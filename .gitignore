@@ -1,4 +1,7 @@
 node_modules/
 
+*.DS_Store
+.DS_Store
+
 src/assets/index.js
 src/assets/styles.css
