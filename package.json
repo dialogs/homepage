@@ -1,0 +1,30 @@
+{
+	"name": "reetm",
+	"version": "1.0.0",
+	"description": "reetm website",
+	"main": "index.js",
+	"scripts": {
+		"server": "node server/server",
+		"webpack": "webpack",
+		"webpack:watch": "webpack --progress --colors --watch",
+		"start": "npm run server & npm run webpack:watch"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "4.16.4",
+		"flexboxgrid": "6.3.1",
+		"normalize.css": "8.0.1",
+		"jquery": "3.3.1"
+	},
+	"devDependencies": {
+		"css-loader": "2.1.0",
+		"file-loader": "3.0.1",
+		"mini-css-extract-plugin": "0.5.0",
+		"postcss-loader": "3.0.0",
+		"postcss-nested": "4.1.1",
+		"postcss-preset-env": "6.5.0",
+		"webpack": "4.29.3",
+		"webpack-cli": "3.2.3"
+	}
+}
