@@ -4,6 +4,8 @@
 
 /* START home.css */
 
+@import "sections/home/safety.css";
+
 .home {
 	&__section {
 		padding-top: 30px;
