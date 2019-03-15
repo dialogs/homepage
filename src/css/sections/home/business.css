@@ -6,9 +6,18 @@
 
 .business {
 	&__cols {
+		@media (--tablet-viewport) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 	}
 
 	&__info {
+		@media (--tablet-viewport) {
+			width: calc(50% + var(--padding-side-columns));
+		}
+
 		&-title {
 			margin: 0;
 			font-size: var(--font-size-title);
@@ -17,12 +26,51 @@
 		}
 
 		&-subtitle {
+			margin-top: 40px;
+			font-family: var(--font-family-medium);
+			font-size: var(--font-size-subtitle-2);
+			line-height: var(--line-height-subtitle-2);
+			letter-spacing: var(--letter-spacing-0275);
+		}
+
+		&-logo {
+			margin-top: 30px;
+
+			@media (--tablet-viewport) {
+				margin-top: 60px;
+			}
+		}
+
+		&-img {
 		}
 
 		&-list {
+			margin-top: 20px;
+			letter-spacing: var(--letter-spacing-content);
 		}
 	}
 
 	&__image {
+		position: relative;
+		text-align: center;
+
+		@media (--mobile-viewport) {
+			margin-top: 40px;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			width: calc(100% - var(--padding-side-columns) / 2);
+			top: 20px;
+			right: calc(-1 * var(--margin-container-side));
+			bottom: 24%;
+			background-color: var(--color-secondary);
+			z-index: -1;
+		}
+	}
+
+	&__img {
+		max-width: 43%;
 	}
 }

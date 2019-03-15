@@ -54,10 +54,16 @@ li {
 }
 
 ul.list {
+	border-top: 1px solid transparent;
+
 	& li {
 		position: relative;
 		margin-top: 40px;
 		padding-left: 40px;
+
+		@media (--tablet-viewport) {
+			padding-left: 60px;
+		}
 
 		&:before {
 			content: "";

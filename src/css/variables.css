@@ -54,6 +54,9 @@
 
 	--font-size-subtitle: 16px;
 	--line-height-subtitle: 19px;
+
+	--font-size-subtitle-2: 16px;
+	--line-height-subtitle-2: 21px;
 	/* end font */
 
 	/* padding */
@@ -72,6 +75,9 @@
 		--font-size-title-5: 16px;
 		--line-height-title-5: 21px;
 
+		--font-size-subtitle-2: 18px;
+		--line-height-subtitle-2: 23px;
+
 		--padding-top-section: 80px;
 		--padding-side-columns: 60px;
 	} /* @media (--tablet-viewport) */
@@ -88,6 +94,9 @@
 
 		--font-size-subtitle: 20px;
 		--line-height-subtitle: 24px;
+
+		--font-size-subtitle-2: 20px;
+		--line-height-subtitle-2: 26px;
 
 		--padding-top-section: 120px;
 		--padding-side-columns: 80px;
@@ -122,6 +131,9 @@
 
 		--font-size-subtitle: 24px;
 		--line-height-subtitle: 28px;
+
+		--font-size-subtitle-2: 24px;
+		--line-height-subtitle-2: 31px;
 
 		--padding-side-columns: 100px;
 	} /* @media (--laptop-viewport) */
