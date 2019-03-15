@@ -5,11 +5,21 @@
 /* START business.css */
 
 .business {
+	&__cols {
+	}
+
 	&__info {
 		&-title {
+			margin: 0;
+			font-size: var(--font-size-title);
+			line-height: var(--line-height-title);
+			font-weight: 700;
 		}
 
 		&-subtitle {
+		}
+
+		&-list {
 		}
 	}
 
