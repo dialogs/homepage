@@ -5,6 +5,7 @@
 /* START home.css */
 
 @import "sections/home/safety.css";
+@import "sections/home/easy.css";
 
 .home {
 	&__section {
@@ -13,6 +14,11 @@
 
 		&:first-of-type {
 			padding-top: 0;
+		}
+
+		@media (--tablet-viewport) {
+			padding-top: 50px;
+			padding-bottom: 50px;
 		}
 	}
 

@@ -18,10 +18,10 @@
 }
 @font-face {
 	font-family: "SuisseIntl-Bold";
-	src: url("/src/fonts/SuisseIntl-Bold.eot");
-	src: url("/src/fonts/SuisseIntl-Bold.eot?#iefix") format("embedded-opentype"),
-		url("/src/fonts/SuisseIntl-Bold.ttf") format("truetype"),
-		url("/src/fonts/SuisseIntl-Bold.woff") format("woff");
+	src: url("../fonts/SuisseIntl-Bold.eot");
+	src: url("../fonts/SuisseIntl-Bold.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/SuisseIntl-Bold.ttf") format("truetype"),
+		url("../fonts/SuisseIntl-Bold.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }

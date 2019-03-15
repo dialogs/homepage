@@ -1,4 +1,10 @@
 
+import $ from 'jquery';
+
 import './forms.js';
 
-// console.log('Hello site reetm');
+$(function() {
+	$(window).on('resize', function(e) {
+    console.log($(this), $(this).width());
+	});
+})
