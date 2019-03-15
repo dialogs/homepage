@@ -14,3 +14,6 @@
 @import "support.css";
 @import "blog.css";
 @import "home.css";
+@import "sections/home/safety.css";
+@import "sections/home/easy.css";
+@import "sections/home/business.css";

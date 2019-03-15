@@ -1,0 +1,18 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+/* START business.css */
+
+.business {
+	&__info {
+		&-title {
+		}
+
+		&-subtitle {
+		}
+	}
+
+	&__image {
+	}
+}

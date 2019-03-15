@@ -7,6 +7,20 @@
 .safety {
 	position: relative;
 
+	@media (--tablet-landscape-viewport) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	@media (--laptop-viewport) {
+		background-color: #fff;
+		padding-top: 75px;
+		margin-left: calc(-1 * var(--margin-container-side) / 2);
+		margin-right: calc(-1 * var(--margin-container-side) / 2);
+		padding-left: calc(var(--margin-container-side) / 2);
+		padding-right: calc(var(--margin-container-side) / 2);
+	}
+
 	&:before,
 	&:after {
 		@media (--tablet-viewport) {
@@ -16,6 +30,18 @@
 				var(--margin-container-side) + var(--padding-side-columns) * 2
 			);
 			z-index: -1;
+		}
+
+		@media (--laptop-viewport) {
+			width: calc(
+				var(--margin-container-side) + var(--padding-side-columns) * 1.5
+			);
+		}
+
+		@media (--laptop-viewport) {
+			width: calc(
+				var(--margin-container-side) + var(--padding-side-columns) * 2
+			);
 		}
 	}
 
@@ -27,6 +53,18 @@
 			bottom: 100%;
 			background: var(--color-secondary);
 		}
+
+		@media (--tablet-landscape-viewport) {
+			height: 199px;
+			height: 19.2%;
+		}
+
+		@media (--laptop-viewport) {
+			height: 75%;
+			bottom: auto;
+			top: -21%;
+			left: calc(-1 * var(--margin-container-side) / 2);
+		}
 	}
 
 	&:after {
@@ -36,6 +74,18 @@
 			right: calc(-1 * var(--margin-container-side));
 			top: 100%;
 			background: var(--color-primary);
+		}
+
+		@media (--tablet-landscape-viewport) {
+			height: 160px;
+			height: 15.4%;
+		}
+
+		@media (--laptop-viewport) {
+			height: 75%;
+			top: auto;
+			bottom: -13%;
+			right: calc(-1 * var(--margin-container-side) / 2);
 		}
 	}
 
@@ -122,6 +172,14 @@
 				flex-wrap: wrap;
 				justify-content: space-between;
 			}
+
+			@media (--tablet-landscape-viewport) {
+				margin-top: -20px;
+			}
+
+			@media (--laptop-viewport) {
+				margin-top: 0;
+			}
 		}
 
 		&__item {
@@ -135,8 +193,12 @@
 			}
 
 			@media (--tablet-viewport) {
-				margin-top: 60px;
+				margin-top: 40px;
 				width: calc(50% - var(--padding-side-columns) / 2);
+			}
+
+			@media (--tablet-landscape-viewport) {
+				margin-top: 60px;
 			}
 
 			&:before {
