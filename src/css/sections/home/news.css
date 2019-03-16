@@ -1,0 +1,9 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+/* START news.css */
+
+.news {
+	background-color: var(--color-primary);
+}
