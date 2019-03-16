@@ -144,8 +144,12 @@ a {
 		bottom: 0;
 		width: 32%;
 		height: 14px;
-		background: var(--color-primary);
+		background-color: var(--color-primary);
 		transition: width 0.3s ease;
+	}
+
+	&--inverse:before {
+		background-color: var(--color-secondary);
 	}
 
 	&__text {
