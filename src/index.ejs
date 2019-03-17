@@ -191,6 +191,9 @@
 
           <section class="home__section offer">
             <h3 class="offer-title">Получить предложение</h3>
+            <div class="offer-description">
+              Поставка от 100 лицензий
+            </div>
             <form action="" class="form offer__form">
               <div class="offer__form-items-box">
                 <div class="form-item form-item--default offer__form-item">
@@ -213,7 +216,42 @@
                   <label for="offer-company" class="label--default">Название компании</label>
                 </div>
 
-                TODO - styling options in select?
+                <div class="form-item form-item--select offer__form-item">
+                  <!-- TODO - styling options in select-->
+                  <select class="select select--default" id="offer-users" name="OFFER_USERS">
+                    <option selected disabled>Количество пользователей</option>
+                    <option value="1-10">1-10</option>
+                    <option value="val2">11-50</option>
+                    <option value="val3">51-100</option>
+                    <option value="val4">101-500</option>
+                    <option value="val5">500+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="offer__form-items-box offer__form-items-box--checkboxes">
+                <div class="form-item form-item--checkbox offer__form-item">
+                  <label for="offer-personal" class="checkbox__label">
+                    <input checked class="checkbox__input" type="checkbox" id="offer-personal" name="OFFER_PERSONAL">
+                    <span class="checkbox__checkbox">
+                      <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.65856L4.94027 9.95214L13.1557 1" stroke="#1E1E1E" stroke-width="2" />
+                      </svg>
+                    </span>
+                    <span class="checkbox__text">Я согласен на обработку персональных данных</span>
+                  </label>
+                </div>
+                <div class="form-item form-item--checkbox offer__form-item">
+                  <label for="offer-subscribe" class="checkbox__label">
+                    <input class="checkbox__input" type="checkbox" id="offer-subscribe" name="OFFER_SUBSCRIBE">
+                    <span class="checkbox__checkbox">
+                      <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.65856L4.94027 9.95214L13.1557 1" stroke="#1E1E1E" stroke-width="2" />
+                      </svg>
+                    </span>
+                    <span class="checkbox__text">Подписаться на новостную рассылку</span>
+                  </label>
+                </div>
               </div>
 
               <div class="form-item offer__form-item offer__form-item__button">

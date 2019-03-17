@@ -30,6 +30,43 @@
     &--checkbox {
       position: relative;
     }
+
+    &--select {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        background: none;
+        border-right: 2px solid var(--color-secondary);
+        border-bottom: 2px solid var(--color-secondary);
+        top: 50%;
+        right: 0;
+        transform: translateY(-80%) rotate(45deg);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.select {
+  height: var(--input-height);
+  background-color: transparent;
+  width: 100%;
+  display: inline-block;
+  appearance: none;
+  border: none;
+  border-bottom: 2px solid rgba(216, 216, 216, 0.2);
+  border-radius: 0;
+  padding-right: 20px;
+  font-size: var(--font-size-content-3);
+  line-height: var(--line-height-content-3);
+  outline: none;
+
+  &:focus {
+    border-bottom-color: #b9bbfa;
   }
 }
 

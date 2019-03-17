@@ -56,6 +56,8 @@
     }
 
     &-link {
+      transition: all 200ms ease;
+
       &:hover {
         color: var(--color-secondary);
       }
@@ -71,9 +73,18 @@
       width: 200px;
       height: 50px;
       display: none;
+      background-color: transparent;
+      color: var(--text-color-main);
+      transition: all 400ms ease;
+      cursor: pointer;
 
       @media (--tablet-landscape-viewport) {
         display: block;
+      }
+
+      &:hover {
+        background-color: var(--text-color-main);
+        color: #fff;
       }
     }
 

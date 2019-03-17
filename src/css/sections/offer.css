@@ -2,23 +2,80 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* START offer.css */
-
 .offer {
+  &.home__section {
+    padding-top: 70px;
+
+    @media (--tablet-viewport) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+
   &-title {
     margin: 0;
     font-size: var(--font-size-title);
     line-height: var(--line-height-title);
+
+    @media (--tablet-landscape-viewport) {
+      padding-right: 240px;
+    }
+  }
+
+  &-description {
+    font-size: var(--font-size-content-2);
+    line-height: var(--line-height-content-2);
+    letter-spacing: var(--letter-spacing-0275);
+    color: var(--text-color-main-03);
+    font-weight: 700;
+    margin-top: 40px;
+
+    @media (--mobile-viewport) {
+      display: none;
+    }
+
+    @media (--tablet-landscape-viewport) {
+      margin-top: 0;
+      float: right;
+      transform: translateY(-42px);
+    }
   }
 
   &__form {
     margin-top: 80px;
     -webkit-font-smoothing: antialiased;
 
-    &__form-items-box {
+    @media (--tablet-viewport) {
+      margin-top: 0;
+    }
+
+    &-items-box {
+      @media (--tablet-viewport) {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      &--checkboxes {
+        .form-item {
+          margin-top: 40px;
+
+          @media (--tablet-viewport) {
+            margin-top: 60px;
+          }
+        }
+      }
     }
 
     &-item {
+      @media (--tablet-viewport) {
+        width: calc(50% - var(--padding-side-columns) / 2);
+
+        &.form-item {
+          margin-top: 80px;
+        }
+      }
     }
   }
 }
