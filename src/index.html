@@ -236,8 +236,25 @@
             </div>
         	</section>
 
-        	<section>
-        		Получить предложение
+        	<section class="home__section offer">
+        		<h3 class="offer-title">Получить предложение</h3>
+            <form action="" class="form offer__form">
+              <div class="offer__form-items-box">
+                <div class="form-item form-item--default offer__form-item">
+                  <input type="text" class="input--default" id="offer-name" name="OFFER_NAME">
+                  <label for="offer-name" class="label--default">Ваше имя</label>
+                </div>
+
+                <div class="form-item form-item--default offer__form-item">
+                  <input type="email" class="input--default" id="offer-mail" name="OFFER_EMAIL">
+                  <label for="offer-mail" class="label--default">Рабочий email</label>
+                </div>
+              </div>
+              
+              <div class="form-item offer__form-item offer__form-item__button">
+                <button type="submit" class="button button--default">Отправить заявку</button>
+              </div>
+            </form>
         	</section>
         </div>
       </div>

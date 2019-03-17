@@ -1,0 +1,24 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+/* START offer.css */
+
+.offer {
+	&-title {
+		margin: 0;
+		font-size: var(--font-size-title);
+		line-height: var(--line-height-title);
+	}
+
+	&__form {
+		margin-top: 80px;
+		-webkit-font-smoothing: antialiased;
+
+		&__form-items-box {
+		}
+
+		&-item {
+		}
+	}
+}
