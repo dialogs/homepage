@@ -8,7 +8,8 @@
     "browsersync": "browser-sync start --proxy \"localhost:3000\" --files \"src/**/*.ejs\" \"src/**/*.html\" \"src/assets/**/*\" --port 8080",
     "webpack": "webpack",
     "webpack:watch": "webpack --progress --colors --watch",
-    "start": "npm run server & npm run webpack:watch & npm run browsersync"
+    "start": "npm run server & npm run webpack:watch & npm run browsersync",
+    "format": "prettier --write --loglevel warn \"src/**/*.{js,css}\""
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "postcss-loader": "3.0.0",
     "postcss-nested": "4.1.2",
     "postcss-preset-env": "6.6.0",
+    "prettier": "1.16.4",
     "style-loader": "0.23.1",
     "webpack": "4.29.6",
     "webpack-cli": "3.3.0"
