@@ -1,12 +1,15 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
 
 import $ from 'jquery';
 
-import './forms.js';
+import './forms';
 
 $(function() {
-	console.log('ww onload', $(window).width());
+  console.log('window onload', $(window).width());
 
-	$(window).on('resize', function(e) {
+  $(window).on('resize', function(e) {
     console.log($(this), $(this).width());
-	});
-})
+  });
+});

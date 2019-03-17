@@ -2,174 +2,171 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* START support.css */
-@import "variables.css";
-
 .h1--support {
-	@media (--tablet-viewport) {
-		margin-right: -10px;
-	}
+  @media (--tablet-viewport) {
+    margin-right: -10px;
+  }
 
-	@media (--tablet-landscape-viewport) {
-		padding-top: 40px;
-		margin-right: 0;
-	}
+  @media (--tablet-landscape-viewport) {
+    padding-top: 40px;
+    margin-right: 0;
+  }
 
-	@media (--laptop-viewport) {
-		padding-top: 30px;
-	}
+  @media (--laptop-viewport) {
+    padding-top: 30px;
+  }
 }
 
 .support {
-	&__sections {
-		@media (--tablet-viewport) {
-			display: flex;
-			justify-content: space-between;
-		}
-	}
+  &__sections {
+    @media (--tablet-viewport) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 
-	&__section {
-		padding-bottom: 60px;
+  &__section {
+    padding-bottom: 60px;
 
-		@media (--tablet-viewport) {
-			padding-bottom: 100px;
-		}
+    @media (--tablet-viewport) {
+      padding-bottom: 100px;
+    }
 
-		&-form {
-			@media (--tablet-viewport) {
-				width: calc(50% - var(--padding-side-columns) / 2);
-			}
-		}
+    &-form {
+      @media (--tablet-viewport) {
+        width: calc(50% - var(--padding-side-columns) / 2);
+      }
+    }
 
-		&-info {
-			@media (--tablet-viewport) {
-				width: calc(50% - var(--padding-side-columns) * 1.5);
-			}
+    &-info {
+      @media (--tablet-viewport) {
+        width: calc(50% - var(--padding-side-columns) * 1.5);
+      }
 
-			@media (--tablet-landscape-viewport) {
-				width: calc(50% - var(--padding-side-columns));
-				margin-top: 6px;
-			}
+      @media (--tablet-landscape-viewport) {
+        width: calc(50% - var(--padding-side-columns));
+        margin-top: 6px;
+      }
 
-			@media (--laptop-viewport) {
-				width: calc(50% - var(--padding-side-columns) * 2);
-				margin-top: 0;
-			}
-		}
-	}
+      @media (--laptop-viewport) {
+        width: calc(50% - var(--padding-side-columns) * 2);
+        margin-top: 0;
+      }
+    }
+  }
 
-	&__form {
-		margin-top: 40px;
-		font-family: var(--font-family-medium);
-		-webkit-font-smoothing: antialiased;
+  &__form {
+    margin-top: 40px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
 
-		@media (--laptop-viewport) {
-			margin-top: 30px;
-		}
+    @media (--laptop-viewport) {
+      margin-top: 30px;
+    }
 
-		&-item {
-		}
-	}
+    &-item {
+    }
+  }
 
-	&__answer-time {
-		font-size: 14px;
-		line-height: 18px;
-		color: var(--text-color-main-03);
-	}
+  &__answer-time {
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--text-color-main-03);
+  }
 
-	&__corporate {
-		position: relative;
-		padding: 40px 0 60px;
-		font-family: var(--font-family-medium);
-		-webkit-font-smoothing: antialiased;
+  &__corporate {
+    position: relative;
+    padding: 40px 0 60px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
 
-		@media (--laptop-viewport) {
-			padding-bottom: 40px;
-		}
+    @media (--laptop-viewport) {
+      padding-bottom: 40px;
+    }
 
-		@media (--desktop-viewport) {
-			padding-right: calc(var(--padding-side-columns) / 2);
-		}
+    @media (--desktop-viewport) {
+      padding-right: calc(var(--padding-side-columns) / 2);
+    }
 
-		&:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: calc(-1 * var(--margin-container-side));
-			right: calc(-1 * var(--margin-container-side));
-			background: var(--color-primary);
-			z-index: -1;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(-1 * var(--margin-container-side));
+      right: calc(-1 * var(--margin-container-side));
+      background: var(--color-primary);
+      z-index: -1;
 
-			@media (--tablet-viewport) {
-				left: calc(-1 * var(--padding-side-columns) / 2);
-			}
+      @media (--tablet-viewport) {
+        left: calc(-1 * var(--padding-side-columns) / 2);
+      }
 
-			@media (--laptop-viewport) {
-				top: -3px;
-				left: -35px;
-			}
-		}
+      @media (--laptop-viewport) {
+        top: -3px;
+        left: -35px;
+      }
+    }
 
-		&-title {
-			font-size: var(--font-size-title-2);
-			line-height: var(--line-height-title-2);
-			margin-bottom: 20px;
-		}
+    &-title {
+      font-size: var(--font-size-title-2);
+      line-height: var(--line-height-title-2);
+      margin-bottom: 20px;
+    }
 
-		&-text {
-			font-size: var(--font-size-content-3);
-			line-height: var(--line-height-content-3);
-			letter-spacing: var(--letter-spacing-0275);
-		}
+    &-text {
+      font-size: var(--font-size-content-3);
+      line-height: var(--line-height-content-3);
+      letter-spacing: var(--letter-spacing-0275);
+    }
 
-		&__link-enterprise {
-			display: inline-block;
-		}
-	}
+    &__link-enterprise {
+      display: inline-block;
+    }
+  }
 
-	&__mail {
-		&-box {
-			padding-top: 40px;
+  &__mail {
+    &-box {
+      padding-top: 40px;
 
-			@media (--tablet-viewport) {
-				padding-top: 50px;
-			}
+      @media (--tablet-viewport) {
+        padding-top: 50px;
+      }
 
-			@media (--tablet-landscape-viewport) {
-				padding-right: var(--padding-side-columns);
-			}
+      @media (--tablet-landscape-viewport) {
+        padding-right: var(--padding-side-columns);
+      }
 
-			@media (--laptop-viewport) {
-				padding-top: 40px;
-			}
+      @media (--laptop-viewport) {
+        padding-top: 40px;
+      }
 
-			& p {
-				margin: 0;
-			}
+      & p {
+        margin: 0;
+      }
 
-			& p + p {
-				margin-top: 20px;
-			}
-		}
+      & p + p {
+        margin-top: 20px;
+      }
+    }
 
-		&-text {
-			font-family: var(--font-family-medium);
-			font-size: 14px;
-			line-height: 18px;
-		}
-	}
+    &-text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
 
-	@media (--tablet-landscape-viewport) {
-		&__form-item__button,
-		&__form-item__answer-time {
-			display: inline-block;
-			vertical-align: middle;
-		}
+  @media (--tablet-landscape-viewport) {
+    &__form-item__button,
+    &__form-item__answer-time {
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-		&__form-item__answer-time {
-			margin-left: 40px;
-			width: 50%;
-		}
-	}
+    &__form-item__answer-time {
+      margin-left: 40px;
+      width: 50%;
+    }
+  }
 }

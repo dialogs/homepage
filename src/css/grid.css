@@ -2,28 +2,25 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* grid */
 .dlg-container {
-	margin: var(--dlg-container-margin);
+  margin: var(--dlg-container-margin);
 
-	@media (--desktop-viewport) {
-		width: 1320px;
-		margin: 0 auto;
-	}
+  @media (--desktop-viewport) {
+    width: 1320px;
+    margin: 0 auto;
+  }
 }
 
 .container {
-	margin: 0 auto;
-	padding: 0 20px;
+  margin: 0 auto;
+  padding: 0 20px;
 
-	@media (--xl-viewport) {
-		width: 1140px;
-	}
+  @media (--xl-viewport) {
+    width: 1140px;
+  }
 }
 
 .row {
-	margin-right: -20px;
-	margin-left: -20px;
+  margin-right: -20px;
+  margin-left: -20px;
 }
-
-/* end grid */

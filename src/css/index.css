@@ -1,22 +1,31 @@
-@import "~normalize.css/normalize.css";
-@import "~flexboxgrid/css/flexboxgrid.css";
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
 
-@import "variables.css";
-@import "grid.css";
-@import "main.css";
-@import "forms.css";
-@import "button.css";
-@import "header.css";
-@import "footer.css";
-@import "about.css";
-@import "license.css";
-@import "download.css";
-@import "support.css";
-@import "blog.css";
-@import "home.css";
-@import "sections/home/safety.css";
-@import "sections/home/easy.css";
-@import "sections/home/business.css";
-@import "sections/home/clients.css";
-@import "sections/home/news.css";
-@import "sections/offer.css";
+@import '~normalize.css/normalize.css';
+@import '~flexboxgrid/css/flexboxgrid.css';
+
+@import 'fonts.css';
+@import 'variables.css';
+@import 'grid.css';
+@import 'main.css';
+@import 'forms.css';
+@import 'button.css';
+@import 'header.css';
+@import 'footer.css';
+@import 'page.css';
+
+@import 'home.css';
+@import 'sections/home/safety.css';
+@import 'sections/home/easy.css';
+@import 'sections/home/business.css';
+@import 'sections/home/clients.css';
+@import 'sections/home/news.css';
+@import 'sections/offer.css';
+
+@import 'features.css';
+@import 'about.css';
+@import 'license.css';
+@import 'download.css';
+@import 'support.css';
+@import 'blog.css';

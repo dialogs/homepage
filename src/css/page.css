@@ -1,0 +1,111 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+.page {
+  padding: 24px 0;
+
+  &__header {
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+}
+
+.tabs {
+  &__tab {
+    &__header {
+      margin-top: 40px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      color: var(--color-secondary);
+    }
+  }
+}
+
+.accordion {
+  & dt {
+    position: relative;
+    margin-top: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    border-bottom: 1px solid color-mod(#1e1e1e alpha(20%));
+
+    & a {
+      padding: 6px 0;
+      line-height: 24px;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.275px;
+      color: color-mod(#1e1e1e alpha(30%));
+      display: block;
+      position: relative;
+      padding-right: 24px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 18px;
+        right: 0;
+        height: 2px;
+        width: 12px;
+        background-color: var(--color-secondary);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 13px;
+        right: 5px;
+        width: 2px;
+        height: 12px;
+        background-color: var(--color-secondary);
+      }
+    }
+
+    &[data-open='true'] {
+      & a:after {
+        display: none;
+      }
+
+      & + dd {
+        display: block;
+      }
+    }
+
+    &[data-open='false'] {
+      & + dd {
+        display: none;
+      }
+    }
+  }
+
+  & dd {
+    & h4 {
+      letter-spacing: 0.275px;
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    & p {
+      margin: 0 0 20px;
+      letter-spacing: 0.01em;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    & .link--default {
+      /* flex: 1 1 auto; */
+    }
+  }
+}
