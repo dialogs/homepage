@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Главная' }) %>
+
+<body>
+  <div class="site__wrapper">
+    <%- include('partials/header') %>
+
+    <main class="site__middle">
+      <div class="home page-home">
+        <div class="dlg-container">
+          <section class="home__intro home__section">
+            <div class="home__intro-box">
+              <div class="home__intro-info">
+                <h2 class="home__intro-title h1--default">Достигайте командные цели быстрее без потери фокуса</h2>
+                <h3 class="home__intro-text">Простая и эффективная платформа для коммуникаций в компании</h3>
+                <button type="button" class="button button--default home__intro-button">Получить предложение</button>
+              </div>
+              <div class="home__intro-image">
+                <img class="home__intro-img" src="/assets/images/home/home-intro.png" srcset="/assets/images/home/home-intro@2x.png 2x" alt="">
+              </div>
+            </div>
+          </section>
+
+          <section class="home__platform home__section">
+            <h1 class="home__platform-title">dialog — коммуникационная платформадля компании</h1>
+            <div class="home__platform-box">
+              <div class="" id="platform-messenger">
+                <img src="/assets/images/home/platform/platform-messenger-export.png" srcset="/assets/images/home/platform/platform-messenger-export@2x.png 2x" alt="Мессенджер">
+              </div>
+            </div>
+          </section>
+
+          <section class="home__section safety">
+            <h3 class="safety-title">Безопасность и соответствие требованиям</h3>
+
+            <div class="safety-item safety-communication">
+              <div class="safety-item__title">Защищенное общение</div>
+              <div class="safety-item__content safety-communication__content">
+                <div class="safety-communication__items">
+                  <div class="safety-communication__item">
+                    <div class="safety-communication__icon">
+                      <img src="/assets/images/home/safety/icon-safety-communication-1.svg" alt="">
+                    </div>
+                    <div class="safety-communication__text">
+                      Размещение платформы на сервере компании по модели On-Premise. Нет риска утечки информации, внешних сбоев и блокировок.
+                    </div>
+                  </div>
+                  <div class="safety-communication__item">
+                    <div class="safety-communication__icon">
+                      <img src="/assets/images/home/safety/icon-safety-communication-2.svg" alt="">
+                    </div>
+                    <div class="safety-communication__text">
+                      dialog отвечает высоким стандартам безопасности: предусмотрена защита от перехвата данных, утечки конфиденциальной информации, распространения вирусов. ПО проходит аудит на предмет уязвимостей и ошибок.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="safety-item safety-requirements">
+              <div class="safety-item__title">Соответствие требованиям</div>
+              <div class="safety-item__content safety-requirements__content">
+                <div class="safety-requirements__items">
+                  <div class="safety-requirements__item">
+                    Реестр отечественного ПО Минкомсвязи
+                  </div>
+                  <div class="safety-requirements__item">
+                    Лицензия ФСТЭК на разработку, производство средств защиты и техническую защиту конфиденциальной информации
+                  </div>
+                  <div class="safety-requirements__item">
+                    Единый реестр российских программ для ЭВМ и баз данных"
+                  </div>
+                </div>
+                <div class="safety-requirements__link-box">
+                  <a href="licenses.html" class="link--arrow">
+                    <span class="link--arrow__text">Подробнее</span>
+                    <img src="/assets/images/svg-icons/arrow-link.svg" alt="" class="link--arrow__icon">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="home__section incompany">
+            <div class="incompany-title">Делаем простой и эффективной коммуникацию внутри любой компании</div>
+            <div class="incompany-text">
+              dialog API позволяет оптимизировать процессы, связав мессенджер и сервисы компании. Создавайте ботов самостоятельно с помощью <a href="">Bot SDK</a> или воспользуйтесь услугами <a href="">партнера-интегратора.</a>
+            </div>
+            <div>
+              тут другие табы
+            </div>
+          </section>
+
+          <section class="home__section easy">
+            <div class="easy__cols">
+              <div class="easy__col easy__col--left">
+                <h3 class="easy-title">dialog — это просто и эффективно</h3>
+                <div class="easy-image">
+                  <img class="easy-img" src="/assets/images/home/easy/easy-export.png" srcset="/assets/images/home/easy/easy-export@2x.png 2x" alt="">
+                </div>
+              </div>
+              <div class="easy__col easy__col--right">
+                <div class="easy-info">
+                  <div class="easy-info-item">
+                    <div class="easy-info-title">dialog — проще</div>
+                    <div class="easy-info-text">Современный мир перегружен шумом. Реклама, новости, уведомления и функции ради функций. dialog помогает сфокусироваться на решении задач и не отвлекаться по пустякам.</div>
+                  </div>
+                  <div class="easy-info-item">
+                    <div class="easy-info-title">dialog — эффективнее</div>
+                    <div class="easy-info-text">Мы против бюрократии, скучных встреч и формальных писем с бесконечными подписями. Чем эффективнее коммуникация, тем быстрее команда достигает своих целей. Решать рабочие вопросы вместе с dialog можно
+                      быстро и без формальностей.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="home__section business">
+            <div class="business__cols">
+              <div class="business__info">
+                <div class="business__info-title">dialog — в большом бизнесе</div>
+                <div class="business__info-subtitle">Пример интеграции в банковскую сферу</div>
+                <div class="business__info-logo">
+                  <img class="business__info-img" src="/assets/images/home/business/logo-sberbank-business.svg" alt="Сбербанк">
+                </div>
+                <ul class="business__info-list list list--secondary">
+                  <li class="business__info-item">Платформа для общения сотрудников и корпоративных клиентов</li>
+                  <li class="business__info-item">Интеграция банковских сервисов через открытый API</li>
+                  <li class="business__info-item">Доступ с любых устройств и из всех подсетей</li>
+                  <li class="business__info-item">Обмен конфиденциальной информацией</li>
+                </ul>
+
+              </div>
+              <div class="business__image">
+                <img class="business__img" src="/assets/images/home/business/man2.png" srcset="/assets/images/home/business/man2@2x.png 2x" alt="">
+              </div>
+            </div>
+          </section>
+
+          <section class="home__section clients">
+            <div class="clients__title">Наши клиенты</div>
+          </section>
+
+          <section class="home__section news">
+            <h3 class="news-title">Мы в новостях</h3>
+            <div class="news__roster">
+              <div class="news__roster-list">
+                <div class="news__roster-item">
+                  <a href="" class="news__roster-item-link">
+                    <div class="news__roster-image-box">
+                      <div class="news__roster-image">
+                        <img src="/assets/images/blog/blog-table-1.png" alt="">
+                      </div>
+                    </div>
+                    <div class="news__roster-date">12 ноября 2018</div>
+                    <div class="news__roster-short">8 ноября 11-я ежегодная конференция CNews Forum 2018 собрала предcтавителей бизнеса, госструктур и ИТ-компаний для обсуждения инновационных технологий</div>
+                  </a>
+                </div>
+                <div class="news__roster-item">
+                  <a href="" class="news__roster-item-link">
+                    <div class="news__roster-image-box">
+                      <div class="news__roster-image">
+                        <img src="https://dialog-2.ghost.io/content/images/2019/02/-----------44-.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="news__roster-date">22 ноября 2018</div>
+                    <div class="news__roster-short">Тестирование совместимости dialog с программным обеспечением компании «Росплатформа» прошло успешно: наши отечественные решения работают стабильно и эффективно</div>
+                  </a>
+                </div>
+                <div class="news__roster-item">
+                  <a href="" class="news__roster-item-link">
+                    <div class="news__roster-image-box">
+                      <div class="news__roster-image">
+                        <img src="https://dialog-2.ghost.io/content/images/2019/02/Izbrannoe.jpg" alt="">
+                      </div>
+                    </div>
+                    <div class="news__roster-date">22 ноября 2018</div>
+                    <div class="news__roster-short">Мало текста</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="news__link-box">
+              <a href="" class="link--arrow link--arrow--inverse">
+                <span class="link--arrow__text">Все статьи</span>
+                <img src="/assets/images/svg-icons/arrow-link.svg" alt="" class="link--arrow__icon">
+              </a>
+            </div>
+          </section>
+
+          <section class="home__section offer">
+            <h3 class="offer-title">Получить предложение</h3>
+            <form action="" class="form offer__form">
+              <div class="offer__form-items-box">
+                <div class="form-item form-item--default offer__form-item">
+                  <input type="text" class="input--default" id="offer-name" name="OFFER_NAME">
+                  <label for="offer-name" class="label--default">Ваше имя</label>
+                </div>
+
+                <div class="form-item form-item--default offer__form-item">
+                  <input type="email" class="input--default" id="offer-mail" name="OFFER_EMAIL">
+                  <label for="offer-mail" class="label--default">Рабочий email</label>
+                </div>
+
+                <div class="form-item form-item--default offer__form-item">
+                  <input type="tel" class="input--default" id="offer-phone" name="OFFER_PHONE">
+                  <label for="offer-phone" class="label--default">Телефон</label>
+                </div>
+
+                <div class="form-item form-item--default offer__form-item">
+                  <input type="text" class="input--default" id="offer-company" name="OFFER_COMPANY">
+                  <label for="offer-company" class="label--default">Название компании</label>
+                </div>
+
+                TODO - styling options in select?
+              </div>
+
+              <div class="form-item offer__form-item offer__form-item__button">
+                <button type="submit" class="button button--default">Отправить заявку</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <%- include('partials/footer') %>
+  </div>
+
+  <script src="/assets/index.js"></script>
+</body>
+
+</html>

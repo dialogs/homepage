@@ -2,8 +2,6 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* START about.css */
-
 .h1--about {
   padding: 24px 0 40px;
 
@@ -127,8 +125,6 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 40px 0;
-    /*
-		margin-left: 250px;*/
 
     @media (--tablet-viewport) {
       margin-left: 13.65%;
@@ -148,6 +144,7 @@
       margin-left: 22.5%;
       margin-top: 60px;
     }
+
     @media (--desktop-viewport) {
       margin-top: 50px;
     }
@@ -164,7 +161,6 @@
         left: 0;
       }
 
-      /*width: calc((100vw - 1100px) / 2);*/
       background: inherit;
       z-index: -1;
     }
@@ -207,7 +203,7 @@
         max-width: 44px;
       }
     }
-  } /* !.__description */
+  }
 
   &__features {
     &-list {

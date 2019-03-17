@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'Поддержка' }) %>
+
+<body>
+  <div class="site__wrapper">
+    <%- include('partials/header') %>
+
+    <main class="site__middle">
+      <div class="support page-support">
+        <div class="dlg-container">
+          <div class="support__sections">
+            <section class="support__section support__section-form">
+              <h1 class="h1--default h1--support">Форма обратной связи</h1>
+              <form action="" class="form support__form">
+                <div class="form-item form-item--default support__form-item">
+                  <input type="email" class="input--default" id="support-mail" name="SUPPORT_EMAIL">
+                  <label for="support-mail" class="label--default">Ваш Email</label>
+                </div>
+
+                <div class="form-item form-item--default support__form-item">
+                  <input type="text" class="input--default" id="support-theme" name="SUPPORT_THEME">
+                  <label for="support-theme" class="label--default">Тема</label>
+                </div>
+
+                <div class="form-item form-item--default support__form-item">
+                  <textarea class="input--default" id="support-description" rows="8" name="SUPPORT_DESCRIPTION"></textarea>
+                  <label for="support-description" class="label--default">Опишите вашу проблему</label>
+                </div>
+
+                <div class="form-item form-item--checkbox support__form-item">
+                  <label for="support-personal" class="checkbox__label">
+                    <input checked class="checkbox__input" type="checkbox" id="support-personal" name="SUPPORT_PERSONAL">
+                    <span class="checkbox__checkbox">
+                      <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.65856L4.94027 9.95214L13.1557 1" stroke="#1E1E1E" stroke-width="2" />
+                      </svg>
+                    </span>
+                    <span class="checkbox__text">Я согласен на обработку персональных данных</span>
+                  </label>
+                </div>
+
+                <div class="form-item support__form-item support__form-item__button">
+                  <button type="submit" class="button button--default">Отправить</button>
+                </div>
+
+                <div class="form-item support__form-item support__form-item__answer-time">
+                  <span class="support__answer-time">Служба поддержки обычно отвечает в течение 15 минут</span>
+                </div>
+              </form>
+            </section>
+
+            <section class="support__section support__section-info">
+              <div class="support__corporate">
+                <div class="support__corporate-title">Корпоративным клиентам</div>
+                <div class="support__corporate-text">Если вы пользователь <a href="download.html" class="link--default support__corporate__link-enterprise">Reetm Enterprise</a> — воспользуйтесь центром поддержки для корпоративных клиентов. Или
+                  запросите доступ у вашего администратора.</div>
+              </div>
+              <div class="support__mail-box">
+                <p class="support__mail-text">Связаться со службой поддержки можно также по e-mail:</p>
+                <p>
+                  <a href="" class="link--default">support@reetm.ru</a>
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('partials/footer') %>
+  </div>
+
+  <script src="/assets/index.js"></script>
+</body>
+
+</html>

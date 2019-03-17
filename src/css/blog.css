@@ -2,8 +2,6 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* START blog.css */
-
 .blog {
   &__top-section {
     @media (--tablet-landscape-viewport) {
@@ -331,7 +329,6 @@
   }
 }
 
-/*-----*/
 .blog__roster {
   font-weight: 500;
 
@@ -471,7 +468,7 @@
       color: var(--text-color-main-03);
     }
   }
-} /* ! .blog__roster */
+}
 
 .subscribe {
   font-weight: 500;

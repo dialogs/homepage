@@ -4,6 +4,7 @@
 
 .page {
   padding: 24px 0;
+  flex: 1 1 auto;
 
   &__header {
     margin: 0;
@@ -107,5 +108,12 @@
     & .link--default {
       /* flex: 1 1 auto; */
     }
+  }
+}
+
+@media (--tablet-viewport) {
+  .accordion dt,
+  .tabs__tab__header {
+    display: none;
   }
 }
