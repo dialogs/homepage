@@ -45,7 +45,8 @@
 
     &-wrapper {
       position: relative;
-      padding-bottom: 56.25%;
+      padding-bottom: 56.25%; /* for youtube */
+      padding-bottom: 51.4%; /* for image */
       height: 0;
 
       @media (--tablet-viewport) {
@@ -109,6 +110,14 @@
       }
 
       & > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      & > img {
         position: absolute;
         top: 0;
         left: 0;

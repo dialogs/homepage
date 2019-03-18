@@ -19,6 +19,7 @@ app.get('/download', (req, res) => res.render('../src/download'));
 app.get('/download/cloud', (req, res) => res.render('../src/downloadCloud'));
 app.get('/licenses', (req, res) => res.render('../src/licenses'));
 app.get('/support', (req, res) => res.render('../src/support'));
+app.get('/legal', (req, res) => res.render('../src/legal'));
 
 app.get('/playground', (req, res) => res.render('../src/playground'));
 
