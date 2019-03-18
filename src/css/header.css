@@ -92,6 +92,7 @@
     }
 
     &--lang {
+      display: none !important;
       text-transform: uppercase;
       line-height: 19px;
       font-size: 14px;
