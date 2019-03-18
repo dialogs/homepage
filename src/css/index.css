@@ -16,11 +16,13 @@
 @import 'page.css';
 
 @import 'home.css';
+@import 'sections/home/platform.css';
 @import 'sections/home/safety.css';
 @import 'sections/home/easy.css';
 @import 'sections/home/business.css';
 @import 'sections/home/clients.css';
 @import 'sections/home/news.css';
+@import 'sections/home/incompany.css';
 @import 'sections/offer.css';
 
 @import 'features.css';
@@ -29,3 +31,4 @@
 @import 'download.css';
 @import 'support.css';
 @import 'blog.css';
+@import 'legal.css';

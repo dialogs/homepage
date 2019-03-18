@@ -27,7 +27,7 @@
     line-height: var(--line-height-content-2);
     letter-spacing: var(--letter-spacing-0275);
     color: var(--text-color-main-03);
-    font-weight: 700;
+    font-weight: 500;
     margin-top: 40px;
 
     @media (--mobile-viewport) {

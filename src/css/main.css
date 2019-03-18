@@ -72,37 +72,25 @@ a {
 .link--default {
   position: relative;
 
-  &:before,
-  &:after {
+  &:before {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     height: 2px;
-  }
-
-  &:before {
     width: 100%;
     background: var(--color-secondary);
-  }
-  &:after {
-    width: 0;
-    background: var(--color-primary);
-    transition: width 0.2s;
   }
 
   &--inverse {
     &:before {
       background: var(--color-primary);
     }
-    &:after {
-      background: var(--color-secondary);
-    }
   }
 
   &:hover {
-    &:after {
-      width: 100%;
+    &:before {
+      display: none;
     }
   }
 }
@@ -159,8 +147,7 @@ a {
     position: relative;
     display: inline-block;
 
-    &:before,
-    &:after {
+    &:before {
       content: '';
       position: absolute;
       left: 0;
@@ -171,12 +158,16 @@ a {
     &:before {
       width: 100%;
       background: var(--color-secondary);
+
+      .link--download:hover & {
+        display: none;
+      }
     }
-    &:after {
+    /*&:after {
       width: 0;
       background: var(--color-primary);
       transition: width 0.2s;
-    }
+    }*/
   }
 
   &__icon {

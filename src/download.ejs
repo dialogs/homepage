@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head', { title: 'Скачать' }) %>
-
+  <%
+  const links =  {
+    "ios": "https://itunes.apple.com/us/app/dialog-messenger/id1134796870",
+    "android": "https://play.google.com/store/apps/details?id=im.dlg.app",
+    "web": "https://app.dlg.im",
+    "osx": "https://cdn1.dlg.im/desktop/dialog-messenger-mac-latest.zip",
+    "windows": "https://cdn1.dlg.im/desktop/dialog-messenger-win-latest.exe",
+    "linux": "https://cdn1.dlg.im/desktop/dialog-messenger-linux-i386-latest.deb",
+    "linux64": "https://cdn1.dlg.im/desktop/dialog-messenger-linux-amd64-latest.deb",
+    "ios_ee": "https://itunes.apple.com/us/app/dialog-enterprise/id1210727252",
+    "android_ee": "https://play.google.com/store/apps/details?id=im.dlg.ee",
+    "web_ee": "https://ee.dlg.im",
+    "osx_ee": "https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-mac-latest.zip",
+    "windows_ee": "https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-win-latest.exe",
+    "linux_ee": "https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-linux-i386-latest.deb",
+    "linux64_ee": "https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-linux-amd64-latest.deb",
+    "vk": "https://vk.com/dlgim",
+    "facebook": "https://www.facebook.com/startdialog",
+    "twitter": "https://twitter.com/dialoglive"
+  };
+  %>
   <body>
     <div class="site__wrapper">
       <%- include('partials/header') %>
@@ -11,11 +31,9 @@
           <div class="dlg-container">
             <div class="download__sections">
               <section class="download__section download__intro">
-                <h1 class="download__intro-title">Reetm Enterprise</h1>
+                <h1 class="download__intro-title">dialog Enterprise</h1>
                 <div class="download__intro-text">
-                  Информацию о подключении вы можете получить у вашего
-                  системного администратора или в центре
-                  <a class="link--default" href="">поддержки клиентов</a>.
+                  Информацию о подключении вы можете получить у своего системного администратора или в центре <a class="link--default" href="https://support.dlg.im">поддержки клиентов</a>.
                 </div>
               </section>
 
@@ -34,16 +52,19 @@
                   />
                 </div>
                 <div class="download__desktop-button-box">
-                  <a class="button button--default" href=""
+                  <a class="button button--default" href="<%=links.osx_ee %>"
                     >Скачать для MacOS</a
                   >
                 </div>
                 <div class="download__desktop-systems">
                   <div class="download__desktop-system">
-                    <a class="download__item-link" href="">Windows</a>
+                    <a class="download__item-link" href="<%=links.windows_ee %>">Windows</a>
                   </div>
                   <div class="download__desktop-system">
-                    <a class="download__item-link" href="">Linux 32/64</a>
+                    <a class="download__item-link" href="<%=links.linux_ee %>">Linux 32</a>
+                  </div>
+                  <div class="download__desktop-system">
+                    <a class="download__item-link" href="<%=links.linux64_ee %>">Linux 64</a>
                   </div>
                 </div>
               </section>
@@ -113,7 +134,7 @@
                   />
                 </div>
                 <div class="download__web-button-box">
-                  <a class="button button--default" href="">Начать</a>
+                  <a class="button button--default" href="<%=links.web_ee %>">Начать</a>
                 </div>
               </section>
             </div>

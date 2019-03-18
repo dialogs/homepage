@@ -12,7 +12,7 @@
           <section class="home__intro home__section">
             <div class="home__intro-box">
               <div class="home__intro-info">
-                <h2 class="home__intro-title h1--default">Достигайте командные цели быстрее без потери фокуса</h2>
+                <h2 class="home__intro-title h1--default">Достигайте командные цели быстрее и без потери фокуса</h2>
                 <h3 class="home__intro-text">Простая и эффективная платформа для коммуникаций в компании</h3>
                 <button type="button" class="button button--default home__intro-button">Получить предложение</button>
               </div>
@@ -22,13 +22,129 @@
             </div>
           </section>
 
-          <section class="home__platform home__section">
-            <h1 class="home__platform-title">dialog — коммуникационная платформадля компании</h1>
-            <div class="home__platform-box">
-              <div class="" id="platform-messenger">
-                <img src="/assets/images/home/platform/platform-messenger-export.png" srcset="/assets/images/home/platform/platform-messenger-export@2x.png 2x" alt="Мессенджер">
+          <section class="home__section platform">
+            <h1 class="platform-title">dialog — коммуникационная платформа для компании</h1>
+
+            <div class="tabs__parent">
+              <div class="tab__panel">
+                <div class="tab__button tab__button--current" data-target="messenger">Мессенджер</div>
+                <div class="tab__button" data-target="functions">Корпоративные функции</div>
+                <div class="tab__button" data-target="integrations">Интеграции</div>
               </div>
-            </div>
+
+              <div class="accordion">
+                <div class="accordion__button" data-open="true">Мессенджер</div>
+                <div class="accordion__content accordion__content--visible" data-content="messenger">
+                  <div class="platform__item platform--messenger">
+                    <div class="platform__col--noimage">
+                      <div class="platform__icons">
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-1-1.svg" alt="">
+                          <div class="platform__icon-text">Личные и групповые чаты</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-1-2.svg" alt="">
+                          <div class="platform__icon-text">Бесплатные аудио- / видеозвонки</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-1-3.svg" alt="">
+                          <div class="platform__icon-text">Обмен файлами без ограничений</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-1-4.svg" alt="">
+                          <div class="platform__icon-text">Каналы для оповещений</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-1-5.svg" alt="">
+                          <div class="platform__icon-text">Голосовые сообщения</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-1-6.svg" alt="">
+                          <div class="platform__icon-text">Эмодзи и стикеры</div>
+                        </div>
+                      </div>
+                      <div class="platform__description">
+                        Доступность на популярных платформах
+                      </div>
+                      <div class="platform__links">
+                        <span>iOS</span>
+                        <span>Android</span>
+                        <span>Windows</span>
+                        <span>macOS</span>
+                        <span>Linux</span>
+                      </div>
+                    </div>
+                    <div class="platform__image">
+                      <img src="/assets/images/home/platform/platform-messenger-export.png" srcset="/assets/images/home/platform/platform-messenger-export@2x.png 2x" alt="Мессенджер">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">Корпоративные функции</div>
+                <div class="accordion__content" data-content="functions">
+                  <div class="platform__item platform--functions">
+                    <div class="platform__col--noimage">
+                      <div class="platform__icons">
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-2-1.svg" alt="">
+                          <div class="platform__icon-text">Интеллектуальные чат-боты</div>
+                        </div>
+                        <!--
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-2-2.svg" alt="">
+                          <div class="platform__icon-text">Интеграция с электронной почтой</div>
+                        </div>
+                        -->
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-2-2.svg" alt="">
+                          <div class="platform__icon-text">Интеграция с Active Directory (AD/LDAP)</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-2-3.svg" alt="">
+                          <div class="platform__icon-text">Панель администратора</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-1-7.svg" alt="">
+                          <div class="platform__icon-text">Демонстрация экрана</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-2-4.svg" alt="">
+                          <div class="platform__icon-text">Комплекс мер безопасности для защищенного общения</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="platform__image">
+                      <img src="/assets/images/home/platform/platform-functions-export.png" srcset="/assets/images/home/platform/platform-functions-export@2x.png 2x" alt="Корпоративные функции">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">Интеграции</div>
+                <div class="accordion__content" data-content="integrations">
+                  <div class="platform__item platform--integrations">
+                    <div class="platform__col--noimage">
+                      <div class="platform__icons">
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-3-1.svg" alt="">
+                          <div class="platform__icon-text">dialog API для интеграции со сторонними приложениями</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-3-2.svg" alt="">
+                          <div class="platform__icon-text">Bot SDK (Software Development Kit) для создания собственных ботов</div>
+                        </div>
+                        <div class="platform__icon">
+                          <img class="platform__icon-img" src="/assets/images/home/platform/icon-3-3.svg" alt="">
+                          <div class="platform__icon-text">Возможность изменить фирменный стиль интерфейса dialog в соответствии с гайдлайнами бренда заказчика</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="platform__image">
+                      <img src="/assets/images/home/platform/platform-integrations-export.png" srcset="/assets/images/home/platform/platform-integrations-export@2x.png 2x" alt="Корпоративные функции">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- tabs__parent -->
           </section>
 
           <section class="home__section safety">
@@ -43,7 +159,7 @@
                       <img src="/assets/images/home/safety/icon-safety-communication-1.svg" alt="">
                     </div>
                     <div class="safety-communication__text">
-                      Размещение платформы на сервере компании по модели On-Premise. Нет риска утечки информации, внешних сбоев и блокировок.
+                      Размещение платформы на сервере компании по модели On-Premise. В комплексе со средствами защиты в ПО минимизированы риски утечки информации, внешних сбоев и блокировок. 
                     </div>
                   </div>
                   <div class="safety-communication__item">
@@ -51,7 +167,7 @@
                       <img src="/assets/images/home/safety/icon-safety-communication-2.svg" alt="">
                     </div>
                     <div class="safety-communication__text">
-                      dialog отвечает высоким стандартам безопасности: предусмотрена защита от перехвата данных, утечки конфиденциальной информации, распространения вирусов. ПО проходит аудит на предмет уязвимостей и ошибок.
+                      dialog отвечает высоким стандартам безопасности: предусмотрена защита от перехвата данных, утечки конфиденциальной информации и распространения вирусов. ПО проходит аудит на предмет уязвимостей и ошибок.
                     </div>
                   </div>
                 </div>
@@ -63,17 +179,20 @@
               <div class="safety-item__content safety-requirements__content">
                 <div class="safety-requirements__items">
                   <div class="safety-requirements__item">
-                    Реестр отечественного ПО Минкомсвязи
+                    Компания-разработчик ООО “Диалог” состоит в реестре аккредитованных организаций, осуществляющих деятельность в области информационных технологий на территории РФ (№ 436 от 07.09.2016 г.).
                   </div>
                   <div class="safety-requirements__item">
-                    Лицензия ФСТЭК на разработку, производство средств защиты и техническую защиту конфиденциальной информации
+                    Мессенджер dialog соответствует требованиям Единого реестра российских программ для электронных вычислительных машин и баз данных, а также состоит в реестре отечественного ПО.
                   </div>
                   <div class="safety-requirements__item">
-                    Единый реестр российских программ для ЭВМ и баз данных"
+                    Компания-разработчик ООО "Диалог" лицензирована ФСТЭК России на деятельность по технической защите конфиденциальной информации, разработку и производство средств защиты конфиденциальной информации.
+                  </div>
+                  <div class="safety-requirements__item">
+                    Компания-разработчик ООО "Диалог" имеет лицензию ФСБ России на разработку, производство, распространение шифровальных средств, информационных систем и телекоммуникационных систем, защищённых с помощью шифровальных средств.
                   </div>
                 </div>
                 <div class="safety-requirements__link-box">
-                  <a href="licenses.html" class="link--arrow">
+                  <a href="/licenses" class="link--arrow">
                     <span class="link--arrow__text">Подробнее</span>
                     <img src="/assets/images/svg-icons/arrow-link.svg" alt="" class="link--arrow__icon">
                   </a>
@@ -83,12 +202,104 @@
           </section>
 
           <section class="home__section incompany">
-            <div class="incompany-title">Делаем простой и эффективной коммуникацию внутри любой компании</div>
+            <h3 class="incompany-title">Делаем коммуникацию внутри любой компании простой и эффективной</h3>
             <div class="incompany-text">
-              dialog API позволяет оптимизировать процессы, связав мессенджер и сервисы компании. Создавайте ботов самостоятельно с помощью <a href="">Bot SDK</a> или воспользуйтесь услугами <a href="">партнера-интегратора.</a>
+              dialog API позволяет оптимизировать процессы, связав мессенджер и сервисы компании. Создавайте ботов самостоятельно с помощью <a href="https://dialogs.github.io/bots-docs/#/" class="link--default">Bot SDK</a> или воспользуйтесь услугами партнёра-интегратора.
             </div>
-            <div>
-              тут другие табы
+
+            <div class="tabs__parent">
+              <div class="tab__panel">
+                <div class="tab__button tab__button--current" data-target="marketing">Маркетинг</div>
+                <div class="tab__button" data-target="development">Разработка</div>
+                <div class="tab__button" data-target="hr">HR</div>
+                <div class="tab__button" data-target="sales">Продажи</div>
+                <div class="tab__button" data-target="support">Техническая поддержка</div>
+                <div class="tab__button" data-target="security">Служба безопасности</div>
+              </div>
+
+              <div class="accordion">
+                <div class="accordion__button" data-open="false">Маркетинг</div>
+                <div class="accordion__content accordion__content--visible" data-content="marketing">
+                  <div class="incompany__content-title">
+                    Пример оптимизации процесса
+                  </div>
+                  <div class="incompany__content-images">
+                    <img src="/assets/images/home/incompany/icon-marketing.svg" alt="">
+                    <img src="/assets/images/home/incompany/icon-arrows.svg" alt="">
+                    <img src="/assets/images/home/incompany/logo-dlg.png" alt="" class="dlg">
+                  </div>
+                  <div class="incompany__content-description">
+                    Будьте в курсе результатов маркетинговых активностей с уведомлениями из аналитических систем (например, Google Analytics).
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">Разработка</div>
+                <div class="accordion__content" data-content="development">
+                  <div class="incompany__content-title">
+                    Пример оптимизации процесса
+                  </div>
+                  <div class="incompany__content-images">
+                    <img src="/assets/images/home/incompany/logo-jira.svg" alt="" class="jira">
+                    <img src="/assets/images/home/incompany/icon-arrows.svg" alt="">
+                    <img src="/assets/images/home/incompany/logo-dlg.png" alt="" class="dlg">
+                  </div>
+                  <div class="incompany__content-description">
+                    Автоматизируйте процессы — синхронизируйте статусы задач из Jira  в dialog.
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">HR</div>
+                <div class="accordion__content" data-content="hr">
+                  <div class="incompany__content-title">
+                    Пример оптимизации процесса
+                  </div>
+                  <div class="incompany__content-images">
+                    <img src="/assets/images/home/incompany/icon-hr.svg" alt="" class="hr">
+                  </div>
+                  <div class="incompany__content-description">
+                    Сократите время на работу с кандидатами – передайте рутинную работу сервису. Программа сама выберет время и назначит собеседование.
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">Продажи</div>
+                <div class="accordion__content" data-content="sales">
+                  <div class="incompany__content-title">
+                    Пример оптимизации процесса
+                  </div>
+                  <div class="incompany__content-images">
+                    <img src="/assets/images/home/incompany/icon-amocrm.svg" alt="" class="amocrm">
+                  </div>
+                  <div class="incompany__content-description">
+                    Будьте всегда в курсе сделок  с автоматическим обновлением статусов из CRM.
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">Техническая поддержка</div>
+                <div class="accordion__content" data-content="support">
+                  <div class="incompany__content-title">
+                    Пример оптимизации процесса
+                  </div>
+                  <div class="incompany__content-images">
+                    <img src="/assets/images/home/incompany/icon-zendesk.svg" alt="" class="zendesk">
+                  </div>
+                  <div class="incompany__content-description">
+                    Сократите время ответа службы поддержки — соберите все запросы в одну систему.
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">Служба безопасности</div>
+                <div class="accordion__content" data-content="security">
+                  <div class="incompany__content-title">
+                    Пример оптимизации процесса
+                  </div>
+                  <div class="incompany__content-images">
+                    <img src="/assets/images/home/incompany/security.svg" alt="" class="security">
+                  </div>
+                  <div class="incompany__content-description">
+                    Интеграции с антивирусами, системами контроля утечек данных  (DLP). Оповещения о событиях системы безопасности.
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -103,13 +314,12 @@
               <div class="easy__col easy__col--right">
                 <div class="easy-info">
                   <div class="easy-info-item">
-                    <div class="easy-info-title">dialog — проще</div>
-                    <div class="easy-info-text">Современный мир перегружен шумом. Реклама, новости, уведомления и функции ради функций. dialog помогает сфокусироваться на решении задач и не отвлекаться по пустякам.</div>
+                    <div class="easy-info-title">В диалоге – проще</div>
+                    <div class="easy-info-text">Современный мир перегружен шумом - реклама, новости, отвлекающие уведомления. IT-продукты в погоне за новыми функциями забывают о пользователях. Dialog помогает сфокусироваться на решении задач без сложных интерфейсов и фич - берись и работай, как тебе удобно.</div>
                   </div>
                   <div class="easy-info-item">
-                    <div class="easy-info-title">dialog — эффективнее</div>
-                    <div class="easy-info-text">Мы против бюрократии, скучных встреч и формальных писем с бесконечными подписями. Чем эффективнее коммуникация, тем быстрее команда достигает своих целей. Решать рабочие вопросы вместе с dialog можно
-                      быстро и без формальностей.</div>
+                    <div class="easy-info-title">В диалоге – эффективнее</div>
+                    <div class="easy-info-text">Мы против бюрократии, бесполезных встреч и формальных писем с километровыми подписями. Чем эффективнее коммуникация, тем быстрее команда достигает своих целей. Dialog помогает эффективно решать личные и командные задачи без перегруженных процессов.</div>
                   </div>
                 </div>
               </div>
@@ -142,68 +352,23 @@
             <div class="clients__title">Наши клиенты</div>
           </section>
 
-          <section class="home__section news">
-            <h3 class="news-title">Мы в новостях</h3>
-            <div class="news__roster">
-              <div class="news__roster-list">
-                <div class="news__roster-item">
-                  <a href="" class="news__roster-item-link">
-                    <div class="news__roster-image-box">
-                      <div class="news__roster-image">
-                        <img src="/assets/images/blog/blog-table-1.png" alt="">
-                      </div>
-                    </div>
-                    <div class="news__roster-date">12 ноября 2018</div>
-                    <div class="news__roster-short">8 ноября 11-я ежегодная конференция CNews Forum 2018 собрала предcтавителей бизнеса, госструктур и ИТ-компаний для обсуждения инновационных технологий</div>
-                  </a>
-                </div>
-                <div class="news__roster-item">
-                  <a href="" class="news__roster-item-link">
-                    <div class="news__roster-image-box">
-                      <div class="news__roster-image">
-                        <img src="https://dialog-2.ghost.io/content/images/2019/02/-----------44-.jpg" alt="">
-                      </div>
-                    </div>
-                    <div class="news__roster-date">22 ноября 2018</div>
-                    <div class="news__roster-short">Тестирование совместимости dialog с программным обеспечением компании «Росплатформа» прошло успешно: наши отечественные решения работают стабильно и эффективно</div>
-                  </a>
-                </div>
-                <div class="news__roster-item">
-                  <a href="" class="news__roster-item-link">
-                    <div class="news__roster-image-box">
-                      <div class="news__roster-image">
-                        <img src="https://dialog-2.ghost.io/content/images/2019/02/Izbrannoe.jpg" alt="">
-                      </div>
-                    </div>
-                    <div class="news__roster-date">22 ноября 2018</div>
-                    <div class="news__roster-short">Мало текста</div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="news__link-box">
-              <a href="" class="link--arrow link--arrow--inverse">
-                <span class="link--arrow__text">Все статьи</span>
-                <img src="/assets/images/svg-icons/arrow-link.svg" alt="" class="link--arrow__icon">
-              </a>
-            </div>
-          </section>
+          <%- // include('partials/index/news') %>
 
           <section class="home__section offer">
             <h3 class="offer-title">Получить предложение</h3>
             <div class="offer-description">
-              Поставка от 100 лицензий
+              Пакет от 100 лицензий.
             </div>
             <form action="" class="form offer__form">
               <div class="offer__form-items-box">
                 <div class="form-item form-item--default offer__form-item">
                   <input type="text" class="input--default" id="offer-name" name="OFFER_NAME">
-                  <label for="offer-name" class="label--default">Ваше имя</label>
+                  <label for="offer-name" class="label--default">Как к вам обращаться</label>
                 </div>
 
                 <div class="form-item form-item--default offer__form-item">
                   <input type="email" class="input--default" id="offer-mail" name="OFFER_EMAIL">
-                  <label for="offer-mail" class="label--default">Рабочий email</label>
+                  <label for="offer-mail" class="label--default">Рабочий e-mail</label>
                 </div>
 
                 <div class="form-item form-item--default offer__form-item">
@@ -238,7 +403,7 @@
                         <path d="M1 5.65856L4.94027 9.95214L13.1557 1" stroke="#1E1E1E" stroke-width="2" />
                       </svg>
                     </span>
-                    <span class="checkbox__text">Я согласен на обработку персональных данных</span>
+                    <span class="checkbox__text">Я согласен на обработку личных данных</span>
                   </label>
                 </div>
                 <div class="form-item form-item--checkbox offer__form-item">
