@@ -5,8 +5,8 @@
 import $ from 'jquery';
 
 import './forms';
-import './accordion';
 import './features';
+import './accordion-home';
 
 $(function() {
   console.log('window onload', $(window).width());
