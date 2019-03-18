@@ -3,26 +3,52 @@
  */
 
 .page {
-  padding: 24px 0;
+  padding: 20px 0;
   flex: 1 1 auto;
 
   &__header {
     margin: 0;
     padding: 0;
-    font-size: 28px;
+    font-size: 60px;
     font-weight: 500;
-    line-height: 30px;
+    line-height: 62px;
+    margin-bottom: 40px;
+
+    @media (--mobile-viewport) {
+      font-size: 28px;
+      line-height: 30px;
+    }
   }
 }
 
 .tabs {
-  &__tab {
-    &__header {
+  &--upper {
+    display: none;
+
+    & .tabs__tab__title {
+      margin-right: 42px;
+    }
+
+    @media (--tablet-viewport) {
+      display: flex;
+      flex-flow: row wrap;
       margin-top: 40px;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
-      color: var(--color-secondary);
+      margin-bottom: 114px;
+    }
+  }
+
+  &--main {
+    /* margin-top: 40px; */
+
+    & .tabs__tab__title {
+      @media (--tablet-viewport) {
+        display: none;
+      }
+    }
+  }
+
+  &__tab {
+    &__title {
     }
   }
 }
@@ -85,12 +111,19 @@
   }
 
   & dd {
+    margin-bottom: 20px;
+
     & h4 {
       letter-spacing: 0.275px;
       font-size: 18px;
       font-weight: 500;
       margin: 0;
-      padding: 20px 0;
+      padding: 0 0 20px;
+      margin-top: 60px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
     }
 
     & p {
@@ -107,11 +140,33 @@
     justify-content: space-between;
     & .link--default {
       /* flex: 1 1 auto; */
+      margin-right: 32px;
+    }
+
+    @media (--tablet-viewport) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__tabs {
+    &__link {
+      font-size: 32px;
+      line-height: 42px;
+      display: inline-block;
+      color: color-mod(var(--text-color-main) alpha(30%));
+
+      &--active {
+        color: var(--text-color-main);
+      }
     }
   }
 }
 
 @media (--tablet-viewport) {
+  .accordion dd {
+    display: block !important;
+  }
+
   .accordion dt,
   .tabs__tab__header {
     display: none;

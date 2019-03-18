@@ -6,6 +6,7 @@ import $ from 'jquery';
 
 import './forms';
 import './accordion';
+import './features';
 
 $(function() {
   console.log('window onload', $(window).width());

@@ -14,7 +14,7 @@
   --color-secondary: #b9bbfa;
   /* text color */
   --text-color-main: #1e1e1e;
-  --text-color-main-03: color-mod(#1e1e1e alpha(30%));
+  --text-color-main-03: color-mod(var(--text-color-main) alpha(30%));
   /* font */
   --font-apple: -apple-system, 'BlinkMacSystemFont';
   --font-fallback: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
@@ -27,7 +27,7 @@
   --letter-spacing-content: 0.01em;
   --letter-spacing-0275: 0.275px;
   --font-size-content-2: 16px;
-  --line-height-content-2: 21px;
+  --line-height-content-2: 22px;
   --font-size-content-3: 18px;
   --line-height-content-3: 23px;
   --font-size-footer-nav: 14px;

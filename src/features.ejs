@@ -6,28 +6,31 @@
   <div class="site__wrapper">
     <%- include('partials/header') %>
 
-    <main class="site__middle">
-      <div class="page features">
-        <div class="dlg-container">
-          <h1 class="page__header">Что умеет Reetm</h1>
-          <div class="tabs2">
-            <div class="tabs__tab__header2">Мессенджер</div>
-            <div class="tabs__tab__header2">Бизнес функции</div>
-            <div class="tabs__tab__header2">Интеграции</div>
+    <main class="page features">
+      <div class="dlg-container">
+        <h1 class="page__header">Что умеет Reetm</h1>
+
+        <div class="features__tabs">
+          <a href="#" class="features__tabs__tab features__tabs__tab--active">Мессенджер</a>
+          <a href="#" class="features__tabs__tab">Бизнес функции</a>
+          <a href="#" class="features__tabs__tab">Интеграции</a>
+        </div>
+
+        <div class="features__slider">
+          <div class="features__slider__tabs">
+            <a href="#" class="features__slider__tab features__slider__tab--active">Аудио/Видеовызовы</a>
+            <a href="#" class="features__slider__tab">Обмен файлами любого типа</a>
+            <a href="#" class="features__slider__tab">Личные и групповые чаты</a>
+            <a href="#" class="features__slider__tab">Аудио-сообщения</a>
+            <a href="#" class="features__slider__tab">Каналы</a>
+            <a href="#" class="features__slider__tab">Демонстрация экрана</a>
+            <a href="#" class="features__slider__tab">Работает на любой платформе</a>
           </div>
-          <div class="tabs">
+
+          <div class="features__slider__content">
             <div class="tabs__tab">
-              <div class="tabs__tab__header">Мессенджер</div>
+              <div class="tabs__tab__title">Мессенджер</div>
               <div class="tabs__tab__content">
-                <div class="accordion__tabs">
-                  <a href="#">Аудио/Видеовызовы</a>
-                  <a href="#">Обмен файлами любого типа</a>
-                  <a href="#">Личные и групповые чаты</a>
-                  <a href="#">Аудио-сообщения</a>
-                  <a href="#">Каналы</a>
-                  <a href="#">Демонстрация экрана</a>
-                  <a href="#">Работает на любой платформе</a>
-                </div>
                 <dl class="accordion">
                   <dt><a href="#">Аудио/Видеовызовы</a></dt>
                   <dd>
@@ -71,7 +74,7 @@
               </div>
             </div>
             <div class="tabs__tab">
-              <div class="tabs__tab__header">Бизнес функции</div>
+              <div class="tabs__tab__title">Бизнес функции</div>
               <div class="tabs__tab__content">
                 <dl class="accordion">
                   <dt><a href="#">Чатботы</a></dt>
@@ -94,7 +97,7 @@
               </div>
             </div>
             <div class="tabs__tab">
-              <div class="tabs__tab__header">Интеграции</div>
+              <div class="tabs__tab__title">Интеграции</div>
               <div class="tabs__tab__content">
                 <dl class="accordion">
                   <dt><a href="#">API Reetm</a></dt>
@@ -122,6 +125,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </main>
