@@ -1,0 +1,9 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+.platform {
+  &-title {
+    padding: 0 0 16px;
+  }
+}

@@ -34,7 +34,7 @@
       margin: 0;
       font-size: var(--font-size-title);
       line-height: var(--line-height-title);
-      font-weight: 700;
+      font-weight: 500;
 
       @media (--tablet-landscape-viewport) {
         margin-right: calc(-1 * var(--padding-side-columns) / 2);

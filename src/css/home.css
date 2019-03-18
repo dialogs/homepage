@@ -174,14 +174,4 @@
     }
   }
   /* ! .home__intro */
-
-  &__platform {
-    &-title {
-      padding: 0;
-    }
-
-    &-box {
-    }
-  }
-  /* ! .home__platform */
 }

@@ -22,13 +22,39 @@
             </div>
           </section>
 
-          <section class="home__platform home__section">
-            <h1 class="home__platform-title">dialog — коммуникационная платформадля компании</h1>
-            <div class="home__platform-box">
-              <div class="" id="platform-messenger">
-                <img src="/assets/images/home/platform/platform-messenger-export.png" srcset="/assets/images/home/platform/platform-messenger-export@2x.png 2x" alt="Мессенджер">
+          <section class="home__section platform">
+            <h1 class="platform-title">dialog — коммуникационная платформадля компании</h1>
+
+            <div class="tabs__parent">
+              <div class="tab__panel">
+                <div class="tab__button tab__button--current" data-target="messenger">Мессенджер</div>
+                <div class="tab__button" data-target="functions">Корпоративные функции</div>
+                <div class="tab__button" data-target="integrations">Интеграции</div>
               </div>
-            </div>
+
+              <div class="accordion">
+                <div class="accordion__button" data-open="false">Мессенджер</div>
+                <div class="accordion__content accordion__content--visible" data-content="messenger">
+                  <div class="platform__item platform--messenger">
+                    <img src="/assets/images/home/platform/platform-messenger-export.png" srcset="/assets/images/home/platform/platform-messenger-export@2x.png 2x" alt="Мессенджер">
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">Корпоративные функции</div>
+                <div class="accordion__content" data-content="functions">
+                  <div class="platform__item platform--functions">
+                    <img src="/assets/images/home/platform/platform-functions-export.png" srcset="/assets/images/home/platform/platform-functions-export@2x.png 2x" alt="Корпоративные функции">
+                  </div>
+                </div>
+
+                <div class="accordion__button" data-open="false">Интеграции</div>
+                <div class="accordion__content" data-content="integrations">
+                  <div class="platform__item platform--integrations">
+                    <img src="/assets/images/home/platform/platform-integrations-export.png" srcset="/assets/images/home/platform/platform-integrations-export@2x.png 2x" alt="Корпоративные функции">
+                  </div>
+                </div>
+              </div>
+            </div><!-- tabs__parent -->
           </section>
 
           <section class="home__section safety">
@@ -88,9 +114,9 @@
               dialog API позволяет оптимизировать процессы, связав мессенджер и сервисы компании. Создавайте ботов самостоятельно с помощью <a href="">Bot SDK</a> или воспользуйтесь услугами <a href="">партнера-интегратора.</a>
             </div>
 
-            <div class="incompany__tab-box">
+            <div class="tabs__parent">
               <div class="tab__panel">
-                <div class="tab__button" data-target="marketing">Маркетинг</div>
+                <div class="tab__button tab__button--current" data-target="marketing">Маркетинг</div>
                 <div class="tab__button" data-target="development">Разработка</div>
                 <div class="tab__button" data-target="hr">HR</div>
                 <div class="tab__button" data-target="sales">Продажи</div>
@@ -100,7 +126,7 @@
 
               <div class="accordion">
                 <div class="accordion__button" data-open="false">Маркетинг</div>
-                <div class="accordion__content" data-content="marketing">
+                <div class="accordion__content accordion__content--visible" data-content="marketing">
                   <div class="incompany__content-title">
                     Пример оптимизации
                   </div>
