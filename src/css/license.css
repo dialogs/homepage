@@ -239,3 +239,12 @@
     }
   }
 }
+
+.link--ori {
+  /* TODO */
+  display: inline-block;
+
+  @media (max-width: 329px) {
+    width: 160px;
+  }
+}
