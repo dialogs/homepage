@@ -4,8 +4,6 @@
 
 const path = require('path');
 const express = require('express');
-const port = 3000;
-
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -24,10 +22,17 @@ app.get('/support', (req, res) => res.render('../src/support'));
 
 app.get('/playground', (req, res) => res.render('../src/playground'));
 
-app.listen(port, (err) => {
-  if (err) {
-    return console.log('something bad happened', err);
-  }
-
-  console.log(`server is listening on port ${port}`);
-});
+app.listen(
+  {
+    port: 8080,
+    host: '0.0.0.0',
+  },
+  (error) => {
+    if (error) {
+      console.trace(error);
+      process.exit(1);
+    } else {
+      console.log('Server started');
+    }
+  },
+);
