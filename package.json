@@ -1,15 +1,16 @@
 {
-  "name": "@dlghq/dialog-homepage",
+  "name": "@dlghq/dialog-homepage-next",
   "version": "0.0.0",
   "description": "Brand new dialog website",
   "main": "index.js",
   "scripts": {
     "server": "node server/server",
     "browsersync": "browser-sync start --proxy \"localhost:3000\" --files \"src/**/*.ejs\" \"src/**/*.html\" \"src/assets/**/*\" --port 8080",
-    "webpack": "webpack",
-    "webpack:watch": "webpack --progress --colors --watch",
+    "webpack": "cross-env NODE_ENV=production webpack",
+    "webpack:watch": "cross-env NODE_ENV=development webpack --progress --colors --watch",
     "start": "npm run server & npm run webpack:watch & npm run browsersync",
-    "format": "prettier --write --loglevel warn \"src/**/*.{js,css}\""
+    "format": "prettier --write --loglevel warn \"src/**/*.{js,css}\"",
+    "build": "npm run webpack"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "normalize.css": "8.0.1"
   },
   "devDependencies": {
+    "cross-env": "5.2.0",
     "css-loader": "2.1.1",
     "ejs": "2.6.1",
     "file-loader": "3.0.1",
