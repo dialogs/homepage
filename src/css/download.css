@@ -124,6 +124,9 @@
     }
 
     &-text {
+      & .link--default {
+        display: inline-block;
+      }
     }
   }
 
