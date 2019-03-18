@@ -124,6 +124,12 @@
     }
 
     &-text {
+      .download--cloud & {
+        @media (--tablet-viewport) {
+          padding-right: calc(3 * var(--padding-side-columns));
+        }
+      }
+
       & .link--default {
         display: inline-block;
       }
