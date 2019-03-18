@@ -32,13 +32,16 @@
       display: block;
       height: 36px;
     }
+    &-icon {
+      height: 32px;
+    }
   }
 
   &__menu {
     font-weight: 500;
     font-size: 14px;
     line-height: 19px;
-    margin-top: 6px;
+    /*margin-top: 6px;*/
     margin-left: 60px;
     display: none;
 
