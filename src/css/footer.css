@@ -49,6 +49,7 @@
 
         @media (--laptop-viewport) {
           right: 50px;
+          left: -900px;
         }
       }
 
@@ -235,6 +236,10 @@
 
       @media (--tablet-viewport) {
         right: 0;
+      }
+
+      @media (--desktop-viewport) {
+        left: -900px;
       }
     }
 
