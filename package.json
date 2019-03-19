@@ -1,5 +1,5 @@
 {
-  "name": "@dlghq/dialog-homepage-next",
+  "name": "@dlghq/homepage-next",
   "version": "0.0.0",
   "description": "Brand new dialog website",
   "main": "index.js",
