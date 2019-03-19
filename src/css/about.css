@@ -4,27 +4,11 @@
 
 @import './variables.css';
 
-.h1--about {
-  padding: 24px 0 40px;
-
-  @media (--tablet-viewport) {
-    width: 80%;
-    padding: 30px 0 60px;
-  }
-  @media (--tablet-landscape-viewport) {
-    padding: 30px 0 80px;
-  }
-  @media (--laptop-viewport) {
-    width: 70%;
-    padding: 20px 0 80px;
-  }
-  @media (--desktop-viewport) {
-    width: 60%;
-  }
-}
-
 .about {
-  &__title {
+  & .page__header {
+    @media (--desktop-viewport) {
+      padding-bottom: 80px;
+    }
   }
 
   &__promo {

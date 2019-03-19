@@ -20,10 +20,7 @@
   line-height: var(--button-line-height);
   padding: var(--button-padding);
   transition: 300ms;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &--default {
     -webkit-font-smoothing: antialiased;

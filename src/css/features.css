@@ -172,6 +172,7 @@
 
   &__slide {
     display: none;
+    position: relative;
 
     h4 {
       font-size: 24px;
@@ -211,5 +212,15 @@
         line-height: 22px;
       }
     }
+  }
+
+  &__image {
+    flex: 0 0 auto;
+    position: absolute;
+    display: block;
+    top: 20px;
+    width: 200px;
+    height: 400px;
+    left: calc(100% + 100px);
   }
 }

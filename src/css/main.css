@@ -192,39 +192,13 @@ button {
   margin: 0;
 }
 
-h1 {
-  font-size: var(--font-size-title);
-  line-height: var(--line-height-title);
-  font-weight: 500;
-  margin: 0;
-  padding: 24px 0 40px;
-
-  .&--default {
-    padding: 24px 0 40px;
-
-    @media (--tablet-viewport) {
-      padding: 30px 0 60px;
-    }
-    @media (--tablet-landscape-viewport) {
-      padding: 30px 0 80px;
-    }
-    @media (--laptop-viewport) {
-      padding: 20px 0 80px;
-    }
-  }
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-weight: 500;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
 }
 
 /* skeleton */

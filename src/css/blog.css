@@ -5,6 +5,11 @@
 @import './variables.css';
 
 .blog {
+  & img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
   &__top-section {
     @media (--tablet-landscape-viewport) {
       display: flex;
