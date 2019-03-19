@@ -239,6 +239,7 @@ img {
   }
 
   &__middle {
+    /* TODO: REMOVE THIS!!! */
     flex-grow: 1;
   }
 
@@ -257,4 +258,10 @@ img {
   @media (--tablet-landscape-viewport) {
     padding-bottom: 120px;
   }
+}
+
+.main {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
 }

@@ -2,6 +2,8 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import './variables.css';
+
 .blog {
   &__top-section {
     @media (--tablet-landscape-viewport) {
