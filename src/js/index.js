@@ -21,7 +21,6 @@ $(function() {
 	const header = $('#header');
 
 	headerBtnMemu.on('click', function() {
-		headerBtnMemu.toggleClass('fg');
 		header.toggleClass('header--mobile-open');
 	});
 });
