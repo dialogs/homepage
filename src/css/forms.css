@@ -78,9 +78,13 @@
 
   &__input {
     position: absolute;
-    appearance: none;
+    /*appearance: none;*/
+    /*visibility: hidden;*/
 
     &:hover + .checkbox__checkbox {
+    }
+    &:focus + .checkbox__checkbox {
+      background-color: red;
     }
 
     &:checked + .checkbox__checkbox {
