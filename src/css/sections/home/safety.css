@@ -55,14 +55,13 @@
     }
 
     @media (--tablet-landscape-viewport) {
-      height: 199px;
-      height: 19.2%;
+      height: 14.2%;
     }
 
     @media (--laptop-viewport) {
       height: 75%;
       bottom: auto;
-      top: -21%;
+      top: -17%;
       left: calc(-1 * var(--margin-container-side) / 2);
     }
   }
