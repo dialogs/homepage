@@ -507,6 +507,7 @@
       &--left {
         @media (--tablet-viewport) {
           width: calc(50% - var(--padding-side-columns) / 2);
+          padding-top: 36px;
         }
       }
 
@@ -529,6 +530,11 @@
           bottom: 0;
           background-color: var(--color-primary);
           z-index: -1;
+
+          @media (--tablet-viewport) {
+            left: calc(-1 * var(--padding-side-columns) * 1.5);
+            right: calc(-1 * var(--margin-container-side));
+          }
         }
       }
     }
@@ -542,6 +548,10 @@
 
   &-image {
     margin-top: 30px;
+
+    @media (--tablet-viewport) {
+      margin-top: 80px;
+    }
 
     & img {
       display: block;
@@ -588,6 +598,15 @@
     font-size: var(--font-size-content);
     line-height: var(--line-height-content);
     letter-spacing: var(--letter-spacing-content);
+
+    @media (--tablet-viewport) {
+      margin-left: calc(1.5 * var(--padding-side-columns));
+      padding-bottom: 30px;
+    }
+
+    @media (--tablet-landscape-viewport) {
+      padding-top: 60px;
+    }
   }
 
   & p {
@@ -604,6 +623,11 @@
     letter-spacing: var(--letter-spacing-0275);
     margin-top: 60px;
     margin-bottom: 40px;
+
+    @media (--tablet-landscape-viewport) {
+      margin-top: 80px;
+      margin-bottom: 60px;
+    }
   }
 
   & ul {
@@ -653,6 +677,11 @@
     padding-bottom: 60px;
     position: relative;
 
+    @media (--tablet-landscape-viewport) {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
     &:before {
       content: '';
       position: absolute;
@@ -662,6 +691,10 @@
       bottom: 0;
       background-color: var(--color-secondary);
       box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
+
+      @media (--tablet-viewport) {
+        left: calc(-1 * var(--padding-side-columns));
+      }
     }
 
     & p {
@@ -673,6 +706,10 @@
       letter-spacing: var(--letter-spacing-0275);
       font-weight: 500;
 
+      @media (--tablet-viewport) {
+        padding-left: 0;
+      }
+
       &:before,
       &:after {
         content: '';
@@ -682,6 +719,10 @@
         height: 36px;
         background-image: url('/assets/images/blockquote.svg');
         background-repeat: no-repeat;
+
+        @media (--tablet-viewport) {
+          left: 0;
+        }
       }
 
       &:before {
