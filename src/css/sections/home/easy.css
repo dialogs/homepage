@@ -2,7 +2,7 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* START easy.css */
+@import '../../variables.css';
 
 .easy {
   &__cols {

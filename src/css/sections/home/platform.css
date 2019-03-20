@@ -2,6 +2,8 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import '../../variables.css';
+
 .platform {
   @media (--tablet-viewport) {
     padding-top: 80px;
@@ -14,6 +16,8 @@
 
   &-title {
     padding: 0 0 16px;
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
 
     @media (--tablet-viewport) {
       padding-bottom: 40px;

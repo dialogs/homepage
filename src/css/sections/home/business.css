@@ -2,7 +2,7 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* START business.css */
+@import '../../variables.css';
 
 .business {
   &__cols {

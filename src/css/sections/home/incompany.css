@@ -2,6 +2,8 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import '../../variables.css';
+
 .incompany {
   @media (--tablet-landscape-viewport) {
     padding-top: 60px;

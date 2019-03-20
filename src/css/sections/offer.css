@@ -2,6 +2,8 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import '../variables.css';
+
 .offer {
   &.home__section {
     padding-top: 70px;

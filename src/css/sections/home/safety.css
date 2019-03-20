@@ -2,7 +2,7 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* START safety.css */
+@import '../../variables.css';
 
 .safety {
   position: relative;
