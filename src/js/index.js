@@ -5,7 +5,6 @@
 import $ from 'jquery';
 
 import './forms';
-import './features';
 import './accordion-home';
 
 $(function() {

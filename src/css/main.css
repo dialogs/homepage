@@ -113,7 +113,7 @@ a {
     width: 32%;
     height: 14px;
     background-color: var(--color-primary);
-    transition: width 0.3s ease;
+    transition: width 300ms ease;
   }
 
   &--inverse:before {
@@ -235,6 +235,7 @@ h6 {
 }
 
 .main {
+  overflow: hidden;
   flex: 1 1 auto;
   min-width: 0;
   min-height: 0;
