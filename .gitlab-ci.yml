@@ -62,7 +62,7 @@ staging:
     - source variables
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
-    - git clone git@gitlab.transmit.im:web/ansible-roles/homepage.git
+    - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
     - cd homepage && ansible-galaxy install -r requirements.yml
     - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
   dependencies:
