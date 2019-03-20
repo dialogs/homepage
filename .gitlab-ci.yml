@@ -1,0 +1,52 @@
+services:
+  - docker:dind
+
+variables:
+  GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+  GIT_STRATEGY: clone
+  IMAGE_NAME: dlgim/$CI_PROJECT_NAME
+  BUILD_NUMBER: "${CI_PIPELINE_IID}"
+
+cache:
+  key: "${CI_COMMIT_SHA}"
+  paths:
+    - ./node_modules
+    - ./src
+
+stages:
+  - build
+  #- version
+  - docker
+  - deploy
+
+build:
+  image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
+  stage: build
+  script:
+    - npm install
+    - NODE_ENV=production npm run build
+
+version:
+  image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
+  stage: version
+  script:
+    - version=$(node -p "require('./package.json').version")
+    - image_version="$version.${BUILD_NUMBER}"
+    - echo $image_version
+    - echo "export IMAGE_VERSION=$image_version" > variables
+  artifacts:
+    paths:
+      - variables
+
+docker build:
+  stage: docker
+  script:
+    - source variables
+    - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
+    - docker build -t "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" .
+    - docker tag "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" "${REGISTRY}"/"${IMAGE_NAME}":latest
+    - docker push "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}"
+    - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
+  dependencies:
+    - build
+    - version
