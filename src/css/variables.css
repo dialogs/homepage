@@ -50,7 +50,7 @@
   --padding-top-section: 60px;
   --padding-side-columns: 40px;
   --margin-container-side: 20px;
-  --dlg-container-margin: 0 var(--margin-container-side);
+  --container-margin: 0 var(--margin-container-side);
 
   @media (--mobile-viewport) {
   }

@@ -7,7 +7,6 @@
 
   &__header {
     margin: 0;
-    padding: 0;
     font-weight: 500;
 
     @media (--mobile-viewport) {
@@ -35,7 +34,7 @@
     @media (--desktop-viewport) {
       font-size: 60px;
       line-height: 62px;
-      padding: 30px 0 50px;
+      padding: 40px 0 50px;
     }
   }
 }
