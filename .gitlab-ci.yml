@@ -15,9 +15,9 @@ cache:
 
 stages:
   - build
-  #- version
+  - version
   - docker
-  - deploy
+  #- deploy
 
 build:
   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
