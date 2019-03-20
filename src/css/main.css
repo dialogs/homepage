@@ -186,6 +186,24 @@ a {
   }
 }
 
+.link--back {
+  font-size: 18px;
+  line-height: 23px;
+
+  & img {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: scale(-1) translateY(1px);
+    transform: scale(-1) translateY(1px);
+    margin-right: 18px;
+  }
+
+  & span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
 button {
   border: none;
   background: none;
@@ -240,4 +258,31 @@ h6 {
   flex: 1 1 auto;
   min-width: 0;
   min-height: 0;
+}
+
+.share-box {
+  &__link {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    cursor: pointer;
+
+    &--arrow {
+      background-image: url('/assets/images/svg-icons/social-arrow.svg');
+    }
+
+    &--vk {
+      background-image: url('/assets/images/svg-icons/social-vkontakte.svg');
+    }
+
+    &--fb {
+      background-image: url('/assets/images/svg-icons/social-facebook.svg');
+    }
+
+    &--tw {
+      background-image: url('/assets/images/svg-icons/social-twitter.svg');
+    }
+  }
 }
