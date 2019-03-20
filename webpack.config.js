@@ -9,13 +9,16 @@ const devMode = process.env.NODE_ENV === 'development';
 
 module.exports = {
   mode: 'development',
-  entry: [
-    path.join(__dirname, 'src/js/index.js'),
-    path.join(__dirname, 'src/css/index.css'),
-  ],
+  entry: {
+    index: [
+      path.join(__dirname, 'src/js/index.js'),
+      path.join(__dirname, 'src/css/index.css'),
+    ],
+    features: path.join(__dirname, 'src/js/features.js'),
+  },
   output: {
     path: path.join(__dirname, 'src/assets'),
-    filename: 'index.js',
+    filename: '[name].js',
   },
   plugins: [new MiniCSSExtractPlugin({ filename: 'styles.css' })],
   module: {

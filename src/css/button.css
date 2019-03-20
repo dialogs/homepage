@@ -2,6 +2,8 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import './variables.css';
+
 :root {
   --button-text-color: #fff;
   --button-background-color: #1e1e1e;
@@ -18,10 +20,7 @@
   line-height: var(--button-line-height);
   padding: var(--button-padding);
   transition: 300ms;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &--default {
     -webkit-font-smoothing: antialiased;

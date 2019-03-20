@@ -1,5 +1,6 @@
 node_modules/
 
 src/assets/index.js
+src/assets/features.js
 src/assets/styles.css
 src/assets/fonts/

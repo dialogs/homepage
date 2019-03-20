@@ -2,6 +2,8 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import './variables.css';
+
 .site__header {
   padding: 12px 0;
 
