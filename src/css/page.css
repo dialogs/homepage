@@ -28,12 +28,12 @@
     }
 
     @media (--laptop-viewport) {
+      font-size: 60px;
+      line-height: 62px;
       padding: 20px 0 40px;
     }
 
     @media (--desktop-viewport) {
-      font-size: 60px;
-      line-height: 62px;
       padding: 40px 0 50px;
     }
   }

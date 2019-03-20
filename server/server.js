@@ -15,6 +15,7 @@ app.get('/', (req, res) => res.render('../src/index'));
 app.get('/features', (req, res) => res.render('../src/features'));
 app.get('/blog', (req, res) => res.render('../src/blog'));
 app.get('/blog/tag', (req, res) => res.render('../src/blogTag'));
+app.get('/blog/article', (req, res) => res.render('../src/blogArticle'));
 app.get('/about', (req, res) => res.render('../src/about'));
 app.get('/download', (req, res) => {
   res.render('../src/download', { links });

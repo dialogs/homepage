@@ -15,6 +15,7 @@
   }
 
   &-title {
+    margin: 0;
     padding: 0 0 16px;
     font-size: var(--font-size-title);
     line-height: var(--line-height-title);

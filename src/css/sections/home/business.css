@@ -152,7 +152,9 @@
 
   &__img {
     @media (--mobile-viewport) {
-      max-width: 43%;
+      .home & {
+        max-width: 43%;
+      }
     }
 
     @media (--tablet-landscape-viewport) {
