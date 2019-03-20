@@ -526,7 +526,7 @@
     }
   }
 
-  & .blog__link-back {
+  & .link--back {
     @media (--mobile-viewport) {
       display: none;
     }
