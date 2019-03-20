@@ -29,6 +29,10 @@ app.get('/legal', (req, res) => res.render('../src/legal'));
 
 app.get('/playground', (req, res) => res.render('../src/playground'));
 
+app.get('*', (req, res) => {
+  res.render('../src/404');
+});
+
 app.listen(
   {
     port: 8080,
