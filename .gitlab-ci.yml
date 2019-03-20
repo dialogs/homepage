@@ -67,6 +67,6 @@ staging:
     - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
   dependencies:
     - version
-#   only:
-#     - develop
+  only:
+    - develop
 
