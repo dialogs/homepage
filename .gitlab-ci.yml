@@ -12,6 +12,7 @@ cache:
   paths:
     - ./node_modules
     - ./src
+    - ./public
 
 stages:
   - version
@@ -35,13 +36,20 @@ build:
   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
   stage: build
   script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data '{"text": "👉🏾 ${CI_PROJECT_NAME} [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) build started."}' \
+      $dialogHookUrl
     - npm ci
     - NODE_ENV=production npm run build
 
 notify_fail:
   when: on_failure
   script:
-    - curl --header \"Content-Type: application/json\" --request POST --data '{"text":"[❌]: Homepage: build ${BUILD_NUMBER} failed. \n$CIRCLE_BUILD_URL"}' $dialogHookUrl
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data '{"text": "🖕🏾 ${CI_PROJECT_NAME} [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) build failed."}' \
+      $dialogHookUrl
 
 docker build:
   stage: docker
@@ -52,9 +60,14 @@ docker build:
     - docker tag "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" "${REGISTRY}"/"${IMAGE_NAME}":latest
     - docker push "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}"
     - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data '{"text": "👌🏾 ${CI_PROJECT_NAME} [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) build finished."}' \
+      $dialogHookUrl
+
   dependencies:
-    - build
     - version
+    - build
 
 staging:
   stage: deploy
@@ -70,6 +83,10 @@ staging:
     - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
     - cd homepage && ansible-galaxy install -r requirements.yml
     - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data '{"text": "🤟🏾 ${CI_PROJECT_NAME} [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) deploy successfuly."}' \
+      $dialogHookUrl
   dependencies:
     - version
   only:
