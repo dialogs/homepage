@@ -16,7 +16,7 @@
 @import 'page.css';
 
 @import 'home.css';
-@import 'sections/home/platform.css';
+/* @import 'sections/home/platform.css'; */
 @import 'sections/home/safety.css';
 @import 'sections/home/easy.css';
 @import 'sections/home/business.css';

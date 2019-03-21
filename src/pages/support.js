@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { Container } from '../components/Container/Container';
+import { PageHeader } from '../components/PageHeader/PageHeader';
 
 export default () => {
   return (
     <Container>
       <div className="support__sections">
         <section className="support__section support__section-form">
-          <h1 className="h1--default h1--support">Обратная связь</h1>
+          <PageHeader>Обратная связь</PageHeader>
           <form action="" className="form support__form">
             <div className="form-item form-item--default support__form-item">
               <input
@@ -48,7 +49,7 @@ export default () => {
             <div className="form-item form-item--checkbox support__form-item">
               <label for="support-personal" className="checkbox__label">
                 <input
-                  checked
+                  defaultChecked
                   className="checkbox__input"
                   type="checkbox"
                   id="support-personal"

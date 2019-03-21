@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import { Container } from '../components/Container/Container';
+import { Platform } from '../components/Platform/Platform';
+import { Section } from '../components/Section/Section';
+import { PageHeader } from '../components/PageHeader/PageHeader';
+// import { Tabs, Tab } from '../components/Tabs/Tabs';
 
 export default () => {
   return (
@@ -9,12 +13,12 @@ export default () => {
       <div className="home__intro home__section">
         <div className="home__intro-box">
           <div className="home__intro-info">
-            <h2 className="home__intro-title">
+            <PageHeader>
               Достигайте командные цели быстрее и без потери фокуса
-            </h2>
-            <h3 className="home__intro-text">
+            </PageHeader>
+            <h4 className="home__intro-text">
               Простая и эффективная платформа для коммуникаций в компании
-            </h3>
+            </h4>
             <button
               type="button"
               className="button button--default home__intro-button"
@@ -33,242 +37,9 @@ export default () => {
         </div>
       </div>
 
-      <div className="home__section platform">
-        <h1 className="platform-title">
-          dialog — коммуникационная платформа для компании
-        </h1>
-
-        <div className="tabs__parent">
-          <div className="tab__panel">
-            <div
-              className="tab__button tab__button--current"
-              data-target="messenger"
-            >
-              Мессенджер
-            </div>
-            <div className="tab__button" data-target="functions">
-              Корпоративные функции
-            </div>
-            <div className="tab__button" data-target="integrations">
-              Интеграции
-            </div>
-          </div>
-
-          <div className="accordion">
-            <div className="accordion__button" data-open="true">
-              Мессенджер
-            </div>
-            <div
-              className="accordion__content accordion__content--visible"
-              data-content="messenger"
-            >
-              <div className="platform__item platform--messenger">
-                <div className="platform__col--noimage">
-                  <div className="platform__icons">
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-1-1.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Личные и групповые чаты
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-1-2.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Бесплатные аудио- / видеозвонки
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-1-3.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Обмен файлами без ограничений
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-1-4.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Каналы для оповещений
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-1-5.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Голосовые сообщения
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-1-6.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Эмодзи и стикеры
-                      </div>
-                    </div>
-                  </div>
-                  <div className="platform__description">
-                    Доступность на популярных платформах
-                  </div>
-                  <div className="platform__links">
-                    <span>iOS</span>
-                    <span>Android</span>
-                    <span>Windows</span>
-                    <span>macOS</span>
-                    <span>Linux</span>
-                  </div>
-                </div>
-                <div className="platform__image">
-                  <img
-                    src="/images/home/platform/platform-messenger-export.png"
-                    srcSet="/images/home/platform/platform-messenger-export@2x.png 2x"
-                    alt="Мессенджер"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="accordion__button" data-open="false">
-              Корпоративные функции
-            </div>
-            <div className="accordion__content" data-content="functions">
-              <div className="platform__item platform--functions">
-                <div className="platform__col--noimage">
-                  <div className="platform__icons">
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-2-1.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Интеллектуальные чат-боты
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-2-2.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Интеграция с Active Directory (AD/LDAP)
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-2-3.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Панель администратора
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-1-7.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Демонстрация экрана
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-2-4.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Комплекс мер безопасности для защищенного общения
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="platform__image">
-                  <img
-                    src="/images/home/platform/platform-functions-export.png"
-                    srcSet="/images/home/platform/platform-functions-export@2x.png 2x"
-                    alt="Корпоративные функции"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="accordion__button" data-open="false">
-              Интеграции
-            </div>
-            <div className="accordion__content" data-content="integrations">
-              <div className="platform__item platform--integrations">
-                <div className="platform__col--noimage">
-                  <div className="platform__icons">
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-3-1.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        dialog API для интеграции со сторонними приложениями
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-3-2.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Bot SDK (Software Development Kit) для создания
-                        собственных ботов
-                      </div>
-                    </div>
-                    <div className="platform__icon">
-                      <img
-                        className="platform__icon-img"
-                        src="/images/home/platform/icon-3-3.svg"
-                        alt=""
-                      />
-                      <div className="platform__icon-text">
-                        Возможность изменить фирменный стиль интерфейса dialog в
-                        соответствии с гайдлайнами бренда заказчика
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="platform__image">
-                  <img
-                    src="/images/home/platform/platform-integrations-export.png"
-                    srcSet="/images/home/platform/platform-integrations-export@2x.png 2x"
-                    alt="Корпоративные функции"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Section>
+        <Platform />
+      </Section>
 
       <div className="home__section safety">
         <h3 className="safety-title">
@@ -358,7 +129,7 @@ export default () => {
         </h3>
         <div className="incompany-text">
           dialog API позволяет оптимизировать процессы, связав мессенджер и
-          сервисы компании. Создавайте ботов самостоятельно с помощью
+          сервисы компании. Создавайте ботов самостоятельно с помощью{' '}
           <a
             href="https://dialogs.github.io/bots-docs/"
             className="link--default"

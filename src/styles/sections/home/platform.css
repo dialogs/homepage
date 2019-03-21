@@ -91,9 +91,6 @@
 
     width: calc(50% - var(--padding-side-columns) / 2);
 
-    &-img {
-    }
-
     &-text {
       margin-top: 15px;
     }
@@ -137,9 +134,6 @@
 
     @media (--laptop-viewport) {
       width: calc(50% - var(--padding-side-columns));
-    }
-
-    & img {
     }
   }
 

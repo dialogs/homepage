@@ -1,24 +1,49 @@
 @import '../../styles/variables.css';
 
+:root {
+  --tabs-tab-horizontal-color: var(--text-color-main);
+  --tabs-tab-horizontal-color-active: var(--color-secondary);
+  --tabs-tab-vertical-color: color-mod(
+    var(--tabs-tab-horizontal-color) alpha(30%)
+  );
+  --tabs-tab-vertical-color-active: var(--tabs-tab-horizontal-color);
+}
+
 .tabs {
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 100px;
 
   &__tab {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
-    color: var(--text-color-main);
-    margin-right: 42px;
-    cursor: pointer;
+    cursor: pointer !important;
+    flex: 0 0 auto;
+  }
 
-    &--active {
-      color: var(--color-secondary);
+  &--horizontal {
+    & .tabs__tab {
+      color: var(--tabs-tab-horizontal-color);
+      font-size: 24px;
+      line-height: 32px;
+      margin-right: 42px;
+
+      &--active {
+        color: var(--tabs-tab-horizontal-color-active);
+      }
     }
   }
 
-  @media (--mobile-viewport) {
-    display: none;
+  &--vertical {
+    flex-flow: column wrap;
+
+    & .tabs__tab {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 42px;
+      color: var(--tabs-tab-vertical-color);
+
+      &--active {
+        color: var(--tabs-tab-vertical-color-active);
+      }
+    }
   }
 }

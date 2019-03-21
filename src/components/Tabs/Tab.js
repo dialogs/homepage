@@ -1,13 +1,21 @@
 import React from 'react';
 import classnames from 'classnames';
 
-export function Tab({ value, current, children, onChange }) {
+export function Tab({ value, current, changeOnHover, children, onChange }) {
   const className = classnames('tabs__tab', {
     'tabs__tab--active': value === current,
   });
 
+  function handleTabSelect() {
+    onChange(value);
+  }
+
+  const actions = changeOnHover
+    ? { onMouseEnter: handleTabSelect }
+    : { onClick: handleTabSelect };
+
   return (
-    <div data-tab={value} className={className} onClick={() => onChange(value)}>
+    <div className={className} {...actions}>
       {children}
     </div>
   );

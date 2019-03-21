@@ -1,17 +1,14 @@
 import React from 'react';
 
 import { Container } from '../components/Container/Container';
+import { PageHeader } from '../components/PageHeader/PageHeader';
 
 export default () => {
   return (
-    <div className="about page-about">
-      <section className="about__title">
-        <Container>
-          <h1 className="page__header">
-            dialog – намного больше, чем просто мессенджер
-          </h1>
-        </Container>
-      </section>
+    <div className="about page">
+      <Container>
+        <PageHeader>dialog – намного больше, чем просто мессенджер</PageHeader>
+      </Container>
 
       <section className="about__promo">
         <div className="about__video">

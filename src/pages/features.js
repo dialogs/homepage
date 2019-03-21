@@ -7,11 +7,13 @@ import { Tabs, Tab } from '../components/Tabs';
 export default () => {
   const [tab, setTab] = useState('messenger');
 
+  function renderTabContent() {}
+
   return (
     <Container>
       <section className="page features">
         <PageHeader>Что умеет Reetm</PageHeader>
-        <Tabs onChange={setTab} current={tab}>
+        <Tabs onChange={setTab} current={tab} className="features__tabs">
           <Tab value="messenger">Мессенджер</Tab>
           <Tab value="business">Бизнес функции</Tab>
           <Tab value="integrations">Интеграции</Tab>

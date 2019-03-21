@@ -4,39 +4,8 @@
 
 .page {
   flex: 1 1 auto;
-
-  &__header {
-    margin: 0;
-    font-weight: 500;
-
-    @media (--mobile-viewport) {
-      font-size: 28px;
-      line-height: 30px;
-      padding: 40px 0;
-    }
-
-    @media (--tablet-viewport) {
-      font-size: 40px;
-      line-height: 42px;
-      padding: 40px 0;
-    }
-
-    @media (--tablet-landscape-viewport) {
-      font-size: 50px;
-      line-height: 52px;
-      padding: 30px 0 40px;
-    }
-
-    @media (--laptop-viewport) {
-      font-size: 60px;
-      line-height: 62px;
-      padding: 20px 0 40px;
-    }
-
-    @media (--desktop-viewport) {
-      padding: 40px 0 50px;
-    }
-  }
+  min-width: 0;
+  min-height: 0;
 }
 
 .tabs {
