@@ -64,7 +64,7 @@ export default () => {
                     <path
                       d="M1 5.65856L4.94027 9.95214L13.1557 1"
                       stroke="#1E1E1E"
-                      stroke-width="2"
+                      strokeWidth="2"
                     />
                   </svg>
                 </span>

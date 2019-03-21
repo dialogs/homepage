@@ -135,7 +135,7 @@ export const query = graphql`
           id
           slug
           title
-          html
+          excerpt
           publishDate: published_at
           featureImage: feature_image
           tags {

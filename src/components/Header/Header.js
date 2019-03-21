@@ -33,6 +33,11 @@ export function Header() {
                   </a>
                 </li>
                 <li className="header__menu-item">
+                  <a href="/features" className="header__menu-link">
+                    Функции
+                  </a>
+                </li>
+                <li className="header__menu-item">
                   <a href="/blog" className="header__menu-link">
                     Блог
                   </a>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import removeMarkdown from 'remove-markdown';
 
 import { BlogRoster } from '../BlogRoster/BlogRoster';
 import { Subscribe } from '../Subscribe/Subscribe';
@@ -13,24 +14,24 @@ export default ({ data: { post, recommended } }) => {
         <header className="blog__article__header">
           <div className="blog__article__header-item blog__article__header-item--left">
             <a href="#" className="link--back">
-              <img
-                src="/assets/images/svg-icons/arrow-link.svg"
-                alt=""
-                className=""
-              />
+              <img src="/images/svg-icons/arrow-link.svg" alt="" className="" />
               <span>Назад</span>
             </a>
             <div className="blog__article-image">
-              <img src={post.featureImage} alt="" />
+              <img src={post.featureImage} alt={post.title} />
             </div>
           </div>
           <div className="blog__article__header-item blog__article__header-item--right">
-            <div className="blog__article-date">12 сентября 2018</div>
+            <div className="blog__article-date">
+              {new Date(post.publishDate).toLocaleDateString('ru', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </div>
             <h1 className="page__header">{post.title}</h1>
             <div className="blog__article-short">
-              Созданные ускорять принятие решений в компании, повышать
-              продуктивность и прозрачность работы, массовые мессенджеры могут
-              стать источником дополнительных трудностей
+              {removeMarkdown(post.excerpt)}
             </div>
             <div className="blog__article-tags">
               <span>Инновационные технологии</span>
@@ -62,9 +63,12 @@ export const pageQuery = graphql`
   query blogPostBySlug($slug: String!) {
     post: ghostPost(slug: { eq: $slug }) {
       id
+      slug
       title
+      excerpt
       html
       featureImage: feature_image
+      publishDate: published_at
     }
     recommended: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
@@ -75,6 +79,7 @@ export const pageQuery = graphql`
           id
           slug
           title
+          excerpt
           publishDate: published_at
           featureImage: feature_image
         }

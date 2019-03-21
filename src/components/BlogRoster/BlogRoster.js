@@ -21,6 +21,7 @@ export function BlogRoster({ title, posts, limit = DEFAULT_LIMIT }) {
               key={post.id}
               slug={post.slug}
               title={post.title}
+              excerpt={post.excerpt}
               publishDate={post.publishDate}
               featureImage={post.featureImage}
             />

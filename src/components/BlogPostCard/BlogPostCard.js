@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import removeMarkdown from 'remove-markdown';
 
-export function BlogPostCard({ title, slug, img, publishDate, featureImage }) {
+export function BlogPostCard({
+  title,
+  slug,
+  img,
+  publishDate,
+  featureImage,
+  excerpt,
+}) {
   return (
     <div className="blog__roster-item">
       <Link to={`/blog/${slug}`} className="blog__roster-item-link">
@@ -18,13 +26,10 @@ export function BlogPostCard({ title, slug, img, publishDate, featureImage }) {
           })}
         </div>
         <div className="blog__roster-name">{title}</div>
-        <div className="blog__roster-short">
-          8 ноября 11 - я ежегодная конференция CNews Forum 2018 собрала
-          предcтавителей бизнеса, госструктур и ИТ - компаний для обсуждения
-          инновационных технологий
-        </div>
+        <div className="blog__roster-short">{removeMarkdown(excerpt)}</div>
         <div className="blog__roster-tags">
-          <span> Инновационные технологии </span> <span> Новости </span>
+          <span>Инновационные технологии</span>
+          <span>Новости</span>
         </div>
       </Link>
     </div>

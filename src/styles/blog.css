@@ -504,6 +504,7 @@
         }
 
         @media (--desktop-viewport) {
+          padding-top: 48px;
           padding-right: calc(var(--padding-side-columns));
         }
 
@@ -512,14 +513,14 @@
           position: absolute;
           left: -20px;
           right: -20px;
-          top: -60px;
+          top: 0;
           bottom: 0;
           background-color: var(--color-primary);
           z-index: -1;
 
           @media (--tablet-viewport) {
             left: calc(-1 * var(--padding-side-columns) * 1.5);
-            right: calc(-1 * var(--margin-container-side));
+            right: calc(-1 * var(--margin-container-side) * 2);
           }
         }
       }
@@ -631,7 +632,10 @@
   }
 
   & p {
+    font-size: 18px;
     margin: 32px 0;
+    line-height: 29px;
+    letter-spacing: 0.01em;
   }
 
   & h2,
@@ -692,6 +696,11 @@
     }
   }
 
+  & img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
   & blockquote {
     margin: 40px 0;
     padding-top: 60px;
@@ -742,7 +751,7 @@
         left: 40px;
         width: 40px;
         height: 36px;
-        background-image: url('/assets/images/blockquote.svg');
+        background-image: url('/images/blockquote.svg');
         background-repeat: no-repeat;
 
         @media (--tablet-viewport) {

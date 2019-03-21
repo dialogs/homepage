@@ -5,7 +5,7 @@ import { Header } from '../Header/Header';
 import '../../styles/index.css';
 
 export default ({ children }) => (
-  <main>
+  <main className="main">
     <Header />
     {children}
     <Footer />

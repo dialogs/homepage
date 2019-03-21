@@ -5,7 +5,7 @@ export default () => {
     <div className="about page-about">
       <section className="about__title">
         <div className="container">
-          <h1 className="h1--about h1--default">
+          <h1 className="page__header">
             dialog – намного больше, чем просто мессенджер
           </h1>
         </div>
