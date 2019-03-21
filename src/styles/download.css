@@ -39,7 +39,6 @@
       padding-left: calc(1.5 * var(--padding-side-columns));
     }
   }
-  /* end layout */
 
   &__item {
     padding-top: 40px;
@@ -78,10 +77,10 @@
       &:before {
         content: '';
         position: absolute;
-        top: -16px;
+        top: 0;
         bottom: 0;
         left: calc(50% - var(--padding-side-columns) / 2);
-        right: calc(-1 * var(--margin-container-side));
+        right: calc(-1 * var(--margin-container-side) * 2);
         background: var(--color-primary);
         z-index: -1;
       }
@@ -91,19 +90,11 @@
       .download--enterprise & {
         padding-right: calc(3.5 * var(--padding-side-columns));
       }
-
-      &:before {
-        top: -7px;
-      }
     }
 
     @media (--laptop-viewport) {
       .download--enterprise & {
         padding-right: calc(5 * var(--padding-side-columns));
-      }
-
-      &:before {
-        top: -18px;
       }
     }
 
@@ -212,10 +203,10 @@
       &:before {
         content: '';
         position: absolute;
-        top: -16px;
+        top: 0;
         bottom: 0;
         left: 0;
-        right: calc(-1 * var(--margin-container-side));
+        right: calc(-1 * var(--margin-container-side) * 2);
         background: var(--color-primary);
         z-index: -1;
       }

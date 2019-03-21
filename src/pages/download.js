@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { PageHeader } from '../components/PageHeader/PageHeader';
+
 export default () => (
   <div className="container">
     <section className="download__sections">
       <section className="download__section download__intro">
-        <h1 className="download__intro-title">dialog Enterprise</h1>
+        <PageHeader>dialog Enterprise</PageHeader>
         <div className="download__intro-text">
           Информацию о подключении вы можете получить у своего системного
           администратора или в центре{' '}

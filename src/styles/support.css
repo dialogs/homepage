@@ -94,7 +94,7 @@
       top: 0;
       bottom: 0;
       left: calc(-1 * var(--margin-container-side));
-      right: calc(-1 * var(--margin-container-side));
+      right: calc(-1 * var(--margin-container-side) * 2);
       background: var(--color-primary);
       z-index: -1;
 

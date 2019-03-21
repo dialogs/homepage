@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { PageHeader } from '../../components/PageHeader/PageHeader';
+
 export default () => (
   <div className="container">
     <div className="download__sections">
       <section className="download__section download__intro">
-        <h1 className="download__intro-title">
+        <PageHeader>
           Демонстрационное облачное приложение платформы dialog
-        </h1>
+        </PageHeader>
         <div className="download__intro-text">
           Вы можете ознакомиться с функциями платформы в нашем демо-приложении.{' '}
           <a className="link--default triggerModalWindow" href="#">

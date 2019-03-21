@@ -100,7 +100,7 @@ export default () => {
                 className="link--default support__corporate__link-enterprise"
               >
                 центром поддержки
-              </a>
+              </a>{' '}
               для корпоративных клиентов.
             </div>
           </div>

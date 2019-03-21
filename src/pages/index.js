@@ -4,28 +4,30 @@ import { Link } from 'gatsby';
 export default () => {
   return (
     <section className="container">
-      <div className="home__intro-box">
-        <div className="home__intro-info">
-          <h2 className="home__intro-title h1--default">
-            Достигайте командные цели быстрее и без потери фокуса
-          </h2>
-          <h3 className="home__intro-text">
-            Простая и эффективная платформа для коммуникаций в компании
-          </h3>
-          <button
-            type="button"
-            className="button button--default home__intro-button"
-          >
-            Получить предложение
-          </button>
-        </div>
-        <div className="home__intro-image">
-          <img
-            className="home__intro-img"
-            src="/images/home/home-intro.png"
-            srcSet="/images/home/home-intro@2x.png 2x"
-            alt=""
-          />
+      <div className="home__intro home__section">
+        <div className="home__intro-box">
+          <div className="home__intro-info">
+            <h2 className="home__intro-title">
+              Достигайте командные цели быстрее и без потери фокуса
+            </h2>
+            <h3 className="home__intro-text">
+              Простая и эффективная платформа для коммуникаций в компании
+            </h3>
+            <button
+              type="button"
+              className="button button--default home__intro-button"
+            >
+              Получить предложение
+            </button>
+          </div>
+          <div className="home__intro-image">
+            <img
+              className="home__intro-img"
+              src="/assets/images/home/home-intro.png"
+              srcSet="/assets/images/home/home-intro@2x.png 2x"
+              alt=""
+            />
+          </div>
         </div>
       </div>
 
