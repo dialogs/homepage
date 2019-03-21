@@ -2,6 +2,7 @@ import React, { Children, useState } from 'react';
 import classnames from 'classnames';
 
 import { PageHeader } from '../PageHeader/PageHeader';
+import { Section } from '../Section/Section';
 import { Tabs, Tab } from '../Tabs';
 import { PlatformIcon } from './PlatformIcon';
 import './Platform.css';
@@ -11,7 +12,7 @@ export function Platform({ className }) {
   const classes = classnames('platform', className);
 
   return (
-    <div className={classes}>
+    <Section className={classes}>
       <PageHeader className="platform__title">
         dialog — коммуникационная <br />
         платформа для компании
@@ -202,6 +203,6 @@ export function Platform({ className }) {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 }
