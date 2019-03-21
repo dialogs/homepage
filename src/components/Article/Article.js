@@ -34,7 +34,9 @@ export function Article(props) {
             })}
           </div>
           <ArticleHeader>{props.title}</ArticleHeader>
-          <div className="article__short">{removeMarkdown(props.excerpt)}</div>
+          <div className="article__excerpt">
+            {removeMarkdown(props.excerpt)}
+          </div>
           <div className="article__tags">
             <span>Инновационные технологии</span>
           </div>
