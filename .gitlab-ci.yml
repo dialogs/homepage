@@ -2,29 +2,22 @@ services:
   - docker:dind
 
 variables:
-  GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+  GIT_SSH_COMMAND: 'ssh -o StrictHostKeyChecking=no'
   GIT_STRATEGY: clone
   IMAGE_NAME: dlgim/$CI_PROJECT_NAME
-  BUILD_NUMBER: "${CI_PIPELINE_IID}"
+  BUILD_NUMBER: '${CI_PIPELINE_IID}'
 
 cache:
-  key: "${CI_COMMIT_SHA}"
+  key: '${CI_COMMIT_SHA}'
   paths:
     - ./node_modules
     - ./src
 
 stages:
-  - build
   - version
+  - build
   - docker
   - deploy
-
-build:
-  image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
-  stage: build
-  script:
-    - npm install
-    - NODE_ENV=production npm run build
 
 version:
   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
@@ -38,6 +31,18 @@ version:
     paths:
       - variables
 
+build:
+  image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
+  stage: build
+  script:
+    - npm ci
+    - NODE_ENV=production npm run build
+
+notify_fail:
+  when: on_failure
+  script:
+    - curl --header \"Content-Type: application/json\" --request POST --data '{"text":"[❌]: Homepage: build ${BUILD_NUMBER} failed. \n$CIRCLE_BUILD_URL"}' $dialogHookUrl
+
 docker build:
   stage: docker
   script:
@@ -50,7 +55,7 @@ docker build:
   dependencies:
     - build
     - version
-    
+
 staging:
   stage: deploy
   environment:
@@ -69,4 +74,3 @@ staging:
     - version
   only:
     - develop
-
