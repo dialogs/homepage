@@ -7,7 +7,7 @@ import './Hero.css';
 
 export function Hero() {
   return (
-    <Section className="hero home__intro home__section">
+    <Section className="hero home__intro">
       <div className="home__intro-box">
         <div className="home__intro-info">
           <PageHeader>
