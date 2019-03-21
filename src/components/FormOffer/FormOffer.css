@@ -45,7 +45,6 @@
 	}
 
 	&__form {
-		margin-top: 80px;
 		-webkit-font-smoothing: antialiased;
 
 		@media (--tablet-viewport) {
@@ -62,16 +61,34 @@
 		}
 
 		& .form-item {
+			margin-top: 60px;
+
+			&:first-of-type {
+				margin-top: 60px;
+			}
+
 			@media (--tablet-viewport) {
 				width: calc(50% - var(--padding-side-columns) / 2);
 				margin-top: 80px;
+
+				&:first-of-type {
+					margin-top: 80px;
+				}
 			}
 
 			&--checkbox {
 				margin-top: 40px;
 
+				&:first-of-type {
+					margin-top: 40px;
+				}
+
 				@media (--tablet-viewport) {
 					margin-top: 60px;
+
+					&:first-of-type {
+						margin-top: 60px;
+					}
 				}
 			}
 		}
