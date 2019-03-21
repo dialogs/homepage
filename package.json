@@ -14,7 +14,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.16.4",
-    "ejs": "2.6.1",
     "normalize.css": "8.0.1",
     "react": "16.8.4",
     "react-dom": "16.8.4",

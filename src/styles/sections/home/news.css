@@ -2,7 +2,7 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-/* START news.css */
+@import '../../variables.css';
 
 .news {
   position: relative;

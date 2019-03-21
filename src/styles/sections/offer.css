@@ -2,9 +2,19 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import '../variables.css';
+
 .offer {
   &.home__section {
     padding-top: 70px;
+
+    .business + & {
+      padding-top: 40px;
+
+      @media (--tablet-landscape-viewport) {
+        padding-top: 50px;
+      }
+    }
 
     @media (--tablet-viewport) {
       padding-top: 100px;

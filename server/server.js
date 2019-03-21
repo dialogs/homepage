@@ -16,3 +16,18 @@ app.use(
     redirectSlashes: true,
   }),
 );
+
+app.listen(
+  {
+    port: env('PORT', 3000),
+    host: env('HOST', '127.0.0.1'),
+  },
+  (error) => {
+    if (error) {
+      console.trace(error);
+      process.exit(1);
+    } else {
+      console.log('Server started');
+    }
+  },
+);

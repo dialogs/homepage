@@ -2,6 +2,8 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import './variables.css';
+
 .site__footer {
   background: var(--color-primary);
 }
@@ -49,7 +51,10 @@
 
         @media (--laptop-viewport) {
           right: 50px;
-          left: -900px;
+        }
+
+        @media (--desktop-viewport) {
+          left: calc(-1 * (100vw - 100%) / 2);
         }
       }
 
@@ -239,7 +244,7 @@
       }
 
       @media (--desktop-viewport) {
-        left: -900px;
+        left: calc(-1 * (100vw - 1320px) / 2);
       }
     }
 

@@ -6,127 +6,183 @@
   <div class="site__wrapper">
     <%- include('partials/header') %>
 
-    <main class="page features">
+    <main class="main">
       <div class="container">
-        <h1 class="page__header">Что умеет Reetm</h1>
-
-        <div class="features__tabs">
-          <a href="#" class="features__tabs__tab features__tabs__tab--active">Мессенджер</a>
-          <a href="#" class="features__tabs__tab">Бизнес функции</a>
-          <a href="#" class="features__tabs__tab">Интеграции</a>
-        </div>
-
-        <div class="features__slider">
-          <div class="features__slider__tabs">
-            <a href="#" class="features__slider__tab features__slider__tab--active">Аудио/Видеовызовы</a>
-            <a href="#" class="features__slider__tab">Обмен файлами любого типа</a>
-            <a href="#" class="features__slider__tab">Личные и групповые чаты</a>
-            <a href="#" class="features__slider__tab">Аудио-сообщения</a>
-            <a href="#" class="features__slider__tab">Каналы</a>
-            <a href="#" class="features__slider__tab">Демонстрация экрана</a>
-            <a href="#" class="features__slider__tab">Работает на любой платформе</a>
+        <section class="page features">
+          <h1 class="page__header">Что умеет Reetm</h1>
+          <div>
+            <div class="features__tabs">
+              <div data-tab="messenger" class="features__tabs__tab">Мессенджер</div>
+              <div data-tab="business" class="features__tabs__tab">Бизнес функции</div>
+              <div data-tab="integrations" class="features__tabs__tab">Интеграции</div>
+            </div>
+            <div class="features__content">
+              <div data-tab="messenger" class="features__content__block">
+                <div class="feature_block">
+                  <div class="feature_block__links">
+                    <a data-slide="calls" href="#" class="feature_block__link">Аудио/Видеовызовы</a>
+                    <a data-slide="files" href="#" class="feature_block__link">Обмен файлами любого типа</a>
+                    <a data-slide="chats" href="#" class="feature_block__link">Личные и групповые чаты</a>
+                    <a data-slide="audio" href="#" class="feature_block__link">Аудио-сообщения</a>
+                    <a data-slide="channels" href="#" class="feature_block__link">Каналы</a>
+                    <a data-slide="sharing" href="#" class="feature_block__link">Демонстрация экрана</a>
+                    <a data-slide="crossplatform" href="#" class="feature_block__link">Работает на любой платформе</a>
+                  </div>
+                  <div class="feature_block__slides">
+                    <div class="feature_block__slides__heading">Мессенджер</div>
+                    <dl>
+                      <dt><a href="#">Аудио/Видеовызовы</a></dt>
+                      <dd data-slide="calls" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                          <h4>Высокое качество связи</h4>
+                          <p>В зависимости от уровня сигнала сотового оператора в месте вашего нахождения, Reetm оптимизирует качество связи автоматически. При слабом уровне сигнала Reetm снижает количество передаваемого аудио или видеотрафика без
+                            разрыва
+                            или задержки соединения.</p>
+                          <h4>Безопасное общение</h4>
+                          <p>Все звонки надежно защищены криптографическими решениями на базе end-to-end и TLS шифрования.</p>
+                        </div>
+                        <img src="/assets/images/features/messenger-audio.png" srcset="/assets/images/features/messenger-audio@2x.png 2x" alt="Аудио/Видеовызовы" class="feature_block__image feature_block__image--mobile">
+                      </dd>
+                      <dt><a href="#">Обмен файлами любого типа</a></dt>
+                      <dd data-slide="files" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                          <h4>Передача файлов без ограничений по размеру</h4>
+                          <p>Не проходит тяжелая презентация по почте? Забудьте об ограничениях – делитесь информацией любого размера, прикрепляйте заметки к файлам, а удобный поиск по названию файла и имени отправителя поможет быстро найти важные
+                            данные.</p>
+                        </div>
+                        <img src="/assets/images/features/messenger-sending.png" srcset="/assets/images/features/messenger-sending@2x.png 2x" alt="Обмен файлами любого типа" class="feature_block__image feature_block__image--mobile">
+                      </dd>
+                      <dt><a href="#">Личные и групповые чаты</a></dt>
+                      <dd data-slide="chats" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                          <h4>Все сообщения будут доставлены</h4>
+                          <p>Платформа Reetm оптимизирована как для работы с GSM сетями предыдущих поколений, так и с сетями нового поколения. Приложение отправит сообщение, когда возможности сети позволят это сделать, а также проконтролирует
+                            доставку.</p>
+                        </div>
+                        <img src="/assets/images/features/messenger-chats.png" srcset="/assets/images/features/messenger-chats@2x.png 2x" alt="Личные и групповые чаты" class="feature_block__image feature_block__image--mobile">
+                      </dd>
+                      <dt><a href="#">Аудио-сообщения</a></dt>
+                      <dd data-slide="audio" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                          <h4>Не отвлекайтесь от дел</h4>
+                          <p>Нет времени печатать сообщение? Воспользуйтесь функцией голосовых сообщений – это гораздо удобнее и быстрее, чем автоответчик или голосовая почта.</p>
+                        </div>
+                        <img src="/assets/images/features/messenger-audio-message.png" srcset="/assets/images/features/messenger-audio-message@2x.png 2x" alt="Аудио-сообщения" class="feature_block__image feature_block__image--mobile">
+                      </dd>
+                      <dt><a href="#">Каналы</a></dt>
+                      <dd data-slide="channels" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                          <h4>Работайте над документами совместно</h4>
+                          <p>Единовременная рассылка сообщений всем сотрудникам организации – новостные ленты, блоги, оповещения.</p>
+                        </div>
+                        <img src="/assets/images/features/messenger-channels.png" srcset="/assets/images/features/messenger-channels@2x.png 2x" alt="Каналы" class="feature_block__image feature_block__image--mobile">
+                      </dd>
+                      <dt><a href="#">Демонстрация экрана</a></dt>
+                      <dd data-slide="sharing" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                          <h4>Работайте над документами совместно</h4>
+                          <p>Транслируйте экран коллегам или партнерам, обсуждайте внутренние документы или проведите презентацию в режиме реального времени.</p>
+                        </div>
+                        <img src="/assets/images/features/messenger-screen.png" srcset="/assets/images/features/messenger-screen@2x.png 2x" alt="Демонстрация экрана" class="feature_block__image feature_block__image--laptop">
+                      </dd>
+                      <dt><a href="#">Работает на любой платформе</a></dt>
+                      <dd data-slide="crossplatform" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                          <h4>Всегда на связи</h4>
+                          <p>Reetm доступен на всех ваших устройствах. Поддерживаются операционные системы Android, iOS, macOS, Windows и Linux. Стабильная работа и синхронизация чатов в веб, мобильном и десктопном клиентах.</p>
+                        </div>
+                        <img src="/assets/images/features/messenger-platform.png" srcset="/assets/images/features/messenger-platform@2x.png 2x" alt="Всегда на связи" class="feature_block__image feature_block__image--laptop">
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div data-tab="business" class="features__content__block">
+                <div class="feature_block">
+                  <div class="feature_block__links">
+                    <a data-slide="chatbots" href="#" class="feature_block__link">Чатботы</a>
+                    <a data-slide="dashboard" href="#" class="feature_block__link">Панель администратора</a>
+                    <a data-slide="ad" href="#" class="feature_block__link">Active Directory (AD)</a>
+                  </div>
+                  <div class="feature_block__slides">
+                    <div class="feature_block__slides__heading">Бизнес функции</div>
+                    <dl>
+                      <dt><a href="#">Чатботы</a></dt>
+                      <dd data-slide="chatbots" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                        <h4>Автоматизируйте процессы</h4>
+                        <p>Чатбот похож на виртуального собеседника. Он обрабатывает входящий вопрос и выдает ответ.</p>
+                        <p>Пример: оформление документов. Это утомительная и неизбежная часть работы. Но с помощью чатбота её можно сделать проще.</p>
+                        </div>
+                        <img src="/assets/images/features/business-chatbots.png" srcset="/assets/images/features/business-chatbots@2x.png 2x" alt="Автоматизируйте процессы" class="feature_block__image feature_block__image--mobile">
+                      </dd>
+                      <dt><a href="#">Панель администратора</a></dt>
+                      <dd data-slide="dashboard" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                        <h4>Управляйте доступами</h4>
+                        <p>Со временем сотрудники вашей компании могут приходить и уходить. С Панелью администратора вы можете легко активировать / деактивировать пользователей в вашем рабочем пространстве и управлять доступами.</p>
+                        </div>
+                        <img src="/assets/images/features/business-administrator.png" srcset="/assets/images/features/business-administrator@2x.png 2x" alt="Управляйте доступами" class="feature_block__image feature_block__image--laptop">
+                      </dd>
+                      <dt><a href="#">Active Directory (AD)</a></dt>
+                      <dd data-slide="ad" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                        <h4>Единая точка входа для своих работников</h4>
+                        <p>Reetm отображает информацию о пользователях из AD. Интегрируйте имеющуюся рабочую среду и групповую политику с Reetm. Пользователи могут войти в Reetm под своими учетными записями. </p>
+                        </div>
+                        <img src="/assets/images/features/business-ad.png" srcset="/assets/images/features/business-ad@2x.png 2x" alt="Active Directory (AD)" class="feature_block__image feature_block__image--laptop">
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div data-tab="integrations" class="features__content__block">
+                <div class="feature_block">
+                  <div class="feature_block__links">
+                    <a data-slide="api" href="#" class="feature_block__link">API Reetm</a>
+                    <a data-slide="botsdk" href="#" class="feature_block__link">Bot SDK</a>
+                    <a data-slide="whitelabel" href="#" class="feature_block__link">Брендинг <br>компании-заказчика</a>
+                  </div>
+                  <div class="feature_block__slides">
+                    <div class="feature_block__slides__heading">Интеграции</div>
+                    <dl>
+                      <dt><a href="#">API Reetm</a></dt>
+                      <dd data-slide="api" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                        <h4>Совместимость с популярными бизнес-сервисами</h4>
+                        <p>АТС, CRM, Таск менеджеры, Аналитические системы - все это, и не только, можно связать с Reetm. Интеграции ограничены только фантазией разработчика.</p>
+                        </div>
+                        <img src="/assets/images/features/integration-api.png" srcset="/assets/images/features/integration-api@2x.png 2x" alt="API Reetm" class="feature_block__image feature_block__image--laptop">
+                      </dd>
+                      <dt><a href="#">Bot SDK</a></dt>
+                      <dd data-slide="botsdk" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                        <h4>Готовые средства разработки ботов для Reetm</h4>
+                        <p><a href="#" class="link--default">BOT SDK</a> позволяет быстро создавать собственных ботов. В настоящее время SDK доступен для JS, Java и Python.</p>
+                        <div class="feature_block__slide__links">
+                          <a href="#" class="link--default">Python</a>
+                          <a href="#" class="link--default">Java</a>
+                          <a href="#" class="link--default">JavaScript</a>
+                          <a href="#" class="link--default">Docs</a>
+                        </div>
+                        </div>
+                        <img src="/assets/images/features/integration-bot-sdk.png" srcset="/assets/images/features/integration-bot-sdk@2x.png 2x" alt="Bot SDK" class="feature_block__image feature_block__image--laptop">
+                      </dd>
+                      <dt><a href="#">Брендинг компании-заказчика</a></dt>
+                      <dd data-slide="whitelabel" class="feature_block__slide">
+                        <div class="feature_block__slide__text">
+                        <h4>Не отходите от фирменного стиля</h4>
+                        <p>Используйте гайдлайны брендбука, чтобы приложение соответствовало фирменному стилю вашей компании. В интерфейсе Reetm можно изменить логотип, цвета и шрифты.</p>
+                        </div>
+                        <img src="/assets/images/features/integration-branding.png" srcset="/assets/images/features/integration-branding@2x.png 2x" alt="Брендинг компании-заказчика" class="feature_block__image feature_block__image--laptop">
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div class="features__slider__content">
-            <div class="tabs__tab">
-              <div class="tabs__tab__title">Мессенджер</div>
-              <div class="tabs__tab__content">
-                <dl class="accordion">
-                  <dt><a href="#">Аудио/Видеовызовы</a></dt>
-                  <dd>
-                    <h4>Высокое качество связи</h4>
-                    <p>В зависимости от уровня сигнала сотового оператора в месте вашего нахождения, Reetm оптимизирует качество связи автоматически. При слабом уровне сигнала Reetm снижает количество передаваемого аудио или видеотрафика без разрыва
-                      или задержки соединения.</p>
-                    <h4>Безопасное общение</h4>
-                    <p>Все звонки надежно защищены криптографическими решениями на базе end-to-end и TLS шифрования.</p>
-                  </dd>
-                  <dt><a href="#">Обмен файлами любого типа</a></dt>
-                  <dd>
-                    <h4>Передача файлов без ограничений по размеру</h4>
-                    <p>Не проходит тяжелая презентация по почте? Забудьте об ограничениях – делитесь информацией любого размера, прикрепляйте заметки к файлам, а удобный поиск по названию файла и имени отправителя поможет быстро найти важные данные.</p>
-                  </dd>
-                  <dt><a href="#">Личные и групповые чаты</a></dt>
-                  <dd>
-                    <h4>Все сообщения будут доставлены</h4>
-                    <p>Платформа Reetm оптимизирована как для работы с GSM сетями предыдущих поколений, так и с сетями нового поколения. Приложение отправит сообщение, когда возможности сети позволят это сделать, а также проконтролирует доставку.</p>
-                  </dd>
-                  <dt><a href="#">Аудио-сообщения</a></dt>
-                  <dd>
-                    <h4>Не отвлекайтесь от дел</h4>
-                    <p>Нет времени печатать сообщение? Воспользуйтесь функцией голосовых сообщений – это гораздо удобнее и быстрее, чем автоответчик или голосовая почта.</p>
-                  </dd>
-                  <dt><a href="#">Каналы</a></dt>
-                  <dd>
-                    <h4>Работайте над документами совместно</h4>
-                    <p>Единовременная рассылка сообщений всем сотрудникам организации – новостные ленты, блоги, оповещения.</p>
-                  </dd>
-                  <dt><a href="#">Демонстрация экрана</a></dt>
-                  <dd>
-                    <h4>Работайте над документами совместно</h4>
-                    <p>Транслируйте экран коллегам или партнерам, обсуждайте внутренние документы или проведите презентацию в режиме реального времени.</p>
-                  </dd>
-                  <dt><a href="#">Работает на любой платформе</a></dt>
-                  <dd>
-                    <h4>Всегда на связи</h4>
-                    <p>Reetm доступен на всех ваших устройствах. Поддерживаются операционные системы Android, iOS, macOS, Windows и Linux. Стабильная работа и синхронизация чатов в веб, мобильном и десктопном клиентах.</p>
-                  </dd>
-                </dl>
-              </div>
-            </div>
-            <div class="tabs__tab">
-              <div class="tabs__tab__title">Бизнес функции</div>
-              <div class="tabs__tab__content">
-                <dl class="accordion">
-                  <dt><a href="#">Чатботы</a></dt>
-                  <dd>
-                    <h4>Автоматизируйте процессы</h4>
-                    <p>Чатбот похож на виртуального собеседника. Он обрабатывает входящий вопрос и выдает ответ.</p>
-                    <p>Пример: оформление документов. Это утомительная и неизбежная часть работы. Но с помощью чатбота её можно сделать проще.</p>
-                  </dd>
-                  <dt><a href="#">Панель администратора</a></dt>
-                  <dd>
-                    <h4>Управляйте доступами</h4>
-                    <p>Со временем сотрудники вашей компании могут приходить и уходить. С Панелью администратора вы можете легко активировать / деактивировать пользователей в вашем рабочем пространстве и управлять доступами.</p>
-                  </dd>
-                  <dt><a href="#">Active Directory (AD)</a></dt>
-                  <dd>
-                    <h4>Единая точка входа для своих работников</h4>
-                    <p>Reetm отображает информацию о пользователях из AD. Интегрируйте имеющуюся рабочую среду и групповую политику с Reetm. Пользователи могут войти в Reetm под своими учетными записями.</p>
-                  </dd>
-                </dl>
-              </div>
-            </div>
-            <div class="tabs__tab">
-              <div class="tabs__tab__title">Интеграции</div>
-              <div class="tabs__tab__content">
-                <dl class="accordion">
-                  <dt><a href="#">API Reetm</a></dt>
-                  <dd>
-                    <h4>Совместимость с популярными бизнес-сервисами</h4>
-                    <p>АТС, CRM, Таск менеджеры, Аналитические системы - все это, и не только, можно связать с Reetm. Интеграции ограничены только фантазией разработчика.</p>
-                  </dd>
-                  <dt><a href="#">Bot SDK</a></dt>
-                  <dd>
-                    <h4>Готовые средства разработки ботов для Reetm</h4>
-                    <p><a href="#" class="link--default">BOT SDK</a> позволяет быстро создавать собственных ботов. В настоящее время SDK доступен для JS, Java и Python.</p>
-                    <div class="accordion__links">
-                      <a href="#" class="link--default">Python</a>
-                      <a href="#" class="link--default">Java</a>
-                      <a href="#" class="link--default">JavaScript</a>
-                      <a href="#" class="link--default">Docs</a>
-                    </div>
-                  </dd>
-                  <dt><a href="#">Брендинг компании-заказчика</a></dt>
-                  <dd>
-                    <h4>Не отходите от фирменного стиля</h4>
-                    <p>Используйте гайдлайны брендбука, чтобы приложение соответствовало фирменному стилю вашей компании. В интерфейсе Reetm можно изменить логотип, цвета и шрифты.</p>
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        </section>
       </div>
     </main>
 
@@ -134,6 +190,7 @@
   </div>
 
   <script src="/assets/index.js"></script>
+  <script src="/assets/features.js"></script>
 
 </body>
 

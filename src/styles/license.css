@@ -24,15 +24,10 @@
     }
   }
 
-  &__intro {
-    &-title {
-    }
-
-    &-text {
-      font-size: var(--font-size-content);
-      line-height: var(--line-height-content);
-      letter-spacing: var(--letter-spacing-content);
-    }
+  &__intro-text {
+    font-size: var(--font-size-content);
+    line-height: var(--line-height-content);
+    letter-spacing: var(--letter-spacing-content);
   }
 
   &__photos {
@@ -75,6 +70,9 @@
     &-item {
       width: calc(50% - var(--padding-side-columns) / 2);
       margin-top: 60px;
+      img {
+        max-width: 100%;
+      }
 
       @media (--tablet-landscape-viewport) {
         flex-basis: 33.33333333%;

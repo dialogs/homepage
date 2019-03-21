@@ -2,6 +2,8 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
+@import './variables.css';
+
 .container {
   margin: var(--container-margin);
 
@@ -10,17 +12,3 @@
     margin: 0 auto;
   }
 }
-/*
-.container {
-  margin: 0 auto;
-  padding: 0 20px;
-
-  @media (--xl-viewport) {
-    width: 1140px;
-  }
-}
-
-.row {
-  margin-right: -20px;
-  margin-left: -20px;
-} */
