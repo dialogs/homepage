@@ -1,12 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import { Container } from '../components/Container/Container';
 import { BlogRoster } from '../components/BlogRoster/BlogRoster';
 import { Subscribe } from '../components/Subscribe/Subscribe';
 
 export default ({ data: { posts } }, pageContext) => {
   return (
-    <div className="container">
+    <Container>
       <div className="blog__top-section">
         <div className="blog__main box-block">
           <div className="blog__main-image">
@@ -123,7 +124,7 @@ export default ({ data: { posts } }, pageContext) => {
       <section className="blog__subscribe-section">
         <Subscribe />
       </section>
-    </div>
+    </Container>
   );
 };
 

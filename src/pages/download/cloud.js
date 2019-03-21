@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { Container } from '../../components/Container/Container';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 
 export default () => (
-  <div className="container">
+  <Container>
     <div className="download__sections">
       <section className="download__section download__intro">
         <PageHeader>
@@ -123,5 +124,5 @@ export default () => (
         </div>
       </section>
     </div>
-  </div>
+  </Container>
 );

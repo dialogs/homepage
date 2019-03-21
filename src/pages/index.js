@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import { Container } from '../components/Container/Container';
+
 export default () => {
   return (
-    <section className="container">
+    <Container>
       <div className="home__intro home__section">
         <div className="home__intro-box">
           <div className="home__intro-info">
@@ -750,6 +752,6 @@ export default () => {
           </div>
         </form>
       </div>
-    </section>
+    </Container>
   );
 };

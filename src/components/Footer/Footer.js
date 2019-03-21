@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import { Container } from '../Container/Container';
+
 export function Footer() {
   return (
     <footer className="site__footer">
       <div className="footer__top">
-        <div className="container">
+        <Container>
           <div className="footer__top-content">
             <div className="footer__top-content-item footer__contacts">
               <div className="footer__contacts-item footer__contacts-item--phone">
@@ -178,16 +180,16 @@ export function Footer() {
               </nav>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
       <div className="footer__bottom">
-        <div className="container">
+        <Container>
           <div className="footer__copyright">
             <span className="footer__copyright-text">
               © 2016-2019 ООО “Диалог” ИНН: 7804568396
             </span>
           </div>
-        </div>
+        </Container>
       </div>
     </footer>
   );

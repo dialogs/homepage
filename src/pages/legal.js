@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { Container } from '../components/Container/Container';
+
 export default () => (
-  <div className="container">
+  <Container>
     <article className="legal">
       <h1>Политика конфиденциальности</h1>
       <p>
@@ -128,5 +130,5 @@ export default () => (
         обеспечения Dialog.
       </p>
     </article>
-  </div>
+  </Container>
 );

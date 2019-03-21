@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
+import { Container } from '../Container/Container';
 import { Article } from '../Article/Article';
 import { BlogRoster } from '../BlogRoster/BlogRoster';
 import { Subscribe } from '../Subscribe/Subscribe';
@@ -10,7 +11,7 @@ export default ({ data: { post, recommended } }) => {
   console.log({ post, recommended });
 
   return (
-    <section className="container blog_post">
+    <Container className="blog_post">
       <Article
         className="post__article"
         title={post.title}
@@ -31,7 +32,7 @@ export default ({ data: { post, recommended } }) => {
       <div className="blog_post__subscribe">
         <Subscribe />
       </div>
-    </section>
+    </Container>
   );
 };
 

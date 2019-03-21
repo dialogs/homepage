@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { Container } from '../components/Container/Container';
+
 export default () => {
   return (
-    <section className="container">
+    <Container>
       <div className="support__sections">
         <section className="support__section support__section-form">
           <h1 className="h1--default h1--support">Обратная связь</h1>
@@ -115,6 +117,6 @@ export default () => {
           </div>
         </section>
       </div>
-    </section>
+    </Container>
   );
 };

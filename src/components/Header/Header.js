@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import { Container } from '../Container/Container';
+
 export function Header() {
   return (
     <header className="site__header">
-      <div className="container">
+      <Container>
         <div className="header__columns">
           <div className="header__col">
             <div className="header__logo">
@@ -56,7 +58,7 @@ export function Header() {
             <button className="header__button header__button--menu" />
           </div>
         </div>
-      </div>
+      </Container>
     </header>
   );
 }

@@ -1,14 +1,16 @@
 import React from 'react';
 
+import { Container } from '../components/Container/Container';
+
 export default () => {
   return (
     <div className="about page-about">
       <section className="about__title">
-        <div className="container">
+        <Container>
           <h1 className="page__header">
             dialog – намного больше, чем просто мессенджер
           </h1>
-        </div>
+        </Container>
       </section>
 
       <section className="about__promo">
@@ -21,7 +23,7 @@ export default () => {
             />
           </div>
         </div>
-        <div className="container">
+        <Container>
           <div className="about__description">
             <img src="/images/svg/about-promo.svg" alt="" />
             <span>
@@ -37,11 +39,11 @@ export default () => {
               <img src="/images/svg-icons/arrow.svg" alt="" />
             </a>
           </div>
-        </div>
+        </Container>
       </section>
 
       <section className="about__features">
-        <div className="container">
+        <Container>
           <div className="about__features-list">
             <div className="about__features-item">
               <div className="about__features-icon">
@@ -74,11 +76,11 @@ export default () => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       <section className="about__licenses">
-        <div className="container">
+        <Container>
           <div className="about__licenses-title">Патенты и лицензии</div>
           <div className="about__licenses-text">
             Патенты и лицензии ООО “Диалог” и его продукты соответствуют
@@ -96,11 +98,11 @@ export default () => {
               />
             </a>
           </div>
-        </div>
+        </Container>
       </section>
 
       <section className="about__contacts box--prefooter">
-        <div className="container">
+        <Container>
           <div className="about__contacts-block">
             <div className="about__contacts-title">Контакты</div>
             <div className="about__contacts-items">
@@ -138,7 +140,7 @@ export default () => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </div>
   );

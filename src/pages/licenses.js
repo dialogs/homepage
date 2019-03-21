@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { Container } from '../components/Container/Container';
+
 export default () => {
   return (
-    <section className="container">
+    <Container>
       <div className="license__column-content">
         <section className="license__section license__intro">
           <h1 className="h1--default license__intro-title">
@@ -322,6 +324,6 @@ export default () => {
           </div>
         </section>
       </div>
-    </section>
+    </Container>
   );
 };
