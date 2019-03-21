@@ -44,6 +44,7 @@ build:
     - NODE_ENV=production npm run build
 
 notify_fail:
+  stage: build
   when: on_failure
   script:
     - |
