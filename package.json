@@ -3,36 +3,32 @@
   "version": "0.0.0",
   "description": "Brand new dialog website",
   "main": "index.js",
+  "private": "true",
   "scripts": {
     "server": "node server/server",
-    "browsersync": "browser-sync start --proxy \"localhost:8080\" --files \"src/**/*.ejs\" \"src/**/*.html\" \"src/assets/**/*\" --port 3000",
-    "webpack": "cross-env NODE_ENV=production webpack",
-    "webpack:watch": "cross-env NODE_ENV=development webpack --progress --colors --watch",
-    "start": "npm run server & npm run webpack:watch & npm run browsersync",
+    "start": "gatsby develop",
     "format": "prettier --write --loglevel warn \"src/**/*.{js,css}\"",
-    "build": "npm run webpack"
+    "build": "gatsby build"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "4.16.4",
     "ejs": "2.6.1",
-    "flexboxgrid": "6.3.1",
-    "jquery": "3.3.1",
-    "normalize.css": "8.0.1"
+    "normalize.css": "8.0.1",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
+    "jquery": "3.3.1"
   },
   "devDependencies": {
-    "browser-sync": "2.26.3",
-    "cross-env": "5.2.0",
-    "css-loader": "2.1.1",
-    "file-loader": "3.0.1",
-    "mini-css-extract-plugin": "0.5.0",
-    "postcss-loader": "3.0.0",
-    "postcss-nested": "4.1.2",
+    "gatsby": "2.2.3",
+    "gatsby-plugin-express": "1.1.6",
+    "gatsby-plugin-layout": "1.0.13",
+    "gatsby-plugin-postcss": "2.0.7",
+    "gatsby-source-ghost": "3.3.0",
+    "postcss-custom-media": "7.0.7",
     "postcss-preset-env": "6.6.0",
-    "prettier": "1.16.4",
-    "style-loader": "0.23.1",
-    "webpack": "4.29.6",
-    "webpack-cli": "3.3.0"
+    "postcss-nested": "4.1.2",
+    "prettier": "1.16.4"
   }
 }

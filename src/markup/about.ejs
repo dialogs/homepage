@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'О нас' }) %>
+
+<body>
+  <div class="site__wrapper">
+    <%- include('partials/header') %>
+
+    <main class="site__middle">
+      <div class="about page-about">
+        <section class="about__title">
+          <div class="container">
+            <h1 class="h1--about h1--default">dialog – намного больше, чем просто мессенджер</h1>
+          </div>
+        </section>
+
+        <section class="about__promo">
+          <div class="about__video">
+            <div class="about__video-wrapper">
+              <img src="/assets/images/about/team.png" srcset="/assets/images/about/team@2x.png 2x" alt=""/>
+              <!--
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/5btLG91jTi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              -->
+            </div>
+          </div>
+          <div class="container">
+            <div class="about__description">
+              <img src="/assets/images/svg/about-promo.svg" alt="">
+              <span>Подробнее о жизни в компании вы можете прочитать в специальном проекте i can choose</span>
+              <a href="https://icanchoose.ru/company/dialog/" class="about__description-link" target="_blank">
+                <img src="/assets/images/svg-icons/arrow.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="about__features">
+          <div class="container">
+            <div class="about__features-list">
+              <div class="about__features-item">
+                <div class="about__features-icon">
+                  <img src="/assets/images/svg/about-mission.svg" alt="Миссия">
+                </div>
+                <div class="about__features-title">Миссия</div>
+                <div class="about__features-description">Искоренить бюрократию. Упростить и повысить качество коммуникации всего человечества</div>
+              </div>
+              <div class="about__features-item">
+                <div class="about__features-icon">
+                  <img src="/assets/images/svg/about-worth.svg" alt="Ценности">
+                </div>
+                <div class="about__features-title">Ценности</div>
+                <div class="about__features-description">Простота, открытость, гибкость, разумные инновации, возможность и эффективность</div>
+              </div>
+              <div class="about__features-item">
+                <div class="about__features-icon">
+                  <img src="/assets/images/svg/about-goal.svg" alt="Цель">
+                </div>
+                <div class="about__features-title">Цель</div>
+                <div class="about__features-description">Создать коммуникационную платформу для формирования экосистемы «бизнес-общество-государство»</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about__licenses">
+          <div class="container">
+            <div class="about__licenses-title">Патенты и лицензии</div>
+            <div class="about__licenses-text">Патенты и лицензии ООО “Диалог” и его продукты соответствуют определённым требованиям Федеральных органов власти России.</div>
+            <div class="about__licenses-link-box">
+              <a href="/licenses" class="about__licenses-link link--arrow">
+                <span class="link--arrow__text">Подробнее о патентах и лицензиях</span>
+                <img src="/assets/images/svg-icons/arrow-link.svg" alt="" class="link--arrow__icon">
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="about__contacts box--prefooter">
+          <div class="container">
+            <div class="about__contacts-block">
+              <div class="about__contacts-title">Контакты</div>
+              <div class="about__contacts-items">
+                <div class="about__contacts-item about__contacts-item--email">
+                  <a href="#" class="link--default">info@dlg.im</a>
+                </div>
+                <div class="about__contacts-item about__contacts-item--phone">
+                  <a href="tel:+78007758202">+7 (800) 775-8202</a>
+                </div>
+              </div>
+              <div class="about__contacts-offices">
+                <div class="about__contacts-office">
+                  <div class="about__contacts-city">Москва</div>
+                  <div class="about__contacts-address">121170, ул. Поклонная 3к2, 11 этаж</div>
+                  <div class="about__contacts-map-link"><a href="#" class="link--default">На карте</a></div>
+                </div>
+                <div class="about__contacts-office">
+                  <div class="about__contacts-city">Новосибирск</div>
+                  <div class="about__contacts-address">630090, ул. Николаева 11, оф. 311</div>
+                  <div class="about__contacts-map-link"><a href="#" class="link--default">На карте</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <%- include('partials/footer') %>
+  </div>
+
+  <script src="/assets/index.js"></script>
+</body>
+
+</html>

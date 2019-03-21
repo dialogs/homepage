@@ -1,0 +1,117 @@
+@custom-media --sm-viewport screen and (max-width: 767px);
+@custom-media --md-viewport screen and (min-width: 768px);
+@custom-media --lg-viewport screen and (min-width: 992px);
+@custom-media --xl-viewport screen and (min-width: 1200px);
+@custom-media --mobile-viewport screen and (max-width: 767px);
+@custom-media --tablet-viewport screen and (min-width: 768px);
+@custom-media --tablet-landscape-viewport screen and (min-width: 1024px);
+@custom-media --laptop-viewport screen and (min-width: 1440px);
+@custom-media --desktop-viewport screen and (min-width: 1600px);
+
+:root {
+  /* color */
+  --color-primary: #d2fde5;
+  --color-secondary: #b9bbfa;
+  /* text color */
+  --text-color-main: #1e1e1e;
+  --text-color-main-03: color-mod(var(--text-color-main) alpha(30%));
+  /* font */
+  --font-apple: -apple-system, 'BlinkMacSystemFont';
+  --font-fallback: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-family: 'SuisseIntl', var(--font-apple), var(--font-fallback),
+    var(--font-emoji);
+  --font-size-content: 16px;
+  --line-height-content: 26px;
+  --letter-spacing-content: 0.01em;
+  --letter-spacing-0275: 0.275px;
+  --font-size-content-2: 16px;
+  --line-height-content-2: 22px;
+  --font-size-content-3: 18px;
+  --line-height-content-3: 23px;
+  --font-size-footer-nav: 14px;
+  --line-height-footer-nav: 22px;
+  --font-size-title: 28px;
+  --line-height-title: 30px;
+  --font-size-title-2: 20px;
+  --line-height-title-2: 26px;
+  --font-size-title-3: 24px;
+  --line-height-title-3: 31px;
+  --font-size-title-4: 20px;
+  --line-height-title-4: 26px;
+  --font-size-title-5: 14px;
+  --line-height-title-5: 18px;
+  --font-size-subtitle: 16px;
+  --line-height-subtitle: 19px;
+  --font-size-subtitle-2: 16px;
+  --line-height-subtitle-2: 21px;
+  /* paddings & margins */
+  --padding-top-section: 60px;
+  --padding-side-columns: 40px;
+  --margin-container-side: 20px;
+  --container-margin: 0 var(--margin-container-side);
+
+  @media (--mobile-viewport) {
+  }
+
+  @media (--tablet-viewport) {
+    --font-size-title: 40px;
+    --line-height-title: 42px;
+    --font-size-title-5: 16px;
+    --line-height-title-5: 21px;
+    --font-size-subtitle-2: 18px;
+    --line-height-subtitle-2: 23px;
+    --padding-top-section: 80px;
+    --padding-side-columns: 60px;
+    --margin-container-side: 54px;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    --font-size-content-3: 20px;
+    --line-height-content-3: 26px;
+    --font-size-title: 50px;
+    --line-height-title: 52px;
+    --font-size-title-2: 24px;
+    --line-height-title-2: 31px;
+    --font-size-subtitle: 20px;
+    --line-height-subtitle: 24px;
+    --font-size-subtitle-2: 20px;
+    --line-height-subtitle-2: 26px;
+    --padding-top-section: 120px;
+    --padding-side-columns: 80px;
+    --margin-container-side: 72px;
+  }
+
+  @media (--laptop-viewport) {
+    --font-size-content: 18px;
+    --line-height-content: 29px;
+    --font-size-content-2: 18px;
+    --line-height-content-2: 23px;
+    --font-size-content-3: 24px;
+    --line-height-content-3: 31px;
+    --line-height-footer-nav: 18px;
+    --font-size-title: 60px;
+    --line-height-title: 62px;
+    --font-size-title-2: 32px;
+    --line-height-title-2: 42px;
+    --font-size-title-3: 32px;
+    --line-height-title-3: 42px;
+    --font-size-title-4: 24px;
+    --line-height-title-4: 31px;
+    --font-size-title-5: 18px;
+    --line-height-title-5: 23px;
+    --font-size-subtitle: 24px;
+    --line-height-subtitle: 28px;
+    --font-size-subtitle-2: 24px;
+    --line-height-subtitle-2: 31px;
+    --padding-side-columns: 100px;
+    --margin-container-side: 170px;
+  }
+
+  @media (--desktop-viewport) {
+    --padding-top-section: 90px;
+    --padding-side-columns: 120px;
+    --margin-container-side: 140px;
+  }
+}
