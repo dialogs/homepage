@@ -4,42 +4,15 @@ import { Link } from 'gatsby';
 import { Container } from '../components/Container/Container';
 import { Platform } from '../components/Platform/Platform';
 import { Section } from '../components/Section/Section';
+import { Hero } from '../components/Hero/Hero';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 // import { Tabs, Tab } from '../components/Tabs/Tabs';
 
 export default () => {
   return (
     <Container>
-      <div className="home__intro home__section">
-        <div className="home__intro-box">
-          <div className="home__intro-info">
-            <PageHeader>
-              Достигайте командные цели быстрее и без потери фокуса
-            </PageHeader>
-            <h4 className="home__intro-text">
-              Простая и эффективная платформа для коммуникаций в компании
-            </h4>
-            <button
-              type="button"
-              className="button button--default home__intro-button"
-            >
-              Получить предложение
-            </button>
-          </div>
-          <div className="home__intro-image">
-            <img
-              className="home__intro-img"
-              src="/images/home/home-intro.png"
-              srcSet="/images/home/home-intro@2x.png 2x"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-
-      <Section>
-        <Platform />
-      </Section>
+      <Hero />
+      <Platform />
 
       <div className="home__section safety">
         <h3 className="safety-title">
