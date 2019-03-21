@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 export function Header() {
   return (
@@ -7,40 +8,40 @@ export function Header() {
         <div className="header__columns">
           <div className="header__col">
             <div className="header__logo">
-              <a href="/" className="header__logo-link">
+              <Link to="/" className="header__logo-link">
                 <img
                   src="/images/logo-header.svg"
                   alt=""
                   className="header__logo-icon"
                 />
-              </a>
+              </Link>
             </div>
             <nav className="header__menu">
               <ul className="header__menu-list">
                 <li className="header__menu-item">
-                  <a href="/about" className="header__menu-link">
+                  <Link to="/about" className="header__menu-link">
                     О нас
-                  </a>
+                  </Link>
                 </li>
                 <li className="header__menu-item">
-                  <a href="/download/cloud" className="header__menu-link">
+                  <Link to="/download/cloud" className="header__menu-link">
                     Скачать
-                  </a>
+                  </Link>
                 </li>
                 <li className="header__menu-item">
-                  <a href="/support" className="header__menu-link">
+                  <Link to="/support" className="header__menu-link">
                     Поддержка
-                  </a>
+                  </Link>
                 </li>
                 <li className="header__menu-item">
-                  <a href="/features" className="header__menu-link">
+                  <Link to="/features" className="header__menu-link">
                     Функции
-                  </a>
+                  </Link>
                 </li>
                 <li className="header__menu-item">
-                  <a href="/blog" className="header__menu-link">
+                  <Link to="/blog" className="header__menu-link">
                     Блог
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

@@ -23,8 +23,8 @@ export default () => {
           <div className="home__intro-image">
             <img
               className="home__intro-img"
-              src="/assets/images/home/home-intro.png"
-              srcSet="/assets/images/home/home-intro@2x.png 2x"
+              src="/images/home/home-intro.png"
+              srcSet="/images/home/home-intro@2x.png 2x"
               alt=""
             />
           </div>
@@ -337,14 +337,14 @@ export default () => {
               </div>
             </div>
             <div className="safety-requirements__link-box">
-              <a href="/licenses" className="link--arrow">
+              <Link to="/licenses" className="link--arrow">
                 <span className="link--arrow__text">Подробнее</span>
                 <img
                   src="/images/svg-icons/arrow-link.svg"
                   alt=""
                   className="link--arrow__icon"
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -358,11 +358,11 @@ export default () => {
           dialog API позволяет оптимизировать процессы, связав мессенджер и
           сервисы компании. Создавайте ботов самостоятельно с помощью
           <a
-            href="https://dialogs.github.io/bots-docs/#/"
+            href="https://dialogs.github.io/bots-docs/"
             className="link--default"
           >
             Bot SDK
-          </a>
+          </a>{' '}
           или воспользуйтесь услугами партнёра-интегратора.
         </div>
 

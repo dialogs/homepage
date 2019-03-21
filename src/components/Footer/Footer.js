@@ -1,4 +1,5 @@
-import React from "react"
+import React from 'react';
+import { Link } from 'gatsby';
 
 export function Footer() {
   return (
@@ -143,31 +144,35 @@ export function Footer() {
               <nav className="footer__nav">
                 <div className="footer__nav-list">
                   <div className="footer__nav-item">
-                    <a className="footer__nav-link" href="/licenses">
+                    <Link className="footer__nav-link" to="/licenses">
                       Патенты и лицензии
-                    </a>
+                    </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <a className="footer__nav-link" href="/legal">
+                    <Link className="footer__nav-link" to="/legal">
                       Правовая информация
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="footer__nav-list">
                   <div className="footer__nav-item">
-                    <a className="footer__nav-link" href="https://docs.dlg.im/">
+                    <a
+                      className="footer__nav-link"
+                      href="https://docs.dlg.im/"
+                      target="_blank"
+                    >
                       Документация
                     </a>
                   </div>
                   <div className="footer__nav-item">
-                    <a className="footer__nav-link" href="/download/cloud">
+                    <Link className="footer__nav-link" to="/download/cloud">
                       Скачать
-                    </a>
+                    </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <a className="footer__nav-link" href="/support">
+                    <Link className="footer__nav-link" to="/support">
                       Поддержка
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </nav>
@@ -185,5 +190,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

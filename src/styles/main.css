@@ -187,6 +187,8 @@ a {
 }
 
 .link--back {
+  outline: none;
+  cursor: pointer;
   font-size: 18px;
   line-height: 23px;
 
@@ -261,7 +263,7 @@ h6 {
 }
 
 .share-box {
-  &__link {
+  ” &__link {
     display: block;
     width: 50px;
     height: 50px;
@@ -270,19 +272,19 @@ h6 {
     cursor: pointer;
 
     &--arrow {
-      background-image: url('/assets/images/svg-icons/social-arrow.svg');
+      background-image: url('/images/svg-icons/social-arrow.svg');
     }
 
     &--vk {
-      background-image: url('/assets/images/svg-icons/social-vkontakte.svg');
+      background-image: url('/images/svg-icons/social-vkontakte.svg');
     }
 
     &--fb {
-      background-image: url('/assets/images/svg-icons/social-facebook.svg');
+      background-image: url('/images/svg-icons/social-facebook.svg');
     }
 
     &--tw {
-      background-image: url('/assets/images/svg-icons/social-twitter.svg');
+      background-image: url('/images/svg-icons/social-twitter.svg');
     }
   }
 }

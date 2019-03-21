@@ -1,0 +1,22 @@
+.article {
+  &__header {
+    &__block {
+      &--left {
+      }
+      &--right {
+      }
+    }
+  }
+
+  &__date {
+  }
+
+  &__excerpt {
+  }
+
+  &__tags {
+  }
+
+  &__content {
+  }
+}

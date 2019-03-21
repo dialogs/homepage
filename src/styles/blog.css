@@ -459,7 +459,7 @@
 
 .blog__share-link {
   &--vk {
-    background-image: url('/assets/images/svg-icons/social-vkontakte.svg');
+    background-image: url('/images/svg-icons/social-vkontakte.svg');
     background-repeat: no-repeat;
   }
 }
