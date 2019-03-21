@@ -71,7 +71,7 @@
           @media (--tablet-viewport) {
             top: 0;
             left: calc(-1 * var(--padding-side-columns) * 1.5);
-            right: calc(-1 * var(--margin-container-side) * 2);
+            right: calc(-1 * var(--margin-container-side));
           }
         }
       }
@@ -137,6 +137,7 @@
     @media (--laptop-viewport) {
       margin-left: calc(1.5 * var(--padding-side-columns));
       margin-right: calc(3 * var(--padding-side-columns));
+      margin-bottom: 120px;
     }
 
     & p {
@@ -253,7 +254,9 @@
 
         @media (--tablet-viewport) {
           left: calc(-1 * var(--padding-side-columns));
-          right: calc(-3 * var(--padding-side-columns));
+          right: calc(
+            -1.5 * var(--padding-side-columns) - var(--margin-container-side)
+          );
         }
 
         @media (--laptop-viewport) {
