@@ -5,6 +5,10 @@
 @import '../../variables.css';
 
 .easy {
+  & img {
+    max-width: 100%;
+  }
+
   &__cols {
     @media (--tablet-viewport) {
       display: flex;
