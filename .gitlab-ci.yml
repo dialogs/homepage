@@ -38,8 +38,8 @@ build:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "👉🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) build started."}' \
-      $dialogHookUrl
+      --data "{\"text\": \"👉🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) build started.\"}" \
+      $DIALOG_HOOK_URL
     - npm ci
     - NODE_ENV=production npm run build
 
@@ -48,8 +48,8 @@ docker build:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "👉🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) docker image build started."}' \
-      $dialogHookUrl
+      --data "{\"text\": \"👉🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) docker image build started.\"}" \
+      $DIALOG_HOOK_URL
     - source variables
     - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
     - docker build -t "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" .
@@ -58,8 +58,8 @@ docker build:
     - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "👌🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) docker image build finished."}' \
-      $dialogHookUrl
+      --data "{\"text\": \"👌🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) docker image build finished.\"} \
+      $DIALOG_HOOK_URL
 
   dependencies:
     - version
@@ -75,8 +75,8 @@ staging:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "👉🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) deploy to staging started."}' \
-      $dialogHookUrl
+      --data "{\"text\": \"👉🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) deploy to staging started.\"}" \
+      $DIALOG_HOOK_URL
     - source variables
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
@@ -85,8 +85,8 @@ staging:
     - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "🤟🏾 ${CI_PROJECT_NAME} [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) deploy successfuly."}' \
-      $dialogHookUrl
+      --data "{\"text\": \"🤟🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) deploy successfuly.\"}" \
+      $DIALOG_HOOK_URL
   dependencies:
     - version
   only:
@@ -98,8 +98,8 @@ notify_build_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "🖕🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) build failed."}' \
-      $dialogHookUrl
+      --data "{\"text": \"🖕🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) build failed.\"}" \
+      $DIALOG_HOOK_URL
 
 notify_docker_fail:
   stage: docker
@@ -107,8 +107,8 @@ notify_docker_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "🖕🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) docker image build failed."}' \
-      $dialogHookUrl
+      --data "{\"text\": \"🖕🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) docker image build failed.\"}" \
+      $DIALOG_HOOK_URL
 
 notify_staging_fail:
   stage: deploy
@@ -116,5 +116,5 @@ notify_staging_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "🖕🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) deploy failed."}' \
-      $dialogHookUrl
+      --data "{\"text\": \"🖕🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) deploy failed.\"}" \
+      $DIALOG_HOOK_URL
