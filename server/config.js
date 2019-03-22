@@ -7,24 +7,30 @@ const isProduction = process.env['NODE_ENV'] === 'production';
 module.exports = {
   isProduction,
   dialog: {
-    url: env(
-      'DIALOG_URL',
-      'https://http.dlg.im/v1/webhooks/1c7648f8db2f20354c8299e24da1bd3aef8dc6c57ceaea6cca4c2429071b8a2b',
+    webhook: env(
+      'DIALOG_WEBHOOK',
+      'https://ee.dlg.im/v1/webhooks/d6a644b7e6a0bb5831b0c0c85830200f376d8ba717c6aa299225648a1d32929c',
     ),
   },
   email_to: env('EMAIL_TO', 'info@dlg.im'),
   email: {
-    host: 'smtp.gmail.com',
-    port: 465,
+    host: env('EMAIL_HOST', 'smtp.gmail.com'),
+    port: env('EMAIL_PORT', 465),
     secure: true,
     auth: {
       user: env('EMAIL_USER', 'bot@dlg.im'),
       pass: env('EMAIL_PASSWORD', 'zUebiL&WRJRcJWJhwfPj2YgJ'),
     },
   },
-  listen: {
-    port: env('PORT', 3000),
-    host: env('HOST', '127.0.0.1'),
+  server: {
+    dev: {
+      port: 3010,
+      host: '127.0.0.1',
+    },
+    production: {
+      port: env('PORT', 3000),
+      host: env('HOST', '127.0.0.1'),
+    },
   },
   ghost: {
     endpoint: env('GHOST_ENDPOINT', 'https://dialog-2.ghost.io'),

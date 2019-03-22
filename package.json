@@ -6,9 +6,9 @@
   "private": "true",
   "scripts": {
     "server": "node server/server",
-    "start": "gatsby develop",
-    "format": "prettier --write \"src/**/*.{js,json,css,yml}\"",
-    "build": "gatsby build"
+    "start": "gatsby develop & npm run server",
+    "build": "cross-env NODE_ENV=production gatsby build",
+    "format": "prettier --write \"src/**/*.{js,json,css,yml}\""
   },
   "author": "",
   "license": "MIT",

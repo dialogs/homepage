@@ -1,9 +1,12 @@
-const { ghost } = require('./server/config');
+const { isProduction, ghost } = require('./server/config');
 
 module.exports = {
-  siteMetadata: {
-    title: `Title from siteMetadata`,
-  },
+  proxy: !isProduction
+    ? {
+        prefix: '/api/v1',
+        url: 'http://127.0.0.1:3010',
+      }
+    : undefined,
   plugins: [
     {
       resolve: 'gatsby-plugin-express',
