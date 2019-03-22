@@ -19,6 +19,7 @@ stages:
   - build
   - docker
   - deploy
+  - notify
 
 version:
   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
@@ -99,7 +100,7 @@ staging:
     - develop
 
 notify_build_fail:
-  stage: build
+  stage: docker
   when: on_failure
   script:
     - |
@@ -108,7 +109,7 @@ notify_build_fail:
       $DIALOG_HOOK_URL
 
 notify_docker_fail:
-  stage: docker
+  stage: deploy
   when: on_failure
   script:
     - |
@@ -117,7 +118,7 @@ notify_docker_fail:
       $DIALOG_HOOK_URL
 
 notify_staging_fail:
-  stage: deploy
+  stage: notify
   when: on_failure
   script:
     - |
