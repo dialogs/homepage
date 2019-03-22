@@ -1,53 +1,18 @@
 import React from 'react';
-import UAParser from 'ua-parser-js';
 
 import { Section } from '../Section/Section';
-
-function getOS(o) {
-  const userAgent = new UAParser(navigator.userAgent);
-  const os = userAgent.getOS();
-
-  switch (os.name) {
-    case 'Mint':
-    case 'Mageia':
-    case 'VectorLinux':
-    case 'Joli':
-    case 'Ubuntu':
-    case 'Debian':
-    case 'SUSE':
-    case 'Gentoo':
-    case 'Arch':
-    case 'Slackware':
-    case 'Fedora':
-    case 'Mandriva':
-    case 'CentOS':
-    case 'PCLinuxOS':
-    case 'RedHat':
-    case 'Zenwalk':
-    case 'Linpus':
-    case 'Linux':
-    case 'Hurd':
-      return 'Linux';
-
-    case 'Mac OS':
-      return 'macOS';
-
-    case 'Windows':
-    default:
-      return 'Windows';
-  }
-}
+import { getOS } from '../../utils/getOS';
 
 export function DownloadDesktop() {
   const os = getOS();
-  console.log(os);
+  console.log({ os });
 
   function renderDownloadDesktopButton() {
     switch (os) {
       case 'macOS':
         return (
           <a className="button button--default" href="<%=links.osx %>">
-            Скачать для Windows
+            Скачать для MacOS
           </a>
         );
 
@@ -67,7 +32,7 @@ export function DownloadDesktop() {
       default:
         return (
           <a className="button button--default" href="<%=links.osx %>">
-            Скачать для MacOS
+            Скачать для Windows
           </a>
         );
     }
