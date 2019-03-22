@@ -36,21 +36,24 @@ build:
   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
   stage: build
   script:
+    - source variables
     - |
       curl --header 'Content-Type: application/json' --request POST \
       --data "{\"text\": \"👉🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) build started.\"}" \
       $DIALOG_HOOK_URL
     - npm ci
     - NODE_ENV=production npm run build
+  dependencies:
+    - version
 
 docker build:
   stage: docker
   script:
+    - source variables
     - |
       curl --header 'Content-Type: application/json' --request POST \
       --data "{\"text\": \"👉🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) docker image build started.\"}" \
       $DIALOG_HOOK_URL
-    - source variables
     - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
     - docker build -t "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" .
     - docker tag "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" "${REGISTRY}"/"${IMAGE_NAME}":latest
@@ -60,7 +63,6 @@ docker build:
       curl --header 'Content-Type: application/json' --request POST \
       --data "{\"text\": \"👌🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) docker image build finished.\"} \
       $DIALOG_HOOK_URL
-
   dependencies:
     - version
     - build
@@ -73,11 +75,11 @@ staging:
   cache: {}
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
+    - source variables
     - |
       curl --header 'Content-Type: application/json' --request POST \
       --data "{\"text\": \"👉🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) deploy to staging started.\"}" \
       $DIALOG_HOOK_URL
-    - source variables
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
     - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
