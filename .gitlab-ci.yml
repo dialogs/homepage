@@ -29,6 +29,10 @@ version:
     - image_version="$version.${BUILD_NUMBER}"
     - echo $image_version
     - echo "export IMAGE_VERSION=$image_version" > variables
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}* build started.\"}" \
+      $DIALOG_HOOK_URL
   artifacts:
     paths:
       - variables
@@ -38,15 +42,11 @@ build:
   stage: build
   script:
     - source variables
-    - |
-      curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 Homepage *${BUILD_NUMBER}* build started.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
-      $DIALOG_HOOK_URL
     - npm ci
     - npm run build
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👌🏾 Homepage *${BUILD_NUMBER}* build finished.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}* application build finished.\"}" \
       $DIALOG_HOOK_URL
   dependencies:
     - version
@@ -55,10 +55,6 @@ docker build:
   stage: docker
   script:
     - source variables
-    - |
-      curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 Homepage *${BUILD_NUMBER}* docker build started.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
-      $DIALOG_HOOK_URL
     - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
     - docker build -t "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" .
     - docker tag "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" "${REGISTRY}"/"${IMAGE_NAME}":latest
@@ -66,7 +62,7 @@ docker build:
     - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👌🏾 Homepage *${BUILD_NUMBER}* docker image build finished.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}* docker image build finished.\"}" \
       $DIALOG_HOOK_URL
   dependencies:
     - version
@@ -83,7 +79,7 @@ staging:
     - source variables
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 Homepage *${BUILD_NUMBER}* deploy to staging started.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}* deploy started.\"}" \
       $DIALOG_HOOK_URL
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
@@ -92,21 +88,12 @@ staging:
     - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🤟🏾 Homepage *${BUILD_NUMBER}* deploy successfuly.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      --data "{\"text\": \"🤟🏾 Homepage build *#${BUILD_NUMBER}* deploy successfuly.\"}" \
       $DIALOG_HOOK_URL
   dependencies:
     - version
   only:
     - develop
-
-notify_build_fail:
-  stage: docker
-  when: on_failure
-  script:
-    - |
-      curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🖕🏾 Homepage *${BUILD_NUMBER}* build failed.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Pipeline info](${CI_PIPELINE_URL})\"}" \
-      $DIALOG_HOOK_URL
 
 notify_docker_fail:
   stage: deploy
@@ -114,7 +101,7 @@ notify_docker_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🖕🏾 Homepage *${BUILD_NUMBER}* docker image build failed.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Pipeline info](${CI_PIPELINE_URL})\"}" \
+      --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}* docker image build failed.\"}" \
       $DIALOG_HOOK_URL
 
 notify_staging_fail:
@@ -123,5 +110,5 @@ notify_staging_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🖕🏾 Homepage *${BUILD_NUMBER}* deploy failed.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Pipeline info](${CI_PIPELINE_URL})\"}" \
+      --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}* deploy failed.\"}" \
       $DIALOG_HOOK_URL
