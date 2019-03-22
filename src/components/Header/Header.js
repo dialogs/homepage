@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import { Container } from '../Container/Container';
 import { Modal } from '../Modal/Modal';
+import { FormOffer } from '../FormOffer/FormOffer';
 
 export function Header() {
   let [isModalOpen, setModalOpen] = useState(false);
@@ -10,6 +11,7 @@ export function Header() {
   function handleModalOpen() {
     setModalOpen(true);
   }
+
   function handleModalClose() {
     setModalOpen(false);
   }
@@ -73,7 +75,11 @@ export function Header() {
         </div>
       </Container>
 
-      {isModalOpen && <Modal onClose={handleModalClose} />}
+      {isModalOpen && (
+        <Modal onClose={handleModalClose}>
+          <FormOffer />
+        </Modal>
+      )}
     </header>
   );
 }

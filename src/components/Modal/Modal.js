@@ -1,15 +1,18 @@
 import React from 'react';
 
 import { Heading } from '../Heading/Heading';
-import { FormOffer } from '../FormOffer/FormOffer';
 
 import './Modal.css';
 
-export function Modal({ onClose }) {
+export function Modal({ onClose, children }) {
+  function handleModalClick(event) {
+    event.stopPropagation();
+  }
+
   return (
     <section className="modal">
       <div className="modal__overlay" onClick={onClose}>
-        <div className="modal__window">
+        <div className="modal__window" onClick={handleModalClick}>
           <div className="modal__window__header">
             <Heading>Получить предложение</Heading>
             <img
@@ -19,9 +22,7 @@ export function Modal({ onClose }) {
               onClick={onClose}
             />
           </div>
-          <div className="modal__window__body">
-            <FormOffer />
-          </div>
+          <div className="modal__window__body">{children}</div>
         </div>
       </div>
     </section>
