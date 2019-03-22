@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 
 import { PageHeader } from '../PageHeader/PageHeader';

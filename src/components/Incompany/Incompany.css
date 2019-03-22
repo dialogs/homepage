@@ -1,0 +1,41 @@
+.incompany {
+  &__title {
+    padding-right: 100px;
+  }
+  &__subtitle {
+    padding-right: 100px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+  }
+
+  &__wrapper {
+    position: relative;
+    min-height: 500px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 80px 0;
+  }
+
+  &__tabs {
+    flex: 0 0 auto;
+  }
+
+  &__box {
+    flex: 0 0 600px;
+  }
+
+  &__content {
+    &__title {
+      display: none;
+    }
+
+    &__body {
+      &__image {
+        height: 100px;
+      }
+    }
+  }
+}
