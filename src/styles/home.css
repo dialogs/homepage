@@ -29,28 +29,28 @@
   }
 
   &__intro {
-    position: relative;
+    /*position: relative;*/
 
     &:before {
-      content: '';
-      position: absolute;
+      /*content: '';
+      position: absolute;*/
       /* top depends on header's height */
-      top: -60px;
+      /*top: -60px;
       left: calc(-1 * var(--margin-container-side) * 3);
       right: calc(-1 * var(--margin-container-side));
       bottom: 24%;
       background: var(--color-primary);
-      z-index: -1;
+      z-index: -1;*/
 
-      @media (--tablet-viewport) {
+      /*@media (--tablet-viewport) {
         top: -88px;
         right: calc(50% - var(--padding-side-columns) * 2);
         bottom: 0;
-      }
+      }*/
 
-      @media (--tablet-landscape-viewport) {
+      /*@media (--tablet-landscape-viewport) {
         top: -100px;
-      }
+      }*/
 
       @media (--laptop-viewport) {
         top: -140px;
