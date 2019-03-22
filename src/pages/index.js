@@ -58,7 +58,7 @@ export default () => {
         </div>
       </section>
 
-      <div className="home__section business">
+      <section className="section business">
         <div className="business__cols">
           <div className="business__info">
             <div className="business__info-title">
@@ -98,7 +98,7 @@ export default () => {
             />
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="home__section offer">
         <h3 className="offer-title">Получить предложение</h3>

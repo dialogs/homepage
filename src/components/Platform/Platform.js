@@ -19,32 +19,32 @@ export function Platform({ className }) {
             <div className="platform__content__title">Мессенджер</div>
             <div className="platform__content__icons">
               <PlatformIcon
-                column="three"
+                type="messenger"
                 image="/images/home/platform/icon-1-1.svg"
                 text="Личные и групповые чаты"
               />
               <PlatformIcon
-                column="three"
+                type="messenger"
                 image="/images/home/platform/icon-1-2.svg"
                 text="Бесплатные аудио/видеозвонки"
               />
               <PlatformIcon
-                column="three"
+                type="messenger"
                 image="/images/home/platform/icon-1-3.svg"
                 text="Обмен файлами без ограничений"
               />
               <PlatformIcon
-                column="three"
+                type="messenger"
                 image="/images/home/platform/icon-1-4.svg"
                 text="Каналы для оповещений"
               />
               <PlatformIcon
-                column="three"
+                type="messenger"
                 image="/images/home/platform/icon-1-5.svg"
                 text="Голосовые сообщения"
               />
               <PlatformIcon
-                column="three"
+                type="messenger"
                 image="/images/home/platform/icon-1-6.svg"
                 text="Эмодзи и стикеры"
               />
@@ -77,27 +77,27 @@ export function Platform({ className }) {
             </div>
             <div className="platform__content__icons">
               <PlatformIcon
-                column="two"
+                type="functions"
                 image="/images/home/platform/icon-2-1.svg"
                 text="Интеллектуальные чат-боты"
               />
               <PlatformIcon
-                column="two"
+                type="functions"
                 image="/images/home/platform/icon-2-2.svg"
                 text="Интеграция с Active Directory (AD/LDAP)"
               />
               <PlatformIcon
-                column="two"
+                type="functions"
                 image="/images/home/platform/icon-2-3.svg"
                 text="Панель администратора"
               />
               <PlatformIcon
-                column="two"
+                type="functions"
                 image="/images/home/platform/icon-1-7.svg"
                 text="Демонстрация экрана"
               />
               <PlatformIcon
-                column="two"
+                type="functions"
                 image="/images/home/platform/icon-2-3.svg"
                 text="Комплекс мер безопасности для защищенного общения"
               />
@@ -116,23 +116,23 @@ export function Platform({ className }) {
             <div className="platform__content__title">Интеграции</div>
             <div className="platform__content__icons">
               <PlatformIcon
-                column="one"
+                type="integrations"
                 image="/images/home/platform/icon-3-1.svg"
                 text="dialog API для интеграции со сторонними приложениями"
               />
               <PlatformIcon
-                column="one"
+                type="integrations"
                 image="/images/home/platform/icon-3-2.svg"
                 text="Bot SDK (Software Development Kit) для создания собственных ботов"
               />
               <PlatformIcon
-                column="one"
+                type="integrations"
                 image="/images/home/platform/icon-3-3.svg"
                 text="Возможность изменить фирменный стиль интерфейса dialog в соответствии с гайдлайнами бренда заказчика"
               />
             </div>
             <img
-              className="platform__content__image"
+              className="platform__content__image platform__content__image--integrations"
               src="/images/home/platform/platform-integrations-export.png"
               srcSet="/images/home/platform/platform-integrations-export@2x.png 2x"
               alt="Корпоративные функции"
