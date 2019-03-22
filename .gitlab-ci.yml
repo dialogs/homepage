@@ -38,7 +38,7 @@ build:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) build started.\"}" \
+      --data "{\"text\": \"👉🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) build started.\"}" \
       $DIALOG_HOOK_URL
     - npm ci
     - NODE_ENV=production npm run build
@@ -48,7 +48,7 @@ docker build:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) docker image build started.\"}" \
+      --data "{\"text\": \"👉🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) docker image build started.\"}" \
       $DIALOG_HOOK_URL
     - source variables
     - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
@@ -58,7 +58,7 @@ docker build:
     - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👌🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) docker image build finished.\"} \
+      --data "{\"text\": \"👌🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) docker image build finished.\"} \
       $DIALOG_HOOK_URL
 
   dependencies:
@@ -75,7 +75,7 @@ staging:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) deploy to staging started.\"}" \
+      --data "{\"text\": \"👉🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) deploy to staging started.\"}" \
       $DIALOG_HOOK_URL
     - source variables
     - eval `ssh-agent`
@@ -85,7 +85,7 @@ staging:
     - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🤟🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) deploy successfuly.\"}" \
+      --data "{\"text\": \"🤟🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) deploy successfuly.\"}" \
       $DIALOG_HOOK_URL
   dependencies:
     - version
@@ -98,7 +98,7 @@ notify_build_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text": \"🖕🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) build failed.\"}" \
+      --data "{\"text": \"🖕🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) build failed.\"}" \
       $DIALOG_HOOK_URL
 
 notify_docker_fail:
@@ -107,7 +107,7 @@ notify_docker_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🖕🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) docker image build failed.\"}" \
+      --data "{\"text\": \"🖕🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) docker image build failed.\"}" \
       $DIALOG_HOOK_URL
 
 notify_staging_fail:
@@ -116,5 +116,5 @@ notify_staging_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🖕🏾 [${BUILD_NUMBER}](${CIRCLE_BUILD_URL}) deploy failed.\"}" \
+      --data "{\"text\": \"🖕🏾 [${IMAGE_VERSION}](${CI_PIPELINE_URL}) deploy failed.\"}" \
       $DIALOG_HOOK_URL
