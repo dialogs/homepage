@@ -38,21 +38,10 @@ build:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "👉🏾 $CI_PROJECT_NAME [$BUILD_NUMBER]($CIRCLE_BUILD_URL) build started."}' \
+      --data '{"text": "👉🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) build started."}' \
       $dialogHookUrl
     - npm ci
     - NODE_ENV=production npm run build
-
-notify_build_fail:
-  stage:
-    - build
-    - docker
-  when: on_failure
-  script:
-    - |
-      curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "🖕🏾 $CI_PROJECT_NAME [$BUILD_NUMBER]($CIRCLE_BUILD_URL) build failed."}' \
-      $dialogHookUrl
 
 docker build:
   stage: docker
@@ -65,7 +54,7 @@ docker build:
     - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data '{"text": "👌🏾 $CI_PROJECT_NAME [$BUILD_NUMBER]($CIRCLE_BUILD_URL) build finished."}' \
+      --data '{"text": "👌🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) build finished."}' \
       $dialogHookUrl
 
   dependencies:
@@ -80,6 +69,10 @@ staging:
   cache: {}
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data '{"text": "👉🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) deploy to staging started."}' \
+      $dialogHookUrl
     - source variables
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
@@ -94,3 +87,30 @@ staging:
     - version
   only:
     - develop
+
+notify_build_fail:
+  stage: build
+  when: on_failure
+  script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data '{"text": "🖕🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) build failed."}' \
+      $dialogHookUrl
+
+notify_docker_fail:
+  stage: docker
+  when: on_failure
+  script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data '{"text": "🖕🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) docker build failed."}' \
+      $dialogHookUrl
+
+notify_staging_fail:
+  stage: deploy
+  when: on_failure
+  script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data '{"text": "🖕🏾 $CI_PROJECT_NAME [$IMAGE_VERSION]($CIRCLE_BUILD_URL) deploy failed."}' \
+      $dialogHookUrl
