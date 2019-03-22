@@ -8,7 +8,7 @@ import { Subscribe } from '../Subscribe/Subscribe';
 import './BlogPost.css';
 
 export default ({ data: { post, recommended } }) => {
-  console.log({ post, recommended });
+  // console.log({ post, recommended });
 
   return (
     <Container className="blog_post">

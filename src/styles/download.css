@@ -158,6 +158,18 @@
     }
 
     &-button-box {
+      display: flex;
+      flex-flow: column nowrap;
+
+      & .button {
+        flex: 0 0 auto;
+        margin-bottom: 16px;
+        max-width: 320px;
+
+        @media (--mobile-viewport) {
+          width: auto;
+        }
+      }
     }
 
     &-systems {
@@ -169,21 +181,28 @@
       position: relative;
       display: inline-block;
       font-size: 14px;
+      line-height: 20px;
+      padding-left: 23px;
+      margin-left: 20px;
 
-      & + & {
-        padding-left: 23px;
-        margin-left: 20px;
-      }
-
-      & + &:before {
+      &:before {
         content: '';
         position: absolute;
         left: 0;
-        bottom: 30%;
-        width: 3px;
-        height: 3px;
+        top: 9px;
+        width: 4px;
+        height: 4px;
         border-radius: 50%;
         background: var(--text-color-main);
+      }
+
+      &:first-child {
+        padding-left: 0;
+        margin-left: 0;
+
+        &:before {
+          display: none;
+        }
       }
     }
   }

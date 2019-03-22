@@ -1,3 +1,4 @@
 node_modules/
 public/
 .cache/
+server/gatsby-express.json

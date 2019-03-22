@@ -1,4 +1,6 @@
 .incompany {
+  padding-top: 0;
+
   &__title {
     padding-right: 100px;
   }

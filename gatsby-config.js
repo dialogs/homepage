@@ -1,3 +1,5 @@
+const { ghost } = require('./server/config');
+
 module.exports = {
   siteMetadata: {
     title: `Title from siteMetadata`,
@@ -32,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-source-ghost`,
       options: {
-        apiUrl: `https://dialog-2.ghost.io`,
-        contentApiKey: `eae4004a845dbabe44a0283afd`,
+        apiUrl: ghost.endpoint,
+        contentApiKey: ghost.apiKey,
       },
     },
   ],
