@@ -31,18 +31,6 @@
   &__intro {
     position: relative;
 
-    @media (--tablet-viewport) {
-      padding-bottom: 45px;
-    }
-
-    @media (--tablet-landscape-viewport) {
-      padding-bottom: 50px;
-    }
-
-    @media (--laptop-viewport) {
-      padding-bottom: 60px;
-    }
-
     &:before {
       content: '';
       position: absolute;

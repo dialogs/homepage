@@ -1,10 +1,13 @@
 @import '../../styles/variables.css';
 
 .safety {
-  margin-top: 40px;
-  padding-bottom: 140px;
-  margin-bottom: 40px;
   position: relative;
+  padding-bottom: 30px;
+
+  @media (--tablet-viewport) {
+    margin-top: 40px;
+    padding-bottom: 30px;
+  }
 
   @media (--tablet-landscape-viewport) {
     padding-top: 60px;
@@ -18,6 +21,10 @@
     margin-right: calc(-1 * var(--margin-container-side) / 2);
     padding-left: calc(var(--margin-container-side) / 2);
     padding-right: calc(var(--margin-container-side) / 2);
+  }
+
+  @media (--desktop-viewport) {
+    padding-bottom: 110px;
   }
 
   &:before,
@@ -75,15 +82,18 @@
     }
 
     @media (--tablet-landscape-viewport) {
-      height: 160px;
-      height: 15.4%;
+      height: 13%;
     }
 
     @media (--laptop-viewport) {
       height: 75%;
       top: auto;
-      bottom: -13%;
+      bottom: -15%;
       right: calc(-1 * var(--margin-container-side) / 2);
+    }
+
+    @media (--desktop-viewport) {
+      bottom: -11.2%;
     }
   }
 

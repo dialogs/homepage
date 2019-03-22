@@ -7,7 +7,7 @@ import './Safety.css';
 
 export function Safety() {
   return (
-    <Section className="home__section safety">
+    <Section className="safety">
       <h3 className="safety-title">Безопасность и соответствие требованиям</h3>
 
       <div className="safety-item safety-communication">
