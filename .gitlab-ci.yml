@@ -2,29 +2,24 @@ services:
   - docker:dind
 
 variables:
-  GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+  GIT_SSH_COMMAND: 'ssh -o StrictHostKeyChecking=no'
   GIT_STRATEGY: clone
   IMAGE_NAME: dlgim/$CI_PROJECT_NAME
-  BUILD_NUMBER: "${CI_PIPELINE_IID}"
+  BUILD_NUMBER: '${CI_PIPELINE_IID}'
 
 cache:
-  key: "${CI_COMMIT_SHA}"
+  key: '${CI_COMMIT_SHA}'
   paths:
     - ./node_modules
     - ./src
+    - ./public
 
 stages:
-  - build
   - version
+  - build
   - docker
   - deploy
-
-build:
-  image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
-  stage: build
-  script:
-    - npm install
-    - NODE_ENV=production npm run build
+  - notify
 
 version:
   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
@@ -38,19 +33,45 @@ version:
     paths:
       - variables
 
+build:
+  image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
+  stage: build
+  script:
+    - source variables
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👉🏾 Homepage *${BUILD_NUMBER}* build started.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      $DIALOG_HOOK_URL
+    - npm ci
+    - npm run build
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👌🏾 Homepage *${BUILD_NUMBER}* build finished.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      $DIALOG_HOOK_URL
+  dependencies:
+    - version
+
 docker build:
   stage: docker
   script:
     - source variables
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👉🏾 Homepage *${BUILD_NUMBER}* docker build started.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      $DIALOG_HOOK_URL
     - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
     - docker build -t "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" .
     - docker tag "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" "${REGISTRY}"/"${IMAGE_NAME}":latest
     - docker push "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}"
     - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👌🏾 Homepage *${BUILD_NUMBER}* docker image build finished.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      $DIALOG_HOOK_URL
   dependencies:
-    - build
     - version
-    
+    - build
+
 staging:
   stage: deploy
   environment:
@@ -60,13 +81,47 @@ staging:
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
     - source variables
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👉🏾 Homepage *${BUILD_NUMBER}* deploy to staging started.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      $DIALOG_HOOK_URL
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
     - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
     - cd homepage && ansible-galaxy install -r requirements.yml
     - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"🤟🏾 Homepage *${BUILD_NUMBER}* deploy successfuly.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Job info](${CI_JOB_URL})\"}" \
+      $DIALOG_HOOK_URL
   dependencies:
     - version
   only:
     - develop
 
+notify_build_fail:
+  stage: docker
+  when: on_failure
+  script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"🖕🏾 Homepage *${BUILD_NUMBER}* build failed.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Pipeline info](${CI_PIPELINE_URL})\"}" \
+      $DIALOG_HOOK_URL
+
+notify_docker_fail:
+  stage: deploy
+  when: on_failure
+  script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"🖕🏾 Homepage *${BUILD_NUMBER}* docker image build failed.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Pipeline info](${CI_PIPELINE_URL})\"}" \
+      $DIALOG_HOOK_URL
+
+notify_staging_fail:
+  stage: notify
+  when: on_failure
+  script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"🖕🏾 Homepage *${BUILD_NUMBER}* deploy failed.\nBranch: [${CI_COMMIT_REF_NAME}](${CI_PROJECT_URL})\n[Pipeline info](${CI_PIPELINE_URL})\"}" \
+      $DIALOG_HOOK_URL
