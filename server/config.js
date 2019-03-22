@@ -27,7 +27,7 @@ module.exports = {
     host: env('HOST', '127.0.0.1'),
   },
   ghost: {
-    endpoint: env('https://dialog-2.ghost.io'),
+    endpoint: env('GHOST_ENDPOINT', 'https://dialog-2.ghost.io'),
     apiKey: env('GHOST_API_KEY', 'eae4004a845dbabe44a0283afd'),
   },
 };
