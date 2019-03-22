@@ -1,16 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import { Container } from '../components/Container/Container';
 import { Section } from '../components/Section/Section';
-import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Heading } from '../components/Heading/Heading';
 import { Hero } from '../components/Hero/Hero';
 import { Platform } from '../components/Platform/Platform';
 import { Safety } from '../components/Safety/Safety';
 import { Incompany } from '../components/Incompany/Incompany';
 import { FormOffer } from '../components/FormOffer/FormOffer';
-// import { Tabs, Tab } from '../components/Tabs/Tabs';
 
 export default () => {
   return (

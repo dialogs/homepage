@@ -1,9 +1,9 @@
 import React from 'react';
-import classnames from 'classnames';
 
-import './Modal.css';
 import { Heading } from '../Heading/Heading';
 import { FormOffer } from '../FormOffer/FormOffer';
+
+import './Modal.css';
 
 export function Modal({ onClose }) {
   return (

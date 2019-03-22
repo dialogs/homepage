@@ -28,14 +28,13 @@ function getOS(o) {
     case 'Linux':
     case 'Hurd':
       return 'Linux';
-      break;
+
     case 'Mac OS':
       return 'macOS';
-      break;
+
     case 'Windows':
     default:
       return 'Windows';
-      break;
   }
 }
 
@@ -45,7 +44,7 @@ export function DownloadDesktop() {
 
   function renderDownloadDesktopButton() {
     switch (os) {
-      case 'Mac OS':
+      case 'macOS':
         return (
           <a className="button button--default" href="<%=links.osx %>">
             Скачать для Windows
@@ -91,7 +90,7 @@ export function DownloadDesktop() {
         {renderDownloadDesktopButton()}
       </div>
       <div className="download__desktop-systems">
-        {os !== 'Mac OS' && (
+        {os !== 'macOS' && (
           <div className="download__desktop-system">
             <a className="download__item-link" href="<%=links.osc %>">
               Mac OS

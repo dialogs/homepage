@@ -104,7 +104,7 @@ export default () => {
             <div className="about__contacts-title">Контакты</div>
             <div className="about__contacts-items">
               <div className="about__contacts-item about__contacts-item--email">
-                <a href="#" className="link--default">
+                <a href="/404" className="link--default">
                   info@dlg.im
                 </a>
               </div>
@@ -119,7 +119,7 @@ export default () => {
                   121170, ул. Поклонная 3к2, 11 этаж
                 </div>
                 <div className="about__contacts-map-link">
-                  <a href="#" className="link--default">
+                  <a href="/404" className="link--default">
                     На карте
                   </a>
                 </div>
@@ -130,7 +130,7 @@ export default () => {
                   630090, ул. Николаева 11, оф. 311
                 </div>
                 <div className="about__contacts-map-link">
-                  <a href="#" className="link--default">
+                  <a href="/404" className="link--default">
                     На карте
                   </a>
                 </div>

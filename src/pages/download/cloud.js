@@ -15,7 +15,7 @@ export default () => {
           <div className="download__intro-text">
             Вы можете ознакомиться с функциями платформы в нашем
             демо-приложении.{' '}
-            <a className="link--default triggerModalWindow" href="#">
+            <a className="link--default triggerModalWindow" href="/404">
               Оставьте заявку
             </a>
             , чтобы получить информацию о подключении платформы.
@@ -39,7 +39,7 @@ export default () => {
                 />
               </div>
               <div className="download__mobile-link-box">
-                <a className="download__item-link" href="#">
+                <a className="download__item-link" href="/404">
                   iPhone / iPad
                 </a>
               </div>
@@ -61,7 +61,7 @@ export default () => {
                 />
               </div>
               <div className="download__mobile-link-box">
-                <a className="download__item-link" href="#">
+                <a className="download__item-link" href="/404">
                   Android
                 </a>
               </div>

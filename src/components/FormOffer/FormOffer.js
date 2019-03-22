@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Section } from '../Section/Section';
-
 import './FormOffer.css';
 
 export function FormOffer() {

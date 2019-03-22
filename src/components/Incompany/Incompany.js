@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';

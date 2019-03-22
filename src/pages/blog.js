@@ -18,7 +18,7 @@ export default ({ data: { posts } }, pageContext) => {
           </div>
           <div className="blog__main-date"> 12 сентября 2018 </div>
           <div className="blog__main-title">
-            <a href="#">Какой ущерб могут нанести массовые мессенджеры</a>
+            <a href="/404">Какой ущерб могут нанести массовые мессенджеры</a>
           </div>
           <div className="blog__main-short">
             Созданные ускорять принятие решений в компании, повышать
@@ -43,7 +43,7 @@ export default ({ data: { posts } }, pageContext) => {
                 <div className="blog__popular-info">
                   <div className="blog__popular-date"> 15 августа 2018 </div>
                   <div className="blog__popular-item-title">
-                    <a href="#" className="blog__popular-item-title-link">
+                    <a href="/404" className="blog__popular-item-title-link">
                       Поколение Х, миллениалы, беби - бумеры: как люди разных
                       поколений используют мессенджер в работе
                     </a>
@@ -60,7 +60,7 @@ export default ({ data: { posts } }, pageContext) => {
                 <div className="blog__popular-info">
                   <div className="blog__popular-date"> 23 сентября 2018 </div>
                   <div className="blog__popular-item-title">
-                    <a href="#" className="blog__popular-item-title-link">
+                    <a href="/404" className="blog__popular-item-title-link">
                       12 правил делового общения в мессенджерах
                     </a>
                   </div>
@@ -75,7 +75,7 @@ export default ({ data: { posts } }, pageContext) => {
                 <div className="blog__popular-info">
                   <div className="blog__popular-date"> 2 марта 2019 </div>
                   <div className="blog__popular-item-title">
-                    <a href="#" className="blog__popular-item-title-link">
+                    <a href="/404" className="blog__popular-item-title-link">
                       Статья блога с текущего сайта с изображением оттуда
                     </a>
                   </div>

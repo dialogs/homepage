@@ -22,35 +22,51 @@ export default () => {
           <div data-tab="messenger" className="features__content__block">
             <div className="feature_block">
               <div className="feature_block__links">
-                <a data-slide="calls" href="#" className="feature_block__link">
+                <a
+                  data-slide="calls"
+                  href="/404"
+                  className="feature_block__link"
+                >
                   Аудио/Видеовызовы
                 </a>
-                <a data-slide="files" href="#" className="feature_block__link">
+                <a
+                  data-slide="files"
+                  href="/404"
+                  className="feature_block__link"
+                >
                   Обмен файлами любого типа
                 </a>
-                <a data-slide="chats" href="#" className="feature_block__link">
+                <a
+                  data-slide="chats"
+                  href="/404"
+                  className="feature_block__link"
+                >
                   Личные и групповые чаты
                 </a>
-                <a data-slide="audio" href="#" className="feature_block__link">
+                <a
+                  data-slide="audio"
+                  href="/404"
+                  className="feature_block__link"
+                >
                   Аудио-сообщения
                 </a>
                 <a
                   data-slide="channels"
-                  href="#"
+                  href="/404"
                   className="feature_block__link"
                 >
                   Каналы
                 </a>
                 <a
                   data-slide="sharing"
-                  href="#"
+                  href="/404"
                   className="feature_block__link"
                 >
                   Демонстрация экрана
                 </a>
                 <a
                   data-slide="crossplatform"
-                  href="#"
+                  href="/404"
                   className="feature_block__link"
                 >
                   Работает на любой платформе
@@ -60,7 +76,7 @@ export default () => {
                 <div className="feature_block__slides__heading">Мессенджер</div>
                 <dl>
                   <dt>
-                    <a href="#">Аудио/Видеовызовы</a>
+                    <a href="/404">Аудио/Видеовызовы</a>
                   </dt>
                   <dd data-slide="calls" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -86,7 +102,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Обмен файлами любого типа</a>
+                    <a href="/404">Обмен файлами любого типа</a>
                   </dt>
                   <dd data-slide="files" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -107,7 +123,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Личные и групповые чаты</a>
+                    <a href="/404">Личные и групповые чаты</a>
                   </dt>
                   <dd data-slide="chats" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -128,7 +144,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Аудио-сообщения</a>
+                    <a href="/404">Аудио-сообщения</a>
                   </dt>
                   <dd data-slide="audio" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -147,7 +163,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Каналы</a>
+                    <a href="/404">Каналы</a>
                   </dt>
                   <dd data-slide="channels" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -165,7 +181,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Демонстрация экрана</a>
+                    <a href="/404">Демонстрация экрана</a>
                   </dt>
                   <dd data-slide="sharing" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -184,7 +200,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Работает на любой платформе</a>
+                    <a href="/404">Работает на любой платформе</a>
                   </dt>
                   <dd
                     data-slide="crossplatform"
@@ -215,19 +231,19 @@ export default () => {
               <div className="feature_block__links">
                 <a
                   data-slide="chatbots"
-                  href="#"
+                  href="/404"
                   className="feature_block__link"
                 >
                   Чатботы
                 </a>
                 <a
                   data-slide="dashboard"
-                  href="#"
+                  href="/404"
                   className="feature_block__link"
                 >
                   Панель администратора
                 </a>
-                <a data-slide="ad" href="#" className="feature_block__link">
+                <a data-slide="ad" href="/404" className="feature_block__link">
                   Active Directory (AD)
                 </a>
               </div>
@@ -237,7 +253,7 @@ export default () => {
                 </div>
                 <dl>
                   <dt>
-                    <a href="#">Чатботы</a>
+                    <a href="/404">Чатботы</a>
                   </dt>
                   <dd data-slide="chatbots" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -260,7 +276,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Панель администратора</a>
+                    <a href="/404">Панель администратора</a>
                   </dt>
                   <dd data-slide="dashboard" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -280,7 +296,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Active Directory (AD)</a>
+                    <a href="/404">Active Directory (AD)</a>
                   </dt>
                   <dd data-slide="ad" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -306,15 +322,19 @@ export default () => {
           <div data-tab="integrations" className="features__content__block">
             <div className="feature_block">
               <div className="feature_block__links">
-                <a data-slide="api" href="#" className="feature_block__link">
+                <a data-slide="api" href="/404" className="feature_block__link">
                   API Reetm
                 </a>
-                <a data-slide="botsdk" href="#" className="feature_block__link">
+                <a
+                  data-slide="botsdk"
+                  href="/404"
+                  className="feature_block__link"
+                >
                   Bot SDK
                 </a>
                 <a
                   data-slide="whitelabel"
-                  href="#"
+                  href="/404"
                   className="feature_block__link"
                 >
                   Брендинг <br />
@@ -325,7 +345,7 @@ export default () => {
                 <div className="feature_block__slides__heading">Интеграции</div>
                 <dl>
                   <dt>
-                    <a href="#">API Reetm</a>
+                    <a href="/404">API Reetm</a>
                   </dt>
                   <dd data-slide="api" className="feature_block__slide">
                     <div className="feature_block__slide__text">
@@ -344,29 +364,29 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Bot SDK</a>
+                    <a href="/404">Bot SDK</a>
                   </dt>
                   <dd data-slide="botsdk" className="feature_block__slide">
                     <div className="feature_block__slide__text">
                       <h4>Готовые средства разработки ботов для Reetm</h4>
                       <p>
-                        <a href="#" className="link--default">
+                        <a href="/404" className="link--default">
                           BOT SDK
                         </a>{' '}
                         позволяет быстро создавать собственных ботов. В
                         настоящее время SDK доступен для JS, Java и Python.
                       </p>
                       <div className="feature_block__slide__links">
-                        <a href="#" className="link--default">
+                        <a href="/404" className="link--default">
                           Python
                         </a>
-                        <a href="#" className="link--default">
+                        <a href="/404" className="link--default">
                           Java
                         </a>
-                        <a href="#" className="link--default">
+                        <a href="/404" className="link--default">
                           JavaScript
                         </a>
-                        <a href="#" className="link--default">
+                        <a href="/404" className="link--default">
                           Docs
                         </a>
                       </div>
@@ -379,7 +399,7 @@ export default () => {
                     />
                   </dd>
                   <dt>
-                    <a href="#">Брендинг компании-заказчика</a>
+                    <a href="/404">Брендинг компании-заказчика</a>
                   </dt>
                   <dd data-slide="whitelabel" className="feature_block__slide">
                     <div className="feature_block__slide__text">

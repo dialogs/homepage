@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import classnames from 'classnames';
 import removeMarkdown from 'remove-markdown';
 

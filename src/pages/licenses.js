@@ -35,8 +35,8 @@ export default () => {
               />
               <div className="license__photos-link-box">
                 <a
-                  className="link--download license__photos-link"
                   href="/images/patent-dialog-server.jpg"
+                  className="link--download license__photos-link"
                 >
                   <span className="link--download__text">Dialog server</span>
                   <img
@@ -249,7 +249,7 @@ export default () => {
           </div>
           <div className="license__partners-list">
             <div className="license__partners-item">
-              <a className="license__partners-item-link">
+              <a href="/404" className="license__partners-item-link">
                 <img
                   className="license__partners-image"
                   src="/images/partner-infotecs.svg"
@@ -258,7 +258,7 @@ export default () => {
               </a>
             </div>
             <div className="license__partners-item">
-              <a className="license__partners-item-link">
+              <a href="/404" className="license__partners-item-link">
                 <img
                   className="license__partners-image"
                   src="/images/partner-rostelecom.svg"
@@ -267,7 +267,7 @@ export default () => {
               </a>
             </div>
             <div className="license__partners-item">
-              <a className="license__partners-item-link">
+              <a href="/404" className="license__partners-item-link">
                 <img
                   className="license__partners-image"
                   src="/images/partner-norbit.svg"
@@ -276,7 +276,7 @@ export default () => {
               </a>
             </div>
             <div className="license__partners-item">
-              <a className="license__partners-item-link">
+              <a href="/404" className="license__partners-item-link">
                 <img
                   className="license__partners-image"
                   src="/images/partner-jet.svg"
@@ -285,7 +285,7 @@ export default () => {
               </a>
             </div>
             <div className="license__partners-item">
-              <a className="license__partners-item-link">
+              <a href="/404" className="license__partners-item-link">
                 <img
                   className="license__partners-image"
                   src="/images/partner-redsoft.svg"
@@ -294,7 +294,7 @@ export default () => {
               </a>
             </div>
             <div className="license__partners-item">
-              <a className="license__partners-item-link">
+              <a href="/404" className="license__partners-item-link">
                 <img
                   className="license__partners-image"
                   src="/images/partner-omp.svg"
@@ -303,7 +303,7 @@ export default () => {
               </a>
             </div>
             <div className="license__partners-item">
-              <a className="license__partners-item-link">
+              <a href="/404" className="license__partners-item-link">
                 <img
                   className="license__partners-image"
                   src="/images/partner-infowatch.svg"
@@ -313,7 +313,7 @@ export default () => {
             </div>
           </div>
           <div className="license__partners-link-box">
-            <a href="#" className="license__partners-link link--arrow">
+            <a href="/404" className="license__partners-link link--arrow">
               <span className="link--arrow__text">Партнерская программа</span>
               <img
                 src="/images/svg-icons/arrow-link.svg"

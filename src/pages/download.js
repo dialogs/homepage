@@ -69,7 +69,7 @@ export default () => (
               />
             </div>
             <div className="download__mobile-link-box">
-              <a className="download__item-link" href="#">
+              <a className="download__item-link" href="/404">
                 iPhone / iPad
               </a>
             </div>
@@ -91,7 +91,7 @@ export default () => (
               />
             </div>
             <div className="download__mobile-link-box">
-              <a className="download__item-link" href="#">
+              <a className="download__item-link" href="/404">
                 Android
               </a>
             </div>

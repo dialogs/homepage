@@ -161,6 +161,7 @@ export function Footer() {
                     <a
                       className="footer__nav-link"
                       href="https://docs.dlg.im/"
+                      rel="noopener noreferrer"
                       target="_blank"
                     >
                       Документация
