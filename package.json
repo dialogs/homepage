@@ -8,7 +8,7 @@
     "server": "node server/server",
     "start": "gatsby develop",
     "format": "prettier --write --loglevel warn \"src/**/*.{js,css}\"",
-    "build": "gatsby build"
+    "build": "cross-env NODE_ENV=production gatsby build"
   },
   "author": "",
   "license": "MIT",
