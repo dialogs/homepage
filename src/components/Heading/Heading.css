@@ -1,0 +1,32 @@
+@import '../../styles/variables.css';
+
+.heading {
+  margin: 0;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 64px;
+  padding: 40px 0;
+
+  @media (--mobile-viewport) {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  @media (--tablet-viewport) {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    font-size: 50px;
+    line-height: 52px;
+  }
+
+  @media (--laptop-viewport) {
+    font-size: 60px;
+    line-height: 64px;
+  }
+
+  @media (--desktop-viewport) {
+  }
+}

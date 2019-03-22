@@ -7,11 +7,11 @@ import { Modal } from '../Modal/Modal';
 export function Header() {
   let [isModalOpen, setModalOpen] = useState(false);
 
-  console.log('isModalOpen', isModalOpen);
-  console.log('setModalOpen', setModalOpen);
-
   function handleModalOpen() {
     setModalOpen(true);
+  }
+  function handleModalClose() {
+    setModalOpen(false);
   }
 
   return (
@@ -72,7 +72,8 @@ export function Header() {
           </div>
         </div>
       </Container>
-      {isModalOpen ? <Modal /> : null}
+
+      {isModalOpen && <Modal onClose={handleModalClose} />}
     </header>
   );
 }

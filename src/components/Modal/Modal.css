@@ -1,67 +1,50 @@
 .modal {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1000;
-	/*display: none;*/
-	display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-	&--opened {
-		display: block;
-	}
+  &__overlay {
+    background-color: color-mod(#000 alpha(75%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+  }
 
-	&__bg {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-color: rgba(0, 0, 0, 0.8);
-	}
+  &__window {
+    background-color: #fff;
+    position: relative;
 
-	&__wrapper {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-	}
+    @media (--tablet-viewport) {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-	&__window {
-		z-index: 1100;
-		max-height: 100%;
-		width: 100%;
-		overflow: auto;
+    @media (--desktop-viewport) {
+      max-width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-		&__content {
-			padding: 20px;
-			background-color: #fff;
-			margin: 20px;
-			position: relative;
+    &__close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
 
-			@media (--tablet-viewport) {
-				max-width: 80%;
-				margin-left: auto;
-				margin-right: auto;
-			}
+    &__header {
+      padding: 0 60px;
+    }
 
-			@media (--desktop-viewport) {
-				max-width: 60%;
-				margin-left: auto;
-				margin-right: auto;
-			}
-		}
-
-		&__close {
-			position: absolute;
-			right: 20px;
-			top: 20px;
-		}
-	}
+    &__body {
+      padding: 40px 60px;
+    }
+  }
 }
-
