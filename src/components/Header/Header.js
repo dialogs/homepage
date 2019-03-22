@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 
 import { Container } from '../Container/Container';
+import { Modal } from '../Modal/Modal';
 
 export function Header() {
+  let [isModalOpen, setModalOpen] = useState(false);
+
+  console.log('isModalOpen', isModalOpen);
+  console.log('setModalOpen', setModalOpen);
+
+  function handleModalOpen() {
+    setModalOpen(true);
+  }
+
   return (
     <header className="site__header">
       <Container>
@@ -49,7 +59,10 @@ export function Header() {
             </nav>
           </div>
           <div className="header__col">
-            <button className="header__button header__button--offer">
+            <button
+              className="header__button header__button--offer"
+              onClick={handleModalOpen}
+            >
               Получить предложение
             </button>
             <button className="header__button header__button--lang btn__change-lang">
@@ -59,6 +72,7 @@ export function Header() {
           </div>
         </div>
       </Container>
+      {isModalOpen ? <Modal /> : null}
     </header>
   );
 }
