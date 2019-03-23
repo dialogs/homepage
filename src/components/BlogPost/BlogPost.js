@@ -57,6 +57,11 @@ export const pageQuery = graphql`
           slug
           title
           excerpt
+          tags {
+            id
+            slug
+            name
+          }
           publishDate: published_at
           featureImage: feature_image
         }

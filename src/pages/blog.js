@@ -4,8 +4,9 @@ import { graphql } from 'gatsby';
 import { Container } from '../components/Container/Container';
 import { BlogRoster } from '../components/BlogRoster/BlogRoster';
 import { Subscribe } from '../components/Subscribe/Subscribe';
+import { BlogTags } from '../components/BlogTags/BlogTags';
 
-export default ({ data: { posts } }, pageContext) => {
+export default ({ data: { posts, tags } }, pageContext) => {
   return (
     <Container>
       <div className="blog__top-section">
@@ -86,34 +87,7 @@ export default ({ data: { posts } }, pageContext) => {
           <section className="blog__tags box-block">
             <h2 className="blog__tags-title"> Теги </h2>
             <ul className="blog__tags-list">
-              <li className="blog__tags-item">
-                <a href="blog-tag.html" className="blog__tags-link">
-                  <span className="blog__tags-name">
-                    Инновационные технологии
-                  </span>
-                  <span className="blog__tags-amount"> 421 </span>
-                </a>
-              </li>
-              <li className="blog__tags-item">
-                <a href="blog-tag.html" className="blog__tags-link">
-                  <span className="blog__tags-name"> Новости </span>
-                  <span className="blog__tags-amount"> 301 </span>
-                </a>
-              </li>
-              <li className="blog__tags-item">
-                <a href="blog-tag.html" className="blog__tags-link">
-                  <span className="blog__tags-name"> Корпорации </span>
-                  <span className="blog__tags-amount"> 244 </span>
-                </a>
-              </li>
-              <li className="blog__tags-item">
-                <a href="blog-tag.html" className="blog__tags-link">
-                  <span className="blog__tags-name">
-                    Государственный сектор
-                  </span>
-                  <span className="blog__tags-amount"> 244 </span>
-                </a>
-              </li>
+              <BlogTags tags={tags.edges} />
             </ul>
           </section>
         </div>
@@ -142,12 +116,23 @@ export const query = graphql`
           tags {
             id
             slug
+            name
           }
           authors {
             id
             slug
             name
           }
+        }
+      }
+    }
+    tags: allGhostTag(sort: { order: DESC, fields: [postCount] }) {
+      edges {
+        tag: node {
+          id
+          slug
+          name
+          postCount
         }
       }
     }

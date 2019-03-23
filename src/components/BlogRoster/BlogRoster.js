@@ -16,24 +16,28 @@ export function BlogRoster({ title, posts, limit = DEFAULT_LIMIT }) {
       <div className="blog__roster-title">{title}</div>
       <div className="blog__roster-list">
         {posts.edges.slice(0, visibleCount).map(({ post }) => {
+          console.log(post);
           return (
             <BlogPostCard
               key={post.id}
               slug={post.slug}
               title={post.title}
               excerpt={post.excerpt}
+              tags={post.tags}
               publishDate={post.publishDate}
               featureImage={post.featureImage}
             />
           );
         })}
       </div>
-      <button
-        className="button button--pale blog__button-more"
-        onClick={handleLoadMoreClick}
-      >
-        Смотреть еще
-      </button>
+      {visibleCount < posts.edges.length && (
+        <button
+          className="button button--pale blog__button-more"
+          onClick={handleLoadMoreClick}
+        >
+          Смотреть еще
+        </button>
+      )}
     </div>
   );
 }

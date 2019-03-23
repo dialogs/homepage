@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import removeMarkdown from 'remove-markdown';
 
+import { Tag } from '../Tag/Tag';
+
 export function BlogPostCard({
   title,
   slug,
@@ -9,6 +11,7 @@ export function BlogPostCard({
   publishDate,
   featureImage,
   excerpt,
+  tags,
 }) {
   return (
     <div className="blog__roster-item">
@@ -27,10 +30,13 @@ export function BlogPostCard({
         </div>
         <div className="blog__roster-name">{title}</div>
         <div className="blog__roster-short">{removeMarkdown(excerpt)}</div>
-        <div className="blog__roster-tags">
-          <span>Инновационные технологии</span>
-          <span>Новости</span>
-        </div>
+        {tags && (
+          <div className="blog__roster-tags">
+            {tags.map(({ name, id }) => (
+              <Tag key={id} name={name} />
+            ))}
+          </div>
+        )}
       </Link>
     </div>
   );
