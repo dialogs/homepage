@@ -14,6 +14,7 @@ export function Input({
   label,
   className,
   onChange,
+  rows,
 }) {
   const ref = createRef();
   const [isFocused, setIsFocused] = useState(false);
@@ -45,6 +46,7 @@ export function Input({
     setIsFocused(false);
   }
 
+  const TagName = type === 'textarea' ? 'textarea' : 'input';
   return (
     <div className={classes}>
       <div className="input__wrapper">
@@ -57,10 +59,11 @@ export function Input({
             {label}
           </label>
         )}
-        <input
+        <TagName
           type={type}
           id={id}
           ref={ref}
+          rows={rows}
           className="input__input"
           value={value}
           onChange={handleChange}
