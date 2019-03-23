@@ -32,6 +32,8 @@
       right: 0;
       width: 68%;
       height: 21%;
+      height: 25vw;
+      min-height: 118px;
       background-color: var(--color-secondary);
       background-color: #b9bbfa;
     }
@@ -45,7 +47,6 @@
       justify-content: space-between;
       padding: 12px var(--margin-container-side);
       background: var(--color-primary);
-      background: tomato;
       z-index: 5;
 
       @media (--tablet-viewport) {
