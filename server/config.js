@@ -32,9 +32,7 @@ module.exports = {
         host: env('HOST', '127.0.0.1'),
       },
   ghost: {
-    // endpoint: env('GHOST_ENDPOINT', 'https://dialog-2.ghost.io'),
-    // apiKey: env('GHOST_API_KEY', 'eae4004a845dbabe44a0283afd'),
-    endpoint: env('GHOST_ENDPOINT', 'http://localhost:2368'),
-    apiKey: env('GHOST_API_KEY', '707dcf952838cd09a907007e6f'),
+    endpoint: env('GHOST_ENDPOINT', 'https://dialog-2.ghost.io'),
+    apiKey: env('GHOST_API_KEY', 'eae4004a845dbabe44a0283afd'),
   },
 };
