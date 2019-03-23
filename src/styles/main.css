@@ -20,14 +20,16 @@
 html,
 body {
   height: 100%;
-}
-
-body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-family);
   font-size: var(--font-size-content-2);
   line-height: var(--line-height-content-2);
   color: var(--text-color-main);
   background: #fff;
+  position: relative;
+  z-index: 0;
 }
 
 ul,
