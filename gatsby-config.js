@@ -1,7 +1,7 @@
-const { isProduction, ghost } = require('./server/config');
+const { isDev, ghost } = require('./server/config');
 
 module.exports = {
-  proxy: !isProduction
+  proxy: isDev
     ? {
         prefix: '/api/v1',
         url: 'http://127.0.0.1:3010',

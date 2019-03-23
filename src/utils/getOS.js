@@ -1,6 +1,10 @@
 import UAParser from 'ua-parser-js';
 
 export function getOS() {
+  if (typeof navigator === 'undefined') {
+    return 'Windows';
+  }
+
   const userAgent = new UAParser(navigator.userAgent);
   const os = userAgent.getOS();
 
