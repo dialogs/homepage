@@ -1,0 +1,65 @@
+@import '../../styles/variables.css';
+:root {
+  --input-border-color: color-mod(var(--text-color-main) alpha(20%));
+  --input-active-border-color: var(--color-secondary);
+}
+.input {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  padding: 24px 0;
+  vertical-align: middle;
+  min-width: 250px;
+  width: 100%;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__label {
+    letter-spacing: 0.275px;
+    padding: 0 var(--default-padding);
+    font-size: var(--font-size-content-3);
+    line-height: var(--line-height-content-3);
+    color: var(--text-color-main);
+    user-select: none;
+    position: absolute;
+    font-weight: 500;
+    left: 0;
+    bottom: 50%;
+    cursor: text;
+    transform: translateY(50%) translateZ(0);
+    transform-origin: 0% 50%;
+    transition-timing-function: ease;
+    transition-duration: 200ms;
+    transition-property: transform, font-size;
+  }
+
+  &__input {
+    letter-spacing: 0.275px;
+    border: none;
+    font-weight: 500;
+    padding: 10px 0;
+    font-size: var(--font-size-content-3);
+    line-height: var(--line-height-content-3);
+    color: var(--text-color-main);
+    box-shadow: 0 1px 0 0 var(--input-border-color);
+    transition: box-shadow 200ms ease;
+    background-color: transparent;
+    width: 100%;
+    display: inline-block;
+    appearance: none;
+    outline: none;
+  }
+
+  &--non-empty,
+  &--focused {
+    & .input__label {
+      cursor: pointer;
+      transform: translateY(-70%) scale(0.8);
+    }
+
+    & .input__input {
+      box-shadow: 0 2px 0 0 var(--input-active-border-color);
+    }
+  }
+}
