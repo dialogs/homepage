@@ -66,6 +66,7 @@
       &__list {
         text-align: center;
         padding: 20px 0;
+        width: 100%;
       }
 
       &__item {
