@@ -27,7 +27,7 @@ export function BlogHeader({ featured, tags }) {
           })}
         </div>
         <div className="blog__main-title">
-          <Link href={`/blog/${mainPost.slug}`}>{mainPost.title}</Link>
+          <Link to={`/blog/${mainPost.slug}`}>{mainPost.title}</Link>
         </div>
         <div className="blog__main-short">
           {removeMarkdown(mainPost.excerpt)}
@@ -46,7 +46,6 @@ export function BlogHeader({ featured, tags }) {
           <h2 className="blog__popular-title"> Популярные статьи </h2>
           <div className="blog__popular-list">
             {otherPosts.map((post) => {
-              console.log(post);
               return (
                 <div className="blog__popular-item" key={post.id}>
                   <div className="blog__popular-image-box">
