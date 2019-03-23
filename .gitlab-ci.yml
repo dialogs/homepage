@@ -6,6 +6,7 @@ variables:
   GIT_STRATEGY: clone
   IMAGE_NAME: dlgim/$CI_PROJECT_NAME
   BUILD_NUMBER: '${CI_PIPELINE_IID}'
+  STAGING_URL: 'https://new-landing.dlg.im'
 
 cache:
   key: '${CI_COMMIT_SHA}'
@@ -25,14 +26,15 @@ version:
   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
   stage: version
   script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipline started\"}" \
+      $DIALOG_HOOK_URL
+
     - version=$(node -p "require('./package.json').version")
     - image_version="$version.${BUILD_NUMBER}"
     - echo $image_version
     - echo "export IMAGE_VERSION=$image_version" > variables
-    - |
-      curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}* build started.\"}" \
-      $DIALOG_HOOK_URL
   artifacts:
     paths:
       - variables
@@ -44,9 +46,10 @@ build:
     - source variables
     - npm ci
     - npm run build
+
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}* application build successful.\"}" \
+      --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}*: application build successful.\"}" \
       $DIALOG_HOOK_URL
   dependencies:
     - version
@@ -60,9 +63,10 @@ docker build:
     - docker tag "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" "${REGISTRY}"/"${IMAGE_NAME}":latest
     - docker push "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}"
     - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
+
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}* docker image redady\n${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}.\"}" \
+      --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}:* docker image ready. ${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}\"}" \
       $DIALOG_HOOK_URL
   dependencies:
     - version
@@ -72,23 +76,25 @@ staging:
   stage: deploy
   environment:
     name: staging
-    url: https://new-landing.dlg.im
+    url: '${STAGING_URL}'
   cache: {}
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
     - source variables
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}* deploy started.\"}" \
+      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* deploy started.\"}" \
       $DIALOG_HOOK_URL
+
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
     - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
     - cd homepage && ansible-galaxy install -r requirements.yml
     - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
+
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🤟🏾 Homepage build *#${BUILD_NUMBER}* deploy successfuly.\"}" \
+      --data "{\"text\": \"🤟🏾 Homepage build *#${BUILD_NUMBER}:* successfully deployed. [Check here](${STAGING_URL})\"}" \
       $DIALOG_HOOK_URL
   dependencies:
     - version
@@ -101,5 +107,5 @@ notify_fail:
   script:
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}* failed. [More info](${CI_PIPELINE_URL})\"}" \
+      --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed. [More info](${CI_PIPELINE_URL})\"}" \
       $DIALOG_HOOK_URL

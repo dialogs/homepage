@@ -5,11 +5,9 @@
 const path = require('path');
 const express = require('express');
 const gatsyExpress = require('gatsby-plugin-express');
-const { server, isDev } = require('./config');
+const { server } = require('./config');
 const api = require('./api');
 const app = express();
-
-const listen = isDev ? server.dev : server.production;
 
 app.use('/api/v1', api);
 
@@ -22,11 +20,11 @@ app.use(
   }),
 );
 
-app.listen(listen, (error) => {
+app.listen(server, (error) => {
   if (error) {
     console.trace(error);
     process.exit(1);
   } else {
-    console.log(`Express server started at ${listen.host}:${listen.port}\n`);
+    console.log(`Express server started at ${server.host}:${server.port}\n`);
   }
 });
