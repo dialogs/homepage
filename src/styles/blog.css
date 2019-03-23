@@ -45,6 +45,7 @@
     &-image {
       & img {
         display: block;
+        max-height: 100%;
       }
     }
 

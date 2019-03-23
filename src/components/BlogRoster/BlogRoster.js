@@ -15,8 +15,7 @@ export function BlogRoster({ title, posts, limit = DEFAULT_LIMIT }) {
     <div className="blog__roster">
       <div className="blog__roster-title">{title}</div>
       <div className="blog__roster-list">
-        {posts.edges.slice(0, visibleCount).map(({ post }) => {
-          console.log(post);
+        {posts.slice(0, visibleCount).map((post) => {
           return (
             <BlogPostCard
               key={post.id}
@@ -30,7 +29,7 @@ export function BlogRoster({ title, posts, limit = DEFAULT_LIMIT }) {
           );
         })}
       </div>
-      {visibleCount < posts.edges.length && (
+      {visibleCount < posts.length && (
         <button
           className="button button--pale blog__button-more"
           onClick={handleLoadMoreClick}

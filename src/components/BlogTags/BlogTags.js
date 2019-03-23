@@ -8,7 +8,6 @@ export function BlogTags({ tags }) {
   }
 
   const tagsToRender = removeServiceTags(tags);
-  console.log({ tagsToRender });
 
   return (
     <section className="blog__tags box-block">

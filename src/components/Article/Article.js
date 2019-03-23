@@ -45,15 +45,15 @@ export function Article({
           </div>
           <ArticleHeader>{title}</ArticleHeader>
           <div className="article__excerpt">{removeMarkdown(excerpt)}</div>
-          <div className="article__tags">
-            {tags && (
+          {tags && (
+            <div className="article__tags">
               <div className="blog__roster-tags">
                 {removeServiceTags(tags).map(({ name, id }) => (
                   <Tag key={id} name={name} />
                 ))}
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </header>
       <div

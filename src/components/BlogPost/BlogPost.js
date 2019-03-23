@@ -23,7 +23,7 @@ export default ({ data: { post, recommended } }) => {
       <div className="blog_post__recommended">
         <BlogRoster
           title="Рекомендованные статьи"
-          posts={recommended}
+          posts={recommended.posts}
           limit={6}
         />
       </div>
@@ -34,41 +34,36 @@ export default ({ data: { post, recommended } }) => {
     </Container>
   );
 };
+export const postFragment = graphql`
+  fragment PostFragment on GhostPost {
+    id
+    slug
+    title
+    excerpt
+    publishDate: published_at
+    featureImage: feature_image
+    tags {
+      ...PostTagsFragment
+    }
+    authors {
+      id
+      slug
+      name
+    }
+  }
+`;
 
 export const pageQuery = graphql`
   query blogPostBySlug($slug: String!) {
     post: ghostPost(slug: { eq: $slug }) {
-      id
-      slug
-      title
-      excerpt
-      html
-      featureImage: feature_image
-      publishDate: published_at
-      tags {
-        id
-        name
-        slug
-      }
+      ...PostFragment
     }
     recommended: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
       limit: 12
     ) {
-      edges {
-        post: node {
-          id
-          slug
-          title
-          excerpt
-          tags {
-            id
-            slug
-            name
-          }
-          publishDate: published_at
-          featureImage: feature_image
-        }
+      posts: nodes {
+        ...PostFragment
       }
     }
   }
