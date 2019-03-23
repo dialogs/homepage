@@ -57,6 +57,7 @@ export const pageQuery = graphql`
   query blogPostBySlug($slug: String!) {
     post: ghostPost(slug: { eq: $slug }) {
       ...PostFragment
+      html
     }
     recommended: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
