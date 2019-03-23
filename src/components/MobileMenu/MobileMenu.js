@@ -31,6 +31,31 @@ export function MobileMenu() {
               </a>
             </li>
             <li className="navigation__item">
+              <a href="/download/cloud" className="navigation__link">
+                Скачать
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="/download/cloud" className="navigation__link">
+                Скачать
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="/download/cloud" className="navigation__link">
+                Скачать
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="/download/cloud" className="navigation__link">
+                Скачать
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="/download/cloud" className="navigation__link">
+                Скачать
+              </a>
+            </li>
+            <li className="navigation__item">
               <a href="/support" className="navigation__link">
                 Поддержка
               </a>

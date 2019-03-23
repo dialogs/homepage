@@ -12,7 +12,12 @@
     z-index: 100;
     overflow: auto;
     height: 100vh;
+    padding-top: 56px;
     padding-bottom: 64px;
+
+    @media (--tablet-viewport) {
+      padding-top: 84px;
+    }
 
     &__content {
       display: flex;
@@ -32,12 +37,20 @@
     }
 
     &__header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
-      padding: 12px var(--margin-container-side) 0;
+      padding: 12px var(--margin-container-side);
+      background: var(--color-primary);
+      background: tomato;
+      z-index: 5;
 
       @media (--tablet-viewport) {
         padding-top: 26px;
+        padding-bottom: 26px;
       }
     }
 
