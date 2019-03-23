@@ -84,12 +84,7 @@ export default ({ data: { posts, tags } }, pageContext) => {
               </div>
             </div>
           </section>
-          <section className="blog__tags box-block">
-            <h2 className="blog__tags-title"> Теги </h2>
-            <ul className="blog__tags-list">
-              <BlogTags tags={tags.edges} />
-            </ul>
-          </section>
+          {tags && <BlogTags tags={tags.nodes} />}
         </div>
       </div>
       <section className="blog__roster-section">
@@ -127,13 +122,11 @@ export const query = graphql`
       }
     }
     tags: allGhostTag(sort: { order: DESC, fields: [postCount] }) {
-      edges {
-        tag: node {
-          id
-          slug
-          name
-          postCount
-        }
+      totalCount
+      nodes {
+        id
+        name
+        postCount
       }
     }
   }

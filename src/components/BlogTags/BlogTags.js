@@ -1,20 +1,27 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
-function removeSrviceTags(tags) {
-  return tags.filter(({ tag: { name } }) => name.indexOf('#') === -1);
-}
+import { removeServiceTags } from '../../utils/removeServiceTags';
 
 export function BlogTags({ tags }) {
-  console.log(tags);
+  if (!tags) {
+    return null;
+  }
+
+  const tagsToRender = removeServiceTags(tags);
+
   return (
-    <li className="blog__tags-item">
-      {removeSrviceTags(tags).map(({ tag: { id, slug, name, postCount } }) => (
-        <Link to={`/tag/${slug}`} key={id} className="blog__tags-link">
-          <span className="blog__tags-name">{name}</span>
-          <span className="blog__tags-amount">{postCount}</span>
-        </Link>
-      ))}
-    </li>
+    <section className="blog__tags box-block">
+      <h2 className="blog__tags-title">Теги</h2>
+      <ul className="blog__tags-list">
+        {tagsToRender.map(({ id, slug, name, postCount }) => (
+          <li className="blog__tags-item">
+            <Link to={`/tag/${slug}`} key={id} className="blog__tags-link">
+              <span className="blog__tags-name">{name}</span>
+              <span className="blog__tags-amount">{postCount}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }

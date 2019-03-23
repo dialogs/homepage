@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Container } from '../components/Container/Container';
 import { Features } from '../components/Features/Features';

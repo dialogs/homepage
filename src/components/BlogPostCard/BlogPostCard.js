@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import removeMarkdown from 'remove-markdown';
 
 import { Tag } from '../Tag/Tag';
+import { removeServiceTags } from '../../utils/removeServiceTags';
 
 export function BlogPostCard({
   title,
@@ -13,6 +14,8 @@ export function BlogPostCard({
   excerpt,
   tags,
 }) {
+  const tagsToRender = removeServiceTags(tags);
+
   return (
     <div className="blog__roster-item">
       <Link to={`/blog/${slug}`} className="blog__roster-item-link">
@@ -30,9 +33,9 @@ export function BlogPostCard({
         </div>
         <div className="blog__roster-name">{title}</div>
         <div className="blog__roster-short">{removeMarkdown(excerpt)}</div>
-        {tags && (
+        {tagsToRender && (
           <div className="blog__roster-tags">
-            {tags.map(({ name, id }) => (
+            {tagsToRender.map(({ name, id }) => (
               <Tag key={id} name={name} />
             ))}
           </div>

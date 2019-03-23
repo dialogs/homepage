@@ -3,13 +3,24 @@ import classnames from 'classnames';
 import removeMarkdown from 'remove-markdown';
 
 import { ArticleHeader } from '../ArticleHeader/ArticleHeader';
+import { Tag } from '../Tag/Tag';
+import { removeServiceTags } from '../../utils/removeServiceTags';
 import './Article.css';
 
-export function Article(props) {
-  const className = classnames('article', props.className);
+export function Article({
+  title,
+  tags,
+  excerpt,
+  publishDate,
+  featureImage,
+  className,
+  html,
+}) {
+  console.log('Article', { tags });
+  const classes = classnames('article', className);
 
   return (
-    <article className={className}>
+    <article className={classes}>
       <header className="article__header">
         <div className="article__header__block article__header__block--left">
           <button
@@ -21,29 +32,33 @@ export function Article(props) {
             <span>Назад</span>
           </button>
           <div className="article-image">
-            <img src={props.featureImage} alt={props.title} />
+            <img src={featureImage} alt={title} />
           </div>
         </div>
         <div className="article__header__block article__header__block--right">
           <div className="article__date">
-            {new Date(props.publishDate).toLocaleDateString('ru', {
+            {new Date(publishDate).toLocaleDateString('ru', {
               year: 'numeric',
               month: 'long',
               day: 'numeric',
             })}
           </div>
-          <ArticleHeader>{props.title}</ArticleHeader>
-          <div className="article__excerpt">
-            {removeMarkdown(props.excerpt)}
-          </div>
+          <ArticleHeader>{title}</ArticleHeader>
+          <div className="article__excerpt">{removeMarkdown(excerpt)}</div>
           <div className="article__tags">
-            <span>Инновационные технологии</span>
+            {tags && (
+              <div className="blog__roster-tags">
+                {removeServiceTags(tags).map(({ name, id }) => (
+                  <Tag key={id} name={name} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </header>
       <div
         className="article__content"
-        dangerouslySetInnerHTML={{ __html: props.html }}
+        dangerouslySetInnerHTML={{ __html: html }}
       />
     </article>
   );

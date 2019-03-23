@@ -8,13 +8,12 @@ import { Subscribe } from '../Subscribe/Subscribe';
 import './BlogPost.css';
 
 export default ({ data: { post, recommended } }) => {
-  // console.log({ post, recommended });
-
   return (
     <Container className="blog_post">
       <Article
         className="post__article"
         title={post.title}
+        tags={post.tags}
         featureImage={post.featureImage}
         publishDate={post.publishDate}
         excerpt={post.excerpt}
@@ -46,6 +45,11 @@ export const pageQuery = graphql`
       html
       featureImage: feature_image
       publishDate: published_at
+      tags {
+        id
+        name
+        slug
+      }
     }
     recommended: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
