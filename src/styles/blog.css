@@ -45,7 +45,7 @@
     &-image {
       & img {
         display: block;
-        max-height: 100%;
+        max-width: 100%;
       }
     }
 
@@ -403,16 +403,7 @@
   }
 
   &-image {
-    position: relative;
-    height: 0;
-    /* padding-bottom = 430/752 */
-    padding-bottom: 57.1808%;
-
     & img {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
     }
   }
