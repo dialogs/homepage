@@ -11,14 +11,16 @@ const app = express();
 
 app.use('/api/v1', api);
 
-app.use(express.static('public/'));
-app.use(
-  gatsyExpress('server/gatsby-express.json', {
-    publicDir: './public/',
-    template: path.resolve('./public/404/index.html'),
-    redirectSlashes: true,
-  }),
-);
+if (!isDev) {
+  app.use(express.static('public/'));
+  app.use(
+    gatsyExpress('server/gatsby-express.json', {
+      publicDir: './public/',
+      template: path.resolve('./public/404/index.html'),
+      redirectSlashes: true,
+    }),
+  );
+}
 
 app.listen(server, (error) => {
   if (error) {
