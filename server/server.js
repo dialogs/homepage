@@ -5,7 +5,7 @@
 const path = require('path');
 const express = require('express');
 const gatsyExpress = require('gatsby-plugin-express');
-const { server } = require('./config');
+const { isDev, server } = require('./config');
 const api = require('./api');
 const app = express();
 
