@@ -3,14 +3,15 @@ import classnames from 'classnames';
 
 // export type PlatformIconProps = {
 //   column: 'one' | 'two' | ' three',
+//   type: 'messenger' | 'functions' | ' integrations',
 // };
 
-export function PlatformIcon({ image, column, text, className }) {
+export function PlatformIcon({ image, type, text, className }) {
   return (
     <div
       className={classnames(
         'platform_icon',
-        `platform_icon--${column}`,
+        `platform_icon--${type}`,
         className,
       )}
     >
@@ -21,5 +22,5 @@ export function PlatformIcon({ image, column, text, className }) {
 }
 
 PlatformIcon.defaultProps = {
-  column: 'one',
+  type: 'functions',
 };

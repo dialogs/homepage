@@ -5,6 +5,19 @@
 @import '../../variables.css';
 
 .easy {
+  &.section {
+    @media (--tablet-viewport) {
+      padding-top: 50px;
+    }
+    @media (--desktop-viewport) {
+      padding-top: 50px;
+    }
+  }
+
+  & img {
+    max-width: 100%;
+  }
+
   &__cols {
     @media (--tablet-viewport) {
       display: flex;

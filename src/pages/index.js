@@ -17,7 +17,7 @@ export default () => {
       <Safety />
       <Incompany />
 
-      <div className="home__section easy">
+      <section className="section easy">
         <div className="easy__cols">
           <div className="easy__col easy__col--left">
             <h3 className="easy-title">dialog — это просто и эффективно</h3>
@@ -55,9 +55,9 @@ export default () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="home__section business">
+      <section className="section business">
         <div className="business__cols">
           <div className="business__info">
             <div className="business__info-title">
@@ -97,7 +97,7 @@ export default () => {
             />
           </div>
         </div>
-      </div>
+      </section>
 
       <Section className="offer">
         <Heading>Получить предложение</Heading>

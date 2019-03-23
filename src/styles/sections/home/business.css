@@ -61,9 +61,6 @@
       }
     }
 
-    &-img {
-    }
-
     &-list {
       margin-top: 20px;
       letter-spacing: var(--letter-spacing-content);
@@ -90,6 +87,14 @@
   &__image {
     position: relative;
     text-align: center;
+
+    & img {
+      max-width: 45%;
+
+      @media (--tablet-viewport) {
+        max-width: 100%;
+      }
+    }
 
     @media (--mobile-viewport) {
       margin-top: 40px;

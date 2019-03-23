@@ -15,7 +15,7 @@ export function Incompany() {
           <div className="incompany__content">
             <div className="incompany__content__title">Маркетинг</div>
             <div className="incompany__content__body">
-              <div className="incompany__content__body__title incompany__content-title">
+              <div className="incompany__content__body__title">
                 Пример оптимизации процесса
               </div>
               <div className="incompany__content__body__image incompany__content-images">
@@ -41,7 +41,7 @@ export function Incompany() {
           <div className="incompany__content">
             <div className="incompany__content__title">Разработка</div>
             <div className="incompany__content__body">
-              <div className="incompany__content__body__title incompany__content-title">
+              <div className="incompany__content__body__title">
                 Пример оптимизации процесса
               </div>
               <div className="incompany__content__body__image incompany__content-images">
@@ -70,7 +70,7 @@ export function Incompany() {
           <div className="incompany__content">
             <div className="incompany__content__title">HR</div>
             <div className="incompany__content__body" />
-            <div className="incompany__content__body__title incompany__content-title">
+            <div className="incompany__content__body__title">
               Пример оптимизации процесса
             </div>
             <div className="incompany__content__body__image incompany__content-images">
@@ -93,7 +93,7 @@ export function Incompany() {
           <div className="incompany__content">
             <div className="incompany__content__title">Продажи</div>
             <div className="incompany__content__body">
-              <div className="incompany__content__body__title incompany__content-title">
+              <div className="incompany__content__body__title">
                 Пример оптимизации процесса
               </div>
               <div className="incompany__content__body__image incompany__content-images">
@@ -118,7 +118,7 @@ export function Incompany() {
               Техническая поддержка
             </div>
             <div className="incompany__content__body">
-              <div className="incompany__content__body__title incompany__content-title">
+              <div className="incompany__content__body__title">
                 Пример оптимизации процесса
               </div>
               <div className="incompany__content__body__image incompany__content-images">
@@ -141,7 +141,7 @@ export function Incompany() {
           <div className="incompany__content">
             <div className="incompany__content__title">Служба безопасности</div>
             <div className="incompany__content__body">
-              <div className="incompany__content__body__title incompany__content-title">
+              <div className="incompany__content__body__title">
                 Пример оптимизации процесса
               </div>
               <div className="incompany__content__body__image incompany__content-images">
