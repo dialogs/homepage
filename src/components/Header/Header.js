@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import { Container } from '../Container/Container';
 import { Modal } from '../Modal/Modal';
+import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { FormOffer } from '../FormOffer/FormOffer';
 
 export function Header() {
@@ -74,6 +75,7 @@ export function Header() {
           </div>
         </div>
       </Container>
+      <MobileMenu />
 
       {isModalOpen && (
         <Modal onClose={handleModalClose}>
