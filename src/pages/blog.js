@@ -126,6 +126,7 @@ export const query = graphql`
       nodes {
         id
         name
+        slug
         postCount
       }
     }
