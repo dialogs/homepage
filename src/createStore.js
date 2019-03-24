@@ -5,11 +5,10 @@ const initialState = {};
 
 export function createStore() {
   const rootReducer = createRootReducer();
+  const devTools =
+    typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__
+      ? window.__REDUX_DEVTOOLS_EXTENSION__()
+      : undefined;
 
-  return reduxCreateStore(
-    rootReducer,
-    initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION__(),
-  );
+  return reduxCreateStore(rootReducer, initialState, devTools);
 }
