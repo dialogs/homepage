@@ -40,7 +40,7 @@ export function MobileMenu({ isOpen, onClose }) {
           <Link to="/features" className="navigation__link">
             Функции
           </Link>
-          <Link to="/blog" className="header__menu-link">
+          <Link to="/blog" className="navigation__link">
             Блог
           </Link>
         </nav>
