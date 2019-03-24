@@ -7,16 +7,11 @@ import { Subscribe } from '../components/Subscribe/Subscribe';
 import { BlogHeader } from '../components/BlogHeader/BlogHeader';
 
 export default ({ data: { featured, allPosts, tags } }) => {
-  // console.log(featured, posts, tags);
   return (
     <Container>
       <BlogHeader featured={featured.posts} tags={tags} />
-      <section className="blog__roster-section">
-        <BlogRoster title="Последние статьи" posts={allPosts.posts} />
-      </section>
-      <section className="blog__subscribe-section">
-        <Subscribe />
-      </section>
+      <BlogRoster title="Последние статьи" posts={allPosts.posts} />
+      <Subscribe />
     </Container>
   );
 };

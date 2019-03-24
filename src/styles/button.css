@@ -26,6 +26,7 @@
     -webkit-font-smoothing: antialiased;
     color: var(--button-text-color);
     background-color: var(--button-background-color);
+    min-width: 200px;
 
     @media (--mobile-viewport) {
       width: 100%;
@@ -34,6 +35,10 @@
 
     @media (--tablet-viewport) {
       min-width: 150px;
+    }
+
+    @media (--tablet-landscape-viewport) {
+      min-width: 200px;
     }
 
     &:hover {

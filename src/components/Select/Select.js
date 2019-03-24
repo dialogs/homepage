@@ -1,28 +1,24 @@
-/* eslint-disable no-restricted-globals */
-import React, { useState, createRef } from 'react';
-
+import React, { createRef, useState } from 'react';
 import classNames from 'classnames';
-import './Input.css';
 
-export function Input({
-  type,
+import './Select.css';
+export function Select({
   id,
-  value,
-  tabIndex,
   name,
-  disabled,
+  tabIndex,
+  value,
+  options,
   label,
   className,
   onChange,
-  rows,
 }) {
   const ref = createRef();
   const [isFocused, setIsFocused] = useState(false);
   const classes = classNames(
-    'input',
+    'select',
     {
-      'input--non-empty': Boolean(value),
-      'input--focused': isFocused,
+      'select--non-empty': Boolean(value),
+      'select--focused': isFocused,
     },
     className,
   );
@@ -46,33 +42,38 @@ export function Input({
     setIsFocused(false);
   }
 
-  const TagName = type === 'textarea' ? 'textarea' : 'input';
   return (
     <div className={classes}>
-      <div className="input__wrapper">
+      <div className="select__wrapper">
         {label && (
           <label
-            className="input__label"
+            className="select__label"
             htmlFor={id}
             onMouseDown={handleLabelMouseDown}
           >
             {label}
           </label>
         )}
-        <TagName
-          type={type}
+        <select
+          className="select__select"
           id={id}
-          ref={ref}
-          rows={rows}
-          className="input__input"
-          value={value}
+          name={name}
           onChange={handleChange}
+          ref={ref}
+          value={value}
           tabIndex={tabIndex}
           onBlur={handleBlur}
           onFocus={handleFocus}
-          name={name}
-          disabled={disabled}
-        />
+        >
+          {label && <option disabled>{label}</option>}
+          {options.map((option) => {
+            return (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            );
+          })}
+        </select>
       </div>
     </div>
   );

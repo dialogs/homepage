@@ -1,8 +1,10 @@
 @import '../../styles/variables.css';
+
 :root {
   --input-border-color: color-mod(var(--text-color-main) alpha(20%));
   --input-active-border-color: var(--color-secondary);
 }
+
 .input {
   display: inline-flex;
   flex-flow: column nowrap;
@@ -13,6 +15,7 @@
 
   &__wrapper {
     position: relative;
+    line-height: 0;
   }
 
   &__label {
@@ -34,6 +37,7 @@
   }
 
   &__input {
+    resize: none;
     letter-spacing: 0.275px;
     border: none;
     padding: 10px 0;
@@ -54,7 +58,7 @@
     & .input__label {
       cursor: pointer;
       color: color-mod(var(--text-color-main) alpha(30%));
-      transform: translateY(-110%) scale(0.7);
+      transform: translateY(-120%) scale(0.7);
     }
 
     & .input__input {

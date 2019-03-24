@@ -15,9 +15,12 @@ export default () => (
           We can't seem to find the page you are looking for.
         </Heading>
         <div className="not_found__links">
-          <Link to="/" className="link link--default">
+          <button
+            onClick={() => window.history.back()}
+            className="link link--default"
+          >
             Go back
-          </Link>
+          </button>
           <Link to="/" className="link link--default">
             Go home
           </Link>

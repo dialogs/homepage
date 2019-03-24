@@ -19,21 +19,16 @@ export default ({ data: { post, recommended } }) => {
         excerpt={post.excerpt}
         html={post.html}
       />
-
-      <div className="blog_post__recommended">
-        <BlogRoster
-          title="Рекомендованные статьи"
-          posts={recommended.posts}
-          limit={6}
-        />
-      </div>
-
-      <div className="blog_post__subscribe">
-        <Subscribe />
-      </div>
+      <BlogRoster
+        title="Рекомендованные статьи"
+        posts={recommended.posts}
+        limit={6}
+      />
+      <Subscribe />
     </Container>
   );
 };
+
 export const postFragment = graphql`
   fragment PostFragment on GhostPost {
     id
@@ -61,7 +56,7 @@ export const pageQuery = graphql`
     }
     recommended: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
-      limit: 12
+      limit: 3
     ) {
       posts: nodes {
         ...PostFragment

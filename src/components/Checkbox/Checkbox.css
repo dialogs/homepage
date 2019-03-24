@@ -1,0 +1,81 @@
+@import '../../styles/variables.css';
+
+.checkbox {
+  position: relative;
+  padding: 24px 0;
+
+  &__label {
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  &__checkbox {
+  }
+
+  &__text {
+    line-height: 36px;
+  }
+}
+
+.checkbox {
+  &__label {
+    display: inline-block;
+    padding-left: 56px;
+  }
+
+  &__input {
+    position: absolute;
+    appearance: none;
+
+    &:hover + .checkbox__checkbox {
+    }
+    &:focus + .checkbox__checkbox {
+      background-color: var(--color-primary);
+    }
+
+    &:checked + .checkbox__checkbox {
+      background-color: var(--color-primary);
+      box-shadow: inset 0 0 0px 2px var(--color-primary);
+
+      & svg {
+        & path {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
+
+    &:checked:focus + .checkbox__checkbox {
+      box-shadow: inset 0 0 0px 2px #1e1e1e;
+    }
+  }
+
+  &__checkbox {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -18px;
+    width: 36px;
+    height: 36px;
+    box-shadow: inset 0 0 0px 2px #1e1e1e;
+
+    transition: 0.4s;
+
+    & svg {
+      position: absolute;
+      top: 12px;
+      left: 11px;
+
+      & path {
+        stroke-dasharray: 18;
+        stroke-dashoffset: 18;
+        transition: 0.4s;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

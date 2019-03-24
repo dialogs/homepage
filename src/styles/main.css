@@ -84,6 +84,7 @@ a {
 
 .link--default {
   position: relative;
+  cursor: pointer;
 
   &:before {
     content: '';
@@ -305,5 +306,11 @@ h6 {
 
 .not_found {
   text-align: center;
-  padding: 50px 0;
+  padding: 40px 0 !important;
+
+  &__links {
+    & .link {
+      margin: 0 20px;
+    }
+  }
 }
