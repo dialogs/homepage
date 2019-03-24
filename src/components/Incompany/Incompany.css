@@ -3,6 +3,10 @@
 .incompany {
   padding-top: 30px;
 
+  @media (--mobile-viewport) {
+    padding-bottom: 20px;
+  }
+
   @media (--tablet-viewport) {
   }
 

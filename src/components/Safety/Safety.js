@@ -8,7 +8,10 @@ import './Safety.css';
 export function Safety() {
   return (
     <Section className="safety">
-      <h3 className="safety-title">Безопасность и соответствие требованиям</h3>
+      <h3 className="safety-title">
+        Безопасность
+        <br /> и соответствие требованиям
+      </h3>
 
       <div className="safety-item safety-communication">
         <div className="safety-item__title">Защищенное общение</div>

@@ -3,6 +3,8 @@ import React from 'react';
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
 
+import './Business.css';
+
 export function Business() {
   return (
     <Section className="business">

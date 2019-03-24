@@ -1,7 +1,10 @@
 @import '../../styles/variables.css';
 
 .platform {
-  padding-top: 30px;
+  @media (--mobile-viewport) {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
 
   @media (--tablet-viewport) {
     padding-top: 100px;
@@ -189,6 +192,10 @@
 
     &__image {
       max-width: 100%;
+
+      @media (--mobile-viewport) {
+        margin-bottom: 20px;
+      }
 
       @media (--tablet-viewport) {
         position: absolute;

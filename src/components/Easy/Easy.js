@@ -3,6 +3,8 @@ import React from 'react';
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
 
+import './Easy.css';
+
 export function Easy() {
   return (
     <Section className="easy">

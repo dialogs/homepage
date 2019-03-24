@@ -1,13 +1,17 @@
 @import '../../styles/variables.css';
 
 .safety {
-  margin-top: 40px;
+  @media (--mobile-viewport) {
+    margin-top: 0;
+    padding-top: 40px;
+  }
+
   padding-bottom: 140px;
-  margin-bottom: 40px;
   position: relative;
   padding-bottom: 30px;
 
   @media (--tablet-viewport) {
+    margin-top: 40px;
     padding-top: 60px;
     padding-bottom: 30px;
   }
