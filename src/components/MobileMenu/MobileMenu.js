@@ -1,76 +1,48 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import classNames from 'classnames';
 
 import './MobileMenu.css';
 
-export function MobileMenu() {
+export function MobileMenu({ isOpen, onClose }) {
+  const classes = classNames('mobile-menu', {
+    'mobile-menu--opened': isOpen,
+  });
+
   return (
-    <div className="mobile-menu">
+    <div className={classes}>
       <div className="mobile-menu__content">
         <div className="mobile-menu__header">
           <div className="header__logo">
-            <a href="/" className="header__logo-link">
+            <Link to="/" className="header__logo-link">
               <img
-                src="images/logo-header.svg"
-                alt=""
+                src="/images/logo-header.svg"
+                alt="dialog"
                 className="header__logo-icon"
               />
-            </a>
+            </Link>
           </div>
-          <button className="header__button header__button--menu" />
+          <button
+            className="header__button header__button--menu"
+            onClick={onClose}
+          />
         </div>
         <nav className="navigation">
-          <ul className="navigation__list">
-            <li className="navigation__item">
-              <a href="/about" className="navigation__link">
-                О нас
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="/download/cloud" className="navigation__link">
-                Скачать
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="/download/cloud" className="navigation__link">
-                Скачать
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="/download/cloud" className="navigation__link">
-                Скачать
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="/download/cloud" className="navigation__link">
-                Скачать
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="/download/cloud" className="navigation__link">
-                Скачать
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="/download/cloud" className="navigation__link">
-                Скачать
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="/support" className="navigation__link">
-                Поддержка
-              </a>
-            </li>
-            <li className="navigation__item navigation__item--parent">
-              <a href="/features" className="navigation__link">
-                Функции
-              </a>
-            </li>
-            <li className="navigation__item">
-              <a href="/blog" className="header__menu-link">
-                Блог
-              </a>
-            </li>
-          </ul>
+          <Link to="/Linkbout" className="navigation__link">
+            О нас
+          </Link>
+          <Link to="/download/cloud" className="navigation__link">
+            Скачать
+          </Link>
+          <Link to="/support" className="navigation__link">
+            Поддержка
+          </Link>
+          <Link to="/features" className="navigation__link">
+            Функции
+          </Link>
+          <Link to="/blog" className="header__menu-link">
+            Блог
+          </Link>
         </nav>
         <button className="mobile-menu__button">Получить предложение</button>
       </div>
