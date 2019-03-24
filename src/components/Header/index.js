@@ -5,7 +5,6 @@ import { openOfferModal } from '../../actions/modals';
 import { Header } from './Header';
 
 const mapStateToProps = ({ app }) => {
-  console.log({ app });
   return {
     isMobileMenuOpen: app.isMobileMenuOpen,
   };

@@ -16,7 +16,6 @@ export function Article({
   className,
   html,
 }) {
-  console.log('Article', { tags });
   const classes = classnames('article', className);
 
   return (

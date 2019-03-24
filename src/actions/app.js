@@ -1,5 +1,4 @@
 export function openMobileMenu() {
-  console.log('openMobileMenu');
   return {
     type: 'MOBILE_MENU/OPEN',
   };

@@ -5,7 +5,6 @@ import { getOS } from '../../utils/getOS';
 
 export function DownloadDesktop() {
   const os = getOS();
-  console.log({ os });
 
   function renderDownloadDesktopButton() {
     switch (os) {
