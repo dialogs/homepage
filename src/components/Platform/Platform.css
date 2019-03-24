@@ -94,7 +94,7 @@
     }
 
     & .collapsible__content {
-      @media (--desktop-viewport) {
+      @media (--tablet-viewport) {
         display: block;
       }
     }
