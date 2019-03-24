@@ -28,7 +28,7 @@ export function MobileMenu({ isOpen, onClose }) {
           />
         </div>
         <nav className="navigation">
-          <Link to="/Linkbout" className="navigation__link">
+          <Link to="/about" className="navigation__link">
             О нас
           </Link>
           <Link to="/download/cloud" className="navigation__link">

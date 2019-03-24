@@ -50,7 +50,7 @@ export function OfferForm({ value, className }) {
         />
       </div>
 
-      <div className="form__box form__box--column">
+      <div className="form__box">
         <Checkbox
           label="Я согласен на обработку персональных данных"
           value={agree}
