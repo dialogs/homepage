@@ -275,6 +275,7 @@ h6 {
   min-height: 0;
   display: flex;
   flex-flow: column nowrap;
+  overflow: hidden;
 }
 
 .share-box {

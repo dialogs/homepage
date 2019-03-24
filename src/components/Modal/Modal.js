@@ -4,7 +4,7 @@ import { Heading } from '../Heading/Heading';
 
 import './Modal.css';
 
-export function Modal({ onClose, children }) {
+export function Modal({ onClose, title, children }) {
   function handleModalClick(event) {
     event.stopPropagation();
   }
@@ -14,13 +14,15 @@ export function Modal({ onClose, children }) {
       <div className="modal__overlay" onClick={onClose}>
         <div className="modal__window" onClick={handleModalClick}>
           <div className="modal__window__header">
-            <Heading>Получить предложение</Heading>
-            <img
-              className="modal__window__close"
-              src="/images/svg-icons/icon-clear.svg"
-              alt="Закрыть окно"
-              onClick={onClose}
-            />
+            {title && <Heading>{title}</Heading>}
+            {onClose && (
+              <img
+                className="modal__window__close"
+                src="/images/svg-icons/icon-clear.svg"
+                alt="Закрыть окно"
+                onClick={onClose}
+              />
+            )}
           </div>
           <div className="modal__window__body">{children}</div>
         </div>

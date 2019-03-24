@@ -20,6 +20,8 @@
     "normalize.css": "8.0.1",
     "react": "16.8.5",
     "react-dom": "16.8.5",
+    "react-redux": "6.0.1",
+    "redux": "4.0.1",
     "ua-parser-js": "0.7.19"
   },
   "devDependencies": {
