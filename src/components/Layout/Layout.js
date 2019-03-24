@@ -1,7 +1,8 @@
 import React from 'react';
 
+import Header from '../Header';
+import Modals from '../Modals';
 import { Footer } from '../Footer/Footer';
-import { Header } from '../Header/Header';
 
 import '../../styles/index.css';
 
@@ -10,5 +11,6 @@ export default ({ children }) => (
     <Header />
     {children}
     <Footer />
+    <Modals />
   </main>
 );

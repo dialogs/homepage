@@ -1,22 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 
 import { Container } from '../Container/Container';
-import { Modal } from '../Modal/Modal';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
-import { FormOffer } from '../FormOffer/FormOffer';
 
-export function Header() {
-  let [isModalOpen, setModalOpen] = useState(false);
-
-  function handleModalOpen() {
-    setModalOpen(true);
-  }
-
-  function handleModalClose() {
-    setModalOpen(false);
-  }
-
+export function Header({
+  isMobileMenuOpen,
+  openMobileMenu,
+  openOfferModal,
+  closeMobileMenu,
+}) {
   return (
     <header className="site__header">
       <Container>
@@ -64,24 +57,21 @@ export function Header() {
           <div className="header__col">
             <button
               className="header__button header__button--offer"
-              onClick={handleModalOpen}
+              onClick={openOfferModal}
             >
               Получить предложение
             </button>
             <button className="header__button header__button--lang btn__change-lang">
               en
             </button>
-            <button className="header__button header__button--menu" />
+            <button
+              className="header__button header__button--menu"
+              onClick={openMobileMenu}
+            />
           </div>
         </div>
       </Container>
-      <MobileMenu />
-
-      {isModalOpen && (
-        <Modal onClose={handleModalClose}>
-          <FormOffer />
-        </Modal>
-      )}
+      <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
     </header>
   );
 }
