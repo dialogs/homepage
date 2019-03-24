@@ -64,6 +64,7 @@
     transition-timing-function: ease;
     transition-duration: 120ms;
     transition-property: transform, color;
+    pointer-events: none;
   }
 
   &--non-empty,
@@ -71,6 +72,7 @@
     & .select__label {
       cursor: pointer;
       color: color-mod(var(--text-color-main) alpha(30%));
+      pointer-events: all;
       transform: translateY(-120%) scale(0.7);
     }
 
