@@ -5,7 +5,7 @@ import { PageHeader } from '../PageHeader/PageHeader';
 
 import './Hero.css';
 
-export function Hero() {
+export function Hero({ openOfferModal }) {
   return (
     <Section className="hero home__intro">
       <div className="home__intro-box">
@@ -19,6 +19,7 @@ export function Hero() {
           <button
             type="button"
             className="button button--default home__intro-button"
+            onClick={openOfferModal}
           >
             Получить предложение
           </button>
