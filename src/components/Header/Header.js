@@ -4,6 +4,8 @@ import { Link } from 'gatsby';
 import { Container } from '../Container/Container';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 
+import './Header.css';
+
 export function Header({
   isMobileMenuOpen,
   openMobileMenu,
