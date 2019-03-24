@@ -26,6 +26,7 @@
   &__input {
     position: absolute;
     appearance: none;
+    right: 10000px;
 
     &:hover + .checkbox__checkbox {
     }
