@@ -36,16 +36,14 @@ export function SupportForm({ className }) {
         onChange={setAgree}
       />
 
-      <div className="form-item support__form-item support__form-item__button">
+      <div className="form__footer">
         <button type="submit" className="button button--default">
           Отправить
         </button>
-      </div>
 
-      <div className="form-item support__form-item support__form-item__answer-time">
-        <span className="support__answer-time">
+        <div className="information">
           Служба поддержки обычно отвечает в течение 15 минут
-        </span>
+        </div>
       </div>
     </form>
   );
