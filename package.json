@@ -6,7 +6,7 @@
   "private": "true",
   "scripts": {
     "server": "node server/server",
-    "start": "gatsby develop & npm run server",
+    "start": "gatsby develop -H 0.0.0.0 -p 8000 & npm run server",
     "build": "cross-env NODE_ENV=production gatsby build",
     "format": "prettier --write \"src/**/*.{js,json,css,yml}\""
   },
