@@ -1,5 +1,6 @@
 .collapsible {
   &__title {
+    margin-bottom: 20px;
     display: block;
     padding: 6px 0;
     line-height: 24px;
@@ -10,6 +11,7 @@
     position: relative;
     padding-right: 24px;
     cursor: pointer;
+    box-shadow: 0 1px 0 0 color-mod(#1e1e1e alpha(20%));
 
     &:before {
       content: '';
@@ -38,6 +40,7 @@
 
   &--open {
     & .collapsible__title {
+      color: color-mod(#1e1e1e alpha(90%));
       &:after {
         display: none;
       }

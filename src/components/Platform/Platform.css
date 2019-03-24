@@ -72,6 +72,32 @@
     @media (--laptop-viewport) {
       width: calc(50% - var(--padding-side-columns) / 2);
     }
+
+    &__item {
+      display: none;
+
+      @media (--mobile-viewport) {
+        display: block !important;
+      }
+
+      &--visible {
+        display: block;
+      }
+    }
+
+    & .collapsible__title {
+      display: none;
+
+      @media (--mobile-viewport) {
+        display: block !important;
+      }
+    }
+
+    & .collapsible__content {
+      @media (--desktop-viewport) {
+        display: block;
+      }
+    }
   }
 
   &__content {

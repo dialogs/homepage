@@ -193,5 +193,29 @@
         }
       }
     }
+
+    display: none;
+
+    @media (--mobile-viewport) {
+      display: block !important;
+    }
+
+    &--visible {
+      display: block;
+    }
+
+    & .collapsible__title {
+      display: none;
+
+      @media (--mobile-viewport) {
+        display: block !important;
+      }
+    }
+
+    & .collapsible__content {
+      @media (--tablet-viewport) {
+        display: block;
+      }
+    }
   }
 }

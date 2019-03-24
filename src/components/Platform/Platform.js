@@ -1,22 +1,44 @@
 import React, { useState } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import { PageHeader } from '../PageHeader/PageHeader';
 import { Section } from '../Section/Section';
 import { Tabs, Tab } from '../Tabs';
 import { PlatformIcon } from './PlatformIcon';
+import { Collapsible } from '../Collapsible/Collapsible';
 import './Platform.css';
 
 export function Platform({ className }) {
   const [tab, setTab] = useState('messenger');
-  const classes = classnames('platform', className);
+  const classes = classNames('platform', className);
 
-  function renderCurrentTab() {
-    switch (tab) {
-      case 'messenger':
-        return (
-          <div className="platform__content">
-            <div className="platform__content__title">Мессенджер</div>
+  return (
+    <Section className={classes}>
+      <PageHeader className="platform__title">
+        dialog — коммуникационная <br />
+        платформа для компаний
+      </PageHeader>
+      <div className="platform__wrapper">
+        <Tabs
+          onChange={setTab}
+          current={tab}
+          vertical
+          changeOnHover
+          className="platform__tabs"
+        >
+          <Tab value="messenger">Мессенджер</Tab>
+          <Tab value="features">Корпоративные функции</Tab>
+          <Tab value="integrations">Интеграции</Tab>
+        </Tabs>
+
+        <div className="platform__box">
+          <Collapsible
+            className={classNames(
+              'platform__box__item',
+              tab === 'messenger' ? 'platform__box__item--visible' : null,
+            )}
+            title="Мессенджер"
+          >
             <div className="platform__content__icons">
               <PlatformIcon
                 type="messenger"
@@ -67,14 +89,14 @@ export function Platform({ className }) {
               srcSet="/images/home/platform/platform-messenger-export@2x.png 2x"
               alt="Мессенджер"
             />
-          </div>
-        );
-      case 'features':
-        return (
-          <div className="platform__content">
-            <div className="platform__content__title">
-              Корпоративные функции
-            </div>
+          </Collapsible>
+          <Collapsible
+            className={classNames(
+              'platform__box__item',
+              tab === 'features' ? 'platform__box__item--visible' : null,
+            )}
+            title="Корпоративные функции"
+          >
             <div className="platform__content__icons">
               <PlatformIcon
                 type="functions"
@@ -108,12 +130,14 @@ export function Platform({ className }) {
               srcSet="/images/home/platform/platform-functions-export@2x.png 2x"
               alt="Корпоративные функции"
             />
-          </div>
-        );
-      case 'integrations':
-        return (
-          <div className="platform__content">
-            <div className="platform__content__title">Интеграции</div>
+          </Collapsible>
+          <Collapsible
+            className={classNames(
+              'platform__box__item',
+              tab === 'integrations' ? 'platform__box__item--visible' : null,
+            )}
+            title="Интеграции"
+          >
             <div className="platform__content__icons">
               <PlatformIcon
                 type="integrations"
@@ -137,33 +161,8 @@ export function Platform({ className }) {
               srcSet="/images/home/platform/platform-integrations-export@2x.png 2x"
               alt="Корпоративные функции"
             />
-          </div>
-        );
-      default:
-        return null;
-    }
-  }
-
-  return (
-    <Section className={classes}>
-      <PageHeader className="platform__title">
-        dialog — коммуникационная <br />
-        платформа для компаний
-      </PageHeader>
-      <div className="platform__wrapper">
-        <Tabs
-          onChange={setTab}
-          current={tab}
-          vertical
-          changeOnHover
-          className="platform__tabs"
-        >
-          <Tab value="messenger">Мессенджер</Tab>
-          <Tab value="features">Корпоративные функции</Tab>
-          <Tab value="integrations">Интеграции</Tab>
-        </Tabs>
-
-        <div className="platform__box">{renderCurrentTab()}</div>
+          </Collapsible>
+        </div>
       </div>
     </Section>
   );
