@@ -23,7 +23,7 @@ module.exports = {
     },
   },
   server: {
-    port: env('PORT', isDev ? 3010 : 3000),
+    port: env('PORT', isDev ? 3010 : 8080),
     host: env('HOST', '127.0.0.1'),
   },
   ghost: {
