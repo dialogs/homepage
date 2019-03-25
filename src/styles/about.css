@@ -130,7 +130,9 @@
       margin-top: 50px;
 
       &:hover {
-        box-shadow: 0px -2px 14px rgba(0, 0, 0, 0.08);
+        &:before {
+          box-shadow: 0px -6px 14px rgba(0, 0, 0, 0.1);
+        }
       }
     }
 
@@ -155,6 +157,7 @@
       bottom: 0;
       left: calc(-1 * var(--margin-container-side));
       right: calc(-1 * var(--margin-container-side));
+      transition: box-shadow 150ms ease;
 
       @media (--tablet-viewport) {
         left: 0;
