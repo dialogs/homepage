@@ -23,8 +23,8 @@ module.exports = {
     },
   },
   server: {
-    port: env('PORT', isDev ? 3010 : 3000),
-    host: env('HOST', '127.0.0.1'),
+    port: env('PORT', isDev ? 3010 : 8080),
+    host: env('HOST', '0.0.0.0'),
   },
   ghost: {
     endpoint: env('GHOST_ENDPOINT', 'https://georgetokmakov.ghost.io'),
