@@ -21,21 +21,27 @@ export default () => {
           </div>
         </div>
         <Container>
-          <div className="about__description">
-            <img src="/images/svg/about-promo.svg" alt="" />
+          <a
+            href="https://icanchoose.ru/company/dialog/"
+            className="about__description about__description-link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              className="img--icon"
+              src="/images/svg/about-promo.svg"
+              alt=""
+            />
             <span>
               Подробнее о жизни в компании вы можете прочитать в специальном
               проекте i can choose
             </span>
-            <a
-              href="https://icanchoose.ru/company/dialog/"
-              className="about__description-link"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <img src="/images/svg-icons/arrow.svg" alt="" />
-            </a>
-          </div>
+            <img
+              className="img--arrow"
+              src="/images/svg-icons/arrow.svg"
+              alt=""
+            />
+          </a>
         </Container>
       </section>
 
