@@ -18,6 +18,7 @@
     "classnames": "2.2.6",
     "core-js": "2.6.5",
     "express": "4.16.4",
+    "gatsby-plugin-express": "1.1.6",
     "nodemailer": "5.1.1",
     "normalize.css": "8.0.1",
     "react": "16.8.5",
@@ -31,7 +32,6 @@
   "devDependencies": {
     "cross-env": "5.2.0",
     "gatsby": "2.2.8",
-    "gatsby-plugin-express": "1.1.6",
     "gatsby-plugin-layout": "1.0.13",
     "gatsby-plugin-postcss": "2.0.7",
     "gatsby-source-ghost": "3.3.0",
