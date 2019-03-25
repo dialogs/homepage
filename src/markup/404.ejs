@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: 'О нас' }) %>
+
+<body>
+  <div class="site__wrapper">
+    <%- include('partials/header') %>
+
+    <main class="site__middle">
+      <div class="container">
+        <section class="page not_found">
+          <h1>404</h1>
+          <h4>Page not found</h4>
+          <div>Что-то пошло не так.</div>
+          <div>Попробуйте <a href="/" class="link--default">снова</a></div>
+        </section>
+      </div>
+    </main>
+
+    <%- include('partials/footer') %>
+  </div>
+
+  <script src="/assets/index.js"></script>
+</body>
+
+</html>

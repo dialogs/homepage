@@ -1,0 +1,11 @@
+@import '../../styles/variables.css';
+
+.business {
+  @media (--mobile-viewport) {
+    padding-top: 10px;
+  }
+
+  & .heading {
+    padding: 0;
+  }
+}

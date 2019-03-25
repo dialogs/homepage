@@ -1,0 +1,20 @@
+.section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	@media (--tablet-viewport) {
+		padding-top: 80px;
+		padding-bottom: 60px;
+	}
+
+	@media (--tablet-landscape-viewport) {
+	}
+
+	@media (--laptop-viewport) {
+		padding-bottom: 75px;
+	}
+
+	@media (--desktop-viewport) {
+		padding-bottom: 80px;
+	}
+}

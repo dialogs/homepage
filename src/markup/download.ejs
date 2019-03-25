@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head', { title: 'Скачать' }) %>
+
+  <body>
+    <div class="site__wrapper">
+      <%- include('partials/header') %>
+
+      <main class="site__middle">
+        <div class="download download--enterprise page-download">
+          <div class="container">
+            <div class="download__sections">
+              <section class="download__section download__intro">
+                <h1 class="download__intro-title">dialog Enterprise</h1>
+                <div class="download__intro-text">
+                  Информацию о подключении вы можете получить у своего системного администратора или в центре <a class="link--default" href="https://support.dlg.im">поддержки клиентов</a>.
+                </div>
+              </section>
+
+              <section
+                class="download__section download__item download__desktop"
+              >
+                <h2 class="download__item-title download__desktop-title">
+                  Десктопное приложение
+                </h2>
+                <div class="download__desktop-pictute">
+                  <img
+                    class="download__desktop-img"
+                    src="/assets/images/download/enterprise-desktop.png"
+                    srcset="/assets/images/download/enterprise-desktop@2x.png 2x"
+                    alt="Десктопное приложение enterprise"
+                  />
+                </div>
+                <div class="download__desktop-button-box">
+                  <a class="button button--default" href="<%=links.osx_ee %>"
+                    >Скачать для MacOS</a
+                  >
+                </div>
+                <div class="download__desktop-systems">
+                  <div class="download__desktop-system">
+                    <a class="download__item-link" href="<%=links.windows_ee %>">Windows</a>
+                  </div>
+                  <div class="download__desktop-system">
+                    <a class="download__item-link" href="<%=links.linux_ee %>">Linux 32</a>
+                  </div>
+                  <div class="download__desktop-system">
+                    <a class="download__item-link" href="<%=links.linux64_ee %>">Linux 64</a>
+                  </div>
+                </div>
+              </section>
+
+              <section
+                class="download__section download__item download__mobile"
+              >
+                <h2 class="download__item-title download__mobile-title">
+                  Мобильное приложение
+                </h2>
+                <div class="download__mobile-items">
+                  <div class="download__mobile-item">
+                    <div class="download__mobile-pictute">
+                      <img
+                        class="download__mobile-img"
+                        src="/assets/images/download/enterprise-mobile-iphone.png"
+                        srcset="
+                          /assets/images/download/enterprise-mobile-iphone@2x.png 2x
+                        "
+                        alt="Мобильное приложение enterprise iPhone / iPad"
+                      />
+                    </div>
+                    <div class="download__mobile-link-box">
+                      <a class="download__item-link" href="/404">iPhone / iPad</a>
+                    </div>
+                    <div class="download__mobile-qr-box">
+                      <img
+                        class="download__mobile-qr"
+                        src="/assets/images/download/enterprise-mobile-iphone-qr.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="download__mobile-item">
+                    <div class="download__mobile-pictute">
+                      <img
+                        class="download__mobile-img"
+                        src="/assets/images/download/enterprise-mobile-android.png"
+                        srcset="/assets/images/download/enterprise-mobile-android@2x.png 2x"
+                        alt="Мобильное приложение enterprise Android"
+                      />
+                    </div>
+                    <div class="download__mobile-link-box">
+                      <a class="download__item-link" href="/404">Android</a>
+                    </div>
+                    <div class="download__mobile-qr-box">
+                      <img
+                        class="download__mobile-qr"
+                        src="/assets/images/download/enterprise-mobile-android-qr.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="download__section download__item download__web">
+                <h2 class="download__item-title download__web-title">
+                  Web версия
+                </h2>
+                <div class="download__web-pictute">
+                  <img
+                    class="download__web-img"
+                    src="/assets/images/download/enterprise-web.png"
+                    srcset="/assets/images/download/enterprise-web@2x.png 2x"
+                    alt="Web версия enterprise"
+                  />
+                </div>
+                <div class="download__web-button-box">
+                  <a class="button button--default" href="<%=links.web_ee %>">Начать</a>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <%- include('partials/footer') %>
+    </div>
+
+    <script src="/assets/index.js"></script>
+  </body>
+</html>

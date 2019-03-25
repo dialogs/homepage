@@ -1,5 +1,4 @@
 node_modules/
-
-src/assets/index.js
-src/assets/styles.css
-src/assets/fonts/
+public/
+.cache/
+server/gatsby-express.json

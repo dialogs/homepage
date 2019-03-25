@@ -1,0 +1,11 @@
+@import '../../styles/variables.css';
+
+.easy {
+  @media (--mobile-viewport) {
+    padding-top: 30px;
+  }
+
+  & .heading {
+    padding: 0;
+  }
+}

@@ -1,0 +1,201 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+@import '../../styles/variables.css';
+
+.support {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @media (--tablet-viewport) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .page_header {
+    padding-bottom: 60px;
+
+    @media (--tablet-landscape-viewport) {
+      padding-top: 40px;
+    }
+
+    @media (--laptop-viewport) {
+      padding-top: 30px;
+    }
+  }
+
+  &__section {
+    padding-bottom: 60px;
+
+    @media (--tablet-viewport) {
+      padding-bottom: 100px;
+    }
+
+    &-form {
+      @media (--tablet-viewport) {
+        width: calc(50% - var(--padding-side-columns) / 2);
+      }
+    }
+
+    &-info {
+      @media (--mobile-viewport) {
+        padding-bottom: 80px;
+      }
+
+      @media (--tablet-viewport) {
+        width: calc(50% - var(--padding-side-columns) * 1.5);
+      }
+
+      @media (--tablet-landscape-viewport) {
+        width: calc(50% - var(--padding-side-columns));
+        margin-top: 6px;
+      }
+
+      @media (--laptop-viewport) {
+        width: calc(50% - var(--padding-side-columns) * 2);
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__form {
+    @media (--laptop-viewport) {
+      margin-top: 30px;
+    }
+
+    & .input,
+    & .checkbox {
+    }
+
+    & .input {
+      @media (--tablet-viewport) {
+        margin-bottom: 8px;
+      }
+    }
+
+    & .checkbox {
+      @media (--tablet-landscape-viewport) {
+        margin-top: 12px;
+      }
+    }
+
+    & .form__footer {
+      margin-top: 20px;
+
+      @media (--tablet-viewport) {
+        margin-top: 32px;
+      }
+
+      @media (--tablet-landscape-viewport) {
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        margin-top: 42px;
+      }
+
+      & .button {
+      }
+
+      & .information {
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--text-color-main-03);
+        margin-top: 40px;
+
+        @media (--tablet-landscape-viewport) {
+          margin-top: 0;
+          margin-left: 40px;
+          margin-right: calc(-1 * var(--padding-side-columns));
+        }
+
+        @media (--laptop-viewport) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__corporate {
+    position: relative;
+    padding: 40px 0 60px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+
+    @media (--laptop-viewport) {
+      padding-bottom: 40px;
+    }
+
+    @media (--desktop-viewport) {
+      padding-right: calc(var(--padding-side-columns) / 2);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(-1 * var(--margin-container-side));
+      right: calc(-1 * var(--margin-container-side));
+      background: var(--color-primary);
+      z-index: -1;
+
+      @media (--tablet-viewport) {
+        left: calc(-1 * var(--padding-side-columns) / 2);
+      }
+
+      @media (--laptop-viewport) {
+        top: -3px;
+        left: -35px;
+      }
+    }
+
+    &-title {
+      font-size: var(--font-size-title-2);
+      line-height: var(--line-height-title-2);
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      font-size: var(--font-size-content-3);
+      line-height: var(--line-height-content-3);
+      letter-spacing: var(--letter-spacing-0275);
+    }
+
+    &__link-enterprise {
+      display: inline-block;
+    }
+  }
+
+  &__mail {
+    &-box {
+      padding-top: 40px;
+
+      @media (--tablet-viewport) {
+        padding-top: 50px;
+      }
+
+      @media (--tablet-landscape-viewport) {
+        padding-right: var(--padding-side-columns);
+      }
+
+      @media (--laptop-viewport) {
+        padding-top: 40px;
+      }
+
+      & p {
+        margin: 0;
+      }
+
+      & p + p {
+        margin-top: 20px;
+      }
+    }
+
+    &-text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

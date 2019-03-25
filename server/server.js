@@ -4,36 +4,34 @@
 
 const path = require('path');
 const express = require('express');
+const gatsyExpress = require('gatsby-plugin-express');
+const bodyParser = require('body-parser');
+
+const { isDev, server } = require('./config');
+const api = require('./api');
 const app = express();
 
-app.set('view engine', 'ejs');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/assets', express.static(path.join(__dirname, '../src/assets')));
+app.use('/api/v1', api);
 
-app.get('/', (req, res) => res.render('../src/index'));
-app.get('/features', (req, res) => res.render('../src/features'));
-app.get('/blog', (req, res) => res.render('../src/blog'));
-app.get('/blog/tag', (req, res) => res.render('../src/blogTag'));
-app.get('/about', (req, res) => res.render('../src/about'));
-app.get('/download', (req, res) => res.render('../src/download'));
-app.get('/download/cloud', (req, res) => res.render('../src/downloadCloud'));
-app.get('/licenses', (req, res) => res.render('../src/licenses'));
-app.get('/support', (req, res) => res.render('../src/support'));
-app.get('/legal', (req, res) => res.render('../src/legal'));
+if (!isDev) {
+  app.use(express.static('public/'));
+  app.use(
+    gatsyExpress('server/gatsby-express.json', {
+      publicDir: './public/',
+      template: path.resolve('./public/404/index.html'),
+      redirectSlashes: true,
+    }),
+  );
+}
 
-app.get('/playground', (req, res) => res.render('../src/playground'));
-
-app.listen(
-  {
-    port: 8080,
-    host: '0.0.0.0',
-  },
-  (error) => {
-    if (error) {
-      console.trace(error);
-      process.exit(1);
-    } else {
-      console.log('Server started');
-    }
-  },
-);
+app.listen(server, (error) => {
+  if (error) {
+    console.trace(error);
+    process.exit(1);
+  } else {
+    console.log(`Express server started at ${server.host}:${server.port}\n`);
+  }
+});
