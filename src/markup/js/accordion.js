@@ -10,7 +10,6 @@ panelTitle.parent().attr('data-open', false);
 
 $(() => {
   function handleAccorderonTitleClick(event) {
-    console.log(handleAccorderonTitleClick);
     event.preventDefault();
 
     const currentPanelTitle = $(this).parent();

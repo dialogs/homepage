@@ -9,7 +9,6 @@ export function SubscribeForm({ onSubmit, className }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('SubscribeForm handleSubmit', { email });
     onSubmit({ email });
   }
 
