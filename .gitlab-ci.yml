@@ -12,7 +12,7 @@ cache:
   key: '${CI_COMMIT_SHA}'
   paths:
     - ./node_modules
-    - ./src
+    - ./server
     - ./public
 
 stages:
