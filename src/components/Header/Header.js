@@ -73,7 +73,11 @@ export function Header({
           </div>
         </div>
       </Container>
-      <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={closeMobileMenu}
+        openOfferModal={openOfferModal}
+      />
     </header>
   );
 }

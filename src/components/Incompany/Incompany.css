@@ -78,6 +78,10 @@
     @media (--mobile-viewport) {
       display: none;
     }
+
+    & .tabs__tab {
+      cursor: default !important;
+    }
   }
 
   &__content {

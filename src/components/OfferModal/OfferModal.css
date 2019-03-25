@@ -1,0 +1,6 @@
+.offer_modal__form {
+  & .input,
+  & .select {
+    flex: 0 0 45%;
+  }
+}

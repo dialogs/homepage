@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import { Container } from '../Container/Container';
+import links from '../../constants/links';
 
 export function Footer() {
   return (
@@ -26,7 +27,7 @@ export function Footer() {
               <div className="footer__social">
                 <div className="footer__social-item" data-social="facebook">
                   <a
-                    href="https://www.facebook.com/startdialog"
+                    href={links.facebook}
                     className="footer__social-link"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -49,7 +50,7 @@ export function Footer() {
                 </div>
                 <div className="footer__social-item" data-social="vkontakte">
                   <a
-                    href="https://vk.com/dlgim"
+                    href={links.vk}
                     className="footer__social-link"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -72,7 +73,7 @@ export function Footer() {
                 </div>
                 <div className="footer__social-item" data-social="youtube">
                   <a
-                    href="https://www.youtube.com/channel/UCxIlUFZyAMWOEq6IAL_sfAA?view_as=subscriber"
+                    href={links.youtube}
                     className="footer__social-link"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -97,7 +98,7 @@ export function Footer() {
                 </div>
                 <div className="footer__social-item" data-social="twitter">
                   <a
-                    href="https://twitter.com/dialoglive"
+                    href={links.twitter}
                     className="footer__social-link"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -120,7 +121,7 @@ export function Footer() {
                 </div>
                 <div className="footer__social-item" data-social="github">
                   <a
-                    href="https://github.com/dialogs"
+                    href={links.github}
                     className="footer__social-link"
                     rel="noopener noreferrer"
                     target="_blank"

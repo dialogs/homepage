@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Section } from '../Section/Section';
 import { getOS } from '../../utils/getOS';
+import links from '../../constants/links';
 
 export function DownloadDesktop() {
   const os = getOS();
@@ -10,7 +10,7 @@ export function DownloadDesktop() {
     switch (os) {
       case 'macOS':
         return (
-          <a className="button button--default" href="<%=links.osx %>">
+          <a className="button button--default" href={links.osx}>
             Скачать для MacOS
           </a>
         );
@@ -18,10 +18,10 @@ export function DownloadDesktop() {
       case 'Linux':
         return (
           <>
-            <a className="button button--default" href="<%=links.linux %>">
+            <a className="button button--default" href={links.linux}>
               Скачать для Linux 32
             </a>
-            <a className="button button--default" href="<%=links.linux64 %>">
+            <a className="button button--default" href={links.linux64}>
               Скачать для Linux 64
             </a>
           </>
@@ -30,7 +30,7 @@ export function DownloadDesktop() {
       case 'Windows':
       default:
         return (
-          <a className="button button--default" href="<%=links.osx %>">
+          <a className="button button--default" href={links.osx}>
             Скачать для Windows
           </a>
         );
@@ -56,28 +56,28 @@ export function DownloadDesktop() {
       <div className="download__desktop-systems">
         {os !== 'macOS' && (
           <div className="download__desktop-system">
-            <a className="download__item-link" href="<%=links.osc %>">
+            <a className="download__item-link" href={links.osc}>
               Mac OS
             </a>
           </div>
         )}
         {os !== 'Windows' && (
           <div className="download__desktop-system">
-            <a className="download__item-link" href="<%=links.windows %>">
+            <a className="download__item-link" href={links.windows}>
               Windows
             </a>
           </div>
         )}
         {os !== 'Linux' && (
           <div className="download__desktop-system">
-            <a className="download__item-link" href="<%=links.linux %>">
+            <a className="download__item-link" href={links.linux}>
               Linux 32
             </a>
           </div>
         )}
         {os !== 'Linux' && (
           <div className="download__desktop-system">
-            <a className="download__item-link" href="<%=links.linux64 %>">
+            <a className="download__item-link" href={links.linux64}>
               Linux 64
             </a>
           </div>

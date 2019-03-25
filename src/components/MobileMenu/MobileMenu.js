@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import './MobileMenu.css';
 
-export function MobileMenu({ isOpen, onClose }) {
+export function MobileMenu({ isOpen, onClose, openOfferModal }) {
   const classes = classNames('mobile-menu', {
     'mobile-menu--opened': isOpen,
   });
@@ -44,7 +44,9 @@ export function MobileMenu({ isOpen, onClose }) {
             Блог
           </Link>
         </nav>
-        <button className="mobile-menu__button">Получить предложение</button>
+        <button className="mobile-menu__button" onClick={openOfferModal}>
+          Получить предложение
+        </button>
       </div>
     </div>
   );
