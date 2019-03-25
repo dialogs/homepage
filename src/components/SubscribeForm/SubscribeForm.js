@@ -3,13 +3,14 @@ import classNames from 'classnames';
 
 import { Input } from '../Input/Input';
 
-export function SubscribeForm({ className }) {
+export function SubscribeForm({ onSubmit, className }) {
   const [email, setEmail] = useState('');
   const classes = classNames('form', className);
 
   function handleSubmit(event) {
     event.preventDefault();
     console.log('SubscribeForm handleSubmit', { email });
+    onSubmit({ email });
   }
 
   return (
@@ -17,6 +18,7 @@ export function SubscribeForm({ className }) {
       <Input
         value={email}
         type="email"
+        name="email"
         onChange={setEmail}
         label="Ваш e-mail"
       />

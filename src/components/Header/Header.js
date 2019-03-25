@@ -34,7 +34,7 @@ export function Header({
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/download/cloud" className="header__menu-link">
+                  <Link to="/download" className="header__menu-link">
                     Скачать
                   </Link>
                 </li>

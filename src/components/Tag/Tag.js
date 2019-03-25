@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 export function Tag({ name }) {
   return <span className="tag">{name}</span>;
