@@ -96,7 +96,7 @@ function logBody(body, site) {
   });
 }
 
-router.post('/', (request, responce) => {
+router.post('/', (request, response) => {
   const { body } = request;
   const referer = request.header('referer');
   const promises = [];
@@ -109,21 +109,21 @@ router.post('/', (request, responce) => {
 
   Promise.all(promises)
     .then(() => {
-      responce.json({
+      response.json({
         status: 200,
         message: 'Ok',
       });
     })
     .catch((e) => {
       console.error(e);
-      responce.json({
+      response.json({
         status: 500,
         message: 'Internal Error',
       });
     });
 });
 
-// router.post('/subscribe', (request, responce) => {
+// router.post('/subscribe', (request, response) => {
 //   const referer = request.header('referer');
 //   const body = request.body;
 //   let promises = [];
@@ -135,21 +135,21 @@ router.post('/', (request, responce) => {
 //
 //   Promise.all(promises)
 //     .then(() => {
-//       responce.json({
+//       response.json({
 //         status: 200,
 //         message: 'Ok',
 //       });
 //     })
 //     .catch((e) => {
 //       console.error(e);
-//       responce.json({
+//       response.json({
 //         status: 500,
 //         message: 'Internal Error',
 //       });
 //     });
 // });
 //
-// router.post('/offer', (request, responce) => {
+// router.post('/offer', (request, response) => {
 //   const referer = request.header('referer');
 //   const body = request.body;
 //   let promises = [];
@@ -160,20 +160,20 @@ router.post('/', (request, responce) => {
 //
 //   Promise.all(promises)
 //     .then(() => {
-//       responce.json({
+//       response.json({
 //         status: 200,
 //         message: 'Ok',
 //       });
 //     })
 //     .catch((e) => {
 //       console.error(e);
-//       responce.json({
+//       response.json({
 //         status: 500,
 //         message: 'Internal Error',
 //       });
 //     });
 // });
-// router.post('/support', (request, responce) => {
+// router.post('/support', (request, response) => {
 //   const referer = request.header('referer');
 //   const body = request.body;
 //   let promises = [];
@@ -184,22 +184,22 @@ router.post('/', (request, responce) => {
 //
 //   Promise.all(promises)
 //     .then(() => {
-//       responce.json({
+//       response.json({
 //         status: 200,
 //         message: 'Ok',
 //       });
 //     })
 //     .catch((e) => {
 //       console.error(e);
-//       responce.json({
+//       response.json({
 //         status: 500,
 //         message: 'Internal Error',
 //       });
 //     });
 // });
 
-router.get('/', (request, responce) => {
-  responce.json({
+router.get('/', (request, response) => {
+  response.json({
     status: 200,
     message: 'knock knock...',
   });

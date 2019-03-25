@@ -2,6 +2,10 @@ import axios from 'axios';
 
 import { Field } from '../utils/field';
 
+function getData(responce) {
+  return responce.data;
+}
+
 export function submitSubscribeForm(form) {
   return (dispatch) => {
     const body = { ...form, form: 'subscribe' };
@@ -10,7 +14,7 @@ export function submitSubscribeForm(form) {
       dispatch,
       type: 'SUBSCRIBE_FORM_SUBMIT',
       context: {},
-      action: axios.post('/api/v1/', body),
+      action: axios.post('/api/v1/', body).then(getData),
       initialState: null,
     });
   };
@@ -24,7 +28,7 @@ export function submitOfferForm(form) {
       dispatch,
       type: 'OFFER_FORM_SUBMIT',
       context: {},
-      action: axios.post('/api/v1/', body),
+      action: axios.post('/api/v1/', body).then(getData),
       initialState: null,
     });
   };
@@ -38,7 +42,7 @@ export function submitSupportForm(form) {
       dispatch,
       type: 'SUPPORT_FORM_SUBMIT',
       context: {},
-      action: axios.post('/api/v1/', body),
+      action: axios.post('/api/v1/', body).then(getData),
       initialState: null,
     });
   };
