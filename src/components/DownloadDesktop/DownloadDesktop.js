@@ -38,7 +38,7 @@ export function DownloadDesktop() {
   }
 
   return (
-    <Section className="download__section download__item download__desktop">
+    <div className="download__section download__item download__desktop">
       <h2 className="download__item-title download__desktop-title">
         Десктопное приложение
       </h2>
@@ -83,6 +83,6 @@ export function DownloadDesktop() {
           </div>
         )}
       </div>
-    </Section>
+    </div>
   );
 }

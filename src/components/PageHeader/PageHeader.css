@@ -3,11 +3,10 @@
 .page_header {
   margin: 0;
   font-weight: 500;
-  font-size: 60px;
-  line-height: 62px;
   padding: 40px 0;
 
   @media (--mobile-viewport) {
+    padding-top: 25px;
     font-size: 28px;
     line-height: 30px;
   }
