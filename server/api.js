@@ -89,18 +89,6 @@ function notifyEmail(body, site) {
   });
 }
 
-function notifyMailchimp(body, site) {
-  const listId =
-    body.lang === 'ru' ? config.mailchimp.list.ru : config.mailchimp.list.en;
-  return mailchimp.post(`/lists/${listId}/members`, {
-    email_address: body.email,
-    status: 'subscribed',
-    merge_fields: {
-      FUNAME: body.name,
-    },
-  });
-}
-
 function logBody(body, site) {
   return new Promise((resolve, reject) => {
     console.log({ site, body });
@@ -118,9 +106,6 @@ router.post('/', (request, responce) => {
   }
   promises.push(notifyEmail(body, referer));
   promises.push(notifyDialog(body, referer));
-  if (body.form === 'subscribe') {
-    promises.push(notifyMailchimp(body, referer));
-  }
 
   Promise.all(promises)
     .then(() => {
