@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Modal } from '../Modal/Modal';
-import { OfferForm } from '../OfferForm/OfferForm';
+import OfferForm from '../OfferForm';
 
 export function OfferModal({ isOpen, onClose }) {
   if (!isOpen) {

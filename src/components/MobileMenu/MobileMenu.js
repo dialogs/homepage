@@ -28,19 +28,19 @@ export function MobileMenu({ isOpen, onClose }) {
           />
         </div>
         <nav className="navigation">
-          <Link to="/about" className="navigation__link">
+          <Link to="/about" className="navigation__link" onClick={onClose}>
             О нас
           </Link>
-          <Link to="/download/cloud" className="navigation__link">
+          <Link to="/download" className="navigation__link" onClick={onClose}>
             Скачать
           </Link>
-          <Link to="/support" className="navigation__link">
+          <Link to="/support" className="navigation__link" onClick={onClose}>
             Поддержка
           </Link>
-          <Link to="/features" className="navigation__link">
+          <Link to="/features" className="navigation__link" onClick={onClose}>
             Функции
           </Link>
-          <Link to="/blog" className="navigation__link">
+          <Link to="/blog" className="navigation__link" onClick={onClose}>
             Блог
           </Link>
         </nav>

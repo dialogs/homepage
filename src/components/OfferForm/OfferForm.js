@@ -7,45 +7,64 @@ import { Checkbox } from '../Checkbox/Checkbox';
 
 import './OfferForm.css';
 
-export function OfferForm({ value, className }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [company, setCompany] = useState('');
-  const [users, setUsers] = useState('1-10');
-  const [agree, setAgree] = useState(true);
-  const [subscribe, setSubscribe] = useState(false);
+export function OfferForm({ onSubmit, className }) {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    users: '1-10',
+    agree: true,
+    subscribe: false,
+  });
+
   const classes = classNames('form', className);
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('OfferForm handleSubmit', {
-      name,
-      email,
-      phone,
-      company,
-      users,
-      agree,
-      subscribe,
+    onSubmit(form);
+  }
+
+  function handleChange(value, name) {
+    setForm({
+      ...form,
+      [name]: value,
     });
   }
 
   return (
     <form className={classes} onSubmit={handleSubmit}>
       <div className="form__box">
-        <Input value={name} onChange={setName} label="Как к вам обращаться" />
-        <Input value={email} onChange={setEmail} label="Рабочий e-mail" />
-        <Input value={phone} onChange={setPhone} label="Телефон" />
         <Input
-          value={company}
-          onChange={setCompany}
+          value={form.name}
+          name="name"
+          onChange={handleChange}
+          label="Как к вам обращаться"
+        />
+        <Input
+          value={form.email}
+          name="email"
+          onChange={handleChange}
+          label="Рабочий e-mail"
+        />
+        <Input
+          value={form.phone}
+          name="phone"
+          onChange={handleChange}
+          label="Телефон"
+        />
+        <Input
+          value={form.company}
+          name="company"
+          onChange={handleChange}
           label="Название компании"
         />
 
         <Select
           options={['1-10', '11-50', '51-100', '101-500', '500+']}
-          value={users}
-          onChange={setUsers}
+          value={form.users}
+          name="users"
+          onChange={handleChange}
           label="Название компании"
         />
       </div>
@@ -53,13 +72,15 @@ export function OfferForm({ value, className }) {
       <div className="form__box">
         <Checkbox
           label="Я согласен на обработку персональных данных"
-          value={agree}
-          onChange={setAgree}
+          value={form.agree}
+          name="agree"
+          onChange={handleChange}
         />
         <Checkbox
           label="Подписаться на новостную рассылку"
-          value={subscribe}
-          onChange={setSubscribe}
+          value={form.subscribe}
+          name="subscribe"
+          onChange={handleChange}
         />
       </div>
 

@@ -10,8 +10,7 @@ import { removeServiceTags } from '../../utils/removeServiceTags';
 import './BlogHeader.css';
 
 export function BlogHeader({ featured, tags }) {
-  const mainPost = featured[0];
-  const otherPosts = featured.slice(1);
+  const [mainPost, ...otherPosts] = featured;
 
   return (
     <Section className="blog__top-section blog_header">
@@ -75,7 +74,7 @@ export function BlogHeader({ featured, tags }) {
             })}
           </div>
         </section>
-        {tags && <BlogTags tags={tags.nodes} />}
+        {false && <BlogTags tags={tags.nodes} />}
       </div>
     </Section>
   );

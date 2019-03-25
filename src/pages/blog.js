@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Container } from '../components/Container/Container';
+import { BlogHeader } from '../components/BlogHeader/BlogHeader';
 import { BlogRoster } from '../components/BlogRoster/BlogRoster';
 import { Subscribe } from '../components/Subscribe/Subscribe';
-import { BlogHeader } from '../components/BlogHeader/BlogHeader';
 
 export default ({ data: { featured, allPosts, tags } }) => {
   return (

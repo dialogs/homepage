@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
-import { OfferForm } from '../OfferForm/OfferForm';
+import OfferForm from '../OfferForm';
 import './Offer.css';
 
 export function Offer() {

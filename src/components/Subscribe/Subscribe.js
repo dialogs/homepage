@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Section } from '../Section/Section';
-import { SubscribeForm } from '../SubscribeForm/SubscribeForm';
+import SubscribeForm from '../SubscribeForm';
 import './Subscribe.css';
 
 export function Subscribe() {

@@ -1,14 +1,23 @@
-import { createStore as reduxCreateStore } from 'redux';
+import {
+  createStore as reduxCreateStore,
+  applyMiddleware,
+  compose,
+} from 'redux';
+import thunk from 'redux-thunk';
+
 import { createRootReducer } from './state/createRootReducer';
 
 const initialState = {};
+const composeEnhancers =
+  (process.env.NODE_ENV !== 'production' &&
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
 
 export function createStore() {
-  const rootReducer = createRootReducer();
-  const devTools =
-    typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__
-      ? window.__REDUX_DEVTOOLS_EXTENSION__()
-      : undefined;
-
-  return reduxCreateStore(rootReducer, initialState, devTools);
+  return reduxCreateStore(
+    createRootReducer(),
+    initialState,
+    composeEnhancers(applyMiddleware(thunk)),
+  );
 }
