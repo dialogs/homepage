@@ -12,16 +12,6 @@
     }
   }
 
-  & .page_header {
-    @media (--mobile-viewport) {
-      padding-bottom: 20px;
-    }
-
-    @media (--tablet-viewport) {
-      padding-bottom: 40px;
-    }
-  }
-
   &__section {
   }
 
@@ -132,10 +122,6 @@
           padding-right: calc(3 * var(--padding-side-columns));
         }
       }
-
-      & .link--default {
-        display: inline-block;
-      }
     }
   }
 
@@ -175,10 +161,17 @@
       & .button {
         flex: 0 0 auto;
         margin-bottom: 16px;
-        max-width: 320px;
 
         @media (--mobile-viewport) {
           width: auto;
+        }
+
+        @media (--tablet-viewport) {
+          max-width: 250px;
+        }
+
+        @media (--tablet-landscape-viewport) {
+          max-width: 320px;
         }
       }
     }

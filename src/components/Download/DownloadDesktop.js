@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { getOS } from '../../utils/getOS';
-import links from '../../constants/links';
 
-export function DownloadDesktop() {
+export function DownloadDesktop(links) {
   const os = getOS();
+  console.log('os', os);
 
   function renderDownloadDesktopButton() {
     switch (os) {
