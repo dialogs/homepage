@@ -35,4 +35,11 @@ module.exports = {
     endpoint: env('GHOST_ENDPOINT', 'https://georgetokmakov.ghost.io'),
     apiKey: env('GHOST_API_KEY', '927544e28f9c605d92e6e9123a'),
   },
+  mailchimp: {
+    key: env('MAILCHIMP_KEY', '60f18b64be37e27454d2be0075362713-us13'),
+    list: {
+      ru: env('MAILCHIMP_LIST_RU', '31bdb551f1'),
+      en: env('MAILCHIMP_LIST_EN', 'fd8e55c366'),
+    },
+  },
 };

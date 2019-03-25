@@ -8,10 +8,22 @@ const initialState = {
 
 export function forms(state = initialState, action) {
   switch (action.type) {
-    case 'OFFER_FORM/CHANGE':
+    case 'SUBSCRIBE_FORM_SUBMIT':
       return {
-        state,
-        offer: new Field(action.payload),
+        ...state,
+        subscribe: action.payload,
+      };
+
+    case 'OFFER_FORM_SUBMIT':
+      return {
+        ...state,
+        subscribe: action.payload,
+      };
+
+    case 'SUPPORT_FORM_SUBMIT':
+      return {
+        ...state,
+        subscribe: action.payload,
       };
 
     default:

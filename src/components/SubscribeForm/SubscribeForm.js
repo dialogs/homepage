@@ -13,13 +13,17 @@ export function SubscribeForm({ onSubmit, className }) {
     onSubmit({ email });
   }
 
+  function handleChange(value) {
+    setEmail(value);
+  }
+
   return (
     <form className={classes} onSubmit={handleSubmit}>
       <Input
         value={email}
         type="email"
         name="email"
-        onChange={setEmail}
+        onChange={handleChange}
         label="Ваш e-mail"
       />
       <div className="form__footer">

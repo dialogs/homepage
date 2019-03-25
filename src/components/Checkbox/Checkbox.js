@@ -7,7 +7,7 @@ export function Checkbox({ label, id, name, className, value, onChange }) {
   const classes = classnames('checkbox', className);
 
   function handleChange(event) {
-    onChange(!value);
+    onChange(!value, name);
   }
 
   return (

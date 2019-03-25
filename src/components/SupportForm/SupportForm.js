@@ -4,36 +4,59 @@ import classNames from 'classnames';
 import { Input } from '../Input/Input';
 import { Checkbox } from '../Checkbox/Checkbox';
 
-export function SupportForm({ className }) {
+export function SupportForm({ onSubmit, className }) {
   const classes = classNames('form', className);
-  const [email, setEmail] = useState('');
-  const [topic, setTopic] = useState('');
-  const [message, setMessage] = useState('');
-  const [agree, setAgree] = useState(true);
+  const [form, setForm] = useState({
+    email: '',
+    topic: '',
+    message: '',
+    agree: true,
+  });
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('handleSubmit', { email, topic, message, agree });
+    onSubmit(form);
+  }
+
+  function handleChange(value, name) {
+    setForm({
+      ...form,
+      [name]: value,
+    });
   }
 
   return (
     <form onSubmit={handleSubmit} className={classes}>
-      <Input value={email} type="text" onChange={setEmail} label="Ваш e-mail" />
-
-      <Input value={topic} type="email" onChange={setTopic} label="Тема" />
+      <Input
+        value={form.email}
+        name="email"
+        type="email"
+        onChange={handleChange}
+        label="Ваш e-mail"
+      />
 
       <Input
-        value={message}
+        value={form.topic}
+        name="topic"
+        type="text"
+        onChange={handleChange}
+        label="Тема"
+      />
+
+      <Input
+        value={form.message}
+        name="message"
         type="textarea"
-        onChange={setMessage}
+        onChange={handleChange}
         rows={6}
         label="Опишите ваш вопрос"
       />
 
       <Checkbox
         label="Я согласен на обработку персональных данных"
-        value={agree}
-        onChange={setAgree}
+        value={form.agree}
+        name="agree"
+        onChange={handleChange}
       />
 
       <div className="form__footer">

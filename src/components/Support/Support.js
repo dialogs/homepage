@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
-import { SupportForm } from '../SupportForm/SupportForm';
+import SupportForm from '../SupportForm';
 
 import './Support.css';
 

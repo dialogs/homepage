@@ -24,7 +24,7 @@ export function Select({
   );
 
   function handleChange() {
-    onChange(ref.current.value);
+    onChange(ref.current.value, name);
   }
 
   function handleLabelMouseDown(event) {
