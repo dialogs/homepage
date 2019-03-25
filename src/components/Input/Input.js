@@ -28,7 +28,7 @@ export function Input({
   );
 
   function handleChange() {
-    onChange(ref.current.value);
+    onChange(name, ref.current.value);
   }
 
   function handleLabelMouseDown(event) {
