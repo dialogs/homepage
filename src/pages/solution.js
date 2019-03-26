@@ -5,6 +5,7 @@ import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Promo } from '../components/Promo/Promo';
 import { SecureCommunication } from '../components/SecureCommunication/SecureCommunication';
+import { EffectiveCommunication } from '../components/EffectiveCommunication/EffectiveCommunication';
 
 export default () => {
   return (
@@ -32,6 +33,7 @@ export default () => {
           }
         />
         <SecureCommunication />
+        <EffectiveCommunication />
       </Container>
     </Page>
   );

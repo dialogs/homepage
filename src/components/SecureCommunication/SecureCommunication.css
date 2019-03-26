@@ -3,16 +3,117 @@
 .secure-communication {
   padding-top: 20px;
 
-  & .block {
-    &--header {
-    }
+  & .heading {
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    margin-top: 0;
+    margin-bottom: 40px;
   }
 
-  & .item {
+  & .box {
+    margin-bottom: 60px;
+
+    &__icon {
+      margin-bottom: 40px;
+    }
+
     &__title {
-      font-size: 24px;
-      line-height: 31px;
+      font-size: var(--font-size-title-4);
+      line-height: var(--line-height-title-4);
       font-weight: 500;
+      margin-bottom: 40px;
+    }
+
+    &__content {
+    }
+
+    &__subtitle {
+      font-weight: 500;
+    }
+
+    &__text {
+    }
+
+    &--architecture {
+      @media (--tablet-viewport) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      & .col {
+        @media (--tablet-viewport) {
+          width: calc(50% - var(--padding-side-columns) / 2);
+        }
+      }
+
+      &__image {
+        position: relative;
+        padding-bottom: 45px;
+
+        @media (--mobile-viewport) {
+          margin-top: 40px;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          height: 50%;
+          left: -20px;
+          right: -20px;
+          bottom: 0;
+          background-color: var(--color-primary);
+          z-index: -1;
+        }
+
+        & img {
+          display: block;
+          max-width: 100%;
+        }
+      }
+    }
+
+    &--standarts {
+      & .items {
+      }
+
+      & .item {
+        margin-bottom: 40px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      & .box__subtitle {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 30px;
+
+        @media (--mobile-viewport) {
+          padding-right: 40px;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 1px;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          background-color: var(--color-secondary);
+        }
+      }
+    }
+
+    &--compliance {
+      & .list li:first-of-type {
+        margin-top: 0;
+      }
+
+      & .link-box {
+        margin-top: 40px;
+      }
     }
   }
 }
