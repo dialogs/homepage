@@ -63,6 +63,12 @@
         @media (--tablet-viewport) {
           width: calc(50% - var(--padding-side-columns) / 2);
         }
+
+        &.information {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+        }
       }
 
       &__image {

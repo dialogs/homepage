@@ -11,7 +11,7 @@ export function SecureCommunication() {
       <Heading level="2">Безопасное общение</Heading>
 
       <div className="box box--architecture">
-        <div className="col">
+        <div className="col information">
           <div className="box__icon">
             <img
               src="/images/home/safety/icon-safety-communication-1.svg"
