@@ -15,8 +15,8 @@ export function Tab({ value, current, changeOnHover, children, onChange }) {
     : { onClick: handleTabSelect };
 
   return (
-    <div className={className} {...actions}>
-      {children}
+    <div className={className}>
+      <span {...actions}>{children}</span>
     </div>
   );
 }
