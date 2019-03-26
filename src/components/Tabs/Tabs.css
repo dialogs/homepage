@@ -39,15 +39,20 @@
       font-size: var(--font-size-title-2);
       line-height: var(--line-height-title-2);
       font-weight: 500;
-      color: var(--tabs-tab-vertical-color);
 
-      &--active {
-        color: var(--tabs-tab-vertical-color-active);
+      span {
+        color: var(--tabs-tab-vertical-color);
+
+        &:hover {
+          cursor: default;
+          color: #1e1e1e;
+        }
       }
 
-      &:hover {
-        cursor: default;
-        color: #1e1e1e;
+      &--active {
+        span {
+          color: var(--tabs-tab-vertical-color-active);
+        }
       }
 
       & + .tabs__tab {
