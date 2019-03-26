@@ -8,7 +8,7 @@ import './EffectiveCommunication.css';
 export function EffectiveCommunication() {
   return (
     <Section className="effective-communication">
-      <div className="column">
+      <div className="column column--image">
         <Heading level="2">Эффективные коммуникации</Heading>
         <div className="image">
           <img
@@ -17,7 +17,7 @@ export function EffectiveCommunication() {
           />
         </div>
       </div>
-      <div className="column column--info">
+      <div className="column">
         <div className="item">
           <div className="item__title">
             Повышение продуктивности сотрудников за счет:

@@ -162,6 +162,7 @@
       & .list li {
         @media (--tablet-viewport) {
           width: calc(50% - var(--padding-side-columns) / 2);
+          padding-left: 40px;
         }
       }
 

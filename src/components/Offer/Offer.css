@@ -23,11 +23,18 @@
     }
 
     & .heading {
+      margin: 0;
+      font-size: var(--font-size-title);
+      line-height: var(--line-height-title);
       flex: 1 1 auto;
       width: 100%;
 
       @media (--mobile-viewport) {
         padding-top: 0;
+      }
+
+      @media (--tablet-viewport) {
+        padding: 40px 0;
       }
 
       @media (--laptop-viewport) {

@@ -5,6 +5,11 @@
   padding-top: 30px;
   padding-bottom: 30px;
 
+  @media (--tablet-viewport) {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
   & .heading {
     font-size: var(--font-size-title);
     line-height: var(--line-height-title);
@@ -13,6 +18,7 @@
 
     @media (--tablet-viewport) {
       margin-bottom: 60px;
+      padding-right: 40px;
     }
 
     @media (--laptop-viewport) {
@@ -26,6 +32,10 @@
 
     &--partners {
       margin-top: 40px;
+
+      @media (--tablet-viewport) {
+        margin-top: 60px;
+      }
     }
   }
 
@@ -50,8 +60,13 @@
     justify-content: space-between;
     margin-top: 20px;
 
+    @media (--tablet-viewport) {
+      width: 26%;
+    }
+
     &__icon {
       max-width: 100%;
+      max-height: 110px;
     }
 
     &__name {
