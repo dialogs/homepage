@@ -9,7 +9,7 @@ export function Offer() {
   return (
     <Section className="offer">
       <div className="offer__header">
-        <Heading>Получить предложение</Heading>
+        <Heading level="4">Получить предложение</Heading>
         <div className="offer__header__subheader">Пакет от 100 лицензий.</div>
       </div>
       <OfferForm className="offer__form" />
