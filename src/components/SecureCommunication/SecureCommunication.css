@@ -2,6 +2,7 @@
 
 .secure-communication {
   padding-top: 20px;
+  padding-bottom: 30px;
 
   & .heading {
     font-size: var(--font-size-title);
@@ -12,6 +13,10 @@
 
   & .box {
     margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
     &__icon {
       margin-bottom: 40px;

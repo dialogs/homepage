@@ -1,0 +1,53 @@
+@import '../../styles/variables.css';
+
+.effective-communication {
+  padding-top: 30px;
+
+  @media (--tablet-viewport) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  & .heading {
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    margin-top: 0;
+    margin-bottom: 60px;
+  }
+
+  .column {
+    @media (--tablet-viewport) {
+      width: calc(50% - var(--padding-side-columns) / 2);
+    }
+  }
+
+  & .image {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 50%;
+      left: -20px;
+      right: -20px;
+      bottom: 25%;
+      background-color: var(--color-primary);
+      z-index: -1;
+    }
+
+    & img {
+      max-width: 100%;
+    }
+  }
+
+  & .item {
+    margin-top: 40px;
+
+    &__title {
+      font-weight: 500;
+      font-size: var(--font-size-title-2);
+      line-height: var(--line-height-title-2);
+    }
+  }
+}
