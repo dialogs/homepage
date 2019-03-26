@@ -68,6 +68,10 @@
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
+
+          @media (--tablet-landscape-viewport) {
+            justify-content: center;
+          }
         }
       }
 
@@ -77,6 +81,11 @@
 
         @media (--mobile-viewport) {
           margin-top: 40px;
+        }
+
+        @media (--tablet-landscape-viewport) {
+          margin-top: -95px;
+          padding-bottom: 85px;
         }
 
         &:after {
