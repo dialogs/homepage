@@ -6,6 +6,8 @@ import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Promo } from '../components/Promo/Promo';
 import { SecureCommunication } from '../components/SecureCommunication/SecureCommunication';
 import { EffectiveCommunication } from '../components/EffectiveCommunication/EffectiveCommunication';
+import { Partnership } from '../components/Partnership/Partnership';
+import { Offer } from '../components/Offer/Offer';
 
 export default () => {
   return (
@@ -34,6 +36,8 @@ export default () => {
         />
         <SecureCommunication />
         <EffectiveCommunication />
+        <Partnership />
+        <Offer />
       </Container>
     </Page>
   );

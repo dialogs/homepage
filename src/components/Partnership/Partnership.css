@@ -1,0 +1,61 @@
+@import '../../styles/variables.css';
+
+.partnership {
+  font-weight: 500;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  & .heading {
+    font-size: var(--font-size-title);
+    line-height: var(--line-height-title);
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    @media (--tablet-viewport) {
+      margin-bottom: 60px;
+    }
+
+    @media (--laptop-viewport) {
+      margin-bottom: 80px;
+    }
+  }
+
+  .column {
+    &--info {
+    }
+
+    &--partners {
+      margin-top: 40px;
+    }
+  }
+
+  & .subtitle {
+    font-size: var(--font-size-content-3);
+    line-height: var(--line-height-content-3);
+    margin-bottom: 40px;
+  }
+
+  & .partners {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  & .partner {
+    width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    &__icon {
+      max-width: 100%;
+    }
+
+    &__name {
+      margin-top: 20px;
+    }
+  }
+}
