@@ -1,0 +1,83 @@
+@import '../../styles/variables.css';
+
+:root {
+  --select-border-color: color-mod(var(--text-color-main) alpha(20%));
+  --select-active-border-color: #b9bbfa;
+}
+
+.select {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  padding: 24px 0;
+  vertical-align: middle;
+  min-width: 250px;
+  width: 100%;
+
+  &__wrapper {
+    position: relative;
+    line-height: 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: none;
+      border-right: 2px solid var(--color-secondary);
+      border-bottom: 2px solid var(--color-secondary);
+      top: 50%;
+      right: 4px;
+      transform: translateY(-70%) rotate(45deg);
+      pointer-events: none;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    outline: none;
+    padding: 10px 0;
+    border: none;
+    appearance: none;
+    border-radius: 0;
+    box-shadow: 0 1px 0 0 var(--select-border-color);
+    transition: box-shadow 120ms ease;
+    background-color: transparent;
+    font-size: var(--font-size-content-3);
+    line-height: var(--line-height-content-3);
+    color: var(--text-color-main);
+    padding-right: 32px;
+    cursor: pointer;
+  }
+
+  &__label {
+    letter-spacing: 0.275px;
+    padding: 0 var(--default-padding);
+    font-size: var(--font-size-content-3);
+    line-height: var(--line-height-content-3);
+    color: var(--text-color-main);
+    user-select: none;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transform: translateY(0%) translateZ(0);
+    transform-origin: 0% 50%;
+    transition-timing-function: ease;
+    transition-duration: 120ms;
+    transition-property: transform, color;
+    pointer-events: none;
+  }
+
+  &--non-empty,
+  &--focused {
+    & .select__label {
+      cursor: pointer;
+      color: color-mod(var(--text-color-main) alpha(30%));
+      pointer-events: all;
+      transform: translateY(-120%) scale(0.7);
+    }
+
+    & .select__select {
+      box-shadow: 0 2px 0 0 var(--select-active-border-color);
+    }
+  }
+}

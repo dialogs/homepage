@@ -1,0 +1,14 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+@import './variables.css';
+
+.container {
+  margin: var(--container-margin);
+
+  @media (--desktop-viewport) {
+    width: 1320px;
+    margin: 0 auto;
+  }
+}

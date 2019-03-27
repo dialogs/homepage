@@ -1,0 +1,118 @@
+.offer {
+  padding-top: 30px;
+
+  @media (--tablet-viewport) {
+    padding-top: 20px;
+    padding-bottom: 100px;
+  }
+
+  &__header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+
+    @media (--tablet-landscape-viewport) {
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+    @media (--laptop-viewport) {
+      justify-content: flex-start;
+    }
+
+    & .heading {
+      flex: 1 1 auto;
+      width: 100%;
+
+      @media (--mobile-viewport) {
+        padding-top: 0;
+      }
+
+      @media (--laptop-viewport) {
+        flex-grow: 0;
+        width: auto;
+        margin-right: 60px;
+      }
+    }
+
+    &__subheader {
+      flex: 0 0 auto;
+      font-size: var(--font-size-content-2);
+      line-height: var(--line-height-content-2);
+      letter-spacing: var(--letter-spacing-0275);
+      color: var(--text-color-main-03);
+      font-weight: 500;
+
+      @media (--mobile-viewport) {
+        display: none;
+      }
+
+      @media (--tablet-viewport) {
+        padding-bottom: 30px;
+      }
+
+      @media (--tablet-landscape-viewport) {
+        padding-bottom: 0;
+      }
+
+      @media (--laptop-viewport) {
+        width: auto;
+      }
+    }
+  }
+
+  &__form {
+    & .form__box {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-content: flex-start;
+
+      & .input,
+      & .select,
+      & .checkbox {
+        flex: 0 0 100%;
+        margin-bottom: 8px;
+
+        @media (--tablet-viewport) {
+          margin-bottom: 32px;
+          flex-basis: calc(50% - var(--padding-side-columns) / 2);
+          /* width: calc(50% - var(--padding-side-columns) / 2); */
+        }
+      }
+
+      & .input {
+        @media (--tablet-landscape-viewport) {
+          margin-bottom: 15px;
+        }
+      }
+
+      & .checkbox {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 0;
+
+        @media (--tablet-viewport) {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    & .form__footer {
+      margin-top: 20px;
+
+      @media (--mobile-viewport) {
+        & .button {
+          width: 100%;
+        }
+      }
+
+      @media (--tablet-landscape-viewport) {
+        margin-top: 30px;
+      }
+    }
+  }
+}

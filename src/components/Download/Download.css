@@ -1,0 +1,25 @@
+@import '../../styles/variables.css';
+
+.download {
+  padding-top: 0;
+
+  & .page_header {
+    @media (--mobile-viewport) {
+      padding-bottom: 20px;
+    }
+
+    @media (--tablet-viewport) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__subtitle {
+    @media (--mobile-viewport) {
+      margin-right: -4px;
+    }
+
+    & .link--default {
+      display: inline-block;
+    }
+  }
+}

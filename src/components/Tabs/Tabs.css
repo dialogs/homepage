@@ -1,0 +1,62 @@
+@import '../../styles/variables.css';
+
+:root {
+  --tabs-tab-horizontal-color: var(--text-color-main);
+  --tabs-tab-horizontal-color-active: var(--color-secondary);
+  --tabs-tab-vertical-color: color-mod(
+    var(--tabs-tab-horizontal-color) alpha(30%)
+  );
+  --tabs-tab-vertical-color-active: var(--tabs-tab-horizontal-color);
+}
+
+.tabs {
+  display: flex;
+  flex-flow: row wrap;
+
+  &__tab {
+    font-weight: 400;
+    cursor: pointer !important;
+    flex: 0 0 auto;
+  }
+
+  &--horizontal {
+    & .tabs__tab {
+      color: var(--tabs-tab-horizontal-color);
+      font-size: 24px;
+      line-height: 32px;
+      margin-right: 42px;
+
+      &--active {
+        color: var(--tabs-tab-horizontal-color-active);
+      }
+    }
+  }
+
+  &--vertical {
+    flex-flow: column wrap;
+
+    & .tabs__tab {
+      font-size: var(--font-size-title-2);
+      line-height: var(--line-height-title-2);
+      font-weight: 500;
+      color: var(--tabs-tab-vertical-color);
+
+      &--active {
+        color: var(--tabs-tab-vertical-color-active);
+      }
+
+      &:hover {
+        cursor: default;
+        color: #1e1e1e;
+      }
+
+      & + .tabs__tab {
+        margin-top: 15px;
+
+        @media (--laptop-viewport) {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
