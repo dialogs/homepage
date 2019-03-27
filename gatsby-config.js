@@ -1,4 +1,4 @@
-const { isDev, ghost } = require('./config');
+const { isDev, ghost } = require('./server/config');
 
 module.exports = {
   proxy: isDev

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const request = require('request');
 const nodemailer = require('nodemailer');
-const config = require('../config');
+const config = require('./config');
 
 // http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';

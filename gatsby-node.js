@@ -1,5 +1,5 @@
 const path = require(`path`);
-const config = require('./config');
+const config = require('./server/config');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
