@@ -24,13 +24,13 @@ module.exports = {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [
+          require('postcss-nested'),
+          require('postcss-custom-media'),
           require('postcss-preset-env')({
             features: {
               'color-mod-function': true,
-              'postcss-custom-media': true,
             },
           }),
-          require('postcss-nested'),
         ],
       },
     },
