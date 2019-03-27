@@ -11,10 +11,15 @@ import './Features.css';
 export function Features() {
   const [tab, setTab] = useState('messenger');
   const [slideTab, setSlideTab] = useState('calls');
+  const sectionClassName = classNames('features', {
+    'features--primary': true,
+    'features--secondary': false,
+    'features--transparent': false,
+  });
 
   return (
     <Page className="features">
-      <Section className="features">
+      <Section className={sectionClassName}>
         <Heading>Что умеет Reetm</Heading>
         <Tabs onChange={setTab} current={tab} className="features__tabs">
           <Tab value="messenger">Мессенджер</Tab>

@@ -69,6 +69,7 @@
     width: 600px;
     height: 650px;
     transition: background 200ms ease;
+
     @media (--mobile-viewport) {
       display: none;
     }
@@ -94,7 +95,11 @@
 .feature_block {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+
+  & .features__tabs {
+    width: 32%;
+  }
 
   &__links {
     flex: 0 0 370px;
@@ -135,9 +140,22 @@
   }
 
   &__slides {
-    flex: 0 0 560px;
-    padding-right: 120px;
     position: relative;
+
+    @media (--mobile-viewport) {
+    }
+
+    @media (--tablet-viewport) {
+      width: 32%;
+      margin-left: 80px;
+    }
+
+    @media (--tablet-landscape-viewport) {
+    }
+
+    @media (--laptop-viewport) {
+      flex: 0 0 560px;
+    }
 
     &__heading {
       display: none;
@@ -173,8 +191,8 @@
     display: none;
 
     h4 {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: var(--font-size-content-3);
+      line-height: var(--line-height-content-3);
       letter-spacing: 0.275px;
       font-weight: 500;
       padding: 0;
@@ -199,12 +217,13 @@
       /* transition: transform 350ms ease, opacity 200ms ease; */
     }
 
-    &--active {
-      display: block;
+    &:last-child {
+      & .feature_block__image {
+        margin-bottom: 0;
+      }
     }
 
     @media (--mobile-viewport) {
-      display: block !important;
       position: relative;
       padding-top: 40px;
       padding-bottom: 60px;
@@ -220,9 +239,9 @@
       }
     }
 
-    &:last-child {
-      & .feature_block__image {
-        margin-bottom: 0;
+    @media (--tablet-viewport) {
+      &--active {
+        display: block;
       }
     }
   }
@@ -236,6 +255,13 @@
     transform-origin: center center;
     transition: transform 400ms ease, scale 300ms ease, opacity 200ms ease;
     transform: translateZ(0) translateX(350%) translateY(-50%) scale(0.7);
+
+    @media (--tablet-viewport) {
+      .feature_block__slide--active & {
+        opacity: 1;
+        transform: translateZ(0) translateX(-20%) translateY(-50%) scale(1);
+      }
+    }
 
     &--mobile {
       left: calc(100% + 120px);

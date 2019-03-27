@@ -1,3 +1,9 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+@import '../../styles/variables.css';
+
 .collapsible {
   &__title {
     margin-bottom: 20px;
@@ -41,12 +47,15 @@
   &--open {
     & .collapsible__title {
       color: color-mod(#1e1e1e alpha(90%));
+
       &:after {
         display: none;
       }
     }
-    & .collapsible__content {
-      display: block;
+    @media (--mobile-viewport) {
+      & .collapsible__content {
+        display: block;
+      }
     }
   }
 }
