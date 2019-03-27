@@ -1,0 +1,38 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+@import './variables.css';
+
+.prices {
+  &__description {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  & .item {
+    margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  & .heading {
+  }
+
+  & .list {
+    @media (--tablet-viewport) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    & li {
+      @media (--tablet-viewport) {
+        flex-basis: 50%;
+        max-width: calc(50% - var(--padding-side-columns) / 2);
+      }
+    }
+  }
+}
