@@ -40,6 +40,11 @@
       margin-bottom: 40px;
     }
 
+    @media (--tablet-landscape-viewport) {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
     &:before {
       content: '';
       position: absolute;
@@ -54,6 +59,11 @@
         left: calc(-1 * var(--margin-container-side));
         bottom: -40px;
         height: 80%;
+      }
+
+      @media (--tablet-landscape-viewport) {
+        bottom: 0;
+        height: 70%;
       }
     }
 
@@ -71,6 +81,14 @@
       }
     }
 
+    @media (--tablet-landscape-viewport) {
+      margin-top: 60px;
+
+      &:first-of-type {
+        margin-top: 18px;
+      }
+    }
+
     &__title {
       font-weight: 500;
       font-size: var(--font-size-title-2);
@@ -81,6 +99,11 @@
       @media (--tablet-viewport) {
         margin-top: 30px;
         padding-left: 40px;
+      }
+
+      @media (--tablet-landscape-viewport) {
+        margin-top: 40px;
+        padding-left: 60px;
       }
     }
   }
