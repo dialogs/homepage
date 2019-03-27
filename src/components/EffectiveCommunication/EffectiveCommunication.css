@@ -3,6 +3,7 @@
 .effective-communication {
   padding-top: 30px;
   padding-bottom: 30px;
+  position: relative;
 
   @media (--tablet-viewport) {
     padding-top: 40px;
@@ -10,6 +11,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  @media (--laptop-viewport) {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    margin-top: 80px;
+    background-color: #fff;
+    box-shadow: calc(var(--margin-container-side) / 2) 0 #fff;
+  }
+
+  &:before {
+    @media (--laptop-viewport) {
+      content: '';
+      position: absolute;
+      height: 330px;
+      left: 0;
+      top: -80px;
+      right: calc(-1 * var(--margin-container-side));
+      background-color: var(--color-secondary);
+      z-index: -1;
+    }
   }
 
   & .heading {
@@ -53,7 +75,7 @@
       right: -20px;
       bottom: 25%;
       background-color: var(--color-primary);
-      z-index: -1;
+      z-index: 0;
 
       @media (--tablet-viewport) {
         left: calc(-1 * var(--margin-container-side));
@@ -69,6 +91,7 @@
 
     & img {
       max-width: 100%;
+      position: relative;
     }
   }
 
