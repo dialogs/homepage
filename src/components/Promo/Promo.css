@@ -1,0 +1,140 @@
+@import '../../styles/variables.css';
+
+/* TODO: find good way to name/place it */
+.solution {
+  &.page_header {
+    @media (--tablet-viewport) {
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
+    @media (--tablet-landscape-viewport) {
+      padding-top: 20px;
+      padding-bottom: 80px;
+      padding-right: 120px;
+    }
+    @media (--laptop-viewport) {
+      padding-bottom: 100px;
+    }
+    @media (--desktop-viewport) {
+      padding-right: 300px;
+    }
+  }
+}
+
+.promo {
+  padding-top: 0;
+  padding-bottom: 20px;
+
+  @media (--tablet-viewport) {
+    padding-bottom: 50px;
+  }
+
+  @media (--laptop-viewport) {
+    padding-bottom: 60px;
+  }
+
+  &__content {
+    position: relative;
+    margin-left: calc(-1 * var(--margin-container-side));
+    margin-right: var(--padding-side-columns);
+    margin-bottom: 20px;
+    /* margin-bottom === bottom value of after pseudoelement */
+
+    @media (--tablet-viewport) {
+      margin-right: calc(1.5 * var(--padding-side-columns));
+      margin-bottom: 40px;
+    }
+
+    @media (--tablet-landscape-viewport) {
+      margin-bottom: 50px;
+    }
+
+    @media (--laptop-viewport) {
+      margin-bottom: 100px;
+    }
+
+    @media (--desktop-viewport) {
+      margin-bottom: 110px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+    }
+
+    &:before {
+      width: calc(var(--padding-side-columns) / 2);
+      height: 50%;
+      left: 100%;
+      top: 0;
+      background: var(--color-primary);
+    }
+
+    &:after {
+      left: var(--margin-container-side);
+      right: calc(
+        -1 * (var(--padding-side-columns) + var(--margin-container-side))
+      );
+      top: 50%;
+      bottom: -20px;
+      background: var(--color-secondary);
+      box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
+
+      @media (--tablet-viewport) {
+        right: calc(
+          -1 * (1.5 * var(--padding-side-columns) + var(--margin-container-side))
+        );
+        top: 40%;
+        bottom: -40px;
+      }
+
+      @media (--tablet-landscape-viewport) {
+        bottom: -50px;
+      }
+
+      @media (--laptop-viewport) {
+        top: 35%;
+        bottom: -100px;
+      }
+
+      @media (--desktop-viewport) {
+        bottom: -110px;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+
+    &--main {
+      width: 100%;
+    }
+
+    &--small {
+      position: absolute;
+      bottom: 20px;
+      right: -40px;
+      height: 72%;
+
+      @media (--tablet-viewport) {
+        bottom: 30px;
+        right: calc(-1.5 * var(--padding-side-columns));
+      }
+
+      @media (--tablet-landscape-viewport) {
+        bottom: 40px;
+        height: 69%;
+      }
+
+      @media (--laptop-viewport) {
+        bottom: 50px;
+      }
+
+      @media (--desktop-viewport) {
+        bottom: 60px;
+      }
+    }
+  }
+}
