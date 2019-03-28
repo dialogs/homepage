@@ -107,10 +107,19 @@
   flex-flow: row nowrap;
   justify-content: flex-start;
 
+  @media (--tablet-viewport) {
+    justify-content: space-between;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    justify-content: flex-start;
+  }
+
   & .features__tabs {
     width: 32%;
   }
 
+  /*
   &__links {
     flex: 0 0 370px;
     margin-right: 190px;
@@ -148,16 +157,17 @@
       color: var(--text-color-main);
     }
   }
+  */
 
   &__slides {
     position: relative;
 
     @media (--tablet-viewport) {
-      width: 32%;
-      margin-left: 80px;
+      width: 60%;
     }
 
     @media (--tablet-landscape-viewport) {
+      width: 32%;
     }
 
     @media (--laptop-viewport) {
@@ -212,9 +222,19 @@
     p {
       padding: 0;
       margin: 0;
-      font-size: 18px;
-      line-height: 28px;
+      font-size: var(--font-size-content-2);
+      line-height: var(--line-height-content-2);
       letter-spacing: 0.01em;
+
+      + p {
+        margin-top: 20px;
+      }
+    }
+
+    &__links {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
     }
 
     &__text {
@@ -235,11 +255,6 @@
       h4 {
         margin-top: 40px;
       }
-
-      p {
-        font-size: 16px;
-        line-height: 22px;
-      }
     }
 
     @media (--tablet-viewport) {
@@ -254,17 +269,11 @@
     position: absolute;
     display: block;
     top: 20px;
-    opacity: 0;
+    /*opacity: 0;*/
     transform-origin: center center;
-    transition: transform 400ms ease, scale 300ms ease, opacity 200ms ease;
+    /*transition: transform 400ms ease, scale 300ms ease, opacity 200ms ease;
     transform: translateZ(0) translateX(350%) translateY(-50%) scale(0.7);
-
-    @media (--tablet-viewport) {
-      .feature_block__slide--active & {
-        opacity: 1;
-        transform: translateZ(0) translateX(-20%) translateY(-50%) scale(1);
-      }
-    }
+    transform: translateZ(0) translateX(350%) translateY(-50%) scale(0.7);*/
 
     &--mobile {
       left: calc(100% + 120px);
@@ -283,6 +292,25 @@
       max-width: 100%;
       left: auto;
       top: auto;
+    }
+
+    @media (--tablet-viewport) {
+    }
+
+    @media (--tablet-landscape-viewport) {
+      /*
+      opacity: 0;
+      transform: translateZ(0) translateX(350%) translateY(-50%) scale(0);
+      */
+      transition: transform 500ms;
+      transform: scale(0);
+
+      .feature_block__slide--active & {
+        /*opacity: 1;
+        transform: translateZ(0) translateX(-20%) translateY(-50%) scale(1);
+        */
+        transform: scale(1);
+      }
     }
   }
 }

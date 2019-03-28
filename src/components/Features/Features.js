@@ -11,16 +11,12 @@ import './Features.css';
 export function Features() {
   const [tab, setTab] = useState('messenger');
   const [slideTab, setSlideTab] = useState('calls');
-  const sectionClassName = classNames('features', {
-    'features--primary': true,
-    'features--secondary': false,
-    'features--transparent': false,
-  });
+  const sectionClassName = classNames('features', 'features--primary');
 
   return (
-    <Page className="features">
+    <Page>
       <Section className={sectionClassName}>
-        <Heading>Что умеет Reetm</Heading>
+        <Heading>Что умеет dialog</Heading>
         <Tabs onChange={setTab} current={tab} className="features__tabs">
           <Tab value="messenger">Мессенджер</Tab>
           <Tab value="business">Бизнес функции</Tab>
@@ -64,8 +60,8 @@ export function Features() {
                     <h4>Высокое качество связи</h4>
                     <p>
                       В зависимости от уровня сигнала сотового оператора в месте
-                      вашего нахождения, Reetm оптимизирует качество связи
-                      автоматически. При слабом уровне сигнала Reetm снижает
+                      вашего нахождения, dialog оптимизирует качество связи
+                      автоматически. При слабом уровне сигнала dialog снижает
                       количество передаваемого аудио или видеотрафика без
                       разрыва или задержки соединения.
                     </p>
@@ -120,10 +116,11 @@ export function Features() {
                   <div className="feature_block__slide__text">
                     <h4>Все сообщения будут доставлены</h4>
                     <p>
-                      Платформа Reetm оптимизирована как для работы с GSM сетями
-                      предыдущих поколений, так и с сетями нового поколения.
-                      Приложение отправит сообщение, когда возможности сети
-                      позволят это сделать, а также проконтролирует доставку.
+                      Платформа dialog оптимизирована как для работы с GSM
+                      сетями предыдущих поколений, так и с сетями нового
+                      поколения. Приложение отправит сообщение, когда
+                      возможности сети позволят это сделать, а также
+                      проконтролирует доставку.
                     </p>
                   </div>
                   <img
@@ -216,7 +213,7 @@ export function Features() {
                   <div className="feature_block__slide__text">
                     <h4>Всегда на связи</h4>
                     <p>
-                      Reetm доступен на всех ваших устройствах. Поддерживаются
+                      dialog доступен на всех ваших устройствах. Поддерживаются
                       операционные системы Android, iOS, macOS, Windows и Linux.
                       Стабильная работа и синхронизация чатов в веб, мобильном и
                       десктопном клиентах.
@@ -317,9 +314,9 @@ export function Features() {
                   <div className="feature_block__slide__text">
                     <h4>Единая точка входа для своих работников</h4>
                     <p>
-                      Reetm отображает информацию о пользователях из AD.
+                      dialog отображает информацию о пользователях из AD.
                       Интегрируйте имеющуюся рабочую среду и групповую политику
-                      с Reetm. Пользователи могут войти в Reetm под своими
+                      с dialog. Пользователи могут войти в dialog под своими
                       учетными записями.
                     </p>
                   </div>
@@ -349,14 +346,14 @@ export function Features() {
                 vertical
                 changeOnHover
               >
-                <Tab value="api">API Reetm</Tab>
+                <Tab value="api">API dialog</Tab>
                 <Tab value="botsdk">Bot SDK</Tab>
                 <Tab value="whitelabel">Брендинг компании-заказчика</Tab>
               </Tabs>
               <div className="feature_block__slides">
                 <div className="feature_block__slides__heading">Интеграции</div>
                 <Collapsible
-                  title="API Reetm"
+                  title="API dialog"
                   contentClassName={classNames(
                     'feature_block__slide',
                     slideTab === 'api' ? 'feature_block__slide--active' : null,
@@ -366,14 +363,14 @@ export function Features() {
                     <h4>Совместимость с популярными бизнес-сервисами</h4>
                     <p>
                       АТС, CRM, Таск менеджеры, Аналитические системы - все это,
-                      и не только, можно связать с Reetm. Интеграции ограничены
+                      и не только, можно связать с dialog. Интеграции ограничены
                       только фантазией разработчика.
                     </p>
                   </div>
                   <img
                     src="/images/features/integration-api.png"
                     srcSet="/images/features/integration-api@2x.png 2x"
-                    alt="API Reetm"
+                    alt="API dialog"
                     className="feature_block__image feature_block__image--laptop"
                   />
                 </Collapsible>
@@ -387,7 +384,7 @@ export function Features() {
                   )}
                 >
                   <div className="feature_block__slide__text">
-                    <h4>Готовые средства разработки ботов для Reetm</h4>
+                    <h4>Готовые средства разработки ботов для dialog</h4>
                     <p>
                       <a href="/404" className="link--default">
                         BOT SDK
@@ -431,7 +428,7 @@ export function Features() {
                     <p>
                       Используйте гайдлайны брендбука, чтобы приложение
                       соответствовало фирменному стилю вашей компании. В
-                      интерфейсе Reetm можно изменить логотип, цвета и шрифты.
+                      интерфейсе dialog можно изменить логотип, цвета и шрифты.
                     </p>
                   </div>
                   <img
