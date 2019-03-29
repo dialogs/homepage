@@ -124,6 +124,11 @@ export function Platform({ className }) {
                 image="/images/home/platform/icon-2-3.svg"
                 text="Комплекс мер безопасности для защищенного общения"
               />
+              <PlatformIcon
+                type="functions"
+                image="/images/home/platform/icon-3-3.svg"
+                text="Возможность изменить фирменный стиль интерфейса dialog в соответствии с гайдлайнами бренда заказчика"
+              />
             </div>
             <img
               className="platform__content__image"
@@ -149,11 +154,6 @@ export function Platform({ className }) {
                 type="integrations"
                 image="/images/home/platform/icon-3-2.svg"
                 text="Bot SDK (Software Development Kit) для создания собственных ботов"
-              />
-              <PlatformIcon
-                type="integrations"
-                image="/images/home/platform/icon-3-3.svg"
-                text="Возможность изменить фирменный стиль интерфейса dialog в соответствии с гайдлайнами бренда заказчика"
               />
             </div>
             <img
