@@ -22,4 +22,12 @@
       display: inline-block;
     }
   }
+
+  &__desktop {
+    &-systems {
+      @media (max-width: 420px) {
+        text-align: center;
+      }
+    }
+  }
 }

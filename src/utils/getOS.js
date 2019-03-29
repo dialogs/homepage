@@ -33,6 +33,12 @@ export function getOS() {
     case 'Mac OS':
       return 'macOS';
 
+    case 'iOS':
+      return 'iOS';
+
+    case 'Android':
+      return 'Android';
+
     case 'Windows':
     default:
       return 'Windows';
