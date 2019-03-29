@@ -184,12 +184,16 @@
       &__list {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
+        margin-left: -10px;
+        margin-right: -10px;
         font-size: 14px;
         line-height: 18px;
         letter-spacing: var(--letter-spacing-content);
 
         span {
+          margin-left: 10px;
+          margin-right: 10px;
         }
       }
     }

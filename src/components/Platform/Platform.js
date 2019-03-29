@@ -81,6 +81,7 @@ export function Platform({ className }) {
                 <span>Windows</span>
                 <span>macOS</span>
                 <span>Linux</span>
+                <span>Аврора</span>
               </div>
             </div>
             <img
