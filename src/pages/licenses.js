@@ -1,15 +1,14 @@
 import React from 'react';
 
 import { Container } from '../components/Container/Container';
+import { PageHeader } from '../components/PageHeader/PageHeader';
 
 export default () => {
   return (
     <Container>
       <div className="license__column-content">
         <section className="license__section license__intro">
-          <h1 className="h1--default license__intro-title">
-            Патенты и лицензии
-          </h1>
+          <PageHeader>Патенты и лицензии</PageHeader>
           <div className="license__intro-text">
             Процесс производства программного обеспечения основан на практиках
             дизайн-мышления, принципах архитектурного единства, положениях и
@@ -37,6 +36,7 @@ export default () => {
                 <a
                   href="/images/patent-dialog-server.jpg"
                   className="link--download license__photos-link"
+                  download
                 >
                   <span className="link--download__text">Dialog server</span>
                   <img
@@ -57,6 +57,7 @@ export default () => {
                 <a
                   className="link--download license__photos-link"
                   href="/images/patent-dialog-core.jpg"
+                  download
                 >
                   <span className="link--download__text">Dialog Core</span>
                   <img
@@ -77,6 +78,7 @@ export default () => {
                 <a
                   className="link--download license__photos-link"
                   href="/images/patent-dialog-android-sdk.jpg"
+                  download
                 >
                   <span className="link--download__text">
                     Dialog Android SDK
@@ -99,6 +101,7 @@ export default () => {
                 <a
                   className="link--download license__photos-link"
                   href="/images/patent-dialog-ios-sdk.jpg"
+                  download
                 >
                   <span className="link--download__text">Dialog iOS SDK</span>
                   <img
@@ -119,6 +122,7 @@ export default () => {
                 <a
                   className="link--download license__photos-link"
                   href="/images/patent-dialog-web-sdk.jpg"
+                  download
                 >
                   <span className="link--download__text">Dialog WEB SDK</span>
                   <img
@@ -139,6 +143,7 @@ export default () => {
                 <a
                   className="link--download license__photos-link"
                   href="/images/patent-dialog-web-sdk.jpg"
+                  download
                 >
                   <span className="link--download__text">
                     Dialog enterprise
@@ -170,6 +175,7 @@ export default () => {
                 <a
                   className="link--download license__photos-link"
                   href="/images/fstek-1.jpg"
+                  download
                 >
                   <span className="link--download__text">ФСБ</span>
                   <img
@@ -191,8 +197,9 @@ export default () => {
                 <a
                   className="link--download license__photos-link"
                   href="/images/fstek-1.jpg"
+                  download
                 >
-                  <span className="link--download__text">ФСБ СКЗИ</span>
+                  <span className="link--download__text">ФСТЭК</span>
                   <img
                     src="/images/svg-icons/arrow-download.svg"
                     alt=""
@@ -211,6 +218,7 @@ export default () => {
                 <a
                   className="link--download license__photos-link"
                   href="/images/fstek-3.jpg"
+                  download
                 >
                   <span className="link--download__text">ФСБ ТЗКИ</span>
                   <img
