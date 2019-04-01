@@ -1,42 +1,79 @@
 import React from 'react';
 
 import { getOS } from '../../utils/getOS';
+import appLinks from '../../constants/links';
 
-export function DownloadDesktop({ links }) {
+export function DownloadDesktop({ isEnterprise }) {
   const os = getOS();
+  const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
 
   function renderDownloadDesktopImage() {
     switch (os) {
       case 'macOS':
+      case 'iOS':
         return (
           <img
             className="download__desktop-img"
-            src="/images/download/cloud-desktop-macos.png"
-            srcSet="/images/download/cloud-desktop-macos@2x.png 2x"
-            alt="Десктопное приложение демо в облаке для MacOS"
+            src={
+              isEnterprise
+                ? '/images/download/enterprise-desktop-macos.png'
+                : '/images/download/cloud-desktop-macos.png'
+            }
+            srcSet={
+              isEnterprise
+                ? '/images/download/enterprise-desktop-macos@2x.png 2x'
+                : '/images/download/cloud-desktop-macos@2x.png 2x'
+            }
+            alt={
+              isEnterprise
+                ? 'Десктопное приложение enterprise для MacOS'
+                : 'Десктопное приложение демо в облаке для MacOS'
+            }
           />
         );
-        break;
 
       case 'Linux':
         return (
           <img
             className="download__desktop-img"
-            src="/images/download/cloud-desktop-linux.png"
-            srcSet="/images/download/cloud-desktop-linux@2x.png 2x"
-            alt="Десктопное приложение демо в облаке для Linux"
+            src={
+              isEnterprise
+                ? '/images/download/enterprise-desktop-linux.png'
+                : '/images/download/cloud-desktop-linux.png'
+            }
+            srcSet={
+              isEnterprise
+                ? '/images/download/enterprise-desktop-linux@2x.png 2x'
+                : '/images/download/cloud-desktop-linux@2x.png 2x'
+            }
+            alt={
+              isEnterprise
+                ? 'Десктопное приложение enterprise для Linux'
+                : 'Десктопное приложение демо в облаке для Linux'
+            }
           />
         );
-        break;
 
       case 'Windows':
       default:
         return (
           <img
             className="download__desktop-img"
-            src="/images/download/cloud-desktop-windows.png"
-            srcSet="/images/download/cloud-desktop-windows@2x.png 2x"
-            alt="Десктопное приложение демо в облаке для Windows"
+            src={
+              isEnterprise
+                ? '/images/download/enterprise-desktop-windows.png'
+                : '/images/download/cloud-desktop-windows.png'
+            }
+            srcSet={
+              isEnterprise
+                ? '/images/download/enterprise-desktop-windows@2x.png 2x'
+                : '/images/download/cloud-desktop-windows@2x.png 2x'
+            }
+            alt={
+              isEnterprise
+                ? 'Десктопное приложение enterprise для Windows'
+                : 'Десктопное приложение демо в облаке для Windows'
+            }
           />
         );
     }
@@ -45,8 +82,9 @@ export function DownloadDesktop({ links }) {
   function renderDownloadDesktopButton() {
     switch (os) {
       case 'macOS':
+      case 'iOS':
         return (
-          <a className="button button--default g" href={links.osx}>
+          <a className="button button--default" href={links.osx}>
             Скачать для MacOS
           </a>
         );
@@ -66,7 +104,7 @@ export function DownloadDesktop({ links }) {
       case 'Windows':
       default:
         return (
-          <a className="button button--default" href={links.osx}>
+          <a className="button button--default" href={links.windows}>
             Скачать для Windows
           </a>
         );
@@ -87,14 +125,14 @@ export function DownloadDesktop({ links }) {
       </div>
 
       <div className="download__desktop-systems">
-        {os !== 'macOS' && (
+        {os !== 'macOS' && os !== 'iOS' && (
           <div className="download__desktop-system">
             <a className="download__item-link" href={links.osx}>
               Mac OS
             </a>
           </div>
         )}
-        {os !== 'Windows' && os !== 'iOS' && os !== 'Android' && (
+        {os !== 'Windows' && os !== 'Android' && (
           <div className="download__desktop-system">
             <a className="download__item-link" href={links.windows}>
               Windows
@@ -119,3 +157,7 @@ export function DownloadDesktop({ links }) {
     </div>
   );
 }
+
+DownloadDesktop.defaultProps = {
+  isEnterprise: false,
+};
