@@ -76,17 +76,13 @@
     position: absolute;
     left: calc(100% - 140px);
     top: 0;
-    width: 600px;
-    height: 650px;
+    width: 400px;
+    height: 620px;
     transition: background 200ms ease;
     z-index: -1;
 
     @media (--mobile-viewport) {
       display: none;
-    }
-
-    @media (--desktop-viewport) {
-      width: 280px;
     }
   }
 
@@ -325,7 +321,7 @@
 
     @media (--laptop-viewport) {
       &--laptop {
-        top: -40px;
+        top: -46px;
         max-height: none;
       }
 
