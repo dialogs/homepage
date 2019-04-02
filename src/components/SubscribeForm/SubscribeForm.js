@@ -29,13 +29,13 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         label="Ваш e-mail"
       />
       <div className="form__footer">
-        <Button type="submit" disabled={pending}>
+        <Button type="submit" className="form__submit" disabled={pending}>
           Подписаться
         </Button>
         <div className="form__info">
           {error && (
             <div className="form__error">
-              Что то пошло не так. Попробуйте снова.
+              Что-то пошло не так. Попробуйте снова.
             </div>
           )}
           {pending && <div className="form__pending">Подписка</div>}

@@ -11,9 +11,14 @@ export function Button({
   className,
   onClick,
 }) {
-  const classes = classNames('button', 'button--default', {
-    'button--disabled': pending || disabled,
-  });
+  const classes = classNames(
+    'button',
+    'button--default',
+    {
+      'button--disabled': pending || disabled,
+    },
+    className,
+  );
 
   return (
     <button
@@ -30,5 +35,5 @@ export function Button({
 Button.defaultProps = {
   type: 'button',
   disabled: false,
-  peding: false,
+  pending: false,
 };

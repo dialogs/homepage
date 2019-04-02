@@ -5,6 +5,8 @@ import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
+import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
+
 import './OfferForm.css';
 
 export function OfferForm({ pending, error, value, onSubmit, className }) {
@@ -85,14 +87,11 @@ export function OfferForm({ pending, error, value, onSubmit, className }) {
       </div>
 
       <div className="form__footer">
-        <Button type="submit">Отправить заявку</Button>
+        <Button type="submit" className="form__submit">
+          Отправить заявку
+        </Button>
         <div className="form__info">
-          {error && (
-            <div className="form__error">
-              Не удалось отправить сообщение. Пожалуйста, свяжитесь с нами через
-              info@dlg.im или +7(800)775-82-02
-            </div>
-          )}
+          {error && <FormErrorMessage />}
           {pending && <div className="form__pending">Отправка сообщения</div>}
           {value && value.status === 200 && (
             <div className="form__success">Сообщение успешно отправлено.</div>

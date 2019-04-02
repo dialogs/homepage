@@ -3,6 +3,9 @@
 .checkbox {
   position: relative;
   padding: 24px 0;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
 
   &__label {
     vertical-align: middle;
