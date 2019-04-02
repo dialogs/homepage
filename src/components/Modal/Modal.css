@@ -108,7 +108,8 @@
       }
     }
     @media (--tablet-landscape-viewport) {
-      max-width: 800px;
+      min-width: auto;
+      max-width: 1200px;
     }
   }
 

@@ -7,7 +7,7 @@ import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
 import './OfferForm.css';
 
-export function OfferForm({ onSubmit, className }) {
+export function OfferForm({ pending, error, value, onSubmit, className }) {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -86,6 +86,18 @@ export function OfferForm({ onSubmit, className }) {
 
       <div className="form__footer">
         <Button type="submit">Отправить заявку</Button>
+        <div className="form__info">
+          {error && (
+            <div className="form__error">
+              Не удалось отправить сообщение. Пожалуйста, свяжитесь с нами через
+              info@dlg.im или +7(800)775-82-02
+            </div>
+          )}
+          {pending && <div className="form__pending">Отправка сообщения</div>}
+          {value && value.status === 200 && (
+            <div className="form__success">Сообщение успешно отправлено.</div>
+          )}
+        </div>
       </div>
     </form>
   );

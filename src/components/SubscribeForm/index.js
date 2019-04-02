@@ -7,6 +7,7 @@ const mapStateToProps = ({ forms }) => {
   return {
     error: forms.subscribe.error,
     pending: forms.subscribe.pending,
+    value: forms.subscribe.value,
   };
 };
 

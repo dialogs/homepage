@@ -5,28 +5,30 @@
 @import './variables.css';
 
 .form {
-  &-item {
+  &__footer {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__info {
+    flex: 1 1 auto;
+    min-width: 0px;
+    min-height: 0px;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--text-color-main-03);
     margin-top: 40px;
 
-    &:first-of-type {
+    @media (--tablet-landscape-viewport) {
       margin-top: 0;
+      margin-left: 40px;
+      margin-right: calc(-1 * var(--padding-side-columns));
     }
 
-    @media (--tablet-viewport) {
-      margin-top: 60px;
-    }
-
-    &--default {
-      position: relative;
-      margin-top: 60px;
-
-      @media (--tablet-viewport) {
-        margin-top: 80px;
-      }
-    }
-
-    &--checkbox {
-      position: relative;
+    @media (--laptop-viewport) {
+      margin-right: 0;
     }
   }
 }

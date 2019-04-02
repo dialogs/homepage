@@ -7,6 +7,7 @@
   &__label {
     vertical-align: middle;
     cursor: pointer;
+    user-select: none;
   }
 
   &__checkbox {
@@ -31,12 +32,12 @@
     &:hover + .checkbox__checkbox {
     }
     &:focus + .checkbox__checkbox {
-      background-color: var(--color-primary);
+      /* background-color: var(--color-primary); */
     }
 
     &:checked + .checkbox__checkbox {
       background-color: var(--color-primary);
-      box-shadow: inset 0 0 0px 2px var(--color-primary);
+      box-shadow: inset 0 0 0 0 #1e1e1e;
 
       & svg {
         & path {
@@ -59,8 +60,7 @@
     width: 36px;
     height: 36px;
     box-shadow: inset 0 0 0px 2px #1e1e1e;
-
-    transition: 0.4s;
+    transition: box-shadow 150ms ease, background 150ms ease;
 
     & svg {
       position: absolute;
@@ -70,7 +70,8 @@
       & path {
         stroke-dasharray: 18;
         stroke-dashoffset: 18;
-        transition: 0.4s;
+        transition: stroke-dasharray 150ms ease-out,
+          stroke-dashoffset 150ms ease-out;
       }
     }
   }

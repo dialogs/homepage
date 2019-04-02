@@ -58,20 +58,10 @@
   &__form {
     margin-top: 40px;
     font-weight: 500;
-    -webkit-font-smoothing: antialiased;
 
     @media (--laptop-viewport) {
       margin-top: 30px;
     }
-
-    &-item {
-    }
-  }
-
-  &__answer-time {
-    font-size: 14px;
-    line-height: 18px;
-    color: var(--text-color-main-03);
   }
 
   &__corporate {

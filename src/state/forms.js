@@ -17,13 +17,13 @@ export function forms(state = initialState, action) {
     case 'OFFER_FORM_SUBMIT':
       return {
         ...state,
-        subscribe: action.payload,
+        offer: action.payload,
       };
 
     case 'SUPPORT_FORM_SUBMIT':
       return {
         ...state,
-        subscribe: action.payload,
+        support: action.payload,
       };
 
     default:

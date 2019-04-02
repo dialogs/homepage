@@ -5,7 +5,7 @@ import { Input } from '../Input/Input';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
 
-export function SupportForm({ onSubmit, className }) {
+export function SupportForm({ error, pending, value, onSubmit, className }) {
   const classes = classNames('form', className);
   const [form, setForm] = useState({
     email: '',
@@ -64,8 +64,25 @@ export function SupportForm({ onSubmit, className }) {
       <div className="form__footer">
         <Button type="submit">Отправить</Button>
 
-        <div className="information">
-          Служба поддержки обычно отвечает в течение 15 минут
+        <div className="form__info">
+          {!error && !pending && !value && (
+            <div className="form__initial">
+              Служба поддержки обычно отвечает в течение 15 минут
+            </div>
+          )}
+          {error && (
+            <div className="form__error">
+              Не удалось отправить сообщение. Пожалуйста, свяжитесь с нами через
+              info@dlg.im или +7(800)775-82-02
+            </div>
+          )}
+          {pending && <div className="form__pending">Отправка сообщения.</div>}
+          {value && value.status === 200 && (
+            <div className="form__success">
+              Ваше обращение успешно отправлено. С вами свяжутся в ближайшее
+              время.
+            </div>
+          )}
         </div>
       </div>
     </form>

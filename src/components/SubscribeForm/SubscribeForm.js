@@ -5,7 +5,6 @@ import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
 
 export function SubscribeForm({ value, error, pending, onSubmit, className }) {
-  console.log(value, error, pending);
   const [email, setEmail] = useState('');
   const classes = classNames('form', className);
 
@@ -29,12 +28,21 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         onChange={handleChange}
         label="Ваш e-mail"
       />
-      {error && <div className="form__error">Something went wrong</div>}
       <div className="form__footer">
         <Button type="submit" disabled={pending}>
           Подписаться
         </Button>
-        {pending && <div className="form__pending">Submit in progress</div>}
+        <div className="form__info">
+          {error && (
+            <div className="form__error">
+              Что то пошло не так. Попробуйте снова.
+            </div>
+          )}
+          {pending && <div className="form__pending">Подписка</div>}
+          {value && value.status === 200 && (
+            <div className="form__success">Вы успешно подписаны.</div>
+          )}
+        </div>
       </div>
     </form>
   );

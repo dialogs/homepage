@@ -3,8 +3,12 @@ import { submitOfferForm } from '../../actions/forms';
 
 import { OfferForm } from './OfferForm';
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = ({ forms }) => {
+  return {
+    error: forms.offer.error,
+    pending: forms.offer.pending,
+    value: forms.offer.value,
+  };
 };
 
 const mapDispatchToProps = { onSubmit: submitOfferForm };

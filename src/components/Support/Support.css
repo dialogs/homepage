@@ -93,26 +93,6 @@
         align-content: flex-start;
         margin-top: 42px;
       }
-
-      & .button {
-      }
-
-      & .information {
-        font-size: 14px;
-        line-height: 18px;
-        color: var(--text-color-main-03);
-        margin-top: 40px;
-
-        @media (--tablet-landscape-viewport) {
-          margin-top: 0;
-          margin-left: 40px;
-          margin-right: calc(-1 * var(--padding-side-columns));
-        }
-
-        @media (--laptop-viewport) {
-          margin-right: 0;
-        }
-      }
     }
   }
 
