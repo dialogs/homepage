@@ -34,12 +34,15 @@
     justify-content: space-between;
 
     @media (--tablet-viewport) {
-      min-height: 700px;
+      min-height: 773px; /* max-height of .platform__box__item + 20px */
     }
     @media (--tablet-landscape-viewport) {
-      min-height: 620px;
+      min-height: 663px;
     }
     @media (--laptop-viewport) {
+      min-height: 696px;
+    }
+    @media (--desktop-viewport) {
       min-height: 650px;
     }
   }
@@ -184,12 +187,16 @@
       &__list {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
+        margin-left: -10px;
+        margin-right: -10px;
         font-size: 14px;
         line-height: 18px;
         letter-spacing: var(--letter-spacing-content);
 
         span {
+          margin-left: 10px;
+          margin-right: 10px;
         }
       }
     }

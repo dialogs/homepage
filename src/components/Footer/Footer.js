@@ -169,7 +169,7 @@ export function Footer() {
                     </a>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to="/download/cloud">
+                    <Link className="footer__nav-link" to="/download">
                       Скачать
                     </Link>
                   </div>

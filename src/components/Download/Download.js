@@ -5,7 +5,6 @@ import { PageHeader } from '../PageHeader/PageHeader';
 import { DownloadDesktop } from './DownloadDesktop';
 import { DownloadMobile } from './DownloadMobile';
 import { DownloadWeb } from './DownloadWeb';
-import links from '../../constants/links';
 
 import './Download.css';
 
@@ -25,7 +24,7 @@ export function Download({ openOfferModal }) {
         </div>
       </section>
 
-      <DownloadDesktop links={links} />
+      <DownloadDesktop />
       <DownloadMobile />
       <DownloadWeb />
     </Section>

@@ -27,9 +27,9 @@ export function Hero({ openOfferModal }) {
         <div className="home__intro-image">
           <img
             className="home__intro-img"
-            src="/images/home/home-intro.png"
-            srcSet="/images/home/home-intro@2x.png 2x"
-            alt=""
+            src="/images/home/home-hero.png"
+            srcSet="/images/home/home-hero@2x.png 2x"
+            alt="Достигайте командные цели быстрее и без потери фокуса"
           />
         </div>
       </div>

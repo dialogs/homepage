@@ -1,17 +1,31 @@
 import React from 'react';
 
-import links from '../../constants/links';
+import appLinks from '../../constants/links';
 
-export function DownloadWeb() {
+export function DownloadWeb({ isEnterprise }) {
+  const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
+
   return (
     <section className="download__section download__item download__web">
       <h2 className="download__item-title download__web-title">Web версия</h2>
       <div className="download__web-pictute">
         <img
           className="download__web-img"
-          src="/images/download/cloud-web.png"
-          srcSet="/images/download/cloud-web@2x.png 2x"
-          alt="Web версия демо в облаке"
+          src={
+            isEnterprise
+              ? '/images/download/enterprise-web.png'
+              : '/images/download/cloud-web.png'
+          }
+          srcSet={
+            isEnterprise
+              ? '/images/download/enterprise-web@2x.png 2x'
+              : '/images/download/cloud-web@2x.png 2x'
+          }
+          alt={
+            isEnterprise
+              ? 'Web версия dialog enterprise'
+              : 'Web версия облачного приложения платформы dialog'
+          }
         />
       </div>
       <div className="download__web-button-box">
@@ -22,3 +36,7 @@ export function DownloadWeb() {
     </section>
   );
 }
+
+DownloadWeb.defaultProps = {
+  isEnterprise: false,
+};
