@@ -1,28 +1,43 @@
 import React, { useState } from 'react';
+import classNames from 'classnames';
 
+// import { Page } from '../Page/Page';
 import { Heading } from '../Heading/Heading';
 import { Section } from '../Section/Section';
 import { Tabs, Tab } from '../Tabs';
 import { Collapsible } from '../Collapsible/Collapsible';
+import './Features.css';
 
 export function Features() {
   const [tab, setTab] = useState('messenger');
-  const [slideTab, setSlideTab] = useState('calls');
+  const [slideTab1, setSlideTab1] = useState('calls');
+  const [slideTab2, setSlideTab2] = useState('chatbots');
+  const [slideTab3, setSlideTab3] = useState('api');
+  const sectionClassName = classNames('features', {
+    ['features--secondary']: tab === 'messenger',
+    ['features--primary']: tab === 'business',
+    ['features--transparent']: tab === 'integrations',
+  });
 
   return (
-    <Section className="page features">
-      <Heading>Что умеет Reetm</Heading>
+    <Section className={sectionClassName}>
+      <Heading>Что умеет dialog</Heading>
       <Tabs onChange={setTab} current={tab} className="features__tabs">
         <Tab value="messenger">Мессенджер</Tab>
         <Tab value="business">Бизнес функции</Tab>
         <Tab value="integrations">Интеграции</Tab>
       </Tabs>
       <div className="features__content">
-        <div className="features__content__block">
+        <div
+          className={classNames(
+            'features__content__block',
+            tab === 'messenger' ? 'features__content__block--visible' : null,
+          )}
+        >
           <div className="feature_block">
             <Tabs
-              onChange={setSlideTab}
-              current={slideTab}
+              onChange={setSlideTab1}
+              current={slideTab1}
               className="features__tabs"
               vertical
               changeOnHover
@@ -39,14 +54,17 @@ export function Features() {
               <div className="feature_block__slides__heading">Мессенджер</div>
               <Collapsible
                 title="Аудио/Видеовызовы"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab1 === 'calls' ? 'feature_block__slide--active' : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Высокое качество связи</h4>
                   <p>
                     В зависимости от уровня сигнала сотового оператора в месте
-                    вашего нахождения, Reetm оптимизирует качество связи
-                    автоматически. При слабом уровне сигнала Reetm снижает
+                    вашего нахождения, dialog оптимизирует качество связи
+                    автоматически. При слабом уровне сигнала dialog снижает
                     количество передаваемого аудио или видеотрафика без разрыва
                     или задержки соединения.
                   </p>
@@ -65,7 +83,10 @@ export function Features() {
               </Collapsible>
               <Collapsible
                 title="Обмен файлами любого типа"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab1 === 'files' ? 'feature_block__slide--active' : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Передача файлов без ограничений по размеру</h4>
@@ -86,12 +107,15 @@ export function Features() {
               </Collapsible>
               <Collapsible
                 title="Личные и групповые чаты"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab1 === 'chats' ? 'feature_block__slide--active' : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Все сообщения будут доставлены</h4>
                   <p>
-                    Платформа Reetm оптимизирована как для работы с GSM сетями
+                    Платформа dialog оптимизирована как для работы с GSM сетями
                     предыдущих поколений, так и с сетями нового поколения.
                     Приложение отправит сообщение, когда возможности сети
                     позволят это сделать, а также проконтролирует доставку.
@@ -106,7 +130,10 @@ export function Features() {
               </Collapsible>
               <Collapsible
                 title="Аудио-сообщения"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab1 === 'audio' ? 'feature_block__slide--active' : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Не отвлекайтесь от дел</h4>
@@ -125,7 +152,12 @@ export function Features() {
               </Collapsible>
               <Collapsible
                 title="Каналы"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab1 === 'channels'
+                    ? 'feature_block__slide--active'
+                    : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Работайте над документами совместно</h4>
@@ -143,7 +175,12 @@ export function Features() {
               </Collapsible>
               <Collapsible
                 title="Демонстрация экрана"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab1 === 'sharing'
+                    ? 'feature_block__slide--active'
+                    : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Работайте над документами совместно</h4>
@@ -162,12 +199,17 @@ export function Features() {
               </Collapsible>
               <Collapsible
                 title="Работает на любой платформе"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab1 === 'crossplatform'
+                    ? 'feature_block__slide--active'
+                    : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Всегда на связи</h4>
                   <p>
-                    Reetm доступен на всех ваших устройствах. Поддерживаются
+                    dialog доступен на всех ваших устройствах. Поддерживаются
                     операционные системы Android, iOS, macOS, Windows и Linux.
                     Стабильная работа и синхронизация чатов в веб, мобильном и
                     десктопном клиентах.
@@ -183,11 +225,16 @@ export function Features() {
             </div>
           </div>
         </div>
-        <div className="features__content__block">
+        <div
+          className={classNames(
+            'features__content__block',
+            tab === 'business' ? 'features__content__block--visible' : null,
+          )}
+        >
           <div className="feature_block">
             <Tabs
-              onChange={setSlideTab}
-              current={slideTab}
+              onChange={setSlideTab2}
+              current={slideTab2}
               className="features__tabs"
               vertical
               changeOnHover
@@ -202,7 +249,12 @@ export function Features() {
               </div>
               <Collapsible
                 title="Чатботы"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab2 === 'chatbots'
+                    ? 'feature_block__slide--active'
+                    : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Автоматизируйте процессы</h4>
@@ -224,7 +276,12 @@ export function Features() {
               </Collapsible>
               <Collapsible
                 title="Панель администратора"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab2 === 'dashboard'
+                    ? 'feature_block__slide--active'
+                    : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Управляйте доступами</h4>
@@ -244,67 +301,83 @@ export function Features() {
               </Collapsible>
               <Collapsible
                 title="Active Directory (AD)"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab2 === 'ad' ? 'feature_block__slide--active' : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Единая точка входа для своих работников</h4>
                   <p>
-                    Reetm отображает информацию о пользователях из AD.
+                    dialog отображает информацию о пользователях из AD.
                     Интегрируйте имеющуюся рабочую среду и групповую политику с
-                    Reetm. Пользователи могут войти в Reetm под своими учетными
-                    записями.
+                    dialog. Пользователи могут войти в dialog под своими
+                    учетными записями.
                   </p>
                 </div>
                 <img
                   src="/images/features/business-ad.png"
                   srcSet="/images/features/business-ad@2x.png 2x"
                   alt="Active Directory (AD)"
-                  className="feature_block__image feature_block__image--laptop"
+                  className="feature_block__image feature_block__image--laptop feature_block__image--ad"
                 />
               </Collapsible>
             </div>
           </div>
         </div>
-        <div className="features__content__block">
+        <div
+          className={classNames(
+            'features__content__block',
+            tab === 'integrations' ? 'features__content__block--visible' : null,
+          )}
+        >
           <div className="feature_block">
             <Tabs
-              onChange={setSlideTab}
-              current={slideTab}
+              onChange={setSlideTab3}
+              current={slideTab3}
               className="features__tabs"
               vertical
               changeOnHover
             >
-              <Tab value="api">API Reetm</Tab>
+              <Tab value="api">API dialog</Tab>
               <Tab value="botsdk">Bot SDK</Tab>
               <Tab value="whitelabel">Брендинг компании-заказчика</Tab>
             </Tabs>
             <div className="feature_block__slides">
               <div className="feature_block__slides__heading">Интеграции</div>
               <Collapsible
-                title="API Reetm"
-                contentClassName="feature_block__slide"
+                title="API dialog"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab3 === 'api' ? 'feature_block__slide--active' : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Совместимость с популярными бизнес-сервисами</h4>
                   <p>
                     АТС, CRM, Таск менеджеры, Аналитические системы - все это, и
-                    не только, можно связать с Reetm. Интеграции ограничены
+                    не только, можно связать с dialog. Интеграции ограничены
                     только фантазией разработчика.
                   </p>
                 </div>
                 <img
                   src="/images/features/integration-api.png"
                   srcSet="/images/features/integration-api@2x.png 2x"
-                  alt="API Reetm"
-                  className="feature_block__image feature_block__image--laptop"
+                  alt="API dialog"
+                  className="feature_block__image feature_block__image--printscreen feature_block__image--api"
                 />
               </Collapsible>
               <Collapsible
                 title="Bot SDK"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab3 === 'botsdk'
+                    ? 'feature_block__slide--active'
+                    : null,
+                )}
               >
                 <div className="feature_block__slide__text">
-                  <h4>Готовые средства разработки ботов для Reetm</h4>
+                  <h4>Готовые средства разработки ботов для dialog</h4>
                   <p>
                     <a href="/404" className="link--default">
                       BOT SDK
@@ -331,26 +404,31 @@ export function Features() {
                   src="/images/features/integration-bot-sdk.png"
                   srcSet="/images/features/integration-bot-sdk@2x.png 2x"
                   alt="Bot SDK"
-                  className="feature_block__image feature_block__image--laptop"
+                  className="feature_block__image feature_block__image--printscreen"
                 />
               </Collapsible>
               <Collapsible
                 title="Брендинг компании-заказчика"
-                contentClassName="feature_block__slide"
+                contentClassName={classNames(
+                  'feature_block__slide',
+                  slideTab3 === 'whitelabel'
+                    ? 'feature_block__slide--active'
+                    : null,
+                )}
               >
                 <div className="feature_block__slide__text">
                   <h4>Не отходите от фирменного стиля</h4>
                   <p>
                     Используйте гайдлайны брендбука, чтобы приложение
                     соответствовало фирменному стилю вашей компании. В
-                    интерфейсе Reetm можно изменить логотип, цвета и шрифты.
+                    интерфейсе dialog можно изменить логотип, цвета и шрифты.
                   </p>
                 </div>
                 <img
                   src="/images/features/integration-branding.png"
                   srcSet="/images/features/integration-branding@2x.png 2x"
                   alt="Брендинг компании-заказчика"
-                  className="feature_block__image feature_block__image--laptop"
+                  className="feature_block__image feature_block__image--laptop feature_block__image--whitelabel"
                 />
               </Collapsible>
             </div>
