@@ -304,14 +304,3 @@ h6 {
     }
   }
 }
-
-.not_found {
-  text-align: center;
-  padding: 40px 0 !important;
-
-  &__links {
-    & .link {
-      margin: 0 20px;
-    }
-  }
-}

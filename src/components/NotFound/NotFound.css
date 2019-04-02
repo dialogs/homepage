@@ -1,0 +1,41 @@
+.not_found {
+  padding: 60px 0 100px;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__header {
+    margin: 0;
+    padding: 0 !important;
+  }
+
+  &__text {
+    margin: 40px 0;
+    padding: 0;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+  }
+
+  &__image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 100px;
+
+    @media (--tablet-landscape-viewport) {
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 460px;
+      width: 42%;
+    }
+
+    @media (--laptop-viewport) {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}

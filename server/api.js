@@ -1,12 +1,15 @@
 const router = require('express').Router();
 const request = require('request');
 const nodemailer = require('nodemailer');
+const Mailchimp = require('mailchimp-api-v3');
 const config = require('./config');
+const md5 = require('md5');
 
 // http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 const mailer = nodemailer.createTransport(config.email);
+const mailchimp = new Mailchimp(config.mailchimp.key);
 
 function renderTextMessage(body, site) {
   const message = `
@@ -85,6 +88,18 @@ function notifyEmail(body, site) {
   });
 }
 
+function notifyMailchimp(body, site) {
+  const listId =
+    body.lang === 'ru' ? config.mailchimp.list.ru : config.mailchimp.list.en;
+  return mailchimp.put(`/lists/${listId}/members/${md5(body.email)}`, {
+    email_address: body.email,
+    status: 'subscribed',
+    merge_fields: {
+      FUNAME: body.name,
+    },
+  });
+}
+
 function logBody(body, site) {
   return new Promise((resolve, reject) => {
     console.log({ site, body });
@@ -92,7 +107,7 @@ function logBody(body, site) {
   });
 }
 
-router.post(['/subscribe', '/offer'], (request, response) => {
+router.post(['/subscribe', '/offer'], (request, response, next) => {
   const { body } = request;
   const referer = request.header('referer');
   const promises = [];
@@ -103,8 +118,11 @@ router.post(['/subscribe', '/offer'], (request, response) => {
   if (config.email.auth.user && config.email.auth.pass) {
     promises.push(notifyEmail(body, referer));
   }
-  if (dialog.webhook) {
+  if (config.dialog.webhook) {
     promises.push(notifyDialog(body, referer));
+  }
+  if (body.form === 'subscribe') {
+    promises.push(notifyMailchimp(body, referer));
   }
 
   Promise.all(promises)
@@ -126,8 +144,7 @@ router.post(['/subscribe', '/offer'], (request, response) => {
 router.post('/support', (request, response) => {
   const referer = request.header('referer');
   const body = request.body;
-  let promises = [];
-  console.log('support post', { body, referer });
+  const promises = [];
 
   if (config.isDev) {
     promises.push(logBody(body, referer));
@@ -135,7 +152,7 @@ router.post('/support', (request, response) => {
   if (config.email.auth.user && config.email.auth.pass) {
     promises.push(notifyEmail(body, referer));
   }
-  if (dialog.webhook) {
+  if (config.dialog.webhook) {
     promises.push(notifyDialog(body, referer));
   }
 

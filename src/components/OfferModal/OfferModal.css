@@ -1,6 +1,35 @@
 .offer_modal__form {
+  & .form__box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
   & .input,
+  & .checkbox,
   & .select {
-    flex: 0 0 45%;
+    flex: 0 0 100%;
+  }
+
+  & .form__footer {
+    margin-top: 40px;
+  }
+
+  @media (--tablet-viewport) {
+    padding-bottom: 60px;
+
+    & .form__box {
+      flex-flow: row wrap;
+    }
+
+    & .input,
+    & .checkbox,
+    & .select {
+      flex: 0 0 45%;
+    }
+  }
+
+  @media (--laptop-viewport) {
+    padding-bottom: 80px;
   }
 }

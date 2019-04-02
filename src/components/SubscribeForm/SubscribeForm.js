@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import { Input } from '../Input/Input';
+import { Button } from '../Button/Button';
 
-export function SubscribeForm({ onSubmit, className }) {
+export function SubscribeForm({ value, error, pending, onSubmit, className }) {
+  console.log(value, error, pending);
   const [email, setEmail] = useState('');
   const classes = classNames('form', className);
 
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit({ email });
+    onSubmit({ email, form: 'subscribe' });
   }
 
   function handleChange(value) {
@@ -22,13 +24,17 @@ export function SubscribeForm({ onSubmit, className }) {
         value={email}
         type="email"
         name="email"
+        state={error ? 'error' : 'normal'}
+        disabled={pending}
         onChange={handleChange}
         label="Ваш e-mail"
       />
+      {error && <div className="form__error">Something went wrong</div>}
       <div className="form__footer">
-        <button type="submit" className="button button--default">
+        <Button type="submit" disabled={pending}>
           Подписаться
-        </button>
+        </Button>
+        {pending && <div className="form__pending">Submit in progress</div>}
       </div>
     </form>
   );

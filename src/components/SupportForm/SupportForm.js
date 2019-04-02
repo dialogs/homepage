@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 import { Input } from '../Input/Input';
 import { Checkbox } from '../Checkbox/Checkbox';
+import { Button } from '../Button/Button';
 
 export function SupportForm({ onSubmit, className }) {
   const classes = classNames('form', className);
@@ -15,7 +16,7 @@ export function SupportForm({ onSubmit, className }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit(form);
+    onSubmit({ ...form, form: 'support' });
   }
 
   function handleChange(value, name) {
@@ -33,6 +34,7 @@ export function SupportForm({ onSubmit, className }) {
         type="email"
         onChange={handleChange}
         label="Ваш e-mail"
+        required
       />
 
       <Input
@@ -60,9 +62,7 @@ export function SupportForm({ onSubmit, className }) {
       />
 
       <div className="form__footer">
-        <button type="submit" className="button button--default">
-          Отправить
-        </button>
+        <Button type="submit">Отправить</Button>
 
         <div className="information">
           Служба поддержки обычно отвечает в течение 15 минут

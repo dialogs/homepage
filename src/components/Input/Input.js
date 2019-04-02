@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-globals */
 import React, { useState, createRef } from 'react';
 
 import classNames from 'classnames';
@@ -15,6 +14,8 @@ export function Input({
   className,
   onChange,
   rows,
+  state,
+  required,
 }) {
   const ref = createRef();
   const [isFocused, setIsFocused] = useState(false);
@@ -23,7 +24,9 @@ export function Input({
     {
       'input--non-empty': Boolean(value),
       'input--focused': isFocused,
+      'input--disabled': disabled,
     },
+    `input--${state}`,
     className,
   );
 
@@ -33,7 +36,10 @@ export function Input({
 
   function handleLabelMouseDown(event) {
     event.preventDefault();
-    handleFocus();
+
+    if (!disabled) {
+      handleFocus();
+    }
   }
 
   function handleFocus() {
@@ -72,8 +78,15 @@ export function Input({
           onFocus={handleFocus}
           name={name}
           disabled={disabled}
+          required={required}
         />
       </div>
     </div>
   );
 }
+
+Input.defaultProps = {
+  type: 'text',
+  state: 'normal',
+  disabled: false,
+};

@@ -3,6 +3,7 @@
 :root {
   --input-border-color: color-mod(var(--text-color-main) alpha(20%));
   --input-active-border-color: var(--color-secondary);
+  --input-error-border-color: var(--color-danger);
 }
 
 .input {
@@ -64,6 +65,23 @@
 
     & .input__input {
       box-shadow: 0 2px 0 0 var(--input-active-border-color);
+    }
+  }
+
+  &--disabled {
+    & .input__wrapper {
+      opacity: 0.6 !important;
+    }
+
+    & .input__label,
+    & .input__input {
+      cursor: not-allowed !important;
+    }
+  }
+
+  &--error {
+    & .input__input {
+      box-shadow: 0 2px 0 0 var(--input-error-border-color);
     }
   }
 }

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
 import { Checkbox } from '../Checkbox/Checkbox';
-
+import { Button } from '../Button/Button';
 import './OfferForm.css';
 
 export function OfferForm({ onSubmit, className }) {
@@ -22,7 +22,7 @@ export function OfferForm({ onSubmit, className }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit(form);
+    onSubmit({ ...form, form: 'offer' });
   }
 
   function handleChange(value, name) {
@@ -85,9 +85,7 @@ export function OfferForm({ onSubmit, className }) {
       </div>
 
       <div className="form__footer">
-        <button type="submit" className="button button--default">
-          Отправить заявку
-        </button>
+        <Button type="submit">Отправить заявку</Button>
       </div>
     </form>
   );

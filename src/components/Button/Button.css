@@ -2,12 +2,12 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-@import './variables.css';
+@import '../../styles/variables.css';
 
 :root {
   --button-text-color: #fff;
   --button-background-color: #1e1e1e;
-  --button-hover-background-color: #b9bbfa;
+  --button-hover-background-color: var(--color-secondary);
   --button-font-size: 18px;
   --button-line-height: 23px;
   --button-padding: 20px;
@@ -18,12 +18,11 @@
   text-align: center;
   font-size: var(--button-font-size);
   line-height: var(--button-line-height);
-  padding: var(--button-padding);
-  transition: 300ms;
+  padding: var(--button-padding) calc(var(--button-padding) * 2);
+  transition: background 250ms ease;
   cursor: pointer;
 
   &--default {
-    -webkit-font-smoothing: antialiased;
     color: var(--button-text-color);
     background-color: var(--button-background-color);
     min-width: 200px;
@@ -31,14 +30,6 @@
     @media (--mobile-viewport) {
       width: 100%;
       max-width: 400px;
-    }
-
-    @media (--tablet-viewport) {
-      min-width: 150px;
-    }
-
-    @media (--tablet-landscape-viewport) {
-      min-width: 200px;
     }
 
     &:hover {
@@ -53,5 +44,11 @@
     &:hover {
       background-color: rgba(30, 30, 30, 0.1);
     }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+    background-color: var(--button-background-color) !important;
   }
 }

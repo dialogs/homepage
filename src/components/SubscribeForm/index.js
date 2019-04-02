@@ -3,8 +3,11 @@ import { submitSubscribeForm } from '../../actions/forms';
 
 import { SubscribeForm } from './SubscribeForm';
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = ({ forms }) => {
+  return {
+    error: forms.subscribe.error,
+    pending: forms.subscribe.pending,
+  };
 };
 
 const mapDispatchToProps = { onSubmit: submitSubscribeForm };

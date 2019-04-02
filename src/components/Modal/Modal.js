@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Heading } from '../Heading/Heading';
-
 import './Modal.css';
 
 export function Modal({ onClose, title, children }) {
@@ -10,22 +8,14 @@ export function Modal({ onClose, title, children }) {
   }
 
   return (
-    <section className="modal">
-      <div className="modal__overlay" onClick={onClose}>
-        <div className="modal__window" onClick={handleModalClick}>
-          <div className="modal__window__header">
-            {title && <Heading>{title}</Heading>}
-            {onClose && (
-              <img
-                className="modal__window__close"
-                src="/images/svg-icons/icon-clear.svg"
-                alt="Закрыть окно"
-                onClick={onClose}
-              />
-            )}
+    <section className="modal" onClick={onClose}>
+      <div className="modal__window" onClick={handleModalClick}>
+        {onClose && (
+          <div className="modal__window__close" onClick={onClose}>
+            <img src="/images/svg-icons/icon-clear.svg" alt="Закрыть окно" />
           </div>
-          <div className="modal__window__body">{children}</div>
-        </div>
+        )}
+        {children}
       </div>
     </section>
   );

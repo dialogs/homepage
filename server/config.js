@@ -34,6 +34,13 @@ const config = {
     endpoint: env('GHOST_ENDPOINT', null),
     apiKey: env('GHOST_API_KEY', null),
   },
+  mailchimp: {
+    key: env('MAILCHIMP_KEY', null),
+    list: {
+      ru: env('MAILCHIMP_LIST_RU', null),
+      en: env('MAILCHIMP_LIST_EN', null),
+    },
+  },
 };
 
 function checkOrFail(envName, variable) {
@@ -63,5 +70,8 @@ function checkUrlOrFail(envName, url) {
 
 checkUrlOrFail('GHOST_ENDPOINT', config.ghost.endpoint);
 checkOrFail('GHOST_API_KEY', config.ghost.apiKey);
+checkOrFail('MAILCHIMP_KEY', config.mailchimp.key);
+checkOrFail('MAILCHIMP_LIST_RU', config.mailchimp.list.ru);
+checkOrFail('MAILCHIMP_LIST_EN', config.mailchimp.list.en);
 
 module.exports = config;
