@@ -14,9 +14,9 @@ export function Features() {
   const [slideTab2, setSlideTab2] = useState('chatbots');
   const [slideTab3, setSlideTab3] = useState('api');
   const sectionClassName = classNames('features', {
-    ['features--secondary']: tab === 'messenger',
-    ['features--primary']: tab === 'business',
-    ['features--transparent']: tab === 'integrations',
+    'features--secondary': tab === 'messenger',
+    'features--primary': tab === 'business',
+    'features--transparent': tab === 'integrations',
   });
 
   return (
