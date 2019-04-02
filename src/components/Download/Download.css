@@ -102,7 +102,7 @@
         top: 0;
         bottom: 0;
         left: calc(50% - var(--padding-side-columns) / 2);
-        right: calc(-1 * var(--margin-container-side) * 2);
+        right: calc(-1 * var(--margin-container-side));
         background: var(--color-primary);
         z-index: -1;
       }
@@ -183,6 +183,8 @@
       & .button {
         flex: 0 0 auto;
         margin-bottom: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
 
         &:last-child {
           margin-bottom: 0;
@@ -259,7 +261,7 @@
         top: 0;
         bottom: 0;
         left: 0;
-        right: calc(-1 * var(--margin-container-side) * 2);
+        right: calc(-1 * var(--margin-container-side));
         background: var(--color-primary);
         z-index: -1;
       }

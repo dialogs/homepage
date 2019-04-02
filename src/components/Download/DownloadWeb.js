@@ -22,7 +22,9 @@ export function DownloadWeb({ isEnterprise }) {
               : '/images/download/cloud-web@2x.png 2x'
           }
           alt={
-            isEnterprise ? 'Web версия enterprise' : 'Web версия демо в облаке'
+            isEnterprise
+              ? 'Web версия dialog enterprise'
+              : 'Web версия облачного приложения платформы dialog'
           }
         />
       </div>

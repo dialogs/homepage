@@ -8,7 +8,6 @@ export function DownloadMobile({ isEnterprise }) {
   const os = getOS();
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
 
-  console.log('os', os);
   const mobileClasses = classnames(
     'download__mobile-items',
     'current--' + os.toLowerCase(),
