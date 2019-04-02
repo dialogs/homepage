@@ -70,7 +70,7 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
         <div className="form__info">
           {!error && !pending && !value && (
             <div className="form__initial">
-              Служба поддержки обычно отвечает в течение 15 минут
+              Служба поддержки обычно отвечает <br />в течение 15 минут
             </div>
           )}
           {error && <FormErrorMessage />}
