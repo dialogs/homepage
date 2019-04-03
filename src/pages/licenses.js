@@ -23,7 +23,7 @@ export default () => {
 
         <section className="license__section license__photos license__photos--patents">
           <div className="license__photos-title">
-            Компания является правообладателем 6 программных продуктов, которые
+            Компания является правообладателем 5 программных продуктов, которые
             зарегистрированы в Роспатенте
           </div>
           <div className="license__photos-list">
@@ -134,6 +134,7 @@ export default () => {
                 </a>
               </div>
             </div>
+            {/*
             <div className="license__photos-item license--dialog-enterprise">
               <img
                 className="license__photos-image"
@@ -157,6 +158,7 @@ export default () => {
                 </a>
               </div>
             </div>
+            */}
           </div>
         </section>
 
@@ -169,13 +171,13 @@ export default () => {
             <div className="license__photos-item">
               <img
                 className="license__photos-image"
-                src="/images/fstek-1.jpg"
+                src="/images/license-fsb.jpg"
                 alt="ФСБ"
               />
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
-                  href="/images/fstek-1.jpg"
+                  href="/images/license-fsb.jpg"
                   download
                 >
                   <span className="link--download__text">ФСБ</span>
