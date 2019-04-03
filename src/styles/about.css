@@ -5,24 +5,8 @@
 @import './variables.css';
 
 .about {
-  & .page_header {
-    @media (--tablet-viewport) {
-      padding-top: 30px;
-      padding-bottom: 60px;
-    }
-
-    @media (--tablet-landscape-viewport) {
-      padding-bottom: 80px;
-      padding-right: calc(2.5 * var(--padding-side-columns));
-    }
-
-    @media (--desktop-viewport) {
-      padding-top: 20px;
-      padding-bottom: 80px;
-    }
-  }
-
   &__promo {
+    padding-top: 40px;
     @media (--desktop-viewport) {
       width: 1600px;
       margin: auto;

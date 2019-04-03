@@ -3,32 +3,24 @@
  */
 
 @import '~normalize.css/normalize.css';
-/* @import '~flexboxgrid/css/flexboxgrid.css'; */
 
 @import 'fonts.css';
 @import 'variables.css';
 @import 'grid.css';
 @import 'main.css';
 @import 'forms.css';
-/* @import 'button.css'; */
-/*@import 'header.css';*/
 @import 'footer.css';
 @import 'page.css';
 
+/* TODO: place this styles to the right place(components foldew which it belongs) */
 @import 'home.css';
-/* @import 'sections/home/platform.css'; */
-/* @import 'sections/home/safety.css'; */
 @import 'sections/home/easy.css';
 @import 'sections/home/business.css';
 @import 'sections/home/clients.css';
-@import 'sections/home/news.css';
-/*@import 'sections/home/incompany.css';*/
-/*@import 'sections/offer.css';*/
 
-/* @import 'features.css'; */
+/* @import 'sections/home/news.css'; */
+
 @import 'about.css';
 @import 'license.css';
-/*@import 'download.css';*/
-/*@import 'support.css';*/
 @import 'blog.css';
 @import 'legal.css';

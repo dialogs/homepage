@@ -15,14 +15,6 @@
 
   & .page_header {
     padding-bottom: 60px;
-
-    @media (--tablet-landscape-viewport) {
-      padding-top: 40px;
-    }
-
-    @media (--laptop-viewport) {
-      padding-top: 30px;
-    }
   }
 
   &__section {

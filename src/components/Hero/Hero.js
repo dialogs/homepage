@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
@@ -11,10 +12,10 @@ export function Hero({ openOfferModal }) {
       <div className="home__intro-box">
         <div className="home__intro-info">
           <PageHeader>
-            Достигайте командные цели быстрее и без потери фокуса
+            <FormattedMessage id="hero_header" />
           </PageHeader>
           <h4 className="home__intro-text">
-            Простая и эффективная платформа для коммуникаций в компании
+            <FormattedMessage id="hero_subheader" />
           </h4>
           <button
             type="button"

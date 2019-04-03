@@ -7,21 +7,23 @@ import { MobileMenu } from '../MobileMenu/MobileMenu';
 import './Header.css';
 
 export function Header({
+  locale,
+  originalPath,
   isMobileMenuOpen,
   openMobileMenu,
   openOfferModal,
   closeMobileMenu,
 }) {
   return (
-    <header className="site__header">
+    <header className="header">
       <Container>
         <div className="header__columns">
           <div className="header__col">
             <div className="header__logo">
-              <Link to="/" className="header__logo-link">
+              <Link to={`/${locale}`} className="header__logo-link">
                 <img
                   src="/images/logo-header.svg"
-                  alt=""
+                  alt="dialog"
                   className="header__logo-icon"
                 />
               </Link>
@@ -29,27 +31,33 @@ export function Header({
             <nav className="header__menu">
               <ul className="header__menu-list">
                 <li className="header__menu-item">
-                  <Link to="/about" className="header__menu-link">
+                  <Link to={`/${locale}/about`} className="header__menu-link">
                     О нас
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/download" className="header__menu-link">
+                  <Link
+                    to={`/${locale}/download`}
+                    className="header__menu-link"
+                  >
                     Скачать
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/support" className="header__menu-link">
+                  <Link to={`/${locale}/support`} className="header__menu-link">
                     Поддержка
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/features" className="header__menu-link">
+                  <Link
+                    to={`/${locale}/features`}
+                    className="header__menu-link"
+                  >
                     Функции
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/blog" className="header__menu-link">
+                  <Link to={`/${locale}/blog`} className="header__menu-link">
                     Блог
                   </Link>
                 </li>
@@ -63,9 +71,12 @@ export function Header({
             >
               Получить предложение
             </button>
-            <button className="header__button header__button--lang btn__change-lang">
-              en
-            </button>
+            <Link
+              to={`/${locale === 'ru' ? 'en' : 'ru'}${originalPath}`}
+              className="header__button header__button--lang btn__change-lang"
+            >
+              {locale === 'ru' ? 'en' : 'ru'}
+            </Link>
             <button
               className="header__button header__button--menu"
               onClick={openMobileMenu}

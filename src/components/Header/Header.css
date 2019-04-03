@@ -4,7 +4,7 @@
 
 @import '../../styles/variables.css';
 
-.site__header {
+.header {
   padding: 12px 0;
 
   @media (--tablet-viewport) {
@@ -16,9 +16,7 @@
   @media (--laptop-viewport) {
     padding: 45px 0;
   }
-}
 
-.header {
   &__columns {
     display: flex;
     justify-content: space-between;
@@ -94,7 +92,6 @@
     }
 
     &--lang {
-      display: none !important;
       text-transform: uppercase;
       line-height: 19px;
       font-size: 14px;
@@ -138,5 +135,4 @@
       }
     }
   }
-  /* ! .header-button */
-} /* ! .header */
+}
