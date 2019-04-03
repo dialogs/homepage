@@ -74,7 +74,6 @@
   & .partners {
     display: flex;
     flex-flow: row wrap;
-    /*align-items: stretch;*/
     justify-content: space-between;
 
     @media (--tablet-landscape-viewport) {
@@ -89,6 +88,14 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: 200ms ease;
+
+    &:hover {
+      filter: grayscale(0);
+      opacity: 1;
+    }
 
     @media (--tablet-viewport) {
       width: 26%;
