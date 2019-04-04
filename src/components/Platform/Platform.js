@@ -148,18 +148,18 @@ export function Platform({ className }) {
               'platform__box__item',
               tab === 'integrations' ? 'platform__box__item--visible' : null,
             )}
-            title="Интеграции"
+            title={<FormattedMessage id="integrations" />}
           >
             <div className="platform__content__icons">
               <PlatformIcon
                 type="integrations"
                 image="/images/home/platform/icon-3-1.svg"
-                text="dialog API для интеграции со сторонними приложениями"
+                text={<FormattedMessage id="platform_api" />}
               />
               <PlatformIcon
                 type="integrations"
                 image="/images/home/platform/icon-3-2.svg"
-                text="Bot SDK (Software Development Kit) для создания собственных ботов"
+                text={<FormattedMessage id="platform_bot_sdk" />}
               />
             </div>
             <img

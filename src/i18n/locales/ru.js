@@ -26,4 +26,8 @@ module.exports = {
     'Комплекс мер безопасности для защищенного общения',
   platform_customization:
     'Возможность изменить фирменный стиль интерфейса dialog в соответствие с гайдлайнами бренда заказчика',
+
+  platform_api: 'dialog API для интеграции со сторонними приложениями',
+  platform_bot_sdk:
+    'Bot SDK (Software Development Kit) для создания собственных ботов',
 };

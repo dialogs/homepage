@@ -27,4 +27,8 @@ module.exports = {
     'A range of security features for secure communications',
   platform_customization:
     'The possibility to customize dialog’s interface to fit a client’s branding',
+
+  platform_api: 'dialog API for integration with third-party applications',
+  platform_bot_sdk:
+    'Bot SDK (Software Development Kit) for creating your own bots',
 };
