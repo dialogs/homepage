@@ -5,9 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 
-export default ({ pageContext }) => {
-  const locale = pageContext.locale;
-
+export default ({ pageContext: { locale } }) => {
   const officesLinks = {
     moscow:
       'https://www.google.com/maps/place/dialog/@55.7368062,37.5323798,18z/data=!3m1!4b1!4m13!1m7!3m6!1s0x0:0x0!2zNTXCsDQ0JzEyLjUiTiAzN8KwMzInMDAuNyJF!3b1!8m2!3d55.736806!4d37.533528!3m4!1s0x46b54a53aa3b42cd:0x3c26303a75a2c356!8m2!3d55.7368062!4d37.5334741',
@@ -144,9 +142,11 @@ export default ({ pageContext }) => {
             </div>
             <div className="about__contacts-offices">
               <div className="about__contacts-office">
-                <div className="about__contacts-city">
-                  <FormattedMessage id="moscow" />
-                </div>
+                <FormattedMessage
+                  id="moscow"
+                  className="about__contacts-city"
+                  tagName="div"
+                />
                 <div className="about__contacts-address">
                   121170, ул. Поклонная 3к2, 11 этаж
                 </div>
@@ -162,9 +162,11 @@ export default ({ pageContext }) => {
                 </div>
               </div>
               <div className="about__contacts-office">
-                <div className="about__contacts-city">
-                  <FormattedMessage id="novosibirsk" />
-                </div>
+                <FormattedMessage
+                  id="novosibirsk"
+                  className="about__contacts-city"
+                  tagName="div"
+                />
                 <div className="about__contacts-address">
                   630090, ул. Николаева 11, оф. 311
                 </div>
@@ -180,9 +182,11 @@ export default ({ pageContext }) => {
                 </div>
               </div>
               <div className="about__contacts-office">
-                <div className="about__contacts-city">
-                  <FormattedMessage id="novosibirsk" />
-                </div>
+                <FormattedMessage
+                  id="novosibirsk"
+                  className="about__contacts-city"
+                  tagName="div"
+                />
                 <div className="about__contacts-address">
                   630007, ул. Коммунистическая 40
                 </div>

@@ -156,6 +156,11 @@ export function Footer() {
                       Правовая информация
                     </Link>
                   </div>
+                  <div className="footer__nav-item">
+                    <Link className="footer__nav-link" to="/prices">
+                      Цены
+                    </Link>
+                  </div>
                 </div>
                 <div className="footer__nav-list">
                   <div className="footer__nav-item">
