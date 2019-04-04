@@ -79,4 +79,12 @@ module.exports = {
     'Reduce technical support response times – collect all requests into one system.',
   case_security_service:
     'Integration with anti-virus and data loss prevention systems (DLP). Notifications about security system activity.',
+
+  easy_header: 'dialog is simple and effective',
+  easier_title: 'It’s easier in dialog',
+  easier_text:
+    'The modern world is full of noise – advertisements, news, and distracting notifications. In pursuit of new features, IT-products often forget about users. dialog helps you focus on solving problems without complex interfaces and features, so you can work as you want.',
+  more_efficient_title: 'It’s more efficient in dialog',
+  more_efficient_text:
+    'We don’t believe in bureaucracy, pointless meetings or memos with miles of signatures. The more efficient your communication, the faster your team will accomplish its goals. dialog helps you and your team solve problems without added stress.',
 };

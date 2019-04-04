@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -11,7 +12,7 @@ export function Easy() {
       <div className="easy__cols">
         <div className="easy__col easy__col--left">
           <Heading className="easy-title">
-            dialog — это просто и эффективно
+            <FormattedMessage id="easy_header" />
           </Heading>
           <div className="easy-image">
             <img
@@ -25,23 +26,19 @@ export function Easy() {
         <div className="easy__col easy__col--right">
           <div className="easy-info">
             <div className="easy-info-item">
-              <div className="easy-info-title">В диалоге – проще</div>
+              <div className="easy-info-title">
+                <FormattedMessage id="easier_title" />
+              </div>
               <div className="easy-info-text">
-                Современный мир перегружен шумом - реклама, новости, отвлекающие
-                уведомления. IT-продукты в погоне за новыми функциями забывают о
-                пользователях. Dialog помогает сфокусироваться на решении задач
-                без сложных интерфейсов и фич - берись и работай, как тебе
-                удобно.
+                <FormattedMessage id="easier_text" />
               </div>
             </div>
             <div className="easy-info-item">
-              <div className="easy-info-title">В диалоге – эффективнее</div>
+              <div className="easy-info-title">
+                <FormattedMessage id="more_efficient_title" />
+              </div>
               <div className="easy-info-text">
-                Мы против бюрократии, бесполезных встреч и формальных писем с
-                километровыми подписями. Чем эффективнее коммуникация, тем
-                быстрее команда достигает своих целей. Dialog помогает
-                эффективно решать личные и командные задачи без перегруженных
-                процессов.
+                <FormattedMessage id="more_efficient_text" />
               </div>
             </div>
           </div>
