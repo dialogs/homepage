@@ -1,6 +1,9 @@
 module.exports = {
   button_get_offer: 'Получить предложение',
 
+  get_offer: 'Получить предложение',
+  send_application: 'Отправить заявку',
+
   link_more: 'Подробнее',
 
   avrora_sailfish: 'Аврора',
@@ -79,6 +82,7 @@ module.exports = {
     'Сократите время ответа службы поддержки – соберите все запросы в одну систему.',
   case_security_service:
     'Интеграции с антивирусами, системами контроля утечек данных (DLP). Оповещения о событиях системы безопасности.',
+
   easy_header: 'dialog — это просто и эффективно',
   easier_title: 'В диалоге – проще',
   easier_text:
@@ -93,4 +97,20 @@ module.exports = {
   business_case_2: 'Доступ с любых устройств и всех подсетей',
   business_case_3: 'Интеграция банковских сервисов через открытый API',
   business_case_4: 'Обмен конфиденциальной информацией ',
+
+  offer_licenses: 'Пакет от 100 лицензий',
+
+  form_label_name: 'Как к вам обращаться',
+  form_label_email: 'Рабочий e-mail',
+  form_label_phone: 'Телефон',
+  form_label_company: 'Название компании',
+  form_label_amount: 'Количество пользователей',
+  form_label_agreement: 'Я согласен на обработку персональных данных',
+  form_label_subscribe: 'Подписаться на новостную рассылку',
+
+  form_pending: 'Отправка сообщения',
+  form_success_message: 'Сообщение успешно отправлено',
+  form_error_message: `Не удалось отправить сообщение. Пожалуйста, свяжитесь с нами через 
+      <a href="mailto:info@dlg.im">info@dlg.im</a> или 
+      <a href="tel:+78007758202">+7(800)775-82-02</a>`,
 };

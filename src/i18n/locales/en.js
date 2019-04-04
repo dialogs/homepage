@@ -1,6 +1,9 @@
 module.exports = {
   button_get_offer: 'Get Offer',
 
+  get_offer: 'Get Offer',
+  send_application: 'Send Application',
+
   link_more: 'Learn More',
 
   avrora_sailfish: 'Sailfish',
@@ -95,4 +98,20 @@ module.exports = {
   business_case_2: 'Access from any device or subnet',
   business_case_3: 'Integrating banking services via open API',
   business_case_4: 'Sharing confidential information',
+
+  offer_licenses: 'Package of 100 licenses and more',
+
+  form_label_name: 'How to address you',
+  form_label_email: 'Business e-mail',
+  form_label_phone: 'Phone number',
+  form_label_company: 'Company name',
+  form_label_amount: 'Number of users',
+  form_label_agreement: 'I agree to have my personal data processed',
+  form_label_subscribe: 'Subscribe to the mailing list',
+
+  form_pending: 'Application is pending',
+  form_success_message: 'Application has sent successfully',
+  form_error_message: `Something went wrong. Please, contact us by
+      <a href="mailto:info@dlg.im">info@dlg.im</a> or 
+      <a href="tel:+78007758202">+7(800)775-82-02</a>`,
 };
