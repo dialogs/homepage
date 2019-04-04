@@ -10,22 +10,17 @@ export default () => {
     <Container>
       <div className="license__column-content">
         <section className="license__section license__intro">
-          <PageHeader>Патенты и лицензии</PageHeader>
+          <PageHeader>
+            <FormattedMessage id="licenses_licenses" />
+          </PageHeader>
           <div className="license__intro-text">
-            Процесс производства программного обеспечения основан на практиках
-            дизайн-мышления, принципах архитектурного единства, положениях и
-            принципах манифеста Agile и практиках DevOps. Он определяется
-            внутренним регламентом процесса проектирования и внедрения
-            технологий. Для поддержки и устранения выявленных ошибок в
-            программном обеспечении внедрён процесс управления инцидентами и
-            запросами обслуживания.
+            <FormattedMessage id="licenses_prodiction_process" />
           </div>
         </section>
 
         <section className="license__section license__photos license__photos--patents">
           <div className="license__photos-title">
-            Компания является правообладателем 5 программных продуктов, которые
-            зарегистрированы в Роспатенте
+            <FormattedMessage id="licenses_company_is_the_holder" />
           </div>
           <div className="license__photos-list">
             <div className="license__photos-item license--dialog-server">
@@ -165,8 +160,7 @@ export default () => {
 
         <section className="license__section license__photos license__photos--fstek">
           <div className="license__photos-title">
-            Компания имеет необходимую квалификацию и лицензии ФСТЭК России и
-            ФСБ России
+            <FormattedMessage id="licenses_required_licenses" />
           </div>
           <div className="license__photos-list">
             <div className="license__photos-item">
@@ -181,7 +175,9 @@ export default () => {
                   href="/images/license-fsb.jpg"
                   download
                 >
-                  <span className="link--download__text">ФСБ</span>
+                  <span className="link--download__text">
+                    <FormattedMessage id="licenses_FSB" />
+                  </span>
                   <img
                     src="/images/svg-icons/arrow-download.svg"
                     alt=""
@@ -203,7 +199,9 @@ export default () => {
                   href="/images/fstek-1.jpg"
                   download
                 >
-                  <span className="link--download__text">ФСТЭК</span>
+                  <span className="link--download__text">
+                    <FormattedMessage id="licenses_FSTEK" />
+                  </span>
                   <img
                     src="/images/svg-icons/arrow-download.svg"
                     alt=""
@@ -224,7 +222,9 @@ export default () => {
                   href="/images/fstek-3.jpg"
                   download
                 >
-                  <span className="link--download__text">ФСБ ТЗКИ</span>
+                  <span className="link--download__text">
+                    <FormattedMessage id="licenses_FSTEK_TZKI" />
+                  </span>
                   <img
                     src="/images/svg-icons/arrow-download.svg"
                     alt=""
@@ -237,20 +237,18 @@ export default () => {
         </section>
 
         <section className="license__section license__assoc box--prefooter">
-          <div className="license__assoc-title">Реестры и ассоциации</div>
+          <div className="license__assoc-title">
+            <FormattedMessage id="licenses_associations" />
+          </div>
           <ul>
             <li>
-              Мессенджер dialog соответствует требованиям Единого реестра
-              российских программ для электронных вычислительных машин и баз
-              данных и состоит в реестре отечественного ПО.
+              <FormattedMessage id="licenses_messenger_complies" />
             </li>
             <li>
-              Компания является членом Ассоциации документальной электросвязи
-              (АДЭ).
+              <FormattedMessage id="licenses_member" />
             </li>
             <li>
-              ООО “Диалог” входит в реестр Организаторов Распространения
-              Информации (ОРИ) Роскомнадзор.
+              <FormattedMessage id="licenses_ooo" />
             </li>
           </ul>
         </section>

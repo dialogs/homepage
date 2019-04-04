@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { BlogPostCard } from '../BlogPostCard/BlogPostCard';
@@ -36,7 +37,7 @@ export function BlogRoster({ title, posts, limit = DEFAULT_LIMIT }) {
             className="button button--pale blog__button-more"
             onClick={handleLoadMoreClick}
           >
-            Смотреть еще
+            <FormattedMessage id="blog_roster_see_more" />
           </button>
         )}
       </div>

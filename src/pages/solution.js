@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -14,7 +15,7 @@ export default () => {
     <Page>
       <Container>
         <PageHeader className="solution">
-          Простое и технологичное решение для корпоративных коммуникаций
+          <FormattedMessage id="solutions_simple" />
         </PageHeader>
         <Promo
           element1={

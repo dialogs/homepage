@@ -1,4 +1,6 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
 import { Link } from 'gatsby';
 import removeMarkdown from 'remove-markdown';
 
@@ -42,7 +44,10 @@ export function BlogHeader({ featured, tags }) {
 
       <div className="blog__secondary">
         <section className="blog__popular box-block">
-          <h2 className="blog__popular-title"> Популярные статьи </h2>
+          <h2 className="blog__popular-title">
+            {' '}
+            <FormattedMessage id="blog_header_popular" />{' '}
+          </h2>
           <div className="blog__popular-list">
             {otherPosts.map((post) => {
               return (

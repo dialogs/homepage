@@ -1,8 +1,8 @@
 module.exports = {
-  button_get_offer: 'Get Offer',
+  button_get_offer: 'Request Trial',
 
-  get_offer: 'Get Offer',
-  send_application: 'Send Application',
+  get_offer: 'Request Trial',
+  send_application: 'Send',
 
   link_more: 'Learn More',
   link_more_licenses: 'Learn more about patents and licenses',
@@ -334,4 +334,65 @@ module.exports = {
     "Dialog software is not intended for use by people under 13 years old. If you are under 13, and this server is in the US, then do not use this software. (According to the requirements of COPPA - the Law on the Protection of Children's Privacy on the Internet).",
   legal_if_you_are:
     "If you are an EU resident under the age of 16, you are not entitled to use the Dialog software. In some cases, the legal representative (guardian) of the minor has the right to apply to Dialog with the consent (approval) on the processing of the minor's personal data in the form provided for the realisation of the rights granted to the user, on the basis of this treatment a minor may have the right to use the Dialog software.",
+
+  licenses_licenses: 'Patents and Licenses',
+  licenses_prodiction_process:
+    'The process of developing software is based on design-thinking practices, architectural integrity, and the provisions and principles of the Agile Manifesto and DevOps practices. It is defined by the internal regulations of the design process and the implementing of technologies. A process for managing incidents and service requests has been implemented to provide technical support and eliminate software errors.',
+  licenses_company_is_the_holder:
+    'The company is the copyright holder of 6 software products, which are registered with RosPatent.',
+  licenses_required_licenses:
+    'The company possesses the required qualifications and licenses from the Federal Service for Technical and Export Control of Russia and the FSB of Russia.',
+  licenses_FSB: 'FSB',
+  licenses_FSTEK: 'FSTEC Methods for Cryptographic Protection of Information',
+  licenses_FSTEK_TZKI: 'FSTEC Technical Protection of Confidential Information',
+  licenses_associations: 'Registries and Associations',
+  licenses_messenger_complies:
+    'dialog messenger complies with the requirements of the United Registry of Russian Programs for Electronic Computers and Databases, and is also on the national software registry.',
+  licenses_member:
+    'The company is a member of the Association of Documented Telecommunications (ADT).',
+  licenses_ooo:
+    'OOO Dialog is registered as an Information-Dissemination Organizer (IDO) by RosComNadzor.',
+
+  blog_header_popular: 'Popular Articles',
+  subscribe_subscribe: 'Sign up for new blog articles!',
+  blog_roster_see_more: 'See more',
+
+  footer_patents_and_licenses: 'Patents',
+  footer_legal: 'Legal',
+  footer_documentation: 'Documentation',
+  footer_download: 'Download',
+  footer_support: 'Help',
+  footer_copyright: 'Copyright © 2016-2019 dialog LLC',
+  footer_pricing: 'Pricing',
+
+  solutions_simple:
+    'A simple, technological solution for corporate communications',
+
+  SecureCommunication_secure: 'Secure communications',
+  SecureCommunication_secure_arcitecture: 'On-premise solution',
+  SecureCommunication_on_premise:
+    'Unlike cloud solutions, dialog does not have keys to decrypt your communication and access infrastructure. This architecture offers better protection from any attacker.',
+  SecureCommunication_high_standards: 'High security standards',
+  SecureCommunication_encryption: 'Data encryption',
+  SecureCommunication_tls_dtls:
+    'Client-server encryption based on TLS and DTLS protocols for a secure dialog connection.',
+  SecureCommunication_audit: 'Security audit',
+  SecureCommunication_regular_audit:
+    'Dialog works with leading security experts to conduct regular audits on its products.',
+  SecureCommunication_antivirus: 'Integration with anti-virus software',
+  SecureCommunication_icap:
+    'dialog supports integrations with anti-virus software via the ICAP protocol. Messenger blocks malicious files from being sent.',
+  SecureCommunication_siem:
+    'SIEM technology provides real-time analysis, giving dialog the ability to promptly respond to security events before damage is done.',
+  SecureCommunication_dlp: 'Integration with DLP',
+  SecureCommunication_dlp_icap:
+    'dialog integrates with data loss prevention systems based on the ICAP protocol, blocking message and attachments containing confidential information from being sent. This minimizes the risk of deliberate or accidental leaks of confidential information.',
+  SecureCommunication_requirements: 'Compliance',
+  SecureCommunication_developer:
+    'The National Software Registry of the Ministry of Digital Development, Communications and Mass Media (MinComSvyaz)',
+  SecureCommunication_messenger:
+    'License from the Federal Service for Technical and Export Control to develop and produce security systems and technical protection for confidential information.',
+  SecureCommunication_licenses:
+    'United Registry of Russian Programs for Electronic Computers and Databases.',
+  SecureCommunication_learn_more: 'Learn more',
 };
