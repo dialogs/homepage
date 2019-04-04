@@ -87,4 +87,12 @@ module.exports = {
   more_efficient_title: 'It’s more efficient in dialog',
   more_efficient_text:
     'We don’t believe in bureaucracy, pointless meetings or memos with miles of signatures. The more efficient your communication, the faster your team will accomplish its goals. dialog helps you and your team solve problems without added stress.',
+
+  business_header: 'dialog and big business',
+  business_example: 'Case Study: Integrations in the Banking Sphere',
+  business_case_1:
+    'A platform for employee and corporate client communications',
+  business_case_2: 'Access from any device or subnet',
+  business_case_3: 'Integrating banking services via open API',
+  business_case_4: 'Sharing confidential information',
 };
