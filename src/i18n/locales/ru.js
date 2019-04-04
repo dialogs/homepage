@@ -122,4 +122,6 @@ module.exports = {
   form_error_message: `Не удалось отправить сообщение. Пожалуйста, свяжитесь с нами через 
       <a href="mailto:info@dlg.im">info@dlg.im</a> или 
       <a href="tel:+78007758202">+7(800)775-82-02</a>`,
+
+  more_than_messenger: 'dialog – намного больше, чем просто мессенджер',
 };

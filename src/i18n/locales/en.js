@@ -123,4 +123,6 @@ module.exports = {
   form_error_message: `Something went wrong. Please, contact us by
       <a href="mailto:info@dlg.im">info@dlg.im</a> or 
       <a href="tel:+78007758202">+7(800)775-82-02</a>`,
+
+  more_than_messenger: 'dialog is more than just a messenger',
 };

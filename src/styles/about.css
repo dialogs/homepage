@@ -6,7 +6,16 @@
 
 .about {
   &__promo {
-    padding-top: 40px;
+    padding-top: 20px;
+
+    @media (--mobile-viewport) {
+      padding-top: 0;
+    }
+
+    @media (--tablet-landscape-viewport) {
+      padding-top: 40px;
+    }
+
     @media (--desktop-viewport) {
       width: 1600px;
       margin: auto;

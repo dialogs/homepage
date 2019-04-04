@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
@@ -7,7 +8,9 @@ export default () => {
   return (
     <div className="about page">
       <Container>
-        <PageHeader>dialog – намного больше, чем просто мессенджер</PageHeader>
+        <PageHeader>
+          <FormattedMessage id="more_than_messenger" />
+        </PageHeader>
       </Container>
 
       <section className="about__promo">
