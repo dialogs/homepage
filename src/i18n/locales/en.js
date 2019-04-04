@@ -5,6 +5,7 @@ module.exports = {
   send_application: 'Send Application',
 
   link_more: 'Learn More',
+  link_more_licenses: 'Learn more about patents and licenses',
 
   avrora_sailfish: 'Sailfish',
 
@@ -125,4 +126,20 @@ module.exports = {
       <a href="tel:+78007758202">+7(800)775-82-02</a>`,
 
   more_than_messenger: 'dialog is more than just a messenger',
+  mission: 'Mission',
+  mission_text:
+    'Eradicating bureaucracy. Simplifying and improving the quality of human communications',
+  values: 'Values',
+  values_text:
+    'Simplicity, transparency, flexibility, smart innovations, opportunity, and efficiency',
+  goal: 'Goal',
+  goal_text:
+    'Creating a communications platform to facilitate a more cohesive “business-society-government” ecosystem',
+  patents_licenses: 'Patents and licenses',
+  about_licenses_text:
+    'The patents and licenses of OOO Dialog and its products comply with the specific requirements of the federal authorities of Russia.',
+
+  contacts: 'Contact Information',
+  moscow: 'Moscow',
+  novosibirsk: 'Novosibirsk',
 };
