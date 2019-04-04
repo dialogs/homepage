@@ -293,4 +293,45 @@ module.exports = {
                   <p>
                     Use your brand book to make the application fit your company’s unique identity. You can change your logo, colors, and fonts in the dialog interface.
                   </p>`,
+  legal_policy: 'Privacy Policy',
+  legal_this_policy:
+    'This privacy policy is based on the principles of brevity and clarity.',
+  legal_our_company:
+    "Our company intends to meet the highest requirements in the field of security and processing of personal data of users. Dialog uses various security measures and precautions that protect user's personal data provided to the Dialog",
+  legal_personal_data:
+    "User's personal data processing is carried out in accordance with the current legislation of the Russian Federation and only for the purposes of using our software. User data can be used to improve the client service, and also to improve the performance of the application. Your e-mail address is used to receive information from Dialog: you can receive important notifications from us on it, and we are committed to responding to your inquiries about our product.",
+  legal_if_you_use:
+    'If you use or register in Dialog, Dialog may have access to information about your name, mobile phone number, e-mail address, IP address (personal data). Please note that all the above personal data are indicated by the user on their own.',
+  legal_upon_registration:
+    'Upon registration of the user, the latter agrees that Dialog collect, process, store and use the above personal data in accordance with Federal Law No. 152-FZ of the Russian Federation of July 27, 2006 "On Personal Data".',
+  legal_upon_registration_user:
+    'Upon registration, the User expresses his consent to the transfer of the above personal data to third parties for the purposes of providing services to Dialog and / or to third parties. At the same time, data transmission should be carried out using automation tools that provide the necessary protection of user rights.',
+  legal_dialog_is_required:
+    'Dialog is required to provide personal data to a third party in cases specifically provided by Russian law, for example, based on a court decision.',
+  legal_in_case:
+    "In the event that for any reason Dialog becomes aware of the unauthorised disclosure of the user's personal data that Dialog has received, Dialog undertakes to notify the user as soon as possible. This notification is sent to the user's email or mobile phone.",
+  legal_we_use_cookie: 'Dialog uses cookies',
+  legal_cookie_files:
+    "Cookies are files that describe your preferences to the application. This is a small piece of data that is created and sent to the website. It is stored on the user's computer and used by the web browser if the user allows it.",
+  legal_cookie_cintains:
+    'Cookies contain information about the interaction and traffic of the user in the application. We use this data to improve the usability of the application. We can also share some of this data with third-party services that help us better understand the needs of our users. These services can not use your cookie in any other way, except to assist dialog in the development of the business.',
+  legal_we_do_not:
+    "We do not sell information and do not exchange information that can be used to identify our users. But we share some personal data with our trusted third-party service providers who are required to keep this information in secret and use it only to support our business. We can also disclose our user's personal information when required to comply with Russian laws. We can also share this data in cases where a person violates someone's rights, threatens property or human security. However, other information that we collect and that can not be used to identify our client can be transferred to third parties for use in marketing, advertising or other purposes.",
+  legal_upon_registration_cookie:
+    'When registering, you agree to the Dialog use of cookies for the above purposes.',
+  legal_additional_rights: 'Additional User Rights',
+  legal_user_entitled: 'The user is entitled to:',
+  legal_request_the_removal:
+    'request the removal or correction of personal data;',
+  legal_request_data: 'access the user data that is available from Dialog;',
+  legal_request_information:
+    'request information about the transfer of their data to third parties;',
+  legal_withdraw_consent:
+    'withdraw consent to the processing of personal data and / or the use of cookies.',
+  legal_granted_rights:
+    'The rights granted to the user are realised by sending a scanned document containing the above user right and his signature. This document should be sent to Dialog through this software. Dialog undertakes to facilitate the implementation of user rights within 10 business days from the receipt of a properly issued and directed document from the user.',
+  legal_dialog_software:
+    "Dialog software is not intended for use by people under 13 years old. If you are under 13, and this server is in the US, then do not use this software. (According to the requirements of COPPA - the Law on the Protection of Children's Privacy on the Internet).",
+  legal_if_you_are:
+    "If you are an EU resident under the age of 16, you are not entitled to use the Dialog software. In some cases, the legal representative (guardian) of the minor has the right to apply to Dialog with the consent (approval) on the processing of the minor's personal data in the form provided for the realisation of the rights granted to the user, on the basis of this treatment a minor may have the right to use the Dialog software.",
 };
