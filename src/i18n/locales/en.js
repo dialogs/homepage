@@ -49,4 +49,34 @@ module.exports = {
     'The software development company OOO Dialog is licensed by the Federal Service for Technical and Export Control (FSTEC) of Russia to protect confidential information, and to develop and produce methods for securing confidential information.',
   compliance_text_4:
     'The software development company OOO Dialog has a license from the Federal Secret Service (FSB) of Russia to develop, produce, and distribute encryption tools, as well as information systems and telecommunications systems secured by encryption tools.',
+
+  incompany_header:
+    'We make communication simple and effective for any company',
+  incompany_subtitle: `The dialog API helps you optimize workflow by connecting the messenger to a company’s services. Create your own bots using the 
+        <a
+          href="https://dialogs.github.io/bots-docs/"
+          class="link--default"
+        >
+          Bot SDK
+        </a>
+        or use the services of one of our integrator partners`,
+  marketing: 'Marketing',
+  development: 'Development',
+  hr: 'HR',
+  sales: 'Sales',
+  technical_support: 'Technical Support',
+  security_service: 'Security Service',
+  optimization_cases: 'Optimization cases',
+  case_marketing:
+    'Stay up-to-date on your marketing results with notifications from analytics systems (for instance, Google Analytics).',
+  case_development:
+    'Automate processes – synchronize task statuses from JIRA in dialog.',
+  case_hr:
+    'Save time in the hiring process – let our service handle mundane tasks. The program will fix a time and arrange interviews on its own.',
+  case_sales:
+    'Stay up to date on deals with automatic status updates from CRM.',
+  case_technical_support:
+    'Reduce technical support response times – collect all requests into one system.',
+  case_security_service:
+    'Integration with anti-virus and data loss prevention systems (DLP). Notifications about security system activity.',
 };
