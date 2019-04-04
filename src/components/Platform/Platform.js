@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { PageHeader } from '../PageHeader/PageHeader';
 import { Section } from '../Section/Section';
@@ -15,8 +16,7 @@ export function Platform({ className }) {
   return (
     <Section className={classes}>
       <PageHeader className="platform__title">
-        dialog — коммуникационная <br />
-        платформа для компаний
+        <FormattedHTMLMessage id="platform_header" />
       </PageHeader>
       <div className="platform__wrapper">
         <Tabs
@@ -26,9 +26,15 @@ export function Platform({ className }) {
           changeOnHover
           className="platform__tabs"
         >
-          <Tab value="messenger">Мессенджер</Tab>
-          <Tab value="features">Корпоративные функции</Tab>
-          <Tab value="integrations">Интеграции</Tab>
+          <Tab value="messenger">
+            <FormattedMessage id="messenger" />
+          </Tab>
+          <Tab value="features">
+            <FormattedMessage id="corporate_features" />
+          </Tab>
+          <Tab value="integrations">
+            <FormattedMessage id="integrations" />
+          </Tab>
         </Tabs>
 
         <div className="platform__box">
@@ -37,43 +43,43 @@ export function Platform({ className }) {
               'platform__box__item',
               tab === 'messenger' ? 'platform__box__item--visible' : null,
             )}
-            title="Мессенджер"
+            title={<FormattedMessage id="messenger" />}
           >
             <div className="platform__content__icons">
               <PlatformIcon
                 type="messenger"
                 image="/images/home/platform/icon-1-1.svg"
-                text="Личные и групповые чаты"
+                text={<FormattedMessage id="platform_chats" />}
               />
               <PlatformIcon
                 type="messenger"
                 image="/images/home/platform/icon-1-2.svg"
-                text="Бесплатные аудио/видеозвонки"
+                text={<FormattedMessage id="platform_free_calls" />}
               />
               <PlatformIcon
                 type="messenger"
                 image="/images/home/platform/icon-1-3.svg"
-                text="Обмен файлами без ограничений"
+                text={<FormattedMessage id="platform_files_sharing" />}
               />
               <PlatformIcon
                 type="messenger"
                 image="/images/home/platform/icon-1-4.svg"
-                text="Каналы для оповещений"
+                text={<FormattedMessage id="platform_alert_channels" />}
               />
               <PlatformIcon
                 type="messenger"
                 image="/images/home/platform/icon-1-5.svg"
-                text="Голосовые сообщения"
+                text={<FormattedMessage id="platform_voice_messages" />}
               />
               <PlatformIcon
                 type="messenger"
                 image="/images/home/platform/icon-1-6.svg"
-                text="Эмодзи и стикеры"
+                text={<FormattedMessage id="platform_emojis_stickers" />}
               />
             </div>
             <div className="platform__content__links">
               <div className="platform__content__links__title">
-                Доступность на популярных платформах
+                <FormattedHTMLMessage id="platform_availability" />
               </div>
               <div className="platform__content__links__list">
                 <span>iOS</span>
@@ -81,7 +87,7 @@ export function Platform({ className }) {
                 <span>Windows</span>
                 <span>macOS</span>
                 <span>Linux</span>
-                <span>Аврора</span>
+                <FormattedMessage id="avrora_sailfish" />
               </div>
             </div>
             <img
@@ -96,38 +102,38 @@ export function Platform({ className }) {
               'platform__box__item',
               tab === 'features' ? 'platform__box__item--visible' : null,
             )}
-            title="Корпоративные функции"
+            title={<FormattedMessage id="corporate_features" />}
           >
             <div className="platform__content__icons">
               <PlatformIcon
                 type="functions"
                 image="/images/home/platform/icon-2-1.svg"
-                text="Интеллектуальные чат-боты"
+                text={<FormattedMessage id="platform_smart_chatbots" />}
               />
               <PlatformIcon
                 type="functions"
                 image="/images/home/platform/icon-2-2.svg"
-                text="Интеграция с Active Directory (AD/LDAP)"
+                text={<FormattedMessage id="platform_ad_integration" />}
               />
               <PlatformIcon
                 type="functions"
                 image="/images/home/platform/icon-2-3.svg"
-                text="Панель администратора"
+                text={<FormattedMessage id="admin_panel" />}
               />
               <PlatformIcon
                 type="functions"
                 image="/images/home/platform/icon-1-7.svg"
-                text="Демонстрация экрана"
+                text={<FormattedMessage id="screen_sharing" />}
               />
               <PlatformIcon
                 type="functions"
-                image="/images/home/platform/icon-2-3.svg"
-                text="Комплекс мер безопасности для защищенного общения"
+                image="/images/home/platform/icon-2-4.svg"
+                text={<FormattedMessage id="platform_secure_communication" />}
               />
               <PlatformIcon
                 type="functions"
                 image="/images/home/platform/icon-3-3.svg"
-                text="Возможность изменить фирменный стиль интерфейса dialog в соответствии с гайдлайнами бренда заказчика"
+                text={<FormattedMessage id="platform_customization" />}
               />
             </div>
             <img
