@@ -68,11 +68,13 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
         </Button>
 
         <div className="form__info">
+          {/*
           {!error && !pending && !value && (
             <div className="form__initial">
               Служба поддержки обычно отвечает <br />в течение 15 минут
             </div>
           )}
+          */}
           {error && <FormErrorMessage />}
           {pending && <div className="form__pending">Отправка сообщения.</div>}
           {value && value.status === 200 && (

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
+// import { PartnersTechnological } from '../components/PartnersTechnological/PartnersTechnological';
 
 export default () => {
   return (
@@ -22,7 +23,7 @@ export default () => {
 
         <section className="license__section license__photos license__photos--patents">
           <div className="license__photos-title">
-            Компания является правообладателем 6 программных продуктов, которые
+            Компания является правообладателем 5 программных продуктов, которые
             зарегистрированы в Роспатенте
           </div>
           <div className="license__photos-list">
@@ -133,6 +134,7 @@ export default () => {
                 </a>
               </div>
             </div>
+            {/*
             <div className="license__photos-item license--dialog-enterprise">
               <img
                 className="license__photos-image"
@@ -156,6 +158,7 @@ export default () => {
                 </a>
               </div>
             </div>
+            */}
           </div>
         </section>
 
@@ -168,13 +171,13 @@ export default () => {
             <div className="license__photos-item">
               <img
                 className="license__photos-image"
-                src="/images/fstek-1.jpg"
+                src="/images/license-fsb.jpg"
                 alt="ФСБ"
               />
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
-                  href="/images/fstek-1.jpg"
+                  href="/images/license-fsb.jpg"
                   download
                 >
                   <span className="link--download__text">ФСБ</span>
@@ -232,7 +235,7 @@ export default () => {
           </div>
         </section>
 
-        <section className="license__section license__assoc">
+        <section className="license__section license__assoc box--prefooter">
           <div className="license__assoc-title">Реестры и ассоциации</div>
           <ul>
             <li>
@@ -249,87 +252,6 @@ export default () => {
               Информации (ОРИ) Роскомнадзор.
             </li>
           </ul>
-        </section>
-
-        <section className="license__section license__partners box--prefooter">
-          <div className="license__partners-title">
-            Компания имеет технологичных партнеров
-          </div>
-          <div className="license__partners-list">
-            <div className="license__partners-item">
-              <a href="/404" className="license__partners-item-link">
-                <img
-                  className="license__partners-image"
-                  src="/images/partner-infotecs.svg"
-                  alt="infotecs"
-                />
-              </a>
-            </div>
-            <div className="license__partners-item">
-              <a href="/404" className="license__partners-item-link">
-                <img
-                  className="license__partners-image"
-                  src="/images/partner-rostelecom.svg"
-                  alt="rostelecom"
-                />
-              </a>
-            </div>
-            <div className="license__partners-item">
-              <a href="/404" className="license__partners-item-link">
-                <img
-                  className="license__partners-image"
-                  src="/images/partner-norbit.svg"
-                  alt="norbit"
-                />
-              </a>
-            </div>
-            <div className="license__partners-item">
-              <a href="/404" className="license__partners-item-link">
-                <img
-                  className="license__partners-image"
-                  src="/images/partner-jet.svg"
-                  alt="jet"
-                />
-              </a>
-            </div>
-            <div className="license__partners-item">
-              <a href="/404" className="license__partners-item-link">
-                <img
-                  className="license__partners-image"
-                  src="/images/partner-redsoft.svg"
-                  alt="redsoft"
-                />
-              </a>
-            </div>
-            <div className="license__partners-item">
-              <a href="/404" className="license__partners-item-link">
-                <img
-                  className="license__partners-image"
-                  src="/images/partner-omp.svg"
-                  alt="open mobile platform"
-                />
-              </a>
-            </div>
-            <div className="license__partners-item">
-              <a href="/404" className="license__partners-item-link">
-                <img
-                  className="license__partners-image"
-                  src="/images/partner-infowatch.svg"
-                  alt="infowatch"
-                />
-              </a>
-            </div>
-          </div>
-          <div className="license__partners-link-box">
-            <a href="/404" className="license__partners-link link--arrow">
-              <span className="link--arrow__text">Партнерская программа</span>
-              <img
-                src="/images/svg-icons/arrow-link.svg"
-                alt=""
-                className="link--arrow__icon"
-              />
-            </a>
-          </div>
         </section>
       </div>
     </Container>

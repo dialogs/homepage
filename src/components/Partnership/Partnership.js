@@ -28,30 +28,45 @@ export function Partnership() {
       </div>
       <div className="column column--partners">
         <div className="partners">
-          <div className="partner">
+          <a
+            className="partner"
+            href="https://www.basealt.ru/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <img
               className="partner__icon"
               src="/images/partner-basealt.png"
               alt="Базальт"
             />
             <div className="partner__name">Базальт</div>
-          </div>
-          <div className="partner">
+          </a>
+          <a
+            className="partner"
+            href="https://myoffice.ru/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <img
               className="partner__icon"
               src="/images/partner-moiofis.png"
               alt="МойОфис"
             />
             <div className="partner__name">МойОфис</div>
-          </div>
-          <div className="partner">
+          </a>
+          <a
+            className="partner"
+            href="https://sailfishos.org/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <img
               className="partner__icon"
-              src="/images/partner-avrora.png"
+              src="/images/partner-avrora-orig.png"
               alt="Аврора"
             />
             <div className="partner__name">Аврора</div>
-          </div>
+          </a>
         </div>
       </div>
     </Section>

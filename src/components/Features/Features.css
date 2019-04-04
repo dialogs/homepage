@@ -44,6 +44,20 @@
 
       & .tabs__tab {
         cursor: default !important;
+
+        @media (--laptop-viewport) {
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--color-secondary);
+            left: -30px;
+            top: 16px;
+          }
+        }
       }
     }
 
