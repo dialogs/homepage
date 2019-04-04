@@ -14,11 +14,9 @@ export function Hero({ openOfferModal }) {
           <PageHeader>
             <FormattedMessage id="hero_header" />
           </PageHeader>
-          <FormattedMessage
-            id="hero_subheader"
-            className="hero__text"
-            tagName="h4"
-          />
+          <h4 className="hero__text">
+            <FormattedMessage id="hero_subheader" />
+          </h4>
           <button
             type="button"
             className="button button--default"
