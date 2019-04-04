@@ -29,7 +29,7 @@ export function Hero({ openOfferModal }) {
           className="hero__image"
           src="/images/home/home-hero.png"
           srcSet="/images/home/home-hero@2x.png 2x"
-          alt={<FormattedMessage id="hero_header" />}
+          alt="Достигайте командные цели быстрее и без потери фокуса"
         />
       </div>
     </Section>
