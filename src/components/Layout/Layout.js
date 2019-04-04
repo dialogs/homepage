@@ -18,7 +18,7 @@ export default ({ children, pageContext }) => {
       <main className="main">
         <Header locale={locale} originalPath={originalPath} />
         {children}
-        <Footer />
+        <Footer locale={locale} />
         <Modals />
       </main>
     </IntlProvider>

@@ -1,6 +1,8 @@
 module.exports = {
   button_get_offer: 'Get Offer',
 
+  link_more: 'Learn More',
+
   avrora_sailfish: 'Sailfish',
 
   hero_header: 'Achieve your team goals faster without losing focus',
@@ -31,4 +33,20 @@ module.exports = {
   platform_api: 'dialog API for integration with third-party applications',
   platform_bot_sdk:
     'Bot SDK (Software Development Kit) for creating your own bots',
+
+  safety_header: `Security and Compliance`,
+  secure_communication: 'Secure communications',
+  safety_text_1:
+    'On-Premise platform installation on a company’s server. The range of security features minimizes the risk of information leaks, external failures and locks in the software.',
+  safety_text_2:
+    'dialog meets the highest security standards, providing protection from data theft, confidential information leaks and viruses. The software is regularly checked for vulnerabilities and bugs.',
+  compliance: 'Compliance',
+  compliance_text_1:
+    'The software development company OOO Dialog is registered as an accredited organization for information technology in the Russian Federation (No. 436 dated 09/07/2016).',
+  compliance_text_2:
+    'dialog messenger complies with the requirements of the Unified Registry of Russian Programs for Electronic Computers and Databases, and is also on the national software registry.',
+  compliance_text_3:
+    'The software development company OOO Dialog is licensed by the Federal Service for Technical and Export Control (FSTEC) of Russia to protect confidential information, and to develop and produce methods for securing confidential information.',
+  compliance_text_4:
+    'The software development company OOO Dialog has a license from the Federal Secret Service (FSB) of Russia to develop, produce, and distribute encryption tools, as well as information systems and telecommunications systems secured by encryption tools.',
 };
