@@ -89,6 +89,7 @@ export function Header({
         isOpen={isMobileMenuOpen}
         onClose={closeMobileMenu}
         openOfferModal={openOfferModal}
+        locale={locale}
       />
     </header>
   );
