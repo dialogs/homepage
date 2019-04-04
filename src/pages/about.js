@@ -45,10 +45,7 @@ export default ({ pageContext: { locale } }) => {
               src="/images/svg/about-promo.svg"
               alt=""
             />
-            <span>
-              Подробнее о жизни в компании вы можете прочитать в специальном
-              проекте i can choose
-            </span>
+            <FormattedMessage id="link_icanchoose" />
             <img
               className="img--arrow"
               src="/images/svg-icons/arrow.svg"
@@ -142,13 +139,11 @@ export default ({ pageContext: { locale } }) => {
             </div>
             <div className="about__contacts-offices">
               <div className="about__contacts-office">
-                <FormattedMessage
-                  id="moscow"
-                  className="about__contacts-city"
-                  tagName="div"
-                />
+                <div className="about__contacts-city">
+                  <FormattedMessage id="moscow" />
+                </div>
                 <div className="about__contacts-address">
-                  121170, ул. Поклонная 3к2, 11 этаж
+                  <FormattedMessage id="moscow_address" />
                 </div>
                 <div className="about__contacts-map-link">
                   <a
@@ -157,18 +152,16 @@ export default ({ pageContext: { locale } }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    На карте
+                    <FormattedMessage id="on_map" />
                   </a>
                 </div>
               </div>
               <div className="about__contacts-office">
-                <FormattedMessage
-                  id="novosibirsk"
-                  className="about__contacts-city"
-                  tagName="div"
-                />
+                <div className="about__contacts-city">
+                  <FormattedMessage id="novosibirsk" />
+                </div>
                 <div className="about__contacts-address">
-                  630090, ул. Николаева 11, оф. 311
+                  <FormattedMessage id="novosibirsk_address_nikolaeva" />
                 </div>
                 <div className="about__contacts-map-link">
                   <a
@@ -177,18 +170,16 @@ export default ({ pageContext: { locale } }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    На карте
+                    <FormattedMessage id="on_map" />
                   </a>
                 </div>
               </div>
               <div className="about__contacts-office">
-                <FormattedMessage
-                  id="novosibirsk"
-                  className="about__contacts-city"
-                  tagName="div"
-                />
+                <div className="about__contacts-city">
+                  <FormattedMessage id="novosibirsk" />
+                </div>
                 <div className="about__contacts-address">
-                  630007, ул. Коммунистическая 40
+                  <FormattedMessage id="novosibirsk_address_most" />
                 </div>
                 <div className="about__contacts-map-link">
                   <a
@@ -197,7 +188,7 @@ export default ({ pageContext: { locale } }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    На карте
+                    <FormattedMessage id="on_map" />
                   </a>
                 </div>
               </div>

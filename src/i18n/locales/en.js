@@ -140,6 +140,12 @@ module.exports = {
     'The patents and licenses of OOO Dialog and its products comply with the specific requirements of the federal authorities of Russia.',
 
   contacts: 'Contact Information',
+  on_map: 'View map',
   moscow: 'Moscow',
   novosibirsk: 'Novosibirsk',
+  moscow_address: '3, bldg. 2 Poklonnaya St., 121170',
+  novosibirsk_address_nikolaeva: 'office 311, 11 Nikolaeva St., 630090',
+  novosibirsk_address_most: '40 Kommunisticheskaya St., 630007',
+  link_icanchoose:
+    'More information about company life you can find in special project "i can choose"',
 };
