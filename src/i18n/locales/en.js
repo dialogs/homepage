@@ -224,4 +224,73 @@ module.exports = {
   form_label_topic: 'Subject',
   form_label_your_question: 'Describe your issue',
   form_send: 'Send',
+
+  what_dialog_can: 'What dialog can do',
+  feature_audio_video: 'Audio/Video Calls',
+  feature_audio_video_content: `<h4>High quality connections</h4>
+                  <p>
+                    dialog automatically optimizes connection quality based on the strength of your mobile operator’s signal at your location. If the signal is weak, dialog reduces the amount of audio or video traffic being transmitted without interrupting or delaying your connection.
+                  </p>
+                  <h4>Secure communications</h4>
+                  <p>
+                    All calls are securely protected by cryptographic solutions based on end-to-end and TLS encryption.
+                  </p>`,
+  feature_files: 'Share files of any format',
+  feature_files_content: `<h4>Share files without size restrictions</h4>
+                  <p>
+                    Can’t send your large presentation via e-mail? Forget about restrictions – share any amount of data you like and use the convenient search to help find important information easily and quickly by looking up the file or sender name.
+                  </p>`,
+  feature_chats: 'Private and Group Chats',
+  feature_chats_content: `<h4>All messages will be delivered</h4>
+                  <p>The dialog platform is optimized to work both with older GSM networks, as well as new-generation networks. The application will send a message when the network is ready to transmit the data, and also controls its delivery.</p>`,
+  feature_audio_messages: 'Audio Messages',
+  feature_audio_messages_content: `<h4>Don’t get distracted</h4>
+            <p>Don’t have time to type out a message? Use the voice message function – it’s much easier and faster than a voice autoreply or voice mail.</p>`,
+  feature_channels: 'Channels',
+  feature_channels_content: `<h4>Direct contact</h4>
+            <p>Send bulk messages: news feeds, blogs and notifications. Message a group or all the employees in an organization.</p>`,
+  feature_screen_sharing: 'Screen Sharing',
+  feature_screen_sharing_content: `<h4>Work on documents together</h4>
+  <p>Broadcast your device’s screen to colleagues or partners, discuss internal documents or hold a presentation in real time.</p>`,
+  feature_any_platform: 'Multi-platform',
+  feature_any_platform_content: `<h4>Always in touch</h4>
+            <p>dialog is available on all your devices. Supported by Android, iOS, macOS, Windows and Linux operating systems. Work securely and synchronize chats on web, mobile and desktop clients.</p>`,
+  feature_chatbots: 'Chat Bots',
+  feature_chatbots_content: `<h4>Automate your workflow</h4>
+                  <p>
+                    The chat bot is like a virtual companion. It processes an incoming question and gives a response.
+                  </p>
+                  <p>
+                    Example: arranging documents. This is a tedious and unavoidable part of work. Use the chat bot to make it easier.
+                  </p>`,
+  feature_dashboard: 'Admin Panel',
+  feature_dashboard_content: `<h4>Manage access</h4>
+                  <p>
+                    Over time, your company will recruit new employees and others will leave. With the Admin Panel, you can easily activate or deactivate users in your work space and manage their access.
+                  </p>`,
+  feature_ad: 'Active Directory (AD/LDAP)',
+  feature_ad_content: `<h4>Single entry point for your employees</h4>
+                  <p>
+                    dialog displays user information from the AD. Integrate your current work environment and group policies with dialog. Users can enter dialog via their accounts. 
+                  </p>`,
+
+  feature_api: 'dialog API ',
+  feature_api_content: `<h4>Compatibility with popular business services. </h4>
+                  <p>
+                    ATC, CRM, task managers, analytics systems – all these and more can be connected to dialog. The integrations are only limited by the developer’s imagination.
+                  </p>`,
+
+  feature_botsdk: 'dialog Bot SDK ',
+  feature_botsdk_content: `<h4>Ready-made bot development tools for dialog</h4>
+                  <p>
+                  The
+                  <a href="https://dialogs.github.io/bots-docs/#/" class="link--default">
+                      BOT SDK
+                    </a> let’s you quickly make your own bots. The SDK is currently available for JS, Java and Python.
+                  </p>`,
+  feature_whitelabel: 'Client Company Branding',
+  feature_whitelabel_content: `<h4>Don’t leave your brand behind</h4>
+                  <p>
+                    Use your brand book to make the application fit your company’s unique identity. You can change your logo, colors, and fonts in the dialog interface.
+                  </p>`,
 };
