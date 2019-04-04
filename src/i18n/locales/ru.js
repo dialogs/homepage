@@ -65,13 +65,13 @@ module.exports = {
 
   incompany_header:
     'Делаем коммуникацию внутри любой компании простой и эффективной',
-  incompany_subtitle: `dialog API позволяет оптимизировать процессы, связав мессенджер и сервисы компании. Создавайте ботов самостоятельно с помощью 
+  incompany_subtitle: `dialog API позволяет оптимизировать процессы, связав мессенджер и сервисы компании. Создавайте ботов самостоятельно с помощью
         <a
           href="https://dialogs.github.io/bots-docs/"
           class="link--default"
         >
           Bot SDK
-        </a> 
+        </a>
         или воспользуйтесь услугами партнёра-интегратора.`,
   marketing: 'Маркетинг',
   development: 'Разработка',
@@ -120,8 +120,8 @@ module.exports = {
 
   form_pending: 'Отправка сообщения',
   form_success_message: 'Сообщение успешно отправлено',
-  form_error_message: `Не удалось отправить сообщение. Пожалуйста, свяжитесь с нами через 
-      <a href="mailto:info@dlg.im">info@dlg.im</a> или 
+  form_error_message: `Не удалось отправить сообщение. Пожалуйста, свяжитесь с нами через
+      <a href="mailto:info@dlg.im">info@dlg.im</a> или
       <a href="tel:+78007758202">+7(800)775-82-02</a>`,
 
   more_than_messenger: 'dialog – намного больше, чем просто мессенджер',
@@ -147,4 +147,49 @@ module.exports = {
   novosibirsk_address_most: '630007, ул. Коммунистическая 40',
   link_icanchoose:
     'Подробнее о жизни в компании вы можете прочитать в специальном проекте i can choose',
+  prices_pageheader: 'Стоимость бессрочной лицензии на одного пользователя:',
+  prices_price: '4800 ₽',
+  prices_subtitle:
+    'Цена на платформу может отличаться в зависимости от количества пользователей',
+  prices__description:
+    'Базовая версия продукта содержит привычные функции мессенджера',
+  prices_item_title: 'Мессенджер',
+  prices_personal_chats: 'Личные чаты',
+  prices_group_open_closed_chat: 'Групповые открытые / закрытые чаты',
+  prices_open_closed_channels: 'Открытые/закрытые каналы',
+  prices_stickers_smiles_reactions: 'Стикеры, смайлики, реакции на сообщения',
+  prices_statuses: 'Статусы присутствия',
+  prices_voice_messages: 'Голосовые сообщения',
+  prices_starred_chats_and_contacts: 'Избранные чаты и контакты',
+  prices_address_book: 'Адресная книга',
+  prices_search: 'Поиск по сообщения и контактам',
+  prices_mentions: 'Возможность упоминания пользователя с помощью @',
+  prices_view_all_media: 'Просмотр всех загруженных медиа в выбранном чате',
+  prices_cites: 'Переотправка и цитирование сообщений',
+  prices_geolocation: 'Отправка местоположения',
+  prices_contact_in_chat: 'Отправка контакта в чате',
+  prices_disable_notification:
+    'Возможность выключить все уведомления в конкретных чатах',
+  prices_corporate_fuctions: 'Корпоративные функции',
+  prices_exchange_documents: 'Обмен документами любого размера',
+  prices_chatbots: 'Поддержка чат-ботов',
+  prices_audio_video_conference: 'Аудио / Видеоконференции для участников',
+  prices_discovery:
+    'Отдельная вкладка «Обзор», на которой в административной панели можно закрепить необходимые корпоративные каналы или группы',
+  prices_policy_management: 'Управление правами в группах и каналах',
+  prices_admin_panel: 'Административная панель',
+  prices_custom_data_in_profile: 'Пользовательские данные в профиле',
+  prices_screensahring: 'Демонстрация экрана',
+  prices_interface_customization: 'Кастомизация интерфейса',
+  prices_integrations: 'Интеграции',
+  prices_e_mail_integration:
+    'Интеграции с e-mail, голосовой почтой и системами коммуникации',
+  prices_video_conference_integrations:
+    'Интеграции с системами видеоконференцсвязи (в разработке)',
+  prices_ats: 'Интеграции с корпоративной АТС',
+  prices_open_api: 'Открытое API',
+  prices_ad_ldap: 'Интеграция с каталогами пользователей AD / LDAP',
+  prices_security_infrastructure:
+    'Интеграции с инфраструктурой безопасности (SIEM, DLP, IDM,Антивирус)',
+  prices_bot_sdk: 'Bot SDK',
 };

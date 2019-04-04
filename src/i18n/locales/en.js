@@ -65,7 +65,7 @@ module.exports = {
 
   incompany_header:
     'We make communication simple and effective for any company',
-  incompany_subtitle: `The dialog API helps you optimize workflow by connecting the messenger to a company’s services. Create your own bots using the 
+  incompany_subtitle: `The dialog API helps you optimize workflow by connecting the messenger to a company’s services. Create your own bots using the
         <a
           href="https://dialogs.github.io/bots-docs/"
           class="link--default"
@@ -122,7 +122,7 @@ module.exports = {
   form_pending: 'Application is pending',
   form_success_message: 'Application has sent successfully',
   form_error_message: `Something went wrong. Please, contact us by
-      <a href="mailto:info@dlg.im">info@dlg.im</a> or 
+      <a href="mailto:info@dlg.im">info@dlg.im</a> or
       <a href="tel:+78007758202">+7(800)775-82-02</a>`,
 
   more_than_messenger: 'dialog is more than just a messenger',
@@ -148,4 +148,50 @@ module.exports = {
   novosibirsk_address_most: '40 Kommunisticheskaya St., 630007',
   link_icanchoose:
     'More information about company life you can find in special project "i can choose"',
+  prices_pageheader:
+    'The cost of an indefinite license per unique registered user:',
+  prices_price: '4,800 rubles',
+  prices_subtitle:
+    'The price for the platform may vary depending on the number of users.',
+  prices__description:
+    'The basic version of the product consists of the familiar messenger functions',
+  prices_item_title: 'Messenger',
+  prices_personal_chats: 'Personal chats',
+  prices_group_open_closed_chat: 'Group public/private chats',
+  prices_open_closed_channels: 'Public/private channels',
+  prices_stickers_smiles_reactions: 'Stickers, smiley faces, message reactions',
+  prices_statuses: 'Presence status',
+  prices_voice_messages: 'Voice Messages',
+  prices_starred_chats_and_contacts: 'Favorite chats and contacts',
+  prices_address_book: 'Address book',
+  prices_search: 'Search messages and contacts',
+  prices_mentions: 'The option to reference nicknames',
+  prices_view_all_media: 'Inspect all media loaded in a selected chat',
+  prices_cites: 'Forward & reply messages',
+  prices_geolocation: 'Share location',
+  prices_contact_in_chat: 'Send a contact in a chat',
+  prices_disable_notification:
+    'The option to turn off notifications in all/specific chats',
+  prices_corporate_fuctions: 'Corporate Features',
+  prices_exchange_documents: 'Share documents of any size',
+  prices_chatbots: 'Chat bot support',
+  prices_audio_video_conference: 'Audio/video conferencing for team members',
+  prices_discovery:
+    'A dedicated “Overview” tab, in which, via the admin panel, you can pin necessary corporate channels or groups',
+  prices_policy_management: 'Manage rights in groups and channels',
+  prices_admin_panel: 'Admin panel',
+  prices_custom_data_in_profile: 'User information is saved in their profile',
+  prices_screensahring: 'Screen Sharing',
+  prices_interface_customization: 'Interface customization',
+  prices_integrations: 'Integrations',
+  prices_e_mail_integration:
+    'Integrations with e-mail, voice mail and communications systems',
+  prices_video_conference_integrations:
+    'Integrations with video conferencing systems',
+  prices_ats: 'Integrations with corporate VoIP',
+  prices_open_api: 'Open API',
+  prices_ad_ldap: 'Integration with AD / LDAP user catalogues',
+  prices_security_infrastructure:
+    'Integrations with security infrastructure (SIEM, DLP, IDM, Anti-virus)',
+  prices_bot_sdk: 'Bot SDK',
 };
