@@ -64,7 +64,7 @@ export function OfferForm({ pending, error, value, onSubmit, className }) {
         />
 
         <Select
-          options={['1-10', '11-50', '51-100', '101-500', '500+']}
+          options={['1-100', '101-500', '501-1000', '1000+']}
           value={form.users}
           name="users"
           onChange={handleChange}
