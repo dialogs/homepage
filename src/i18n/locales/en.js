@@ -1,6 +1,7 @@
 module.exports = {
-  hero_header:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit rem in sint et nemo non obcaecati minus quia praesentium dolorem accusantium consequatur, pariatur sequi suscipit quibusdam delectus consectetur! Soluta, dignissimos!',
+    'A simple and effective platform for communication within a company',
+
+  button_get_offer: 'Get Offer',
 };
