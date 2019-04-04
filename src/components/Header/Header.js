@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../Container/Container';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
@@ -32,7 +33,7 @@ export function Header({
               <ul className="header__menu-list">
                 <li className="header__menu-item">
                   <Link to={`/${locale}/about`} className="header__menu-link">
-                    О нас
+                    <FormattedMessage id="menu_about" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
@@ -40,12 +41,12 @@ export function Header({
                     to={`/${locale}/download`}
                     className="header__menu-link"
                   >
-                    Скачать
+                    <FormattedMessage id="menu_download" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
                   <Link to={`/${locale}/support`} className="header__menu-link">
-                    Поддержка
+                    <FormattedMessage id="menu_support" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
@@ -53,12 +54,12 @@ export function Header({
                     to={`/${locale}/features`}
                     className="header__menu-link"
                   >
-                    Функции
+                    <FormattedMessage id="menu_features" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
                   <Link to={`/${locale}/blog`} className="header__menu-link">
-                    Блог
+                    <FormattedMessage id="menu_blog" />
                   </Link>
                 </li>
               </ul>
@@ -69,7 +70,7 @@ export function Header({
               className="header__button header__button--offer"
               onClick={openOfferModal}
             >
-              Получить предложение
+              <FormattedMessage id="button_get_offer" />
             </button>
             <Link
               to={`/${locale === 'ru' ? 'en' : 'ru'}${originalPath}`}

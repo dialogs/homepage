@@ -8,6 +8,15 @@ module.exports = {
 
   avrora_sailfish: 'Аврора',
 
+  menu_about: 'О нас',
+  menu_download: 'Скачать',
+  menu_support: 'Поддержка',
+  menu_features: 'Функции',
+  menu_blog: 'Блог',
+  menu_solutions: 'Решения',
+  menu_partners: 'Партнерам',
+  menu_pricing: 'Цены',
+
   hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
   hero_subheader: 'Простая и эффективная платформа для коммуникаций в компании',
 

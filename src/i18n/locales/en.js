@@ -8,6 +8,15 @@ module.exports = {
 
   avrora_sailfish: 'Sailfish',
 
+  menu_about: 'About Us',
+  menu_download: 'Download',
+  menu_support: 'Support',
+  menu_features: 'Features',
+  menu_blog: 'Blog',
+  menu_solutions: 'Solutions',
+  menu_partners: 'Partners',
+  menu_pricing: 'Pricing',
+
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
     'A simple and effective platform for communication within a company',
