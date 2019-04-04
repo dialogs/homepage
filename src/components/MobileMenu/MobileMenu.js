@@ -9,7 +9,7 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
   const classes = classNames('mobile-menu', {
     'mobile-menu--opened': isOpen,
   });
-  console.log('locale', locale);
+
   return (
     <div className={classes}>
       <div className="mobile-menu__content">
