@@ -211,4 +211,17 @@ module.exports = {
 
   download_web_title: 'Web Version',
   start: 'Start',
+
+  support_header: 'Feedback',
+  support_corporate_title: 'Contact Technical Support',
+  support_corporate_text_before:
+    'If you are a dialog Enterprise user – use the technical ',
+  support_corporate_text_link: 'support center',
+  support_corporate_text_after: 'for corporate clients',
+  support_connect: 'You can also connect with the technical support via ',
+
+  form_label_your_email: 'Your e-mail ',
+  form_label_topic: 'Subject',
+  form_label_your_question: 'Describe your issue',
+  form_send: 'Send',
 };
