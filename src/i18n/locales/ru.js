@@ -147,6 +147,24 @@ module.exports = {
   novosibirsk_address_most: '630007, ул. Коммунистическая 40',
   link_icanchoose:
     'Подробнее о жизни в компании вы можете прочитать в специальном проекте i can choose',
+
+  download_header: 'Демонстрационное облачное приложение платформы dialog',
+  download_subtitle_before:
+    'Вы можете ознакомиться с функциями платформы в нашем демо-приложении. ',
+  download_subtitle_button_text: 'Оставьте заявку',
+  download_subtitle_after:
+    ', чтобы получить информацию о подключении платформы.',
+
+  download_enterprise_subtitle_before:
+    'Информацию о подключении вы можете получить у своего системного администратора или в центре ',
+  download_enterprise_subtitle_link: 'поддержки клиентов',
+
+  download_desktop_title: 'Десктопное приложение',
+  download_for: 'Скачать для ',
+  download_mobile_title: 'Мобильное приложение',
+
+  download_web_title: 'Web версия',
+  start: 'Начать',
   prices_pageheader: 'Стоимость бессрочной лицензии на одного пользователя:',
   prices_price: '4800 ₽',
   prices_subtitle:

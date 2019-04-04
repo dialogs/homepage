@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 
 import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
@@ -15,7 +16,9 @@ export function DownloadMobile({ isEnterprise }) {
 
   return (
     <section className="download__section download__item download__mobile">
-      <h2 className="download__item-title">Мобильное приложение</h2>
+      <h2 className="download__item-title">
+        <FormattedMessage id="download_mobile_title" />
+      </h2>
       <div className={mobileClasses}>
         <div className="download__mobile-item mobile--ios">
           <div className="download__mobile-pictute">
