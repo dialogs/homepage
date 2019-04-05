@@ -38,8 +38,11 @@ export function DownloadMobile({ isEnterprise }) {
           <div className="title">iPhone / iPad</div>
           <div className="qr-box">
             <img
-              className="download__mobile-qr"
-              src="/images/download/cloud-mobile-iphone-qr.png"
+              src={
+                isEnterprise
+                  ? '/images/download/enterprise-iphone-qr.png'
+                  : '/images/download/cloud-mobile-iphone-qr.png'
+              }
               alt=""
             />
           </div>
@@ -69,7 +72,14 @@ export function DownloadMobile({ isEnterprise }) {
           </div>
           <div className="title">Android</div>
           <div className="qr-box">
-            <img src="/images/download/cloud-mobile-android-qr.png" alt="" />
+            <img
+              src={
+                isEnterprise
+                  ? '/images/download/enterprise-android-qr.png'
+                  : '/images/download/cloud-mobile-android-qr.png'
+              }
+              alt=""
+            />
           </div>
           <a className="store-link" href={links.android}>
             <img
