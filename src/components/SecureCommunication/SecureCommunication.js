@@ -103,13 +103,16 @@ export function SecureCommunication() {
         <div className="box__content">
           <ul className="list list--secondary">
             <li>
-              <FormattedMessage id="SecureCommunication_developer" />
+              <FormattedMessage id="compliance_text_1" />
             </li>
             <li>
-              <FormattedMessage id="SecureCommunication_messenger" />
+              <FormattedMessage id="compliance_text_2" />
             </li>
             <li>
-              <FormattedMessage id="SecureCommunication_licenses" />
+              <FormattedMessage id="compliance_text_3" />
+            </li>
+            <li>
+              <FormattedMessage id="compliance_text_4" />
             </li>
           </ul>
         </div>

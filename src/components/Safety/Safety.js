@@ -52,16 +52,13 @@ export function Safety({ intl: { locale } }) {
         <div className="safety-item__content safety-requirements__content">
           <div className="safety-requirements__items">
             <div className="safety-requirements__item">
-              <FormattedMessage id="compliance_text_1" />
+              <FormattedMessage id="compliance_index_1" />
             </div>
             <div className="safety-requirements__item">
-              <FormattedMessage id="compliance_text_2" />
+              <FormattedMessage id="compliance_index_2" />
             </div>
             <div className="safety-requirements__item">
-              <FormattedMessage id="compliance_text_3" />
-            </div>
-            <div className="safety-requirements__item">
-              <FormattedMessage id="compliance_text_4" />
+              <FormattedMessage id="compliance_index_3" />
             </div>
           </div>
           <div className="safety-requirements__link-box">

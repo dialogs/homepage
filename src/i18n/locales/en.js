@@ -56,6 +56,12 @@ module.exports = {
   safety_text_2:
     'dialog meets the highest security standards, providing protection from data theft, confidential information leaks and viruses. The software is regularly checked for vulnerabilities and bugs.',
   compliance: 'Compliance',
+  compliance_index_1:
+    'The National Software Registry of the Ministry of Digital Development, Communications and Mass Media',
+  compliance_index_2:
+    'FSTEC Methods for Cryptographic Protection of Information',
+  compliance_index_3: 'FSTEC Technical Protection of Confidential Information',
+
   compliance_text_1:
     'The software development company OOO Dialog is registered as an accredited organization for information technology in the Russian Federation (No. 436 dated 09/07/2016).',
   compliance_text_2:
@@ -384,10 +390,7 @@ module.exports = {
   SecureCommunication_requirements: 'Compliance',
   SecureCommunication_developer:
     'The National Software Registry of the Ministry of Digital Development, Communications and Mass Media (MinComSvyaz)',
-  SecureCommunication_messenger:
-    'License from the Federal Service for Technical and Export Control to develop and produce security systems and technical protection for confidential information.',
-  SecureCommunication_licenses:
-    'United Registry of Russian Programs for Electronic Computers and Databases.',
+
   SecureCommunication_learn_more: 'Learn more',
 
   EffectiveCommunication_effective_communications: 'Effective Communications',
