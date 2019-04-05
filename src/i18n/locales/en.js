@@ -286,17 +286,14 @@ module.exports = {
 
   feature_botsdk: 'dialog Bot SDK ',
   feature_botsdk_content: `<h4>Ready-made bot development tools for dialog</h4>
-                  <p>
-                  The
-                  <a href="https://dialogs.github.io/bots-docs/#/" class="link--default">
-                      BOT SDK
-                    </a> let’s you quickly make your own bots. The SDK is currently available for JS, Java and Python.
+                  <p>The <a href="https://dialogs.github.io/bots-docs/#/" class="link--default">BOT SDK</a> let’s you quickly make your own bots. The SDK is currently available for JS, Java and Python.
                   </p>`,
   feature_whitelabel: 'Client Company Branding',
   feature_whitelabel_content: `<h4>Don’t leave your brand behind</h4>
                   <p>
                     Use your brand book to make the application fit your company’s unique identity. You can change your logo, colors, and fonts in the dialog interface.
                   </p>`,
+
   legal_policy: 'Privacy Policy',
   legal_this_policy:
     'This privacy policy is based on the principles of brevity and clarity.',

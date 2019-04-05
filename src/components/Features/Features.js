@@ -347,22 +347,33 @@ export function Features() {
               >
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_botsdk_content" />
-                  {/*
+                  {/**/}
                   <div className="feature_block__slide__links">
-                    <a href="/404" className="link--default">
+                    <a
+                      href="https://github.com/dialogs/python-bot-sdk/"
+                      className="link--default"
+                    >
                       Python
                     </a>
-                    <a href="/404" className="link--default">
+                    <a
+                      href="https://github.com/dialogs/java-bot-sdk/"
+                      className="link--default"
+                    >
                       Java
                     </a>
-                    <a href="/404" className="link--default">
+                    <a
+                      href="https://github.com/dialogs/js-bot-sdk"
+                      className="link--default"
+                    >
                       JavaScript
                     </a>
-                    <a href="/404" className="link--default">
+                    <a
+                      href="https://dialogs.github.io/bots-docs/#/README"
+                      className="link--default"
+                    >
                       Docs
                     </a>
                   </div>
-                */}
                 </div>
                 <img
                   src="/images/features/integration-bot-sdk.png"
