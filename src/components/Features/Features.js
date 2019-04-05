@@ -108,9 +108,15 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_files_content" />
                 </div>
-                <img
+                {/*<img
                   src="/images/features/messenger-sending.png"
                   srcSet="/images/features/messenger-sending@2x.png 2x"
+                  alt="Обмен файлами любого типа"
+                  className="feature_block__image feature_block__image--mobile"
+                />*/}
+                <img
+                  src="/images/features/messenger-sending-2.png"
+                  srcSet="/images/features/messenger-sending-2@2x.png 2x"
                   alt="Обмен файлами любого типа"
                   className="feature_block__image feature_block__image--mobile"
                 />
@@ -125,9 +131,15 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_chats_content" />
                 </div>
-                <img
+                {/*<img
                   src="/images/features/messenger-chats.png"
                   srcSet="/images/features/messenger-chats@2x.png 2x"
+                  alt="Личные и групповые чаты"
+                  className="feature_block__image feature_block__image--mobile"
+                />*/}
+                <img
+                  src="/images/features/messenger-chats-2.png"
+                  srcSet="/images/features/messenger-chats-2@2x.png 2x"
                   alt="Личные и групповые чаты"
                   className="feature_block__image feature_block__image--mobile"
                 />
