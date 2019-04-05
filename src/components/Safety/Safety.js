@@ -65,7 +65,7 @@ export function Safety({ intl: { locale } }) {
             </div>
           </div>
           <div className="safety-requirements__link-box">
-            <Link to={`/${locale}/licenses`} className="link--arrow">
+            <Link to={`/${locale}/patents`} className="link--arrow">
               <span className="link--arrow__text">
                 <FormattedMessage id="link_more" />
               </span>

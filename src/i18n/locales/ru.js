@@ -17,6 +17,8 @@ module.exports = {
   menu_solutions: 'Решения',
   menu_partners: 'Партнерам',
   menu_pricing: 'Цены',
+  menu_patents: 'Патенты и лицензии',
+  menu_legal: 'Правовая информация',
 
   hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
   hero_subheader: 'Простая и эффективная платформа для коммуникаций в компании',
@@ -276,13 +278,9 @@ module.exports = {
   subscribe_subscribe: 'Подпишитесь на свежие статьи блога!',
   blog_roster_see_more: 'Смотреть еще',
 
-  footer_patents_and_licenses: 'Патенты и лицензии',
-  footer_legal: 'Правовая информация',
   footer_documentation: 'Документация',
-  footer_download: 'Скачать',
   footer_support: 'Помощь',
   footer_copyright: '© 2016-2019 ООО “Диалог” ИНН: 7804568396',
-  footer_pricing: 'Цены',
   solutions_simple:
     'Простое и технологичное решение для корпоративных коммуникаций',
 

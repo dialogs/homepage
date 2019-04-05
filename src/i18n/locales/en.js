@@ -17,6 +17,8 @@ module.exports = {
   menu_solutions: 'Solutions',
   menu_partners: 'Partners',
   menu_pricing: 'Pricing',
+  menu_patents: 'Patents and Licenses',
+  menu_legal: 'Legal Information',
 
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
@@ -357,13 +359,9 @@ module.exports = {
   subscribe_subscribe: 'Sign up for new blog articles!',
   blog_roster_see_more: 'See more',
 
-  footer_patents_and_licenses: 'Patents',
-  footer_legal: 'Legal',
   footer_documentation: 'Documentation',
-  footer_download: 'Download',
   footer_support: 'Help',
   footer_copyright: 'Copyright © 2016-2019 dialog LLC',
-  footer_pricing: 'Pricing',
 
   solutions_simple:
     'A simple, technological solution for corporate communications',
