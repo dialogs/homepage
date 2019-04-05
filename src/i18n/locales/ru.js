@@ -318,9 +318,7 @@ module.exports = {
   support_header: 'Обратная связь',
   support_corporate_title: 'Обратитесь в службу поддержки',
   support_corporate_text_before:
-    'Если вы пользователь dialog Enterprise, свяжитесь',
-  support_corporate_text_link: ' с персональным менеджером.',
-  support_corporate_text_after: 'для корпоративных клиентов.',
+    'Если вы пользователь dialog Enterprise, свяжитесь с персональным менеджером.',
   support_connect: 'Связаться со службой поддержки можно также по e-mail:',
 
   form_label_your_email: 'Ваш e-mail',
