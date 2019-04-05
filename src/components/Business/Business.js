@@ -6,7 +6,7 @@ import { Heading } from '../Heading/Heading';
 
 import './Business.css';
 
-export function Business() {
+export function Business({ intl: { locale } }) {
   return (
     <Section className="business">
       <div className="business__cols">
@@ -20,8 +20,12 @@ export function Business() {
           <div className="business__info-logo">
             <img
               className="business__info-img"
-              src="/images/home/business/logo-sberbank-business.svg"
-              alt="Сбербанк"
+              src={
+                locale === 'ru'
+                  ? '/images/home/business/logo-sberbank-business.svg'
+                  : '/images/home/business/logo-sberbank-en.svg'
+              }
+              alt={locale === 'ru' ? 'Сбербанк' : 'Sberbank'}
             />
           </div>
           <ul className="business__info-list list list--secondary">

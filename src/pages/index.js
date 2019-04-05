@@ -7,7 +7,7 @@ import { Platform } from '../components/Platform/Platform';
 import Safety from '../components/Safety';
 import { Incompany } from '../components/Incompany/Incompany';
 import { Easy } from '../components/Easy/Easy';
-import { Business } from '../components/Business/Business';
+import Business from '../components/Business';
 import { Offer } from '../components/Offer/Offer';
 
 export default () => {
