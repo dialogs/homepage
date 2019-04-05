@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -9,7 +10,9 @@ export function EffectiveCommunication() {
   return (
     <Section className="effective-communication">
       <div className="column column--image">
-        <Heading level="2">Эффективные коммуникации</Heading>
+        <Heading level="2">
+          <FormattedMessage id="EffectiveCommunication_effective_communications" />
+        </Heading>
         <div className="image">
           <img
             src="/images/solution/effective-communication.png"
@@ -20,32 +23,36 @@ export function EffectiveCommunication() {
       <div className="column">
         <div className="item">
           <div className="item__title">
-            Повышение продуктивности сотрудников за счет:
+            <FormattedMessage id="EffectiveCommunication_increased_productivity" />
           </div>
           <ul className="list list--secondary">
             <li>
-              Повышения скорости коммуникации в рабочих группах за счет
-              мгновенного обмена сообщениями.
+              <FormattedMessage id="EffectiveCommunication_increased_speed" />
             </li>
             <li>
-              Быстрого принятия оперативных решений в рабочих чатах и каналах.
+              <FormattedMessage id="EffectiveCommunication_fast" />
             </li>
             <li>
-              Новых возможностей для совместной работы с функциями мессенджера.
+              <FormattedMessage id="EffectiveCommunication_new" />
             </li>
           </ul>
         </div>
         <div className="item">
           <div className="item__title">
-            Сокращение затрат на средства коммуникации от 10% до 30% за счет:
+            <FormattedMessage id="EffectiveCommunication_decreasing" />
           </div>
           <ul className="list list--secondary">
-            <li>Совмещения разрозненных инструментов в одной платформе.</li>
-            <li>Интеграции VoIP и мобильной телефонии.</li>
-            <li>Телеконференций.</li>
             <li>
-              Экономии при звонках внутри организации, роуминге, звонках на
-              внешние телефоны.
+              <FormattedMessage id="EffectiveCommunication_combination" />
+            </li>
+            <li>
+              <FormattedMessage id="EffectiveCommunication_viop" />
+            </li>
+            <li>
+              <FormattedMessage id="EffectiveCommunication_teleconference" />
+            </li>
+            <li>
+              <FormattedMessage id="EffectiveCommunication_calls_inside" />
             </li>
           </ul>
         </div>

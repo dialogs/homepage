@@ -1,7 +1,7 @@
 module.exports = {
-  button_get_offer: 'Request Trial',
+  button_get_offer: 'Get Offer',
 
-  get_offer: 'Request Trial',
+  get_offer: 'Get Offer',
   send_application: 'Send',
 
   link_more: 'Learn More',
@@ -121,8 +121,8 @@ module.exports = {
   form_label_agreement: 'I agree to have my personal data processed',
   form_label_subscribe: 'Subscribe to the mailing list',
 
-  form_pending: 'Application is pending',
-  form_success_message: 'Application has sent successfully',
+  form_pending: 'Submitting...',
+  form_success_message: 'The request has sent successfully',
   form_error_message: `Something went wrong. Please, contact us by
       <a href="mailto:info@dlg.im">info@dlg.im</a> or
       <a href="tel:+78007758202">+7(800)775-82-02</a>`,
@@ -275,7 +275,7 @@ module.exports = {
   feature_ad: 'Active Directory (AD/LDAP)',
   feature_ad_content: `<h4>Single entry point for your employees</h4>
                   <p>
-                    dialog displays user information from the AD. Integrate your current work environment and group policies with dialog. Users can enter dialog via their accounts. 
+                    dialog displays user information from the AD. Integrate your current work environment and group policies with dialog. Users can enter dialog via their accounts.
                   </p>`,
 
   feature_api: 'dialog API ',
@@ -343,9 +343,9 @@ module.exports = {
     'The company is the copyright holder of 6 software products, which are registered with RosPatent.',
   licenses_required_licenses:
     'The company possesses the required qualifications and licenses from the Federal Service for Technical and Export Control of Russia and the FSB of Russia.',
-  licenses_FSB: 'FSB',
-  licenses_FSTEK: 'FSTEC Methods for Cryptographic Protection of Information',
-  licenses_FSTEK_TZKI: 'FSTEC Technical Protection of Confidential Information',
+  licenses_FSB: ' FSB',
+  licenses_FSTEK: 'FSTEC',
+  licenses_FSTEK_TZKI: 'FSTEC',
   licenses_associations: 'Registries and Associations',
   licenses_messenger_complies:
     'dialog messenger complies with the requirements of the United Registry of Russian Programs for Electronic Computers and Databases, and is also on the national software registry.',
@@ -392,4 +392,31 @@ module.exports = {
   SecureCommunication_licenses:
     'United Registry of Russian Programs for Electronic Computers and Databases.',
   SecureCommunication_learn_more: 'Learn more',
+
+  EffectiveCommunication_effective_communications: 'Effective Communications',
+  EffectiveCommunication_increased_productivity:
+    'Increasing employee productivity by:',
+  EffectiveCommunication_increased_speed:
+    'Increasing the speed of communication in working groups with instant messaging',
+  EffectiveCommunication_fast:
+    'Enabling quick decision-making in work chats and channels',
+  EffectiveCommunication_new:
+    'Offering new ways of cooperating using the messenger’s features',
+  EffectiveCommunication_decreasing:
+    'Reducing expenses on communications equipment from 10% to 30% by:',
+  EffectiveCommunication_combination:
+    'Combining various tools on a single platform',
+  EffectiveCommunication_viop: 'Integrating VoIP and mobile telephony',
+  EffectiveCommunication_teleconference: 'Teleconferencing',
+  EffectiveCommunication_calls_inside:
+    'Saving on calls within an organization, as well as roaming, and external calls',
+
+  Partnership_technological:
+    'Technological Partnerships with Russian Software Developers',
+  Partnership_vendors:
+    'dialog works with vendors to ensure the infrastructure meets the requirements of Russian legislation',
+  Partnership_learn_more: 'Learn More',
+  Partnership_bazalt: 'BaseALT',
+  Partnership_my_office: 'MyOffice',
+  Partnership_aurora: 'Sailfish',
 };

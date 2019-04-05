@@ -121,8 +121,8 @@ module.exports = {
   form_label_subscribe: 'Подписаться на новостную рассылку',
 
   form_pending: 'Отправка сообщения',
-  form_success_message: 'Сообщение успешно отправлено',
-  form_error_message: `Не удалось отправить сообщение. Пожалуйста, свяжитесь с нами через
+  form_success_message: 'Заявка успешно отправлена',
+  form_error_message: `Не удалось отправить заявку. Пожалуйста, свяжитесь с нами через
       <a href="mailto:info@dlg.im">info@dlg.im</a> или
       <a href="tel:+78007758202">+7(800)775-82-02</a>`,
 
@@ -404,4 +404,30 @@ module.exports = {
                   <p>
                     Используйте гайдлайны брендбука, чтобы приложение соответствовало фирменному стилю вашей компании. В интерфейсе dialog можно изменить логотип, цвета и шрифты.
                   </p>`,
+
+  EffectiveCommunication_effective_communications: 'Эффективные коммуникации',
+  EffectiveCommunication_increased_productivity:
+    'Повышение продуктивности сотрудников',
+  EffectiveCommunication_increased_speed:
+    'Повышение скорости коммуникации в рабочих группах за счет мгновенного обмена сообщениями',
+  EffectiveCommunication_fast:
+    'Быстрое принятие оперативных решений в рабочих чатах и каналах',
+  EffectiveCommunication_new:
+    'Новые возможности для совместной работы с функциями мессенджера',
+  EffectiveCommunication_decreasing:
+    'Сокращение затрат на средства коммуникации от 10% до 30%',
+  EffectiveCommunication_combination:
+    'Совмещение разрозненных инструментов в одной платформе',
+  EffectiveCommunication_viop: 'Интеграция VoIP и мобильной телефонии.',
+  EffectiveCommunication_teleconference: 'Телеконференции.',
+  EffectiveCommunication_calls_inside:
+    'Экономия при звонках внутри организации, роуминге, звонках на внешние телефоны',
+
+  Partnership_technological: 'Технологическое партнерство с российским ПО',
+  Partnership_vendors:
+    'dialog сотрудничает с вендорами для обеспечения инфраструктуры требованиям российского законодательства',
+  Partnership_learn_more: 'Подробнее о партнерах',
+  Partnership_bazalt: 'Базальт',
+  Partnership_my_office: 'МойОфис',
+  Partnership_aurora: 'Аврора',
 };
