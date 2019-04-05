@@ -155,6 +155,10 @@
           @media (--tablet-viewport) {
             transform: translateX(20px);
           }
+
+          @media (--tablet-landscape-viewport) {
+            max-width: 440px;
+          }
         }
       }
     }
