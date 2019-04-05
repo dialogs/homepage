@@ -17,6 +17,7 @@ export function Partnership() {
         <div className="subtitle">
           <FormattedMessage id="Partnership_vendors" />
         </div>
+        {/*
         <div className="link-box">
           <a className="link--arrow" href="/licenses">
             <span className="link--arrow__text">
@@ -29,6 +30,7 @@ export function Partnership() {
             />
           </a>
         </div>
+        */}
       </div>
       <div className="column column--partners">
         <div className="partners">

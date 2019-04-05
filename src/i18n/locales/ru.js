@@ -417,8 +417,8 @@ module.exports = {
     'Сокращение затрат на средства коммуникации от 10% до 30%',
   EffectiveCommunication_combination:
     'Совмещение разрозненных инструментов в одной платформе',
-  EffectiveCommunication_viop: 'Интеграция VoIP и мобильной телефонии.',
-  EffectiveCommunication_teleconference: 'Телеконференции.',
+  EffectiveCommunication_viop: 'Интеграция VoIP и мобильной телефонии',
+  EffectiveCommunication_teleconference: 'Телеконференции',
   EffectiveCommunication_calls_inside:
     'Экономия при звонках внутри организации, роуминге, звонках на внешние телефоны',
 
