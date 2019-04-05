@@ -8,8 +8,6 @@ import { Section } from '../components/Section/Section';
 import { Heading } from '../components/Heading/Heading';
 import { Offer } from '../components/Offer/Offer';
 
-import '../styles/prices.css';
-
 export default () => {
   return (
     <Page>

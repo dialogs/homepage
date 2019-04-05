@@ -1,3 +1,9 @@
+@custom-media --mobile-viewport screen and (max-width: 767px);
+@custom-media --tablet-viewport screen and (min-width: 768px);
+@custom-media --tablet-landscape-viewport screen and (min-width: 1024px);
+@custom-media --laptop-viewport screen and (min-width: 1440px);
+@custom-media --desktop-viewport screen and (min-width: 1600px);
+
 :root {
   /* color */
   --color-primary: #d2fde5;
@@ -105,10 +111,4 @@
     --padding-side-columns: 120px;
     --margin-container-side: 140px;
   }
-
-  @custom-media --mobile-viewport screen and (max-width: 767px);
-  @custom-media --tablet-viewport screen and (min-width: 768px);
-  @custom-media --tablet-landscape-viewport screen and (min-width: 1024px);
-  @custom-media --laptop-viewport screen and (min-width: 1440px);
-  @custom-media --desktop-viewport screen and (min-width: 1600px);
 }
