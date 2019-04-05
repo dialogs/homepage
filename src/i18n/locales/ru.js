@@ -28,7 +28,6 @@ module.exports = {
   corporate_features: 'Корпоративные функции',
   integrations: 'Интеграции',
 
-  prices_group_open_closed_chats: 'Групповые открытые/закрытые чаты',
   platform_chats: 'Личные и групповые чаты',
   platform_free_calls: 'Бесплатные аудио- / видеозвонки',
   platform_files_sharing: 'Обмен файлами без ограничений',
@@ -208,8 +207,6 @@ module.exports = {
   prices_integrations: 'Интеграции',
   prices_email_integration:
     'Интеграции с e-mail, голосовой почтой и системами коммуникации',
-  prices_video_conference_integrations:
-    'Интеграции с системами видеоконференцсвязи (в разработке)',
   prices_ats: 'Интеграции с корпоративной АТС',
   prices_open_api: 'Открытое API',
   prices_ad_ldap: 'Интеграция с каталогами пользователей AD / LDAP',

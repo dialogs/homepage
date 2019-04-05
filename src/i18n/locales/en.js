@@ -197,8 +197,6 @@ module.exports = {
   prices_security_infrastructure:
     'Integrations with security infrastructure (SIEM, DLP, IDM, Anti-virus)',
   prices_bot_sdk: 'Bot SDK',
-  prices_video_conference_integrations:
-    'Integrations with video conferencing systems',
 
   download_header: 'The dialog platform’s cloud app demo',
   download_subtitle_before: 'Try out the platform’s features in our app demo. ',
