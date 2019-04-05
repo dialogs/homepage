@@ -24,12 +24,9 @@ export function Support() {
           </div>
           <div className="support__corporate-text">
             <FormattedMessage id="support_corporate_text_before" />
-            <a
-              href="https://support.dlg.im"
-              className="link--default support__corporate__link-enterprise"
-            >
-              <FormattedMessage id="support_corporate_text_link" />
-            </a>{' '}
+
+            <FormattedMessage id="support_corporate_text_link" />
+
             <FormattedMessage id="support_corporate_text_after" />
           </div>
         </div>

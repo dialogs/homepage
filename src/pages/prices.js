@@ -119,9 +119,6 @@ export default () => {
             </Heading>
             <ul className="list list--secondary">
               <li>
-                <FormattedMessage id="prices_email_integration" />
-              </li>
-              <li>
                 <FormattedMessage id="prices_video_conference_integrations" />
               </li>
               <li>

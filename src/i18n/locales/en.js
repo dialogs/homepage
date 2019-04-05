@@ -149,8 +149,7 @@ module.exports = {
   novosibirsk_address_nikolaeva: 'office 311, 11 Nikolaeva St., 630090',
   novosibirsk_address_most: '40 Kommunisticheskaya St., 630007',
   link_icanchoose:
-    'More information about company life you can find in special project "i can choose"',
-
+    'More information about company life you can find in special project "icanchoose"',
   prices_pageheader:
     'The cost of an indefinite license per unique registered user:',
   prices_price: '4,800 rubles',
@@ -198,6 +197,8 @@ module.exports = {
   prices_security_infrastructure:
     'Integrations with security infrastructure (SIEM, DLP, IDM, Anti-virus)',
   prices_bot_sdk: 'Bot SDK',
+  prices_video_conference_integrations:
+    'Integrations with video conferencing systems',
 
   download_header: 'The dialog platform’s cloud app demo',
   download_subtitle_before: 'Try out the platform’s features in our app demo. ',
