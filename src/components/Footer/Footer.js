@@ -6,6 +6,7 @@ import { Container } from '../Container/Container';
 import links from '../../constants/links';
 
 export function Footer({ locale }) {
+  console.log('locale', locale);
   return (
     <footer className="site__footer">
       <div className="footer__top">
@@ -192,11 +193,14 @@ export function Footer({ locale }) {
                       <FormattedMessage id="footer_support" />
                     </Link>
                   </div>
-                  <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/blog`}>
-                      <FormattedMessage id="menu_blog" />
-                    </Link>
-                  </div>
+                  {locale == 'ru' && (
+                    <div className="footer__nav-item">
+                      <Link className="footer__nav-link" to={`/${locale}/blog`}>
+                        <FormattedMessage id="menu_blog" />
+                      </Link>
+                    </div>
+                  )}
+
                   <div className="footer__nav-item">
                     <a
                       className="footer__nav-link"
