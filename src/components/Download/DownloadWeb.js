@@ -20,9 +20,7 @@ export function DownloadWeb({ isEnterprise }) {
               : '/images/download/cloud-web.png'
           }
           srcSet={
-            isEnterprise
-              ? '/images/download/enterprise-web@2x.png 2x'
-              : '/images/download/cloud-web@2x.png 2x'
+            isEnterprise ? '/images/download/enterprise-web@2x.png 2x' : ''
           }
           alt={
             isEnterprise
