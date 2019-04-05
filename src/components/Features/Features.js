@@ -142,10 +142,16 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_audio_messages_content" />
                 </div>
-                <img
+                {/*<img
                   src="/images/features/messenger-audio-message.png"
                   srcSet="/images/features/messenger-audio-message@2x.png 2x"
                   alt="Аудио-сообщения"
+                  className="feature_block__image feature_block__image--mobile"
+                />*/}
+                <img
+                  src="/images/features/messenger-audio-2.png"
+                  srcSet="/images/features/messenger-audio-2@2x.png 2x"
+                  alt="Аудио/Видеовызовы"
                   className="feature_block__image feature_block__image--mobile"
                 />
               </Collapsible>
