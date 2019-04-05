@@ -32,6 +32,7 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
           <Link
             to={`/${locale}/about`}
             className="navigation__link"
+            activeClassName="navigation__link--active"
             onClick={onClose}
           >
             <FormattedMessage id="menu_about" />
@@ -39,6 +40,7 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
           <Link
             to={`/${locale}/download`}
             className="navigation__link"
+            activeClassName="navigation__link--active"
             onClick={onClose}
           >
             <FormattedMessage id="menu_download" />
@@ -46,6 +48,7 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
           <Link
             to={`/${locale}/support`}
             className="navigation__link"
+            activeClassName="navigation__link--active"
             onClick={onClose}
           >
             <FormattedMessage id="menu_support" />
@@ -53,6 +56,7 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
           <Link
             to={`/${locale}/features`}
             className="navigation__link"
+            activeClassName="navigation__link--active"
             onClick={onClose}
           >
             <FormattedMessage id="menu_features" />
@@ -60,6 +64,7 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
           <Link
             to={`/${locale}/blog`}
             className="navigation__link"
+            activeClassName="navigation__link--active"
             onClick={onClose}
           >
             <FormattedMessage id="menu_blog" />

@@ -32,7 +32,11 @@ export function Header({
             <nav className="header__menu">
               <ul className="header__menu-list">
                 <li className="header__menu-item">
-                  <Link to={`/${locale}/about`} className="header__menu-link">
+                  <Link
+                    to={`/${locale}/about`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
                     <FormattedMessage id="menu_about" />
                   </Link>
                 </li>
@@ -40,12 +44,17 @@ export function Header({
                   <Link
                     to={`/${locale}/download`}
                     className="header__menu-link"
+                    activeClassName="header__menu-link--active"
                   >
                     <FormattedMessage id="menu_download" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to={`/${locale}/support`} className="header__menu-link">
+                  <Link
+                    to={`/${locale}/support`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
                     <FormattedMessage id="menu_support" />
                   </Link>
                 </li>
@@ -53,12 +62,17 @@ export function Header({
                   <Link
                     to={`/${locale}/features`}
                     className="header__menu-link"
+                    activeClassName="header__menu-link--active"
                   >
                     <FormattedMessage id="menu_features" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to={`/${locale}/blog`} className="header__menu-link">
+                  <Link
+                    to={`/${locale}/blog`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
                     <FormattedMessage id="menu_blog" />
                   </Link>
                 </li>
