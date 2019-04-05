@@ -148,17 +148,20 @@ export function Footer({ locale }) {
               <nav className="footer__nav">
                 <div className="footer__nav-list">
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`${locale}/patents`}>
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/patents`}
+                    >
                       <FormattedMessage id="menu_patents" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`${locale}/legal`}>
+                    <Link className="footer__nav-link" to={`/${locale}/legal`}>
                       <FormattedMessage id="menu_legal" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`${locale}/prices`}>
+                    <Link className="footer__nav-link" to={`/${locale}/prices`}>
                       <FormattedMessage id="menu_pricing" />
                     </Link>
                   </div>
@@ -177,13 +180,16 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`${locale}/download`}
+                      to={`/${locale}/download`}
                     >
                       <FormattedMessage id="menu_download" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`${locale}/support`}>
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/support`}
+                    >
                       <FormattedMessage id="footer_support" />
                     </Link>
                   </div>
