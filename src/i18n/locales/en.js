@@ -150,6 +150,7 @@ module.exports = {
   novosibirsk_address_most: '40 Kommunisticheskaya St., 630007',
   link_icanchoose:
     'More information about company life you can find in special project "i can choose"',
+
   prices_pageheader:
     'The cost of an indefinite license per unique registered user:',
   prices_price: '4,800 rubles',
@@ -159,7 +160,7 @@ module.exports = {
     'The basic version of the product consists of the familiar messenger functions',
   prices_item_title: 'Messenger',
   prices_personal_chats: 'Personal chats',
-  prices_group_open_closed_chat: 'Group public/private chats',
+  prices_group_open_closed_chats: 'Group public/private chats',
   prices_open_closed_channels: 'Public/private channels',
   prices_stickers_smiles_reactions: 'Stickers, smiley faces, message reactions',
   prices_statuses: 'Presence status',
@@ -185,8 +186,9 @@ module.exports = {
   prices_custom_data_in_profile: 'User information is saved in their profile',
   prices_screensahring: 'Screen Sharing',
   prices_interface_customization: 'Interface customization',
+
   prices_integrations: 'Integrations',
-  prices_e_mail_integration:
+  prices_email_integration:
     'Integrations with e-mail, voice mail and communications systems',
   prices_video_conference_integrations:
     'Integrations with video conferencing systems',

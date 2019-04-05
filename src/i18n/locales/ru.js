@@ -167,6 +167,7 @@ module.exports = {
 
   download_web_title: 'Web версия',
   start: 'Начать',
+
   prices_pageheader: 'Стоимость бессрочной лицензии на одного пользователя:',
   prices_price: '4800 ₽',
   prices_subtitle:
@@ -175,7 +176,7 @@ module.exports = {
     'Базовая версия продукта содержит привычные функции мессенджера',
   prices_item_title: 'Мессенджер',
   prices_personal_chats: 'Личные чаты',
-  prices_group_open_closed_chat: 'Групповые открытые / закрытые чаты',
+  prices_group_open_closed_chats: 'Групповые открытые / закрытые чаты',
   prices_open_closed_channels: 'Открытые/закрытые каналы',
   prices_stickers_smiles_reactions: 'Стикеры, смайлики, реакции на сообщения',
   prices_statuses: 'Статусы присутствия',
@@ -201,8 +202,9 @@ module.exports = {
   prices_custom_data_in_profile: 'Пользовательские данные в профиле',
   prices_screensahring: 'Демонстрация экрана',
   prices_interface_customization: 'Кастомизация интерфейса',
+
   prices_integrations: 'Интеграции',
-  prices_e_mail_integration:
+  prices_email_integration:
     'Интеграции с e-mail, голосовой почтой и системами коммуникации',
   prices_video_conference_integrations:
     'Интеграции с системами видеоконференцсвязи (в разработке)',
