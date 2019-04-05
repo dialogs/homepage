@@ -30,28 +30,12 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
         </div>
         <nav className="navigation">
           <Link
-            to={`/${locale}/about`}
+            to={`/${locale}/solution`}
             className="navigation__link"
             activeClassName="navigation__link--active"
             onClick={onClose}
           >
-            <FormattedMessage id="menu_about" />
-          </Link>
-          <Link
-            to={`/${locale}/download`}
-            className="navigation__link"
-            activeClassName="navigation__link--active"
-            onClick={onClose}
-          >
-            <FormattedMessage id="menu_download" />
-          </Link>
-          <Link
-            to={`/${locale}/support`}
-            className="navigation__link"
-            activeClassName="navigation__link--active"
-            onClick={onClose}
-          >
-            <FormattedMessage id="menu_support" />
+            <FormattedMessage id="menu_solutions" />
           </Link>
           <Link
             to={`/${locale}/features`}
@@ -62,12 +46,28 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
             <FormattedMessage id="menu_features" />
           </Link>
           <Link
-            to={`/${locale}/blog`}
+            to={`/${locale}/download`}
             className="navigation__link"
             activeClassName="navigation__link--active"
             onClick={onClose}
           >
-            <FormattedMessage id="menu_blog" />
+            <FormattedMessage id="menu_download" />
+          </Link>
+          <Link
+            to={`/${locale}/prices`}
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+            onClick={onClose}
+          >
+            <FormattedMessage id="menu_pricing" />
+          </Link>
+          <Link
+            to={`/${locale}/about`}
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+            onClick={onClose}
+          >
+            <FormattedMessage id="menu_about" />
           </Link>
         </nav>
         <button className="mobile-menu__button" onClick={openOfferModal}>
