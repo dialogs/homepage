@@ -22,6 +22,27 @@
     @media (--mobile-viewport) {
       display: none;
     }
+
+    &--top {
+      & .tabs__tab {
+        @media (--tablet-viewport) {
+          font-weight: 500;
+          font-size: 18px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+
+        @media (--tablet-landscape-viewport) {
+          font-size: 20px;
+        }
+
+        @media (--laptop-viewport) {
+          font-size: 24px;
+        }
+      }
+    }
   }
 
   &__content {

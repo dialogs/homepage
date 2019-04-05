@@ -25,7 +25,11 @@ export function Features() {
       <Heading>
         <FormattedMessage id="what_dialog_can" />
       </Heading>
-      <Tabs onChange={setTab} current={tab} className="features__tabs">
+      <Tabs
+        onChange={setTab}
+        current={tab}
+        className="features__tabs  features__tabs--top"
+      >
         <Tab value="messenger">
           <FormattedMessage id="messenger" />
         </Tab>
@@ -347,7 +351,6 @@ export function Features() {
               >
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_botsdk_content" />
-                  {/**/}
                   <div className="feature_block__slide__links">
                     <a
                       href="https://github.com/dialogs/python-bot-sdk/"
