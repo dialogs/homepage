@@ -105,7 +105,7 @@ export default ({ pageContext: { locale } }) => {
           </div>
           <div className="about__licenses-link-box">
             <Link
-              to={`/${locale}/licenses`}
+              to={`/${locale}/patents`}
               className="about__licenses-link link--arrow"
             >
               <span className="link--arrow__text">
