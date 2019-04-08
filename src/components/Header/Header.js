@@ -33,29 +33,11 @@ export function Header({
               <ul className="header__menu-list">
                 <li className="header__menu-item">
                   <Link
-                    to={`/${locale}/about`}
+                    to={`/${locale}/solution`}
                     className="header__menu-link"
                     activeClassName="header__menu-link--active"
                   >
-                    <FormattedMessage id="menu_about" />
-                  </Link>
-                </li>
-                <li className="header__menu-item">
-                  <Link
-                    to={`/${locale}/download`}
-                    className="header__menu-link"
-                    activeClassName="header__menu-link--active"
-                  >
-                    <FormattedMessage id="menu_download" />
-                  </Link>
-                </li>
-                <li className="header__menu-item">
-                  <Link
-                    to={`/${locale}/support`}
-                    className="header__menu-link"
-                    activeClassName="header__menu-link--active"
-                  >
-                    <FormattedMessage id="menu_support" />
+                    <FormattedMessage id="menu_solutions" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
@@ -69,11 +51,30 @@ export function Header({
                 </li>
                 <li className="header__menu-item">
                   <Link
-                    to={`/${locale}/blog`}
+                    to={`/${locale}/download`}
                     className="header__menu-link"
                     activeClassName="header__menu-link--active"
                   >
-                    <FormattedMessage id="menu_blog" />
+                    <FormattedMessage id="menu_download" />
+                  </Link>
+                </li>
+                <li className="header__menu-item">
+                  <Link
+                    to={`/${locale}/prices`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_pricing" />
+                  </Link>
+                </li>
+
+                <li className="header__menu-item">
+                  <Link
+                    to={`/${locale}/about`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_about" />
                   </Link>
                 </li>
               </ul>

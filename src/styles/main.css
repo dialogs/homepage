@@ -93,7 +93,6 @@ a {
     bottom: 0;
     height: 2px;
     width: 100%;
-    transition: width 200ms ease;
     background: var(--color-secondary);
   }
 

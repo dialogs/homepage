@@ -150,14 +150,17 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`/${locale}/patents`}
+                      to={`/${locale}/solution`}
                     >
-                      <FormattedMessage id="menu_patents" />
+                      <FormattedMessage id="menu_solutions" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/legal`}>
-                      <FormattedMessage id="menu_legal" />
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/features`}
+                    >
+                      <FormattedMessage id="menu_features" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
@@ -165,8 +168,38 @@ export function Footer({ locale }) {
                       <FormattedMessage id="menu_pricing" />
                     </Link>
                   </div>
+                  <div className="footer__nav-item">
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/download`}
+                    >
+                      <FormattedMessage id="menu_download" />
+                    </Link>
+                  </div>
+                  <div className="footer__nav-item">
+                    <Link className="footer__nav-link" to={`/${locale}/about`}>
+                      <FormattedMessage id="menu_about" />
+                    </Link>
+                  </div>
                 </div>
+
                 <div className="footer__nav-list">
+                  <div className="footer__nav-item">
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/support`}
+                    >
+                      <FormattedMessage id="footer_support" />
+                    </Link>
+                  </div>
+                  {locale === 'ru' && (
+                    <div className="footer__nav-item">
+                      <Link className="footer__nav-link" to={`/${locale}/blog`}>
+                        <FormattedMessage id="menu_blog" />
+                      </Link>
+                    </div>
+                  )}
+
                   <div className="footer__nav-item">
                     <a
                       className="footer__nav-link"
@@ -180,17 +213,14 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`/${locale}/download`}
+                      to={`/${locale}/patents`}
                     >
-                      <FormattedMessage id="menu_download" />
+                      <FormattedMessage id="menu_patents" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link
-                      className="footer__nav-link"
-                      to={`/${locale}/support`}
-                    >
-                      <FormattedMessage id="footer_support" />
+                    <Link className="footer__nav-link" to={`/${locale}/legal`}>
+                      <FormattedMessage id="menu_legal" />
                     </Link>
                   </div>
                 </div>

@@ -52,8 +52,15 @@
     &-list {
       display: flex;
     }
+
     &-item {
-      & + & {
+      margin-left: 25px;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      @media (--laptop-viewport) {
         margin-left: 38px;
       }
     }

@@ -14,7 +14,7 @@ module.exports = {
   menu_support: 'Support',
   menu_features: 'Features',
   menu_blog: 'Blog',
-  menu_solutions: 'Solutions',
+  menu_solutions: 'Why dialog',
   menu_partners: 'Partners',
   menu_pricing: 'Pricing',
   menu_patents: 'Patents and Licenses',

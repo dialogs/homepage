@@ -33,7 +33,7 @@ export function Safety({ intl: { locale } }) {
             <div className="safety-communication__item">
               <div className="safety-communication__icon">
                 <img
-                  src="/images/home/safety/icon-safety-communication-2.svg"
+                  src="/images/home/safety/icon-safety-communication-3.svg"
                   alt=""
                 />
               </div>
