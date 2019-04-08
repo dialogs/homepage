@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 
-export default () => {
+export default ({ pageContext: { locale } }) => {
   const officesLinks = {
     moscow:
       'https://www.google.com/maps/place/dialog/@55.7368062,37.5323798,18z/data=!3m1!4b1!4m13!1m7!3m6!1s0x0:0x0!2zNTXCsDQ0JzEyLjUiTiAzN8KwMzInMDAuNyJF!3b1!8m2!3d55.736806!4d37.533528!3m4!1s0x46b54a53aa3b42cd:0x3c26303a75a2c356!8m2!3d55.7368062!4d37.5334741',
@@ -16,7 +18,9 @@ export default () => {
   return (
     <div className="about page">
       <Container>
-        <PageHeader>dialog – намного больше, чем просто мессенджер</PageHeader>
+        <PageHeader>
+          <FormattedMessage id="more_than_messenger" />
+        </PageHeader>
       </Container>
 
       <section className="about__promo">
@@ -41,10 +45,7 @@ export default () => {
               src="/images/svg/about-promo.svg"
               alt=""
             />
-            <span>
-              Подробнее о жизни в компании вы можете прочитать в специальном
-              проекте i can choose
-            </span>
+            <FormattedMessage id="link_icanchoose" />
             <img
               className="img--arrow"
               src="/images/svg-icons/arrow.svg"
@@ -61,30 +62,33 @@ export default () => {
               <div className="about__features-icon">
                 <img src="/images/svg/about-mission.svg" alt="Миссия" />
               </div>
-              <div className="about__features-title">Миссия</div>
+              <div className="about__features-title">
+                <FormattedMessage id="mission" />
+              </div>
               <div className="about__features-description">
-                Искоренить бюрократию. Упростить и повысить качество
-                коммуникации всего человечества
+                <FormattedMessage id="mission_text" />
               </div>
             </div>
             <div className="about__features-item">
               <div className="about__features-icon">
                 <img src="/images/svg/about-worth.svg" alt="Ценности" />
               </div>
-              <div className="about__features-title">Ценности</div>
+              <div className="about__features-title">
+                <FormattedMessage id="values" />
+              </div>
               <div className="about__features-description">
-                Простота, открытость, гибкость, разумные инновации, возможность
-                и эффективность
+                <FormattedMessage id="values_text" />
               </div>
             </div>
             <div className="about__features-item">
               <div className="about__features-icon">
                 <img src="/images/svg/about-goal.svg" alt="Цель" />
               </div>
-              <div className="about__features-title">Цель</div>
+              <div className="about__features-title">
+                <FormattedMessage id="goal" />
+              </div>
               <div className="about__features-description">
-                Создать коммуникационную платформу для формирования экосистемы
-                «бизнес-общество-государство»
+                <FormattedMessage id="goal_text" />
               </div>
             </div>
           </div>
@@ -93,22 +97,26 @@ export default () => {
 
       <section className="about__licenses">
         <Container>
-          <div className="about__licenses-title">Патенты и лицензии</div>
+          <div className="about__licenses-title">
+            <FormattedMessage id="patents_licenses" />
+          </div>
           <div className="about__licenses-text">
-            Патенты и лицензии ООО “Диалог” и его продукты соответствуют
-            определённым требованиям Федеральных органов власти России.
+            <FormattedMessage id="about_licenses_text" />
           </div>
           <div className="about__licenses-link-box">
-            <a href="/licenses" className="about__licenses-link link--arrow">
+            <Link
+              to={`/${locale}/patents`}
+              className="about__licenses-link link--arrow"
+            >
               <span className="link--arrow__text">
-                Подробнее о патентах и лицензиях
+                <FormattedMessage id="link_more_licenses" />
               </span>
               <img
                 src="/images/svg-icons/arrow-link.svg"
                 alt=""
                 className="link--arrow__icon"
               />
-            </a>
+            </Link>
           </div>
         </Container>
       </section>
@@ -116,10 +124,12 @@ export default () => {
       <section className="about__contacts box--prefooter">
         <Container>
           <div className="about__contacts-block">
-            <div className="about__contacts-title">Контакты</div>
+            <div className="about__contacts-title">
+              <FormattedMessage id="contacts" />
+            </div>
             <div className="about__contacts-items">
               <div className="about__contacts-item about__contacts-item--email">
-                <a href="/404" className="link--default">
+                <a href="mailto:info@dlg.im" className="link--default">
                   info@dlg.im
                 </a>
               </div>
@@ -129,9 +139,11 @@ export default () => {
             </div>
             <div className="about__contacts-offices">
               <div className="about__contacts-office">
-                <div className="about__contacts-city">Москва</div>
+                <div className="about__contacts-city">
+                  <FormattedMessage id="moscow" />
+                </div>
                 <div className="about__contacts-address">
-                  121170, ул. Поклонная 3к2, 11 этаж
+                  <FormattedMessage id="moscow_address" />
                 </div>
                 <div className="about__contacts-map-link">
                   <a
@@ -140,14 +152,16 @@ export default () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    На карте
+                    <FormattedMessage id="on_map" />
                   </a>
                 </div>
               </div>
               <div className="about__contacts-office">
-                <div className="about__contacts-city">Новосибирск</div>
+                <div className="about__contacts-city">
+                  <FormattedMessage id="novosibirsk" />
+                </div>
                 <div className="about__contacts-address">
-                  630090, ул. Николаева 11, оф. 311
+                  <FormattedMessage id="novosibirsk_address_nikolaeva" />
                 </div>
                 <div className="about__contacts-map-link">
                   <a
@@ -156,14 +170,16 @@ export default () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    На карте
+                    <FormattedMessage id="on_map" />
                   </a>
                 </div>
               </div>
               <div className="about__contacts-office">
-                <div className="about__contacts-city">Новосибирск</div>
+                <div className="about__contacts-city">
+                  <FormattedMessage id="novosibirsk" />
+                </div>
                 <div className="about__contacts-address">
-                  630007, ул. Коммунистическая 40
+                  <FormattedMessage id="novosibirsk_address_most" />
                 </div>
                 <div className="about__contacts-map-link">
                   <a
@@ -172,7 +188,7 @@ export default () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    На карте
+                    <FormattedMessage id="on_map" />
                   </a>
                 </div>
               </div>

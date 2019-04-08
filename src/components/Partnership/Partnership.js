@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -8,16 +9,20 @@ import './Partnership.css';
 export function Partnership() {
   return (
     <Section className="partnership">
-      <Heading level="2">Технологическое партнерство с российским ПО</Heading>
+      <Heading level="2">
+        <FormattedMessage id="Partnership_technological" />
+      </Heading>
 
       <div className="column column--info">
         <div className="subtitle">
-          dialog сотрудничает с вендорами для обеспечения инфраструктуры
-          требованиям российского законодательства
+          <FormattedMessage id="Partnership_vendors" />
         </div>
+        {/*
         <div className="link-box">
           <a className="link--arrow" href="/licenses">
-            <span className="link--arrow__text">Подробнее о партнерах</span>
+            <span className="link--arrow__text">
+              <FormattedMessage id="Partnership_learn_more" />
+            </span>
             <img
               src="/images/svg-icons/arrow-link.svg"
               alt=""
@@ -25,6 +30,7 @@ export function Partnership() {
             />
           </a>
         </div>
+        */}
       </div>
       <div className="column column--partners">
         <div className="partners">
@@ -39,7 +45,9 @@ export function Partnership() {
               src="/images/partner-basealt.png"
               alt="Базальт"
             />
-            <div className="partner__name">Базальт</div>
+            <div className="partner__name">
+              <FormattedMessage id="Partnership_bazalt" />
+            </div>
           </a>
           <a
             className="partner"
@@ -52,7 +60,9 @@ export function Partnership() {
               src="/images/partner-moiofis.png"
               alt="МойОфис"
             />
-            <div className="partner__name">МойОфис</div>
+            <div className="partner__name">
+              <FormattedMessage id="Partnership_my_office" />
+            </div>
           </a>
           <a
             className="partner"
@@ -65,7 +75,9 @@ export function Partnership() {
               src="/images/partner-avrora-orig.png"
               alt="Аврора"
             />
-            <div className="partner__name">Аврора</div>
+            <div className="partner__name">
+              <FormattedMessage id="Partnership_aurora" />
+            </div>
           </a>
         </div>
       </div>

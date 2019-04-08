@@ -65,7 +65,7 @@ export function Select({
           onBlur={handleBlur}
           onFocus={handleFocus}
         >
-          {label && <option disabled>{label}</option>}
+          {/*label && <option disabled>{label}</option>*/}
           {options.map((option) => {
             return (
               <option key={option} value={option}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../Container/Container';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
@@ -7,21 +8,23 @@ import { MobileMenu } from '../MobileMenu/MobileMenu';
 import './Header.css';
 
 export function Header({
+  locale,
+  originalPath,
   isMobileMenuOpen,
   openMobileMenu,
   openOfferModal,
   closeMobileMenu,
 }) {
   return (
-    <header className="site__header">
+    <header className="header">
       <Container>
         <div className="header__columns">
           <div className="header__col">
             <div className="header__logo">
-              <Link to="/" className="header__logo-link">
+              <Link to={`/${locale}`} className="header__logo-link">
                 <img
                   src="/images/logo-header.svg"
-                  alt=""
+                  alt="dialog"
                   className="header__logo-icon"
                 />
               </Link>
@@ -29,28 +32,48 @@ export function Header({
             <nav className="header__menu">
               <ul className="header__menu-list">
                 <li className="header__menu-item">
-                  <Link to="/about" className="header__menu-link">
-                    О нас
+                  <Link
+                    to={`/${locale}/about`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_about" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/download" className="header__menu-link">
-                    Скачать
+                  <Link
+                    to={`/${locale}/download`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_download" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/support" className="header__menu-link">
-                    Поддержка
+                  <Link
+                    to={`/${locale}/support`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_support" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/features" className="header__menu-link">
-                    Функции
+                  <Link
+                    to={`/${locale}/features`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_features" />
                   </Link>
                 </li>
                 <li className="header__menu-item">
-                  <Link to="/blog" className="header__menu-link">
-                    Блог
+                  <Link
+                    to={`/${locale}/blog`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_blog" />
                   </Link>
                 </li>
               </ul>
@@ -61,11 +84,14 @@ export function Header({
               className="header__button header__button--offer"
               onClick={openOfferModal}
             >
-              Получить предложение
+              <FormattedMessage id="button_get_offer" />
             </button>
-            <button className="header__button header__button--lang btn__change-lang">
-              en
-            </button>
+            <Link
+              to={`/${locale === 'ru' ? 'en' : 'ru'}${originalPath}`}
+              className="header__button header__button--lang btn__change-lang"
+            >
+              {locale === 'ru' ? 'en' : 'ru'}
+            </Link>
             <button
               className="header__button header__button--menu"
               onClick={openMobileMenu}
@@ -77,6 +103,7 @@ export function Header({
         isOpen={isMobileMenuOpen}
         onClose={closeMobileMenu}
         openOfferModal={openOfferModal}
+        locale={locale}
       />
     </header>
   );

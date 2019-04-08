@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 
 import './Safety.css';
 
-export function Safety() {
+export function Safety({ intl: { locale } }) {
   return (
     <Section className="safety">
       <h3 className="safety-title">
-        Безопасность
-        <br /> и соответствие требованиям
+        <FormattedHTMLMessage id="safety_header" />
       </h3>
 
       <div className="safety-item safety-communication">
-        <div className="safety-item__title">Защищенное общение</div>
+        <div className="safety-item__title">
+          <FormattedMessage id="secure_communication" />
+        </div>
         <div className="safety-item__content safety-communication__content">
           <div className="safety-communication__items">
             <div className="safety-communication__item">
@@ -25,9 +27,7 @@ export function Safety() {
                 />
               </div>
               <div className="safety-communication__text">
-                Размещение платформы на сервере компании по модели On-Premise. В
-                комплексе со средствами защиты в ПО минимизированы риски утечки
-                информации, внешних сбоев и блокировок.
+                <FormattedMessage id="safety_text_1" />
               </div>
             </div>
             <div className="safety-communication__item">
@@ -38,10 +38,7 @@ export function Safety() {
                 />
               </div>
               <div className="safety-communication__text">
-                dialog отвечает высоким стандартам безопасности: предусмотрена
-                защита от перехвата данных, утечки конфиденциальной информации и
-                распространения вирусов. ПО проходит аудит на предмет
-                уязвимостей и ошибок.
+                <FormattedMessage id="safety_text_2" />
               </div>
             </div>
           </div>
@@ -49,36 +46,26 @@ export function Safety() {
       </div>
 
       <div className="safety-item safety-requirements">
-        <div className="safety-item__title">Соответствие требованиям</div>
+        <div className="safety-item__title">
+          <FormattedMessage id="compliance" />
+        </div>
         <div className="safety-item__content safety-requirements__content">
           <div className="safety-requirements__items">
             <div className="safety-requirements__item">
-              Компания-разработчик ООО “Диалог” состоит в реестре
-              аккредитованных организаций, осуществляющих деятельность в области
-              информационных технологий на территории РФ (№ 436 от 07.09.2016
-              г.).
+              <FormattedMessage id="compliance_index_1" />
             </div>
             <div className="safety-requirements__item">
-              Мессенджер dialog соответствует требованиям Единого реестра
-              российских программ для электронных вычислительных машин и баз
-              данных, а также состоит в реестре отечественного ПО.
+              <FormattedMessage id="compliance_index_2" />
             </div>
             <div className="safety-requirements__item">
-              Компания-разработчик ООО "Диалог" лицензирована ФСТЭК России на
-              деятельность по технической защите конфиденциальной информации,
-              разработку и производство средств защиты конфиденциальной
-              информации.
-            </div>
-            <div className="safety-requirements__item">
-              Компания-разработчик ООО "Диалог" имеет лицензию ФСБ России на
-              разработку, производство, распространение шифровальных средств,
-              информационных систем и телекоммуникационных систем, защищённых с
-              помощью шифровальных средств.
+              <FormattedMessage id="compliance_index_3" />
             </div>
           </div>
           <div className="safety-requirements__link-box">
-            <Link to="/licenses" className="link--arrow">
-              <span className="link--arrow__text">Подробнее</span>
+            <Link to={`/${locale}/patents`} className="link--arrow">
+              <span className="link--arrow__text">
+                <FormattedMessage id="link_more" />
+              </span>
               <img
                 src="/images/svg-icons/arrow-link.svg"
                 alt=""

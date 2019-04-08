@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 
 import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
@@ -15,7 +16,9 @@ export function DownloadMobile({ isEnterprise }) {
 
   return (
     <section className="download__section download__item download__mobile">
-      <h2 className="download__item-title">Мобильное приложение</h2>
+      <h2 className="download__item-title">
+        <FormattedMessage id="download_mobile_title" />
+      </h2>
       <div className={mobileClasses}>
         <div className="download__mobile-item mobile--ios">
           <div className="download__mobile-pictute">
@@ -35,8 +38,11 @@ export function DownloadMobile({ isEnterprise }) {
           <div className="title">iPhone / iPad</div>
           <div className="qr-box">
             <img
-              className="download__mobile-qr"
-              src="/images/download/cloud-mobile-iphone-qr.png"
+              src={
+                isEnterprise
+                  ? '/images/download/enterprise-iphone-qr.png'
+                  : '/images/download/cloud-mobile-iphone-qr.png'
+              }
               alt=""
             />
           </div>
@@ -66,7 +72,14 @@ export function DownloadMobile({ isEnterprise }) {
           </div>
           <div className="title">Android</div>
           <div className="qr-box">
-            <img src="/images/download/cloud-mobile-android-qr.png" alt="" />
+            <img
+              src={
+                isEnterprise
+                  ? '/images/download/enterprise-android-qr.png'
+                  : '/images/download/cloud-mobile-android-qr.png'
+              }
+              alt=""
+            />
           </div>
           <a className="store-link" href={links.android}>
             <img

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
@@ -13,18 +14,10 @@ export function Incompany() {
   return (
     <Section className="incompany">
       <PageHeader className="incompany__title">
-        Делаем коммуникацию внутри любой компании простой и эффективной
+        <FormattedMessage id="incompany_header" />
       </PageHeader>
       <div className="incompany__subtitle">
-        dialog API позволяет оптимизировать процессы, связав мессенджер и
-        сервисы компании. Создавайте ботов самостоятельно с помощью{' '}
-        <a
-          href="https://dialogs.github.io/bots-docs/"
-          className="link--default"
-        >
-          Bot SDK
-        </a>{' '}
-        или воспользуйтесь услугами партнёра-интегратора.
+        <FormattedHTMLMessage id="incompany_subtitle" />
       </div>
       <div className="incompany__wrapper">
         <Tabs
@@ -34,12 +27,24 @@ export function Incompany() {
           changeOnHover
           className="incompany__tabs"
         >
-          <Tab value="marketing">Маркетинг</Tab>
-          <Tab value="development">Разработка</Tab>
-          <Tab value="hr">HR</Tab>
-          <Tab value="sales">Продажи</Tab>
-          <Tab value="support">Техническая поддержка</Tab>
-          <Tab value="security">Служба безопасности</Tab>
+          <Tab value="marketing">
+            <FormattedMessage id="marketing" />
+          </Tab>
+          <Tab value="development">
+            <FormattedMessage id="development" />
+          </Tab>
+          <Tab value="hr">
+            <FormattedMessage id="hr" />
+          </Tab>
+          <Tab value="sales">
+            <FormattedMessage id="sales" />
+          </Tab>
+          <Tab value="support">
+            <FormattedMessage id="technical_support" />
+          </Tab>
+          <Tab value="security">
+            <FormattedMessage id="security_service" />
+          </Tab>
         </Tabs>
 
         <div className="incompany__box">
@@ -48,11 +53,11 @@ export function Incompany() {
               'incompany__content',
               tab === 'marketing' ? 'incompany__content--visible' : null,
             )}
-            title="Маркетинг"
+            title={<FormattedMessage id="marketing" />}
           >
             <div className="incompany__content__body">
               <div className="incompany__content__body__title">
-                Пример оптимизации процесса
+                <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
                 <img src="/images/home/incompany/icon-marketing.svg" alt="" />
@@ -64,9 +69,7 @@ export function Incompany() {
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
-                Будьте в курсе результатов маркетинговых активностей с
-                уведомлениями из аналитических систем (например, Google
-                Analytics).
+                <FormattedMessage id="case_marketing" />
               </div>
             </div>
           </Collapsible>
@@ -75,11 +78,11 @@ export function Incompany() {
               'incompany__content',
               tab === 'development' ? 'incompany__content--visible' : null,
             )}
-            title="Разработка"
+            title={<FormattedMessage id="development" />}
           >
             <div className="incompany__content__body">
               <div className="incompany__content__body__title">
-                Пример оптимизации процесса
+                <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
                 <img
@@ -95,8 +98,7 @@ export function Incompany() {
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
-                Автоматизируйте процессы — синхронизируйте статусы задач из
-                Jira в dialog.
+                <FormattedMessage id="case_development" />
               </div>
             </div>
           </Collapsible>
@@ -105,12 +107,11 @@ export function Incompany() {
               'incompany__content',
               tab === 'hr' ? 'incompany__content--visible' : null,
             )}
-            title="HR"
+            title={<FormattedMessage id="hr" />}
           >
-            {' '}
             <div className="incompany__content__body">
               <div className="incompany__content__body__title">
-                Пример оптимизации процесса
+                <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
                 <img
@@ -120,9 +121,7 @@ export function Incompany() {
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
-                Сократите время на работу с кандидатами – передайте рутинную
-                работу сервису. Программа сама выберет время и назначит
-                собеседование.
+                <FormattedMessage id="case_hr" />
               </div>
             </div>
           </Collapsible>
@@ -131,11 +130,11 @@ export function Incompany() {
               'incompany__content',
               tab === 'sales' ? 'incompany__content--visible' : null,
             )}
-            title="Продажи"
+            title={<FormattedMessage id="sales" />}
           >
             <div className="incompany__content__body">
               <div className="incompany__content__body__title">
-                Пример оптимизации процесса
+                <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
                 <img
@@ -145,8 +144,7 @@ export function Incompany() {
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
-                Будьте всегда в курсе сделок с автоматическим обновлением
-                статусов из CRM.
+                <FormattedMessage id="case_sales" />
               </div>
             </div>
           </Collapsible>
@@ -155,12 +153,12 @@ export function Incompany() {
               'incompany__content',
               tab === 'support' ? 'incompany__content--visible' : null,
             )}
-            title="Техническая поддержка"
+            title={<FormattedMessage id="technical_support" />}
           >
             {' '}
             <div className="incompany__content__body">
               <div className="incompany__content__body__title">
-                Пример оптимизации процесса
+                <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
                 <img
@@ -170,8 +168,7 @@ export function Incompany() {
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
-                Сократите время ответа службы поддержки — соберите все запросы в
-                одну систему.
+                <FormattedMessage id="case_technical_support" />
               </div>
             </div>
           </Collapsible>
@@ -180,11 +177,11 @@ export function Incompany() {
               'incompany__content',
               tab === 'security' ? 'incompany__content--visible' : null,
             )}
-            title="Служба безопасности"
+            title={<FormattedMessage id="security_service" />}
           >
             <div className="incompany__content__body">
               <div className="incompany__content__body__title">
-                Пример оптимизации процесса
+                <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
                 <img
@@ -194,8 +191,7 @@ export function Incompany() {
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
-                Интеграции с антивирусами, системами контроля утечек данных 
-                (DLP). Оповещения о событиях системы безопасности.
+                <FormattedMessage id="case_security_service" />
               </div>
             </div>
           </Collapsible>

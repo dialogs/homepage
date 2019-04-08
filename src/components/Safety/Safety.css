@@ -209,10 +209,10 @@
 
       @media (--tablet-viewport) {
         margin-top: 40px;
-        width: calc(50% - var(--padding-side-columns) / 2);
       }
 
       @media (--tablet-landscape-viewport) {
+        width: calc(33% - var(--padding-side-columns) / 4);
         margin-top: 60px;
       }
 

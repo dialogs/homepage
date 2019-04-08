@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
@@ -13,14 +14,14 @@ export function Download({ openOfferModal }) {
     <Section className="download download__sections">
       <section className="download__section download__intro">
         <PageHeader>
-          Демонстрационное облачное приложение платформы dialog
+          <FormattedMessage id="download_header" />
         </PageHeader>
         <div className="download__subtitle">
-          Вы можете ознакомиться с функциями платформы в нашем демо-приложении.{' '}
+          <FormattedMessage id="download_subtitle_before" />
           <button className="link link--default" onClick={openOfferModal}>
-            Оставьте заявку
+            <FormattedMessage id="download_subtitle_button_text" />
           </button>
-          , чтобы получить информацию о подключении платформы.
+          <FormattedMessage id="download_subtitle_after" />
         </div>
       </section>
 

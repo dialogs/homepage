@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 
 import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
@@ -41,45 +42,45 @@ export function OfferForm({ pending, error, value, onSubmit, className }) {
           value={form.name}
           name="name"
           onChange={handleChange}
-          label="Как к вам обращаться"
+          label={<FormattedMessage id="form_label_name" />}
         />
         <Input
           value={form.email}
           name="email"
           onChange={handleChange}
-          label="Рабочий e-mail"
+          label={<FormattedMessage id="form_label_email" />}
         />
         <Input
           value={form.phone}
           name="phone"
           onChange={handleChange}
-          label="Телефон"
+          label={<FormattedMessage id="form_label_phone" />}
         />
         <Input
           value={form.company}
           name="company"
           onChange={handleChange}
-          label="Название компании"
+          label={<FormattedMessage id="form_label_company" />}
         />
 
         <Select
-          options={['1-10', '11-50', '51-100', '101-500', '500+']}
+          options={['1-100', '101-500', '501-1000', '1000+']}
           value={form.users}
           name="users"
           onChange={handleChange}
-          label="Количество пользователей"
+          label={<FormattedMessage id="form_label_amount" />}
         />
       </div>
 
       <div className="form__box">
         <Checkbox
-          label="Я согласен на обработку персональных данных"
+          label={<FormattedMessage id="form_label_agreement" />}
           value={form.agree}
           name="agree"
           onChange={handleChange}
         />
         <Checkbox
-          label="Подписаться на новостную рассылку"
+          label={<FormattedMessage id="form_label_subscribe" />}
           value={form.subscribe}
           name="subscribe"
           onChange={handleChange}
@@ -88,13 +89,19 @@ export function OfferForm({ pending, error, value, onSubmit, className }) {
 
       <div className="form__footer">
         <Button type="submit" className="form__submit">
-          Отправить заявку
+          <FormattedMessage id="send_application" />
         </Button>
         <div className="form__info">
           {error && <FormErrorMessage />}
-          {pending && <div className="form__pending">Отправка сообщения</div>}
+          {pending && (
+            <div className="form__pending">
+              <FormattedMessage id="form_pending" />
+            </div>
+          )}
           {value && value.status === 200 && (
-            <div className="form__success">Сообщение успешно отправлено.</div>
+            <div className="form__success">
+              <FormattedMessage id="form_success_message" />
+            </div>
           )}
         </div>
       </div>

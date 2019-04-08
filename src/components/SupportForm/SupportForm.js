@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 
 import { Input } from '../Input/Input';
 import { Checkbox } from '../Checkbox/Checkbox';
@@ -34,7 +35,7 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
         name="email"
         type="email"
         onChange={handleChange}
-        label="Ваш e-mail"
+        label={<FormattedMessage id="form_label_your_email" />}
         required
       />
 
@@ -43,7 +44,7 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
         name="topic"
         type="text"
         onChange={handleChange}
-        label="Тема"
+        label={<FormattedMessage id="form_label_topic" />}
       />
 
       <Input
@@ -52,11 +53,11 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
         type="textarea"
         onChange={handleChange}
         rows={6}
-        label="Опишите ваш вопрос"
+        label={<FormattedMessage id="form_label_your_question" />}
       />
 
       <Checkbox
-        label="Я согласен на обработку персональных данных"
+        label={<FormattedMessage id="form_label_agreement" />}
         value={form.agree}
         name="agree"
         onChange={handleChange}
@@ -64,7 +65,7 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
 
       <div className="form__footer">
         <Button type="submit" className="form__submit">
-          Отправить
+          <FormattedMessage id="form_send" />
         </Button>
 
         <div className="form__info">
@@ -76,11 +77,14 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
           )}
           */}
           {error && <FormErrorMessage />}
-          {pending && <div className="form__pending">Отправка сообщения.</div>}
+          {pending && (
+            <div className="form__pending">
+              <FormattedMessage id="form_pending" />
+            </div>
+          )}
           {value && value.status === 200 && (
             <div className="form__success">
-              Ваше обращение успешно отправлено. С вами свяжутся в ближайшее
-              время.
+              <FormattedMessage id="form_success_message" />
             </div>
           )}
         </div>

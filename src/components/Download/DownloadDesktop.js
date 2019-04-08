@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
@@ -85,7 +86,8 @@ export function DownloadDesktop({ isEnterprise }) {
       case 'iOS':
         return (
           <a className="button button--default" href={links.osx}>
-            Скачать для MacOS
+            <FormattedMessage id="download_for" />
+            MacOS
           </a>
         );
 
@@ -93,10 +95,12 @@ export function DownloadDesktop({ isEnterprise }) {
         return (
           <>
             <a className="button button--default" href={links.linux}>
-              Скачать для Linux 32
+              <FormattedMessage id="download_for" />
+              Linux 32
             </a>
             <a className="button button--default" href={links.linux64}>
-              Скачать для Linux 64
+              <FormattedMessage id="download_for" />
+              Linux 64
             </a>
           </>
         );
@@ -105,7 +109,8 @@ export function DownloadDesktop({ isEnterprise }) {
       default:
         return (
           <a className="button button--default" href={links.windows}>
-            Скачать для Windows
+            <FormattedMessage id="download_for" />
+            Windows
           </a>
         );
     }
@@ -114,7 +119,7 @@ export function DownloadDesktop({ isEnterprise }) {
   return (
     <div className="download__section download__item download__desktop">
       <h2 className="download__item-title download__desktop-title">
-        Десктопное приложение
+        <FormattedMessage id="download_desktop_title" />
       </h2>
       <div className="download__desktop-pictute">
         {renderDownloadDesktopImage()}

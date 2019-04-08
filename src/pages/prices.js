@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -7,84 +8,136 @@ import { Section } from '../components/Section/Section';
 import { Heading } from '../components/Heading/Heading';
 import { Offer } from '../components/Offer/Offer';
 
-import '../styles/prices.css';
-
 export default () => {
   return (
     <Page>
       <Container>
         <div className="price__header">
           <PageHeader>
-            Стоимость бессрочной лицензии на одного пользователя
+            <FormattedMessage id="prices_pageheader" />
           </PageHeader>
-          <div className="value">4800 ₽</div>
+          <div className="value">
+            <FormattedMessage id="prices_price" />
+          </div>
         </div>
         <div className="price__subtitle">
-          Цена на платформу может отличаться в зависимости от количества
-          пользователей
+          <FormattedMessage id="prices_subtitle" />
         </div>
         <Section className="prices">
           <div className="prices__description">
-            Базовая версия продукта содержит привычные функции мессенджера
+            <FormattedMessage id="prices__description" />
           </div>
           <div className="item">
             <Heading level="3" className="item__title">
-              Мессенджер
+              <FormattedMessage id="prices_item_title" />
             </Heading>
             <ul className="list list--secondary">
-              <li>Личные чаты</li>
-              <li>Групповые открытые / закрытые чаты</li>
-              <li>Открытые / закрытые каналы</li>
-              <li>Стикеры, смайлики, реакции на сообщения</li>
-              <li>Статусы присутствия</li>
-              <li>Голосовые сообщения</li>
-              <li>Избранные чаты и контакты</li>
-              <li>Адресная книга</li>
-              <li>Поиск по сообщения и контактам</li>
-              <li>Возможность упоминания пользователя с помощью @</li>
-              <li>Просмотр всех загруженных медиа в выбранном чате</li>
-              <li>Переотправка и цитирование сообщений</li>
-              <li>Отправка местоположения</li>
-              <li>Отправка контакта в чате</li>
-              <li>Возможность выключить все уведомления в конкретных чатах</li>
+              <li>
+                <FormattedMessage id="prices_personal_chats" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_group_open_closed_chats" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_open_closed_channels" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_stickers_smiles_reactions" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_statuses" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_voice_messages" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_starred_chats_and_contacts" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_address_book" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_search" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_mentions" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_view_all_media" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_cites" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_geolocation" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_contact_in_chat" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_disable_notification" />
+              </li>
             </ul>
           </div>
           <div className="item">
             <Heading level="3" className="item__title">
-              Бизнес функции
+              <FormattedMessage id="prices_corporate_fuctions" />
             </Heading>
             <ul className="list list--secondary">
-              <li>Обмен документами любого размера</li>
-              <li>Поддержка чат-ботов</li>
-              <li>Аудио / Видеоконференции для участников</li>
               <li>
-                Отдельная вкладка «Обзор», на которой в административной панели
-                можно закрепить необходимые корпоративные каналы или группы
+                <FormattedMessage id="prices_exchange_documents" />
               </li>
-              <li>Управление правами в группах и каналах</li>
-              <li>Административная панель</li>
-              <li>Пользовательские данные в профиле</li>
-              <li>Демонстрация экрана</li>
-              <li>Кастомизация интерфейса</li>
+              <li>
+                <FormattedMessage id="prices_chatbots" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_audio_video_conference" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_discovery" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_policy_management" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_admin_panel" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_custom_data_in_profile" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_screensahring" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_interface_customization" />
+              </li>
             </ul>
           </div>
           <div className="item">
             <Heading level="3" className="item__title">
-              Интеграции
+              <FormattedMessage id="prices_integrations" />
             </Heading>
             <ul className="list list--secondary">
               <li>
-                Интеграции с e-mail, голосовой почтой и системами коммуникации
+                <FormattedMessage id="prices_video_conference_integrations" />
               </li>
-              <li>Интеграции с системами видеоконференцсвязи (в разработке)</li>
-              <li>Интеграции с корпоративной АТС</li>
-              <li>Открытое API</li>
-              <li>Интеграция с каталогами пользователей AD / LDAP</li>
               <li>
+                <FormattedMessage id="prices_ats" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_open_api" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_ad_ldap" />
+              </li>
+              <li>
+                <FormattedMessage id="prices_security_infrastructure" />
                 Интеграции с инфраструктурой безопасности (SIEM, DLP, IDM,
                 Антивирус)
               </li>
-              <li>Bot SDK</li>
+              <li>
+                <FormattedMessage id="prices_bot_sdk" />
+              </li>
             </ul>
           </div>
         </Section>

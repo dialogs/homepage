@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section.js';
 import { PageHeader } from '../PageHeader/PageHeader';
@@ -12,10 +13,9 @@ export function DownloadEnterprise() {
       <section className="download__section download__intro">
         <PageHeader>dialog Enterprise</PageHeader>
         <div className="download__subtitle">
-          Информацию о подключении вы можете получить у своего системного
-          администратора или в центре{' '}
+          <FormattedMessage id="download_enterprise_subtitle_before" />
           <a className="link--default" href="https://support.dlg.im">
-            поддержки клиентов
+            <FormattedMessage id="download_enterprise_subtitle_link" />
           </a>
           .
         </div>

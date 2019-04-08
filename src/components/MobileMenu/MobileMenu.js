@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 
 import './MobileMenu.css';
 
-export function MobileMenu({ isOpen, onClose, openOfferModal }) {
+export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
   const classes = classNames('mobile-menu', {
     'mobile-menu--opened': isOpen,
   });
@@ -28,24 +29,49 @@ export function MobileMenu({ isOpen, onClose, openOfferModal }) {
           />
         </div>
         <nav className="navigation">
-          <Link to="/about" className="navigation__link" onClick={onClose}>
-            О нас
+          <Link
+            to={`/${locale}/about`}
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+            onClick={onClose}
+          >
+            <FormattedMessage id="menu_about" />
           </Link>
-          <Link to="/download" className="navigation__link" onClick={onClose}>
-            Скачать
+          <Link
+            to={`/${locale}/download`}
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+            onClick={onClose}
+          >
+            <FormattedMessage id="menu_download" />
           </Link>
-          <Link to="/support" className="navigation__link" onClick={onClose}>
-            Поддержка
+          <Link
+            to={`/${locale}/support`}
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+            onClick={onClose}
+          >
+            <FormattedMessage id="menu_support" />
           </Link>
-          <Link to="/features" className="navigation__link" onClick={onClose}>
-            Функции
+          <Link
+            to={`/${locale}/features`}
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+            onClick={onClose}
+          >
+            <FormattedMessage id="menu_features" />
           </Link>
-          <Link to="/blog" className="navigation__link" onClick={onClose}>
-            Блог
+          <Link
+            to={`/${locale}/blog`}
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+            onClick={onClose}
+          >
+            <FormattedMessage id="menu_blog" />
           </Link>
         </nav>
         <button className="mobile-menu__button" onClick={openOfferModal}>
-          Получить предложение
+          <FormattedMessage id="button_get_offer" />
         </button>
       </div>
     </div>

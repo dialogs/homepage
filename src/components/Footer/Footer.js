@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../Container/Container';
 import links from '../../constants/links';
 
-export function Footer() {
+export function Footer({ locale }) {
   return (
     <footer className="site__footer">
       <div className="footer__top">
@@ -147,18 +148,21 @@ export function Footer() {
               <nav className="footer__nav">
                 <div className="footer__nav-list">
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to="/licenses">
-                      Патенты и лицензии
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/patents`}
+                    >
+                      <FormattedMessage id="menu_patents" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to="/legal">
-                      Правовая информация
+                    <Link className="footer__nav-link" to={`/${locale}/legal`}>
+                      <FormattedMessage id="menu_legal" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to="/prices">
-                      Цены
+                    <Link className="footer__nav-link" to={`/${locale}/prices`}>
+                      <FormattedMessage id="menu_pricing" />
                     </Link>
                   </div>
                 </div>
@@ -170,17 +174,23 @@ export function Footer() {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      Документация
+                      <FormattedMessage id="footer_documentation" />
                     </a>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to="/download">
-                      Скачать
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/download`}
+                    >
+                      <FormattedMessage id="menu_download" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to="/support">
-                      Поддержка
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/support`}
+                    >
+                      <FormattedMessage id="footer_support" />
                     </Link>
                   </div>
                 </div>
@@ -193,7 +203,7 @@ export function Footer() {
         <Container>
           <div className="footer__copyright">
             <span className="footer__copyright-text">
-              © 2016-2019 ООО “Диалог” ИНН: 7804568396
+              <FormattedMessage id="footer_copyright" />
             </span>
           </div>
         </Container>

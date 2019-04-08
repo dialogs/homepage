@@ -90,6 +90,10 @@
       &:last-child {
         margin-bottom: 0;
       }
+
+      &--active {
+        color: var(--color-secondary);
+      }
     }
   }
 
