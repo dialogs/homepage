@@ -9,6 +9,19 @@ module.exports = {
     : undefined,
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'dialog — коммуникационная платформа для компаний',
+        short_name: 'dlg.im',
+        start_url: '/',
+        background_color: '#fff',
+        theme_color: '#b9bbfa',
+        display: 'standalone',
+        icon: 'static/images/icon.png',
+        include_favicon: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-express',
       options: {
         output: 'server/gatsby-express.json',
