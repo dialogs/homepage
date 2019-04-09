@@ -5,7 +5,7 @@ import { Container } from '../components/Container/Container';
 import { Page } from '../components/Page/Page';
 import { NotFound } from '../components/NotFound/NotFound';
 
-export default ({ pageContext: { locale } }) => (
+export default () => (
   <Page>
     <Helmet>
       <title>404 | dialog</title>
