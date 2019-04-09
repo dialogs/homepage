@@ -16,9 +16,6 @@ export function MobileMenu({
     'mobile-menu--opened': isOpen,
   });
 
-  console.log('locale', locale);
-  console.log('originalPath', originalPath);
-
   return (
     <div className={classes}>
       <div className="mobile-menu__content">
