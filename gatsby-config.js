@@ -9,6 +9,13 @@ module.exports = {
     : undefined,
   plugins: [
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://new-landing.dlg.im',
+        policy: [{ userAgent: '*', disallow: ['/'] }],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'dialog — коммуникационная платформа для компаний',
