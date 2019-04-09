@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
+
+import { Link } from 'gatsby';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
@@ -15,8 +17,21 @@ export default ({ pageContext: { locale } }) => {
       'https://www.google.com/maps/place/%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D1%86%D0%B5%D0%BD%D1%82%D1%80+MOST/@55.023146,82.920614,15z/data=!4m5!3m4!1s0x0:0x6bef1adfc015b0e6!8m2!3d55.023146!4d82.920614',
   };
 
+  const metaData = {
+    title: locale === 'ru' ? 'О компании | dialog' : 'About | dialog',
+    description:
+      locale === 'ru'
+        ? 'это корпоративный мессенджер с возможностью установки на внутренний сервер организации'
+        : 'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  };
+
   return (
     <div className="about page">
+      <Helmet>
+        <title>{metaData.title}</title>
+        <meta name="description" content={metaData.description} />
+      </Helmet>
+
       <Container>
         <PageHeader>
           <FormattedMessage id="more_than_messenger" />

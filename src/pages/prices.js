@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 import { Page } from '../components/Page/Page';
@@ -8,9 +9,22 @@ import { Section } from '../components/Section/Section';
 import { Heading } from '../components/Heading/Heading';
 import { Offer } from '../components/Offer/Offer';
 
-export default () => {
+export default ({ pageContext: { locale } }) => {
+  const metaData = {
+    title: locale === 'ru' ? 'Цены | dialog' : 'Pricing | dialog',
+    description:
+      locale === 'ru'
+        ? 'это корпоративный мессенджер с возможностью установки на внутренний сервер организации'
+        : 'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  };
+
   return (
     <Page>
+      <Helmet>
+        <title>{metaData.title}</title>
+        <meta name="description" content={metaData.description} />
+      </Helmet>
+
       <Container>
         <div className="price__header">
           <PageHeader>
