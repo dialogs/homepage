@@ -1,6 +1,10 @@
 const { isDev, ghost } = require('./server/config');
+const siteUrl = 'https://new-landing.dlg.im';
 
 module.exports = {
+  siteMetadata: {
+    siteUrl,
+  },
   proxy: isDev
     ? {
         prefix: '/api/v1',
@@ -19,6 +23,13 @@ module.exports = {
         display: 'standalone',
         icon: 'static/images/icon.png',
         include_favicon: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        policy: [{ userAgent: '*', disallow: ['/'] }],
       },
     },
     {
