@@ -7,7 +7,7 @@ import { Heading } from '../Heading/Heading';
 
 import './SecureCommunication.css';
 
-export function SecureCommunication() {
+export function SecureCommunication({ intl: { locale } }) {
   return (
     <Section className="secure-communication">
       <Heading level="2">
@@ -117,7 +117,7 @@ export function SecureCommunication() {
           </ul>
         </div>
         <div className="link-box">
-          <a className="link--arrow" href="/licenses">
+          <a className="link--arrow" href={`/${locale}/patents`}>
             <span className="link--arrow__text">
               <FormattedMessage id="SecureCommunication_learn_more" />
             </span>
