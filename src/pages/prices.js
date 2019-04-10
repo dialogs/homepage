@@ -10,20 +10,20 @@ import { Heading } from '../components/Heading/Heading';
 import { Offer } from '../components/Offer/Offer';
 
 export default ({ pageContext: { locale } }) => {
-  const metaData = {
-    title: locale === 'ru' ? 'Цены | dialog' : 'Pricing | dialog',
-    description:
-      locale === 'ru'
-        ? 'это корпоративный мессенджер с возможностью установки на внутренний сервер организации'
-        : 'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
-  };
-
   return (
     <Page>
-      <Helmet>
-        <title>{metaData.title}</title>
-        <meta name="description" content={metaData.description} />
-      </Helmet>
+      <FormattedMessage id="meta_title_pricing">
+        {(title) => (
+          <FormattedMessage id="meta_description_pricing">
+            {(description) => (
+              <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+              </Helmet>
+            )}
+          </FormattedMessage>
+        )}
+      </FormattedMessage>
 
       <Container>
         <div className="price__header">
@@ -146,8 +146,6 @@ export default ({ pageContext: { locale } }) => {
               </li>
               <li>
                 <FormattedMessage id="prices_security_infrastructure" />
-                Интеграции с инфраструктурой безопасности (SIEM, DLP, IDM,
-                Антивирус)
               </li>
               <li>
                 <FormattedMessage id="prices_bot_sdk" />

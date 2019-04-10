@@ -11,22 +11,21 @@ import { EffectiveCommunication } from '../components/EffectiveCommunication/Eff
 import { Partnership } from '../components/Partnership/Partnership';
 import { Offer } from '../components/Offer/Offer';
 
-export default ({ pageContext: { locale } }) => {
-  const metaData = {
-    title:
-      locale === 'ru' ? 'Готовые решения | dialog' : 'Box solutions | dialog',
-    description:
-      locale === 'ru'
-        ? 'это корпоративный мессенджер с возможностью установки на внутренний сервер организации'
-        : 'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
-  };
-
+export default () => {
   return (
     <Page>
-      <Helmet>
-        <title>{metaData.title}</title>
-        <meta name="description" content={metaData.description} />
-      </Helmet>
+      <FormattedMessage id="meta_title_solutions">
+        {(title) => (
+          <FormattedMessage id="meta_description_solutions">
+            {(description) => (
+              <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+              </Helmet>
+            )}
+          </FormattedMessage>
+        )}
+      </FormattedMessage>
 
       <Container>
         <PageHeader className="solution">

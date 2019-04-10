@@ -4,19 +4,21 @@ import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../components/Container/Container';
 
-export default ({ pageContext: { locale } }) => {
-  const metaData = {
-    title:
-      locale === 'ru'
-        ? 'Правовая информация | dialog'
-        : 'Legal Information | dialog',
-  };
-
+export default () => {
   return (
     <Container>
-      <Helmet>
-        <title>{metaData.title}</title>
-      </Helmet>
+      <FormattedMessage id="meta_title_legal">
+        {(title) => (
+          <FormattedMessage id="meta_description_legal">
+            {(description) => (
+              <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+              </Helmet>
+            )}
+          </FormattedMessage>
+        )}
+      </FormattedMessage>
 
       <article className="legal">
         <h1>

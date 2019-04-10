@@ -6,21 +6,21 @@ import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 // import { PartnersTechnological } from '../components/PartnersTechnological/PartnersTechnological';
 
-export default ({ pageContext: { locale } }) => {
-  const metaData = {
-    title: locale === 'ru' ? 'Патенты | dialog' : 'Patents | dialog',
-    description:
-      locale === 'ru'
-        ? 'это корпоративный мессенджер с возможностью установки на внутренний сервер организации'
-        : 'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
-  };
-
+export default () => {
   return (
     <Container>
-      <Helmet>
-        <title>{metaData.title}</title>
-        <meta name="description" content={metaData.description} />
-      </Helmet>
+      <FormattedMessage id="meta_title_patents">
+        {(title) => (
+          <FormattedMessage id="meta_description_patents">
+            {(description) => (
+              <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+              </Helmet>
+            )}
+          </FormattedMessage>
+        )}
+      </FormattedMessage>
 
       <div className="license__column-content">
         <section className="license__section license__intro">
