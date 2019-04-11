@@ -77,6 +77,7 @@ module.exports = {
         <a
           href="https://dialogs.github.io/bots-docs/"
           class="link--default"
+          target="_blank"
         >
           Bot SDK
         </a>
