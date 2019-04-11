@@ -15,8 +15,13 @@
 
   &__tab {
     font-weight: 400;
-    cursor: pointer !important;
     flex: 0 0 auto;
+
+    span {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 
   &--horizontal {
@@ -44,7 +49,6 @@
         color: var(--tabs-tab-vertical-color);
 
         &:hover {
-          cursor: default;
           color: #1e1e1e;
         }
       }
