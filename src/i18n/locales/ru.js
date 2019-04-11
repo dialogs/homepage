@@ -118,8 +118,6 @@ module.exports = {
   business_case_3: 'Интеграция банковских сервисов через открытый API',
   business_case_4: 'Обмен конфиденциальной информацией ',
 
-  offer_licenses: 'Пакет от 100 лицензий',
-
   form_label_name: 'Как к вам обращаться',
   form_label_email: 'Рабочий e-mail',
   form_label_phone: 'Телефон',

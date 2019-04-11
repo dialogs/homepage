@@ -119,8 +119,6 @@ module.exports = {
   business_case_3: 'Integrating banking services via open API',
   business_case_4: 'Sharing confidential information',
 
-  offer_licenses: 'Package of 100 licenses and more',
-
   form_label_name: 'How to address you',
   form_label_email: 'Business e-mail',
   form_label_phone: 'Phone number',
