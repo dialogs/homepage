@@ -78,6 +78,7 @@ module.exports = {
           href="https://dialogs.github.io/bots-docs/"
           class="link--default"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Bot SDK
         </a>
@@ -396,7 +397,7 @@ module.exports = {
   feature_botsdk: 'dialog Bot SDK',
   feature_botsdk_content: `<h4>Готовые средства разработки ботов для dialog</h4>
                   <p>
-                  <a href="https://dialogs.github.io/bots-docs/#/" class="link--default" target="_blank">BOT SDK</a> позволяет быстро создавать собственных ботов. В настоящее время SDK доступен для JS, Java и Python.
+                  <a href="https://dialogs.github.io/bots-docs/#/" class="link--default" target="_blank" rel="noopener noreferrer">BOT SDK</a> позволяет быстро создавать собственных ботов. В настоящее время SDK доступен для JS, Java и Python.
                   </p>`,
 
   feature_whitelabel: 'Брендинг компании-заказчика',

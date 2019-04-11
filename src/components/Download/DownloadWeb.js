@@ -30,7 +30,12 @@ export function DownloadWeb({ isEnterprise }) {
         />
       </div>
       <div className="download__web-button-box">
-        <a className="button button--default" href={links.web} target="_blank">
+        <a
+          className="button button--default"
+          href={links.web}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FormattedMessage id="start" />
         </a>
       </div>
