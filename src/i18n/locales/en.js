@@ -20,6 +20,11 @@ module.exports = {
   menu_patents: 'Patents and Licenses',
   menu_legal: 'Legal Information',
 
+  alt_hero_header: 'Achieve your team goals faster without losing focus',
+  alt_messenger: 'Messenger',
+  alt_corporate_features: 'Corporate Features',
+  alt_integrations: 'Integrations',
+
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
     'A simple and effective platform for communication within a company',
