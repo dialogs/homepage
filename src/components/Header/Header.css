@@ -108,6 +108,7 @@
       font-size: 14px;
       letter-spacing: 0.2px;
       margin-left: 20px;
+      min-width: 20px;
       display: none;
 
       @media (--tablet-landscape-viewport) {
