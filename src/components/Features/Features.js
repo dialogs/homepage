@@ -373,24 +373,32 @@ export function Features() {
                     <a
                       href="https://github.com/dialogs/python-bot-sdk/"
                       className="link--default"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Python
                     </a>
                     <a
                       href="https://github.com/dialogs/java-bot-sdk/"
                       className="link--default"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Java
                     </a>
                     <a
                       href="https://github.com/dialogs/js-bot-sdk"
                       className="link--default"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       JavaScript
                     </a>
                     <a
                       href="https://dialogs.github.io/bots-docs/#/README"
                       className="link--default"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Docs
                     </a>

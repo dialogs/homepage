@@ -11,7 +11,7 @@ import '../../styles/index.css';
 addLocaleData(localeData);
 
 export default ({ children, pageContext }) => {
-  const { locale = 'en', languages, originalPath } = pageContext;
+  const { locale = 'en', originalPath } = pageContext;
 
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>

@@ -77,6 +77,8 @@ module.exports = {
         <a
           href="https://dialogs.github.io/bots-docs/"
           class="link--default"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Bot SDK
         </a>
@@ -116,8 +118,6 @@ module.exports = {
   business_case_2: 'Access from any device or subnet',
   business_case_3: 'Integrating banking services via open API',
   business_case_4: 'Sharing confidential information',
-
-  offer_licenses: 'Package of 100 licenses and more',
 
   form_label_name: 'How to address you',
   form_label_email: 'Business e-mail',
@@ -289,7 +289,7 @@ module.exports = {
 
   feature_botsdk: 'dialog Bot SDK ',
   feature_botsdk_content: `<h4>Ready-made bot development tools for dialog</h4>
-                  <p>The <a href="https://dialogs.github.io/bots-docs/#/" class="link--default">BOT SDK</a> let’s you quickly make your own bots. The SDK is currently available for JS, Java and Python.
+                  <p>The <a href="https://dialogs.github.io/bots-docs/#/" class="link--default" target="_blank" rel="noopener noreferrer">BOT SDK</a> let’s you quickly make your own bots. The SDK is currently available for JS, Java and Python.
                   </p>`,
   feature_whitelabel: 'Client Company Branding',
   feature_whitelabel_content: `<h4>Don’t leave your brand behind</h4>

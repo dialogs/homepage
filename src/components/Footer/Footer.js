@@ -17,7 +17,7 @@ export function Footer({ locale }) {
               </div>
               <div className="footer__contacts-item footer__contacts-item--email">
                 <a
-                  href="mailto:support@dlg.ru"
+                  href="mailto:info@dlg.ru"
                   className="link--default link--default--inverse"
                 >
                   info@dlg.im
