@@ -34,6 +34,7 @@ module.exports = {
   alt_amo_crm: 'amoCrm',
   alt_zendesk: 'Zendesk',
   alt_security_service: 'Служба безопасности',
+  alt_easy: 'dialog — это просто и эффективно',
 
   hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
   hero_subheader: 'Простая и эффективная платформа для коммуникаций в компании',
