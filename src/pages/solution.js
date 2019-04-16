@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import ImageFormatted from '../components/ImageFormatted';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -19,19 +20,19 @@ export default () => {
         </PageHeader>
         <Promo
           element1={
-            <img
-              className="promo__image promo__image--main"
-              src="/images/solution/solution-1.jpg"
+            <ImageFormatted
+              imgClass="promo__image promo__image--main"
+              src="/images/solution/solution-1@2x.jpg"
               srcSet="/images/solution/solution-1@2x.jpg 2x"
-              alt=""
+              altLangId="alt_solution_big"
             />
           }
           element2={
-            <img
-              className="promo__image promo__image--small"
-              src="/images/solution/solution-2.jpg"
+            <ImageFormatted
+              imgClass="promo__image promo__image--small"
+              src="/images/solution/solution-2@2x.jpg"
               srcSet="/images/solution/solution-2@2x.jpg 2x"
-              alt=""
+              altLangId="alt_solution_small"
             />
           }
         />

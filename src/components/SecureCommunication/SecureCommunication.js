@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { FormattedMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -17,9 +17,9 @@ export function SecureCommunication() {
       <div className="box box--architecture">
         <div className="col information">
           <div className="box__icon">
-            <img
+            <ImageFormatted
               src="/images/home/safety/icon-safety-communication-1.svg"
-              alt=""
+              altLangId="SecureCommunication_secure_arcitecture"
             />
           </div>
           <div className="box__title">
@@ -32,18 +32,18 @@ export function SecureCommunication() {
           </div>
         </div>
         <div className="col box--architecture__image">
-          <img
+          <ImageFormatted
             src="/images/solution/secure-communication.png"
-            alt="Безопасная архитектура"
+            altLangId="SecureCommunication_secure"
           />
         </div>
       </div>
 
       <div className="box box--standarts">
         <div className="box__icon">
-          <img
+          <ImageFormatted
             src="/images/home/safety/icon-safety-communication-2.svg"
-            alt=""
+            altLangId="SecureCommunication_high_standards"
           />
         </div>
         <div className="box__title">
@@ -95,7 +95,10 @@ export function SecureCommunication() {
 
       <div className="box box--compliance">
         <div className="box__icon">
-          <img src="/images/solution/icon-solution-3.svg" alt="" />
+          <ImageFormatted
+            src="/images/solution/icon-solution-3.svg"
+            altLangId="SecureCommunication_requirements"
+          />
         </div>
         <div className="box__title">
           <FormattedMessage id="SecureCommunication_requirements" />

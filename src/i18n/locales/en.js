@@ -36,6 +36,8 @@ module.exports = {
   alt_security_service: 'Security Service',
   alt_easy: 'dialog is simple and effective',
   alt_big_business: 'dialog and big business',
+  alt_solution_big: 'A simple solution for corporate communications',
+  alt_solution_small: 'A technological solution for corporate communications',
 
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
