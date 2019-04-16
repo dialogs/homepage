@@ -24,6 +24,9 @@ module.exports = {
   alt_messenger: 'Messenger',
   alt_corporate_features: 'Corporate Features',
   alt_integrations: 'Integrations',
+  alt_safety_on_premise:
+    'On-Premise platform installation on a company’s server',
+  alt_safety_standarts: 'Highest security standards',
 
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
