@@ -27,6 +27,13 @@ module.exports = {
   alt_safety_on_premise:
     'On-Premise platform installation on a company’s server',
   alt_safety_standarts: 'Highest security standards',
+  alt_ga: 'Google Analytics',
+  alt_dialog: 'dialog',
+  alt_jira: 'Jira',
+  alt_hr: 'HR',
+  alt_amo_crm: 'amoCrm',
+  alt_zendesk: 'Zendesk',
+  alt_security_service: 'Security Service',
 
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
