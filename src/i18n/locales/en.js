@@ -35,6 +35,7 @@ module.exports = {
   alt_zendesk: 'Zendesk',
   alt_security_service: 'Security Service',
   alt_easy: 'dialog is simple and effective',
+  alt_big_business: 'dialog and big business',
 
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
