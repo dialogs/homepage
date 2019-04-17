@@ -304,7 +304,6 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_ad_content" />
                 </div>
-                <img />
                 <ImageFormatted
                   imgClass="feature_block__image feature_block__image--laptop feature_block__image--ad"
                   src="/images/features/business-ad.png"
