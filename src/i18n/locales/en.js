@@ -62,6 +62,8 @@ module.exports = {
   alt_download_cloud_web: 'The dialog platform’s cloud app demo web version',
   alt_download_enterprise_web: 'Web version dialog Enterprise',
 
+  alt_icanchoose_about_dialog: 'icanchoose about dialog',
+
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
     'A simple and effective platform for communication within a company',

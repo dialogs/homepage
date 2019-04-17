@@ -63,6 +63,8 @@ module.exports = {
     'Web версия демонстрационного облачного приложения платформы dialog',
   alt_download_enterprise_web: 'Web версия dialog Enterprise',
 
+  alt_icanchoose_about_dialog: 'icanchoose о dialog',
+
   hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
   hero_subheader: 'Простая и эффективная платформа для коммуникаций в компании',
 
