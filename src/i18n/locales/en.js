@@ -63,6 +63,7 @@ module.exports = {
   alt_download_enterprise_web: 'Web version dialog Enterprise',
 
   alt_icanchoose_about_dialog: 'icanchoose about dialog',
+  alt_download: 'Download',
 
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
@@ -387,10 +388,10 @@ module.exports = {
   licenses_prodiction_process:
     'The process of developing software is based on design-thinking practices, architectural integrity, and the provisions and principles of the Agile Manifesto and DevOps practices. It is defined by the internal regulations of the design process and the implementing of technologies. A process for managing incidents and service requests has been implemented to provide technical support and eliminate software errors.',
   licenses_company_is_the_holder:
-    'The company is the copyright holder of 6 software products, which are registered with RosPatent.',
+    'The company is the copyright holder of 5 software products, which are registered with RosPatent.',
   licenses_required_licenses:
     'The company possesses the required qualifications and licenses from the Federal Service for Technical and Export Control of Russia and the FSB of Russia.',
-  licenses_FSB: ' FSB',
+  licenses_FSB: 'FSB',
   licenses_FSTEK: 'FSTEC',
   licenses_FSTEK_TZKI: 'FSTEC',
   licenses_associations: 'Registries and Associations',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import ImageFormatted from '../components/ImageFormatted';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
@@ -36,10 +37,10 @@ export default () => {
                   download
                 >
                   <span className="link--download__text">Dialog server</span>
-                  <img
+                  <ImageFormatted
+                    imgClass="link--download__icon"
                     src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
+                    altLangId="alt_download"
                   />
                 </a>
               </div>
@@ -57,10 +58,10 @@ export default () => {
                   download
                 >
                   <span className="link--download__text">Dialog Core</span>
-                  <img
+                  <ImageFormatted
+                    imgClass="link--download__icon"
                     src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
+                    altLangId="alt_download"
                   />
                 </a>
               </div>
@@ -80,10 +81,10 @@ export default () => {
                   <span className="link--download__text">
                     Dialog Android SDK
                   </span>
-                  <img
+                  <ImageFormatted
+                    imgClass="link--download__icon"
                     src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
+                    altLangId="alt_download"
                   />
                 </a>
               </div>
@@ -101,10 +102,10 @@ export default () => {
                   download
                 >
                   <span className="link--download__text">Dialog iOS SDK</span>
-                  <img
+                  <ImageFormatted
+                    imgClass="link--download__icon"
                     src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
+                    altLangId="alt_download"
                   />
                 </a>
               </div>
@@ -122,10 +123,10 @@ export default () => {
                   download
                 >
                   <span className="link--download__text">Dialog WEB SDK</span>
-                  <img
+                  <ImageFormatted
+                    imgClass="link--download__icon"
                     src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
+                    altLangId="alt_download"
                   />
                 </a>
               </div>
@@ -164,10 +165,10 @@ export default () => {
           </div>
           <div className="license__photos-list">
             <div className="license__photos-item">
-              <img
-                className="license__photos-image"
+              <ImageFormatted
+                imgClass="license__photos-image"
                 src="/images/license-fsb.jpg"
-                alt="ФСБ"
+                altLangId="licenses_FSB"
               />
               <div className="license__photos-link-box">
                 <a
@@ -178,20 +179,20 @@ export default () => {
                   <span className="link--download__text">
                     <FormattedMessage id="licenses_FSB" />
                   </span>
-                  <img
+                  <ImageFormatted
+                    imgClass="link--download__icon"
                     src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
+                    altLangId="alt_download"
                   />
                 </a>
               </div>
             </div>
 
             <div className="license__photos-item">
-              <img
-                className="license__photos-image"
+              <ImageFormatted
+                imgClass="license__photos-image"
                 src="/images/fstek-1.jpg"
-                alt="ФСБ СКЗИ"
+                altLangId="licenses_FSTEK"
               />
               <div className="license__photos-link-box">
                 <a
@@ -202,19 +203,19 @@ export default () => {
                   <span className="link--download__text">
                     <FormattedMessage id="licenses_FSTEK" />
                   </span>
-                  <img
+                  <ImageFormatted
+                    imgClass="link--download__icon"
                     src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
+                    altLangId="alt_download"
                   />
                 </a>
               </div>
             </div>
             <div className="license__photos-item">
-              <img
-                className="license__photos-image"
+              <ImageFormatted
+                imgClass="license__photos-image"
                 src="/images/fstek-3.jpg"
-                alt="ФСБ ТЗКИ"
+                altLangId="licenses_FSTEK_TZKI"
               />
               <div className="license__photos-link-box">
                 <a
@@ -225,10 +226,10 @@ export default () => {
                   <span className="link--download__text">
                     <FormattedMessage id="licenses_FSTEK_TZKI" />
                   </span>
-                  <img
+                  <ImageFormatted
+                    imgClass="link--download__icon"
                     src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
+                    altLangId="alt_download"
                   />
                 </a>
               </div>
