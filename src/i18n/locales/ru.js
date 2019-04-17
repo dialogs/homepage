@@ -39,6 +39,26 @@ module.exports = {
   alt_solution_big: 'Простое решение для корпоративных коммуникаций',
   alt_solution_small: 'Технологичное решение для корпоративных коммуникаций',
 
+  alt_download_cloud_mobile_ios:
+    'Мобильное демонстрационное облачное приложение платформы dialog для iPhone / iPad',
+  alt_download_enterprise_mobile_ios:
+    'Мобильное приложение dialog enterprise для iPhone / iPad',
+  alt_download_cloud_mobile_ios_qr:
+    'Скачать мобильное приложение демо в облаке для iPhone / iPad',
+  alt_download_enterprise_mobile_ios_qr:
+    'Скачать мобильное приложение enterprise для iPhone / iPad',
+  alt_download_appstore: 'Скачать с App Store',
+
+  alt_download_cloud_mobile_android:
+    'Мобильное демонстрационное облачное приложение платформы dialog для Android',
+  alt_download_enterprise_mobile_android:
+    'Мобильное приложение dialog enterprise для Android',
+  alt_download_cloud_mobile_android_qr:
+    'Скачать мобильное демонстрационное облачное приложение платформы dialog для Android',
+  alt_download_enterprise_mobile_android_qr:
+    'Скачать мобильное приложение dialog enterprise для Android',
+  alt_download_googleplay: 'Скачать с Google Play',
+
   hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
   hero_subheader: 'Простая и эффективная платформа для коммуникаций в компании',
 
