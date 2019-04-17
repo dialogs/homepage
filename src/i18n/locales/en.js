@@ -59,6 +59,9 @@ module.exports = {
     'Download mobile application dialog Enterprise for Android',
   alt_download_googleplay: 'get it on Google Play',
 
+  alt_download_cloud_web: 'The dialog platform’s cloud app demo web version',
+  alt_download_enterprise_web: 'Web version dialog Enterprise',
+
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
     'A simple and effective platform for communication within a company',
