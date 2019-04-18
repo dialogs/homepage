@@ -1,6 +1,7 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -12,18 +13,11 @@ import { Offer } from '../components/Offer/Offer';
 export default ({ pageContext: { locale } }) => {
   return (
     <Page>
-      <FormattedMessage id="meta_title_pricing">
-        {(title) => (
-          <FormattedMessage id="meta_description_pricing">
-            {(description) => (
-              <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={description} />
-              </Helmet>
-            )}
-          </FormattedMessage>
-        )}
-      </FormattedMessage>
+      <FormattedMetaTags
+        titleId="meta_title_pricing"
+        descriptionId="meta_description_pricing"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_pricing" />
 
       <Container>
         <div className="price__header">
