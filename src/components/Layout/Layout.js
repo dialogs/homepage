@@ -1,6 +1,6 @@
 import React from 'react';
-import { IntlProvider, addLocaleData, FormattedMessage } from 'react-intl';
-import Helmet from 'react-helmet';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import FormattedMetaTags from '../FormattedMetaTags';
 
 import Header from '../Header';
 import Modals from '../Modals';
@@ -17,18 +17,10 @@ export default ({ children, pageContext }) => {
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <main className="main">
-        <FormattedMessage id="meta_title_default">
-          {(title) => (
-            <FormattedMessage id="meta_description_default">
-              {(description) => (
-                <Helmet>
-                  <title>{title}</title>
-                  <meta name="description" content={description} />
-                </Helmet>
-              )}
-            </FormattedMessage>
-          )}
-        </FormattedMessage>
+        <FormattedMetaTags
+          titleId="meta_title_default"
+          descriptionId="meta_description_default"
+        />
 
         <Header locale={locale} originalPath={originalPath} />
         {children}
