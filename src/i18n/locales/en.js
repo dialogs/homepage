@@ -32,6 +32,11 @@ module.exports = {
   meta_description_legal:
     'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
 
+  og_title_default:
+    'dialog | A platform for simple and efficient communications',
+  og_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
   button_get_offer: 'Get Offer',
 
   get_offer: 'Get Offer',
