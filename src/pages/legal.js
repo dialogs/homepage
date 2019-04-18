@@ -1,5 +1,6 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../components/Container/Container';
@@ -7,18 +8,11 @@ import { Container } from '../components/Container/Container';
 export default () => {
   return (
     <Container>
-      <FormattedMessage id="meta_title_legal">
-        {(title) => (
-          <FormattedMessage id="meta_description_legal">
-            {(description) => (
-              <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={description} />
-              </Helmet>
-            )}
-          </FormattedMessage>
-        )}
-      </FormattedMessage>
+      <FormattedMetaTags
+        titleId="meta_title_legal"
+        descriptionId="meta_description_legal"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_legal" />
 
       <article className="legal">
         <h1>

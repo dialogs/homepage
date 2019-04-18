@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import Helmet from 'react-helmet';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { graphql } from 'gatsby';
 
 import { Container } from '../components/Container/Container';
@@ -11,18 +11,11 @@ import { Subscribe } from '../components/Subscribe/Subscribe';
 export default ({ data: { featured, allPosts, tags } }) => {
   return (
     <Container>
-      <FormattedMessage id="meta_title_blog">
-        {(title) => (
-          <FormattedMessage id="meta_description_blog">
-            {(description) => (
-              <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={description} />
-              </Helmet>
-            )}
-          </FormattedMessage>
-        )}
-      </FormattedMessage>
+      <FormattedMetaTags
+        titleId="meta_title_blog"
+        descriptionId="meta_description_blog"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_blog" />
 
       <BlogHeader featured={featured.posts} tags={tags} />
       <BlogRoster title="Последние статьи" posts={allPosts.posts} />

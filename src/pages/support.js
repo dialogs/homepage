@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import Helmet from 'react-helmet';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -9,18 +9,11 @@ import { Support } from '../components/Support/Support';
 export default () => {
   return (
     <Page>
-      <FormattedMessage id="meta_title_support">
-        {(title) => (
-          <FormattedMessage id="meta_description_support">
-            {(description) => (
-              <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={description} />
-              </Helmet>
-            )}
-          </FormattedMessage>
-        )}
-      </FormattedMessage>
+      <FormattedMetaTags
+        titleId="meta_title_support"
+        descriptionId="meta_description_support"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_support" />
 
       <Container>
         <Support />

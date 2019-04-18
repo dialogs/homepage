@@ -1,6 +1,7 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
@@ -9,18 +10,11 @@ import { PageHeader } from '../components/PageHeader/PageHeader';
 export default () => {
   return (
     <Container>
-      <FormattedMessage id="meta_title_patents">
-        {(title) => (
-          <FormattedMessage id="meta_description_patents">
-            {(description) => (
-              <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={description} />
-              </Helmet>
-            )}
-          </FormattedMessage>
-        )}
-      </FormattedMessage>
+      <FormattedMetaTags
+        titleId="meta_title_patents"
+        descriptionId="meta_description_patents"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_patents" />
 
       <div className="license__column-content">
         <section className="license__section license__intro">
