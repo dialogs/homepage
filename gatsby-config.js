@@ -13,6 +13,12 @@ module.exports = {
     : undefined,
   plugins: [
     {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'GTM-M3KJBNM',
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'dialog — коммуникационная платформа для компаний',
