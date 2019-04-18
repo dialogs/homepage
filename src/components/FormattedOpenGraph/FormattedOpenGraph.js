@@ -10,8 +10,13 @@ export function FormattedOpenGraph({
 }) {
   const ogTitle = messages[idOgTitle];
   const ogDescription = messages[idOgDescription];
-  const ogUrl = window.location.href;
-  const ogImage = `${window.location.origin}${ogImageSrc}`;
+  let ogUrl;
+  let ogImage;
+
+  if (typeof window !== `undefined`) {
+    ogUrl = window.location.href;
+    ogImage = `${window.location.origin}${ogImageSrc}`;
+  }
 
   return (
     <Helmet>
