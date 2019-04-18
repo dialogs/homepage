@@ -1,6 +1,7 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
 import { Link } from 'gatsby';
 
@@ -19,18 +20,11 @@ export default ({ pageContext: { locale } }) => {
 
   return (
     <div className="about page">
-      <FormattedMessage id="meta_title_about">
-        {(title) => (
-          <FormattedMessage id="meta_description_about">
-            {(description) => (
-              <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={description} />
-              </Helmet>
-            )}
-          </FormattedMessage>
-        )}
-      </FormattedMessage>
+      <FormattedMetaTags
+        titleId="meta_title_about"
+        descriptionId="meta_description_about"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_about" />
 
       <Container>
         <PageHeader>
