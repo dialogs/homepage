@@ -25,6 +25,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        trackingId: '47364889',
+        webvisor: true,
+        trackHash: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'dialog — коммуникационная платформа для компаний',
