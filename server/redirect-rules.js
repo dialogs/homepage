@@ -1,4 +1,4 @@
-module.expors = [
+module.exports = [
   {
     to: '/',
     from: [
@@ -111,6 +111,6 @@ module.expors = [
       '/ru/blog/chatbots-pt1-2',
       '/ru/blog/raising-productivity-2',
       '/ru/blog/quickstart-2',
-    ]
-  }
+    ],
+  },
 ];
