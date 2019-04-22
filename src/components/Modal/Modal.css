@@ -119,3 +119,9 @@
     min-height: auto;
   }
 }
+
+@media (--tablet-viewport) {
+  body.modal-open {
+    overflow-y: hidden;
+  }
+}
