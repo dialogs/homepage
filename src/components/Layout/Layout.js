@@ -1,5 +1,6 @@
 import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
+import { HeadScripts } from '../HeadScripts/HeadScripts';
 
 import Header from '../Header';
 import Modals from '../Modals';
@@ -16,6 +17,8 @@ export default ({ children, pageContext }) => {
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <main className="main">
+        <HeadScripts />
+
         <Header locale={locale} originalPath={originalPath} />
         {children}
         <Footer locale={locale} />
