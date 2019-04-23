@@ -26,7 +26,7 @@ export function DownloadMobile({ isEnterprise }) {
             <ImageFormatted
               src={
                 isEnterprise
-                  ? '/images/download/enterprise-mobile-iphone@2x.png'
+                  ? '/images/download/ee-download-iphone-new.png'
                   : '/images/download/cloud-mobile-iphone@2x.png'
               }
               altLangId={
@@ -65,7 +65,7 @@ export function DownloadMobile({ isEnterprise }) {
             <ImageFormatted
               src={
                 isEnterprise
-                  ? '/images/download/enterprise-mobile-android@2x.png'
+                  ? '/images/download/ee-download-android-new.png'
                   : '/images/download/cloud-mobile-android@2x.png'
               }
               altLangId={
