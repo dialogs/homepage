@@ -41,9 +41,9 @@ function sendAnal({ form }) {
         }
       }
 
-      // if (fbq) {
-      //   fbq('track', 'SubmitApplication');
-      // }
+      if (window.fbq) {
+        window.fbq('track', 'SubmitApplication');
+      }
     } catch (error) {
       console.warn('Sending events failed.', error);
     }
@@ -53,7 +53,6 @@ function sendAnal({ form }) {
 }
 
 function getFormData(form) {
-  // console.log('getFormData', { form });
   return new Promise((resolve, reject) => {
     resolve({
       ...form,
@@ -65,7 +64,6 @@ function getFormData(form) {
 }
 
 function sendFormData(form, endpoint) {
-  // console.log('sendFormData', { form, endpoint });
   return axios.post(endpoint, form).then(({ data }) => {
     return new Promise((resolve, reject) => {
       if (data.status === 200) {
