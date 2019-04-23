@@ -66,8 +66,7 @@ function notifyEmail(body, site) {
     };
 
     let mailAddressTo =
-      // body.form === 'support' ? config.email_to_support : config.email_to;
-      body.form === 'support' ? 'i.krasnikov@dlg.im' : 'i.krasnikov@dlg.im';
+      body.form === 'support' ? config.email_to_support : config.email_to;
 
     mailer.sendMail(
       {
@@ -126,7 +125,7 @@ router.post(['/subscribe', '/offer'], (request, response, next) => {
     promises.push(notifyDialog(body, referer));
   }
   if (body.form === 'subscribe') {
-    // promises.push(notifyMailchimp(body, referer));
+    promises.push(notifyMailchimp(body, referer));
   }
 
   Promise.all(promises)
