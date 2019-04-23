@@ -4,6 +4,13 @@ import { FormattedMessage } from 'react-intl';
 import appLinks from '../../constants/links';
 
 export function DownloadWeb({ isEnterprise }) {
+  function handleDownloadAnalytics(event, param) {
+    if (typeof window !== 'undefined') {
+      window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
+      window.yaCounter.reachGoal(`download_${param}`);
+    }
+  }
+
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
 
   return (
@@ -35,6 +42,7 @@ export function DownloadWeb({ isEnterprise }) {
           href={links.web}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(event) => handleDownloadAnalytics(event, 'dialog_web')}
         >
           <FormattedMessage id="start" />
         </a>

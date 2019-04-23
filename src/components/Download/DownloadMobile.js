@@ -6,6 +6,13 @@ import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
 
 export function DownloadMobile({ isEnterprise }) {
+  function handleDownloadAnalytics(event, param) {
+    if (typeof window !== 'undefined') {
+      window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
+      window.yaCounter.reachGoal(`download_${param}`);
+    }
+  }
+
   const os = getOS();
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
 
@@ -46,7 +53,11 @@ export function DownloadMobile({ isEnterprise }) {
               alt=""
             />
           </div>
-          <a className="store-link" href={links.ios}>
+          <a
+            className="store-link"
+            href={links.ios}
+            onClick={(event) => handleDownloadAnalytics(event, 'dialog_ios')}
+          >
             <img
               src="/images/download/button-app-store.png"
               srcSet="/images/download/button-app-store@2x.png 2x"
@@ -81,7 +92,13 @@ export function DownloadMobile({ isEnterprise }) {
               alt=""
             />
           </div>
-          <a className="store-link" href={links.android}>
+          <a
+            className="store-link"
+            href={links.android}
+            onClick={(event) =>
+              handleDownloadAnalytics(event, 'dialog_android')
+            }
+          >
             <img
               src="/images/download/button-google-play.png"
               srcSet="/images/download/button-google-play@2x.png 2x"

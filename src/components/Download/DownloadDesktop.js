@@ -5,11 +5,17 @@ import { FormattedMessage } from 'react-intl';
 import appLinks from '../../constants/links';
 
 export function DownloadDesktop({ isEnterprise }) {
+  function handleDownloadAnalytics(event, param) {
+    if (typeof window !== 'undefined') {
+      window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
+      window.yaCounter.reachGoal(`download_${param}`);
+    }
+  }
+
   // const os = getOS();
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
 
-  {
-    /*
+  /*
   function renderDownloadDesktopImage() {
     switch (os) {
       case 'macOS':
@@ -118,7 +124,6 @@ export function DownloadDesktop({ isEnterprise }) {
     }
   }
   */
-  }
 
   return (
     <div className="download__section download__item download__desktop">
@@ -154,22 +159,40 @@ export function DownloadDesktop({ isEnterprise }) {
 
       <div className="download__desktop-systems">
         <div className="download__desktop-system">
-          <a className="download__item-link" href={links.osx}>
+          <a
+            className="download__item-link"
+            href={links.osx}
+            onClick={(event) => handleDownloadAnalytics(event, 'dialog_macos')}
+          >
             Mac OS
           </a>
         </div>
         <div className="download__desktop-system">
-          <a className="download__item-link" href={links.windows}>
+          <a
+            className="download__item-link"
+            href={links.windows}
+            onClick={(event) =>
+              handleDownloadAnalytics(event, 'dialog_windows')
+            }
+          >
             Windows
           </a>
         </div>
         <div className="download__desktop-system">
-          <a className="download__item-link" href={links.linux}>
+          <a
+            className="download__item-link"
+            href={links.linux}
+            onClick={(event) => handleDownloadAnalytics(event, 'dialog_linux')}
+          >
             Linux 32
           </a>
         </div>
         <div className="download__desktop-system">
-          <a className="download__item-link" href={links.linux64}>
+          <a
+            className="download__item-link"
+            href={links.linux64}
+            onClick={(event) => handleDownloadAnalytics(event, 'dialog_linux')}
+          >
             Linux 64
           </a>
         </div>
