@@ -1,13 +1,15 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { getOS } from '../../utils/getOS';
+// import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
 
 export function DownloadDesktop({ isEnterprise }) {
-  const os = getOS();
+  // const os = getOS();
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
 
+  {
+    /*
   function renderDownloadDesktopImage() {
     switch (os) {
       case 'macOS':
@@ -115,6 +117,8 @@ export function DownloadDesktop({ isEnterprise }) {
         );
     }
   }
+  */
+  }
 
   return (
     <div className="download__section download__item download__desktop">
@@ -122,14 +126,54 @@ export function DownloadDesktop({ isEnterprise }) {
         <FormattedMessage id="download_desktop_title" />
       </h2>
       <div className="download__desktop-pictute">
-        {renderDownloadDesktopImage()}
+        {/*renderDownloadDesktopImage()*/}
+        <img
+          className="download__desktop-img"
+          src={
+            isEnterprise
+              ? '/images/download/enterprise-desktop-macos.png'
+              : '/images/download/cloud-desktop-macos.png'
+          }
+          srcSet={
+            isEnterprise
+              ? '/images/download/enterprise-desktop-macos@2x.png 2x'
+              : '/images/download/cloud-desktop-macos@2x.png 2x'
+          }
+          alt={
+            isEnterprise
+              ? 'Десктопное приложение enterprise для MacOS'
+              : 'Десктопное приложение демо в облаке для MacOS'
+          }
+        />
       </div>
-
+      {/*
       <div className="download__desktop-button-box">
         {renderDownloadDesktopButton()}
       </div>
+      */}
 
       <div className="download__desktop-systems">
+        <div className="download__desktop-system">
+          <a className="download__item-link" href={links.osx}>
+            Mac OS
+          </a>
+        </div>
+        <div className="download__desktop-system">
+          <a className="download__item-link" href={links.windows}>
+            Windows
+          </a>
+        </div>
+        <div className="download__desktop-system">
+          <a className="download__item-link" href={links.linux}>
+            Linux 32
+          </a>
+        </div>
+        <div className="download__desktop-system">
+          <a className="download__item-link" href={links.linux64}>
+            Linux 64
+          </a>
+        </div>
+        {/*
         {os !== 'macOS' && os !== 'iOS' && (
           <div className="download__desktop-system">
             <a className="download__item-link" href={links.osx}>
@@ -158,6 +202,7 @@ export function DownloadDesktop({ isEnterprise }) {
             </a>
           </div>
         )}
+        */}
       </div>
     </div>
   );
