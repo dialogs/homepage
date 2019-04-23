@@ -377,10 +377,14 @@
     }
 
     &-img {
-      max-width: 100%;
+      max-width: 500px;
       display: block;
       border-radius: 2px;
       box-shadow: 0 0 64px 0 rgba(0, 0, 0, 0.2);
+
+      @media (--mobile-viewport) {
+        max-width: 100%;
+      }
     }
 
     &-button-box {

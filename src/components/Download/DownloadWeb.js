@@ -20,9 +20,6 @@ export function DownloadWeb({ isEnterprise }) {
               ? '/images/download/enterprise-web.png'
               : '/images/download/cloud-web.png'
           }
-          srcSet={
-            isEnterprise ? '/images/download/enterprise-web@2x.png 2x' : ''
-          }
           altLangId={
             isEnterprise
               ? 'alt_download_enterprise_web'
