@@ -10,7 +10,14 @@ import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
 
 import './OfferForm.css';
 
-export function OfferForm({ pending, error, value, onSubmit, className }) {
+export function OfferForm({
+  pending,
+  error,
+  value,
+  onSubmit,
+  className,
+  flag = 'sales',
+}) {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -25,7 +32,7 @@ export function OfferForm({ pending, error, value, onSubmit, className }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit({ ...form, form: 'offer' });
+    onSubmit({ ...form, form: 'offer', flag: flag });
   }
 
   function handleChange(value, name) {

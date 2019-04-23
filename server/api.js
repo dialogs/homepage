@@ -30,7 +30,7 @@ Accept-Language: ${body.language}
 Document-referrer: ${body.referer}
 Geolocation: ${JSON.stringify(body.geo, null, '  ')}
 Page-href: ${body.href}
-GAcid: ${body.gacid}
+GAcid: ${body.data.GACID}
   `;
 
   return message;
@@ -66,7 +66,8 @@ function notifyEmail(body, site) {
     };
 
     let mailAddressTo =
-      body.form === 'support' ? config.email_to_support : config.email_to;
+      // body.form === 'support' ? config.email_to_support : config.email_to;
+      body.form === 'support' ? 'i.krasnikov@dlg.im' : 'i.krasnikov@dlg.im';
 
     mailer.sendMail(
       {
@@ -97,15 +98,15 @@ function notifyMailchimp(body, site) {
   return mailchimp.put(`/lists/${listId}/members/${md5(body.email)}`, {
     email_address: body.email,
     status: 'subscribed',
-    merge_fields: {
-      FUNAME: body.name,
-    },
+    // merge_fields: {
+    //   FUNAME: body.name,
+    // },
   });
 }
 
 function logBody(body, site) {
   return new Promise((resolve, reject) => {
-    console.log({ site, body });
+    console.log({ body, site });
     resolve();
   });
 }
@@ -125,7 +126,7 @@ router.post(['/subscribe', '/offer'], (request, response, next) => {
     promises.push(notifyDialog(body, referer));
   }
   if (body.form === 'subscribe') {
-    promises.push(notifyMailchimp(body, referer));
+    // promises.push(notifyMailchimp(body, referer));
   }
 
   Promise.all(promises)
