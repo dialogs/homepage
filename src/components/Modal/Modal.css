@@ -119,3 +119,8 @@
     min-height: auto;
   }
 }
+
+body.modal-open,
+#___gatsby.modal-open {
+  overflow-y: hidden;
+}

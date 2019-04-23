@@ -94,6 +94,7 @@
 
       @media (--tablet-landscape-viewport) {
         display: block;
+        z-index: 1;
       }
 
       &:hover {
