@@ -2,18 +2,16 @@ import axios from 'axios';
 
 import { Field } from '../utils/field';
 
-function handleResponse({ data }) {
-  console.log('handleResponse', { data });
-  return new Promise((resolve, reject) => {
-    if (data.status === 500) {
-      reject(data);
-    } else {
-      resolve(data);
-    }
-  });
+function getGACID() {
+  const cookie = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)');
+  const raw = cookie ? decodeURIComponent(cookie[1]) : null;
+  const match = raw.match(/(\d+\.\d+)$/);
+
+  return match ? match[1] : null;
 }
 
-function sendAnal(form) {
+function sendAnal({ form }) {
+  console.log('sendAnal', { form });
   if (typeof window !== 'undefined') {
     try {
       if (window.ga && window.yaCounter) {
@@ -24,24 +22,6 @@ function sendAnal(form) {
         }
 
         switch (form.form) {
-          //   case 'Sales':
-          //     ga('dlg.send', 'event', 'submit', 'form', 'block');
-          //     yaCounter.reachGoal('submit_form_block');
-          //     if (data.PAGE === 'index') {
-          //       ga('dlg.send', 'event', 'submit', 'form', 'block_main');
-          //       yaCounter.reachGoal('submit_form_block_main');
-          //     } else if (data.PAGE === 'developers') {
-          //       ga('dlg.send', 'event', 'submit', 'form', 'block_sdk');
-          //       yaCounter.reachGoal('submit_form_block_sdk');
-          //     } else {
-          //       ga('dlg.send', 'event', 'submit', 'form', `block_${data.PAGE}`);
-          //       yaCounter.reachGoal(`submit_form_block_${data.PAGE}`);
-          //     }
-          //     break;
-          //   case 'Partner':
-          //     ga('dlg.send', 'event', 'submit', 'form', 'partners');
-          //     yaCounter.reachGoal('submit_form_block_partners');
-          //     break;
           case 'support':
             break;
           case 'offer':
@@ -49,7 +29,6 @@ function sendAnal(form) {
               window.ga('dlg.send', 'event', 'submit', 'form', 'block');
               window.yaCounter.reachGoal('submit_form_block');
             } else {
-              // flag === 'popup'
               window.ga('dlg.send', 'event', 'submit', 'form', 'popup');
               window.yaCounter.reachGoal('submit_form_block_popup');
             }
@@ -73,27 +52,35 @@ function sendAnal(form) {
   return Promise.resolve();
 }
 
-function submitFormAsync(form, endpoint) {
-  console.log('submitFormAsync', { form, endpoint });
-  return axios.post(endpoint, form).then(handleResponse);
+function getFormData(form) {
+  // console.log('getFormData', { form });
+  return new Promise((resolve, reject) => {
+    resolve({
+      ...form,
+      data: {
+        GACID: getGACID(),
+      },
+    });
+  });
 }
 
-function addInfoToForm(form) {
-  const data = {};
+function sendFormData(form, endpoint) {
+  // console.log('sendFormData', { form, endpoint });
+  return axios.post(endpoint, form).then(({ data }) => {
+    return new Promise((resolve, reject) => {
+      if (data.status === 200) {
+        resolve({ form, data });
+      } else {
+        reject({ form, data });
+      }
+    });
+  });
+}
 
-  // add gacid
-  let match = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)');
-  let raw = match ? decodeURIComponent(match[1]) : null;
-
-  match = raw.match(/(\d+\.\d+)$/);
-  let gacid = match ? match[1] : null;
-  data.GACID = gacid;
-
-  // return new Promise((resolve, reject) => {
-  //   resolve({ ...form, data });
-  // });
-
-  return { ...form, data };
+function sendForm(form, endpoint) {
+  return getFormData(form)
+    .then((data) => sendFormData(data, endpoint))
+    .then(sendAnal);
 }
 
 export function submitOfferForm(form) {
@@ -102,9 +89,7 @@ export function submitOfferForm(form) {
       dispatch,
       type: 'OFFER_FORM_SUBMIT',
       context: {},
-      action: submitFormAsync(addInfoToForm(form), '/api/v1/offer').then(() =>
-        sendAnal(form),
-      ),
+      action: sendForm(form, '/api/v1/offer'),
       initialState: null,
     });
   };
@@ -116,9 +101,7 @@ export function submitSubscribeForm(form) {
       dispatch,
       type: 'SUBSCRIBE_FORM_SUBMIT',
       context: {},
-      action: addInfoToForm().then((data) =>
-        submitFormAsync(data, form, '/api/v1/subscribe'),
-      ),
+      action: sendForm(form, '/api/v1/subscribe'),
       initialState: null,
     });
   };
@@ -130,9 +113,7 @@ export function submitSupportForm(form) {
       dispatch,
       type: 'SUPPORT_FORM_SUBMIT',
       context: {},
-      action: addInfoToForm().then((data) =>
-        submitFormAsync(data, form, '/api/v1/support'),
-      ),
+      action: sendForm(form, '/api/v1/support'),
       initialState: null,
     });
   };

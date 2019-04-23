@@ -83,7 +83,7 @@ function notifyEmail(body, site) {
       },
       (error, info) => {
         if (error) {
-          console.log(error);
+          reject(error);
         }
 
         resolve();
