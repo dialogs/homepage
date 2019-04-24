@@ -1,6 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
+
+import { Link } from 'gatsby';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
@@ -17,6 +20,12 @@ export default ({ pageContext: { locale } }) => {
 
   return (
     <div className="about page">
+      <FormattedMetaTags
+        titleId="meta_title_about"
+        descriptionId="meta_description_about"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_about" />
+
       <Container>
         <PageHeader>
           <FormattedMessage id="more_than_messenger" />

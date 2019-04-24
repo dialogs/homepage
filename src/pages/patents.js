@@ -1,5 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
@@ -8,6 +10,12 @@ import { PageHeader } from '../components/PageHeader/PageHeader';
 export default () => {
   return (
     <Container>
+      <FormattedMetaTags
+        titleId="meta_title_patents"
+        descriptionId="meta_description_patents"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_patents" />
+
       <div className="license__column-content">
         <section className="license__section license__intro">
           <PageHeader>

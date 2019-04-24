@@ -1,5 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -13,6 +15,12 @@ import { Offer } from '../components/Offer/Offer';
 export default () => {
   return (
     <Page>
+      <FormattedMetaTags
+        titleId="meta_title_solutions"
+        descriptionId="meta_description_solutions"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_solutions" />
+
       <Container>
         <PageHeader className="solution">
           <FormattedMessage id="solutions_simple" />

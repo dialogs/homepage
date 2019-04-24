@@ -1,4 +1,42 @@
 module.exports = {
+  meta_title_default:
+    'dialog | A platform for simple and efficient communications',
+  meta_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
+  meta_title_about: 'About | dialog',
+  meta_description_about:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_solutions: 'Box solutions | dialog',
+  meta_description_solutions:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_features: 'Platform features | dialog',
+  meta_description_features:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_download: 'Download | dialog',
+  meta_description_download:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_pricing: 'Pricing | dialog',
+  meta_description_pricing:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_support: 'Technical Support | dialog',
+  meta_description_support:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_blog: 'Blog | dialog',
+  meta_description_blog:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_patents: 'Patents | dialog',
+  meta_description_patents:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_legal: 'Legal Information | dialog',
+  meta_description_legal:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
+  og_title_default:
+    'dialog | A platform for simple and efficient communications',
+  og_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
   button_get_offer: 'Get Offer',
 
   get_offer: 'Get Offer',
