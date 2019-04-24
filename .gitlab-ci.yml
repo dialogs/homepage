@@ -92,8 +92,8 @@ staging:
     - cd homepage && ansible-galaxy install -r requirements.yml
     - ansible-playbook -u root playbook.yml --diff -e homepage_http_port=7083 -e homepage_service_name="homepage-demo" -e homepage_container="-e homepage_container="quay.io/dlgim/homepage-next:0.0.0.412" --limit homepage-old
     
-  dependencies:
-    - version
+#   dependencies:
+#     - version
 #   only:
 #     - develop
   tags:
