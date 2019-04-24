@@ -1,4 +1,5 @@
 const { isDev, ghost } = require('./server/config');
+const siteUrl = 'https://dlg.im';
 
 module.exports = {
   siteMetadata: {
@@ -49,8 +50,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: siteUrl,
-        policy: [{ userAgent: '*', disallow: ['/'] }],
+        policy: [
+          {
+            userAgent: '*',
+            allow: ['/'],
+            disallow: ['/@joinchat', '/@/joinchat', ' /joinchat'],
+          },
+        ],
       },
     },
     {
