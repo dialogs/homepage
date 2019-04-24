@@ -7,6 +7,7 @@ variables:
   IMAGE_NAME: dlgim/$CI_PROJECT_NAME
   BUILD_NUMBER: '${CI_PIPELINE_IID}'
   PROD_URL: 'https://dlg.im'
+  DEV_URL: 'https://demo.dlg.im'
 
 cache:
   key: '${CI_COMMIT_SHA}'
@@ -16,82 +17,88 @@ cache:
     - ./public
 
 stages:
-  #- version
-  #- build
-  #- docker
+  - version
+  - build
+  - docker
   - deploy
-  #- notify
+  - notify
 
-# version:
-#   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
-#   stage: version
-#   script:
-#     - |
-#       curl --header 'Content-Type: application/json' --request POST \
-#       --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
-#       $DIALOG_WEBHOOK
+version:
+  image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
+  stage: version
+  script:
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
+      $DIALOG_WEBHOOK
 
-#     - version=$(node -p "require('./package.json').version")
-#     - image_version="$version.${BUILD_NUMBER}"
-#     - echo $image_version
-#     - echo "export IMAGE_VERSION=$image_version" > variables
-#   artifacts:
-#     paths:
-#       - variables
+    - version=$(node -p "require('./package.json').version")
+    - image_version="$version.${BUILD_NUMBER}"
+    - echo $image_version
+    - echo "export IMAGE_VERSION=$image_version" > variables
+  artifacts:
+    paths:
+      - variables
 
-# build:
-#   image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
-#   stage: build
-#   script:
-#     - source variables
-#     - npm ci
-#     - npm run build
+build:
+  image: gitlab.transmit.im:5001/gitlab/builders/web-builder:latest
+  stage: build
+  script:
+    - source variables
+    - npm ci
+    - npm run build
 
-#     - |
-#       curl --header 'Content-Type: application/json' --request POST \
-#       --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}*: application build successful.\"}" \
-#       $DIALOG_WEBHOOK
-#   dependencies:
-#     - version
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}*: application build successful.\"}" \
+      $DIALOG_WEBHOOK
+  dependencies:
+    - version
 
-# docker build:
-#   stage: docker
-#   script:
-#     - source variables
-#     - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
-#     - docker build -t "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" .
-#     - docker tag "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" "${REGISTRY}"/"${IMAGE_NAME}":latest
-#     - docker push "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}"
-#     - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
+docker build:
+  stage: docker
+  script:
+    - source variables
+    - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
+    - docker build -t "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" .
+    - docker tag "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}" "${REGISTRY}"/"${IMAGE_NAME}":latest
+    - docker push "${REGISTRY}"/"${IMAGE_NAME}":"${IMAGE_VERSION}"
+    - if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then docker push "${REGISTRY}"/"${IMAGE_NAME}":latest; fi
 
-#     - |
-#       curl --header 'Content-Type: application/json' --request POST \
-#       --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}:* docker image ready. ${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}\"}" \
-#       $DIALOG_WEBHOOK
-#   dependencies:
-#     - version
-#     - build
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👌🏾 Homepage build *#${BUILD_NUMBER}:* docker image ready. ${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}\"}" \
+      $DIALOG_WEBHOOK
+  dependencies:
+    - version
+    - build
 
 staging:
   stage: deploy
   environment:
     name: staging
-    url: https://demo.dlg.im
+    url: '${DEV_URL}'
   cache: {}
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
-    # - source variables
+    - source variables
+    - |
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* deploy to DEV started.\"}" \
+      $DIALOG_WEBHOOK
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
 
     - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
     - cd homepage && ansible-galaxy install -r requirements.yml
-    - ansible-playbook -u root playbook.yml --diff -e homepage_http_port=7083 -e homepage_service_name="homepage-demo" -e homepage_container="quay.io/dlgim/homepage-next:0.0.0.412" --limit homepage-old
-    
-#   dependencies:
-#     - version
-#   only:
-#     - develop
+    - ansible-playbook -u root playbook.yml --diff -e homepage_http_port=7083 -e homepage_service_name="homepage-demo" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}" --limit homepage-old
+      curl --header 'Content-Type: application/json' --request POST \
+      --data "{\"text\": \"🤟🏾 Homepage build *#${BUILD_NUMBER}:* successfully deployed. [Check here](${DEV_URL})\"}" \
+      $DIALOG_WEBHOOK    
+  dependencies:
+    - version
+  only:
+    - develop
   tags:
     - sbc-deploy
 
