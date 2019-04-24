@@ -22,7 +22,7 @@ export default () => {
           element1={
             <ImageFormatted
               imgClass="promo__image promo__image--main"
-              src="/images/solution/solution-1@2x.jpg"
+              src="/images/solution/solution-1-1.jpg"
               srcSet="/images/solution/solution-1@2x.jpg 2x"
               altLangId="alt_solution_big"
             />
