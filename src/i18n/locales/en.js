@@ -1,4 +1,42 @@
 module.exports = {
+  meta_title_default:
+    'dialog | A platform for simple and efficient communications',
+  meta_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
+  meta_title_about: 'About | dialog',
+  meta_description_about:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_solutions: 'Box solutions | dialog',
+  meta_description_solutions:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_features: 'Platform features | dialog',
+  meta_description_features:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_download: 'Download | dialog',
+  meta_description_download:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_pricing: 'Pricing | dialog',
+  meta_description_pricing:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_support: 'Technical Support | dialog',
+  meta_description_support:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_blog: 'Blog | dialog',
+  meta_description_blog:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_patents: 'Patents | dialog',
+  meta_description_patents:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_legal: 'Legal Information | dialog',
+  meta_description_legal:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
+  og_title_default:
+    'dialog | A platform for simple and efficient communications',
+  og_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
   button_get_offer: 'Get Offer',
 
   get_offer: 'Get Offer',
@@ -20,56 +58,102 @@ module.exports = {
   menu_patents: 'Patents and Licenses',
   menu_legal: 'Legal Information',
 
+  alt_hero_header: 'Achieve your team goals faster without losing focus',
+  alt_messenger: 'Messenger',
+  alt_corporate_features: 'Corporate Features',
+  alt_integrations: 'Integrations',
+  alt_safety_on_premise:
+    'On-Premise platform installation on a company’s server',
+  alt_safety_standarts: 'Highest security standards',
+  alt_ga: 'Google Analytics',
+  alt_dialog: 'dialog',
+  alt_jira: 'Jira',
+  alt_hr: 'HR',
+  alt_amo_crm: 'amoCrm',
+  alt_zendesk: 'Zendesk',
+  alt_security_service: 'Security Service',
+  alt_easy: 'dialog is simple and effective',
+  alt_big_business: 'dialog and big business',
+  alt_solution_big: 'A simple solution for corporate communications',
+  alt_solution_small: 'A technological solution for corporate communications',
+
+  alt_download_cloud_mobile_ios:
+    'Mobile application dialog platform’s cloud for iPhone / iPad',
+  alt_download_enterprise_mobile_ios:
+    'Mobile application dialog Enterprise for iPhone / iPad',
+  alt_download_cloud_mobile_ios_qr:
+    'Download mobile application dialog platform’s cloud for iPhone / iPad',
+  alt_download_enterprise_mobile_ios_qr:
+    'Download mobile application dialog Enterprise for iPhone / iPad',
+  alt_download_appstore: 'Download on the App Store',
+
+  alt_download_cloud_mobile_android:
+    'The dialog platform’s cloud mobile app demo for Android',
+  alt_download_enterprise_mobile_android:
+    'Mobile application dialog Enterprise for Android',
+  alt_download_cloud_mobile_android_qr:
+    'Download the dialog platform’s cloud mobile app demo for Android',
+  alt_download_enterprise_mobile_android_qr:
+    'Download mobile application dialog Enterprise for Android',
+  alt_download_googleplay: 'get it on Google Play',
+
+  alt_download_cloud_web: 'The dialog platform’s cloud app demo web version',
+  alt_download_enterprise_web: 'Web version dialog Enterprise',
+
+  alt_icanchoose_about_dialog: 'icanchoose about dialog',
+  alt_download: 'Download',
+
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
-    'A simple and effective platform for communication within a company',
+    'A simple and effective communication platform for your company',
 
-  platform_header: 'dialog – a communications <br />platform for companies',
+  platform_header: 'dialog – a corporate communications <br />platform',
   messenger: 'Messenger',
   corporate_features: 'Corporate Features',
   integrations: 'Integrations',
   platform_chats: 'Private and Group Chats',
   platform_free_calls: 'Free Audio/Video Calls',
   platform_files_sharing: 'Unlimited File Sharing',
-  platform_alert_channels: 'Alerts Channels',
+  platform_alert_channels: 'Notifications Channels',
   platform_voice_messages: 'Voice Messages',
   platform_emojis_stickers: 'Emojis and Stickers',
-  platform_availability: 'Availability on Popular Platforms',
+  platform_availability: 'Available on Popular Platforms',
 
   platform_smart_chatbots: 'Smart Chatbots',
-  platform_ad_integration: 'Active Directory Integration (AD/LDAP)',
+  platform_ad_integration: 'Integration with Active Directory (AD/LDAP)',
   admin_panel: 'Admin Panel',
   screen_sharing: 'Screen Sharing',
   platform_secure_communication:
-    'A range of security features for secure communications',
+    'A range of safety features for secure communications',
   platform_customization:
-    'The possibility to customize dialog’s interface to fit a client’s branding',
+    'Possibility to customize dialog’s interface to fit a client’s branding guidelines',
 
   platform_api: 'dialog API for integration with third-party applications',
   platform_bot_sdk:
-    'Bot SDK (Software Development Kit) for creating your own bots',
+    'Bot SDK (Software Development Kit) to create your own bots',
 
   safety_header: `Security and Compliance`,
   secure_communication: 'Secure communications',
   safety_text_1:
-    'On-Premise platform installation on a company’s server. The range of security features minimizes the risk of information leaks, external failures and locks in the software.',
+    'On-Premise platform installation on a company’s server. The range of security features minimizes the risk of information leaks, external failures and blockings.',
   safety_text_2:
-    'dialog meets the highest security standards, providing protection from data theft, confidential information leaks and viruses. The software is regularly checked for vulnerabilities and bugs.',
+    'dialog meets the highest security standards, providing protection from data theft, confidential information leaks and malware propagation. The software is regularly checked for vulnerabilities and bugs.',
   compliance: 'Compliance',
   compliance_index_1:
-    'The National Software Registry of the Ministry of Digital Development, Communications and Mass Media',
+    '“Dialog” is included in the register of accredited IT organizations in Russia (No. 436 dated 09/07/2016)',
   compliance_index_2:
-    'FSTEC Methods for Cryptographic Protection of Information',
-  compliance_index_3: 'FSTEC Technical Protection of Confidential Information',
+    '“Dialog” is licensed by the FSTEC Russia in the field of technical protection for confidential information, development and production of relevant security tools',
+  compliance_index_3:
+    '“Dialog” is licensed by the Federal Security Service of Russia to develop, produce and distribute cryptographic tools',
 
   compliance_text_1:
-    'The software development company OOO Dialog is registered as an accredited organization for information technology in the Russian Federation (No. 436 dated 09/07/2016).',
+    'The software development company "Dialog" is registered as an accredited IT organization in the Russian Federation (No. 436 dated 09/07/2016).',
   compliance_text_2:
-    'dialog messenger complies with the requirements of the Unified Registry of Russian Programs for Electronic Computers and Databases, and is also on the national software registry.',
+    'dialog messenger complies with the requirements of the Unified Registry of Russian Programs for Electronic Computers and Databases, and is also included in the national software registry.',
   compliance_text_3:
-    'The software development company OOO Dialog is licensed by the Federal Service for Technical and Export Control (FSTEC) of Russia to protect confidential information, and to develop and produce methods for securing confidential information.',
+    'The software development company "Dialog" is licensed by the Federal Service for Technical and Export Control (FSTEC) of Russia to protect confidential information and to develop and produce tools for securing it.',
   compliance_text_4:
-    'The software development company OOO Dialog has a license from the Federal Secret Service (FSB) of Russia to develop, produce, and distribute encryption tools, as well as information systems and telecommunications systems secured by encryption tools.',
+    'The software development company "Dialog" is licensed by the Federal Security Service (FSS) of Russia to develop, produce, and distribute encryption tools, as well as information systems and telecommunications systems secured by encryption tools.',
 
   incompany_header:
     'We make communication simple and effective for any company',
@@ -89,43 +173,43 @@ module.exports = {
   sales: 'Sales',
   technical_support: 'Technical Support',
   security_service: 'Security Service',
-  optimization_cases: 'Optimization cases',
+  optimization_cases: 'Optimization examples',
   case_marketing:
     'Stay up-to-date on your marketing results with notifications from analytics systems (for instance, Google Analytics).',
   case_development:
     'Automate processes – synchronize task statuses from JIRA in dialog.',
   case_hr:
-    'Save time in the hiring process – let our service handle mundane tasks. The program will fix a time and arrange interviews on its own.',
+    'Save time while hiring process – let our service handle the routine. The program will itself fix a time and appoint interviews.',
   case_sales:
     'Stay up to date on deals with automatic status updates from CRM.',
   case_technical_support:
-    'Reduce technical support response times – collect all requests into one system.',
+    'Reduce technical support response time – collect all requests within one system.',
   case_security_service:
-    'Integration with anti-virus and data loss prevention systems (DLP). Notifications about security system activity.',
+    'Integration with anti-virus software and data loss prevention systems (DLP). Notifications about security system activity.',
 
   easy_header: 'dialog is simple and effective',
-  easier_title: 'It’s easier in dialog',
+  easier_title: 'With dialog it’s easier',
   easier_text:
-    'The modern world is full of noise – advertisements, news, and distracting notifications. In pursuit of new features, IT-products often forget about users. dialog helps you focus on solving problems without complex interfaces and features, so you can work as you want.',
-  more_efficient_title: 'It’s more efficient in dialog',
+    'The modern world is full of noises – advertisements, news, distracting notifications. In pursuit of new features, IT products often forget about users. dialog helps you focus on solving problems without complicated interfaces and features, get things done the way you want to.',
+  more_efficient_title: 'With dialog it’s more efficient',
   more_efficient_text:
-    'We don’t believe in bureaucracy, pointless meetings or memos with miles of signatures. The more efficient your communication, the faster your team will accomplish its goals. dialog helps you and your team solve problems without added stress.',
+    'We oppose bureaucracy, pointless meetings or memos with thousands of signatures. The more efficient your communication, the faster your team will accomplish its goals. dialog helps you and your team to solve problems with no overburden.',
 
-  business_header: 'dialog and big business',
-  business_example: 'Case Study: Integrations in the Banking Sphere',
+  business_header: 'dialog and major businesses',
+  business_example: 'Case Study: Integration in Banking',
   business_case_1:
-    'A platform for employee and corporate client communications',
+    'A platform for communication beteween employees and corporate clients',
   business_case_2: 'Access from any device or subnet',
   business_case_3: 'Integrating banking services via open API',
   business_case_4: 'Sharing confidential information',
 
   form_label_name: 'How to address you',
-  form_label_email: 'Business e-mail',
+  form_label_email: 'Work e-mail',
   form_label_phone: 'Phone number',
   form_label_company: 'Company name',
   form_label_amount: 'Number of users',
-  form_label_agreement: 'I agree to have my personal data processed',
-  form_label_subscribe: 'Subscribe to the mailing list',
+  form_label_agreement: 'I agree to personal data processing',
+  form_label_subscribe: 'Subscribe',
 
   form_pending: 'Submitting...',
   form_success_message: 'The request has sent successfully',
@@ -133,19 +217,19 @@ module.exports = {
       <a href="mailto:info@dlg.im">info@dlg.im</a> or
       <a href="tel:+78007758202">+7(800)775-82-02</a>`,
 
-  more_than_messenger: 'dialog is more than just a messenger',
+  more_than_messenger: 'dialog is a lot more than just a messenger',
   mission: 'Mission',
   mission_text:
-    'Eradicating bureaucracy. Simplifying and improving the quality of human communications',
+    'To eradicate bureaucracy. To simplify and improve the quality of communications for all the mankind',
   values: 'Values',
   values_text:
     'Simplicity, transparency, flexibility, smart innovations, opportunity, and efficiency',
   goal: 'Goal',
   goal_text:
-    'Creating a communications platform to facilitate a more cohesive “business-society-government” ecosystem',
+    'To create a communications platform for a “business-society-government” ecosystem',
   patents_licenses: 'Patents and licenses',
   about_licenses_text:
-    'The patents and licenses of OOO Dialog and its products comply with the specific requirements of the federal authorities of Russia.',
+    'The patents and licenses of "Dialog" and its products comply with the specific requirements of the Russian federal authorities.',
 
   contacts: 'Contact Information',
   on_map: 'View map',
@@ -156,25 +240,23 @@ module.exports = {
   novosibirsk_address_most: '40 Kommunisticheskaya St., 630007',
   link_icanchoose:
     'More information about company life you can find in special project "icanchoose"',
-  prices_pageheader:
-    'The cost of an indefinite license per unique registered user:',
-  prices_price: '4,800 rubles',
+  prices_pageheader: 'Unlimited license from one unique personal user:',
+  prices_price: '$75',
   prices_subtitle:
-    'The price for the platform may vary depending on the number of users.',
-  prices__description:
-    'The basic version of the product consists of the familiar messenger functions',
+    'The price for a platform may vary depending on the number of users.',
+  prices__description: 'Contact us to find the best solution for you',
   prices_item_title: 'Messenger',
   prices_personal_chats: 'Personal chats',
   prices_group_open_closed_chats: 'Group public/private chats',
   prices_open_closed_channels: 'Public/private channels',
-  prices_stickers_smiles_reactions: 'Stickers, smiley faces, message reactions',
+  prices_stickers_smiles_reactions: 'Stickers, smileys, message reactions',
   prices_statuses: 'Presence status',
   prices_voice_messages: 'Voice Messages',
   prices_starred_chats_and_contacts: 'Favorite chats and contacts',
   prices_address_book: 'Address book',
-  prices_search: 'Search messages and contacts',
-  prices_mentions: 'The option to reference nicknames',
-  prices_view_all_media: 'Inspect all media loaded in a selected chat',
+  prices_search: 'Messages and contacts search',
+  prices_mentions: 'The option for nickname reference',
+  prices_view_all_media: 'Inspect all media uploaded in a selected chat',
   prices_cites: 'Forward & reply messages',
   prices_geolocation: 'Share location',
   prices_contact_in_chat: 'Send a contact in a chat',
@@ -183,9 +265,9 @@ module.exports = {
   prices_corporate_fuctions: 'Corporate Features',
   prices_exchange_documents: 'Share documents of any size',
   prices_chatbots: 'Chat bot support',
-  prices_audio_video_conference: 'Audio/video conferencing for team members',
+  prices_audio_video_conference: 'Audio/video conferencing for members',
   prices_discovery:
-    'A dedicated “Overview” tab, in which, via the admin panel, you can pin necessary corporate channels or groups',
+    'A separated "Discovery” tab, where you can pin necessary corporate channels or groups using the admin panel',
   prices_policy_management: 'Manage rights in groups and channels',
   prices_admin_panel: 'Admin panel',
   prices_custom_data_in_profile: 'User information is saved in their profile',
@@ -194,7 +276,7 @@ module.exports = {
 
   prices_integrations: 'Integrations',
   prices_email_integration:
-    'Integrations with e-mail, voice mail and communications systems',
+    'Integrations with e-mail, voice mail and communication systems',
   prices_video_conference_integrations:
     'Integrations with video conferencing systems',
   prices_ats: 'Integrations with corporate VoIP',
@@ -205,14 +287,14 @@ module.exports = {
   prices_bot_sdk: 'Bot SDK',
 
   download_header: 'The dialog platform’s cloud app demo',
-  download_subtitle_before: 'Try out the platform’s features in our app demo. ',
   download_subtitle_button_text: 'Complete an application',
   download_subtitle_after:
-    ' to receive information on installing the platform.',
+    ' to receive information on how to install the platform.',
 
   download_enterprise_subtitle_before:
-    'Get installation information from your system administrator or the ',
+    'Get installation info from your system administrator or the ',
   download_enterprise_subtitle_link: 'client support system',
+  download_enterprise_subtitle_2: `You can also try out the platform’s features in our  <a class="link--default" href="/en/download">demo app</a>.`,
 
   download_desktop_title: 'Desktop Application',
   download_for: 'Download for ',
@@ -224,8 +306,8 @@ module.exports = {
   support_header: 'Feedback',
   support_corporate_title: 'Contact Technical Support',
   support_corporate_text_before:
-    'If you are a dialog Enterprise user – use the technical support center',
-  support_connect: 'You can also connect with the technical support via ',
+    'If you are a dialog Enterprise user – ask your admin for access',
+  support_connect: 'You can also contact technical support via ',
 
   form_label_your_email: 'Your e-mail ',
   form_label_topic: 'Subject',
@@ -234,67 +316,67 @@ module.exports = {
 
   what_dialog_can: 'What dialog can do',
   feature_audio_video: 'Audio/Video Calls',
-  feature_audio_video_content: `<h4>High quality connections</h4>
+  feature_audio_video_content: `<h4>High quality connection</h4>
                   <p>
-                    dialog automatically optimizes connection quality based on the strength of your mobile operator’s signal at your location. If the signal is weak, dialog reduces the amount of audio or video traffic being transmitted without interrupting or delaying your connection.
+                    dialog automatically optimizes connection quality based on the strength of the mobile operator’s signal at your location. If the signal is weak, dialog reduces the amount of audio or video traffic without interrupting or delaying your connection.
                   </p>
-                  <h4>Secure communications</h4>
+                  <h4>Secure communication</h4>
                   <p>
                     All calls are securely protected by cryptographic solutions based on end-to-end and TLS encryption.
                   </p>`,
   feature_files: 'Share files of any format',
-  feature_files_content: `<h4>Share files without size restrictions</h4>
+  feature_files_content: `<h4>Share files with no size restrictions</h4>
                   <p>
-                    Can’t send your large presentation via e-mail? Forget about restrictions – share any amount of data you like and use the convenient search to help find important information easily and quickly by looking up the file or sender name.
+                    Cannnot send your large presentation via e-mail? Forget about restrictions – share any amount of data and use our convenient search to easily and quickly find important information by looking up the file or sender name.
                   </p>`,
   feature_chats: 'Private and Group Chats',
   feature_chats_content: `<h4>All messages will be delivered</h4>
-                  <p>The dialog platform is optimized to work both with older GSM networks, as well as new-generation networks. The application will send a message when the network is ready to transmit the data, and also controls its delivery.</p>`,
+                  <p>The dialog platform is optimized to work with both older GSM networks and modern one. The application will send a message when the network is ready to transmit the data, and then control its delivery.</p>`,
   feature_audio_messages: 'Audio Messages',
-  feature_audio_messages_content: `<h4>Don’t get distracted</h4>
-            <p>Don’t have time to type out a message? Use the voice message function – it’s much easier and faster than a voice autoreply or voice mail.</p>`,
+  feature_audio_messages_content: `<h4>Do not get distracted</h4>
+            <p>No time to type a message? Use the voice message feature – it’s much easier and faster than an answering machine or voice mail.</p>`,
   feature_channels: 'Channels',
   feature_channels_content: `<h4>Direct contact</h4>
-            <p>Send bulk messages: news feeds, blogs and notifications. Message a group or all the employees in an organization.</p>`,
+            <p>Simultaneous messaging: news feeds, blogs and notifications. Notify a group or all the employees in an organization.</p>`,
   feature_screen_sharing: 'Screen Sharing',
   feature_screen_sharing_content: `<h4>Work on documents together</h4>
-  <p>Broadcast your device’s screen to colleagues or partners, discuss internal documents or hold a presentation in real time.</p>`,
+  <p>Share your device’s screen to colleagues or partners, discuss internal documents or make a presentation in real time.</p>`,
   feature_any_platform: 'Multi-platform',
   feature_any_platform_content: `<h4>Always in touch</h4>
-            <p>dialog is available on all your devices. Supported by Android, iOS, macOS, Windows and Linux operating systems. Work securely and synchronize chats on web, mobile and desktop clients.</p>`,
+            <p>dialog is available on all your devices. Compatible with Android, iOS, macOS, Windows and Linux. Stable operation and chat synchronization in web, mobile and desktop clients.</p>`,
   feature_chatbots: 'Chat Bots',
   feature_chatbots_content: `<h4>Automate your workflow</h4>
                   <p>
-                    The chat bot is like a virtual companion. It processes an incoming question and gives a response.
+                    A chat bot is like a conversational AI. It processes an incoming question and formulates a response.
                   </p>
                   <p>
-                    Example: arranging documents. This is a tedious and unavoidable part of work. Use the chat bot to make it easier.
+                    Example: paperwork. It is a tedious and unavoidable part of a job. Use the chat bot to make it easier.
                   </p>`,
   feature_dashboard: 'Admin Panel',
   feature_dashboard_content: `<h4>Manage access</h4>
                   <p>
-                    Over time, your company will recruit new employees and others will leave. With the Admin Panel, you can easily activate or deactivate users in your work space and manage their access.
+                    Over time, your company will recruit new employees and others will leave. With the Admin Panel, you can easily activate or deactivate user IDs in your work space and manage their access.
                   </p>`,
   feature_ad: 'Active Directory (AD/LDAP)',
   feature_ad_content: `<h4>Single entry point for your employees</h4>
                   <p>
-                    dialog displays user information from the AD. Integrate your current work environment and group policies with dialog. Users can enter dialog via their accounts.
+                    dialog displays user information from the AD. Integrate your current work environment and group policies with dialog. Users can access dialog with their accounts.
                   </p>`,
 
   feature_api: 'dialog API ',
   feature_api_content: `<h4>Compatibility with popular business services. </h4>
                   <p>
-                    ATC, CRM, task managers, analytics systems – all these and more can be connected to dialog. The integrations are only limited by the developer’s imagination.
+                    PABX, CRM, task managers, analytic systems – all these and more can be connected to dialog. Integrations are only limited by the developer’s imagination.
                   </p>`,
 
   feature_botsdk: 'dialog Bot SDK ',
-  feature_botsdk_content: `<h4>Ready-made bot development tools for dialog</h4>
-                  <p>The <a href="https://dialogs.github.io/bots-docs/#/" class="link--default" target="_blank" rel="noopener noreferrer">BOT SDK</a> let’s you quickly make your own bots. The SDK is currently available for JS, Java and Python.
+  feature_botsdk_content: `<h4>Ready-made bot creation tool for dialog</h4>
+                  <p><a href="https://dialogs.github.io/bots-docs/#/" class="link--default" target="_blank" rel="noopener noreferrer">BOT SDK</a> lets you quickly create your own bots. The SDK is currently available on JS, Java and Python.
                   </p>`,
   feature_whitelabel: 'Client Company Branding',
-  feature_whitelabel_content: `<h4>Don’t leave your brand behind</h4>
+  feature_whitelabel_content: `<h4>Keep your corporate identity</h4>
                   <p>
-                    Use your brand book to make the application fit your company’s unique identity. You can change your logo, colors, and fonts in the dialog interface.
+                    Use your brand book guidelines to make the application fit your company’s unique style. You can change your logo, colors, and fonts in the dialog interface.
                   </p>`,
 
   legal_policy: 'Privacy Policy',
@@ -341,21 +423,21 @@ module.exports = {
 
   licenses_licenses: 'Patents and Licenses',
   licenses_prodiction_process:
-    'The process of developing software is based on design-thinking practices, architectural integrity, and the provisions and principles of the Agile Manifesto and DevOps practices. It is defined by the internal regulations of the design process and the implementing of technologies. A process for managing incidents and service requests has been implemented to provide technical support and eliminate software errors.',
+    'The process of developing software is based on design-thinking practices, architectural integrity, and the provisions and principles of the Agile Manifesto and DevOps practices. It is defined by the internal regulations of technologies development and implementation. A process for managing incidents and service requests has been implemented to provide technical support and eliminate detected software errors.',
   licenses_company_is_the_holder:
-    'The company is the copyright holder of 6 software products, which are registered with RosPatent.',
+    'The company is the copyright holder of 6 software products, registered by RosPatent.',
   licenses_required_licenses:
-    'The company possesses the required qualifications and licenses from the Federal Service for Technical and Export Control of Russia and the FSB of Russia.',
-  licenses_FSB: ' FSB',
+    'The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia.',
+  licenses_FSB: ' FSS',
   licenses_FSTEK: 'FSTEC',
   licenses_FSTEK_TZKI: 'FSTEC',
   licenses_associations: 'Registries and Associations',
   licenses_messenger_complies:
-    'dialog messenger complies with the requirements of the United Registry of Russian Programs for Electronic Computers and Databases, and is also on the national software registry.',
+    'dialog messenger meets the requirements of the Unified register of Russian ECM and databanks programs and included in the register of national software.',
   licenses_member:
     'The company is a member of the Association of Documented Telecommunications (ADT).',
   licenses_ooo:
-    'OOO Dialog is registered as an Information-Dissemination Organizer (IDO) by RosComNadzor.',
+    '"Dialog" is registered as an Information-Dissemination Organization (IDO) by RosComNadzor.',
 
   blog_header_popular: 'Popular Articles',
   subscribe_subscribe: 'Sign up for new blog articles!',
@@ -366,27 +448,27 @@ module.exports = {
   footer_copyright: 'Copyright © 2016-2019 dialog LLC',
 
   solutions_simple:
-    'A simple, technological solution for corporate communications',
+    'A simple and technological solution for corporate communications',
 
   SecureCommunication_secure: 'Secure communications',
   SecureCommunication_secure_arcitecture: 'On-premise solution',
   SecureCommunication_on_premise:
-    'Unlike cloud solutions, dialog does not have keys to decrypt your communication and access infrastructure. This architecture offers better protection from any attacker.',
+    'Unlike cloud solutions, dialog do not possess keys to decrypt your communication and access infrastructure. This architecture provides better protection against any abuser.',
   SecureCommunication_high_standards: 'High security standards',
   SecureCommunication_encryption: 'Data encryption',
   SecureCommunication_tls_dtls:
     'Client-server encryption based on TLS and DTLS protocols for a secure dialog connection.',
   SecureCommunication_audit: 'Security audit',
   SecureCommunication_regular_audit:
-    'Dialog works with leading security experts to conduct regular audits on its products.',
+    'Dialog cooperates with leading security experts to conduct regular audits on its products.',
   SecureCommunication_antivirus: 'Integration with anti-virus software',
   SecureCommunication_icap:
-    'dialog supports integrations with anti-virus software via the ICAP protocol. Messenger blocks malicious files from being sent.',
+    'dialog supports integration with anti-virus software via the ICAP protocol. Messenger blocks malicious files from being sent.',
   SecureCommunication_siem:
-    'SIEM technology provides real-time analysis, giving dialog the ability to promptly respond to security events before damage is done.',
+    'SIEM technology provides real-time analysis, dialog makes in possible to promptly respond to security events before any damage is done.',
   SecureCommunication_dlp: 'Integration with DLP',
   SecureCommunication_dlp_icap:
-    'dialog integrates with data loss prevention systems based on the ICAP protocol, blocking message and attachments containing confidential information from being sent. This minimizes the risk of deliberate or accidental leaks of confidential information.',
+    'dialog integrates with data loss prevention systems based on the ICAP protocol, blocking messages and attachments containing confidential information from being sent. Consequently, it minimizes the risk of deliberate or accidental leaks of confidential information.',
   SecureCommunication_requirements: 'Compliance',
   SecureCommunication_developer:
     'The National Software Registry of the Ministry of Digital Development, Communications and Mass Media (MinComSvyaz)',
@@ -395,26 +477,26 @@ module.exports = {
 
   EffectiveCommunication_effective_communications: 'Effective Communications',
   EffectiveCommunication_increased_productivity:
-    'Increasing employee productivity by:',
+    'Increasing employee productivity by means of:',
   EffectiveCommunication_increased_speed:
-    'Increasing the speed of communication in working groups with instant messaging',
+    'Instant messaging to increase the speed of communication within working groups',
   EffectiveCommunication_fast:
-    'Enabling quick decision-making in work chats and channels',
+    'Quick decision-making in work chats and channels',
   EffectiveCommunication_new:
-    'Offering new ways of cooperating using the messenger’s features',
+    'New ways of cooperation using the messenger’s features',
   EffectiveCommunication_decreasing:
-    'Reducing expenses on communications equipment from 10% to 30% by:',
+    'Reducing expenses on communications from 10% to 30% by means of:',
   EffectiveCommunication_combination:
-    'Combining various tools on a single platform',
+    'Combining various tools within a single platform',
   EffectiveCommunication_viop: 'Integrating VoIP and mobile telephony',
-  EffectiveCommunication_teleconference: 'Teleconferencing',
+  EffectiveCommunication_teleconference: 'Conference calls',
   EffectiveCommunication_calls_inside:
-    'Saving on calls within an organization, as well as roaming, and external calls',
+    'Saving on calls within an organization, roaming, and external calls',
 
   Partnership_technological:
     'Technological Partnerships with Russian Software Developers',
   Partnership_vendors:
-    'dialog works with vendors to ensure the infrastructure meets the requirements of Russian legislation',
+    'dialog cooperates with vendors to ensure the infrastructure comlpiance with the requirements of Russian legislation',
   Partnership_learn_more: 'Learn More',
   Partnership_bazalt: 'BaseALT',
   Partnership_my_office: 'MyOffice',

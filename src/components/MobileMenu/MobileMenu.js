@@ -52,7 +52,7 @@ export function MobileMenu({
             <FormattedMessage id="menu_features" />
           </Link>
           <Link
-            to={`/${locale}/download`}
+            to={`/${locale}/download/enterprise`}
             className="navigation__link"
             activeClassName="navigation__link--active"
             onClick={onClose}

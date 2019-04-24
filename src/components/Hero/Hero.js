@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
+import ImageFormatted from '../ImageFormatted';
 
 import './Hero.css';
 
@@ -25,11 +26,11 @@ export function Hero({ openOfferModal }) {
             <FormattedMessage id="button_get_offer" />
           </button>
         </div>
-        <img
-          className="hero__image"
+        <ImageFormatted
+          imgClass="hero__image"
           src="/images/home/home-hero.png"
           srcSet="/images/home/home-hero@2x.png 2x"
-          alt="Достигайте командные цели быстрее и без потери фокуса"
+          altLangId="alt_hero_header"
         />
       </div>
     </Section>

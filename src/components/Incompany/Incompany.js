@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
@@ -60,12 +61,15 @@ export function Incompany() {
                 <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
-                <img src="/images/home/incompany/icon-marketing.svg" alt="" />
+                <ImageFormatted
+                  src="/images/home/incompany/icon-marketing.svg"
+                  altLangId="alt_ga"
+                />
                 <img src="/images/home/incompany/icon-arrows.svg" alt="" />
-                <img
+                <ImageFormatted
+                  imgClass="dlg"
                   src="/images/home/incompany/logo-dlg.png"
-                  alt=""
-                  className="dlg"
+                  altLangId="alt_dialog"
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
@@ -85,16 +89,16 @@ export function Incompany() {
                 <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
-                <img
+                <ImageFormatted
+                  imgClass="jira"
                   src="/images/home/incompany/logo-jira.svg"
-                  alt=""
-                  className="jira"
+                  altLangId="alt_jira"
                 />
                 <img src="/images/home/incompany/icon-arrows.svg" alt="" />
-                <img
+                <ImageFormatted
+                  imgClass="dlg"
                   src="/images/home/incompany/logo-dlg.png"
-                  alt=""
-                  className="dlg"
+                  altLangId="alt_dialog"
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
@@ -114,10 +118,10 @@ export function Incompany() {
                 <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
-                <img
+                <ImageFormatted
+                  imgClass="hr"
                   src="/images/home/incompany/icon-hr.svg"
-                  alt=""
-                  className="hr"
+                  altLangId="alt_hr"
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
@@ -137,10 +141,10 @@ export function Incompany() {
                 <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
-                <img
+                <ImageFormatted
+                  imgClass="amocrm"
                   src="/images/home/incompany/icon-amocrm.svg"
-                  alt=""
-                  className="amocrm"
+                  altLangId="alt_amo_crm"
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
@@ -161,10 +165,10 @@ export function Incompany() {
                 <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
-                <img
+                <ImageFormatted
+                  imgClass="zendesk"
                   src="/images/home/incompany/icon-zendesk.svg"
-                  alt=""
-                  className="zendesk"
+                  altLangId="alt_zendesk"
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
@@ -184,10 +188,10 @@ export function Incompany() {
                 <FormattedMessage id="optimization_cases" />
               </div>
               <div className="incompany__content__body__image incompany__content-images">
-                <img
+                <ImageFormatted
+                  imgClass="security"
                   src="/images/home/incompany/security.svg"
-                  alt=""
-                  className="security"
+                  altLangId="alt_security_service"
                 />
               </div>
               <div className="incompany__content__body__text incompany__content-description">
