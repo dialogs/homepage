@@ -247,7 +247,8 @@ module.exports = {
   prices_price: '4,800 rubles',
   prices_subtitle:
     'The price for a platform may vary depending on the number of users.',
-  prices__description: 'Contact us to find the best solution for you',
+  prices__description:
+    'The basic version of the product contains familiar messenger functions',
   prices_item_title: 'Messenger',
   prices_personal_chats: 'Personal chats',
   prices_group_open_closed_chats: 'Group public/private chats',
