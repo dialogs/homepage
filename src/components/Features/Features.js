@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 // import { Page } from '../Page/Page';
 import { Heading } from '../Heading/Heading';
@@ -91,11 +92,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_audio_video_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--mobile"
                   src="/images/features/messenger-audio.png"
                   srcSet="/images/features/messenger-audio@2x.png 2x"
-                  alt="Аудио/Видеовызовы"
-                  className="feature_block__image feature_block__image--mobile"
+                  altLangId="feature_audio_video"
                 />
               </Collapsible>
               <Collapsible
@@ -114,11 +115,11 @@ export function Features() {
                   alt="Обмен файлами любого типа"
                   className="feature_block__image feature_block__image--mobile"
                 />*/}
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--mobile"
                   src="/images/features/messenger-sending-2.png"
                   srcSet="/images/features/messenger-sending-2@2x.png 2x"
-                  alt="Обмен файлами любого типа"
-                  className="feature_block__image feature_block__image--mobile"
+                  altLangId="feature_files"
                 />
               </Collapsible>
               <Collapsible
@@ -137,11 +138,11 @@ export function Features() {
                   alt="Личные и групповые чаты"
                   className="feature_block__image feature_block__image--mobile"
                 />*/}
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--mobile"
                   src="/images/features/messenger-chats-2.png"
                   srcSet="/images/features/messenger-chats-2@2x.png 2x"
-                  alt="Личные и групповые чаты"
-                  className="feature_block__image feature_block__image--mobile"
+                  altLangId="feature_chats"
                 />
               </Collapsible>
               <Collapsible
@@ -160,11 +161,11 @@ export function Features() {
                   alt="Аудио-сообщения"
                   className="feature_block__image feature_block__image--mobile"
                 />*/}
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--mobile"
                   src="/images/features/messenger-audio-2.png"
                   srcSet="/images/features/messenger-audio-2@2x.png 2x"
-                  alt="Аудио/Видеовызовы"
-                  className="feature_block__image feature_block__image--mobile"
+                  altLangId="feature_audio_messages"
                 />
               </Collapsible>
               <Collapsible
@@ -179,11 +180,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_channels_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--mobile"
                   src="/images/features/messenger-channels.png"
                   srcSet="/images/features/messenger-channels@2x.png 2x"
-                  alt="Каналы"
-                  className="feature_block__image feature_block__image--mobile"
+                  altLangId="feature_channels"
                 />
               </Collapsible>
               <Collapsible
@@ -198,11 +199,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_screen_sharing_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--laptop"
                   src="/images/features/messenger-screen.png"
                   srcSet="/images/features/messenger-screen@2x.png 2x"
-                  alt="Демонстрация экрана"
-                  className="feature_block__image feature_block__image--laptop"
+                  altLangId="feature_screen_sharing"
                 />
               </Collapsible>
               <Collapsible
@@ -217,11 +218,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_any_platform_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--laptop"
                   src="/images/features/messenger-platform.png"
                   srcSet="/images/features/messenger-platform@2x.png 2x"
-                  alt="Всегда на связи"
-                  className="feature_block__image feature_block__image--laptop"
+                  altLangId="feature_any_platform"
                 />
               </Collapsible>
             </div>
@@ -267,11 +268,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_chatbots_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--mobile"
                   src="/images/features/business-chatbots.png"
                   srcSet="/images/features/business-chatbots@2x.png 2x"
-                  alt="Автоматизируйте процессы"
-                  className="feature_block__image feature_block__image--mobile"
+                  altLangId="feature_chatbots"
                 />
               </Collapsible>
               <Collapsible
@@ -286,11 +287,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_dashboard_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--laptop"
                   src="/images/features/business-administrator.png"
                   srcSet="/images/features/business-administrator@2x.png 2x"
-                  alt="Управляйте доступами"
-                  className="feature_block__image feature_block__image--laptop"
+                  altLangId="feature_dashboard"
                 />
               </Collapsible>
               <Collapsible
@@ -303,11 +304,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_ad_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--laptop feature_block__image--ad"
                   src="/images/features/business-ad.png"
                   srcSet="/images/features/business-ad@2x.png 2x"
-                  alt="Active Directory (AD)"
-                  className="feature_block__image feature_block__image--laptop feature_block__image--ad"
+                  altLangId="feature_ad"
                 />
               </Collapsible>
             </div>
@@ -351,11 +352,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_api_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--printscreen feature_block__image--api"
                   src="/images/features/integration-api.png"
                   srcSet="/images/features/integration-api@2x.png 2x"
-                  alt="API dialog"
-                  className="feature_block__image feature_block__image--printscreen feature_block__image--api"
+                  altLangId="feature_api"
                 />
               </Collapsible>
               <Collapsible
@@ -404,11 +405,11 @@ export function Features() {
                     </a>
                   </div>
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--printscreen"
                   src="/images/features/integration-bot-sdk.png"
                   srcSet="/images/features/integration-bot-sdk@2x.png 2x"
-                  alt="Bot SDK"
-                  className="feature_block__image feature_block__image--printscreen"
+                  altLangId="feature_botsdk"
                 />
               </Collapsible>
               <Collapsible
@@ -423,11 +424,11 @@ export function Features() {
                 <div className="feature_block__slide__text">
                   <FormattedHTMLMessage id="feature_whitelabel_content" />
                 </div>
-                <img
+                <ImageFormatted
+                  imgClass="feature_block__image feature_block__image--laptop feature_block__image--whitelabel"
                   src="/images/features/integration-branding.png"
                   srcSet="/images/features/integration-branding@2x.png 2x"
-                  alt="Брендинг компании-заказчика"
-                  className="feature_block__image feature_block__image--laptop feature_block__image--whitelabel"
+                  altLangId="feature_whitelabel"
                 />
               </Collapsible>
             </div>

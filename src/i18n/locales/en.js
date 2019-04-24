@@ -58,6 +58,51 @@ module.exports = {
   menu_patents: 'Patents and Licenses',
   menu_legal: 'Legal Information',
 
+  alt_hero_header: 'Achieve your team goals faster without losing focus',
+  alt_messenger: 'Messenger',
+  alt_corporate_features: 'Corporate Features',
+  alt_integrations: 'Integrations',
+  alt_safety_on_premise:
+    'On-Premise platform installation on a company’s server',
+  alt_safety_standarts: 'Highest security standards',
+  alt_ga: 'Google Analytics',
+  alt_dialog: 'dialog',
+  alt_jira: 'Jira',
+  alt_hr: 'HR',
+  alt_amo_crm: 'amoCrm',
+  alt_zendesk: 'Zendesk',
+  alt_security_service: 'Security Service',
+  alt_easy: 'dialog is simple and effective',
+  alt_big_business: 'dialog and big business',
+  alt_solution_big: 'A simple solution for corporate communications',
+  alt_solution_small: 'A technological solution for corporate communications',
+
+  alt_download_cloud_mobile_ios:
+    'Mobile application dialog platform’s cloud for iPhone / iPad',
+  alt_download_enterprise_mobile_ios:
+    'Mobile application dialog Enterprise for iPhone / iPad',
+  alt_download_cloud_mobile_ios_qr:
+    'Download mobile application dialog platform’s cloud for iPhone / iPad',
+  alt_download_enterprise_mobile_ios_qr:
+    'Download mobile application dialog Enterprise for iPhone / iPad',
+  alt_download_appstore: 'Download on the App Store',
+
+  alt_download_cloud_mobile_android:
+    'The dialog platform’s cloud mobile app demo for Android',
+  alt_download_enterprise_mobile_android:
+    'Mobile application dialog Enterprise for Android',
+  alt_download_cloud_mobile_android_qr:
+    'Download the dialog platform’s cloud mobile app demo for Android',
+  alt_download_enterprise_mobile_android_qr:
+    'Download mobile application dialog Enterprise for Android',
+  alt_download_googleplay: 'get it on Google Play',
+
+  alt_download_cloud_web: 'The dialog platform’s cloud app demo web version',
+  alt_download_enterprise_web: 'Web version dialog Enterprise',
+
+  alt_icanchoose_about_dialog: 'icanchoose about dialog',
+  alt_download: 'Download',
+
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
     'A simple and effective platform for communication within a company',
@@ -381,10 +426,10 @@ module.exports = {
   licenses_prodiction_process:
     'The process of developing software is based on design-thinking practices, architectural integrity, and the provisions and principles of the Agile Manifesto and DevOps practices. It is defined by the internal regulations of the design process and the implementing of technologies. A process for managing incidents and service requests has been implemented to provide technical support and eliminate software errors.',
   licenses_company_is_the_holder:
-    'The company is the copyright holder of 6 software products, which are registered with RosPatent.',
+    'The company is the copyright holder of 5 software products, which are registered with RosPatent.',
   licenses_required_licenses:
     'The company possesses the required qualifications and licenses from the Federal Service for Technical and Export Control of Russia and the FSB of Russia.',
-  licenses_FSB: ' FSB',
+  licenses_FSB: 'FSB',
   licenses_FSTEK: 'FSTEC',
   licenses_FSTEK_TZKI: 'FSTEC',
   licenses_associations: 'Registries and Associations',

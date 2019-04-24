@@ -57,6 +57,52 @@ module.exports = {
   menu_patents: 'Патенты и лицензии',
   menu_legal: 'Правовая информация',
 
+  alt_hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
+  alt_messenger: 'Мессенджер',
+  alt_corporate_features: 'Корпоративные функции',
+  alt_integrations: 'Интеграции',
+  alt_safety_on_premise:
+    'Размещение платформы на сервере компании по модели On-Premise',
+  alt_safety_standarts: 'Высокие стандарты безопасности',
+  alt_ga: 'Google Analytics',
+  alt_dialog: 'dialog',
+  alt_jira: 'Jira',
+  alt_hr: 'HR',
+  alt_amo_crm: 'amoCrm',
+  alt_zendesk: 'Zendesk',
+  alt_security_service: 'Служба безопасности',
+  alt_easy: 'dialog — это просто и эффективно',
+  alt_big_business: 'dialog в большом бизнесе',
+  alt_solution_big: 'Простое решение для корпоративных коммуникаций',
+  alt_solution_small: 'Технологичное решение для корпоративных коммуникаций',
+
+  alt_download_cloud_mobile_ios:
+    'Мобильное демонстрационное облачное приложение платформы dialog для iPhone / iPad',
+  alt_download_enterprise_mobile_ios:
+    'Мобильное приложение dialog enterprise для iPhone / iPad',
+  alt_download_cloud_mobile_ios_qr:
+    'Скачать мобильное приложение демо в облаке для iPhone / iPad',
+  alt_download_enterprise_mobile_ios_qr:
+    'Скачать мобильное приложение enterprise для iPhone / iPad',
+  alt_download_appstore: 'Скачать с App Store',
+
+  alt_download_cloud_mobile_android:
+    'Мобильное демонстрационное облачное приложение платформы dialog для Android',
+  alt_download_enterprise_mobile_android:
+    'Мобильное приложение dialog enterprise для Android',
+  alt_download_cloud_mobile_android_qr:
+    'Скачать мобильное демонстрационное облачное приложение платформы dialog для Android',
+  alt_download_enterprise_mobile_android_qr:
+    'Скачать мобильное приложение dialog enterprise для Android',
+  alt_download_googleplay: 'Скачать с Google Play',
+
+  alt_download_cloud_web:
+    'Web версия демонстрационного облачного приложения платформы dialog',
+  alt_download_enterprise_web: 'Web версия dialog Enterprise',
+
+  alt_icanchoose_about_dialog: 'icanchoose о dialog',
+  alt_download: 'Скачать',
+
   hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
   hero_subheader: 'Простая и эффективная платформа для коммуникаций в компании',
 

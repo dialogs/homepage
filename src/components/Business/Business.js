@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -44,11 +45,11 @@ export function Business({ intl: { locale } }) {
           </ul>
         </div>
         <div className="business__image">
-          <img
-            className="business__img"
-            src="/images/home/business/man2.png"
+          <ImageFormatted
+            imgClass="business__img"
+            src="/images/home/business/man2@2x.png"
             srcSet="/images/home/business/man2@2x.png 2x"
-            alt="dialog в большом бизнесе"
+            altLangId="alt_big_business"
           />
         </div>
       </div>

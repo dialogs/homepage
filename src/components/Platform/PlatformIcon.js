@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import ImageFormatted from '../ImageFormatted';
 
 // export type PlatformIconProps = {
 //   column: 'one' | 'two' | ' three',
@@ -7,6 +8,8 @@ import classnames from 'classnames';
 // };
 
 export function PlatformIcon({ image, type, text, className }) {
+  const iconAlt = text.props.id;
+
   return (
     <div
       className={classnames(
@@ -15,7 +18,11 @@ export function PlatformIcon({ image, type, text, className }) {
         className,
       )}
     >
-      <img src={image} alt={text} className="platform_icon__image" />
+      <ImageFormatted
+        imgClass="platform_icon__image"
+        src={image}
+        altLangId={iconAlt}
+      />
       <span className="platform_icon__text">{text}</span>
     </div>
   );
