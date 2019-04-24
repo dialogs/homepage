@@ -2,7 +2,7 @@ const { isDev, ghost } = require('./server/config');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://dlg.im'
+    siteUrl: 'https://dlg.im',
   },
   proxy: isDev
     ? {
@@ -53,7 +53,7 @@ module.exports = {
           {
             userAgent: '*',
             allow: ['/'],
-            disallow: ['/@joinchat', '/@/joinchat', ' /joinchat'],
+            disallow: ['/@joinchat', '/@/joinchat', '/joinchat'],
           },
         ],
       },
