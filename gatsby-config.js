@@ -1,9 +1,8 @@
 const { isDev, ghost } = require('./server/config');
-const siteUrl = 'https://dlg.im';
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://new-landing.dlg.im',
+    siteUrl: 'https://dlg.im'
   },
   proxy: isDev
     ? {
