@@ -1,6 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
+import ImageFormatted from '../components/ImageFormatted';
+
+import { Link } from 'gatsby';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
@@ -17,6 +21,12 @@ export default ({ pageContext: { locale } }) => {
 
   return (
     <div className="about page">
+      <FormattedMetaTags
+        titleId="meta_title_about"
+        descriptionId="meta_description_about"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_about" />
+
       <Container>
         <PageHeader>
           <FormattedMessage id="more_than_messenger" />
@@ -26,10 +36,10 @@ export default ({ pageContext: { locale } }) => {
       <section className="about__promo">
         <div className="about__video">
           <div className="about__video-wrapper">
-            <img
+            <ImageFormatted
               src="/images/about/team.png"
               srcSet="/images/about/team@2x.png 2x"
-              alt=""
+              altLangId="more_than_messenger"
             />
           </div>
         </div>
@@ -40,10 +50,10 @@ export default ({ pageContext: { locale } }) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img
-              className="img--icon"
+            <ImageFormatted
+              imgClass="img--icon"
               src="/images/svg/about-promo.svg"
-              alt=""
+              altLangId="alt_icanchoose_about_dialog"
             />
             <FormattedMessage id="link_icanchoose" />
             <img
@@ -60,7 +70,10 @@ export default ({ pageContext: { locale } }) => {
           <div className="about__features-list">
             <div className="about__features-item">
               <div className="about__features-icon">
-                <img src="/images/svg/about-mission.svg" alt="Миссия" />
+                <ImageFormatted
+                  src="/images/svg/about-mission.svg"
+                  altLangId="mission"
+                />
               </div>
               <div className="about__features-title">
                 <FormattedMessage id="mission" />
@@ -71,7 +84,10 @@ export default ({ pageContext: { locale } }) => {
             </div>
             <div className="about__features-item">
               <div className="about__features-icon">
-                <img src="/images/svg/about-worth.svg" alt="Ценности" />
+                <ImageFormatted
+                  src="/images/svg/about-worth.svg"
+                  altLangId="values"
+                />
               </div>
               <div className="about__features-title">
                 <FormattedMessage id="values" />
@@ -82,7 +98,10 @@ export default ({ pageContext: { locale } }) => {
             </div>
             <div className="about__features-item">
               <div className="about__features-icon">
-                <img src="/images/svg/about-goal.svg" alt="Цель" />
+                <ImageFormatted
+                  src="/images/svg/about-goal.svg"
+                  altLangId="goal"
+                />
               </div>
               <div className="about__features-title">
                 <FormattedMessage id="goal" />

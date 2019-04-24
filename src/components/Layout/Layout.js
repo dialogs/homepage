@@ -1,5 +1,8 @@
 import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
+import { HeadScripts } from '../HeadScripts/HeadScripts';
+import FormattedMetaTags from '../FormattedMetaTags';
+import FormattedOpenGraph from '../FormattedOpenGraph';
 
 import Header from '../Header';
 import Modals from '../Modals';
@@ -16,6 +19,17 @@ export default ({ children, pageContext }) => {
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <main className="main">
+        <FormattedMetaTags
+          titleId="meta_title_default"
+          descriptionId="meta_description_default"
+        />
+        <FormattedOpenGraph
+          idOgTitle="og_title_default"
+          idOgDescription="og_description_default"
+        />
+
+        <HeadScripts />
+
         <Header locale={locale} originalPath={originalPath} />
         {children}
         <Footer locale={locale} />

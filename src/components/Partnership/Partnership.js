@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -40,10 +41,10 @@ export function Partnership() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img
-              className="partner__icon"
+            <ImageFormatted
+              imgClass="partner__icon"
               src="/images/partner-basealt.png"
-              alt="Базальт"
+              altLangId="Partnership_bazalt"
             />
             <div className="partner__name">
               <FormattedMessage id="Partnership_bazalt" />
@@ -55,10 +56,10 @@ export function Partnership() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img
-              className="partner__icon"
+            <ImageFormatted
+              imgClass="partner__icon"
               src="/images/partner-moiofis.png"
-              alt="МойОфис"
+              altLangId="Partnership_my_office"
             />
             <div className="partner__name">
               <FormattedMessage id="Partnership_my_office" />
@@ -70,10 +71,10 @@ export function Partnership() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <img
-              className="partner__icon"
+            <ImageFormatted
+              imgClass="partner__icon"
               src="/images/partner-avrora-orig.png"
-              alt="Аврора"
+              altLangId="Partnership_aurora"
             />
             <div className="partner__name">
               <FormattedMessage id="Partnership_aurora" />

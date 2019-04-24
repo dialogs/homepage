@@ -1,9 +1,8 @@
 const { isDev, ghost } = require('./server/config');
-const siteUrl = 'https://new-landing.dlg.im';
 
 module.exports = {
   siteMetadata: {
-    siteUrl,
+    siteUrl: 'https://dlg.im',
   },
   proxy: isDev
     ? {
@@ -12,6 +11,28 @@ module.exports = {
       }
     : undefined,
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'GTM-M3KJBNM',
+        includeInDevelopment: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '1326090010797850',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        trackingId: '47364889',
+        webvisor: true,
+        trackHash: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -28,8 +49,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: siteUrl,
-        policy: [{ userAgent: '*', disallow: ['/'] }],
+        policy: [
+          {
+            userAgent: '*',
+            allow: ['/'],
+            disallow: ['/@joinchat', '/@/joinchat', '/joinchat'],
+          },
+        ],
       },
     },
     {

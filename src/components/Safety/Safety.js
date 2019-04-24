@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
 
@@ -21,9 +22,9 @@ export function Safety({ intl: { locale } }) {
           <div className="safety-communication__items">
             <div className="safety-communication__item">
               <div className="safety-communication__icon">
-                <img
+                <ImageFormatted
                   src="/images/home/safety/icon-safety-communication-1.svg"
-                  alt=""
+                  altLangId="alt_safety_on_premise"
                 />
               </div>
               <div className="safety-communication__text">
@@ -32,9 +33,9 @@ export function Safety({ intl: { locale } }) {
             </div>
             <div className="safety-communication__item">
               <div className="safety-communication__icon">
-                <img
+                <ImageFormatted
                   src="/images/home/safety/icon-safety-communication-3.svg"
-                  alt=""
+                  altLangId="alt_safety_standarts"
                 />
               </div>
               <div className="safety-communication__text">

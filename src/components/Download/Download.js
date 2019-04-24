@@ -17,7 +17,6 @@ export function Download({ openOfferModal }) {
           <FormattedMessage id="download_header" />
         </PageHeader>
         <div className="download__subtitle">
-          <FormattedMessage id="download_subtitle_before" />
           <button className="link link--default" onClick={openOfferModal}>
             <FormattedMessage id="download_subtitle_button_text" />
           </button>

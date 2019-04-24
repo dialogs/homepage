@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 import { PageHeader } from '../PageHeader/PageHeader';
 import { Section } from '../Section/Section';
@@ -90,11 +91,11 @@ export function Platform({ className }) {
                 <FormattedMessage id="avrora_sailfish" />
               </div>
             </div>
-            <img
-              className="platform__content__image"
+            <ImageFormatted
+              imgClass="platform__content__image"
               src="/images/home/platform/platform-messenger-export.png"
               srcSet="/images/home/platform/platform-messenger-export@2x.png 2x"
-              alt="Мессенджер"
+              altLangId="alt_messenger"
             />
           </Collapsible>
           <Collapsible
@@ -136,11 +137,11 @@ export function Platform({ className }) {
                 text={<FormattedMessage id="platform_customization" />}
               />
             </div>
-            <img
-              className="platform__content__image"
+            <ImageFormatted
+              imgClass="platform__content__image"
               src="/images/home/platform/platform-functions-export.png"
               srcSet="/images/home/platform/platform-functions-export@2x.png 2x"
-              alt="Корпоративные функции"
+              altLangId="alt_corporate_features"
             />
           </Collapsible>
           <Collapsible
@@ -162,11 +163,11 @@ export function Platform({ className }) {
                 text={<FormattedMessage id="platform_bot_sdk" />}
               />
             </div>
-            <img
-              className="platform__content__image platform__content__image--integrations"
+            <ImageFormatted
+              imgClass="platform__content__image platform__content__image--integrations"
               src="/images/home/platform/platform-integrations-export.png"
               srcSet="/images/home/platform/platform-integrations-export@2x.png 2x"
-              alt="Корпоративные функции"
+              altLangId="alt_integrations"
             />
           </Collapsible>
         </div>

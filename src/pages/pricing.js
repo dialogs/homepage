@@ -1,5 +1,7 @@
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import FormattedMetaTags from '../components/FormattedMetaTags';
+import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -8,9 +10,15 @@ import { Section } from '../components/Section/Section';
 import { Heading } from '../components/Heading/Heading';
 import { Offer } from '../components/Offer/Offer';
 
-export default () => {
+export default ({ pageContext: { locale } }) => {
   return (
     <Page>
+      <FormattedMetaTags
+        titleId="meta_title_pricing"
+        descriptionId="meta_description_pricing"
+      />
+      <FormattedOpenGraph idOgTitle="meta_title_pricing" />
+
       <Container>
         <div className="price__header">
           <PageHeader>
@@ -136,8 +144,6 @@ export default () => {
               </li>
               <li>
                 <FormattedMessage id="prices_security_infrastructure" />
-                Интеграции с инфраструктурой безопасности (SIEM, DLP, IDM,
-                Антивирус)
               </li>
               <li>
                 <FormattedMessage id="prices_bot_sdk" />

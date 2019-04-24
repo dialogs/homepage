@@ -9,6 +9,7 @@ class Redirect extends PureComponent {
 
     const langKeys = languages.map((language) => language.value);
     const { pathname } = props.location;
+    const { search } = props.location;
 
     // Skip build, Browsers only
     if (typeof window !== 'undefined') {
@@ -19,7 +20,7 @@ class Redirect extends PureComponent {
           fallback: 'en',
         });
 
-      const newUrl = withPrefix(`/${detected}${pathname}`);
+      const newUrl = withPrefix(`/${detected}${pathname}${search}`);
       window.localStorage.setItem('language', detected);
       window.location.replace(newUrl);
     }

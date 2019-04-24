@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section.js';
 import { PageHeader } from '../PageHeader/PageHeader';
@@ -17,7 +17,7 @@ export function DownloadEnterprise() {
           <a className="link--default" href="https://support.dlg.im">
             <FormattedMessage id="download_enterprise_subtitle_link" />
           </a>
-          .
+          . <FormattedHTMLMessage id="download_enterprise_subtitle_2" />
         </div>
       </section>
 
