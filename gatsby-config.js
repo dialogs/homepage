@@ -26,14 +26,14 @@ module.exports = {
         pixelId: '1326090010797850',
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-yandex-metrika`,
-    //   options: {
-    //     trackingId: '47364889',
-    //     webvisor: true,
-    //     trackHash: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        trackingId: '47364889',
+        webvisor: true,
+        trackHash: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
