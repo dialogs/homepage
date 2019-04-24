@@ -92,6 +92,7 @@ staging:
     - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
     - cd homepage && ansible-galaxy install -r requirements.yml
     - ansible-playbook -u root playbook.yml --diff -e homepage_http_port=7083 -e homepage_service_name="homepage-demo" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}" --limit homepage-old
+    - |  
       curl --header 'Content-Type: application/json' --request POST \
       --data "{\"text\": \"🤟🏾 Homepage build *#${BUILD_NUMBER}:* successfully deployed. [Check here](${DEV_URL})\"}" \
       $DIALOG_WEBHOOK    
