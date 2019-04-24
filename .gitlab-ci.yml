@@ -81,10 +81,6 @@ staging:
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
     # - source variables
-    # - |
-    #   curl --header 'Content-Type: application/json' --request POST \
-    #   --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* deploy to DEV started.\"}" \
-    #   $DIALOG_WEBHOOK
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
 
