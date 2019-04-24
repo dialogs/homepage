@@ -85,6 +85,21 @@
       font-weight: 500;
       font-size: 14px;
       line-height: 18px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+        height: 2px;
+        width: 100%;
+        background: #b9bbfa;
+        background: var(--color-secondary);
+      }
+      &:hover:before {
+        display: none;
+      }
     }
   }
 
@@ -218,8 +233,13 @@
       display: inline-block;
       font-size: 14px;
       line-height: 20px;
-      padding-left: 23px;
-      margin-left: 20px;
+      padding-left: 11px;
+      margin-left: 8px;
+
+      @media (--tablet-landscape-viewport) {
+        padding-left: 23px;
+        margin-left: 20px;
+      }
 
       &:before {
         content: '';

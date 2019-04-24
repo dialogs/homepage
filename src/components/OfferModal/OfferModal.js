@@ -16,7 +16,7 @@ export function OfferModal({ isOpen, onClose }) {
         <FormattedMessage id="get_offer" />
       </ModalHeader>
       <ModalBody>
-        <OfferForm className="offer_modal__form" />
+        <OfferForm className="offer_modal__form" flag="popup" />
       </ModalBody>
     </Modal>
   );

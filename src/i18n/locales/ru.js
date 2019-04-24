@@ -240,8 +240,6 @@ module.exports = {
     'Подробнее о жизни в компании вы можете прочитать в специальном проекте icanchoose',
 
   download_header: 'Демонстрационное облачное приложение платформы dialog',
-  download_subtitle_before:
-    'Вы можете ознакомиться с функциями платформы в нашем демо-приложении. ',
   download_subtitle_button_text: 'Оставьте заявку',
   download_subtitle_after:
     ', чтобы получить информацию о подключении платформы.',
@@ -249,6 +247,7 @@ module.exports = {
   download_enterprise_subtitle_before:
     'Информацию о подключении вы можете получить у своего системного администратора или в центре ',
   download_enterprise_subtitle_link: 'поддержки клиентов',
+  download_enterprise_subtitle_2: `Вы также можете ознакомиться с функциями платформы в нашем <a class="link--default" href="/ru/download">демо-приложении</a>.`,
 
   download_desktop_title: 'Десктопное приложение',
   download_for: 'Скачать для ',

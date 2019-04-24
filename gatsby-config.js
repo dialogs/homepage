@@ -14,6 +14,27 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: 'GTM-M3KJBNM',
+        includeInDevelopment: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '1326090010797850',
+      },
+    },
+    // {
+    //   resolve: `gatsby-plugin-yandex-metrika`,
+    //   options: {
+    //     trackingId: '47364889',
+    //     webvisor: true,
+    //     trackHash: true,
+    //   },
+    // },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'dialog — коммуникационная платформа для компаний',

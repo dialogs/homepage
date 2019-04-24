@@ -23,7 +23,7 @@ export default () => {
             <FormattedMessage id="licenses_licenses" />
           </PageHeader>
           <div className="license__intro-text">
-            <FormattedMessage id="licenses_prodiction_process" />
+            {/*<FormattedMessage id="licenses_prodiction_process" />*/}
           </div>
         </section>
 
