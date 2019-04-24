@@ -27,6 +27,7 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         disabled={pending}
         onChange={handleChange}
         label="Ваш e-mail"
+        required
       />
       <div className="form__footer">
         <Button type="submit" className="form__submit" disabled={pending}>

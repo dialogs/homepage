@@ -1,4 +1,41 @@
 module.exports = {
+  meta_title_default:
+    'dialog | Платформа для простых и эффективных коммуникаций',
+  meta_description_default:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+
+  meta_title_about: 'О компании | dialog',
+  meta_description_about:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+  meta_title_solutions: 'Готовые решения | dialog',
+  meta_description_solutions:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+  meta_title_features: 'Возможности платформы | dialog',
+  meta_description_features:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+  meta_title_download: 'Скачать | dialog',
+  meta_description_download:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+  meta_title_pricing: 'Цены | dialog',
+  meta_description_pricing:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+  meta_title_support: 'Служба поддержки | dialog',
+  meta_description_support:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+  meta_title_blog: 'Блог | dialog',
+  meta_description_blog:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+  meta_title_patents: 'Патенты | dialog',
+  meta_description_patents:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+  meta_title_legal: 'Правовая информация | dialog',
+  meta_description_legal:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+
+  og_title_default: 'dialog | Платформа для простых и эффективных коммуникаций',
+  og_description_default:
+    'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
+
   button_get_offer: 'Получить предложение',
 
   get_offer: 'Получить предложение',
@@ -123,6 +160,8 @@ module.exports = {
         <a
           href="https://dialogs.github.io/bots-docs/"
           class="link--default"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Bot SDK
         </a>
@@ -161,8 +200,6 @@ module.exports = {
   business_case_2: 'Доступ с любых устройств и всех подсетей',
   business_case_3: 'Интеграция банковских сервисов через открытый API',
   business_case_4: 'Обмен конфиденциальной информацией ',
-
-  offer_licenses: 'Пакет от 100 лицензий',
 
   form_label_name: 'Как к вам обращаться',
   form_label_email: 'Рабочий e-mail',
@@ -441,7 +478,7 @@ module.exports = {
   feature_botsdk: 'dialog Bot SDK',
   feature_botsdk_content: `<h4>Готовые средства разработки ботов для dialog</h4>
                   <p>
-                  <a href="https://dialogs.github.io/bots-docs/#/" class="link--default">BOT SDK</a> позволяет быстро создавать собственных ботов. В настоящее время SDK доступен для JS, Java и Python.
+                  <a href="https://dialogs.github.io/bots-docs/#/" class="link--default" target="_blank" rel="noopener noreferrer">BOT SDK</a> позволяет быстро создавать собственных ботов. В настоящее время SDK доступен для JS, Java и Python.
                   </p>`,
 
   feature_whitelabel: 'Брендинг компании-заказчика',

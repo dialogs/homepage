@@ -5,7 +5,13 @@ import { FormattedMessage } from 'react-intl';
 
 import './MobileMenu.css';
 
-export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
+export function MobileMenu({
+  isOpen,
+  onClose,
+  openOfferModal,
+  locale,
+  originalPath,
+}) {
   const classes = classNames('mobile-menu', {
     'mobile-menu--opened': isOpen,
   });
@@ -68,6 +74,12 @@ export function MobileMenu({ isOpen, onClose, openOfferModal, locale }) {
             onClick={onClose}
           >
             <FormattedMessage id="menu_about" />
+          </Link>
+          <Link
+            to={`/${locale === 'ru' ? 'en' : 'ru'}${originalPath}`}
+            className="navigation__link navigation__link--lang"
+          >
+            {locale === 'ru' ? 'en' : 'ru'}
           </Link>
         </nav>
         <button className="mobile-menu__button" onClick={openOfferModal}>

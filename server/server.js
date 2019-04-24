@@ -8,11 +8,21 @@ const gatsyExpress = require('gatsby-plugin-express');
 const bodyParser = require('body-parser');
 const { isDev, server } = require('./config');
 const api = require('./api');
+const redirectRules = require('./redirect-rules');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+redirectRules.forEach((rule) => {
+  rule.from.forEach((from) => {
+    console.log(`Add redirect rule from ${from} to ${rule.to}`);
+    app.get(from, (req, res) => {
+      res.redirect(rule.to);
+    });
+  });
+});
 
 app.use('/api/v1', api);
 

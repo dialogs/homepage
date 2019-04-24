@@ -94,6 +94,11 @@
       &--active {
         color: var(--color-secondary);
       }
+
+      &--lang {
+        text-transform: uppercase;
+        color: color-mod(var(--text-color-main) alpha(40%));
+      }
     }
   }
 
@@ -108,6 +113,7 @@
     background-color: var(--text-color-main);
     color: #fff;
     z-index: 5;
+    cursor: pointer;
   }
 
   @media (--tablet-landscape-viewport) {

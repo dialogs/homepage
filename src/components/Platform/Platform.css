@@ -68,10 +68,6 @@
     @media (--laptop-viewport) {
       width: calc(50% - var(--padding-side-columns) / 2);
     }
-
-    & .tabs__tab {
-      cursor: default !important;
-    }
   }
 
   &__box {

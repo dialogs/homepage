@@ -64,8 +64,6 @@
       }
 
       & .tabs__tab {
-        cursor: default !important;
-
         @media (--laptop-viewport) {
           position: relative;
 

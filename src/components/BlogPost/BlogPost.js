@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import { Container } from '../Container/Container';
 import { Article } from '../Article/Article';
@@ -10,6 +11,15 @@ import './BlogPost.css';
 export default ({ data: { post, recommended } }) => {
   return (
     <Container className="blog_post">
+      <Helmet>
+        <title>{post.title}</title>
+        <meta name="description" content={post.excerpt} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.featureImage} />
+        <meta property="og:type" content="article" />
+      </Helmet>
+
       <Article
         className="post__article"
         title={post.title}

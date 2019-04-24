@@ -1,4 +1,42 @@
 module.exports = {
+  meta_title_default:
+    'dialog | A platform for simple and efficient communications',
+  meta_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
+  meta_title_about: 'About | dialog',
+  meta_description_about:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_solutions: 'Box solutions | dialog',
+  meta_description_solutions:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_features: 'Platform features | dialog',
+  meta_description_features:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_download: 'Download | dialog',
+  meta_description_download:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_pricing: 'Pricing | dialog',
+  meta_description_pricing:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_support: 'Technical Support | dialog',
+  meta_description_support:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_blog: 'Blog | dialog',
+  meta_description_blog:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_patents: 'Patents | dialog',
+  meta_description_patents:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_legal: 'Legal Information | dialog',
+  meta_description_legal:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
+  og_title_default:
+    'dialog | A platform for simple and efficient communications',
+  og_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
   button_get_offer: 'Get Offer',
 
   get_offer: 'Get Offer',
@@ -122,6 +160,8 @@ module.exports = {
         <a
           href="https://dialogs.github.io/bots-docs/"
           class="link--default"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Bot SDK
         </a>
@@ -161,8 +201,6 @@ module.exports = {
   business_case_2: 'Access from any device or subnet',
   business_case_3: 'Integrating banking services via open API',
   business_case_4: 'Sharing confidential information',
-
-  offer_licenses: 'Package of 100 licenses and more',
 
   form_label_name: 'How to address you',
   form_label_email: 'Business e-mail',
@@ -334,7 +372,7 @@ module.exports = {
 
   feature_botsdk: 'dialog Bot SDK ',
   feature_botsdk_content: `<h4>Ready-made bot development tools for dialog</h4>
-                  <p>The <a href="https://dialogs.github.io/bots-docs/#/" class="link--default">BOT SDK</a> let’s you quickly make your own bots. The SDK is currently available for JS, Java and Python.
+                  <p>The <a href="https://dialogs.github.io/bots-docs/#/" class="link--default" target="_blank" rel="noopener noreferrer">BOT SDK</a> let’s you quickly make your own bots. The SDK is currently available for JS, Java and Python.
                   </p>`,
   feature_whitelabel: 'Client Company Branding',
   feature_whitelabel_content: `<h4>Don’t leave your brand behind</h4>
