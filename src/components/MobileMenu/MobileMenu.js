@@ -36,7 +36,7 @@ export function MobileMenu({
         </div>
         <nav className="navigation">
           <Link
-            to={`/${locale}/solution`}
+            to={`/${locale}/corporate`}
             className="navigation__link"
             activeClassName="navigation__link--active"
             onClick={onClose}
