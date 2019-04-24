@@ -1,5 +1,6 @@
 import React from 'react';
 import { IntlProvider, addLocaleData } from 'react-intl';
+import { HeadScripts } from '../HeadScripts/HeadScripts';
 import FormattedMetaTags from '../FormattedMetaTags';
 import FormattedOpenGraph from '../FormattedOpenGraph';
 
@@ -26,6 +27,8 @@ export default ({ children, pageContext }) => {
           idOgTitle="og_title_default"
           idOgDescription="og_description_default"
         />
+
+        <HeadScripts />
 
         <Header locale={locale} originalPath={originalPath} />
         {children}

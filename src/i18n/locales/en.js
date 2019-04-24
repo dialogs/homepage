@@ -286,8 +286,7 @@ module.exports = {
     'Integrations with security infrastructure (SIEM, DLP, IDM, Anti-virus)',
   prices_bot_sdk: 'Bot SDK',
 
-  download_header: 'The dialog platform’s cloud demo app',
-  download_subtitle_before: 'Try out the platform’s features in our demo app. ',
+  download_header: 'The dialog platform’s cloud app demo',
   download_subtitle_button_text: 'Complete an application',
   download_subtitle_after:
     ' to receive information on how to install the platform.',
@@ -295,6 +294,7 @@ module.exports = {
   download_enterprise_subtitle_before:
     'Get installation info from your system administrator or the ',
   download_enterprise_subtitle_link: 'client support system',
+  download_enterprise_subtitle_2: `You can also try out the platform’s features in our  <a class="link--default" href="/en/download">demo app</a>.`,
 
   download_desktop_title: 'Desktop Application',
   download_for: 'Download for ',

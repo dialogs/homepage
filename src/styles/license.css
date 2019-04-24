@@ -31,6 +31,14 @@
   }
 
   &__photos {
+    &--patents {
+      padding-top: 0;
+
+      @media (--tablet-landscape-viewport) {
+        padding-top: 30px;
+      }
+    }
+
     &-title {
       font-weight: 500;
       font-size: var(--font-size-title-2);

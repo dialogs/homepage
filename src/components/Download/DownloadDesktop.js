@@ -2,21 +2,21 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
 
-import { getOS } from '../../utils/getOS';
+// import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
 
 export function DownloadDesktop({ isEnterprise }) {
-  const os = getOS();
+  function handleDownloadAnalytics(event, param) {
+    if (typeof window !== 'undefined') {
+      window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
+      window.yaCounter.reachGoal(`download_${param}`);
+    }
+  }
+
+  // const os = getOS();
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
 
-  let imgSrc = isEnterprise
-    ? '/images/download/enterprise-desktop-windows.png'
-    : '/images/download/cloud-desktop-windows.png';
-
-  let imgSrcSet = isEnterprise
-    ? '/images/download/enterprise-desktop-windows@2x.png 2x'
-    : '/images/download/cloud-desktop-windows@2x.png 2x';
-
+  /*
   function renderDownloadDesktopImage() {
     switch (os) {
       case 'macOS':
@@ -104,6 +104,7 @@ export function DownloadDesktop({ isEnterprise }) {
         );
     }
   }
+  */
 
   return (
     <div className="download__section download__item download__desktop">
@@ -111,14 +112,72 @@ export function DownloadDesktop({ isEnterprise }) {
         <FormattedMessage id="download_desktop_title" />
       </h2>
       <div className="download__desktop-pictute">
-        {renderDownloadDesktopImage()}
+        {/*renderDownloadDesktopImage()*/}
+        <img
+          className="download__desktop-img"
+          src={
+            isEnterprise
+              ? '/images/download/enterprise-desktop-macos.png'
+              : '/images/download/cloud-desktop-macos.png'
+          }
+          srcSet={
+            isEnterprise
+              ? '/images/download/enterprise-desktop-macos@2x.png 2x'
+              : '/images/download/cloud-desktop-macos@2x.png 2x'
+          }
+          alt={
+            isEnterprise
+              ? 'Десктопное приложение enterprise для MacOS'
+              : 'Десктопное приложение демо в облаке для MacOS'
+          }
+        />
       </div>
-
+      {/*
       <div className="download__desktop-button-box">
         {renderDownloadDesktopButton()}
       </div>
+      */}
 
       <div className="download__desktop-systems">
+        <div className="download__desktop-system">
+          <a
+            className="download__item-link"
+            href={links.osx}
+            onClick={(event) => handleDownloadAnalytics(event, 'dialog_macos')}
+          >
+            Mac OS
+          </a>
+        </div>
+        <div className="download__desktop-system">
+          <a
+            className="download__item-link"
+            href={links.windows}
+            onClick={(event) =>
+              handleDownloadAnalytics(event, 'dialog_windows')
+            }
+          >
+            Windows
+          </a>
+        </div>
+        <div className="download__desktop-system">
+          <a
+            className="download__item-link"
+            href={links.linux}
+            onClick={(event) => handleDownloadAnalytics(event, 'dialog_linux')}
+          >
+            Linux 32
+          </a>
+        </div>
+        <div className="download__desktop-system">
+          <a
+            className="download__item-link"
+            href={links.linux64}
+            onClick={(event) => handleDownloadAnalytics(event, 'dialog_linux')}
+          >
+            Linux 64
+          </a>
+        </div>
+        {/*
         {os !== 'macOS' && os !== 'iOS' && (
           <div className="download__desktop-system">
             <a className="download__item-link" href={links.osx}>
@@ -147,6 +206,7 @@ export function DownloadDesktop({ isEnterprise }) {
             </a>
           </div>
         )}
+        */}
       </div>
     </div>
   );
