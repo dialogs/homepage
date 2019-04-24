@@ -6,7 +6,8 @@ variables:
   GIT_STRATEGY: clone
   IMAGE_NAME: dlgim/$CI_PROJECT_NAME
   BUILD_NUMBER: '${CI_PIPELINE_IID}'
-  STAGING_URL: 'https://new-landing.dlg.im'
+  PROD_URL: 'https://dlg.im'
+  DEV_URL: 'https://demo.dlg.im'
 
 cache:
   key: '${CI_COMMIT_SHA}'
@@ -76,36 +77,69 @@ staging:
   stage: deploy
   environment:
     name: staging
-    url: '${STAGING_URL}'
+    url: '${DEV_URL}'
   cache: {}
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
     - source variables
     - |
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* deploy started.\"}" \
+      --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* deploy to DEV started.\"}" \
       $DIALOG_WEBHOOK
-
     - eval `ssh-agent`
     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
+
     - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
     - cd homepage && ansible-galaxy install -r requirements.yml
-    - ansible-playbook -u poweruser playbook.yml --diff -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}" --limit homepage-next
-
-    - |
+    - ansible-playbook -u root playbook.yml --diff -e homepage_http_port=7083 -e homepage_service_name="homepage-demo" -e homepage_container="${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}" --limit homepage-old
+    - |  
       curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🤟🏾 Homepage build *#${BUILD_NUMBER}:* successfully deployed. [Check here](${STAGING_URL})\"}" \
-      $DIALOG_WEBHOOK
+      --data "{\"text\": \"🤟🏾 Homepage build *#${BUILD_NUMBER}:* successfully deployed. [Check here](${DEV_URL})\"}" \
+      $DIALOG_WEBHOOK    
   dependencies:
     - version
   only:
     - develop
+  tags:
+    - sbc-deploy
 
-notify_fail:
-  stage: notify
-  when: on_failure
-  script:
-    - |
-      curl --header 'Content-Type: application/json' --request POST \
-      --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed. [More info](${CI_PIPELINE_URL})\"}" \
-      $DIALOG_WEBHOOK
+
+# prod:
+#   stage: deploy
+#   environment:
+#     name: prod
+#     url: '${PROD_URL}'
+#   cache: {}
+#   image: gitlab.transmit.im:5001/gitlab/builders/ansible
+#   script:
+#     # - source variables
+#     # - |
+#     #   curl --header 'Content-Type: application/json' --request POST \
+#     #   --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* deploy to PROD started.\"}" \
+#     #   $DIALOG_WEBHOOK
+
+#     - eval `ssh-agent`
+#     - echo "$SSH_CI_KEY" | base64 -d | ssh-add -
+#     - git clone git@gitlab.transmit.im:web/ansible-playbooks/homepage.git
+#     - cd homepage && ansible-galaxy install -r requirements.yml
+#     - ansible-playbook -u root playbook.yml --diff -e homepage_http_port=8083 -e homepage_service_name="${CI_PROJECT_NAME}" -e homepage_container="quay.io/dlgim/homepage-next:0.0.0.412" --limit homepage-old
+#     #"${REGISTRY}/${IMAGE_NAME}:${IMAGE_VERSION}"
+#     # - |
+#     #   curl --header 'Content-Type: application/json' --request POST \
+#     #   --data "{\"text\": \"🤟🏾 Homepage build *#${BUILD_NUMBER}:* successfully deployed. [Check here](${PROD_URL})\"}" \
+#     #   $DIALOG_WEBHOOK
+#   #dependencies:
+#   #  - version
+#   #only:
+#   #  - develop
+#   tags:
+#     - sbc-deploy
+
+# notify_fail:
+#   stage: notify
+#   when: on_failure
+#   script:
+#     - |
+#       curl --header 'Content-Type: application/json' --request POST \
+#       --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed. [More info](${CI_PIPELINE_URL})\"}" \
+#       $DIALOG_WEBHOOK
