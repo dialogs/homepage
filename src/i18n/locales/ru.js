@@ -256,7 +256,9 @@ module.exports = {
   download_web_title: 'Web версия',
   start: 'Начать',
 
-  prices_pageheader: 'Стоимость бессрочной лицензии на одного пользователя:',
+  prices_go_to_form: `<a class="link--default" href="#prices_offer_form">Отправьте заявку</a>, чтобы узнать цены`,
+  prices_pageheader:
+    'Цена на dialog Enteprise рассчитывается от количества пользователей',
   prices_price: '4800 ₽',
   prices_subtitle:
     'Цена на платформу может отличаться в зависимости от количества пользователей',

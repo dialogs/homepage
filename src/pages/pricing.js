@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
@@ -24,13 +24,17 @@ export default ({ pageContext: { locale } }) => {
           <PageHeader>
             <FormattedMessage id="prices_pageheader" />
           </PageHeader>
+          {/*
           <div className="value">
             <FormattedMessage id="prices_price" />
           </div>
+          */}
         </div>
         <div className="price__subtitle">
-          <FormattedMessage id="prices_subtitle" />
+          {/*<FormattedMessage id="prices_subtitle" />*/}
+          <FormattedHTMLMessage id="prices_go_to_form" />
         </div>
+
         <Section className="prices">
           <div className="prices__description">
             <FormattedMessage id="prices__description" />
@@ -147,7 +151,9 @@ export default ({ pageContext: { locale } }) => {
             </ul>
           </div>
         </Section>
-        <Offer />
+        <div id="prices_offer_form">
+          <Offer />
+        </div>
       </Container>
     </Page>
   );

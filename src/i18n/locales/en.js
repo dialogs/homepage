@@ -240,11 +240,15 @@ module.exports = {
   novosibirsk_address_most: '40 Kommunisticheskaya St., 630007',
   link_icanchoose:
     'More information about company life you can find in special project "icanchoose"',
-  prices_pageheader: 'Unlimited license from one unique personal user:',
-  prices_price: '$75',
+
+  prices_go_to_form: `<a class="link--default" href="#prices_offer_form">Send request</a> to get prices`,
+  prices_pageheader:
+    'The price of the dialog Enterprise is based on the number of users',
+  prices_price: '4,800 rubles',
   prices_subtitle:
     'The price for a platform may vary depending on the number of users.',
-  prices__description: 'Contact us to find the best solution for you',
+  prices__description:
+    'The basic version of the product contains familiar messenger functions',
   prices_item_title: 'Messenger',
   prices_personal_chats: 'Personal chats',
   prices_group_open_closed_chats: 'Group public/private chats',
