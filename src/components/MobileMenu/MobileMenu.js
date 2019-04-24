@@ -60,7 +60,7 @@ export function MobileMenu({
             <FormattedMessage id="menu_download" />
           </Link>
           <Link
-            to={`/${locale}/prices`}
+            to={`/${locale}/pricing`}
             className="navigation__link"
             activeClassName="navigation__link--active"
             onClick={onClose}

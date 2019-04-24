@@ -164,7 +164,10 @@ export function Footer({ locale }) {
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/prices`}>
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/pricing`}
+                    >
                       <FormattedMessage id="menu_pricing" />
                     </Link>
                   </div>
