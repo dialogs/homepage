@@ -13,9 +13,6 @@ export function Offer() {
         <Heading level="4">
           <FormattedMessage id="get_offer" />
         </Heading>
-        <div className="offer__header__subheader">
-          <FormattedMessage id="offer_licenses" />
-        </div>
       </div>
       <OfferForm className="offer__form" />
     </Section>

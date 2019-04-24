@@ -61,9 +61,12 @@ function notifyDialog(body, site) {
 function notifyEmail(body, site) {
   return new Promise((resolve, reject) => {
     const sender = {
-      name: body.name,
+      name: body.name || 'empty name',
       address: body.email,
     };
+
+    let mailAddressTo =
+      body.form === 'support' ? config.email_to_support : config.email_to;
 
     mailer.sendMail(
       {
@@ -71,9 +74,9 @@ function notifyEmail(body, site) {
           name: 'Dialog Bot',
           address: 'bot@dlg.im',
         },
-        to: config.email_to,
-        sender: sender,
-        replyTo: sender,
+        to: mailAddressTo,
+        sender: sender.address,
+        replyTo: sender.address,
         subject: `Заявка с сайта ${site}`,
         text: renderTextMessage(body, site),
       },

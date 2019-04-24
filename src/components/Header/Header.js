@@ -105,6 +105,7 @@ export function Header({
         onClose={closeMobileMenu}
         openOfferModal={openOfferModal}
         locale={locale}
+        originalPath={originalPath}
       />
     </header>
   );

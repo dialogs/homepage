@@ -16,7 +16,7 @@ export function OfferForm({ pending, error, value, onSubmit, className }) {
     email: '',
     phone: '',
     company: '',
-    users: '1-10',
+    users: '1-100',
     agree: true,
     subscribe: false,
   });
@@ -43,24 +43,30 @@ export function OfferForm({ pending, error, value, onSubmit, className }) {
           name="name"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_name" />}
+          required
         />
         <Input
+          type="email"
           value={form.email}
           name="email"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_email" />}
+          required
         />
         <Input
+          type="tel"
           value={form.phone}
           name="phone"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_phone" />}
+          required
         />
         <Input
           value={form.company}
           name="company"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_company" />}
+          required
         />
 
         <Select
@@ -69,6 +75,7 @@ export function OfferForm({ pending, error, value, onSubmit, className }) {
           name="users"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_amount" />}
+          required
         />
       </div>
 
