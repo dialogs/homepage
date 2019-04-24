@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -14,9 +15,9 @@ export function EffectiveCommunication() {
           <FormattedMessage id="EffectiveCommunication_effective_communications" />
         </Heading>
         <div className="image">
-          <img
+          <ImageFormatted
             src="/images/solution/effective-communication.png"
-            alt="Эффективные коммуникации"
+            altLangId="EffectiveCommunication_effective_communications"
           />
         </div>
       </div>

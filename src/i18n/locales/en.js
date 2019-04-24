@@ -1,4 +1,42 @@
 module.exports = {
+  meta_title_default:
+    'dialog | A platform for simple and efficient communications',
+  meta_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
+  meta_title_about: 'About | dialog',
+  meta_description_about:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_solutions: 'Box solutions | dialog',
+  meta_description_solutions:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_features: 'Platform features | dialog',
+  meta_description_features:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_download: 'Download | dialog',
+  meta_description_download:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_pricing: 'Pricing | dialog',
+  meta_description_pricing:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_support: 'Technical Support | dialog',
+  meta_description_support:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_blog: 'Blog | dialog',
+  meta_description_blog:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_patents: 'Patents | dialog',
+  meta_description_patents:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_legal: 'Legal Information | dialog',
+  meta_description_legal:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
+  og_title_default:
+    'dialog | A platform for simple and efficient communications',
+  og_description_default:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+
   button_get_offer: 'Get Offer',
 
   get_offer: 'Get Offer',
@@ -19,6 +57,51 @@ module.exports = {
   menu_pricing: 'Pricing',
   menu_patents: 'Patents and Licenses',
   menu_legal: 'Legal Information',
+
+  alt_hero_header: 'Achieve your team goals faster without losing focus',
+  alt_messenger: 'Messenger',
+  alt_corporate_features: 'Corporate Features',
+  alt_integrations: 'Integrations',
+  alt_safety_on_premise:
+    'On-Premise platform installation on a company’s server',
+  alt_safety_standarts: 'Highest security standards',
+  alt_ga: 'Google Analytics',
+  alt_dialog: 'dialog',
+  alt_jira: 'Jira',
+  alt_hr: 'HR',
+  alt_amo_crm: 'amoCrm',
+  alt_zendesk: 'Zendesk',
+  alt_security_service: 'Security Service',
+  alt_easy: 'dialog is simple and effective',
+  alt_big_business: 'dialog and big business',
+  alt_solution_big: 'A simple solution for corporate communications',
+  alt_solution_small: 'A technological solution for corporate communications',
+
+  alt_download_cloud_mobile_ios:
+    'Mobile application dialog platform’s cloud for iPhone / iPad',
+  alt_download_enterprise_mobile_ios:
+    'Mobile application dialog Enterprise for iPhone / iPad',
+  alt_download_cloud_mobile_ios_qr:
+    'Download mobile application dialog platform’s cloud for iPhone / iPad',
+  alt_download_enterprise_mobile_ios_qr:
+    'Download mobile application dialog Enterprise for iPhone / iPad',
+  alt_download_appstore: 'Download on the App Store',
+
+  alt_download_cloud_mobile_android:
+    'The dialog platform’s cloud mobile app demo for Android',
+  alt_download_enterprise_mobile_android:
+    'Mobile application dialog Enterprise for Android',
+  alt_download_cloud_mobile_android_qr:
+    'Download the dialog platform’s cloud mobile app demo for Android',
+  alt_download_enterprise_mobile_android_qr:
+    'Download mobile application dialog Enterprise for Android',
+  alt_download_googleplay: 'get it on Google Play',
+
+  alt_download_cloud_web: 'The dialog platform’s cloud app demo web version',
+  alt_download_enterprise_web: 'Web version dialog Enterprise',
+
+  alt_icanchoose_about_dialog: 'icanchoose about dialog',
+  alt_download: 'Download',
 
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:

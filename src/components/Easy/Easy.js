@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -15,11 +16,11 @@ export function Easy() {
             <FormattedMessage id="easy_header" />
           </Heading>
           <div className="easy-image">
-            <img
-              className="easy-img"
-              src="/images/home/easy/easy-export.png"
+            <ImageFormatted
+              imgClass="easy-img"
+              src="/images/home/easy/easy-export@2x.png"
               srcSet="/images/home/easy/easy-export@2x.png 2x"
-              alt=""
+              altLangId="alt_easy"
             />
           </div>
         </div>
