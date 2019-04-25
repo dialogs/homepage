@@ -31,7 +31,7 @@ export function HeadScripts() {
       <noscript>{`
         <img src="https://vk.com/rtrg?p=VK-RTRG-312457-9ETr" style="position:fixed;left:-999px;" alt=""/>
       `}</noscript>
-      {/*<script>{`
+      <script>{`
         (function(d, w, c) {
           w.ChatraID = 'szK8K2NL8SAhofLgJ';
           var s = d.createElement('script');
@@ -43,7 +43,7 @@ export function HeadScripts() {
           + '//call.chatra.io/chatra.js';
           if (d.head) d.head.appendChild(s);
         })(document, window, 'Chatra');
-      `}</script>*/}
+      `}</script>
     </Helmet>
   );
 }

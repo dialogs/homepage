@@ -9,8 +9,9 @@ export function Collapsible({
   titleClassName,
   contentClassName,
   className,
+  openByDefault,
 }) {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(openByDefault || false);
 
   const classes = classnames(
     'collapsible',
