@@ -8,6 +8,7 @@ export function FormattedOpenGraph({
   idOgDescription,
   ogImageSrc,
   url,
+  path,
 }) {
   const ogTitle = messages[idOgTitle] || idOgTitle;
   const ogDescription = messages[idOgDescription] || idOgDescription;
@@ -20,7 +21,7 @@ export function FormattedOpenGraph({
       <meta property="og:site_name" content="dialog" />
       {url
         ? [
-            <meta property="og:url" content={url} key="url" />,
+            <meta property="og:url" content={`${url}${path}`} key="url" />,
             <meta
               property="og:image"
               content={`${url}${ogImageSrc}`}
