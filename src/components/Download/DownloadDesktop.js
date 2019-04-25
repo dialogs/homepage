@@ -113,8 +113,8 @@ export function DownloadDesktop({ isEnterprise }) {
       </h2>
       <div className="download__desktop-pictute">
         {/*renderDownloadDesktopImage()*/}
-        <img
-          className="download__desktop-img"
+        <ImageFormatted
+          imgClass="download__desktop-img"
           src={
             isEnterprise
               ? '/images/download/enterprise-desktop-macos.png'
@@ -125,11 +125,7 @@ export function DownloadDesktop({ isEnterprise }) {
               ? '/images/download/enterprise-desktop-macos@2x.png 2x'
               : '/images/download/cloud-desktop-macos@2x.png 2x'
           }
-          alt={
-            isEnterprise
-              ? 'Десктопное приложение enterprise для MacOS'
-              : 'Десктопное приложение демо в облаке для MacOS'
-          }
+          altLangId="download_desktop_title"
         />
       </div>
       {/*
