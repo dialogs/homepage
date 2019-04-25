@@ -57,7 +57,7 @@ module.exports = {
   menu_patents: 'Патенты и лицензии',
   menu_legal: 'Правовая информация',
 
-  alt_hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
+  alt_hero_header: 'Достигайте командных целей быстрее и без потери фокуса',
   alt_messenger: 'Мессенджер',
   alt_corporate_features: 'Корпоративные функции',
   alt_integrations: 'Интеграции',
@@ -103,7 +103,7 @@ module.exports = {
   alt_icanchoose_about_dialog: 'icanchoose о dialog',
   alt_download: 'Скачать',
 
-  hero_header: 'Достигайте командные цели быстрее и без потери фокуса',
+  hero_header: 'Достигайте командных целей быстрее и без потери фокуса',
   hero_subheader: 'Простая и эффективная платформа для коммуникаций в компании',
 
   platform_header: 'dialog — коммуникационная <br />платформа для компаний',
