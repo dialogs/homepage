@@ -10,6 +10,7 @@ import { Subscribe } from '../components/Subscribe/Subscribe';
 
 export default ({
   data: { tags, ruFeatured, enFeatured, ruPosts, enPosts },
+  pageContext: { url },
 }) => {
   if (window.location.href.indexOf('/ru/') > 0) {
     return (
@@ -18,7 +19,7 @@ export default ({
           titleId="meta_title_blog"
           descriptionId="meta_description_blog"
         />
-        <FormattedOpenGraph idOgTitle="meta_title_blog" />
+        <FormattedOpenGraph url={url} idOgTitle="meta_title_blog" />
         <BlogHeader featured={ruFeatured.posts} tags={tags} />
         <BlogRoster title="Последние статьи" posts={ruPosts.posts} />
         <Subscribe />
@@ -31,7 +32,7 @@ export default ({
           titleId="meta_title_blog"
           descriptionId="meta_description_blog"
         />
-        <FormattedOpenGraph idOgTitle="meta_title_blog" />
+        <FormattedOpenGraph url={url} idOgTitle="meta_title_blog" />
         <BlogHeader featured={enFeatured.posts} tags={tags} />
         <BlogRoster title="Latest articles" posts={enPosts.posts} />
         <Subscribe />
