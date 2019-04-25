@@ -21,7 +21,7 @@ export default ({
       <FormattedOpenGraph
         idOgTitle="meta_title_blog"
         url={url}
-        path={originalPath}
+        path={`/${locale}${originalPath}`}
       />
 
       <BlogHeader

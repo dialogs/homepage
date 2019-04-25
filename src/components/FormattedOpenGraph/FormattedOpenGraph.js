@@ -38,4 +38,5 @@ FormattedOpenGraph.defaultProps = {
   idOgTitle: 'og_title_default',
   idOgDescription: 'og_description_default',
   ogImageSrc: '/images/dialog.jpg',
+  path: '',
 };

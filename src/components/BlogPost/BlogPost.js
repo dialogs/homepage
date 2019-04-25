@@ -8,48 +8,31 @@ import { BlogRoster } from '../BlogRoster/BlogRoster';
 import { Subscribe } from '../Subscribe/Subscribe';
 import './BlogPost.css';
 
-export default ({ data: { post, ruRecommended, enRecommended } }) => {
-  if (window.location.href.indexOf('/ru/') > 0) {
-    return (
-      <Container className="blog_post">
-        <Article
-          className="post__article"
-          title={post.title}
-          tags={post.tags}
-          featureImage={post.featureImage}
-          publishDate={post.publishDate}
-          excerpt={post.excerpt}
-          html={post.html}
-        />
-        <BlogRoster
-          title="Рекомендованные статьи"
-          posts={ruRecommended.posts}
-          limit={6}
-        />
-        <Subscribe />
-      </Container>
-    );
-  } else {
-    return (
-      <Container className="blog_post">
-        <Article
-          className="post__article"
-          title={post.title}
-          tags={post.tags}
-          featureImage={post.featureImage}
-          publishDate={post.publishDate}
-          excerpt={post.excerpt}
-          html={post.html}
-        />
-        <BlogRoster
-          title="Recomended articles"
-          posts={enRecommended.posts}
-          limit={6}
-        />
-        <Subscribe />
-      </Container>
-    );
-  }
+export default ({
+  data: { post, ruRecommended, enRecommended },
+  pageContext: { locale },
+}) => {
+  return (
+    <Container className="blog_post">
+      <Article
+        className="post__article"
+        title={post.title}
+        tags={post.tags}
+        featureImage={post.featureImage}
+        publishDate={post.publishDate}
+        excerpt={post.excerpt}
+        html={post.html}
+      />
+      <BlogRoster
+        title={
+          locale === 'ru' ? 'Рекомендованные статьи' : 'Recomended articles'
+        }
+        posts={locale === 'ru' ? ruRecommended.posts : enRecommended.posts}
+        limit={6}
+      />
+      <Subscribe />
+    </Container>
+  );
 };
 
 export const postFragment = graphql`
@@ -80,7 +63,7 @@ export const pageQuery = graphql`
     ruRecommended: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
       filter: { tags: { elemMatch: { name: { eq: "#recomended-ru" } } } }
-      limit: 3
+      limit: 6
     ) {
       posts: nodes {
         ...PostFragment
@@ -89,7 +72,7 @@ export const pageQuery = graphql`
     enRecommended: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
       filter: { tags: { elemMatch: { name: { eq: "#recomended-en" } } } }
-      limit: 3
+      limit: 6
     ) {
       posts: nodes {
         ...PostFragment
