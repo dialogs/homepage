@@ -25,6 +25,10 @@
   &__col {
     display: flex;
     align-items: center;
+
+    @media (--tablet-landscape-viewport) {
+      z-index: 1;
+    }
   }
 
   &__logo {
@@ -94,7 +98,6 @@
 
       @media (--tablet-landscape-viewport) {
         display: block;
-        z-index: 1;
       }
 
       &:hover {
