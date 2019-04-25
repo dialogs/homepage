@@ -14,6 +14,14 @@ export default ({
 }) => {
   return (
     <Container className="blog_post">
+      <Helmet>
+        <title>{post.title}</title>
+        <meta name="description" content={post.excerpt} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.featureImage} />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <Article
         className="post__article"
         title={post.title}
