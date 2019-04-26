@@ -13,14 +13,18 @@ import { EffectiveCommunication } from '../components/EffectiveCommunication/Eff
 import { Partnership } from '../components/Partnership/Partnership';
 import { Offer } from '../components/Offer/Offer';
 
-export default () => {
+export default ({ pageContext: { locale, url, originalPath } }) => {
   return (
     <Page>
       <FormattedMetaTags
         titleId="meta_title_solutions"
         descriptionId="meta_description_solutions"
       />
-      <FormattedOpenGraph idOgTitle="meta_title_solutions" />
+      <FormattedOpenGraph
+        idOgTitle="meta_title_solutions"
+        url={url}
+        path={`/${locale}${originalPath}`}
+      />
 
       <Container>
         <PageHeader className="solution">
