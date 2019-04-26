@@ -21,7 +21,6 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
   function handleChange(value) {
     setEmail(value);
   }
-  const locale = window.location.href.indexOf('/ru/') > 0 ? 'ru' : 'en';
 
   return (
     <form className={classes} onSubmit={handleSubmit}>
@@ -32,7 +31,7 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         state={error ? 'error' : 'normal'}
         disabled={pending}
         onChange={handleChange}
-        label={locale == 'ru' ? 'Ваш e-mail' : 'Your e-mail'}
+        label={locale === 'ru' ? 'Ваш e-mail' : 'Your e-mail'}
         required
       />
       <div className="form__footer">
