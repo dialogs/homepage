@@ -3,29 +3,42 @@ import Helmet from 'react-helmet';
 
 export function FormattedOpenGraph({
   intl: { messages },
-  ogType = 'website',
-  idOgTitle = 'og_title_default',
-  idOgDescription = 'og_description_default',
-  ogImageSrc = '/images/dialog.jpg',
+  ogType,
+  idOgTitle,
+  idOgDescription,
+  ogImageSrc,
+  url,
+  path,
 }) {
-  const ogTitle = messages[idOgTitle];
-  const ogDescription = messages[idOgDescription];
+  const ogTitle = messages[idOgTitle] || messages['og_title_default'];
+  const ogDescription =
+    messages[idOgDescription] || messages['og_description_default'];
 
   return (
     <Helmet>
       <meta property="og:type" content={ogType} />
       <meta property="og:title" content={ogTitle} />
       <meta property="og:description" content={ogDescription} />
-      {typeof window !== 'undefined'
+      <meta property="og:site_name" content="dialog" />
+      {url
         ? [
-            <meta property="og:url" content={window.location.href} />,
+            <meta property="og:url" content={`${url}${path}`} key="url" />,
             <meta
               property="og:image"
-              content={`${window.location.origin}${ogImageSrc}`}
+              content={`${url}${ogImageSrc}`}
+              key="image"
             />,
           ]
         : null}
-      <meta property="og:site_name" content="dialog" />
     </Helmet>
   );
 }
+
+FormattedOpenGraph.defaultProps = {
+  ogType: 'website',
+  idOgTitle: 'og_title_default',
+  idOgDescription: 'og_description_default',
+  ogImageSrc: '/images/dialog.jpg',
+  url: 'https://dlg.im',
+  path: '',
+};

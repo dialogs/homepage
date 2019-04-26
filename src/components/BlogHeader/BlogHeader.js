@@ -11,9 +11,9 @@ import { removeServiceTags } from '../../utils/removeServiceTags';
 
 import './BlogHeader.css';
 
-export function BlogHeader({ featured, tags }) {
+export function BlogHeader({ featured, tags, locale }) {
   const [mainPost, ...otherPosts] = featured;
-  const locale = window.location.href.indexOf('/ru/') > 0 ? 'ru' : 'en';
+
   return (
     <Section className="blog__top-section blog_header">
       <div className="blog__main box-block">

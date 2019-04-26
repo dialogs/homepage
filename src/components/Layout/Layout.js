@@ -14,7 +14,7 @@ import '../../styles/index.css';
 addLocaleData(localeData);
 
 export default ({ children, pageContext }) => {
-  const { locale = 'en', originalPath } = pageContext;
+  const { locale = 'en', originalPath, url } = pageContext;
 
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
@@ -26,6 +26,8 @@ export default ({ children, pageContext }) => {
         <FormattedOpenGraph
           idOgTitle="og_title_default"
           idOgDescription="og_description_default"
+          url={url}
+          path={`/${locale}${originalPath}`}
         />
 
         <HeadScripts />

@@ -5,14 +5,18 @@ import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../components/Container/Container';
 
-export default () => {
+export default ({ pageContext: { locale, url, originalPath } }) => {
   return (
     <Container>
       <FormattedMetaTags
         titleId="meta_title_legal"
         descriptionId="meta_description_legal"
       />
-      <FormattedOpenGraph idOgTitle="meta_title_legal" />
+      <FormattedOpenGraph
+        idOgTitle="meta_title_legal"
+        url={url}
+        path={`/${locale}${originalPath}`}
+      />
 
       <article className="legal">
         <h1>

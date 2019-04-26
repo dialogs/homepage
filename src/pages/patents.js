@@ -8,14 +8,18 @@ import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 // import { PartnersTechnological } from '../components/PartnersTechnological/PartnersTechnological';
 
-export default () => {
+export default ({ pageContext: { locale, url, originalPath } }) => {
   return (
     <Container>
       <FormattedMetaTags
         titleId="meta_title_patents"
         descriptionId="meta_description_patents"
       />
-      <FormattedOpenGraph idOgTitle="meta_title_patents" />
+      <FormattedOpenGraph
+        idOgTitle="meta_title_patents"
+        url={url}
+        path={`/${locale}${originalPath}`}
+      />
 
       <div className="license__column-content">
         <section className="license__section license__intro">

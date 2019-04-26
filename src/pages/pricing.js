@@ -10,14 +10,18 @@ import { Section } from '../components/Section/Section';
 import { Heading } from '../components/Heading/Heading';
 import { Offer } from '../components/Offer/Offer';
 
-export default ({ pageContext: { locale } }) => {
+export default ({ pageContext: { locale, url, originalPath } }) => {
   return (
     <Page>
       <FormattedMetaTags
         titleId="meta_title_pricing"
         descriptionId="meta_description_pricing"
       />
-      <FormattedOpenGraph idOgTitle="meta_title_pricing" />
+      <FormattedOpenGraph
+        idOgTitle="meta_title_pricing"
+        url={url}
+        path={`/${locale}${originalPath}`}
+      />
 
       <Container>
         <div className="price__header">

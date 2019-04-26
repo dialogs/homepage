@@ -6,7 +6,7 @@ import { BlogPostCard } from '../BlogPostCard/BlogPostCard';
 
 const DEFAULT_LIMIT = 6;
 
-export function BlogRoster({ title, posts, limit = DEFAULT_LIMIT }) {
+export function BlogRoster({ title, posts, limit = DEFAULT_LIMIT, locale }) {
   const [visibleCount, updateVisibleCount] = useState(limit);
 
   function handleLoadMoreClick() {
@@ -28,6 +28,7 @@ export function BlogRoster({ title, posts, limit = DEFAULT_LIMIT }) {
                 tags={post.tags}
                 publishDate={post.publishDate}
                 featureImage={post.featureImage}
+                locale={locale}
               />
             );
           })}

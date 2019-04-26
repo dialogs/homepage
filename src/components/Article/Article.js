@@ -16,9 +16,9 @@ export function Article({
   featureImage,
   className,
   html,
+  locale,
 }) {
   const classes = classnames('article', className);
-  const locale = window.location.href.indexOf('/ru/') > 0 ? 'ru' : 'en';
 
   return (
     <article className={classes}>
@@ -27,7 +27,11 @@ export function Article({
           <button
             type="button"
             className="link--back"
-            onClick={() => window.history.back()}
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.history.back();
+              }
+            }}
           >
             <img src="/images/svg-icons/arrow-link.svg" alt="" className="" />
             <span>

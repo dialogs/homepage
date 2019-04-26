@@ -9,35 +9,34 @@ import { BlogRoster } from '../components/BlogRoster/BlogRoster';
 import { Subscribe } from '../components/Subscribe/Subscribe';
 
 export default ({
-  data: { tags, ruFeatured, enFeatured, ruPosts, enPosts },
+  data: { featured, allPosts, tags, ruFeatured, enFeatured, ruPosts, enPosts },
+  pageContext: { locale, url, originalPath },
 }) => {
-  if (window.location.href.indexOf('/ru/') > 0) {
-    return (
-      <Container>
-        <FormattedMetaTags
-          titleId="meta_title_blog"
-          descriptionId="meta_description_blog"
-        />
-        <FormattedOpenGraph idOgTitle="meta_title_blog" />
-        <BlogHeader featured={ruFeatured.posts} tags={tags} />
-        <BlogRoster title="Последние статьи" posts={ruPosts.posts} />
-        <Subscribe />
-      </Container>
-    );
-  } else {
-    return (
-      <Container>
-        <FormattedMetaTags
-          titleId="meta_title_blog"
-          descriptionId="meta_description_blog"
-        />
-        <FormattedOpenGraph idOgTitle="meta_title_blog" />
-        <BlogHeader featured={enFeatured.posts} tags={tags} />
-        <BlogRoster title="Latest articles" posts={enPosts.posts} />
-        <Subscribe />
-      </Container>
-    );
-  }
+  return (
+    <Container>
+      <FormattedMetaTags
+        titleId="meta_title_blog"
+        descriptionId="meta_description_blog"
+      />
+      <FormattedOpenGraph
+        idOgTitle="meta_title_blog"
+        url={url}
+        path={`/${locale}${originalPath}`}
+      />
+
+      <BlogHeader
+        featured={locale === 'ru' ? ruFeatured.posts : enFeatured.posts}
+        tags={tags}
+        locale={locale}
+      />
+      <BlogRoster
+        title={locale === 'ru' ? 'Последние статьи' : 'Latest articles'}
+        posts={locale === 'ru' ? ruPosts.posts : enPosts.posts}
+        locale={locale}
+      />
+      <Subscribe />
+    </Container>
+  );
 };
 
 export const query = graphql`

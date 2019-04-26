@@ -1,5 +1,8 @@
 const path = require(`path`);
 const config = require('./server/config');
+const {
+  siteMetadata: { siteUrl },
+} = require('./gatsby-config');
 const { languages } = require('./src/i18n/locales');
 
 const postsQuery = `
@@ -31,6 +34,7 @@ exports.onCreatePage = ({ page, actions }) => {
         locale: '',
         routed: false,
         redirectPage: page.path,
+        url: siteUrl,
       },
     };
     deletePage(page);
@@ -46,6 +50,7 @@ exports.onCreatePage = ({ page, actions }) => {
           locale: value,
           routed: true,
           originalPath: page.path,
+          url: siteUrl,
         },
       };
       createPage(localePage);
@@ -124,6 +129,7 @@ exports.createPages = ({ graphql, actions }) => {
               context: {
                 locale: 'ru',
                 slug: post.slug,
+                url: siteUrl,
               },
             });
           });
@@ -156,6 +162,7 @@ exports.createPages = ({ graphql, actions }) => {
               context: {
                 locale: 'en',
                 slug: post.slug,
+                url: siteUrl,
               },
             });
           });

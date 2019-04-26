@@ -16,8 +16,10 @@ export function Header({
   closeMobileMenu,
 }) {
   let toLink = locale === 'ru' ? `en${originalPath}` : `ru${originalPath}`;
-  if (window.location.href.indexOf('/blog/') > 0) {
-    toLink = locale === 'ru' ? '/en/blog' : '/ru/blog';
+  if (typeof window !== 'undefined') {
+    if (window.location.href.indexOf('/blog/') > 0) {
+      toLink = locale === 'ru' ? '/en/blog' : '/ru/blog';
+    }
   }
 
   return (
