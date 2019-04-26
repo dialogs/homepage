@@ -6,6 +6,7 @@ import { ArticleHeader } from '../ArticleHeader/ArticleHeader';
 import { Tag } from '../Tag/Tag';
 import { removeServiceTags } from '../../utils/removeServiceTags';
 import './Article.css';
+import { FormattedMessage } from 'react-intl';
 
 export function Article({
   title,
@@ -17,6 +18,7 @@ export function Article({
   html,
 }) {
   const classes = classnames('article', className);
+  const locale = window.location.href.indexOf('/ru/') > 0 ? 'ru' : 'en';
 
   return (
     <article className={classes}>
@@ -28,7 +30,9 @@ export function Article({
             onClick={() => window.history.back()}
           >
             <img src="/images/svg-icons/arrow-link.svg" alt="" className="" />
-            <span>Назад</span>
+            <span>
+              <FormattedMessage id="article_back" />
+            </span>
           </button>
           <div className="article-image">
             <img src={featureImage} alt={title} />
@@ -36,7 +40,7 @@ export function Article({
         </div>
         <div className="article__header__block article__header__block--right">
           <div className="article__date">
-            {new Date(publishDate).toLocaleDateString('ru', {
+            {new Date(publishDate).toLocaleDateString(locale, {
               year: 'numeric',
               month: 'long',
               day: 'numeric',

@@ -119,3 +119,7 @@
     min-height: auto;
   }
 }
+
+body.modal-open {
+  overflow-y: hidden;
+}
