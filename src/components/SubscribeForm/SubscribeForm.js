@@ -8,6 +8,10 @@ import { FormattedMessage } from 'react-intl';
 export function SubscribeForm({ value, error, pending, onSubmit, className }) {
   const [email, setEmail] = useState('');
   const classes = classNames('form', className);
+  const locale =
+    typeof window !== 'undefined' && window.location.href.indexOf('/ru/') > 0
+      ? 'ru'
+      : 'en';
 
   function handleSubmit(event) {
     event.preventDefault();
