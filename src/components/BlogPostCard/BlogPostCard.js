@@ -20,10 +20,8 @@ export function BlogPostCard({
   return (
     <div className="blog__roster-item">
       <Link to={`/${locale}/blog/${slug}`} className="blog__roster-item-link">
-        <div className="blog__roster-image-box">
-          <div className="blog__roster-image">
-            <img src={featureImage} alt={title} />
-          </div>
+        <div className="blog__roster-image">
+          <img src={featureImage} alt={title} />
         </div>
         <div className="blog__roster-date">
           {new Date(publishDate).toLocaleDateString(locale, {
