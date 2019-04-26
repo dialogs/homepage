@@ -27,7 +27,7 @@ export default ({ children, pageContext }) => {
           idOgTitle="og_title_default"
           idOgDescription="og_description_default"
           url={url}
-          path={`${locale}${originalPath}`}
+          path={`/${locale}${originalPath}`}
         />
 
         <HeadScripts />

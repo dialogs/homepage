@@ -10,8 +10,9 @@ export function FormattedOpenGraph({
   url,
   path,
 }) {
-  const ogTitle = messages[idOgTitle] || idOgTitle;
-  const ogDescription = messages[idOgDescription] || idOgDescription;
+  const ogTitle = messages[idOgTitle] || messages['og_title_default'];
+  const ogDescription =
+    messages[idOgDescription] || messages['og_description_default'];
 
   return (
     <Helmet>
@@ -38,5 +39,6 @@ FormattedOpenGraph.defaultProps = {
   idOgTitle: 'og_title_default',
   idOgDescription: 'og_description_default',
   ogImageSrc: '/images/dialog.jpg',
+  url: 'https://dlg.im',
   path: '',
 };
