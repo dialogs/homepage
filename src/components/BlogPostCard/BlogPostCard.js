@@ -13,9 +13,9 @@ export function BlogPostCard({
   featureImage,
   excerpt,
   tags,
+  locale,
 }) {
   const tagsToRender = removeServiceTags(tags);
-  const locale = window.location.href.indexOf('/ru/') > 0 ? 'ru' : 'en';
 
   return (
     <div className="blog__roster-item">

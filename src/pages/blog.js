@@ -31,6 +31,7 @@ export default ({
       <BlogRoster
         title={locale === 'ru' ? 'Последние статьи' : 'Latest articles'}
         posts={locale === 'ru' ? ruPosts.posts : enPosts.posts}
+        locale={locale}
       />
       <Subscribe />
     </Container>

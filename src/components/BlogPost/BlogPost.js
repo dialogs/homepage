@@ -30,6 +30,7 @@ export default ({
         publishDate={post.publishDate}
         excerpt={post.excerpt}
         html={post.html}
+        locale={locale}
       />
       <BlogRoster
         title={
