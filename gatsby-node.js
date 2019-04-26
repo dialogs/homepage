@@ -162,6 +162,7 @@ exports.createPages = ({ graphql, actions }) => {
               context: {
                 locale: 'en',
                 slug: post.slug,
+                url: siteUrl,
               },
             });
           });

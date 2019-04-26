@@ -10,17 +10,20 @@ import './BlogPost.css';
 
 export default ({
   data: { post, ruRecommended, enRecommended },
-  pageContext: { locale },
+  pageContext: { locale, url, slug },
 }) => {
+  const fullUrl = `${url}/${locale}/blog/${slug}`;
+
   return (
     <Container className="blog_post">
       <Helmet>
         <title>{post.title}</title>
         <meta name="description" content={post.excerpt} />
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.featureImage} />
-        <meta property="og:type" content="article" />
+        <meta property="og:url" content={fullUrl} />
       </Helmet>
       <Article
         className="post__article"
@@ -38,6 +41,7 @@ export default ({
         }
         posts={locale === 'ru' ? ruRecommended.posts : enRecommended.posts}
         limit={6}
+        locale={locale}
       />
       <Subscribe />
     </Container>
