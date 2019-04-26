@@ -13,7 +13,7 @@ import './BlogHeader.css';
 
 export function BlogHeader({ featured, tags }) {
   const [mainPost, ...otherPosts] = featured;
-
+  const locale = window.location.href.indexOf('/ru/') > 0 ? 'ru' : 'en';
   return (
     <Section className="blog__top-section blog_header">
       <div className="blog__main box-block">
@@ -21,14 +21,14 @@ export function BlogHeader({ featured, tags }) {
           <img src={mainPost.featureImage} alt={mainPost.title} />
         </div>
         <div className="blog__main-date">
-          {new Date(mainPost.publishDate).toLocaleDateString('ru', {
+          {new Date(mainPost.publishDate).toLocaleDateString(locale, {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
           })}
         </div>
         <div className="blog__main-title">
-          <Link to={`/blog/${mainPost.slug}`}>{mainPost.title}</Link>
+          <Link to={`/${locale}/blog/${mainPost.slug}`}>{mainPost.title}</Link>
         </div>
         <div className="blog__main-short">
           {removeMarkdown(mainPost.excerpt)}
@@ -59,7 +59,7 @@ export function BlogHeader({ featured, tags }) {
                   </div>
                   <div className="blog__popular-info">
                     <div className="blog__popular-date">
-                      {new Date(post.publishDate).toLocaleDateString('ru', {
+                      {new Date(post.publishDate).toLocaleDateString(locale, {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
@@ -67,7 +67,7 @@ export function BlogHeader({ featured, tags }) {
                     </div>
                     <div className="blog__popular-item-title">
                       <Link
-                        to={`/blog/${post.slug}`}
+                        to={`/${locale}/blog/${post.slug}`}
                         className="blog__popular-item-title-link"
                       >
                         {post.title}

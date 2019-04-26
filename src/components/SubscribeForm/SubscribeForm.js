@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
+import { FormattedMessage } from 'react-intl';
 
 export function SubscribeForm({ value, error, pending, onSubmit, className }) {
   const [email, setEmail] = useState('');
@@ -16,6 +17,7 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
   function handleChange(value) {
     setEmail(value);
   }
+  const locale = window.location.href.indexOf('/ru/') > 0 ? 'ru' : 'en';
 
   return (
     <form className={classes} onSubmit={handleSubmit}>
@@ -26,22 +28,28 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         state={error ? 'error' : 'normal'}
         disabled={pending}
         onChange={handleChange}
-        label="Ваш e-mail"
+        label={locale == 'ru' ? 'Ваш e-mail' : 'Your e-mail'}
         required
       />
       <div className="form__footer">
         <Button type="submit" className="form__submit" disabled={pending}>
-          Подписаться
+          <FormattedMessage id="subscribe_submit" />
         </Button>
         <div className="form__info">
           {error && (
             <div className="form__error">
-              Что-то пошло не так. Попробуйте снова.
+              <FormattedMessage id="subscribe_error" />
             </div>
           )}
-          {pending && <div className="form__pending">Подписка</div>}
+          {pending && (
+            <div className="form__pending">
+              <FormattedMessage id="subscribe_pending" />
+            </div>
+          )}
           {value && value.status === 200 && (
-            <div className="form__success">Вы успешно подписаны.</div>
+            <div className="form__success">
+              <FormattedMessage id="subscribe_success" />
+            </div>
           )}
         </div>
       </div>

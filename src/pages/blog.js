@@ -8,33 +8,70 @@ import { BlogHeader } from '../components/BlogHeader/BlogHeader';
 import { BlogRoster } from '../components/BlogRoster/BlogRoster';
 import { Subscribe } from '../components/Subscribe/Subscribe';
 
-export default ({ data: { featured, allPosts, tags } }) => {
-  return (
-    <Container>
-      <FormattedMetaTags
-        titleId="meta_title_blog"
-        descriptionId="meta_description_blog"
-      />
-      <FormattedOpenGraph idOgTitle="meta_title_blog" />
-
-      <BlogHeader featured={featured.posts} tags={tags} />
-      <BlogRoster title="Последние статьи" posts={allPosts.posts} />
-      <Subscribe />
-    </Container>
-  );
+export default ({
+  data: { tags, ruFeatured, enFeatured, ruPosts, enPosts },
+}) => {
+  if (window.location.href.indexOf('/ru/') > 0) {
+    return (
+      <Container>
+        <FormattedMetaTags
+          titleId="meta_title_blog"
+          descriptionId="meta_description_blog"
+        />
+        <FormattedOpenGraph idOgTitle="meta_title_blog" />
+        <BlogHeader featured={ruFeatured.posts} tags={tags} />
+        <BlogRoster title="Последние статьи" posts={ruPosts.posts} />
+        <Subscribe />
+      </Container>
+    );
+  } else {
+    return (
+      <Container>
+        <FormattedMetaTags
+          titleId="meta_title_blog"
+          descriptionId="meta_description_blog"
+        />
+        <FormattedOpenGraph idOgTitle="meta_title_blog" />
+        <BlogHeader featured={enFeatured.posts} tags={tags} />
+        <BlogRoster title="Latest articles" posts={enPosts.posts} />
+        <Subscribe />
+      </Container>
+    );
+  }
 };
 
 export const query = graphql`
   {
-    featured: allGhostPost(
+    enFeatured: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
+      filter: { tags: { elemMatch: { name: { eq: "#featured-en" } } } }
       limit: 4
     ) {
       posts: nodes {
         ...PostFragment
       }
     }
-    allPosts: allGhostPost(sort: { order: DESC, fields: [published_at] }) {
+    enPosts: allGhostPost(
+      sort: { order: DESC, fields: [published_at] }
+      filter: { tags: { elemMatch: { name: { eq: "#en" } } } }
+    ) {
+      posts: nodes {
+        ...PostFragment
+      }
+    }
+    ruFeatured: allGhostPost(
+      sort: { order: DESC, fields: [published_at] }
+      filter: { tags: { elemMatch: { name: { eq: "#featured-ru" } } } }
+      limit: 4
+    ) {
+      posts: nodes {
+        ...PostFragment
+      }
+    }
+    ruPosts: allGhostPost(
+      sort: { order: DESC, fields: [published_at] }
+      filter: { tags: { elemMatch: { name: { eq: "#ru" } } } }
+    ) {
       posts: nodes {
         ...PostFragment
       }
