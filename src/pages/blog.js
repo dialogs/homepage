@@ -27,6 +27,7 @@ export default ({
       <BlogHeader
         featured={locale === 'ru' ? ruFeatured.posts : enFeatured.posts}
         tags={tags}
+        locale={locale}
       />
       <BlogRoster
         title={locale === 'ru' ? 'Последние статьи' : 'Latest articles'}
