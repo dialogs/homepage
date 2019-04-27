@@ -16,6 +16,13 @@ export function MobileMenu({
     'mobile-menu--opened': isOpen,
   });
 
+  let toLink = locale === 'ru' ? `en${originalPath}` : `ru${originalPath}`;
+  if (typeof window !== 'undefined') {
+    if (window.location.href.indexOf('/blog/') > 0) {
+      toLink = locale === 'ru' ? '/en/blog' : '/ru/blog';
+    }
+  }
+
   return (
     <div className={classes}>
       <div className="mobile-menu__content">
@@ -75,10 +82,7 @@ export function MobileMenu({
           >
             <FormattedMessage id="menu_about" />
           </Link>
-          <Link
-            to={`/${locale === 'ru' ? 'en' : 'ru'}${originalPath}`}
-            className="navigation__link navigation__link--lang"
-          >
+          <Link to={toLink} className="navigation__link navigation__link--lang">
             {locale === 'ru' ? 'en' : 'ru'}
           </Link>
         </nav>

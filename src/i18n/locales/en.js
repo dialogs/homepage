@@ -445,7 +445,12 @@ module.exports = {
 
   blog_header_popular: 'Popular Articles',
   subscribe_subscribe: 'Sign up for new blog articles!',
+  subscribe_submit: 'Subscribe',
+  subscribe_error: 'Something went wrong. Try again.',
+  subscribe_pending: 'Subscribing',
+  subscribe_success: 'You have successfully subscribed.',
   blog_roster_see_more: 'See more',
+  article_back: 'Back',
 
   footer_documentation: 'Documentation',
   footer_support: 'Help',

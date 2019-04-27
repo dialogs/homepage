@@ -15,6 +15,13 @@ export function Header({
   openOfferModal,
   closeMobileMenu,
 }) {
+  let toLink = locale === 'ru' ? `en${originalPath}` : `ru${originalPath}`;
+  if (typeof window !== 'undefined') {
+    if (window.location.href.indexOf('/blog/') > 0) {
+      toLink = locale === 'ru' ? '/en/blog' : '/ru/blog';
+    }
+  }
+
   return (
     <header className="header">
       <Container>
@@ -88,7 +95,7 @@ export function Header({
               <FormattedMessage id="button_get_offer" />
             </button>
             <Link
-              to={`/${locale === 'ru' ? 'en' : 'ru'}${originalPath}`}
+              to={toLink}
               className="header__button header__button--lang btn__change-lang"
             >
               {locale === 'ru' ? 'en' : 'ru'}

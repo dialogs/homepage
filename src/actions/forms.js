@@ -11,7 +11,6 @@ function getGACID() {
 }
 
 function sendAnal({ form }) {
-  console.log('sendAnal', { form });
   if (typeof window !== 'undefined') {
     try {
       if (window.ga && window.yaCounter) {

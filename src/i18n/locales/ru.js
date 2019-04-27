@@ -368,7 +368,12 @@ module.exports = {
 
   blog_header_popular: 'Популярные статьи',
   subscribe_subscribe: 'Подпишитесь на свежие статьи блога!',
+  subscribe_submit: 'Подписаться',
+  subscribe_error: 'Что-то пошло не так. Попробуйте снова.',
+  subscribe_pending: 'Подписка',
+  subscribe_success: 'Вы успешно подписаны.',
   blog_roster_see_more: 'Смотреть еще',
+  article_back: 'Назад',
 
   footer_documentation: 'Документация',
   footer_support: 'Помощь',

@@ -9,7 +9,7 @@ import { Link } from 'gatsby';
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 
-export default ({ pageContext: { locale } }) => {
+export default ({ pageContext: { locale, url, originalPath } }) => {
   const officesLinks = {
     moscow:
       'https://www.google.com/maps/place/dialog/@55.7368062,37.5323798,18z/data=!3m1!4b1!4m13!1m7!3m6!1s0x0:0x0!2zNTXCsDQ0JzEyLjUiTiAzN8KwMzInMDAuNyJF!3b1!8m2!3d55.736806!4d37.533528!3m4!1s0x46b54a53aa3b42cd:0x3c26303a75a2c356!8m2!3d55.7368062!4d37.5334741',
@@ -25,7 +25,11 @@ export default ({ pageContext: { locale } }) => {
         titleId="meta_title_about"
         descriptionId="meta_description_about"
       />
-      <FormattedOpenGraph idOgTitle="meta_title_about" />
+      <FormattedOpenGraph
+        idOgTitle="meta_title_about"
+        url={url}
+        path={`/${locale}${originalPath}`}
+      />
 
       <Container>
         <PageHeader>

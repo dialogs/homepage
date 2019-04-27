@@ -120,7 +120,6 @@
   }
 }
 
-body.modal-open,
-#___gatsby.modal-open {
+body.modal-open {
   overflow-y: hidden;
 }

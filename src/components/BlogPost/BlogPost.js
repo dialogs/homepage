@@ -8,18 +8,23 @@ import { BlogRoster } from '../BlogRoster/BlogRoster';
 import { Subscribe } from '../Subscribe/Subscribe';
 import './BlogPost.css';
 
-export default ({ data: { post, recommended } }) => {
+export default ({
+  data: { post, ruRecommended, enRecommended },
+  pageContext: { locale, url, slug },
+}) => {
+  const fullUrl = `${url}/${locale}/blog/${slug}`;
+
   return (
     <Container className="blog_post">
       <Helmet>
         <title>{post.title}</title>
         <meta name="description" content={post.excerpt} />
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.featureImage} />
-        <meta property="og:type" content="article" />
+        <meta property="og:url" content={fullUrl} />
       </Helmet>
-
       <Article
         className="post__article"
         title={post.title}
@@ -28,11 +33,15 @@ export default ({ data: { post, recommended } }) => {
         publishDate={post.publishDate}
         excerpt={post.excerpt}
         html={post.html}
+        locale={locale}
       />
       <BlogRoster
-        title="Рекомендованные статьи"
-        posts={recommended.posts}
+        title={
+          locale === 'ru' ? 'Рекомендованные статьи' : 'Recomended articles'
+        }
+        posts={locale === 'ru' ? ruRecommended.posts : enRecommended.posts}
         limit={6}
+        locale={locale}
       />
       <Subscribe />
     </Container>
@@ -64,9 +73,19 @@ export const pageQuery = graphql`
       ...PostFragment
       html
     }
-    recommended: allGhostPost(
+    ruRecommended: allGhostPost(
       sort: { order: DESC, fields: [published_at] }
-      limit: 3
+      filter: { tags: { elemMatch: { name: { eq: "#recomended-ru" } } } }
+      limit: 6
+    ) {
+      posts: nodes {
+        ...PostFragment
+      }
+    }
+    enRecommended: allGhostPost(
+      sort: { order: DESC, fields: [published_at] }
+      filter: { tags: { elemMatch: { name: { eq: "#recomended-en" } } } }
+      limit: 6
     ) {
       posts: nodes {
         ...PostFragment
