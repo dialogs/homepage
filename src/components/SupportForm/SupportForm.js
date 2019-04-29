@@ -64,7 +64,11 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
       />
 
       <div className="form__footer">
-        <Button type="submit" className="form__submit">
+        <Button
+          type="submit"
+          className="form__submit"
+          disabled={pending || (value && value.status === 200)}
+        >
           <FormattedMessage id="form_send" />
         </Button>
 
