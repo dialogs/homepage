@@ -10,7 +10,7 @@ function getGACID() {
   return match ? match[1] : null;
 }
 
-function sendAnal({ form }) {
+function sendAnal({ form, data }) {
   if (typeof window !== 'undefined') {
     try {
       if (window.ga && window.yaCounter) {
@@ -48,7 +48,7 @@ function sendAnal({ form }) {
     }
   }
 
-  return Promise.resolve();
+  return Promise.resolve(data);
 }
 
 function getFormData(form) {
