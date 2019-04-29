@@ -57,7 +57,7 @@ module.exports = {
   menu_pricing: 'Pricing',
   menu_patents: 'Patents and Licenses',
   menu_legal: 'Legal Information',
-  menu_bounty: 'Bounty-programm',
+  menu_bounty: 'Open-source bounty',
 
   alt_hero_header: 'Achieve your team goals faster without losing focus',
   alt_messenger: 'Messenger',
