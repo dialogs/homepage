@@ -184,6 +184,16 @@ export function Footer({ locale }) {
                       <FormattedMessage id="menu_about" />
                     </Link>
                   </div>
+                  <div className="footer__nav-item">
+                    <a
+                      className="footer__nav-link"
+                      href="https://oss.dlg.im/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <FormattedMessage id="menu_bounty" />
+                    </a>
+                  </div>
                 </div>
 
                 <div className="footer__nav-list">
