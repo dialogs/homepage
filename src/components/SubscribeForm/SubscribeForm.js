@@ -35,7 +35,11 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         required
       />
       <div className="form__footer">
-        <Button type="submit" className="form__submit" disabled={pending}>
+        <Button
+          type="submit"
+          className="form__submit"
+          disabled={pending || (value && value.status === 200)}
+        >
           <FormattedMessage id="subscribe_submit" />
         </Button>
         <div className="form__info">

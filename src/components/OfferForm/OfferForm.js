@@ -102,7 +102,11 @@ export function OfferForm({
       </div>
 
       <div className="form__footer">
-        <Button type="submit" className="form__submit">
+        <Button
+          type="submit"
+          className="form__submit"
+          disabled={pending || (value && value.status === 200)}
+        >
           <FormattedMessage id="send_application" />
         </Button>
         <div className="form__info">
