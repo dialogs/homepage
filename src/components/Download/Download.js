@@ -9,7 +9,7 @@ import { DownloadWeb } from './DownloadWeb';
 
 import './Download.css';
 
-export function Download({ openOfferModal }) {
+export function Download({ openOfferModal, locale }) {
   return (
     <Section className="download download__sections">
       <section className="download__section download__intro">
@@ -25,7 +25,7 @@ export function Download({ openOfferModal }) {
       </section>
 
       <DownloadDesktop />
-      <DownloadMobile />
+      <DownloadMobile locale={locale} />
       <DownloadWeb />
     </Section>
   );
