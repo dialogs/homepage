@@ -6,7 +6,7 @@ import ImageFormatted from '../ImageFormatted';
 import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
 
-export function DownloadMobile({ isEnterprise }) {
+export function DownloadMobile({ isEnterprise, locale }) {
   function handleDownloadAnalytics(event, param) {
     if (typeof window !== 'undefined') {
       window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
@@ -14,13 +14,8 @@ export function DownloadMobile({ isEnterprise }) {
     }
   }
 
-  const os = getOS();
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
-
-  const mobileClasses = classnames(
-    'download__mobile-items',
-    'current--' + os.toLowerCase(),
-  );
+  const mobileClasses = classnames('download__mobile-items');
 
   return (
     <section className="download__section download__item download__mobile">
@@ -43,7 +38,15 @@ export function DownloadMobile({ isEnterprise }) {
               }
             />
           </div>
-          <div className="title">iPhone / iPad</div>
+          <div className="title">
+            <a
+              className="download__item-link"
+              href={locale === 'ru' ? links.ios : links.ios_en}
+              onClick={(event) => handleDownloadAnalytics(event, 'dialog_ios')}
+            >
+              iPhone / iPad
+            </a>
+          </div>
           <div className="qr-box">
             <ImageFormatted
               src={
@@ -60,7 +63,7 @@ export function DownloadMobile({ isEnterprise }) {
           </div>
           <a
             className="store-link"
-            href={links.ios}
+            href={locale === 'ru' ? links.ios : links.ios_en}
             onClick={(event) => handleDownloadAnalytics(event, 'dialog_ios')}
           >
             <ImageFormatted
@@ -86,7 +89,17 @@ export function DownloadMobile({ isEnterprise }) {
               }
             />
           </div>
-          <div className="title">Android</div>
+          <div className="title">
+            <a
+              className="download__item-link"
+              href={links.android}
+              onClick={(event) =>
+                handleDownloadAnalytics(event, 'dialog_android')
+              }
+            >
+              Android
+            </a>
+          </div>
           <div className="qr-box">
             <ImageFormatted
               src={
