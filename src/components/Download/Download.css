@@ -306,7 +306,7 @@
 
       @media (--mobile-viewport) {
         min-width: 280px;
-        margin: 20px 0;
+        margin: 35px 0;
 
         &.mobile--ios {
           display: block;
