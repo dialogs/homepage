@@ -291,6 +291,10 @@
       display: flex;
       justify-content: space-between;
 
+      @media (--mobile-viewport) {
+        flex-direction: column;
+      }
+
       @media (--tablet-viewport) {
         justify-content: flex-start;
       }
@@ -302,19 +306,14 @@
 
       @media (--mobile-viewport) {
         min-width: 280px;
+        margin: 20px 0;
 
         &.mobile--ios {
-          .current--android & {
-            display: none;
-          }
+          display: block;
         }
 
         &.mobile--android {
-          display: none;
-
-          .current--android & {
-            display: block;
-          }
+          display: block;
         }
       }
 

@@ -1,6 +1,7 @@
 module.exports = {
   cloud: {
-    ios: 'https://itunes.apple.com/us/app/dialog-messenger/id1134796870',
+    ios: 'https://itunes.apple.com/ru/app/dialog-messenger/id1134796870',
+    ios_en: 'https://itunes.apple.com/app/dialog-messenger/id1134796870',
     android: 'https://play.google.com/store/apps/details?id=im.dlg.app',
     web: 'https://app.dlg.im',
     osx: 'https://cdn1.dlg.im/desktop/dialog-messenger-mac-latest.zip',
@@ -10,8 +11,9 @@ module.exports = {
       'https://cdn1.dlg.im/desktop/dialog-messenger-linux-amd64-latest.deb',
   },
   enterprise: {
-    ios: 'https://itunes.apple.com/us/app/dialog-enterprise/id1210727252',
-    android: 'https://play.google.com/store/apps/details?id=im.dlg.ee',
+    ios: 'https://itunes.apple.com/ru/app/dialog-in-company/id1438225210',
+    ios_en: 'https://itunes.apple.com/app/dialog-in-company/id1438225210',
+    android: 'https://play.google.com/store/apps/details?id=im.dlg.ee.grpc',
     web: 'https://ee.dlg.im',
     osx:
       'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-mac-latest.zip',

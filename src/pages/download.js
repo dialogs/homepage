@@ -20,7 +20,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
       />
 
       <Container>
-        <Download />
+        <Download locale={locale} />
       </Container>
     </Page>
   );
