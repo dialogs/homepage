@@ -7,7 +7,7 @@ import { DownloadDesktop } from '../Download/DownloadDesktop';
 import { DownloadMobile } from '../Download/DownloadMobile';
 import { DownloadWeb } from '../Download/DownloadWeb';
 
-export function DownloadEnterprise() {
+export function DownloadEnterprise({ locale }) {
   return (
     <Section className="download download__sections">
       <section className="download__section download__intro">
@@ -22,7 +22,7 @@ export function DownloadEnterprise() {
       </section>
 
       <DownloadDesktop isEnterprise />
-      <DownloadMobile isEnterprise />
+      <DownloadMobile isEnterprise locale={locale} />
       <DownloadWeb isEnterprise />
     </Section>
   );
