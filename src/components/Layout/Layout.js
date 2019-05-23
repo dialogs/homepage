@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { HeadScripts } from '../HeadScripts/HeadScripts';
 import FormattedMetaTags from '../FormattedMetaTags';
@@ -19,6 +20,7 @@ export default ({ children, pageContext }) => {
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
       <main className="main">
+        <Helmet htmlAttributes={{ lang: locale }} />
         <FormattedMetaTags
           titleId="meta_title_default"
           descriptionId="meta_description_default"
