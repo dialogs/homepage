@@ -25,6 +25,7 @@ export function Platform({ className }) {
           current={tab}
           vertical
           changeOnHover
+          withSquares
           className="platform__tabs"
         >
           <Tab value="messenger">

@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
 
-import { getOS } from '../../utils/getOS';
+// import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
 
 export function DownloadMobile({ isEnterprise, locale }) {
