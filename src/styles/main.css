@@ -85,6 +85,7 @@ a {
 .link--default {
   position: relative;
   cursor: pointer;
+  display: inline-block;
 
   &:before {
     content: '';

@@ -311,7 +311,7 @@ module.exports = {
   support_header: 'Feedback',
   support_corporate_title: 'Contact Technical Support',
   support_corporate_text_before:
-    'If you are a dialog Enterprise user – ask your admin for access',
+    'If you are a user of dialog enterprise - use the <a class="link--default" href="mailto:{email}">support center</a> for corporate clients. Or request access from your administrator.',
   support_connect: 'You can also contact technical support via ',
 
   form_label_your_email: 'Your e-mail ',
