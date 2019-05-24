@@ -319,7 +319,7 @@
 
     &-item {
       font-size: var(--font-size-content-3);
-      line-height: var(--ln-content-3);
+      line-height: var(--line-height-content-3);
       letter-spacing: 0.275px;
 
       /* TODO change to padding/margin variable???  */
