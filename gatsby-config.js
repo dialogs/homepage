@@ -58,6 +58,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-advanced-sitemap',
     {
       resolve: 'gatsby-plugin-express',
       options: {
