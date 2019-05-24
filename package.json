@@ -21,6 +21,7 @@
     "dotenv": "7.0.0",
     "express": "4.16.4",
     "gatsby": "2.3.29",
+    "gatsby-plugin-advanced-sitemap": "1.0.6",
     "gatsby-plugin-express": "1.1.6",
     "gatsby-plugin-facebook-pixel": "1.0.3",
     "gatsby-plugin-google-tagmanager": "2.0.13",
