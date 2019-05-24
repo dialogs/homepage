@@ -511,4 +511,16 @@ module.exports = {
   Partnership_bazalt: 'BaseALT',
   Partnership_my_office: 'MyOffice',
   Partnership_aurora: 'Sailfish',
+
+  '404_title': `
+We can not<br />
+find page<br />
+which are you looking for.
+  `,
+  '404_text': `
+Please check that page address <br />
+spelled correctly and then repeat <br />
+try again.
+  `,
+  '404_go_to_home': 'Go to home',
 };

@@ -21,7 +21,26 @@ exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
 
   if (page.path.includes('404')) {
-    return Promise.resolve();
+    return new Promise((resolve) => {
+      languages.forEach(({ value }) => {
+        const localePage = {
+          ...page,
+          originalPath: page.path,
+          path: `/${value}${page.path}`,
+          context: {
+            languages,
+            locale: value,
+            routed: true,
+            originalPath: page.path,
+            url: siteUrl,
+          },
+        };
+        // deletePage(page);
+        createPage(localePage);
+      });
+
+      resolve();
+    });
   }
 
   return new Promise((resolve) => {

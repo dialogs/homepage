@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -10,17 +11,13 @@ export function NotFound() {
     <Section className="not_found">
       <div className="not_found__wrapper">
         <Heading level="1" className="not_found__header">
-          Мы не можем <br />
-          найти страницу, <br />
-          которую вы ищете
+          <FormattedHTMLMessage id="404_title" />
         </Heading>
         <p className="not_found__text">
-          Пожалуйста, проверьте, что адрес страницы <br />
-          написан правильно, и затем повторите <br />
-          попытку снова.
+          <FormattedHTMLMessage id="404_text" />
         </p>
         <Link to="/" className="button button--default">
-          Перейти на главную
+          <FormattedHTMLMessage id="404_go_to_home" />
         </Link>
         <img src="/images/artboard1.png" alt="" className="not_found__image" />
       </div>
