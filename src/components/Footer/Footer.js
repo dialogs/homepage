@@ -230,7 +230,10 @@ export function Footer({ locale }) {
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <a className="footer__nav-link" to={`/privacy_policy.pdf`}>
+                    <a
+                      className="footer__nav-link"
+                      href={`/privacy_policy.pdf`}
+                    >
                       <FormattedMessage id="footer_privacy_policy" />
                     </a>
                   </div>
