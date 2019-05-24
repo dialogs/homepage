@@ -185,7 +185,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
-                  href="/images/license-fsb.jpg"
+                  href="/images/license-fstek.jpg"
                   download
                 >
                   <span className="link--download__text">
