@@ -513,15 +513,15 @@ module.exports = {
   Partnership_aurora: 'Sailfish',
 
   '404_title': `
-We can not<br />
-find page<br />
-which are you looking for.
+We couldn’t<br />
+find the page<br />
+you are looking for.
   `,
   '404_text': `
-Please check that page address <br />
-spelled correctly and then repeat <br />
-try again.
+Make sure that the URL<br />
+is written correctly<br />
+and reload the page.
   `,
-  '404_go_to_home': 'Go to home',
+  '404_go_to_home': 'Go to homepage',
   footer_privacy_policy: 'Privacy Policy',
 };
