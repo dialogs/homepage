@@ -406,9 +406,10 @@ module.exports = {
   SecureCommunication_learn_more: 'Узнать подробнее',
 
   support_header: 'Обратная связь',
-  support_corporate_title: 'Обратитесь в службу поддержки',
+  support_corporate_title: 'Корпоративным клиентам',
   support_corporate_text_before:
-    'Если вы пользователь dialog Enterprise, свяжитесь с персональным менеджером.',
+    'Если вы пользователь dialog enterprise — воспользуйтесь <a class="link--default" href="mailto:{email}">центром поддержки</a> для корпоративных клиентов. Или запросите доступ у вашего администратора.',
+
   support_connect: 'Связаться со службой поддержки можно также по e-mail:',
 
   form_label_your_email: 'Ваш e-mail',
