@@ -10,10 +10,12 @@ export function Tabs({
   current,
   className,
   onChange,
+  withSquares,
 }) {
   const classes = classnames(
     'tabs',
     vertical ? 'tabs--vertical' : 'tabs--horizontal',
+    withSquares ? 'tabs--with-squares' : null,
     className,
   );
 
@@ -29,4 +31,5 @@ export function Tabs({
 Tabs.defaultProps = {
   vertical: false,
   changeOnHover: false,
+  withSquares: false,
 };

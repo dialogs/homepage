@@ -68,4 +68,22 @@
       }
     }
   }
+
+  &--with-squares {
+    @media (--laptop-viewport) {
+      & .tabs__tab {
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: var(--color-secondary);
+          left: -30px;
+          top: 16px;
+        }
+      }
+    }
+  }
 }

@@ -311,7 +311,7 @@ module.exports = {
   support_header: 'Feedback',
   support_corporate_title: 'Contact Technical Support',
   support_corporate_text_before:
-    'If you are a dialog Enterprise user – ask your admin for access',
+    'If you are a user of dialog enterprise - use the <a class="link--default" href="mailto:{email}">support center</a> for corporate clients. Or request access from your administrator.',
   support_connect: 'You can also contact technical support via ',
 
   form_label_your_email: 'Your e-mail ',
@@ -433,7 +433,7 @@ module.exports = {
     'The company is the copyright holder of 6 software products, registered by RosPatent.',
   licenses_required_licenses:
     'The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia.',
-  licenses_FSB: ' FSS',
+  licenses_FSB: 'FSS',
   licenses_FSTEK: 'FSTEC',
   licenses_FSTEK_TZKI: 'FSTEC',
   licenses_associations: 'Registries and Associations',
@@ -511,4 +511,17 @@ module.exports = {
   Partnership_bazalt: 'BaseALT',
   Partnership_my_office: 'MyOffice',
   Partnership_aurora: 'Sailfish',
+
+  '404_title': `
+We can not<br />
+find page<br />
+which are you looking for.
+  `,
+  '404_text': `
+Please check that page address <br />
+spelled correctly and then repeat <br />
+try again.
+  `,
+  '404_go_to_home': 'Go to home',
+  footer_privacy_policy: 'Privacy Policy',
 };

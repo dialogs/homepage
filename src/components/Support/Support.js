@@ -1,11 +1,13 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
 import SupportForm from '../SupportForm';
 
 import './Support.css';
+
+const SUPPORT_EMAIL = 'support@dlg.ru';
 
 export function Support() {
   return (
@@ -23,7 +25,12 @@ export function Support() {
             <FormattedMessage id="support_corporate_title" />
           </div>
           <div className="support__corporate-text">
-            <FormattedMessage id="support_corporate_text_before" />
+            <FormattedHTMLMessage
+              id="support_corporate_text_before"
+              values={{
+                email: SUPPORT_EMAIL,
+              }}
+            />
           </div>
         </div>
         <div className="support__mail-box">
@@ -31,8 +38,8 @@ export function Support() {
             <FormattedMessage id="support_connect" />
           </p>
           <p>
-            <a href="mailto:support@dlg.ru" className="link--default">
-              support@dlg.ru
+            <a href={`mailto:${SUPPORT_EMAIL}`} className="link--default">
+              {SUPPORT_EMAIL}
             </a>
           </p>
         </div>

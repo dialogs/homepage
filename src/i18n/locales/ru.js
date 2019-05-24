@@ -358,7 +358,7 @@ module.exports = {
     'Компания имеет необходимую квалификацию и лицензии ФСТЭК России и ФСБ России',
   licenses_FSB: 'ФСБ',
   licenses_FSTEK: 'ФСТЭК',
-  licenses_FSTEK_TZKI: 'ФСБ ТЗКИ',
+  licenses_FSTEK_TZKI: 'ФСТЭК ТЗКИ',
   licenses_associations: 'Реестры и ассоциации',
   licenses_messenger_complies:
     'Мессенджер dialog соответствует требованиям Единого реестра российских программ для электронных вычислительных машин и баз данных и состоит в реестре отечественного ПО.',
@@ -406,9 +406,10 @@ module.exports = {
   SecureCommunication_learn_more: 'Узнать подробнее',
 
   support_header: 'Обратная связь',
-  support_corporate_title: 'Обратитесь в службу поддержки',
+  support_corporate_title: 'Корпоративным клиентам',
   support_corporate_text_before:
-    'Если вы пользователь dialog Enterprise, свяжитесь с персональным менеджером.',
+    'Если вы пользователь dialog enterprise — воспользуйтесь <a class="link--default" href="mailto:{email}">центром поддержки</a> для корпоративных клиентов. Или запросите доступ у вашего администратора.',
+
   support_connect: 'Связаться со службой поддержки можно также по e-mail:',
 
   form_label_your_email: 'Ваш e-mail',
@@ -519,4 +520,17 @@ module.exports = {
   Partnership_bazalt: 'Базальт',
   Partnership_my_office: 'МойОфис',
   Partnership_aurora: 'Аврора',
+
+  '404_title': `
+Мы не можем<br />
+найти страницу, <br />
+которую вы ищете
+  `,
+  '404_text': `
+Пожалуйста, проверьте, что адрес страницы<br />
+написан правильно, и затем повторите<br />
+попытку снова.
+  `,
+  '404_go_to_home': 'Перейти на главную',
+  footer_privacy_policy: 'Политика конфиденциальности',
 };

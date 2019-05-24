@@ -55,6 +55,7 @@ export function Features() {
               className="features__tabs"
               vertical
               changeOnHover
+              withSquares
             >
               <Tab value="calls">
                 <FormattedMessage id="feature_audio_video" />
@@ -241,6 +242,7 @@ export function Features() {
               className="features__tabs"
               vertical
               changeOnHover
+              withSquares
             >
               <Tab value="chatbots">
                 <FormattedMessage id="feature_chatbots" />
@@ -327,6 +329,7 @@ export function Features() {
               className="features__tabs"
               vertical
               changeOnHover
+              withSquares
             >
               <Tab value="api">
                 <FormattedMessage id="feature_api" />

@@ -26,6 +26,7 @@ export function Incompany() {
           current={tab}
           vertical
           changeOnHover
+          withSquares
           className="incompany__tabs"
         >
           <Tab value="marketing">

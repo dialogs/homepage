@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Container } from '../Container/Container';
 import links from '../../constants/links';
+import './Footer.css';
 
 export function Footer({ locale }) {
   return (
@@ -232,6 +233,14 @@ export function Footer({ locale }) {
                     <Link className="footer__nav-link" to={`/${locale}/legal`}>
                       <FormattedMessage id="menu_legal" />
                     </Link>
+                  </div>
+                  <div className="footer__nav-item">
+                    <a
+                      className="footer__nav-link"
+                      href={`/privacy_policy.pdf`}
+                    >
+                      <FormattedMessage id="footer_privacy_policy" />
+                    </a>
                   </div>
                 </div>
               </nav>
