@@ -189,7 +189,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
                   download
                 >
                   <span className="link--download__text">
-                    <FormattedMessage id="licenses_FSB" />
+                    <FormattedMessage id="licenses_FSTEK" />
                   </span>
                   <ImageFormatted
                     imgClass="link--download__icon"
