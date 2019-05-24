@@ -433,7 +433,7 @@ module.exports = {
     'The company is the copyright holder of 6 software products, registered by RosPatent.',
   licenses_required_licenses:
     'The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia.',
-  licenses_FSB: ' FSS',
+  licenses_FSB: 'FSS',
   licenses_FSTEK: 'FSTEC',
   licenses_FSTEK_TZKI: 'FSTEC',
   licenses_associations: 'Registries and Associations',

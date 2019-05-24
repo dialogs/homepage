@@ -185,11 +185,11 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
-                  href="/images/license-fstek.jpg"
+                  href="/images/license-fsb.jpg"
                   download
                 >
                   <span className="link--download__text">
-                    <FormattedMessage id="licenses_FSTEK" />
+                    <FormattedMessage id="licenses_FSB" />
                   </span>
                   <ImageFormatted
                     imgClass="link--download__icon"
@@ -227,7 +227,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               <ImageFormatted
                 imgClass="license__photos-image"
                 src="/images/fstek-3.jpg"
-                altLangId="licenses_FSTEK_TZKI"
+                altLangId="licenses_FSTEK"
               />
               <div className="license__photos-link-box">
                 <a
@@ -236,7 +236,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
                   download
                 >
                   <span className="link--download__text">
-                    <FormattedMessage id="licenses_FSTEK_TZKI" />
+                    <FormattedMessage id="licenses_FSTEK" />
                   </span>
                   <ImageFormatted
                     imgClass="link--download__icon"
