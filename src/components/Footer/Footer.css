@@ -2,7 +2,7 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-@import './variables.css';
+@import '../../styles/variables.css';
 
 .site__footer {
   background: var(--color-primary);
@@ -202,6 +202,8 @@
 
     &-link {
       /* TODO styling: default, hover, on touch devices */
+      line-height: 18px;
+      display: inline-block;
     }
   }
 

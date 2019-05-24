@@ -523,4 +523,5 @@ spelled correctly and then repeat <br />
 try again.
   `,
   '404_go_to_home': 'Go to home',
+  footer_privacy_policy: 'Privacy Policy',
 };
