@@ -109,8 +109,7 @@
     @media (--mobile-viewport) {
       display: block;
       max-width: 85%;
-      margin: auto;
-      max-height: 300px;
+      margin: 0 auto;
     }
 
     @media (--tablet-viewport) {
