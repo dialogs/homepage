@@ -42,6 +42,7 @@
     "intl": "1.2.5",
     "mailchimp-api-v3": "1.13.0",
     "md5": "2.2.1",
+    "morgan": "1.9.1",
     "nodemailer": "6.2.1",
     "normalize.css": "8.0.1",
     "react": "16.8.6",
