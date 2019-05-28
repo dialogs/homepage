@@ -5,17 +5,9 @@ const {
 } = require('./gatsby-config');
 const { languages } = require('./src/i18n/locales');
 
-const postsQuery = `
-  {
-    posts: allGhostPost(sort: { order: DESC, fields: [published_at] }, limit: 1000) {
-      edges {
-        post: node {
-          slug
-        }
-      }
-    }
-  }
-`;
+// Page components
+const blogPost = path.resolve(`./src/components/BlogPost/BlogPost.js`);
+const redirect = path.resolve('./src/i18n/redirect.js');
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
@@ -35,7 +27,6 @@ exports.onCreatePage = ({ page, actions }) => {
             url: siteUrl,
           },
         };
-        // deletePage(page);
         createPage(localePage);
       });
 
@@ -44,7 +35,6 @@ exports.onCreatePage = ({ page, actions }) => {
   }
 
   return new Promise((resolve) => {
-    const redirect = path.resolve('./src/i18n/redirect.js');
     const redirectPage = {
       ...page,
       component: redirect,
@@ -125,8 +115,6 @@ exports.createPages = ({ graphql, actions }) => {
     }
     `;
     const createPostsRu = new Promise((resolve, reject) => {
-      const blogPost = path.resolve(`./src/components/BlogPost/BlogPost.js`);
-
       resolve(
         graphql(postsQueryRu).then((result) => {
           if (result.errors) {
@@ -144,7 +132,7 @@ exports.createPages = ({ graphql, actions }) => {
 
             createPage({
               path: post.url,
-              component: path.resolve(blogPost),
+              component: blogPost,
               context: {
                 locale: 'ru',
                 slug: post.slug,
@@ -158,8 +146,6 @@ exports.createPages = ({ graphql, actions }) => {
       );
     });
     const createPostsEn = new Promise((resolve, reject) => {
-      const blogPost = path.resolve(`./src/components/BlogPost/BlogPost.js`);
-
       resolve(
         graphql(postsQueryEn).then((result) => {
           if (result.errors) {
@@ -177,7 +163,7 @@ exports.createPages = ({ graphql, actions }) => {
 
             createPage({
               path: post.url,
-              component: path.resolve(blogPost),
+              component: blogPost,
               context: {
                 locale: 'en',
                 slug: post.slug,

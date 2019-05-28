@@ -4,16 +4,28 @@
 
 const path = require('path');
 const express = require('express');
-const gatsyExpress = require('gatsby-plugin-express');
+// const gatsbyExpress = require('gatsby-plugin-express');
+const gatsbyExpress = require('./middlewares/gatsbyExpressCustomized');
 const bodyParser = require('body-parser');
 const { isDev, server } = require('./config');
 const api = require('./api');
 const redirectRules = require('./redirect-rules');
+const helmet = require('helmet');
+const cors = require('cors');
+const setHeaders = require('./middlewares/setHeaders');
+const detectLanguage = require('./middlewares/detectLanguage');
+const parseUserAgent = require('./middlewares/parseUserAgent');
 
 const app = express();
 
+app.use(helmet());
+app.use(cors());
+app.use(setHeaders);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(detectLanguage(['en', 'ru']));
+app.use(parseUserAgent);
 
 redirectRules.forEach((rule) => {
   rule.from.forEach((from) => {
@@ -27,15 +39,21 @@ redirectRules.forEach((rule) => {
 app.use('/api/v1', api);
 
 if (!isDev) {
-  app.use(express.static('public/'));
+  app.use(express.static('public/', { maxage: 86400000 }));
+
   app.use(
-    gatsyExpress('server/gatsby-express.json', {
+    gatsbyExpress('server/gatsby-express.json', {
       publicDir: './public/',
-      template: path.resolve('./public/404/index.html'),
       redirectSlashes: true,
     }),
   );
 }
+
+// Error tracing
+app.use((error, req, res, next) => {
+  console.trace(error);
+  next(error);
+});
 
 app.listen(server, (error) => {
   if (error) {
