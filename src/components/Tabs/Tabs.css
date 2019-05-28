@@ -70,16 +70,25 @@
   }
 
   &--with-squares {
-    @media (--laptop-viewport) {
-      & .tabs__tab {
-        position: relative;
+    & .tabs__tab {
+      position: relative;
 
-        &:before {
-          content: '';
-          position: absolute;
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: var(--color-secondary);
+
+        @media (--tablet-viewport) {
+          left: -26px;
+          top: 8px;
           width: 10px;
           height: 10px;
-          background-color: var(--color-secondary);
+        }
+        @media (--tablet-landscape-viewport) {
+          top: 10px;
+        }
+
+        @media (--laptop-viewport) {
           left: -30px;
           top: 16px;
         }
