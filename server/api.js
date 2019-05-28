@@ -27,10 +27,10 @@ Email: ${body.email}
 ---
 Дополнительная информация:
 Accept-Language: ${body.language}
-Document-referrer: ${body.referer}
+Document-referrer: ${body.referrer}
 Geolocation: ${JSON.stringify(body.geo, null, '  ')}
 Page-href: ${body.href}
-GAcid: ${body.data.GACID}
+GAcid: ${body.data.gacid}
   `;
 
   return message;
