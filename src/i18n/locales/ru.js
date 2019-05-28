@@ -532,5 +532,5 @@ module.exports = {
 попытку снова.
   `,
   '404_go_to_home': 'Перейти на главную',
-  footer_privacy_policy: 'Политика конфиденциальности',
+  footer_privacy_policy: 'Обработка персональных данных',
 };
