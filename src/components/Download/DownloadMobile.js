@@ -84,7 +84,7 @@ export function DownloadMobile({ isEnterprise, locale }) {
                     src={
                       isEnterprise
                         ? '/images/download/enterprise_appstore.svg'
-                        : '/images/download/cloud_appstore.png'
+                        : '/images/download/cloud_appstore.svg'
                     }
                     altLangId={
                       isEnterprise
@@ -142,7 +142,7 @@ export function DownloadMobile({ isEnterprise, locale }) {
                     src={
                       isEnterprise
                         ? '/images/download/enterprise_playmarket.svg'
-                        : '/images/download/cloud_playmarket.png'
+                        : '/images/download/cloud_playmarket.svg'
                     }
                     altLangId={
                       isEnterprise
