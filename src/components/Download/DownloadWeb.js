@@ -15,7 +15,7 @@ export function DownloadWeb({ isEnterprise }) {
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
 
   return (
-    <section className="download__section download__item download__web">
+    <div className="download__section download__item download__web">
       <h2 className="download__item-title download__web-title">
         <FormattedMessage id="download_web_title" />
       </h2>
@@ -45,7 +45,7 @@ export function DownloadWeb({ isEnterprise }) {
           <FormattedMessage id="start" />
         </a>
       </div>
-    </section>
+    </div>
   );
 }
 

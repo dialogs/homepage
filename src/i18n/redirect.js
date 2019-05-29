@@ -1,15 +1,12 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect } from 'react';
 import { withPrefix } from 'gatsby';
 import browserLang from 'browser-lang';
 import { languages } from './locales';
 
-class Redirect extends PureComponent {
-  constructor(props) {
-    super(props);
-
+function Redirect({ location }) {
+  useEffect(() => {
     const langKeys = languages.map((language) => language.value);
-    const { pathname } = props.location;
-    const { search } = props.location;
+    const { pathname, search } = location;
 
     // Skip build, Browsers only
     if (typeof window !== 'undefined') {
@@ -24,11 +21,9 @@ class Redirect extends PureComponent {
       window.localStorage.setItem('language', detected);
       window.location.replace(newUrl);
     }
-  }
+  }, []);
 
-  render() {
-    return <div />;
-  }
+  return <div />;
 }
 
 export default Redirect;
