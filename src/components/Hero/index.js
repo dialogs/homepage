@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { injectIntl } from 'react-intl';
 import { openOfferModal } from '../../actions/modals';
 
 import { Hero } from './Hero';
@@ -12,4 +13,4 @@ const mapDispatchToProps = { openOfferModal };
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Hero);
+)(injectIntl(Hero));

@@ -46,6 +46,21 @@ module.exports = {
         include_favicon: true,
       },
     },
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        useMozJpeg: true,
+        stripMetadata: true,
+        defaultQuality: 75,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
