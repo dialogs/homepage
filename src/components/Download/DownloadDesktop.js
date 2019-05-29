@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import ImageFormatted from '../ImageFormatted';
+import { StaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 // import { getOS } from '../../utils/getOS';
 import appLinks from '../../constants/links';
@@ -107,73 +108,95 @@ export function DownloadDesktop({ isEnterprise }) {
   */
 
   return (
-    <div className="download__section download__item download__desktop">
-      <h2 className="download__item-title download__desktop-title">
-        <FormattedMessage id="download_desktop_title" />
-      </h2>
-      <div className="download__desktop-pictute">
-        {/*renderDownloadDesktopImage()*/}
-        <ImageFormatted
-          imgClass="download__desktop-img"
-          src={
-            isEnterprise
-              ? '/images/download/enterprise-desktop-macos.png'
-              : '/images/download/cloud-desktop-macos.png'
-          }
-          srcSet={
-            isEnterprise
-              ? '/images/download/enterprise-desktop-macos@2x.png 2x'
-              : '/images/download/cloud-desktop-macos@2x.png 2x'
-          }
-          altLangId="download_desktop_title"
-        />
-      </div>
-      {/*
-      <div className="download__desktop-button-box">
-        {renderDownloadDesktopButton()}
-      </div>
-      */}
-
-      <div className="download__desktop-systems">
-        <div className="download__desktop-system">
-          <a
-            className="download__item-link"
-            href={links.osx}
-            onClick={(event) => handleDownloadAnalytics(event, 'dialog_macos')}
-          >
-            Mac OS
-          </a>
-        </div>
-        <div className="download__desktop-system">
-          <a
-            className="download__item-link"
-            href={links.windows}
-            onClick={(event) =>
-              handleDownloadAnalytics(event, 'dialog_windows')
+    <StaticQuery
+      query={graphql`
+        query {
+          desktopMacos: file(
+            relativePath: { eq: "images/download/enterprise_desktop.png" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 425) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
             }
-          >
-            Windows
-          </a>
-        </div>
-        <div className="download__desktop-system">
-          <a
-            className="download__item-link"
-            href={links.linux}
-            onClick={(event) => handleDownloadAnalytics(event, 'dialog_linux')}
-          >
-            Linux 32
-          </a>
-        </div>
-        <div className="download__desktop-system">
-          <a
-            className="download__item-link"
-            href={links.linux64}
-            onClick={(event) => handleDownloadAnalytics(event, 'dialog_linux')}
-          >
-            Linux 64
-          </a>
-        </div>
-        {/*
+          }
+        }
+      `}
+      render={({ desktopMacos }) => {
+        return (
+          <div className="download__section download__item download__desktop">
+            <FormattedMessage id="download_desktop_title">
+              {(title) => (
+                <h2 className="download__item-title download__desktop-title">
+                  {title}
+                </h2>
+              )}
+            </FormattedMessage>
+            <div className="download__desktop-pictute">
+              <div className="download__desktop-img">
+                <FormattedMessage id="download_desktop_title">
+                  {(alt) => (
+                    <Image
+                      fadeIn
+                      fluid={desktopMacos.childImageSharp.fluid}
+                      alt={alt}
+                    />
+                  )}
+                </FormattedMessage>
+              </div>
+            </div>
+            {/*
+          <div className="download__desktop-button-box">
+            {renderDownloadDesktopButton()}
+          </div>
+          */}
+
+            <div className="download__desktop-systems">
+              <div className="download__desktop-system">
+                <a
+                  className="download__item-link"
+                  href={links.osx}
+                  onClick={(event) =>
+                    handleDownloadAnalytics(event, 'dialog_macos')
+                  }
+                >
+                  Mac OS
+                </a>
+              </div>
+              <div className="download__desktop-system">
+                <a
+                  className="download__item-link"
+                  href={links.windows}
+                  onClick={(event) =>
+                    handleDownloadAnalytics(event, 'dialog_windows')
+                  }
+                >
+                  Windows
+                </a>
+              </div>
+              <div className="download__desktop-system">
+                <a
+                  className="download__item-link"
+                  href={links.linux}
+                  onClick={(event) =>
+                    handleDownloadAnalytics(event, 'dialog_linux')
+                  }
+                >
+                  Linux 32
+                </a>
+              </div>
+              <div className="download__desktop-system">
+                <a
+                  className="download__item-link"
+                  href={links.linux64}
+                  onClick={(event) =>
+                    handleDownloadAnalytics(event, 'dialog_linux')
+                  }
+                >
+                  Linux 64
+                </a>
+              </div>
+              {/*
         {os !== 'macOS' && os !== 'iOS' && (
           <div className="download__desktop-system">
             <a className="download__item-link" href={links.osx}>
@@ -203,8 +226,11 @@ export function DownloadDesktop({ isEnterprise }) {
           </div>
         )}
         */}
-      </div>
-    </div>
+            </div>
+          </div>
+        );
+      }}
+    />
   );
 }
 

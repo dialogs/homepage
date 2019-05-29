@@ -299,7 +299,8 @@ module.exports = {
   download_enterprise_subtitle_before:
     'Get installation info from your system administrator or the ',
   download_enterprise_subtitle_link: 'client support system',
-  download_enterprise_subtitle_2: `You can also try out the platform’s features in our  <a class="link--default" href="/en/download">demo app</a>.`,
+  download_enterprise_subtitle_2: `You can also try out the platform’s features in our `,
+  download_enterprise_subtitle_2_link: 'demo app',
 
   download_desktop_title: 'Desktop Application',
   download_for: 'Download for ',

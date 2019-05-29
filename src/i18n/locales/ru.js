@@ -248,8 +248,8 @@ module.exports = {
   download_enterprise_subtitle_before:
     'Информацию о подключении вы можете получить у своего системного администратора или в центре ',
   download_enterprise_subtitle_link: 'поддержки клиентов',
-  download_enterprise_subtitle_2: `Вы также можете ознакомиться с функциями платформы в нашем <a class="link--default" href="/ru/download">демо-приложении</a>.`,
-
+  download_enterprise_subtitle_2: `Вы также можете ознакомиться с функциями платформы в нашем `,
+  download_enterprise_subtitle_2_link: 'демо-приложении',
   download_desktop_title: 'Десктопное приложение',
   download_for: 'Скачать для ',
   download_mobile_title: 'Мобильное приложение',
