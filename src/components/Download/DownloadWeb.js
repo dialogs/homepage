@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import ImageFormatted from '../ImageFormatted';
+import { StaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 import appLinks from '../../constants/links';
 
@@ -13,39 +14,75 @@ export function DownloadWeb({ isEnterprise }) {
   }
 
   const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
-
   return (
-    <div className="download__section download__item download__web">
-      <h2 className="download__item-title download__web-title">
-        <FormattedMessage id="download_web_title" />
-      </h2>
-      <div className="download__web-pictute">
-        <ImageFormatted
-          imgClass="download__web-img"
-          src={
-            isEnterprise
-              ? '/images/download/enterprise-web.png'
-              : '/images/download/cloud-web.png'
+    <StaticQuery
+      query={graphql`
+        query {
+          enterpriseWeb: file(
+            relativePath: { eq: "images/download/enterprise_web.png" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
           }
-          altLangId={
-            isEnterprise
-              ? 'alt_download_enterprise_web'
-              : 'alt_download_cloud_web'
+          cloudWeb: file(
+            relativePath: { eq: "images/download/cloud_web.png" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
           }
-        />
-      </div>
-      <div className="download__web-button-box">
-        <a
-          className="button button--default"
-          href={links.web}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(event) => handleDownloadAnalytics(event, 'dialog_web')}
-        >
-          <FormattedMessage id="start" />
-        </a>
-      </div>
-    </div>
+        }
+      `}
+      render={({ enterpriseWeb, cloudWeb }) => {
+        return (
+          <div className="download__section download__item download__web">
+            <h2 className="download__item-title download__web-title">
+              <FormattedMessage id="download_web_title" />
+            </h2>
+            <div className="download__web-pictute">
+              <FormattedMessage
+                id={
+                  isEnterprise
+                    ? 'alt_download_enterprise_web'
+                    : 'alt_download_cloud_web'
+                }
+              >
+                {(title) => (
+                  <Image
+                    className="download__web-img"
+                    fadeIn
+                    fluid={
+                      isEnterprise
+                        ? enterpriseWeb.childImageSharp.fluid
+                        : cloudWeb.childImageSharp.fluid
+                    }
+                    alt={title}
+                  />
+                )}
+              </FormattedMessage>
+            </div>
+            <div className="download__web-button-box">
+              <a
+                className="button button--default"
+                href={links.web}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) =>
+                  handleDownloadAnalytics(event, 'dialog_web')
+                }
+              >
+                <FormattedMessage id="start" />
+              </a>
+            </div>
+          </div>
+        );
+      }}
+    />
   );
 }
 

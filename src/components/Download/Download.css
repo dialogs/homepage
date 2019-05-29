@@ -34,9 +34,6 @@
     }
   }
 
-  &__section {
-  }
-
   /* layout */
   &__intro {
     @media (--tablet-viewport) {
@@ -380,8 +377,7 @@
   }
 
   &__web {
-    &-title {
-    }
+    width: 100%;
 
     &-pictute {
       /* margin depends on img */

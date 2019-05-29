@@ -111,8 +111,17 @@ export function DownloadDesktop({ isEnterprise }) {
     <StaticQuery
       query={graphql`
         query {
-          desktopMacos: file(
-            relativePath: { eq: "images/download/enterprise_desktop.png" }
+          enterpriseDesktopMacos: file(
+            relativePath: { eq: "images/download/enterprise_desktop_macos.png" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 425) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+          cloudDesktopMacos: file(
+            relativePath: { eq: "images/download/cloud_desktop_macos.png" }
           ) {
             childImageSharp {
               fluid(maxWidth: 425) {
@@ -122,7 +131,7 @@ export function DownloadDesktop({ isEnterprise }) {
           }
         }
       `}
-      render={({ desktopMacos }) => {
+      render={({ enterpriseDesktopMacos, cloudDesktopMacos }) => {
         return (
           <div className="download__section download__item download__desktop">
             <FormattedMessage id="download_desktop_title">
@@ -138,7 +147,11 @@ export function DownloadDesktop({ isEnterprise }) {
                   {(alt) => (
                     <Image
                       fadeIn
-                      fluid={desktopMacos.childImageSharp.fluid}
+                      fluid={
+                        isEnterprise
+                          ? enterpriseDesktopMacos.childImageSharp.fluid
+                          : cloudDesktopMacos.childImageSharp.fluid
+                      }
                       alt={alt}
                     />
                   )}
