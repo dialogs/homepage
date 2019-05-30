@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import { Field } from '../utils/field';
+import { safeStorage } from '../utils/safeStorage';
 
 function getGACID() {
   const cookie = document.cookie.match('(?:^|;)\\s*_ga=([^;]*)');
@@ -10,7 +11,25 @@ function getGACID() {
   return match ? match[1] : null;
 }
 
-function sendAnal({ form, data }) {
+async function getGeolocation() {
+  const { data } = await axios({
+    method: 'get',
+    url: 'http://api.ipstack.com/check',
+    output: 'json',
+    params: {
+      access_key: 'da58dc35eb8c318cfa630fea4dc1f5f7',
+    },
+  });
+
+  if (data.error) {
+    console.warn('Failed to get user geolocation');
+    return null;
+  } else {
+    return data;
+  }
+}
+
+function sendAnalitics({ form, data }) {
   if (typeof window !== 'undefined') {
     try {
       if (window.ga && window.yaCounter) {
@@ -51,15 +70,22 @@ function sendAnal({ form, data }) {
   return Promise.resolve(data);
 }
 
-function getFormData(form) {
-  return new Promise((resolve, reject) => {
-    resolve({
-      ...form,
-      data: {
-        GACID: getGACID(),
-      },
-    });
-  });
+async function getFormData(form) {
+  return {
+    ...form,
+    data: {
+      language: navigator.languages.toString(),
+      href: safeStorage.get('href', ''),
+      referrer: safeStorage.get('referrer', ''),
+      gacid: getGACID(),
+      geo: await getGeolocation(),
+    },
+  };
+}
+
+function logFormData(data) {
+  console.log(data);
+  return data;
 }
 
 function sendFormData(form, endpoint) {
@@ -74,10 +100,11 @@ function sendFormData(form, endpoint) {
   });
 }
 
-function sendForm(form, endpoint) {
-  return getFormData(form)
+async function sendForm(form, endpoint) {
+  return await getFormData(form)
+    // .then(logFormData)
     .then((data) => sendFormData(data, endpoint))
-    .then(sendAnal);
+    .then(sendAnalitics);
 }
 
 export function submitOfferForm(form) {
