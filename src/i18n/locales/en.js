@@ -31,6 +31,9 @@ module.exports = {
   meta_title_legal: 'Legal Information | dialog',
   meta_description_legal:
     'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
+  meta_title_jobs: 'Career | dialog',
+  meta_description_jobs:
+    'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
 
   og_title_default:
     'dialog | A platform for simple and efficient communications',
@@ -526,4 +529,27 @@ and reload the page.
   '404_go_to_home': 'Go to homepage',
   footer_privacy_policy: 'Privacy policy',
   footer_anti_corruption_policy: 'Anti-corruption policy',
+  jobs_join_team: 'Join Team',
+  jobs_apply_button: 'Apply for job',
+
+  jobs_ceo_header:
+    'Андрей Кузнецов, основатель и исполнительный директор Reetm',
+  jobs_ceo_quote:
+    'Мы разрабатываем платформу для командной работы, которую приятно и удобно использовать в больших и маленьких коллективах.',
+  jobs_ceo_bio:
+    'Андрей создал компанию в 2016 году и сейчас занимается стратегическим планированием бизнеса и ключевыми технологическими партнерствами.;',
+  jobs_ceo_about_product:
+    '<p>Несмотря на то, что наш продукт используется прежде всего крупными компаниями, мы сами используем его в своей работе – разрабатываем для себя и друг друга. Творим со страстью сделать рабочее пространство простыми эффективным – без компромиссных полумер, присущих типичным enterprise продуктам из-за жестких требований безопасности крупных корпораций. Понимаяи уважая эти требования, мы создаем дружелюбную среду, в которой гармонично сочетаются дебюрократизация, автоматизацияи безопасность. </p><p>Всегда рады видеть в команде творцови новаторов, готовых вместе с нами работать над ⁣⁣коммуникационными продуктами, которыми можно гордиться.</p><p>Кстати, верим в идеи open-source, активно участвуем в развитии продуктов сообщества и постоянно открываем все больше компонентов нашей платформы. У нас есть bounty-программа – мы поощряем инициативных разработчиков за участие в open-source сообществе</p>',
+  jobs_recommend_title: 'Приведи кандидата на вакансию и получи',
+  jobs_recommend_award: '$900',
+  jobs_recommend_action:
+    'Присылай резюме<br/> на <a href="mailto:info@dlg.im">info@dlg.im</a>',
+  job_apply_header: 'Не нашли что искали?',
+  job_apply_message:
+    'Если вы не нашли интересующую вакансию, не отчаивайтесь – заполните эту форму и отправьте нам. Мы обязательно рассмотрим ваше резюме.',
+  job_expectation_header: 'Что мы ожидаем',
+  job_bonus_header: 'Бонусы',
+  job_back: 'Все вакансии',
+  job_apply_button: 'Send resume',
+  jobs_vacancies_header: 'Vacancies',
 };

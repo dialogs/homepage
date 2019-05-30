@@ -42,6 +42,7 @@
     "gatsby-source-ghost": "3.3.4",
     "gatsby-transformer-sharp": "2.1.21",
     "helmet": "3.18.0",
+    "gatsby-transformer-remark": "2.3.12",
     "intl": "1.2.5",
     "lodash.debounce": "4.0.8",
     "mailchimp-api-v3": "1.13.0",

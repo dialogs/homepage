@@ -8,6 +8,7 @@ const { languages } = require('./src/i18n/locales');
 // Page components
 const blogPost = path.resolve(`./src/components/BlogPost/BlogPost.js`);
 const redirect = path.resolve('./src/i18n/redirect.js');
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
@@ -67,6 +68,18 @@ exports.onCreatePage = ({ page, actions }) => {
 
     resolve();
   });
+};
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` });
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    });
+  }
 };
 
 exports.createPages = ({ graphql, actions }) => {
@@ -178,5 +191,47 @@ exports.createPages = ({ graphql, actions }) => {
     promises.push(createPostsRu);
     promises.push(createPostsEn);
   }
+
+  const allVacancies = `
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const createAllVacancies = new Promise((resolve, reject) => {
+    resolve(
+      graphql(allVacancies).then((result) => {
+        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+          const lang = node.fields.slug.indexOf('/ru/') > 0 ? 'ru' : 'en';
+          createPage({
+            path: node.fields.slug,
+            component: path.resolve(
+              `./src/components/VacancyLayout/VacancyLayout.js`,
+            ),
+            context: {
+              // Data passed to context is available
+              // in page queries as GraphQL variables.
+              locale: lang,
+              slug: node.fields.slug,
+              url: siteUrl,
+            },
+          });
+        });
+
+        return resolve();
+      }),
+    );
+  });
+
+  promises.push(createAllVacancies);
+
   return Promise.all(promises);
 };

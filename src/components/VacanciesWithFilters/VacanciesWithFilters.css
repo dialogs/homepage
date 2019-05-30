@@ -1,0 +1,21 @@
+.category_filter {
+  #color: var(--color-primary);
+}
+.category_filter.active {
+  color: var(--color-secondary);
+}
+select {
+  font-family: inherit;
+  background-color: transparent;
+  #width: 100%;
+  padding: 4px 0;
+  #font-size: $select-font-size;
+  #color: $select-color;
+  border: none;
+
+  border-bottom: 1px solid #d1d1d1;
+}
+select:focus,
+button:focus {
+  outline: none;
+}

@@ -1,7 +1,16 @@
+/* ----------- 0 - 767px ----------- */
 @custom-media --mobile-viewport screen and (max-width: 767px);
+
+/* ----------- 768px - max ----------- */
 @custom-media --tablet-viewport screen and (min-width: 768px);
+
+/* ----------- 1024px - max ----------- */
 @custom-media --tablet-landscape-viewport screen and (min-width: 1024px);
+
+/* ----------- 1440px - max ----------- */
 @custom-media --laptop-viewport screen and (min-width: 1440px);
+
+/* ----------- 1600px - max ----------- */
 @custom-media --desktop-viewport screen and (min-width: 1600px);
 
 :root {
