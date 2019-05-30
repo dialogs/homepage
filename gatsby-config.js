@@ -71,6 +71,7 @@ module.exports = {
             disallow: ['/@joinchat', '/@/joinchat', '/joinchat'],
           },
         ],
+        sitemap: `${siteUrl}/sitemap.xml`,
       },
     },
     'gatsby-plugin-advanced-sitemap',

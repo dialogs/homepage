@@ -134,6 +134,7 @@
 
       @media (--desktop-viewport) {
         bottom: 60px;
+        width: 350px;
       }
     }
   }

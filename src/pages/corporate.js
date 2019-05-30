@@ -2,7 +2,8 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
-import ImageFormatted from '../components/ImageFormatted';
+import { graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -13,7 +14,10 @@ import { EffectiveCommunication } from '../components/EffectiveCommunication/Eff
 import { Partnership } from '../components/Partnership/Partnership';
 import { Offer } from '../components/Offer/Offer';
 
-export default ({ pageContext: { locale, url, originalPath } }) => {
+export default ({
+  pageContext: { locale, url, originalPath },
+  data: { promoImage1, promoImage2 },
+}) => {
   return (
     <Page>
       <FormattedMetaTags
@@ -30,24 +34,30 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         <PageHeader className="solution">
           <FormattedMessage id="solutions_simple" />
         </PageHeader>
-        <Promo
-          element1={
-            <ImageFormatted
-              imgClass="promo__image promo__image--main"
-              src="/images/solution/solution-1-1.jpg"
-              srcSet="/images/solution/solution-1@2x.jpg 2x"
-              altLangId="alt_solution_big"
-            />
-          }
-          element2={
-            <ImageFormatted
-              imgClass="promo__image promo__image--small"
-              src="/images/solution/solution-2@2x.jpg"
-              srcSet="/images/solution/solution-2@2x.jpg 2x"
-              altLangId="alt_solution_small"
-            />
-          }
-        />
+        <Promo>
+          <FormattedMessage id="alt_solution_big">
+            {(alt) => (
+              <div className="promo__image promo__image--main">
+                <Image
+                  fadeIn
+                  fluid={promoImage1.childImageSharp.fluid}
+                  alt={alt}
+                />
+              </div>
+            )}
+          </FormattedMessage>
+          <FormattedMessage id="alt_solution_small">
+            {(alt) => (
+              <div className="promo__image promo__image--small">
+                <Image
+                  fadeIn
+                  fluid={promoImage2.childImageSharp.fluid}
+                  alt={alt}
+                />
+              </div>
+            )}
+          </FormattedMessage>
+        </Promo>
         <SecureCommunication />
         <EffectiveCommunication />
         <Partnership />
@@ -56,3 +66,22 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
     </Page>
   );
 };
+
+export const query = graphql`
+  query {
+    promoImage1: file(relativePath: { eq: "images/solution/solution_1.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    promoImage2: file(relativePath: { eq: "images/solution/solution_2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 350) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`;
