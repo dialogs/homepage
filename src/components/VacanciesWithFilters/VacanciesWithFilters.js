@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-import { PageHeader } from '../components/PageHeader/PageHeader';
+import { PageHeader } from '../PageHeader/PageHeader';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import './VacanciesWithFilters.css';
 
