@@ -88,7 +88,6 @@ module.exports = [
       '/ru/news/komanda-dialog-pobyvala-na-krupnieishiei-ievropieiskoi-konfierientsii-posviashchiennoi-tiekhnologhichieskim-innovatsiiam-the-next-web-conference-tnw',
       '/ru/news/businesschat',
       '/ru/news/vpntor',
-      '/ru/news/intieghratsiia-s-zapier',
       '/ru/news/stali-izviestny-top-5-prietiendientov-na-sozdaniie-ghosmiessiendzhiera',
       '/ru/news/500mln',
       '/ru/news/ria_dialog',

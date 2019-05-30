@@ -83,9 +83,9 @@ async function getFormData(form) {
   };
 }
 
-function logFormData({ form, data }) {
-  console.log({ form, data });
-  return { form, data };
+function logFormData(data) {
+  console.log(data);
+  return data;
 }
 
 function sendFormData(form, endpoint) {
@@ -102,8 +102,8 @@ function sendFormData(form, endpoint) {
 
 async function sendForm(form, endpoint) {
   return await getFormData(form)
+    // .then(logFormData)
     .then((data) => sendFormData(data, endpoint))
-    .them(logFormData)
     .then(sendAnalitics);
 }
 

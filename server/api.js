@@ -13,8 +13,6 @@ const mailchimp = new Mailchimp(config.mailchimp.key);
 
 function renderTextMessage(body, site) {
   const message = `
-Заявка с сайта ${site}
-
 Имя: ${body.name}
 Телефон: ${body.phone}
 Email: ${body.email}
@@ -22,14 +20,13 @@ Email: ${body.email}
 Сообщение: ${body.message}
 Количество пользователей: ${body.users}
 Форма: ${body.form}
-Тэги: ${body.tags}
 
----
+========================================================
 Дополнительная информация:
-Accept-Language: ${body.language}
-Document-referrer: ${body.referrer}
-Geolocation: ${JSON.stringify(body.geo, null, '  ')}
-Page-href: ${body.href}
+Accept-Language: ${body.data.language}
+Document-referrer: ${body.data.referrer}
+Geolocation: ${JSON.stringify(body.data.geo, null, 2)}
+Page-href: ${body.data.href}
 GAcid: ${body.data.gacid}
   `;
 
