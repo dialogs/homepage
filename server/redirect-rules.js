@@ -16,7 +16,6 @@ module.exports = [
       '/ru/news',
       '/en/blog/secrets-exposed-trello',
       '/en/blog/bp_automation',
-      '/ru/blog',
       '/en/blog/first',
       '/en/blog/raising-productivity',
       '/en/blog/quickstart',
