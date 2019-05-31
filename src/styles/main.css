@@ -304,3 +304,7 @@ h6 {
     }
   }
 }
+
+body.scrollBlocked {
+  overflow: hidden !important;
+}
