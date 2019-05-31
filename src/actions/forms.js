@@ -70,7 +70,7 @@ function sendAnalitics({ form, data }) {
   return Promise.resolve(data);
 }
 
-function getFormData(form) {
+async function getFormData(form) {
   return {
     ...form,
     data: {
@@ -78,7 +78,7 @@ function getFormData(form) {
       href: safeStorage.get('href', ''),
       referrer: safeStorage.get('referrer', ''),
       gacid: getGACID(),
-      geo: '', // await getGeolocation(),
+      geo: 'DISABLED', // await getGeolocation(),
     },
   };
 }
@@ -100,11 +100,13 @@ function sendFormData(form, endpoint) {
   });
 }
 
-async function sendForm(form, endpoint) {
-  return await getFormData(form)
-    // .then(logFormData)
-    .then((data) => sendFormData(data, endpoint))
-    .then(sendAnalitics);
+function sendForm(form, endpoint) {
+  return (
+    getFormData(form)
+      // .then(logFormData)
+      .then((data) => sendFormData(data, endpoint))
+      .then(sendAnalitics)
+  );
 }
 
 export function submitOfferForm(form) {
