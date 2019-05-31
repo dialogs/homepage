@@ -41,6 +41,7 @@
     "gatsby-transformer-sharp": "2.1.19",
     "helmet": "3.18.0",
     "intl": "1.2.5",
+    "lodash.debounce": "4.0.8",
     "mailchimp-api-v3": "1.13.0",
     "md5": "2.2.1",
     "morgan": "1.9.1",
