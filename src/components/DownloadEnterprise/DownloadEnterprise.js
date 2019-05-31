@@ -8,7 +8,7 @@ import { DownloadDesktop } from '../Download/DownloadDesktop';
 import { DownloadMobile } from '../Download/DownloadMobile';
 import { DownloadWeb } from '../Download/DownloadWeb';
 
-export function DownloadEnterprise({ locale, images }) {
+export function DownloadEnterprise({ locale }) {
   return (
     <Section className="download download__sections">
       <section className="download__section download__intro">
@@ -20,7 +20,7 @@ export function DownloadEnterprise({ locale, images }) {
           </a>
           {'. '}
           <FormattedHTMLMessage id="download_enterprise_subtitle_2" />
-          <Link class="link--default" to={`/${locale}/download`}>
+          <Link className="link--default" to={`/${locale}/download`}>
             <FormattedMessage id="download_enterprise_subtitle_2_link" />
           </Link>
           {'.'}
