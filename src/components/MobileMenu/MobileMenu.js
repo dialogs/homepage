@@ -11,9 +11,11 @@ export function MobileMenu({
   openOfferModal,
   locale,
   originalPath,
+  isSticky,
 }) {
   const classes = classNames('mobile-menu', {
     'mobile-menu--opened': isOpen,
+    'mobile-menu--sticky': isSticky,
   });
 
   let toLink = locale === 'ru' ? `/en${originalPath}` : `/ru${originalPath}`;
