@@ -11,23 +11,23 @@ function getGACID() {
   return match ? match[1] : null;
 }
 
-async function getGeolocation() {
-  const { data } = await axios({
-    method: 'get',
-    url: 'http://api.ipstack.com/check',
-    output: 'json',
-    params: {
-      access_key: 'da58dc35eb8c318cfa630fea4dc1f5f7',
-    },
-  });
+// async function getGeolocation() {
+//   const { data } = await axios({
+//     method: 'get',
+//     url: 'http://api.ipstack.com/check',
+//     output: 'json',
+//     params: {
+//       access_key: 'da58dc35eb8c318cfa630fea4dc1f5f7',
+//     },
+//   });
 
-  if (data.error) {
-    console.warn('Failed to get user geolocation');
-    return null;
-  } else {
-    return data;
-  }
-}
+//   if (data.error) {
+//     console.warn('Failed to get user geolocation');
+//     return null;
+//   } else {
+//     return data;
+//   }
+// }
 
 function sendAnalitics({ form, data }) {
   if (typeof window !== 'undefined') {
@@ -70,7 +70,7 @@ function sendAnalitics({ form, data }) {
   return Promise.resolve(data);
 }
 
-async function getFormData(form) {
+function getFormData(form) {
   return {
     ...form,
     data: {
@@ -78,7 +78,7 @@ async function getFormData(form) {
       href: safeStorage.get('href', ''),
       referrer: safeStorage.get('referrer', ''),
       gacid: getGACID(),
-      geo: await getGeolocation(),
+      geo: '', // await getGeolocation(),
     },
   };
 }
