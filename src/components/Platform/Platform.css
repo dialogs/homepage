@@ -198,7 +198,7 @@
     }
 
     &__image {
-      max-width: 100%;
+      width: 100%;
 
       @media (--mobile-viewport) {
         margin-bottom: 20px;
@@ -208,14 +208,23 @@
         position: absolute;
         bottom: 30px;
         left: 0;
-        max-width: calc(50% - var(--margin-container-side) / 2);
+        width: calc(50% - var(--margin-container-side) / 2);
       }
 
       @media (--tablet-landscape-viewport) {
-        max-width: calc(50% - var(--padding-side-columns) * 1.5);
+        width: calc(50% - var(--padding-side-columns) * 1.5);
+
+        &--messenger {
+          width: 438px;
+        }
+
+        &--corporate {
+          width: 388px;
+        }
 
         &--integrations {
           bottom: 0;
+          width: 361px;
         }
       }
     }
