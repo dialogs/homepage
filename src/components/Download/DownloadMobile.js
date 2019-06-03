@@ -23,7 +23,7 @@ export function DownloadMobile({ isEnterprise, locale }) {
     <StaticQuery
       query={graphql`
         query {
-          phoneIos: file(
+          enterprisePhoneIos: file(
             relativePath: { eq: "images/download/enterprise_iphone.png" }
           ) {
             childImageSharp {
@@ -32,8 +32,26 @@ export function DownloadMobile({ isEnterprise, locale }) {
               }
             }
           }
-          phoneAndroid: file(
+          cloudPhoneIos: file(
+            relativePath: { eq: "images/download/cloud_iphone.png" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 110) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+          enterprisePhoneAndroid: file(
             relativePath: { eq: "images/download/enterprise_android.png" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 110) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+          cloudPhoneAndroid: file(
+            relativePath: { eq: "images/download/cloud_android.png" }
           ) {
             childImageSharp {
               fluid(maxWidth: 110) {
@@ -43,7 +61,12 @@ export function DownloadMobile({ isEnterprise, locale }) {
           }
         }
       `}
-      render={({ phoneIos, phoneAndroid }) => {
+      render={({
+        enterprisePhoneIos,
+        cloudPhoneIos,
+        enterprisePhoneAndroid,
+        cloudPhoneAndroid,
+      }) => {
         return (
           <div className="download__section download__item download__mobile">
             <h2 className="download__item-title">
@@ -62,7 +85,11 @@ export function DownloadMobile({ isEnterprise, locale }) {
                     {(title) => (
                       <Image
                         fadeIn
-                        fluid={phoneIos.childImageSharp.fluid}
+                        fluid={
+                          isEnterprise
+                            ? enterprisePhoneIos.childImageSharp.fluid
+                            : cloudPhoneIos.childImageSharp.fluid
+                        }
                         alt={title}
                       />
                     )}
@@ -120,7 +147,11 @@ export function DownloadMobile({ isEnterprise, locale }) {
                     {(alt) => (
                       <Image
                         fadeIn
-                        fluid={phoneAndroid.childImageSharp.fluid}
+                        fluid={
+                          isEnterprise
+                            ? enterprisePhoneAndroid.childImageSharp.fluid
+                            : cloudPhoneAndroid.childImageSharp.fluid
+                        }
                         alt={alt}
                       />
                     )}

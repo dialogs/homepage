@@ -3,22 +3,25 @@ import { FormattedMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import ImageFormatted from '../components/ImageFormatted';
-
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import Image from 'gatsby-image';
 
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 
-export default ({ pageContext: { locale, url, originalPath } }) => {
-  const officesLinks = {
-    moscow:
-      'https://www.google.com/maps/place/dialog/@55.7368062,37.5323798,18z/data=!3m1!4b1!4m13!1m7!3m6!1s0x0:0x0!2zNTXCsDQ0JzEyLjUiTiAzN8KwMzInMDAuNyJF!3b1!8m2!3d55.736806!4d37.533528!3m4!1s0x46b54a53aa3b42cd:0x3c26303a75a2c356!8m2!3d55.7368062!4d37.5334741',
-    novosibirskNikolaeva:
-      'https://www.google.com/maps/place/%D0%A6%D0%B5%D0%BD%D1%82%D1%80+%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9/@54.8580416,83.1106614,18z/data=!4m13!1m7!3m6!1s0x42dfc3f43cc9190d:0x3da699e7445b010e!2z0YPQuy4g0J3QuNC60L7Qu9Cw0LXQstCwLCAxMSwg0J3QvtCy0L7RgdC40LHQuNGA0YHQuiwg0J3QvtCy0L7RgdC40LHQuNGA0YHQutCw0Y8g0L7QsdC7LiwgNjMwMDkw!3b1!8m2!3d54.8581713!4d83.1103964!3m4!1s0x0:0x70c9334b88f99469!8m2!3d54.8576537!4d83.1117064',
-    novosibirskMost:
-      'https://www.google.com/maps/place/%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D1%86%D0%B5%D0%BD%D1%82%D1%80+MOST/@55.023146,82.920614,15z/data=!4m5!3m4!1s0x0:0x6bef1adfc015b0e6!8m2!3d55.023146!4d82.920614',
-  };
+const officesLinks = {
+  moscow:
+    'https://www.google.com/maps/place/dialog/@55.7368062,37.5323798,18z/data=!3m1!4b1!4m13!1m7!3m6!1s0x0:0x0!2zNTXCsDQ0JzEyLjUiTiAzN8KwMzInMDAuNyJF!3b1!8m2!3d55.736806!4d37.533528!3m4!1s0x46b54a53aa3b42cd:0x3c26303a75a2c356!8m2!3d55.7368062!4d37.5334741',
+  novosibirskNikolaeva:
+    'https://www.google.com/maps/place/%D0%A6%D0%B5%D0%BD%D1%82%D1%80+%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85+%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B9/@54.8580416,83.1106614,18z/data=!4m13!1m7!3m6!1s0x42dfc3f43cc9190d:0x3da699e7445b010e!2z0YPQuy4g0J3QuNC60L7Qu9Cw0LXQstCwLCAxMSwg0J3QvtCy0L7RgdC40LHQuNGA0YHQuiwg0J3QvtCy0L7RgdC40LHQuNGA0YHQutCw0Y8g0L7QsdC7LiwgNjMwMDkw!3b1!8m2!3d54.8581713!4d83.1103964!3m4!1s0x0:0x70c9334b88f99469!8m2!3d54.8576537!4d83.1117064',
+  novosibirskMost:
+    'https://www.google.com/maps/place/%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D1%86%D0%B5%D0%BD%D1%82%D1%80+MOST/@55.023146,82.920614,15z/data=!4m5!3m4!1s0x0:0x6bef1adfc015b0e6!8m2!3d55.023146!4d82.920614',
+};
 
+export default ({
+  pageContext: { locale, url, originalPath },
+  data: { teamImage },
+}) => {
   return (
     <div className="about page">
       <FormattedMetaTags
@@ -40,11 +43,15 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
       <section className="about__promo">
         <div className="about__video">
           <div className="about__video-wrapper">
-            <ImageFormatted
-              src="/images/about/team.png"
-              srcSet="/images/about/team@2x.png 2x"
-              altLangId="more_than_messenger"
-            />
+            <FormattedMessage id="more_than_messenger">
+              {(alt) => (
+                <Image
+                  fadeIn
+                  fluid={teamImage.childImageSharp.fluid}
+                  alt={alt}
+                />
+              )}
+            </FormattedMessage>
           </div>
         </div>
         <Container>
@@ -222,3 +229,15 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
     </div>
   );
 };
+
+export const query = graphql`
+  query {
+    teamImage: file(relativePath: { eq: "images/about/team.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`;

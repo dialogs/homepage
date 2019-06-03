@@ -1,8 +1,9 @@
 const { isDev, ghost } = require('./server/config');
+const siteUrl = 'https://dlg.im';
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://dlg.im',
+    siteUrl,
   },
   proxy: isDev
     ? {
@@ -11,7 +12,7 @@ module.exports = {
       }
     : undefined,
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    { resolve: `gatsby-plugin-react-helmet` },
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
@@ -46,7 +47,7 @@ module.exports = {
         include_favicon: true,
       },
     },
-    'gatsby-transformer-sharp',
+    { resolve: 'gatsby-transformer-sharp' },
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
@@ -71,9 +72,10 @@ module.exports = {
             disallow: ['/@joinchat', '/@/joinchat', '/joinchat'],
           },
         ],
+        sitemap: `${siteUrl}/sitemap.xml`,
       },
     },
-    'gatsby-plugin-advanced-sitemap',
+    { resolve: 'gatsby-plugin-advanced-sitemap' },
     {
       resolve: 'gatsby-plugin-express',
       options: {
@@ -86,20 +88,8 @@ module.exports = {
         component: require.resolve(`./src/components/Layout/Layout`),
       },
     },
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [
-          require('postcss-nested'),
-          require('postcss-custom-media'),
-          require('postcss-preset-env')({
-            features: {
-              'color-mod-function': true,
-            },
-          }),
-        ],
-      },
-    },
+    { resolve: `gatsby-plugin-postcss` },
+    { resolve: 'gatsby-plugin-astroturf' },
     {
       resolve: `gatsby-source-ghost`,
       options: {

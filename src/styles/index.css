@@ -2,7 +2,7 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-@import '~normalize.css/normalize.css';
+@import 'normalize.css';
 
 @import 'fonts.css';
 @import 'variables.css';

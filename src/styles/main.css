@@ -269,15 +269,6 @@ h6 {
   }
 }
 
-.main {
-  flex: 1 1 auto;
-  min-width: 0;
-  min-height: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  overflow: hidden;
-}
-
 .share-box {
   &__link {
     display: block;
@@ -303,4 +294,8 @@ h6 {
       background-image: url('/images/svg-icons/social-twitter.svg');
     }
   }
+}
+
+body.scrollBlocked {
+  overflow: hidden !important;
 }

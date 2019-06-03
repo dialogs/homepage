@@ -1,22 +1,6 @@
-/*
- * Copyright 2019 dialog LLC <info@dlg.im>
- */
-
 @import '../../styles/variables.css';
 
 .header {
-  padding: 12px 0;
-
-  @media (--tablet-viewport) {
-    padding: 26px 0;
-  }
-  @media (--tablet-landscape-viewport) {
-    padding: 25px 0;
-  }
-  @media (--laptop-viewport) {
-    padding: 45px 0;
-  }
-
   &__columns {
     display: flex;
     justify-content: space-between;

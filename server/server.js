@@ -4,6 +4,7 @@
 
 const path = require('path');
 const express = require('express');
+const morgan = require('morgan');
 // const gatsbyExpress = require('gatsby-plugin-express');
 const gatsbyExpress = require('./middlewares/gatsbyExpressCustomized');
 const bodyParser = require('body-parser');
@@ -21,6 +22,7 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(setHeaders);
+app.use(morgan(isDev ? 'dev' : 'combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
