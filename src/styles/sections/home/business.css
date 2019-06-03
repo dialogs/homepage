@@ -89,8 +89,6 @@
     text-align: center;
 
     & img {
-      max-width: 45%;
-
       @media (--tablet-viewport) {
         max-width: 100%;
       }
@@ -167,7 +165,7 @@
     }
 
     @media (--laptop-viewport) {
-      max-height: 560px;
+      /* max-height: 560px; */
     }
 
     @media (--desktop-viewport) {

@@ -8,4 +8,9 @@
   & .heading {
     padding: 0;
   }
+
+  &__img {
+    max-width: 230px;
+    margin-left: 60px;
+  }
 }
