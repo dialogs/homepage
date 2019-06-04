@@ -6,8 +6,10 @@
   "private": "true",
   "scripts": {
     "server": "node server/server",
-    "start": "gatsby develop -H 0.0.0.0 -p 8000 & npm run server",
-    "build": "cross-env NODE_ENV=production gatsby build",
+    "gatsby:start": "gatsby develop -H 0.0.0.0 -p 8000",
+    "gatsby:build": "cross-env NODE_ENV=production gatsby build",
+    "start": "npm-run-all -p server gatsby:start",
+    "build": "npm run gatsby:build",
     "format": "prettier --write \"src/**/*.{js,json,css,yml}\""
   },
   "author": "",
@@ -64,8 +66,9 @@
     "cssnano": "4.1.10",
     "husky": "2.3.0",
     "lint-staged": "8.1.7",
-    "postcss-nested": "4.1.2",
+    "npm-run-all": "4.1.5",
     "postcss-import": "12.0.1",
+    "postcss-nested": "4.1.2",
     "postcss-preset-env": "6.6.0",
     "prettier": "1.17.1"
   },
