@@ -34,7 +34,8 @@ module.exports = {
   meta_title_jobs: 'Карьера | dialog',
   meta_description_jobs:
     'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
-
+  meta_title_vacancy: 'Вакансии | dialog',
+  meta_description_vacancy: '',
   og_title_default: 'dialog | Платформа для простых и эффективных коммуникаций',
   og_description_default:
     'это корпоративный мессенджер с возможностью установки на внутренний сервер организации',
@@ -106,6 +107,8 @@ module.exports = {
 
   alt_icanchoose_about_dialog: 'icanchoose о dialog',
   alt_download: 'Скачать',
+  alt_jobs_company: 'Наша компания',
+  alt_jobs_ceo: 'Директор',
 
   hero_header: 'Достигайте командных целей быстрее и без потери фокуса',
   hero_subheader: 'Простая и эффективная платформа для коммуникаций в компании',
@@ -212,6 +215,10 @@ module.exports = {
   form_label_amount: 'Количество пользователей',
   form_label_agreement: 'Я согласен на обработку персональных данных',
   form_label_subscribe: 'Подписаться на новостную рассылку',
+  form_label_fio: 'Ваше имя',
+  form_label_aboutme: 'О себе',
+  form_label_city: 'Город',
+  form_label_attach_resume: 'Прикрепить резюме',
 
   form_pending: 'Отправка сообщения',
   form_success_message: 'Заявка успешно отправлена',
@@ -551,7 +558,7 @@ module.exports = {
   jobs_recommend_title: 'Приведи кандидата<br/> на вакансию и получи',
   jobs_recommend_award: '60 000 ₽',
   jobs_recommend_action:
-    'Присылай резюме<br/> на <a href="mailto:info@dlg.im">info@dlg.im</a>',
+    'Присылай резюме<br/> на <a href="mailto:info@dlg.im?subject=Отзыв с сайта на вакансию&body=Я хотел бы порекомендовать специалиста на вакансию">info@dlg.im</a>',
   job_apply_header: 'Не нашли что искали?',
   job_apply_message:
     'Если вы не нашли интересующую вакансию, не отчаивайтесь – заполните эту форму и отправьте нам. Мы обязательно рассмотрим ваше резюме.',

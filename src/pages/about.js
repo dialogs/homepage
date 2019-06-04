@@ -34,12 +34,6 @@ export default ({
         path={`/${locale}${originalPath}`}
       />
 
-      <Container>
-        <PageHeader>
-          <FormattedMessage id="more_than_messenger" />
-        </PageHeader>
-      </Container>
-
       <section className="about__promo">
         <div className="about__video">
           <div className="about__video-wrapper">

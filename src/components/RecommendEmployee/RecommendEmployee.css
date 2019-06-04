@@ -9,6 +9,7 @@
 
     @media (--mobile-viewport) {
       flex-direction: column;
+      margin-bottom: 40px;
     }
 
     @media (--tablet-viewport) {

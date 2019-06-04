@@ -17,19 +17,19 @@ import ImageFormatted from '../ImageFormatted';
 import { ContainerFluid } from '../ContainerFluid/ContainerFluid';
 import './VacancyLayout.css';
 
-export default ({ pageContext: { locale, url, originalPath }, data }) => {
-  console.log(url);
+export default ({ data, pageContext: { locale, url, slug } }) => {
+  console.log('layout', data);
   const job = data.markdownRemark;
   return (
     <Page>
       <FormattedMetaTags
-        titleId="meta_title_jobs"
-        descriptionId="meta_description_jobs"
+        titleId="meta_title_vacancy"
+        descriptionId="meta_description_vacancy"
       />
       <FormattedOpenGraph
-        idOgTitle="meta_title_jobs"
+        idOgTitle="meta_title_vacancy"
         url={url}
-        path={`/${locale}${originalPath}`}
+        path={`/${locale}${slug}`}
       />
 
       <Container>
@@ -47,38 +47,31 @@ export default ({ pageContext: { locale, url, originalPath }, data }) => {
             <FormattedMessage id="job_back" />
           </span>
         </button>
-        <Section className="jobs">
-          <div className="jobs__wrapper">
-            <div className="jobs__content">
-              <PageHeader>{job.frontmatter.title}</PageHeader>
-              <Button>
-                <FormattedMessage id="job_apply_button" />
-              </Button>
+        <Section className="vacancy_summary">
+          <div className="vacancy_summary__wrapper">
+            <div className="vacancy_summary__title">
+              {job.frontmatter.title}
             </div>
+            <div className="vacancy_summary__salary">
+              {job.frontmatter.salary}
+            </div>
+            <div className="vacancy_summary__desc">
+              {job.frontmatter.description}
+            </div>
+            <Button>
+              <FormattedMessage id="job_apply_button" />
+            </Button>
           </div>
         </Section>
 
-        <Section className="expectation">
-          <PageHeader className="expectation__title">
-            <FormattedMessage id="job_expectation_header" />
-          </PageHeader>
-
-          <div className="expectation_list" />
-        </Section>
-        <Section className="bonus">
-          <PageHeader className="bonus__title">
-            <FormattedMessage id="job_bonus_header" />
-          </PageHeader>
-
-          <div className="bonus_list" />
+        <Section className="expectations_bonuses">
+          <div dangerouslySetInnerHTML={{ __html: job.html }} />
         </Section>
       </Container>
       <ContainerFluid>
         <RecommendEmployee />
       </ContainerFluid>
-      <Container>
-        <ApplyForJob />
-      </Container>
+      <Container />
     </Page>
   );
 };

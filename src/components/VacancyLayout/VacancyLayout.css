@@ -1,0 +1,188 @@
+.vacancy_summary {
+  &__wrapper {
+    @media (--mobile-viewport) {
+      width: 100%;
+    }
+
+    @media (--laptop-viewport) {
+      width: 779px;
+    }
+  }
+  &__title {
+    @media (--mobile-viewport) {
+      font-size: 28px;
+      line-height: 30px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 40px;
+      line-height: 42px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 50px;
+      line-height: 52px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 60px;
+      line-height: 62px;
+    }
+  }
+  &__salary {
+    @media (--mobile-viewport) {
+      font-size: 16px;
+      line-height: 62px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 24px;
+      line-height: 62px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 30px;
+      line-height: 62px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 36px;
+      line-height: 62px;
+    }
+  }
+  &__desc {
+    @media (--mobile-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+      margin: 22px 0 30px 0;
+    }
+    @media (--tablet-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+      margin: 40px 0 40px 0;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 20px;
+      line-height: 26px;
+      margin: 43px 0 43px 0;
+    }
+    @media (--laptop-viewport) {
+      font-size: 24px;
+      line-height: 31px;
+      margin: 59px 0 66px 0;
+    }
+    @media (--desktop-viewport) {
+      font-size: 24px;
+      line-height: 31px;
+      margin: 57px 0 72px 0;
+    }
+  }
+}
+
+.expectations_bonuses {
+  & h3 {
+    @media (--mobile-viewport) {
+      font-size: 28px;
+      line-height: 30px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 40px;
+      line-height: 42px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 60px;
+      line-height: 78px;
+    }
+  }
+
+  & ul {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+  & li {
+    position: relative;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 17px;
+    padding-left: 60px;
+    min-height: 50px;
+
+    &:before {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 20px;
+      height: 20px;
+      content: '';
+      position: absolute;
+      background-color: var(--color-secondary);
+    }
+  }
+}
+#expectations_bonuses {
+  &__title {
+    @media (--mobile-viewport) {
+      font-size: 28px;
+      line-height: 30px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 40px;
+      line-height: 42px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 60px;
+      line-height: 78px;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list_column {
+    width: 40%;
+
+    & > div {
+      position: relative;
+      font-size: 18px;
+      line-height: 23px;
+      margin-top: 17px;
+      padding-left: 60px;
+      min-height: 50px;
+
+      &:before {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 20px;
+        height: 20px;
+        content: '';
+        position: absolute;
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+
+  &__list_alt {
+    display: flex;
+    flex-flow: column wrap;
+    #justify-content: space-between;
+
+    & > div {
+      position: relative;
+      font-size: 18px;
+      line-height: 23px;
+      margin-top: 17px;
+      padding-left: 60px;
+      min-height: 50px;
+      width: 40%;
+
+      &:before {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 20px;
+        height: 20px;
+        content: '';
+        position: absolute;
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+}

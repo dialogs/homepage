@@ -7,8 +7,21 @@
   width: 30%;
   height: 205px;
   border: 1px solid rgba(0, 0, 0, 0.175);
-  margin: 15px;
+  margin: 15px 30px 15px 0;
   background: #ffffff;
+
+  @media (--mobile-viewport) {
+    width: 100%;
+  }
+  @media (--tablet-viewport) {
+    width: 45%;
+  }
+  @media (--tablet-landscape-viewport) {
+    width: 29%;
+  }
+  @media (--laptop-viewport) {
+    width: 30%;
+  }
 }
 .vacancies__box:hover {
   background: #d2fde5;
@@ -29,6 +42,27 @@
   text-align: center;
   font-size: 18px;
   line-height: 23px;
+
+  @media (--mobile-viewport) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  @media (--tablet-viewport) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  @media (--tablet-landscape-viewport) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  @media (--laptop-viewport) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  @media (--desktop-viewport) {
+    font-size: 18px;
+    line-height: 23px;
+  }
 }
 .vacancies__box__tags {
   margin: 0 auto;

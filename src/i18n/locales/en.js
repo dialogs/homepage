@@ -34,7 +34,8 @@ module.exports = {
   meta_title_jobs: 'Career | dialog',
   meta_description_jobs:
     'handy and feature-rich enterprise multi-device messenger available for server or cloud – Slack-like, but not Slack-limited',
-
+  meta_title_vacancy: 'Vacancies | dialog',
+  meta_description_vacancy: '',
   og_title_default:
     'dialog | A platform for simple and efficient communications',
   og_description_default:
@@ -106,6 +107,8 @@ module.exports = {
 
   alt_icanchoose_about_dialog: 'icanchoose about dialog',
   alt_download: 'Download',
+  alt_jobs_company: 'Our company',
+  alt_jobs_ceo: 'CEO',
 
   hero_header: 'Achieve your team goals faster without losing focus',
   hero_subheader:
@@ -214,6 +217,10 @@ module.exports = {
   form_label_amount: 'Number of users',
   form_label_agreement: 'I agree to personal data processing',
   form_label_subscribe: 'Subscribe',
+  form_label_fio: 'Your name',
+  form_label_aboutme: 'About me',
+  form_label_city: 'City',
+  form_label_attach_resume: 'Attach resume',
 
   form_pending: 'Submitting...',
   form_success_message: 'The request has sent successfully',
@@ -540,10 +547,10 @@ and reload the page.
     'Андрей создал компанию в 2016 году и сейчас занимается стратегическим планированием бизнеса и ключевыми технологическими партнерствами.;',
   jobs_ceo_about_product:
     '<p>Несмотря на то, что наш продукт используется прежде всего крупными компаниями, мы сами используем его в своей работе – разрабатываем для себя и друг друга. Творим со страстью сделать рабочее пространство простыми эффективным – без компромиссных полумер, присущих типичным enterprise продуктам из-за жестких требований безопасности крупных корпораций. Понимаяи уважая эти требования, мы создаем дружелюбную среду, в которой гармонично сочетаются дебюрократизация, автоматизацияи безопасность. </p><p>Всегда рады видеть в команде творцови новаторов, готовых вместе с нами работать над ⁣⁣коммуникационными продуктами, которыми можно гордиться.</p><p>Кстати, верим в идеи open-source, активно участвуем в развитии продуктов сообщества и постоянно открываем все больше компонентов нашей платформы. У нас есть bounty-программа – мы поощряем инициативных разработчиков за участие в open-source сообществе</p>',
-  jobs_recommend_title: 'Приведи кандидата на вакансию и получи',
+  jobs_recommend_title: 'Recommend candidate <br/> for vacancy and get',
   jobs_recommend_award: '$900',
   jobs_recommend_action:
-    'Присылай резюме<br/> на <a href="mailto:info@dlg.im">info@dlg.im</a>',
+    'Send your resume<br/> to <a href="mailto:info@dlg.im?subject=Feedback on vacancy from site&body=I would like to recommend employee">info@dlg.im</a>',
   job_apply_header: 'Не нашли что искали?',
   job_apply_message:
     'Если вы не нашли интересующую вакансию, не отчаивайтесь – заполните эту форму и отправьте нам. Мы обязательно рассмотрим ваше резюме.',

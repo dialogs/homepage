@@ -1,5 +1,5 @@
 .category_filter {
-  #color: var(--color-primary);
+  cursor: pointer;
 }
 .category_filter.active {
   color: var(--color-secondary);

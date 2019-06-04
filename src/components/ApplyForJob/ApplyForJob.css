@@ -1,0 +1,11 @@
+.apply__form__body {
+  display: flex;
+  flex-direction: column;
+}
+.apply__form__twocolumns {
+  display: flex;
+  justify-content: space-between;
+}
+.apply__form__column {
+  width: 45%;
+}

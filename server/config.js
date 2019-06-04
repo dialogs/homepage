@@ -18,6 +18,7 @@ const config = {
   },
   email_to: env('EMAIL_TO', 'info@dlg.im'),
   email_to_support: env('EMAIL_TO_SUPPORT', 'support@dlg.im'),
+  email_to_hr: env('EMAIL_TO_HR', 'hire@dlg.im'),
   email: {
     host: env('EMAIL_HOST', 'smtp.gmail.com'),
     port: envInt('EMAIL_PORT', 465),
@@ -32,8 +33,8 @@ const config = {
     host: env('HOST', '0.0.0.0'),
   },
   ghost: {
-    endpoint: env('GHOST_ENDPOINT', null),
-    apiKey: env('GHOST_API_KEY', null),
+    endpoint: env('GHOST_ENDPOINT', 'https://georgetokmakov.ghost.io'),
+    apiKey: env('GHOST_API_KEY', '927544e28f9c605d92e6e9123a'),
   },
   mailchimp: {
     key: env('MAILCHIMP_KEY', null),
@@ -71,8 +72,8 @@ function checkUrlOrFail(envName, url) {
 
 checkUrlOrFail('GHOST_ENDPOINT', config.ghost.endpoint);
 checkOrFail('GHOST_API_KEY', config.ghost.apiKey);
-checkOrFail('MAILCHIMP_KEY', config.mailchimp.key);
-checkOrFail('MAILCHIMP_LIST_RU', config.mailchimp.list.ru);
-checkOrFail('MAILCHIMP_LIST_EN', config.mailchimp.list.en);
+//checkOrFail('MAILCHIMP_KEY', config.mailchimp.key);
+//checkOrFail('MAILCHIMP_LIST_RU', config.mailchimp.list.ru);
+//checkOrFail('MAILCHIMP_LIST_EN', config.mailchimp.list.en);
 
 module.exports = config;

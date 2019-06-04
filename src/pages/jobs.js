@@ -15,9 +15,13 @@ import { ApplyForJob } from '../components/ApplyForJob/ApplyForJob';
 import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
 import ImageFormatted from '../components/ImageFormatted';
 import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
+import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
 import '../styles/jobs.css';
 
 export default ({ pageContext: { locale, url, originalPath } }) => {
+  console.log('layout', locale);
+  console.log('layout', url);
+  console.log('layout', originalPath);
   return (
     <Page>
       <FormattedMetaTags
@@ -52,7 +56,11 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
 
           <div className="ceo__photo_bio">
             <div className="ceo__photo_wrapper">
-              <img className="ceo__photo" src="/images/jobs/jobs-ceo.png" />
+              <ImageFormatted
+                imgClass="ceo__photo"
+                src="/images/jobs/jobs-ceo.png"
+                altLangId="alt_jobs_ceo"
+              />
               <span className="ceo__bio">
                 <FormattedHTMLMessage id="jobs_ceo_bio" />
               </span>
@@ -79,14 +87,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         <Vacancies lang={locale} />
       </Container>
       <ContainerFluid>
-        <Section className="company">
-          <div className="company__wrapper">
-            <img
-              className="company__life_image"
-              src="/images/jobs/jobs-photos.png"
-            />
-          </div>
-        </Section>
+        <CompanyPictures />
       </ContainerFluid>
       <Container>
         <Section className="icanchoose">

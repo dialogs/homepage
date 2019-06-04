@@ -210,7 +210,9 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(allVacancies).then((result) => {
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-          const lang = node.fields.slug.indexOf('/ru/') > 0 ? 'ru' : 'en';
+          const lang = node.fields.slug.indexOf('/ru/') >= 0 ? 'ru' : 'en';
+          console.log('vacancy lang', lang);
+          console.log('vacancy lang', node.fields.slug);
           createPage({
             path: node.fields.slug,
             component: path.resolve(
@@ -220,6 +222,7 @@ exports.createPages = ({ graphql, actions }) => {
               // Data passed to context is available
               // in page queries as GraphQL variables.
               locale: lang,
+              originalPath: node.fields.slug,
               slug: node.fields.slug,
               url: siteUrl,
             },

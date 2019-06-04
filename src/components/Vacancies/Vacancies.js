@@ -107,6 +107,6 @@ export function Vacancies({ className, children, lang }) {
   console.log(vacanciesData, rawData);
 
   if (lang === 'ru')
-    return <VacanciesWithFilters RenderData={vacanciesData.Ru} />;
-  return <VacanciesWithFilters RenderData={vacanciesData.En} />;
+    return <VacanciesWithFilters lang="ru" RenderData={vacanciesData.Ru} />;
+  return <VacanciesWithFilters lang="en" RenderData={vacanciesData.En} />;
 }

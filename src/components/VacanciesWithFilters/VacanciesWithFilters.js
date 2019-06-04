@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { PageHeader } from '../PageHeader/PageHeader';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { Select } from '../Select/Select';
 
 import './VacanciesWithFilters.css';
 
@@ -19,9 +20,8 @@ class VacanciesWithFilters extends Component {
     console.log(this.state);
   }
 
-  handleCityChange = (event) => {
-    console.log('select', { target: event.target.value });
-    const newCityValue = event.target.value;
+  handleCityChange = (newCityValue) => {
+    console.log('select', newCityValue);
     let filteredVacancies = this.props.RenderData.Vacancies;
     if (newCityValue !== this.props.RenderData.Cities[0]) {
       filteredVacancies = filteredVacancies.filter(
@@ -84,7 +84,12 @@ class VacanciesWithFilters extends Component {
           ? 'category_filter active'
           : 'category_filter';
       return (
-        <button className={style} href="#" onClick={this.handleCategoryChange}>
+        <button
+          key={cat}
+          className={style}
+          href="#"
+          onClick={this.handleCategoryChange}
+        >
           {cat}
         </button>
       );
@@ -106,11 +111,7 @@ class VacanciesWithFilters extends Component {
         </div>
       </Link>
     ));
-    return (
-      <div className="vacancies__wrapper">
-        <PageHeader className="ceo__title">
-          <FormattedMessage id="jobs_vacancies_header" />
-        </PageHeader>
+    /*
         <select
           value={this.state.citySelect}
           onChange={this.handleCityChange}
@@ -118,6 +119,20 @@ class VacanciesWithFilters extends Component {
         >
           {cities}
         </select>
+    */
+    return (
+      <div className="vacancies__wrapper">
+        <PageHeader className="ceo__title">
+          <FormattedMessage id="jobs_vacancies_header" />
+        </PageHeader>
+        <Select
+          options={this.state.renderData.Cities}
+          value={this.state.citySelect}
+          name="cities"
+          onChange={this.handleCityChange}
+          isSmall
+        />
+
         <div className="vacancies__filter">{filters}</div>
         <div className="vacancies__boxes">{boxes}</div>
       </div>

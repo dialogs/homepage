@@ -9,7 +9,7 @@ const md5 = require('md5');
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 const mailer = nodemailer.createTransport(config.email);
-const mailchimp = new Mailchimp(config.mailchimp.key);
+//const mailchimp = new Mailchimp(config.mailchimp.key);
 
 function renderTextMessage(body, site) {
   const message = `
@@ -102,6 +102,44 @@ function notifyMailchimp(body, site) {
   return mailchimp.put(`/lists/${listId}/members/${md5(body.email)}`, {
     email_address: body.email,
     status: 'subscribed',
+  });
+}
+
+function notifyResume(body, site) {
+  return new Promise((resolve, reject) => {
+    const sender = {
+      name: body.name || 'empty name',
+      address: body.email,
+    };
+
+    let mailAddressTo = config.email_to_hr;
+
+    mailer.sendMail(
+      {
+        from: {
+          name: 'Dialog Bot',
+          address: 'bot@dlg.im',
+        },
+        to: mailAddressTo,
+        sender: sender.address,
+        replyTo: sender.address,
+        subject: `Резюме на вакансию с сайта ${site}`,
+        text: renderTextMessage(body, site),
+        attachments: [
+          {
+            filename: 'text3.txt',
+            path: '',
+          },
+        ],
+      },
+      (error, info) => {
+        if (error) {
+          reject(error);
+        }
+
+        resolve();
+      },
+    );
   });
 }
 
@@ -203,6 +241,38 @@ router.post('/support', (request, response) => {
         status: 500,
         message: 'Internal Error',
         error: error,
+      });
+    });
+});
+
+router.post('/apply', (request, response) => {
+  const referer = request.header('referer');
+  const body = request.body;
+  const promises = [];
+
+  //if (config.isDev) {
+  promises.push(logBody(body, referer));
+  //}
+  /*
+  if (config.email.auth.user && config.email.auth.pass) {
+    promises.push(notifyEmail(body, referer));
+  }
+  if (config.dialog.webhook) {
+    promises.push(notifyDialog(body, referer));
+  }*/
+
+  Promise.all(promises)
+    .then(() => {
+      response.json({
+        status: 200,
+        message: 'Ok',
+      });
+    })
+    .catch((e) => {
+      console.error(e);
+      response.json({
+        status: 500,
+        message: 'Internal Error',
       });
     });
 });
