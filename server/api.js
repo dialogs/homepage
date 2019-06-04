@@ -110,7 +110,7 @@ function logBody(body, referer) {
   return Promise.resolve();
 }
 
-router.post(['/subscribe', '/offer'], (request, response) => {
+router.post('/offer', (request, response) => {
   const { body } = request;
   const referer = request.header('referer');
   const promises = [];
@@ -125,9 +125,39 @@ router.post(['/subscribe', '/offer'], (request, response) => {
     promises.push(notifyDialog(body, referer));
   }
 
-  if (body.form === 'subscribe' || body.subscribe) {
+  if (body.subscribe) {
     promises.push(notifyMailchimp(body, referer));
   }
+
+  Promise.all(promises)
+    .then(() => {
+      response.json({
+        status: 200,
+        message: 'Ok',
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+      response.json({
+        status: 500,
+        message: 'Internal Error',
+        error: error,
+      });
+    });
+});
+
+router.post('/subscribe', (request, response) => {
+  const { body } = request;
+  const referer = request.header('referer');
+  const promises = [];
+
+  promises.push(logBody(body, referer));
+
+  if (config.dialog.webhook) {
+    promises.push(notifyDialog(body, referer));
+  }
+
+  promises.push(notifyMailchimp(body, referer));
 
   Promise.all(promises)
     .then(() => {
@@ -167,11 +197,12 @@ router.post('/support', (request, response) => {
         message: 'Ok',
       });
     })
-    .catch((e) => {
-      console.error(e);
+    .catch((error) => {
+      console.error(error);
       response.json({
         status: 500,
         message: 'Internal Error',
+        error: error,
       });
     });
 });
