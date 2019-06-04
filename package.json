@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Brand new dialog website",
   "main": "index.js",
-  "private": "true",
+  "private": true,
   "scripts": {
     "server": "node server/server",
     "gatsby:start": "gatsby develop -H 0.0.0.0 -p 8000",
