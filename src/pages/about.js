@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import ImageFormatted from '../components/ImageFormatted';
@@ -34,6 +34,12 @@ export default ({
         path={`/${locale}${originalPath}`}
       />
 
+      <Container>
+        <PageHeader className="about__header_upper">
+          <FormattedMessage id="about_more_than_messenger" />
+        </PageHeader>
+      </Container>
+
       <section className="about__promo">
         <div className="about__video">
           <div className="about__video-wrapper">
@@ -48,25 +54,33 @@ export default ({
             </FormattedMessage>
           </div>
         </div>
+      </section>
+
+      <section className="about__text">
         <Container>
-          <a
-            href="https://icanchoose.ru/company/dialog/"
-            className="about__description about__description-link"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ImageFormatted
-              imgClass="img--icon"
-              src="/images/svg/about-promo.svg"
-              altLangId="alt_icanchoose_about_dialog"
-            />
-            <FormattedMessage id="link_icanchoose" />
-            <img
-              className="img--arrow"
-              src="/images/svg-icons/arrow.svg"
-              alt=""
-            />
-          </a>
+          <PageHeader className="about__header_middle">
+            <FormattedMessage id="about_more_than_messenger" />
+          </PageHeader>
+          <div className="about__company_wrapper">
+            <FormattedHTMLMessage id="about_company" />
+          </div>
+        </Container>
+      </section>
+
+      <section className="about__green_section">
+        <Container>
+          <PageHeader className="about__green_section_header">
+            <FormattedMessage id="about_partnership" />
+          </PageHeader>
+          <div className="about__green_section_text_wrapper">
+            <FormattedHTMLMessage id="about_company" />
+          </div>
+          <PageHeader className="about__green_section_header">
+            <FormattedMessage id="about_integration" />
+          </PageHeader>
+          <div className="about__green_section_text_wrapper">
+            <FormattedHTMLMessage id="about_company" />
+          </div>
         </Container>
       </section>
 

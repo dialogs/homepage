@@ -559,4 +559,9 @@ and reload the page.
   job_back: 'Все вакансии',
   job_apply_button: 'Send resume',
   jobs_vacancies_header: 'Vacancies',
+  about_more_than_messenger: 'Reetm - is a lot more than just a messenger',
+  about_company:
+    'The company has been developing a corporate messenger Reetm for more than 3 years. Reetm unites specialists in the field of IT-communications, data security, real-time distributed systems, Big Data and other areas related to messaging. Currently, Reetm employs 90 people who at various times have been developing products for the largest companies leading in the field of security systems and data storage.',
+  about_partnership: 'Technology partnership',
+  about_integration: 'Integration',
 };
