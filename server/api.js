@@ -106,7 +106,7 @@ function notifyMailchimp(body, site) {
 }
 
 function logBody(body, referer) {
-  console.log({ body, referer });
+  console.log(JSON.stringify({ ...body, headerReferer: referer }));
   return Promise.resolve();
 }
 
