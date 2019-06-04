@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import ImageFormatted from '../ImageFormatted';
 import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';

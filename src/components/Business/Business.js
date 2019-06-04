@@ -2,7 +2,6 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
