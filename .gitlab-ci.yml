@@ -78,11 +78,13 @@ staging:
   environment:
     name: staging
     url: '${DEV_URL}'
+  variables:
     EMAIL_TO: 'oleg@dlg.im'
   cache: {}
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
     - source variables
+    - echo $EMAIL_TO
     - |
       curl --header 'Content-Type: application/json' --request POST \
       --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* deploy to DEV started.\"}" \
