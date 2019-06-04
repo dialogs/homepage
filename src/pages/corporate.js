@@ -16,7 +16,7 @@ import { Offer } from '../components/Offer/Offer';
 
 export default ({
   pageContext: { locale, url, originalPath },
-  data: { promoImage1, promoImage2 },
+  data: { promoImage1, promoImage2, secureImage, effectiveImage },
 }) => {
   return (
     <Page>
@@ -58,8 +58,8 @@ export default ({
             )}
           </FormattedMessage>
         </Promo>
-        <SecureCommunication />
-        <EffectiveCommunication />
+        <SecureCommunication image={secureImage} />
+        <EffectiveCommunication image={effectiveImage} />
         <Partnership />
         <Offer />
       </Container>
@@ -79,6 +79,24 @@ export const query = graphql`
     promoImage2: file(relativePath: { eq: "images/solution/solution_2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 350) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    secureImage: file(
+      relativePath: { eq: "images/solution/secure-communication.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 440) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+    effectiveImage: file(
+      relativePath: { eq: "images/solution/effective-communication.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }

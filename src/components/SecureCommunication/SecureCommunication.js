@@ -1,13 +1,14 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
+import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
 
 import './SecureCommunication.css';
 
-export function SecureCommunication({ intl: { locale } }) {
+export function SecureCommunication({ intl: { locale }, image }) {
   return (
     <Section className="secure-communication">
       <Heading level="2">
@@ -32,10 +33,13 @@ export function SecureCommunication({ intl: { locale } }) {
           </div>
         </div>
         <div className="col box--architecture__image">
-          <ImageFormatted
-            src="/images/solution/secure-communication.png"
-            altLangId="SecureCommunication_secure"
-          />
+          <FormattedMessage id="SecureCommunication_secure">
+            {(alt) => (
+              <div className="col__image">
+                <Image fadeIn fluid={image.childImageSharp.fluid} alt={alt} />
+              </div>
+            )}
+          </FormattedMessage>
         </div>
       </div>
 

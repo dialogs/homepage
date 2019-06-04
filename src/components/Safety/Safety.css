@@ -39,32 +39,18 @@
     @media (--tablet-viewport) {
       content: '';
       position: absolute;
-      width: calc(
-        var(--margin-container-side) + var(--padding-side-columns) * 2
-      );
+      width: 2500px;
       z-index: -1;
-    }
-
-    @media (--laptop-viewport) {
-      width: calc(
-        var(--margin-container-side) + var(--padding-side-columns) * 1.5
-      );
-    }
-
-    @media (--laptop-viewport) {
-      width: calc(
-        var(--margin-container-side) + var(--padding-side-columns) * 2
-      );
     }
   }
 
   &:before {
     @media (--tablet-viewport) {
-      height: 186px;
+      min-height: 186px;
       height: 20%;
-      left: calc(-1 * var(--margin-container-side));
+      right: 80%;
       bottom: 100%;
-      background: var(--color-secondary);
+      background-color: var(--color-secondary);
     }
 
     @media (--tablet-landscape-viewport) {
@@ -75,15 +61,15 @@
       height: 75%;
       bottom: auto;
       top: -18.4%;
-      left: calc(-1 * var(--margin-container-side) / 2);
     }
   }
 
   &:after {
     @media (--tablet-viewport) {
-      height: 100px;
+      min-height: 100px;
       height: 9.2%;
-      right: calc(-1 * var(--margin-container-side));
+      /* right: calc(-1 * var(--margin-container-side)); */
+      left: 80%;
       top: 100%;
       background: var(--color-primary);
     }
@@ -96,7 +82,6 @@
       height: 75%;
       top: auto;
       bottom: -15%;
-      right: calc(-1 * var(--margin-container-side) / 2);
     }
 
     @media (--desktop-viewport) {
