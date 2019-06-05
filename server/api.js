@@ -9,7 +9,17 @@ const md5 = require('md5');
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 const mailer = nodemailer.createTransport(config.email);
-//const mailchimp = new Mailchimp(config.mailchimp.key);
+const mailchimp = new Mailchimp(config.mailchimp.key);
+//https://ethereal.email/messages
+let testmailer = nodemailer.createTransport({
+  host: 'smtp.ethereal.email',
+  port: 587,
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: 'brennon.schumm30@ethereal.email', // generated ethereal user
+    pass: 'FF6fDnU4HbpVpMe8qx', // generated ethereal password
+  },
+});
 
 function renderTextMessage(body, site) {
   const message = `
@@ -37,6 +47,28 @@ Geolocation: ${JSON.stringify(body.data.geo, null, 2)}
 Page-href: ${body.data.href}
 GAcid: ${body.data.gacid}
   `;
+
+  return message;
+}
+
+function renderApplicationMessage(body, site) {
+  const message = `
+    Имя: ${body.fio}
+    Телефон: ${body.phone}
+    Email: ${body.workemail}
+    Город: ${body.city}
+    Обо мне: ${body.aboutme}
+    Форма: ${body.form}
+    Отклик со страницы: ${site}
+
+    ========================================================
+    Дополнительная информация:
+    Accept-Language: ${body.data.language}
+    Document-referrer: ${body.data.referrer}
+    Geolocation: ${JSON.stringify(body.data.geo, null, 2)}
+    Page-href: ${body.data.href}
+    GAcid: ${body.data.gacid}
+      `;
 
   return message;
 }
@@ -114,7 +146,7 @@ function notifyResume(body, site) {
 
     let mailAddressTo = config.email_to_hr;
 
-    mailer.sendMail(
+    testmailer.sendMail(
       {
         from: {
           name: 'Dialog Bot',
@@ -124,11 +156,10 @@ function notifyResume(body, site) {
         sender: sender.address,
         replyTo: sender.address,
         subject: `Резюме на вакансию с сайта ${site}`,
-        text: renderTextMessage(body, site),
+        text: renderApplicationMessage(body, site),
         attachments: [
           {
-            filename: 'text3.txt',
-            path: '',
+            path: body.files,
           },
         ],
       },
@@ -248,10 +279,12 @@ router.post('/support', (request, response) => {
 router.post('/apply', (request, response) => {
   const referer = request.header('referer');
   const body = request.body;
+  console.log(body);
   const promises = [];
 
   //if (config.isDev) {
   promises.push(logBody(body, referer));
+  promises.push(notifyResume(body, referer));
   //}
   /*
   if (config.email.auth.user && config.email.auth.pass) {
