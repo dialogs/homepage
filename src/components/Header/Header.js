@@ -42,7 +42,7 @@ const HeaderContainer = styled.header`
 
   &.stickyVisible {
     transition: transform 250ms ease-out, background 0ms 0ms ease-out;
-    background: color-mod(#fff alpha(95%));
+    background-color: color-mod(#fff alpha(95%));
     transform: translateY(100%);
   }
 `;
