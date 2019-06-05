@@ -1,8 +1,22 @@
-.not_found {
-  padding: 40px 0 100px;
+@import '../../styles/variables.css';
 
-  &__wrapper {
-    position: relative;
+.not_found {
+  padding: 40px 0 80px;
+
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+
+  @media (--tablet-viewport) {
+    flex-flow: row nowrap;
+  }
+
+  &__col {
+    flex: 1 1 auto;
+
+    @media (--tablet-viewport) {
+      flex: 0 0 50%;
+    }
   }
 
   &__header {
@@ -13,29 +27,37 @@
   &__text {
     margin: 40px 0;
     padding: 0;
-    font-size: 24px;
-    line-height: 32px;
     font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+
+    @media (--tablet-landscape-viewport) {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 
   &__image {
     max-width: 100%;
     display: block;
-    margin: 0 auto;
-    padding-top: 100px;
+    margin-bottom: 40px;
+  }
 
-    @media (--tablet-landscape-viewport) {
-      padding: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      max-width: 460px;
-      width: 42%;
+  &__button {
+    &--uppper {
+      display: none;
+
+      @media (--tablet-viewport) {
+        display: block;
+      }
     }
 
-    @media (--laptop-viewport) {
-      width: auto;
-      max-width: 100%;
+    &--down {
+      display: block;
+
+      @media (--tablet-viewport) {
+        display: none;
+      }
     }
   }
 }
