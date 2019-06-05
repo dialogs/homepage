@@ -2,14 +2,10 @@ import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
-
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Section } from '../components/Section/Section';
-import { Heading } from '../components/Heading/Heading';
-import { Button } from '../components/Button/Button';
-import { Quote } from '../components/Quote/Quote';
 import { Vacancies } from '../components/Vacancies/Vacancies';
 import { ApplyForJob } from '../components/ApplyForJob/ApplyForJob';
 import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';

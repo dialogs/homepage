@@ -1,12 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { useStaticQuery, StaticQuery, graphql } from 'gatsby';
-
-import classnames from 'classnames';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-
-import './Vacancies.css';
+import { useStaticQuery, graphql } from 'gatsby';
 import VacanciesWithFilters from '../VacanciesWithFilters/VacanciesWithFilters';
+import './Vacancies.css';
+
 export function Vacancies({ className, children, lang }) {
   const dataRu = useStaticQuery(
     graphql`

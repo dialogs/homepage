@@ -554,6 +554,9 @@ and reload the page.
   job_apply_header: 'Не нашли что искали?',
   job_apply_message:
     'Если вы не нашли интересующую вакансию, не отчаивайтесь – заполните эту форму и отправьте нам. Мы обязательно рассмотрим ваше резюме.',
+  job_apply_vacancy_header: 'Respond to a vacancy',
+  job_apply_vacancy_message:
+    'We are waiting for a resume from you, a short story about yourself and a few lines on the topic of a vacancy',
   job_expectation_header: 'Что мы ожидаем',
   job_bonus_header: 'Бонусы',
   job_back: 'Все вакансии',
@@ -564,4 +567,9 @@ and reload the page.
     'The company has been developing a corporate messenger Reetm for more than 3 years. Reetm unites specialists in the field of IT-communications, data security, real-time distributed systems, Big Data and other areas related to messaging. Currently, Reetm employs 90 people who at various times have been developing products for the largest companies leading in the field of security systems and data storage.',
   about_partnership: 'Technology partnership',
   about_integration: 'Integration',
+  about_partnership_text:
+    'Reetm forms an independent IT environment with Russian manufacturers of office solutions and operating systems.',
+  about_integration_text:
+    'Integrate Reetm with any external services and applications - use the messenger interface to work with familiar tools, such as mail, calendars, task managers, cloud storages and much more.',
+  about_read_more: 'Read more',
 };

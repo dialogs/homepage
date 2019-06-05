@@ -1,12 +1,9 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
-import SupportForm from '../SupportForm';
-
-import './ApplyForJob.css';
 import ApplyForJobForm from '../ApplyForJobForm';
+import './ApplyForJob.css';
 
 export function ApplyForJob() {
   return (

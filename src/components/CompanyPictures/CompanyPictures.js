@@ -1,13 +1,8 @@
 import React from 'react';
-import classnames from 'classnames';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import { Section } from '../Section/Section';
 import { StaticQuery, graphql } from 'gatsby';
 import ImageFormatted from '../ImageFormatted';
-
-import Img from 'gatsby-image';
-
 import './CompanyPictures.css';
+
 export function CompanyPictures() {
   return (
     <StaticQuery

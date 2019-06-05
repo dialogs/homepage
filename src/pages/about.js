@@ -41,19 +41,21 @@ export default ({
       </Container>
 
       <section className="about__promo">
-        <div className="about__video">
-          <div className="about__video-wrapper">
-            <FormattedMessage id="more_than_messenger">
-              {(alt) => (
-                <Image
-                  fadeIn
-                  fluid={teamImage.childImageSharp.fluid}
-                  alt={alt}
-                />
-              )}
-            </FormattedMessage>
+        <Container>
+          <div className="about__video">
+            <div className="about__video-wrapper">
+              <FormattedMessage id="more_than_messenger">
+                {(alt) => (
+                  <Image
+                    fadeIn
+                    fluid={teamImage.childImageSharp.fluid}
+                    alt={alt}
+                  />
+                )}
+              </FormattedMessage>
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       <section className="about__text">
@@ -73,13 +75,35 @@ export default ({
             <FormattedMessage id="about_partnership" />
           </PageHeader>
           <div className="about__green_section_text_wrapper">
-            <FormattedHTMLMessage id="about_company" />
+            <FormattedHTMLMessage id="about_partnership_text" />
+            <div className="about__read_more_wrapper">
+              <Link to="#">
+                <FormattedMessage id="about_read_more" />
+                <img
+                  src="/images/svg-icons/arrow-link.svg"
+                  alt=""
+                  className=""
+                />
+              </Link>
+            </div>
           </div>
+        </Container>
+        <Container>
           <PageHeader className="about__green_section_header">
             <FormattedMessage id="about_integration" />
           </PageHeader>
           <div className="about__green_section_text_wrapper">
-            <FormattedHTMLMessage id="about_company" />
+            <FormattedHTMLMessage id="about_integration_text" />
+            <div className="about__read_more_wrapper">
+              <Link to="#">
+                <FormattedMessage id="about_read_more" />
+                <img
+                  src="/images/svg-icons/arrow-link.svg"
+                  alt=""
+                  className=""
+                />
+              </Link>
+            </div>
           </div>
         </Container>
       </section>
@@ -243,7 +267,7 @@ export default ({
 
 export const query = graphql`
   query {
-    teamImage: file(relativePath: { eq: "images/about/team.png" }) {
+    teamImage: file(relativePath: { eq: "images/about/corporate.png" }) {
       childImageSharp {
         fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid_withWebp_noBase64

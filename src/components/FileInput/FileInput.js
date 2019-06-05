@@ -1,4 +1,4 @@
-import React, { useState, createRef } from 'react';
+import React, { createRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 export function FileInput({
@@ -13,17 +13,19 @@ export function FileInput({
   const ref = createRef();
 
   function handleChange() {
-    onChange(ref.current.value, name);
+    onChange(ref.current.files[0], name);
   }
 
   return (
     <div>
-      <img src="/images/jobs/jobs-attachment.png" />
+      <img
+        src="/images/jobs/jobs-attachment.png"
+        style={{ marginRight: '10px' }}
+      />
       <input
         type="file"
         ref={ref}
         id="fileElem"
-        multiple
         style={{ display: 'none' }}
         onChange={handleChange}
       />

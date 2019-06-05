@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-
+import { useStaticQuery, graphql } from 'gatsby';
 import { Input } from '../Input/Input';
 import { FileInput } from '../FileInput/FileInput';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
 import { Select } from '../Select/Select';
-
 import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
 
 export function ApplyForJobForm({
@@ -17,6 +16,32 @@ export function ApplyForJobForm({
   onSubmit,
   className,
 }) {
+  const dataRu = useStaticQuery(
+    graphql`
+      query {
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                city
+              }
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
+
+  const rawData = dataRu.allMarkdownRemark.edges;
+  const langslug = window.location.href.indexOf('/ru/') >= 0 ? '/ru/' : '/en/';
+  const cities = rawData
+    .filter((el) => el.node.fields.slug.indexOf(langslug) >= 0)
+    .map((c) => c.node.frontmatter.city)
+    .filter((value, index, self) => self.indexOf(value) === index);
+
   const classes = classNames('form', className);
   const [form, setForm] = useState({
     fio: '',
@@ -31,7 +56,7 @@ export function ApplyForJobForm({
   function handleSubmit(event) {
     event.preventDefault();
     console.log(form);
-    //onSubmit({ ...form, form: 'apply' });
+    onSubmit({ ...form, form: 'apply' });
   }
 
   function handleChange(value, name) {
@@ -41,10 +66,27 @@ export function ApplyForJobForm({
     });
   }
 
+  function getBase64(file, cb) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function() {
+      cb(reader.result);
+    };
+    reader.onerror = function(error) {
+      console.log('Error: ', error);
+    };
+  }
+
   function handleFiles(value, name) {
-    setForm({
-      ...form,
-      [name]: value,
+    console.log(name, value);
+    let fileBase64 = '';
+    getBase64(value, (result) => {
+      fileBase64 = result;
+      console.log(fileBase64);
+      setForm({
+        ...form,
+        [name]: fileBase64,
+      });
     });
   }
 
@@ -59,6 +101,7 @@ export function ApplyForJobForm({
               type="text"
               onChange={handleChange}
               label={<FormattedMessage id="form_label_fio" />}
+              required
             />
             <Input
               value={form.phone}
@@ -66,6 +109,7 @@ export function ApplyForJobForm({
               type="text"
               onChange={handleChange}
               label={<FormattedMessage id="form_label_phone" />}
+              required
             />
           </div>
           <div className="apply__form__column">
@@ -78,7 +122,7 @@ export function ApplyForJobForm({
               required
             />
             <Select
-              options={['Москва', 'Санкт-Петербург']}
+              options={cities}
               value={form.city}
               name="city"
               onChange={handleChange}

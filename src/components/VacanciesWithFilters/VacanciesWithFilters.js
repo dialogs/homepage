@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { PageHeader } from '../PageHeader/PageHeader';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { Select } from '../Select/Select';
-
 import './VacanciesWithFilters.css';
 
 class VacanciesWithFilters extends Component {
@@ -38,7 +37,10 @@ class VacanciesWithFilters extends Component {
       cityActiveValue: newCityValue,
       vacancies: filteredVacancies,
       categories: filteredCategories,
-      categoryActiveValue: this.props.RenderData.Categories[0],
+      categoryActiveValue:
+        this.props.RenderData.Categories.length > 0
+          ? this.props.RenderData.Categories.length[0]
+          : '',
     });
   };
 
@@ -72,12 +74,6 @@ class VacanciesWithFilters extends Component {
   };
 
   render() {
-    console.log('this.state.renderData', this.state.renderData);
-    console.log('this.props.RenderData', this.props.RenderData);
-
-    const cities = this.state.renderData.Cities.map((city) => (
-      <option>{city}</option>
-    ));
     const filters = this.state.categories.map((cat) => {
       const style =
         cat == this.state.categoryActiveValue
@@ -100,7 +96,6 @@ class VacanciesWithFilters extends Component {
           <div className="vacancies__box__title">{node.title}</div>
           <div className="vacancies__box__tags">
             {node.tags
-              .split(';')
               .filter((tag) => tag.length > 0)
               .map((tag) => (
                 <span key={tag}>
@@ -111,15 +106,7 @@ class VacanciesWithFilters extends Component {
         </div>
       </Link>
     ));
-    /*
-        <select
-          value={this.state.citySelect}
-          onChange={this.handleCityChange}
-          className="vacancies__city"
-        >
-          {cities}
-        </select>
-    */
+
     return (
       <div className="vacancies__wrapper">
         <PageHeader className="ceo__title">
@@ -137,7 +124,6 @@ class VacanciesWithFilters extends Component {
         <div className="vacancies__boxes">{boxes}</div>
       </div>
     );
-    return <div />;
   }
 }
 export default VacanciesWithFilters;

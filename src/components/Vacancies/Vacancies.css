@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .vacancies__boxes {
   display: flex;
   align-items: flex-start;
