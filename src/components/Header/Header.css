@@ -29,7 +29,6 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 19px;
-    /*margin-top: 6px;*/
     margin-left: 60px;
     display: none;
 
@@ -127,9 +126,11 @@
         height: 2px;
         background: #000;
       }
+
       &:before {
         top: 9px;
       }
+
       &:after {
         top: 19px;
       }

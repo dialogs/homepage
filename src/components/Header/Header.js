@@ -16,6 +16,7 @@ const HeaderContainer = styled.header`
   left: 0;
   z-index: 1000;
   padding: 20px 0;
+  transform: translateZ(0);
 
   @media (--tablet-viewport) {
     padding: 26px 0;
@@ -33,10 +34,10 @@ const HeaderContainer = styled.header`
     position: fixed;
     top: auto;
     bottom: 100%;
-    transform: translateY(0%) translateZ(0);
+    transform: translateY(-5%);
     transition: transform 250ms ease-out, background 0ms 250ms ease-out;
     padding: 20px 0;
-    box-shadow: 0 2px 2px 0 color-mod(#000 alpha(10%));
+    box-shadow: 0 1px 3px -1px color-mod(#000 alpha(10%));
   }
 
   &.stickyVisible {
@@ -46,7 +47,8 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const TOP_SCROLL_OFFSET = 350;
+const TOP_SCROLL_HIDE_OFFSET = 350;
+const TOP_SCROLL_REMOVE_OFFSET = 100;
 
 export function Header({
   locale,
@@ -72,39 +74,42 @@ export function Header({
 
   useEffect(() => {
     function handleWindowLoad() {
+      console.log(handleWindowLoad);
       prevScrollPosition = getCurrentScroll();
     }
 
-    const handleScroll = debounce(
-      () => {
-        const currentScroll = getCurrentScroll();
+    function handleScroll() {
+      const currentScroll = getCurrentScroll();
 
-        if (currentScroll > TOP_SCROLL_OFFSET - 100) {
-          setSticky(true);
-        } else {
-          setSticky(false);
-          setStickyVisible(false);
-        }
+      if (currentScroll > TOP_SCROLL_HIDE_OFFSET - TOP_SCROLL_REMOVE_OFFSET) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+        setStickyVisible(false);
+      }
 
-        if (currentScroll > TOP_SCROLL_OFFSET) {
-          const isScrollingDown = currentScroll > prevScrollPosition;
-          setStickyVisible(!isScrollingDown);
-        } else {
-          setStickyVisible(false);
-        }
+      if (currentScroll > TOP_SCROLL_HIDE_OFFSET) {
+        const isScrollingDown = currentScroll > prevScrollPosition;
+        setStickyVisible(!isScrollingDown);
+      } else {
+        setStickyVisible(false);
+      }
 
-        prevScrollPosition = currentScroll <= 0 ? 0 : currentScroll;
-      },
-      200,
-      { leading: true, maxWait: 500 },
-    );
+      prevScrollPosition = currentScroll <= 0 ? 0 : currentScroll;
+    }
+
+    const debouncedScroll = debounce(handleScroll, 100, {
+      leading: true,
+      trailing: false,
+      maxWait: 100,
+    });
 
     window.addEventListener('load', handleWindowLoad);
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', debouncedScroll, { passive: true });
 
     return () => {
       window.removeEventListener('load', handleWindowLoad);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', debouncedScroll);
     };
   }, []);
 
