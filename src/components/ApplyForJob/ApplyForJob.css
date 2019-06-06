@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .apply__form__body {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,13 @@
 .apply__form__twocolumns {
   display: flex;
   justify-content: space-between;
+  @media (--mobile-viewport) {
+    flex-direction: column;
+  }
 }
 .apply__form__column {
   width: 45%;
+  @media (--mobile-viewport) {
+    width: 100%;
+  }
 }
