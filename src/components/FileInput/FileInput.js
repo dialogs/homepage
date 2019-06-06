@@ -13,7 +13,9 @@ export function FileInput({
   const ref = createRef();
 
   if (FileInput.value == undefined) {
-    FileInput.label = 'Принять резюме';
+    FileInput.label = 'Прикрепить резюме';
+    if (window.location.href.indexOf('/en/') >= 0)
+      FileInput.label = 'Attach resume';
   } else {
     FileInput.label = FileInput.value;
   }
