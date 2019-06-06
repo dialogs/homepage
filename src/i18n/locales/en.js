@@ -524,5 +524,6 @@ is written correctly<br />
 and reload the page.
   `,
   '404_go_to_home': 'Go to homepage',
-  footer_privacy_policy: 'Privacy Policy',
+  footer_privacy_policy: 'Privacy policy',
+  footer_anti_corruption_policy: 'Anti-corruption policy',
 };

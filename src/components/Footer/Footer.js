@@ -237,9 +237,19 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <a
                       className="footer__nav-link"
-                      href={`/privacy_policy.pdf`}
+                      href={'/privacy_policy.pdf'}
+                      download
                     >
                       <FormattedMessage id="footer_privacy_policy" />
+                    </a>
+                  </div>
+                  <div className="footer__nav-item">
+                    <a
+                      className="footer__nav-link"
+                      href={'/anti_corruption_policy.pdf'}
+                      download
+                    >
+                      <FormattedMessage id="footer_anti_corruption_policy" />
                     </a>
                   </div>
                 </div>

@@ -533,4 +533,5 @@ module.exports = {
   `,
   '404_go_to_home': 'Перейти на главную',
   footer_privacy_policy: 'Обработка персональных данных',
+  footer_anti_corruption_policy: 'Политика по противодействию коррупции',
 };
