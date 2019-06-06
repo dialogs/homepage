@@ -28,6 +28,15 @@ const config = {
       pass: env('EMAIL_PASSWORD', null),
     },
   },
+  test: {
+    host: 'smtp.ethereal.email',
+    port: 587,
+    secure: false,
+    auth: {
+      user: 'brennon.schumm30@ethereal.email',
+      pass: 'FF6fDnU4HbpVpMe8qx',
+    },
+  },
   server: {
     port: envInt('PORT', isDev ? 3010 : 3000),
     host: env('HOST', '0.0.0.0'),

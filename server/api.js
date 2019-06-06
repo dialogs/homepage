@@ -11,15 +11,7 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 const mailer = nodemailer.createTransport(config.email);
 const mailchimp = new Mailchimp(config.mailchimp.key);
 //https://ethereal.email/messages
-let testmailer = nodemailer.createTransport({
-  host: 'smtp.ethereal.email',
-  port: 587,
-  secure: false, // true for 465, false for other ports
-  auth: {
-    user: 'brennon.schumm30@ethereal.email', // generated ethereal user
-    pass: 'FF6fDnU4HbpVpMe8qx', // generated ethereal password
-  },
-});
+let testmailer = nodemailer.createTransport(config.test);
 
 function renderTextMessage(body, site) {
   const message = `
@@ -287,12 +279,12 @@ router.post('/apply', (request, response) => {
   promises.push(notifyResume(body, referer));
   //}
   /*
-  if (config.email.auth.user && config.email.auth.pass) {
-    promises.push(notifyEmail(body, referer));
-  }
-  if (config.dialog.webhook) {
-    promises.push(notifyDialog(body, referer));
-  }*/
+    if (config.email.auth.user && config.email.auth.pass) {
+      promises.push(notifyEmail(body, referer));
+    }
+    if (config.dialog.webhook) {
+      promises.push(notifyDialog(body, referer));
+    }*/
 
   Promise.all(promises)
     .then(() => {
