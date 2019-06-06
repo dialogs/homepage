@@ -19,8 +19,6 @@ export function Vacancies({ className, children, lang }) {
                 category
                 tags
                 salary
-                expectations
-                bonuses
                 description
               }
               fields {
@@ -66,8 +64,6 @@ export function Vacancies({ className, children, lang }) {
       tags: el.node.frontmatter.tags,
       date: el.node.frontmatter.date,
       description: el.node.frontmatter.description,
-      expectations: el.node.frontmatter.expectations,
-      bonuses: el.node.frontmatter.bonuses,
       slug: el.node.fields.slug,
       id: el.node.id,
     });
@@ -93,8 +89,6 @@ export function Vacancies({ className, children, lang }) {
       tags: el.node.frontmatter.tags,
       date: el.node.frontmatter.date,
       description: el.node.frontmatter.description,
-      expectations: el.node.frontmatter.expectations,
-      bonuses: el.node.frontmatter.bonuses,
       slug: el.node.fields.slug,
       id: el.node.id,
     });

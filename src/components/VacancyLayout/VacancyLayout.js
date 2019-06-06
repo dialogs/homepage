@@ -93,8 +93,6 @@ export const query = graphql`
         title
         salary
         description
-        expectations
-        bonuses
       }
     }
   }
