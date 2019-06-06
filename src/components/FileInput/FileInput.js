@@ -12,8 +12,15 @@ export function FileInput({
 }) {
   const ref = createRef();
 
+  if (FileInput.value == undefined) {
+    FileInput.label = 'Принять резюме';
+  } else {
+    FileInput.label = FileInput.value;
+  }
+
   function handleChange() {
     onChange(ref.current.files[0], name);
+    FileInput.value = ref.current.files[0].name;
   }
 
   return (
@@ -28,10 +35,9 @@ export function FileInput({
         id="fileElem"
         style={{ display: 'none' }}
         onChange={handleChange}
+        name=""
       />
-      <label htmlFor="fileElem">
-        <FormattedMessage id="form_label_attach_resume" />
-      </label>
+      <label htmlFor="fileElem">{FileInput.label}</label>
     </div>
   );
 }
