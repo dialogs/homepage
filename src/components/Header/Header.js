@@ -61,10 +61,10 @@ export function Header({
   const [isSticky, setSticky] = useState(false);
   const [isStickyVisible, setStickyVisible] = useState(false);
   let prevScrollPosition = 0;
-  let toLink = `/${locale === 'ru' ? 'en' : 'ru'}${originalPath || ''}`;
+  let toLink = `/${locale === 'ru' ? 'en/' : 'ru/'}${originalPath || ''}`;
   if (typeof window !== 'undefined') {
     if (window.location.href.indexOf('/blog/') > 0) {
-      toLink = locale === 'ru' ? '/en/blog' : '/ru/blog';
+      toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
     }
   }
 
@@ -74,7 +74,6 @@ export function Header({
 
   useEffect(() => {
     function handleWindowLoad() {
-      console.log(handleWindowLoad);
       prevScrollPosition = getCurrentScroll();
     }
 
@@ -131,7 +130,7 @@ export function Header({
               <ul className="header__menu-list">
                 <li className="header__menu-item">
                   <Link
-                    to={`/${locale}/corporate`}
+                    to={`/${locale}/corporate/`}
                     className="header__menu-link"
                     activeClassName="header__menu-link--active"
                   >
@@ -140,7 +139,7 @@ export function Header({
                 </li>
                 <li className="header__menu-item">
                   <Link
-                    to={`/${locale}/features`}
+                    to={`/${locale}/features/`}
                     className="header__menu-link"
                     activeClassName="header__menu-link--active"
                   >
@@ -149,7 +148,7 @@ export function Header({
                 </li>
                 <li className="header__menu-item">
                   <Link
-                    to={`/${locale}/download/enterprise`}
+                    to={`/${locale}/download/enterprise/`}
                     className="header__menu-link"
                     activeClassName="header__menu-link--active"
                   >
@@ -158,7 +157,7 @@ export function Header({
                 </li>
                 <li className="header__menu-item">
                   <Link
-                    to={`/${locale}/pricing`}
+                    to={`/${locale}/pricing/`}
                     className="header__menu-link"
                     activeClassName="header__menu-link--active"
                   >
@@ -168,7 +167,7 @@ export function Header({
 
                 <li className="header__menu-item">
                   <Link
-                    to={`/${locale}/about`}
+                    to={`/${locale}/about/`}
                     className="header__menu-link"
                     activeClassName="header__menu-link--active"
                   >
