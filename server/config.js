@@ -29,12 +29,12 @@ const config = {
     },
   },
   test: {
-    host: 'smtp.ethereal.email',
+    host: env('ETHEREAL_HOST', 'smtp.ethereal.email'),
     port: 587,
     secure: false,
     auth: {
-      user: 'brennon.schumm30@ethereal.email',
-      pass: 'FF6fDnU4HbpVpMe8qx',
+      user: env('ETHEREAL_USER', null),
+      pass: env('ETHEREAL_PASS', null),
     },
   },
   server: {
