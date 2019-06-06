@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import VacanciesWithFilters from '../VacanciesWithFilters/VacanciesWithFilters';
+import { VacanciesWithTabs } from '../VacanciesWithTabs/VacanciesWithTabs';
 import './Vacancies.css';
 
 export function Vacancies({ className, children, lang }) {
@@ -103,6 +103,6 @@ export function Vacancies({ className, children, lang }) {
   console.log(vacanciesData, rawData);
 
   if (lang === 'ru')
-    return <VacanciesWithFilters lang="ru" RenderData={vacanciesData.Ru} />;
-  return <VacanciesWithFilters lang="en" RenderData={vacanciesData.En} />;
+    return <VacanciesWithTabs lang="ru" RenderData={vacanciesData.Ru} />;
+  return <VacanciesWithTabs lang="en" RenderData={vacanciesData.En} />;
 }

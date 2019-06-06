@@ -1,0 +1,32 @@
+@import '../../styles/variables.css';
+
+.vacancies__content {
+  display: none;
+
+  @media (--mobile-viewport) {
+    display: block !important;
+  }
+}
+
+.vacancies__filter {
+  @media (--mobile-viewport) {
+    display: none;
+  }
+}
+.vacancies__content--visible {
+  display: block;
+}
+
+.vacancies .collapsible__title {
+  display: none;
+
+  @media (--mobile-viewport) {
+    display: block !important;
+  }
+}
+
+.vacancies .collapsible__content {
+  @media (--tablet-viewport) {
+    display: block;
+  }
+}
