@@ -132,17 +132,19 @@
           position: absolute;
           height: 50%;
           left: -20px;
-          width: 2500px;
+          right: -20px;
           bottom: 0;
           background-color: var(--color-primary);
           z-index: -1;
 
           @media (--tablet-viewport) {
             left: 0;
+            right: calc(-1 * var(--margin-container-side));
           }
 
           @media (--laptop-viewport) {
             bottom: 20px;
+            right: calc(-1 * var(--margin-container-side) / 2);
           }
         }
 
@@ -156,7 +158,7 @@
             width: 100%;
           }
           @media (--tablet-landscape-viewport) {
-            width: 440px;
+            max-width: 440px;
           }
         }
       }
