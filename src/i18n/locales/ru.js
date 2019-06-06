@@ -414,7 +414,7 @@ module.exports = {
 
   form_label_your_email: 'Ваш e-mail',
   form_label_topic: 'Тема',
-  form_label_your_question: 'Опишите ваш вопрос',
+  form_label_your_question: 'Чем мы можем вам помочь?',
   form_send: 'Отправить',
 
   what_dialog_can: 'Что умеет dialog',
