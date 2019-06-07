@@ -8,7 +8,7 @@ import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Section } from '../components/Section/Section';
 import { Vacancies } from '../components/Vacancies/Vacancies';
 import { ApplyForJob } from '../components/ApplyForJob/ApplyForJob';
-import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
+import { CooperateWith } from '../components/CooperateWith/CooperateWith';
 import ImageFormatted from '../components/ImageFormatted';
 import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
 import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
@@ -56,20 +56,20 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
           <div className="info__partnership">
             <div className="info__box">
               <PageHeader>
-                <FormattedMessage id="partners_info_buiseness" />
+                <FormattedMessage id="partners_info_business" />
               </PageHeader>
               <div className="info__box_text">
-                <FormattedMessage id="partners_buiseness_info" />
+                <FormattedMessage id="partners_business_info" />
               </div>
               <ul className="info__box_list">
                 <li className="info__box_item">
                   <div className="info__box_item_wrapper">
-                    <FormattedMessage id="partners_buiseness_info_who" />
+                    <FormattedMessage id="partners_business_info_who" />
                   </div>
                 </li>
                 <li className="info__box_item">
                   <div className="info__box_item_wrapper">
-                    <FormattedMessage id="partners_buiseness_info_target" />
+                    <FormattedMessage id="partners_business_info_target" />
                   </div>
                 </li>
               </ul>
@@ -97,6 +97,9 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
           </div>
         </Section>
       </Container>
+      <ContainerFluid>
+        <CooperateWith />
+      </ContainerFluid>
       <Container>
         <ApplyForJob />
       </Container>
