@@ -101,6 +101,35 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         <CooperateWith />
       </ContainerFluid>
       <Container>
+        <Section className="availables">
+          <PageHeader>
+            <FormattedMessage id="partners_available_title" />
+          </PageHeader>
+          <ul className="availables__list">
+            <li className="availables__list_item">
+              <div className="availables__list_item_wrapper">
+                <FormattedMessage id="partners_available_materials" />
+              </div>
+            </li>
+            <li className="availables__list_item">
+              <div className="availables__list_item_wrapper">
+                <FormattedMessage id="partners_available_access" />
+              </div>
+            </li>
+            <li className="availables__list_item">
+              <div className="availables__list_item_wrapper">
+                <FormattedMessage id="partners_available_cross" />
+              </div>
+            </li>
+            <li className="availables__list_item">
+              <div className="availables__list_item_wrapper">
+                <FormattedMessage id="partners_available_following" />
+              </div>
+            </li>
+          </ul>
+        </Section>
+      </Container>
+      <Container>
         <ApplyForJob />
       </Container>
     </Page>
