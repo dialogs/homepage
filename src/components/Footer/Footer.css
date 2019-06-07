@@ -159,8 +159,15 @@
     }
 
     &-link {
-      & > svg {
+      svg {
+        transition: transform 100ms ease;
         display: block;
+      }
+
+      &:hover {
+        svg {
+          transform: scale(1.1);
+        }
       }
     }
   }
