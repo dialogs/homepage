@@ -82,12 +82,14 @@
   }
 
   &__company_wrapper {
-    margin-top: 20px;
+    margin-top: 30px;
+
     @media (--mobile-viewport) {
       width: 100%;
       font-size: 16px;
       line-height: 21px;
     }
+
     @media (--tablet-viewport) {
       width: 100%;
       font-size: 18px;
@@ -116,18 +118,22 @@
       padding-top: 0px;
       padding-bottom: 40px;
     }
+
     @media (--tablet-viewport) {
       padding-top: 0px;
       padding-bottom: 70px;
     }
+
     @media (--tablet-landscape-viewport) {
       padding-top: 0px;
       padding-bottom: 60px;
     }
+
     @media (--laptop-viewport) {
       padding-top: 0px;
       padding-bottom: 35px;
     }
+
     @media (--desktop-viewport) {
       padding-top: 0px;
       padding-bottom: 110px;
@@ -186,23 +192,30 @@
       font-size: 16px;
       line-height: 21px;
     }
+
     @media (--tablet-viewport) {
       width: 100%;
       font-size: 18px;
       line-height: 23px;
     }
+
     @media (--tablet-landscape-viewport) {
       width: 45%;
       font-size: 20px;
       line-height: 26px;
       padding-top: 40px;
+      margin-top: 12px;
     }
+
     @media (--laptop-viewport) {
       width: 45%;
       font-size: 24px;
       line-height: 31px;
+      margin-top: 20px;
     }
+
     @media (--desktop-viewport) {
+      margin-top: 40px;
       width: 45%;
       font-size: 24px;
       line-height: 31px;
