@@ -8,6 +8,7 @@
   @media (--tablet-viewport) {
     padding-bottom: 45px;
   }
+
   @media (--tablet-landscape-viewport) {
     padding-bottom: 50px;
   }
@@ -55,6 +56,7 @@
     @media (--mobile-viewport) {
       padding-bottom: 0;
       margin-bottom: 33px;
+      width: 100%;
       flex-grow: 1;
     }
 
@@ -184,6 +186,12 @@
       margin: 0;
     }
   }
+
+  & .button--default {
+    @media (--mobile-viewport) {
+      width: 100%;
+    }
+  }
 }
 
 .jobs__wrapper:before,
@@ -265,23 +273,19 @@
       font-size: 40px;
       line-height: 52px;
       padding-top: 30px;
-      padding-bottom: 20px;
+      padding-bottom: 60px;
     }
 
     @media (--tablet-landscape-viewport) {
       font-size: 50px;
       line-height: 65px;
-      padding-bottom: 30px;
     }
 
     @media (--laptop-viewport) {
       font-size: 60px;
       line-height: 78px;
-      padding-bottom: 40px;
+      padding-bottom: 80px;
     }
-    padding-bottom: 25px;
-    font-size: 60px;
-    line-height: 78px;
   }
 
   &__photo_wrapper {
@@ -382,6 +386,7 @@
       width: 340px;
       padding: 24px;
     }
+
     @media (--tablet-landscape-viewport) {
       font-size: 18px;
       line-height: 23px;
@@ -392,6 +397,7 @@
       width: 518px;
       padding: 40px;
     }
+
     @media (--laptop-viewport) {
       font-size: 18px;
       line-height: 23px;
@@ -403,6 +409,7 @@
       padding: 40px;
     }
   }
+
   &__quote_wrapper {
     position: relative;
     width: 45%;
@@ -411,31 +418,27 @@
     @media (--mobile-viewport) {
       width: 100%;
       margin-left: 0;
-      margin-bottom: -40px;
+      margin-bottom: 40px;
     }
+
     @media (--tablet-viewport) {
+      margin-top: -25px;
       margin-left: 0;
     }
+
     @media (--laptop-viewport) {
       margin-left: 15%;
     }
   }
+
   &__quote_mark {
-    font-size: 140px;
-    line-height: 140px;
-    @media (--tablet-viewport) {
-      font-size: 100px;
-      margin-top: -25px;
-    }
-    @media (--laptop-viewport) {
-      margin-top: 0;
-    }
+    font-size: 120px;
+    height: 80px;
+    line-height: 145px;
   }
 
   &__quote_text {
     font-weight: 500;
-    margin-top: -50px;
-    margin-bottom: 30px;
 
     @media (--mobile-viewport) {
       font-size: 20px;
@@ -447,16 +450,15 @@
       line-height: 29px;
       width: 380px;
       letter-spacing: 0.275px;
-      margin-top: -70px;
-      margin-bottom: 20px;
+      margin: 10px 0;
     }
+
     @media (--laptop-viewport) {
       font-size: 32px;
       line-height: 52px;
       width: 598px;
       letter-spacing: 0.275px;
-      margin-top: -50px;
-      margin-bottom: 30px;
+      margin: 20px 0;
     }
   }
 

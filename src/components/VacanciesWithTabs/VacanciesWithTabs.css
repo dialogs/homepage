@@ -17,11 +17,19 @@
   display: block;
 }
 
-.vacancies .collapsible__title {
-  display: none;
+.vacancies {
+  & .collapsible--open {
+    & .collapsible__title {
+      margin-bottom: 40px;
+    }
+  }
 
-  @media (--mobile-viewport) {
-    display: block !important;
+  & .collapsible__title {
+    display: none;
+
+    @media (--mobile-viewport) {
+      display: block !important;
+    }
   }
 }
 
