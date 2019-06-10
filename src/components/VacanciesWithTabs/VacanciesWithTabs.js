@@ -9,23 +9,25 @@ import { VacancyBox } from '../VacancyBox/VacancyBox';
 
 import './VacanciesWithTabs.css';
 
-export function VacanciesWithTabs(props) {
-  const [category, setCategory] = useState(props.RenderData.Categories[0]);
-  const [city, setCity] = useState(props.RenderData.Cities[0]);
+export function VacanciesWithTabs({ data }) {
+  const [category, setCategory] = useState(data.Categories[0]);
+  const [city, setCity] = useState(data.Cities[0]);
 
-  let vacInCity = props.RenderData.Vacancies.filter((v) => v.city === city);
+  let vacInCity = data.Vacancies.filter((vacancy) => vacancy.city === city);
   if (city === 'Все' || city === 'All') {
-    vacInCity = props.RenderData.Vacancies;
+    vacInCity = data.Vacancies;
   }
 
   let catInCity = vacInCity
     .map((v) => v.category)
     .filter((value, index, self) => self.indexOf(value) === index);
-  catInCity.unshift(props.RenderData.Categories[0]);
+  catInCity.unshift(data.Categories[0]);
 
-  const collapsible = catInCity.map((c) => {
-    let vacInCategory = vacInCity.filter((v) => v.category === c);
-    if (c === 'Все' || c === 'All') {
+  const collapsible = catInCity.map((currentCategory, index) => {
+    let vacInCategory = vacInCity.filter(
+      ({ category }) => category === currentCategory,
+    );
+    if (currentCategory === 'Все' || currentCategory === 'All') {
       vacInCategory = vacInCity;
     }
 
@@ -33,13 +35,14 @@ export function VacanciesWithTabs(props) {
       <Collapsible
         className={classNames(
           'vacancies__content',
-          category === c ? 'vacancies__content--visible' : null,
+          category === currentCategory ? 'vacancies__content--visible' : null,
         )}
-        title={c}
+        title={currentCategory}
+        key={`cotegory_collapsible_${index}`}
       >
         <div className="vacancies__boxes">
-          {vacInCategory.map((vacancy) => (
-            <VacancyBox vacancy={vacancy} />
+          {vacInCategory.map((vacancy, index) => (
+            <VacancyBox vacancy={vacancy} key={`vacancy_${index}`} />
           ))}
         </div>
       </Collapsible>
@@ -52,7 +55,7 @@ export function VacanciesWithTabs(props) {
         <FormattedMessage id="jobs_vacancies_header" />
       </PageHeader>
       <Select
-        options={props.RenderData.Cities}
+        options={data.Cities}
         value={city}
         name="cities"
         onChange={setCity}
@@ -60,9 +63,9 @@ export function VacanciesWithTabs(props) {
       />
       <div className="vacancies__filter">
         <Tabs onChange={setCategory} current={category}>
-          {catInCity.map((cat) => {
+          {catInCity.map((cat, index) => {
             return (
-              <Tab value={cat}>
+              <Tab value={cat} key={`category_tab_${index}`}>
                 <span>{cat}</span>
               </Tab>
             );

@@ -94,8 +94,8 @@ export function Vacancies({ className, children, lang }) {
   });
 
   if (lang === 'ru') {
-    return <VacanciesWithTabs lang="ru" RenderData={vacanciesData.Ru} />;
+    return <VacanciesWithTabs lang="ru" data={vacanciesData.Ru} />;
   }
 
-  return <VacanciesWithTabs lang="en" RenderData={vacanciesData.En} />;
+  return <VacanciesWithTabs lang="en" data={vacanciesData.En} />;
 }
