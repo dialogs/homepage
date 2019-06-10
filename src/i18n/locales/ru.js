@@ -219,6 +219,7 @@ module.exports = {
   form_label_aboutme: 'О себе',
   form_label_city: 'Город',
   form_label_attach_resume: 'Прикрепить резюме',
+  form_label_about: 'О себе',
 
   form_pending: 'Отправка сообщения',
   form_success_message: 'Заявка успешно отправлена',

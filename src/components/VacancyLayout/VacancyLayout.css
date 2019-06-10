@@ -2,8 +2,10 @@
 
 .vacancy_summary {
   &__wrapper {
+    margin-top: -40px;
     @media (--mobile-viewport) {
       width: 100%;
+      margin-top: 30px;
     }
 
     @media (--laptop-viewport) {
@@ -74,6 +76,9 @@
     }
   }
 }
+.vacancy__nav {
+  margin-top: 30px;
+}
 
 .expectations_bonuses {
   & h3 {
@@ -91,12 +96,30 @@
     }
   }
 
+  & ul:first-of-type {
+    @media (--mobile-viewport) {
+      columns: 1;
+    }
+    @media (--tablet-viewport) {
+      columns: 1;
+    }
+    @media (--tablet-landscape-viewport) {
+      columns: 2;
+    }
+    @media (--laptop-viewport) {
+      columns: 2;
+    }
+  }
+
   & ul {
     list-style: none;
     padding: 0;
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
+    @media (--mobile-viewport) {
+      columns: 1;
+    }
   }
   & li {
     position: relative;

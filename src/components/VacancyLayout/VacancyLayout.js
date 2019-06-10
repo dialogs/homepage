@@ -37,12 +37,18 @@ export default ({
       />
 
       <Container>
-        <button type="button" className="link--back" onClick={handleBackClick}>
-          <img src="/images/svg-icons/arrow-link.svg" alt="" className="" />
-          <span>
-            <FormattedMessage id="job_back" />
-          </span>
-        </button>
+        <div className="vacancy__nav">
+          <button
+            type="button"
+            className="link--back"
+            onClick={handleBackClick}
+          >
+            <img src="/images/svg-icons/arrow-link.svg" alt="" className="" />
+            <span>
+              <FormattedMessage id="job_back" />
+            </span>
+          </button>
+        </div>
         <Section className="vacancy_summary">
           <div className="vacancy_summary__wrapper">
             <div className="vacancy_summary__title">
