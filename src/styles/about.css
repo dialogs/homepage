@@ -218,7 +218,6 @@
       position: relative;
       padding-right: 37px;
       display: inline-block;
-      padding-bottom: 10px;
       font-weight: 500;
 
       &:before {
@@ -234,10 +233,12 @@
       &:hover:before {
         width: 100px;
       }
-    }
 
-    a img {
-      margin-left: 20px;
+      img {
+        position: absolute;
+        top: 2px;
+        right: 0;
+      }
     }
   }
 
