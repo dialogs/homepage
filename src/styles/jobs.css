@@ -491,7 +491,9 @@
     margin-left: 0;
     margin-top: 0;
     padding: 40px 70px;
-
+    @media (--mobile-viewport) {
+      padding: 50px 0;
+    }
     &:before {
       right: 0;
 

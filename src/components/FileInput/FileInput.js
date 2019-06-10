@@ -1,6 +1,8 @@
 import React, { createRef, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import './FileInput.css';
+
 export function FileInput({ onChange, required }) {
   const ref = createRef();
   const [fileName, setFileName] = useState(null);
@@ -11,7 +13,7 @@ export function FileInput({ onChange, required }) {
   }
 
   return (
-    <div>
+    <div className="file__input">
       <img
         src="/images/jobs/jobs-attachment.png"
         style={{ marginRight: '10px' }}
