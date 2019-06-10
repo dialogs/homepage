@@ -66,6 +66,9 @@ export function Header({
     if (window.location.href.indexOf('/blog/') > 0) {
       toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
     }
+    if (window.location.href.indexOf('/jobs/') > 0) {
+      toLink = locale === 'ru' ? '/en/jobs/' : '/ru/jobs/';
+    }
   }
 
   function getCurrentScroll() {
