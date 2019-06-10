@@ -14,11 +14,7 @@ export function FileInput({ onChange, required }) {
 
   return (
     <div className="file__input">
-      <img
-        src="/images/jobs/jobs-attachment.png"
-        style={{ marginRight: '10px' }}
-        alt=""
-      />
+      <img src="/images/jobs/jobs-attachment.png" alt="" />
       <input
         type="file"
         ref={ref}
