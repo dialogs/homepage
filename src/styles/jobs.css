@@ -251,7 +251,6 @@
   @media (--tablet-landscape-viewport) {
     padding-bottom: 50px;
   }
-
   @media (--laptop-viewport) {
     padding-bottom: 60px;
   }
@@ -368,22 +367,41 @@
     padding: 40px;
     @media (--mobile-viewport) {
       left: 20px;
-      top: 94%;
+      top: 90%;
       font-size: 14px;
       line-height: 18px;
       padding: 20px;
       bottom: initial;
     }
-
     @media (--tablet-viewport) {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 21px;
+      letter-spacing: 0.5px;
       left: 12%;
+      bottom: -95px;
+      height: 132px;
+      width: 340px;
+      padding: 24px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+      letter-spacing: 0.5px;
+      left: 39%;
+      bottom: -60px;
+      height: 184px;
+      width: 518px;
+      padding: 40px;
     }
     @media (--laptop-viewport) {
       font-size: 18px;
       line-height: 23px;
+      letter-spacing: 0.5px;
       left: 39%;
+      bottom: -60px;
+      height: 184px;
+      width: 518px;
+      padding: 40px;
     }
   }
   &__quote_wrapper {
@@ -396,10 +414,23 @@
       margin-left: 0;
       margin-bottom: -40px;
     }
+    @media (--tablet-viewport) {
+      margin-left: 0;
+    }
+    @media (--laptop-viewport) {
+      margin-left: 15%;
+    }
   }
   &__quote_mark {
     font-size: 140px;
     line-height: 140px;
+    @media (--tablet-viewport) {
+      font-size: 100px;
+      margin-top: -25px;
+    }
+    @media (--laptop-viewport) {
+      margin-top: 0;
+    }
   }
 
   &__quote_text {
@@ -413,12 +444,20 @@
     }
 
     @media (--tablet-viewport) {
-      font-size: 24px;
-      line-height: 39px;
+      font-size: 20px;
+      line-height: 29px;
+      width: 380px;
+      letter-spacing: 0.275px;
+      margin-top: -70px;
+      margin-bottom: 20px;
     }
     @media (--laptop-viewport) {
       font-size: 32px;
       line-height: 52px;
+      width: 598px;
+      letter-spacing: 0.275px;
+      margin-top: -50px;
+      margin-bottom: 30px;
     }
   }
 
