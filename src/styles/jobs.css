@@ -361,18 +361,17 @@
     position: absolute;
     width: 100%;
     bottom: -65px;
-
-    background: var(--color-primary);
-
+    background-color: var(--color-primary);
     padding: 40px;
+
     @media (--mobile-viewport) {
       left: 20px;
-      top: 90%;
       font-size: 14px;
       line-height: 18px;
       padding: 20px;
-      bottom: initial;
+      bottom: -30px;
     }
+
     @media (--tablet-viewport) {
       font-size: 14px;
       line-height: 21px;

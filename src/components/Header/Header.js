@@ -177,6 +177,26 @@ export function Header({
                     <FormattedMessage id="menu_about" />
                   </Link>
                 </li>
+
+                <li className="header__menu-item">
+                  <Link
+                    to={`/${locale}/career/`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_career" />
+                  </Link>
+                </li>
+
+                <li className="header__menu-item">
+                  <Link
+                    to={`/${locale}/support/`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_support" />
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>

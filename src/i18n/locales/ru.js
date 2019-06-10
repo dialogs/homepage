@@ -61,6 +61,7 @@ module.exports = {
   menu_patents: 'Патенты и лицензии',
   menu_legal: 'Правовая информация',
   menu_bounty: 'Open-source bounty',
+  menu_career: 'Карьера',
 
   alt_hero_header: 'Достигайте командных целей быстрее и без потери фокуса',
   alt_messenger: 'Мессенджер',
