@@ -46,16 +46,15 @@ export function ApplyForJobForm({
   const [form, setForm] = useState({
     fio: '',
     phone: '',
-    aboutme: '',
+    about: '',
     workemail: '',
     city: '',
-    files: '',
+    resume: '',
     agree: true,
   });
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(form);
     if (form.agree) {
       onSubmit({ ...form, form: 'apply' });
     }
@@ -68,26 +67,23 @@ export function ApplyForJobForm({
     });
   }
 
-  function getBase64(file, cb) {
-    let reader = new FileReader();
+  function getBase64(file, callback) {
+    const reader = new FileReader();
+
     reader.readAsDataURL(file);
-    reader.onload = function() {
-      cb(reader.result);
+    reader.onload = () => {
+      callback(reader.result);
     };
-    reader.onerror = function(error) {
-      console.log('Error: ', error);
+    reader.onerror = (error) => {
+      console.error(error);
     };
   }
 
-  function handleFiles(value, name) {
-    console.log(name, value);
-    let fileBase64 = '';
-    getBase64(value, (result) => {
-      fileBase64 = result;
-      console.log(fileBase64);
+  function handleResumeChange(value) {
+    getBase64(value, (fileBase64) => {
       setForm({
         ...form,
-        [name]: fileBase64,
+        resume: fileBase64,
       });
     });
   }
@@ -132,14 +128,14 @@ export function ApplyForJobForm({
           </div>
         </div>
         <Input
-          value={form.aboutme}
-          name="aboutme"
+          value={form.about}
+          name="about"
           type="text"
           onChange={handleChange}
-          label={<FormattedMessage id="form_label_aboutme" />}
+          label={<FormattedMessage id="form_label_about" />}
         />
         <div className="apply__form__fileinput">
-          <FileInput name="files" onChange={handleFiles} />
+          <FileInput onChange={handleResumeChange} />
         </div>
         <div className="apply__form__checkbox">
           <Checkbox

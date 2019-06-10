@@ -15,9 +15,6 @@ import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
 import '../styles/jobs.css';
 
 export default ({ pageContext: { locale, url, originalPath } }) => {
-  console.log('layout', locale);
-  console.log('layout', url);
-  console.log('layout', originalPath);
   return (
     <Page>
       <FormattedMetaTags
@@ -41,7 +38,11 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
                 <FormattedMessage id="jobs_apply_button" />
               </a>
             </div>
-            <img className="jobs__image" src="/images/jobs/jobs-promo.png" />
+            <img
+              className="jobs__image"
+              alt=""
+              src="/images/jobs/jobs-promo.png"
+            />
           </div>
         </Section>
 

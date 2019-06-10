@@ -2,8 +2,13 @@
 
 .vacancies__boxes {
   display: flex;
+  flex-flow: row wrap;
   align-items: flex-start;
-  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (--mobile-viewport) {
+    flex-flow: column wrap;
+  }
 }
 
 .vacancies__filter {

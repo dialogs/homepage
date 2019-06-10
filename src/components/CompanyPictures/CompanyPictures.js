@@ -17,7 +17,7 @@ export function CompanyPictures() {
                 relativePath
                 name
                 childImageSharp {
-                  sizes(maxWidth: 600) {
+                  sizes(maxWidth: 400) {
                     ...GatsbyImageSharpSizes
                   }
                 }
@@ -27,17 +27,19 @@ export function CompanyPictures() {
         }
       `}
       render={(data) => {
-        console.log(data);
-        const images = data.images.edges.map((img) => (
-          <div key={img.node.name} className="picture__wrapper">
-            <ImageFormatted
-              key={img.node.name}
-              src={'/' + img.node.relativePath}
-              altLangId="alt_jobs_company"
-            />
+        return (
+          <div className="company__wrapper">
+            {data.images.edges.map((image) => (
+              <div key={image.node.name} className="picture__wrapper">
+                <ImageFormatted
+                  key={image.node.name}
+                  src={'/' + image.node.relativePath}
+                  altLangId="alt_jobs_company"
+                />
+              </div>
+            ))}
           </div>
-        ));
-        return <div className="company__wrapper">{images}</div>;
+        );
       }}
     />
   );

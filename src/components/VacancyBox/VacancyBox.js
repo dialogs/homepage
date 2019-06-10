@@ -1,18 +1,14 @@
 import React from 'react';
-import classnames from 'classnames';
 import { Link } from 'gatsby';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-
 import './VacancyBox.css';
-export function VacancyBox(props) {
-  //console.log(props);
-  const node = props.vacancy;
+
+export function VacancyBox({ vacancy }) {
   return (
-    <Link key={node.id} to={node.slug} className="vacancies__box">
-      <div key={node.id} className="vacancies__box_inner">
-        <div className="vacancies__box__title">{node.title}</div>
+    <Link key={vacancy.id} to={vacancy.slug} className="vacancies__box">
+      <div key={vacancy.id} className="vacancies__box__inner">
+        <div className="vacancies__box__title">{vacancy.title}</div>
         <div className="vacancies__box__tags">
-          {node.tags
+          {vacancy.tags
             .filter((tag) => tag.length > 0)
             .map((tag) => (
               <span key={tag}>

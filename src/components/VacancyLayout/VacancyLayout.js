@@ -13,9 +13,16 @@ import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
 import { ContainerFluid } from '../ContainerFluid/ContainerFluid';
 import './VacancyLayout.css';
 
-export default ({ data, pageContext: { locale, url, slug } }) => {
-  console.log('layout', data);
-  const job = data.markdownRemark;
+export default ({
+  data: { markdownRemark },
+  pageContext: { locale, url, slug },
+}) => {
+  function handleBackClick() {
+    if (typeof window !== 'undefined') {
+      window.history.back();
+    }
+  }
+
   return (
     <Page>
       <FormattedMetaTags
@@ -29,15 +36,7 @@ export default ({ data, pageContext: { locale, url, slug } }) => {
       />
 
       <Container>
-        <button
-          type="button"
-          className="link--back"
-          onClick={() => {
-            if (typeof window !== 'undefined') {
-              window.history.back();
-            }
-          }}
-        >
+        <button type="button" className="link--back" onClick={handleBackClick}>
           <img src="/images/svg-icons/arrow-link.svg" alt="" className="" />
           <span>
             <FormattedMessage id="job_back" />
@@ -46,22 +45,21 @@ export default ({ data, pageContext: { locale, url, slug } }) => {
         <Section className="vacancy_summary">
           <div className="vacancy_summary__wrapper">
             <div className="vacancy_summary__title">
-              {job.frontmatter.title}
+              {markdownRemark.frontmatter.title}
             </div>
             <div className="vacancy_summary__salary">
-              {job.frontmatter.salary}
+              {markdownRemark.frontmatter.salary}
             </div>
             <div className="vacancy_summary__desc">
-              {job.frontmatter.description}
+              {markdownRemark.frontmatter.description}
             </div>
             <Button>
               <FormattedMessage id="job_apply_button" />
             </Button>
           </div>
         </Section>
-
         <Section className="expectations_bonuses">
-          <div dangerouslySetInnerHTML={{ __html: job.html }} />
+          <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
         </Section>
       </Container>
       <ContainerFluid>
@@ -76,7 +74,6 @@ export default ({ data, pageContext: { locale, url, slug } }) => {
             <div className="vacancy__apply_text">
               <FormattedMessage id="job_apply_vacancy_message" />
             </div>
-
             <ApplyForJobForm className="apply__form" />
           </div>
         </Section>

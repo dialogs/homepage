@@ -1,28 +1,13 @@
-import React, { createRef } from 'react';
+import React, { createRef, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export function FileInput({
-  type,
-  id,
-  value,
-  name,
-  label,
-  onChange,
-  required,
-}) {
+export function FileInput({ onChange, required }) {
   const ref = createRef();
-
-  if (FileInput.value == undefined) {
-    FileInput.label = 'Прикрепить резюме';
-    if (window.location.href.indexOf('/en/') >= 0)
-      FileInput.label = 'Attach resume';
-  } else {
-    FileInput.label = FileInput.value;
-  }
+  const [fileName, setFileName] = useState(null);
 
   function handleChange() {
-    onChange(ref.current.files[0], name);
-    FileInput.value = ref.current.files[0].name;
+    onChange(ref.current.files[0]);
+    setFileName(ref.current.files[0].name);
   }
 
   return (
@@ -30,16 +15,27 @@ export function FileInput({
       <img
         src="/images/jobs/jobs-attachment.png"
         style={{ marginRight: '10px' }}
+        alt=""
       />
       <input
         type="file"
         ref={ref}
         id="fileElem"
         style={{ display: 'none' }}
+        multiple={false}
+        required={required}
         onChange={handleChange}
         name=""
       />
-      <label htmlFor="fileElem">{FileInput.label}</label>
+      <FormattedMessage id="attach_resume">
+        {(label) => {
+          return <label htmlFor="fileElem">{fileName || label}</label>;
+        }}
+      </FormattedMessage>
     </div>
   );
 }
+
+FileInput.defaultProps = {
+  required: false,
+};

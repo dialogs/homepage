@@ -88,9 +88,9 @@ exports.createPages = ({ graphql, actions }) => {
 
   if (config.ghost.apiKey && config.ghost.endpoint) {
     const postsQueryRu = `
-    { 
+    {
       posts: allGhostPost(
-        sort: { order: DESC, fields: [published_at] }, 
+        sort: { order: DESC, fields: [published_at] },
         filter: { tags: {elemMatch: { name: {eq: "#ru"} } } }
       )
         {
@@ -108,9 +108,9 @@ exports.createPages = ({ graphql, actions }) => {
     }
     `;
     const postsQueryEn = `
-    { 
+    {
       posts: allGhostPost(
-        sort: { order: DESC, fields: [published_at] }, 
+        sort: { order: DESC, fields: [published_at] },
         filter: { tags: {elemMatch: { name: {eq: "#en"} } } }
       )
         {
@@ -211,16 +211,13 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(allVacancies).then((result) => {
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           const lang = node.fields.slug.indexOf('/ru/') >= 0 ? 'ru' : 'en';
-          console.log('vacancy lang', lang);
-          console.log('vacancy lang', node.fields.slug);
+
           createPage({
             path: node.fields.slug,
             component: path.resolve(
               `./src/components/VacancyLayout/VacancyLayout.js`,
             ),
             context: {
-              // Data passed to context is available
-              // in page queries as GraphQL variables.
               locale: lang,
               originalPath: node.fields.slug,
               slug: node.fields.slug,

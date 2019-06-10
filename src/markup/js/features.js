@@ -98,35 +98,26 @@ $(() => {
   }, 500);
 
   function handleScrollDisabled() {
-    console.log('handleScrollDisabled');
     const headerHeight = $('#header').outerHeight();
     window.scrollTo(0, headerHeight);
   }
 
   function enableSlidesScroll() {
-    console.log('enableSlidesScroll');
     window.removeEventListener('scroll', handleScrollEnabled, scrollOptions);
     window.addEventListener('scroll', handleScrollDisabled, scrollOptions);
     window.addEventListener('scroll', selectNextSlide, scrollOptions);
   }
+
   function disableSlidesScroll() {
-    console.log('disableSlidesScroll');
     window.removeEventListener('scroll', selectNextSlide, scrollOptions);
     window.removeEventListener('scroll', handleScrollDisabled, scrollOptions);
     window.addEventListener('scroll', handleScrollEnabled, scrollOptions);
   }
 
   function handleScrollEnabled() {
-    console.log('handleScrollEnabled');
     const scrollTop = $(document).scrollTop();
     const headerHeight = $('#header').outerHeight();
     const footerHeight = $('#footer').outerHeight();
-    console.log(headerHeight, scrollTop, footerHeight);
-
-    console.log(scrollTop < footerHeight);
-    console.log(scrollTop > headerHeight);
-    console.log(scrollTop > headerHeight || scrollTop < footerHeight);
-    console.log(scrollTop > headerHeight && scrollTop < footerHeight);
 
     // if (scrollTop > headerHeight && scrollTop < footerHeight) {
     //   enableSlidesScroll();

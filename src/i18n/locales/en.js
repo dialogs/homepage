@@ -569,4 +569,5 @@ and reload the page.
   about_integration_text:
     'Integrate Reetm with any external services and applications - use the messenger interface to work with familiar tools, such as mail, calendars, task managers, cloud storages and much more.',
   about_read_more: 'Read more',
+  attach_resume: 'Attach resume',
 };

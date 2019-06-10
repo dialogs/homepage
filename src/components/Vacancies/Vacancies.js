@@ -94,9 +94,9 @@ export function Vacancies({ className, children, lang }) {
     });
   });
 
-  console.log(vacanciesData, rawData);
-
-  if (lang === 'ru')
+  if (lang === 'ru') {
     return <VacanciesWithTabs lang="ru" RenderData={vacanciesData.Ru} />;
+  }
+
   return <VacanciesWithTabs lang="en" RenderData={vacanciesData.En} />;
 }

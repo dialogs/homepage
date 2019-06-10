@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Section } from '../Section/Section';
 
@@ -16,6 +15,7 @@ export function RecommendEmployee({ className, children }) {
             <img
               className="recommend__left__img"
               src="/images/jobs/jobs-icon1.png"
+              alt=""
             />
             <FormattedMessage id="jobs_recommend_award" />
           </div>

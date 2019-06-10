@@ -10,7 +10,6 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 let mailer = nodemailer.createTransport(config.email);
 const mailchimp = new Mailchimp(config.mailchimp.key);
-//https://ethereal.email/messages
 
 function renderTextMessage(body, site) {
   const message = `
@@ -44,21 +43,22 @@ GAcid: ${body.data.gacid}
 
 function renderApplicationMessage(body, site) {
   const message = `
-    Имя: ${body.fio}
-    Телефон: ${body.phone}
-    Email: ${body.workemail}
-    Город: ${body.city}
-    Обо мне: ${body.aboutme}
-    Форма: ${body.form}
-    Отклик со страницы: ${site}
+Имя: ${body.fio}
+Телефон: ${body.phone}
+Email: ${body.workemail}
+Город: ${body.city}
+Обо мне: ${body.about}
+Форма: ${body.form}
+Отклик со страницы: ${site}
 
-    ========================================================
-    Дополнительная информация:
-    Accept-Language: ${body.data.language}
-    Document-referrer: ${body.data.referrer}
-    Geolocation: ${JSON.stringify(body.data.geo, null, 2)}
-    Page-href: ${body.data.href}
-    GAcid: ${body.data.gacid}
+========================================================
+
+Дополнительная информация:
+Accept-Language: ${body.data.language}
+Document-referrer: ${body.data.referrer}
+Geolocation: ${JSON.stringify(body.data.geo, null, 2)}
+Page-href: ${body.data.href}
+GAcid: ${body.data.gacid}
       `;
 
   return message;
@@ -72,7 +72,10 @@ function notifyDialog(body, site) {
         uri: config.dialog.webhook,
         json: true,
         body: {
-          text: renderTextMessage(body, site),
+          text:
+            body.form === 'apply'
+              ? renderApplicationMessage(body, site)
+              : renderTextMessage(body, site),
         },
       },
       (error, res, body) => {
@@ -140,22 +143,20 @@ function notifyResume(body, site) {
       address: body.email,
     };
 
-    let mailAddressTo = config.email_to_hr;
-
     mailer.sendMail(
       {
         from: {
           name: 'Dialog Bot',
           address: 'bot@dlg.im',
         },
-        to: mailAddressTo,
+        to: config.email_to_hr,
         sender: sender.address,
         replyTo: sender.address,
         subject: `Резюме на вакансию с сайта ${site}`,
         text: renderApplicationMessage(body, site),
         attachments: [
           {
-            path: body.files,
+            path: body.resume,
           },
         ],
       },
@@ -275,15 +276,14 @@ router.post('/support', (request, response) => {
 router.post('/apply', (request, response) => {
   const referer = request.header('referer');
   const body = request.body;
-  console.log(body);
   const promises = [];
 
   promises.push(logBody(body, referer));
-  // promises.push(notifyResume(body, referer));
 
   if (config.email.auth.user && config.email.auth.pass) {
-    promises.push(notifyEmail(body, referer));
+    promises.push(notifyResume(body, referer));
   }
+
   if (config.dialog.webhook) {
     promises.push(notifyDialog(body, referer));
   }
