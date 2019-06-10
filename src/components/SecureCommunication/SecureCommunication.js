@@ -5,7 +5,7 @@ import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
-
+import { ArrowLink } from '../ArrowLink/ArrowLink';
 import './SecureCommunication.css';
 
 export function SecureCommunication({ intl: { locale }, image }) {
@@ -124,16 +124,9 @@ export function SecureCommunication({ intl: { locale }, image }) {
           </ul>
         </div>
         <div className="link-box">
-          <a className="link--arrow" href={`/${locale}/patents`}>
-            <span className="link--arrow__text">
-              <FormattedMessage id="SecureCommunication_learn_more" />
-            </span>
-            <img
-              src="/images/svg-icons/arrow-link.svg"
-              alt=""
-              className="link--arrow__icon"
-            />
-          </a>
+          <ArrowLink href={`/${locale}/patents/`} underline>
+            <FormattedMessage id="SecureCommunication_learn_more" />
+          </ArrowLink>
         </div>
       </div>
     </Section>

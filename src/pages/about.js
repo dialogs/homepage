@@ -3,11 +3,12 @@ import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import ImageFormatted from '../components/ImageFormatted';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import links from '../constants/links';
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
+import { ArrowLink } from '../components/ArrowLink/ArrowLink';
 
 const officesLinks = {
   moscow:
@@ -76,11 +77,10 @@ export default ({
           </PageHeader>
           <div className="about__green_section_text_wrapper">
             <FormattedHTMLMessage id="about_partnership_text" />
-            <div className="about__read_more_wrapper">
-              <Link to="#">
+            <div className="about__read_more">
+              <ArrowLink to="#" underline secondary>
                 <FormattedMessage id="about_read_more" />
-                <img src="/images/svg-icons/arrow-link.svg" alt="" />
-              </Link>
+              </ArrowLink>
             </div>
           </div>
         </Container>
@@ -90,11 +90,10 @@ export default ({
           </PageHeader>
           <div className="about__green_section_text_wrapper">
             <FormattedHTMLMessage id="about_integration_text" />
-            <div className="about__read_more_wrapper">
-              <Link to="#">
+            <div className="about__read_more">
+              <ArrowLink to="#" underline secondary>
                 <FormattedMessage id="about_read_more" />
-                <img src="/images/svg-icons/arrow-link.svg" alt="" />
-              </Link>
+              </ArrowLink>
             </div>
           </div>
         </Container>
@@ -158,19 +157,13 @@ export default ({
             <FormattedMessage id="about_licenses_text" />
           </div>
           <div className="about__licenses-link-box">
-            <Link
-              to={`/${locale}/patents`}
-              className="about__licenses-link link--arrow"
+            <ArrowLink
+              underline
+              to={`/${locale}/patents/`}
+              className="about__licenses-link"
             >
-              <span className="link--arrow__text">
-                <FormattedMessage id="link_more_licenses" />
-              </span>
-              <img
-                src="/images/svg-icons/arrow-link.svg"
-                alt=""
-                className="link--arrow__icon"
-              />
-            </Link>
+              <FormattedMessage id="link_more_licenses" />
+            </ArrowLink>
           </div>
         </Container>
       </section>
