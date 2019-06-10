@@ -34,17 +34,27 @@
 
     @media (--tablet-landscape-viewport) {
       display: block;
+      margin-left: 30px;
+    }
+
+    @media (--laptop-viewport) {
+      margin-left: 60px;
     }
 
     &-list {
       display: flex;
+      flex-flow: row nowrap;
     }
 
     &-item {
       margin-left: 25px;
+      flex: 0 0 auto;
 
       &:first-of-type {
         margin-left: 0;
+      }
+      @media (--tablet-landscape-viewport) {
+        margin-left: 20px;
       }
 
       @media (--laptop-viewport) {
@@ -69,15 +79,19 @@
     font-weight: 500;
 
     &--offer {
+      flex: 1 1 auto;
       font-size: 14px;
       border: 2px solid var(--text-color-main);
-      width: 200px;
+      padding-left: 12px;
+      padding-right: 12px;
       height: 50px;
       display: none;
       background-color: transparent;
       color: var(--text-color-main);
       transition: all 400ms ease;
       cursor: pointer;
+      z-index: 1000;
+      background-color: #fff;
 
       @media (--tablet-landscape-viewport) {
         display: block;
