@@ -1,7 +1,7 @@
 ---
 title: Project Manager (implementation department)
 date: "2015-05-06T23:46:37.121Z"
-category: Product Management
+category: IT, Development
 tags:
     - Project Management
     - Scrum

@@ -1,7 +1,7 @@
 ---
 title: Senior Node.JS developer (call module)
 date: "2015-05-06T23:46:37.121Z"
-category: Backend
+category: IT, Development
 tags:
     - NodeJS
     - TeamLead

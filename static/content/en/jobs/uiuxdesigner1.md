@@ -1,7 +1,7 @@
 ---
 title: Senior UX / UI designer (kernel development department)
 date: "2015-05-06T23:46:37.121Z"
-category: Design
+category: Marketing, advertising, PR
 tags:
     - AfterEffects
     - UI Kit

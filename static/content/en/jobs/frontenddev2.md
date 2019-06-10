@@ -1,7 +1,7 @@
 ---
 title: Frontend developer (corporate integration department)
 date: "2015-05-06T23:46:37.121Z"
-category: Frontend
+category: IT, Development
 tags:
     - JavaScript
     - React

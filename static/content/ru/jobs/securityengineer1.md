@@ -1,7 +1,7 @@
 ---
 title: Инженер по информационной безопасности
 date: "2015-05-06T23:46:37.121Z"
-category: Security
+category: Информационные технологии
 tags:
     - DevSecOps
     - OWASP TOP-10

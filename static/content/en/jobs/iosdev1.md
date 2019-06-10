@@ -1,7 +1,7 @@
 ---
 title: Senior iOS Developer (Corporate Integration Department)
 date: "2015-05-06T23:46:37.121Z"
-category: Mobile
+category: IT, Development
 tags:
     - iOS
     - MVVM

@@ -1,7 +1,7 @@
 ---
 title: SMM Manager / Community Manager
 date: "2015-05-06T23:46:37.121Z"
-category: SMM
+category: Marketing, advertising, PR
 tags:
     - SMM
     - Content

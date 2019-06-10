@@ -1,7 +1,7 @@
 ---
 title: Frontend разработчик (отдел корпоративной интеграции)
 date: "2015-05-06T23:46:37.121Z"
-category: Frontend
+category: Информационные технологии
 tags:
     - JavaScript
     - React

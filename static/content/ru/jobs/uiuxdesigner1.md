@@ -1,7 +1,7 @@
 ---
 title: Senior UX/UI designer (отдел разработки ядра платформы)
 date: "2015-05-06T23:46:37.121Z"
-category: Design
+category: Маркетинг, реклама, PR
 tags:
     - AfterEffects
     - UI Kit

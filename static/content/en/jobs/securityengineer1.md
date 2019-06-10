@@ -1,7 +1,7 @@
 ---
 title: Information Security Engineer
 date: "2015-05-06T23:46:37.121Z"
-category: Security
+category: IT, Development
 tags:
     - DevSecOps
     - OWASP TOP-10

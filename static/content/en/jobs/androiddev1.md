@@ -1,7 +1,7 @@
 ---
 title: Android developer (department of integration)
 date: "2015-05-06T23:46:37.121Z"
-category: Mobile
+category: IT, Development
 tags:
     - Android
     - Java

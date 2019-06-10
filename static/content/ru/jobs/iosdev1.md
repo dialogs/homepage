@@ -1,7 +1,7 @@
 ---
 title: Senior IOS Developer (отдел корпоративной интеграции)
 date: "2015-05-06T23:46:37.121Z"
-category: Mobile
+category: Информационные технологии
 tags:
     - iOS
     - MVVM

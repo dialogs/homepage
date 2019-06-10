@@ -1,7 +1,7 @@
 ---
 title: Senior Android Developer (kernel development department)
 date: "2015-05-06T23:46:37.121Z"
-category: Mobile
+category: IT, Development
 tags:
     - Android
     - Java

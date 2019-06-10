@@ -1,7 +1,7 @@
 ---
 title: Senior Android Developer (отдел разработки ядра платформы)
 date: "2015-05-06T23:46:37.121Z"
-category: Mobile
+category: Информационные технологии
 tags:
     - Android
     - Java
