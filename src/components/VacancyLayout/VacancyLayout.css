@@ -1,22 +1,24 @@
 @import '../../styles/variables.css';
 
 .vacancy_summary {
+  padding-top: 40px;
+
   &__wrapper {
-    margin-top: -40px;
     @media (--mobile-viewport) {
       width: 100%;
       margin-top: 30px;
     }
-
-    @media (--laptop-viewport) {
-      width: 779px;
-    }
   }
+
   &__title {
+    font-weight: 500;
+    margin-bottom: 30px;
+
     @media (--mobile-viewport) {
       font-size: 28px;
       line-height: 30px;
     }
+
     @media (--tablet-viewport) {
       font-size: 40px;
       line-height: 42px;
@@ -30,6 +32,7 @@
       line-height: 62px;
     }
   }
+
   &__salary {
     @media (--mobile-viewport) {
       font-size: 16px;
@@ -54,16 +57,20 @@
       line-height: 21px;
       margin: 22px 0 30px 0;
     }
+
     @media (--tablet-viewport) {
       font-size: 18px;
       line-height: 23px;
       margin: 40px 0 40px 0;
     }
+
     @media (--tablet-landscape-viewport) {
       font-size: 20px;
       line-height: 26px;
       margin: 43px 0 43px 0;
+      width: 60%;
     }
+
     @media (--laptop-viewport) {
       font-size: 24px;
       line-height: 31px;
@@ -81,11 +88,15 @@
 }
 
 .expectations_bonuses {
+  padding-top: 10px;
+  padding-bottom: 120px;
+
   & h3 {
     @media (--mobile-viewport) {
       font-size: 28px;
       line-height: 30px;
     }
+
     @media (--tablet-viewport) {
       font-size: 40px;
       line-height: 42px;

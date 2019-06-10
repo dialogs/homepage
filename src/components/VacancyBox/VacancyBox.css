@@ -17,10 +17,20 @@
 
   @media (--tablet-viewport) {
     flex: 0 0 48%;
+    margin-right: 4%;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
   }
 
   @media (--tablet-landscape-viewport) {
     flex: 0 0 32%;
+    margin-right: 2%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
   }
 
   &:hover {

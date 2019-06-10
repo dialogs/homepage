@@ -30,3 +30,28 @@
     display: block;
   }
 }
+
+.vacancies__boxes {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @media (--mobile-viewport) {
+    flex-flow: column wrap;
+  }
+}
+
+.vacancies__filter {
+  margin: 30px 0;
+
+  span {
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 500;
+  }
+}
+
+.vacancies {
+  margin-bottom: 50px;
+}

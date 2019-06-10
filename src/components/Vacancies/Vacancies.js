@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { VacanciesWithTabs } from '../VacanciesWithTabs/VacanciesWithTabs';
-import './Vacancies.css';
 
 export function Vacancies({ className, children, lang }) {
   const dataRu = useStaticQuery(
@@ -36,10 +35,10 @@ export function Vacancies({ className, children, lang }) {
   vacanciesData.Ru = {};
   vacanciesData.En = {};
 
-  let rawVacanciesRu = rawData.filter(
+  const rawVacanciesRu = rawData.filter(
     (el) => el.node.fields.slug.indexOf('/ru/') >= 0,
   );
-  let rawVacanciesEn = rawData.filter(
+  const rawVacanciesEn = rawData.filter(
     (el) => el.node.fields.slug.indexOf('/en/') >= 0,
   );
   vacanciesData.Ru.Cities = ['Все'];
