@@ -56,7 +56,9 @@ export function ApplyForJobForm({
   function handleSubmit(event) {
     event.preventDefault();
     console.log(form);
-    onSubmit({ ...form, form: 'apply' });
+    if (form.agree) {
+      onSubmit({ ...form, form: 'apply' });
+    }
   }
 
   function handleChange(value, name) {
@@ -136,32 +138,33 @@ export function ApplyForJobForm({
           onChange={handleChange}
           label={<FormattedMessage id="form_label_aboutme" />}
         />
-        <FileInput name="files" onChange={handleFiles} />
-
-        <Checkbox
-          label={<FormattedMessage id="form_label_agreement" />}
-          value={form.agree}
-          name="agree"
-          onChange={handleChange}
-        />
+        <div className="apply__form__fileinput">
+          <FileInput name="files" onChange={handleFiles} />
+        </div>
+        <div className="apply__form__checkbox">
+          <Checkbox
+            label={<FormattedMessage id="form_label_agreement" />}
+            value={form.agree}
+            name="agree"
+            onChange={handleChange}
+          />
+        </div>
       </div>
       <div className="form__footer">
         <Button
           type="submit"
           className="form__submit"
-          disabled={pending || (value && value.status === 200)}
+          disabled={!form.agree || pending || (value && value.status === 200)}
         >
           <FormattedMessage id="form_send" />
         </Button>
 
         <div className="form__info">
-          {/*
           {!error && !pending && !value && (
             <div className="form__initial">
               Служба поддержки обычно отвечает <br />в течение 15 минут
             </div>
           )}
-          */}
           {error && <FormErrorMessage />}
           {pending && (
             <div className="form__pending">

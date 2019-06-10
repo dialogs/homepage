@@ -5,9 +5,9 @@ import { ApplyForJobForm } from './ApplyForJobForm';
 
 const mapStateToProps = ({ forms }) => {
   return {
-    error: forms.support.error,
-    pending: forms.support.pending,
-    value: forms.support.value,
+    error: forms.apply.error,
+    pending: forms.apply.pending,
+    value: forms.apply.value,
   };
 };
 

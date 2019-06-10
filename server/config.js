@@ -20,15 +20,6 @@ const config = {
   email_to_support: env('EMAIL_TO_SUPPORT', 'support@dlg.im'),
   email_to_hr: env('EMAIL_TO_HR', 'hire@dlg.im'),
   email: {
-    host: env('EMAIL_HOST', 'smtp.gmail.com'),
-    port: envInt('EMAIL_PORT', 465),
-    secure: true,
-    auth: {
-      user: env('EMAIL_USER', null),
-      pass: env('EMAIL_PASSWORD', null),
-    },
-  },
-  test: {
     host: env('ETHEREAL_HOST', 'smtp.ethereal.email'),
     port: 587,
     secure: false,

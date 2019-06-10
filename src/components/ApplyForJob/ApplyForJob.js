@@ -12,9 +12,9 @@ export function ApplyForJob() {
         <PageHeader>
           <FormattedMessage id="job_apply_header" />
         </PageHeader>
-        <span>
+        <div className="apply__job_text">
           <FormattedMessage id="job_apply_message" />
-        </span>
+        </div>
 
         <ApplyForJobForm className="apply__form" />
       </div>

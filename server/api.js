@@ -8,10 +8,9 @@ const md5 = require('md5');
 // http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
-const mailer = nodemailer.createTransport(config.email);
+let mailer = nodemailer.createTransport(config.email);
 const mailchimp = new Mailchimp(config.mailchimp.key);
 //https://ethereal.email/messages
-let testmailer = nodemailer.createTransport(config.test);
 
 function renderTextMessage(body, site) {
   const message = `
@@ -108,6 +107,11 @@ function notifyEmail(body, site) {
         replyTo: sender.address,
         subject: `Заявка с сайта ${site}`,
         text: renderTextMessage(body, site),
+        attachments: [
+          {
+            path: body.files,
+          },
+        ],
       },
       (error, info) => {
         if (error) {
@@ -138,7 +142,7 @@ function notifyResume(body, site) {
 
     let mailAddressTo = config.email_to_hr;
 
-    testmailer.sendMail(
+    mailer.sendMail(
       {
         from: {
           name: 'Dialog Bot',
@@ -274,17 +278,15 @@ router.post('/apply', (request, response) => {
   console.log(body);
   const promises = [];
 
-  //if (config.isDev) {
   promises.push(logBody(body, referer));
-  promises.push(notifyResume(body, referer));
-  //}
-  /*
-    if (config.email.auth.user && config.email.auth.pass) {
-      promises.push(notifyEmail(body, referer));
-    }
-    if (config.dialog.webhook) {
-      promises.push(notifyDialog(body, referer));
-    }*/
+  // promises.push(notifyResume(body, referer));
+
+  if (config.email.auth.user && config.email.auth.pass) {
+    promises.push(notifyEmail(body, referer));
+  }
+  if (config.dialog.webhook) {
+    promises.push(notifyDialog(body, referer));
+  }
 
   Promise.all(promises)
     .then(() => {

@@ -73,9 +73,9 @@ export default ({ data, pageContext: { locale, url, slug } }) => {
             <PageHeader>
               <FormattedMessage id="job_apply_vacancy_header" />
             </PageHeader>
-            <span>
+            <div className="vacancy__apply_text">
               <FormattedMessage id="job_apply_vacancy_message" />
-            </span>
+            </div>
 
             <ApplyForJobForm className="apply__form" />
           </div>
