@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
 import { ArrowLink } from '../ArrowLink/ArrowLink';
