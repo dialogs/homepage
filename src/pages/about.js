@@ -79,11 +79,7 @@ export default ({
             <div className="about__read_more_wrapper">
               <Link to="#">
                 <FormattedMessage id="about_read_more" />
-                <img
-                  src="/images/svg-icons/arrow-link.svg"
-                  alt=""
-                  className=""
-                />
+                <img src="/images/svg-icons/arrow-link.svg" alt="" />
               </Link>
             </div>
           </div>
@@ -97,11 +93,7 @@ export default ({
             <div className="about__read_more_wrapper">
               <Link to="#">
                 <FormattedMessage id="about_read_more" />
-                <img
-                  src="/images/svg-icons/arrow-link.svg"
-                  alt=""
-                  className=""
-                />
+                <img src="/images/svg-icons/arrow-link.svg" alt="" />
               </Link>
             </div>
           </div>
