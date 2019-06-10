@@ -31,4 +31,7 @@
   opacity: 0.3;
   margin-top: 9px;
   width: 662px;
+  @media (--mobile-viewport) {
+    width: 100%;
+  }
 }
