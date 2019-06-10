@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import FormattedMetaTags from '../FormattedMetaTags';
 import FormattedOpenGraph from '../FormattedOpenGraph';
+import { graphql } from 'gatsby';
 
 import { Page } from '../Page/Page';
 import { Container } from '../Container/Container';

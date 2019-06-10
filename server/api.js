@@ -110,11 +110,6 @@ function notifyEmail(body, site) {
         replyTo: sender.address,
         subject: `Заявка с сайта ${site}`,
         text: renderTextMessage(body, site),
-        attachments: [
-          {
-            path: body.files,
-          },
-        ],
       },
       (error, info) => {
         if (error) {
