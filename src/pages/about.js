@@ -5,7 +5,7 @@ import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import ImageFormatted from '../components/ImageFormatted';
 import { graphql, Link } from 'gatsby';
 import Image from 'gatsby-image';
-
+import links from '../constants/links';
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 
@@ -159,8 +159,11 @@ export default ({
             </div>
             <div className="about__contacts-items">
               <div className="about__contacts-item about__contacts-item--email">
-                <a href="mailto:info@dlg.im" className="link--default">
-                  info@dlg.im
+                <a
+                  href={`mailto:${links.email.info}`}
+                  className="link--default"
+                >
+                  {links.email.info}
                 </a>
               </div>
               <div className="about__contacts-item about__contacts-item--phone">

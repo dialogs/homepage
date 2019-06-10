@@ -4,10 +4,8 @@ import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
 import SupportForm from '../SupportForm';
-
+import links from '../../constants/links';
 import './Support.css';
-
-const SUPPORT_EMAIL = 'support@dlg.ru';
 
 export function Support() {
   return (
@@ -28,7 +26,7 @@ export function Support() {
             <FormattedHTMLMessage
               id="support_corporate_text_before"
               values={{
-                email: SUPPORT_EMAIL,
+                email: links.email.support,
               }}
             />
           </div>
@@ -38,8 +36,8 @@ export function Support() {
             <FormattedMessage id="support_connect" />
           </p>
           <p>
-            <a href={`mailto:${SUPPORT_EMAIL}`} className="link--default">
-              {SUPPORT_EMAIL}
+            <a href={`mailto:${links.email.support}`} className="link--default">
+              {links.email.support}
             </a>
           </p>
         </div>

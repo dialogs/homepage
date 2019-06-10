@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   cloud: {
     ios: 'https://itunes.apple.com/ru/app/dialog-messenger/id1134796870',
     ios_en: 'https://itunes.apple.com/app/dialog-messenger/id1134796870',
@@ -30,4 +30,9 @@ module.exports = {
   youtube:
     'https://www.youtube.com/channel/UCxIlUFZyAMWOEq6IAL_sfAA?view_as=subscriber',
   github: 'https://github.com/dialogs',
+  email: {
+    info: 'info@dlg.im',
+    support: 'support@dlg.im',
+    hire: 'hire@dlg.im',
+  },
 };

@@ -192,7 +192,7 @@
       @media (--tablet-viewport) {
         max-width: 45%;
       }
-      /* =40px */
+
       @media (--tablet-landscape-viewport) {
         width: calc(50% - 80px / 2);
         max-width: 50%;
@@ -280,5 +280,3 @@
     }
   }
 }
-
-/* END footer.css */
