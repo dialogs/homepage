@@ -270,8 +270,9 @@
       &:after {
         left: 54%;
         right: 0;
-        top: 47%;
+        top: 340px;
         bottom: 40px;
+        height: 240px;
         background: var(--color-secondary);
         box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
       }
@@ -279,15 +280,17 @@
 
     @media (--laptop-viewport) {
       &:after {
-        top: 50%;
-        bottom: -20px;
+        top: 380px;
+        height: 348px;
+        right: 0;
       }
     }
 
     @media (--desktop-viewport) {
       &:after {
-        top: 50%;
-        bottom: -70px;
+        top: 380px;
+        height: 441px;
+        right: 0;
       }
     }
 
