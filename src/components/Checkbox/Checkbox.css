@@ -3,7 +3,7 @@
 .checkbox {
   position: relative;
   padding: 24px 0;
-  display: flex;
+  display: inline-flex;
   flex-flow: row;
   align-items: center;
 
@@ -80,7 +80,7 @@
   }
 
   &__text {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 18px;
+    line-height: 24px;
   }
 }
