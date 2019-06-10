@@ -2,34 +2,32 @@
 
 .vacancies__box {
   flex: 1 1 auto;
-  width: 30%;
   height: 205px;
   border: 1px solid color-mod(#000 alpha(17.5%));
   margin: 0 0 30px;
   background-color: #ffffff;
   cursor: pointer;
   transition: all 150ms ease;
-
-  @media (--mobile-viewport) {
-    flex: 1 1 auto;
-    width: 100%;
-  }
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
 
   @media (--tablet-viewport) {
     flex: 0 0 48%;
     margin-right: 4%;
 
-    &:nth-child(2n) {
+    &:nth-child(even) {
       margin-right: 0;
     }
   }
 
   @media (--tablet-landscape-viewport) {
     flex: 0 0 32%;
-    margin-right: 2%;
+    margin-right: 2% !important;
 
     &:nth-child(3n) {
-      margin-right: 0;
+      margin-right: 0 !important;
     }
   }
 
