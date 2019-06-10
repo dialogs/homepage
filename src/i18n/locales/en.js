@@ -312,7 +312,7 @@ module.exports = {
   support_header: 'Feedback',
   support_corporate_title: 'Contact Technical Support',
   support_corporate_text_before:
-    'If you are a user of dialog enterprise - use the <a class="link--default" href="mailto:{email}">support center</a> for corporate clients. Or request access from your administrator.',
+    'If you are a user of dialog enterprise — use the <a class="link--default" href="mailto:{email}">support center</a> for corporate clients. Or request access from your administrator.',
   support_connect: 'You can also contact technical support via ',
 
   form_label_your_email: 'Your e-mail ',
@@ -333,14 +333,14 @@ module.exports = {
   feature_files: 'Share files of any format',
   feature_files_content: `<h4>Share files with no size restrictions</h4>
                   <p>
-                    Cannnot send your large presentation via e-mail? Forget about restrictions – share any amount of data and use our convenient search to easily and quickly find important information by looking up the file or sender name.
+                    Cannnot send your large presentation via e-mail? Forget about restrictions — share any amount of data and use our convenient search to easily and quickly find important information by looking up the file or sender name.
                   </p>`,
   feature_chats: 'Private and Group Chats',
   feature_chats_content: `<h4>All messages will be delivered</h4>
                   <p>The dialog platform is optimized to work with both older GSM networks and modern one. The application will send a message when the network is ready to transmit the data, and then control its delivery.</p>`,
   feature_audio_messages: 'Audio Messages',
   feature_audio_messages_content: `<h4>Do not get distracted</h4>
-            <p>No time to type a message? Use the voice message feature – it’s much easier and faster than an answering machine or voice mail.</p>`,
+            <p>No time to type a message? Use the voice message feature — it’s much easier and faster than an answering machine or voice mail.</p>`,
   feature_channels: 'Channels',
   feature_channels_content: `<h4>Direct contact</h4>
             <p>Simultaneous messaging: news feeds, blogs and notifications. Notify a group or all the employees in an organization.</p>`,
@@ -372,7 +372,7 @@ module.exports = {
   feature_api: 'dialog API ',
   feature_api_content: `<h4>Compatibility with popular business services. </h4>
                   <p>
-                    PABX, CRM, task managers, analytic systems – all these and more can be connected to dialog. Integrations are only limited by the developer’s imagination.
+                    PABX, CRM, task managers, analytic systems — all these and more can be connected to dialog. Integrations are only limited by the developer’s imagination.
                   </p>`,
 
   feature_botsdk: 'dialog Bot SDK ',
@@ -456,7 +456,7 @@ module.exports = {
 
   footer_documentation: 'Documentation',
   footer_support: 'Help',
-  footer_copyright: 'Copyright © 2016-2019 dialog LLC',
+  footer_copyright: 'Copyright © 2016 — 2019 dialog LLC',
 
   solutions_simple:
     'A simple and technological solution for corporate communications',
@@ -524,5 +524,6 @@ is written correctly<br />
 and reload the page.
   `,
   '404_go_to_home': 'Go to homepage',
-  footer_privacy_policy: 'Privacy Policy',
+  footer_privacy_policy: 'Privacy policy',
+  footer_anti_corruption_policy: 'Anti-corruption policy',
 };

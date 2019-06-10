@@ -148,14 +148,15 @@
           }
         }
 
-        & img {
-          display: block;
-          max-width: 100%;
+        & .col__image {
+          width: 80%;
+          max-width: 400px;
+          margin: 0 auto;
 
           @media (--tablet-viewport) {
-            transform: translateX(20px);
+            margin: 0 0 0 30px;
+            width: 100%;
           }
-
           @media (--tablet-landscape-viewport) {
             max-width: 440px;
           }
@@ -169,7 +170,7 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
-          margin-bottom: -40px; /* equals to margin-bottom of .item inside */
+          margin-bottom: -40px;
 
           @media (--tablet-landscape-viewport) {
             margin-bottom: -60px;

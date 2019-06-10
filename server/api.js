@@ -19,9 +19,17 @@ Email: ${body.email}
 Компания: ${body.company}
 Сообщение: ${body.message}
 Количество пользователей: ${body.users}
-Форма: ${body.form}
 
 ========================================================
+
+Форма: ${body.form}
+Флаг: ${body.flag}
+Сайт: ${site}
+Подписка на новости: ${body.subscribe}
+Согласие на обработку персональных данных: ${body.agree}
+
+========================================================
+
 Дополнительная информация:
 Accept-Language: ${body.data.language}
 Document-referrer: ${body.data.referrer}
@@ -94,34 +102,30 @@ function notifyMailchimp(body, site) {
   return mailchimp.put(`/lists/${listId}/members/${md5(body.email)}`, {
     email_address: body.email,
     status: 'subscribed',
-    // merge_fields: {
-    //   FUNAME: body.name,
-    // },
   });
 }
 
-function logBody(body, site) {
-  return new Promise((resolve, reject) => {
-    console.log({ body, site });
-    resolve();
-  });
+function logBody(body, referer) {
+  console.log(JSON.stringify({ ...body, headerReferer: referer }));
+  return Promise.resolve();
 }
 
-router.post(['/subscribe', '/offer'], (request, response, next) => {
+router.post('/offer', (request, response) => {
   const { body } = request;
   const referer = request.header('referer');
   const promises = [];
 
-  if (config.isDev) {
-    promises.push(logBody(body, referer));
-  }
+  promises.push(logBody(body, referer));
+
   if (config.email.auth.user && config.email.auth.pass) {
     promises.push(notifyEmail(body, referer));
   }
+
   if (config.dialog.webhook) {
     promises.push(notifyDialog(body, referer));
   }
-  if (body.form === 'subscribe') {
+
+  if (body.subscribe) {
     promises.push(notifyMailchimp(body, referer));
   }
 
@@ -132,11 +136,42 @@ router.post(['/subscribe', '/offer'], (request, response, next) => {
         message: 'Ok',
       });
     })
-    .catch((e) => {
-      console.error(e);
+    .catch((error) => {
+      console.error(error);
       response.json({
         status: 500,
         message: 'Internal Error',
+        error: error,
+      });
+    });
+});
+
+router.post('/subscribe', (request, response) => {
+  const { body } = request;
+  const referer = request.header('referer');
+  const promises = [];
+
+  promises.push(logBody(body, referer));
+
+  if (config.dialog.webhook) {
+    promises.push(notifyDialog(body, referer));
+  }
+
+  promises.push(notifyMailchimp(body, referer));
+
+  Promise.all(promises)
+    .then(() => {
+      response.json({
+        status: 200,
+        message: 'Ok',
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+      response.json({
+        status: 500,
+        message: 'Internal Error',
+        error: error,
       });
     });
 });
@@ -146,9 +181,8 @@ router.post('/support', (request, response) => {
   const body = request.body;
   const promises = [];
 
-  if (config.isDev) {
-    promises.push(logBody(body, referer));
-  }
+  promises.push(logBody(body, referer));
+
   if (config.email.auth.user && config.email.auth.pass) {
     promises.push(notifyEmail(body, referer));
   }
@@ -163,11 +197,12 @@ router.post('/support', (request, response) => {
         message: 'Ok',
       });
     })
-    .catch((e) => {
-      console.error(e);
+    .catch((error) => {
+      console.error(error);
       response.json({
         status: 500,
         message: 'Internal Error',
+        error: error,
       });
     });
 });

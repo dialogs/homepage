@@ -18,7 +18,10 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit({ ...form, form: 'support' });
+
+    if (form.agree) {
+      onSubmit({ ...form, form: 'support' });
+    }
   }
 
   function handleChange(value, name) {
@@ -38,24 +41,23 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
         label={<FormattedMessage id="form_label_your_email" />}
         required
       />
-
       <Input
         value={form.topic}
         name="topic"
         type="text"
+        required
         onChange={handleChange}
         label={<FormattedMessage id="form_label_topic" />}
       />
-
       <Input
         value={form.message}
         name="message"
         type="textarea"
+        required
         onChange={handleChange}
         rows={6}
         label={<FormattedMessage id="form_label_your_question" />}
       />
-
       <Checkbox
         label={<FormattedMessage id="form_label_agreement" />}
         value={form.agree}
@@ -67,7 +69,7 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
         <Button
           type="submit"
           className="form__submit"
-          disabled={pending || (value && value.status === 200)}
+          disabled={!form.agree || pending || (value && value.status === 200)}
         >
           <FormattedMessage id="form_send" />
         </Button>

@@ -28,14 +28,8 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
           <PageHeader>
             <FormattedMessage id="prices_pageheader" />
           </PageHeader>
-          {/*
-          <div className="value">
-            <FormattedMessage id="prices_price" />
-          </div>
-          */}
         </div>
         <div className="price__subtitle">
-          {/*<FormattedMessage id="prices_subtitle" />*/}
           <FormattedHTMLMessage id="prices_go_to_form" />
         </div>
 

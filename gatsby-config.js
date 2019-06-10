@@ -12,22 +12,22 @@ module.exports = {
       }
     : undefined,
   plugins: [
-    { resolve: `gatsby-plugin-react-helmet` },
+    { resolve: 'gatsby-plugin-react-helmet' },
     {
-      resolve: `gatsby-plugin-google-tagmanager`,
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
         id: 'GTM-M3KJBNM',
         includeInDevelopment: true,
       },
     },
     {
-      resolve: `gatsby-plugin-facebook-pixel`,
+      resolve: 'gatsby-plugin-facebook-pixel',
       options: {
         pixelId: '1326090010797850',
       },
     },
     {
-      resolve: `gatsby-plugin-yandex-metrika`,
+      resolve: 'gatsby-plugin-yandex-metrika',
       options: {
         trackingId: '47364889',
         webvisor: true,
@@ -35,7 +35,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'dialog — коммуникационная платформа для компаний',
         short_name: 'dlg.im',
@@ -83,12 +83,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-layout`,
+      resolve: 'gatsby-plugin-layout',
       options: {
         component: require.resolve(`./src/components/Layout/Layout`),
       },
     },
-    { resolve: `gatsby-plugin-postcss` },
+    { resolve: 'gatsby-plugin-postcss' },
     { resolve: 'gatsby-plugin-astroturf' },
     {
       resolve: `gatsby-source-ghost`,

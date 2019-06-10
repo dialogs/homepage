@@ -93,7 +93,7 @@ export function Footer({ locale }) {
                       />
                       <path
                         d="M10.3438 5.98047V15.9469L18.6771 10.9637L10.3438 5.98047Z"
-                        fill="white"
+                        fill="#b9bbfa"
                       />
                     </svg>
                   </a>
@@ -151,7 +151,7 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`/${locale}/corporate`}
+                      to={`/${locale}/corporate/`}
                     >
                       <FormattedMessage id="menu_solutions" />
                     </Link>
@@ -159,7 +159,7 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`/${locale}/features`}
+                      to={`/${locale}/features/`}
                     >
                       <FormattedMessage id="menu_features" />
                     </Link>
@@ -167,7 +167,7 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`/${locale}/pricing`}
+                      to={`/${locale}/pricing/`}
                     >
                       <FormattedMessage id="menu_pricing" />
                     </Link>
@@ -175,13 +175,13 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`/${locale}/download/enterprise`}
+                      to={`/${locale}/download/enterprise/`}
                     >
                       <FormattedMessage id="menu_download" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/about`}>
+                    <Link className="footer__nav-link" to={`/${locale}/about/`}>
                       <FormattedMessage id="menu_about" />
                     </Link>
                   </div>
@@ -201,13 +201,13 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`/${locale}/support`}
+                      to={`/${locale}/support/`}
                     >
                       <FormattedMessage id="footer_support" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/blog`}>
+                    <Link className="footer__nav-link" to={`/${locale}/blog/`}>
                       <FormattedMessage id="menu_blog" />
                     </Link>
                   </div>
@@ -224,22 +224,32 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link
                       className="footer__nav-link"
-                      to={`/${locale}/patents`}
+                      to={`/${locale}/patents/`}
                     >
                       <FormattedMessage id="menu_patents" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/legal`}>
+                    <Link className="footer__nav-link" to={`/${locale}/legal/`}>
                       <FormattedMessage id="menu_legal" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">
                     <a
                       className="footer__nav-link"
-                      href={`/privacy_policy.pdf`}
+                      href={'/privacy_policy.pdf'}
+                      download
                     >
                       <FormattedMessage id="footer_privacy_policy" />
+                    </a>
+                  </div>
+                  <div className="footer__nav-item">
+                    <a
+                      className="footer__nav-link"
+                      href={'/anti_corruption_policy.pdf'}
+                      download
+                    >
+                      <FormattedMessage id="footer_anti_corruption_policy" />
                     </a>
                   </div>
                 </div>

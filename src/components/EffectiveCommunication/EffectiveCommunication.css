@@ -56,15 +56,21 @@
 
   & .image {
     position: relative;
+    max-width: 500px;
+    width: 80%;
+    margin: 0 auto;
 
     @media (--tablet-viewport) {
       margin-top: auto;
       margin-bottom: 40px;
+      max-width: 340px;
     }
 
     @media (--tablet-landscape-viewport) {
       margin-top: auto;
       margin-bottom: auto;
+      max-width: 500px;
+      width: 500px;
     }
 
     &:before {
@@ -87,11 +93,11 @@
         bottom: 0;
         height: 70%;
       }
-    }
 
-    & img {
-      max-width: 100%;
-      position: relative;
+      @media (--desktop-viewport) {
+        right: -80px;
+        left: -160px;
+      }
     }
   }
 

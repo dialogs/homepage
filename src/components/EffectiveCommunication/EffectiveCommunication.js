@@ -1,13 +1,13 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import ImageFormatted from '../ImageFormatted';
+import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
 
 import './EffectiveCommunication.css';
 
-export function EffectiveCommunication() {
+export function EffectiveCommunication({ image }) {
   return (
     <Section className="effective-communication">
       <div className="column column--image">
@@ -15,10 +15,11 @@ export function EffectiveCommunication() {
           <FormattedMessage id="EffectiveCommunication_effective_communications" />
         </Heading>
         <div className="image">
-          <ImageFormatted
-            src="/images/solution/effective-communication.png"
-            altLangId="EffectiveCommunication_effective_communications"
-          />
+          <FormattedMessage id="EffectiveCommunication_effective_communications">
+            {(alt) => (
+              <Image fadeIn fluid={image.childImageSharp.fluid} alt={alt} />
+            )}
+          </FormattedMessage>
         </div>
       </div>
       <div className="column">

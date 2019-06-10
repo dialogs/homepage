@@ -46,7 +46,7 @@ if (!isDev) {
   app.use(
     gatsbyExpress('server/gatsby-express.json', {
       publicDir: './public/',
-      redirectSlashes: true,
+      redirectSlashes: false,
     }),
   );
 }

@@ -94,6 +94,7 @@
         background: #b9bbfa;
         background: var(--color-secondary);
       }
+
       &:hover:before {
         display: none;
       }
@@ -114,8 +115,8 @@
         top: 0;
         bottom: 0;
         left: calc(50% - var(--padding-side-columns) / 2);
-        right: calc(-1 * var(--margin-container-side));
-        background: var(--color-primary);
+        right: -1500px;
+        background-color: var(--color-primary);
         z-index: -1;
       }
     }
@@ -278,7 +279,7 @@
         top: 0;
         bottom: 0;
         left: 0;
-        right: calc(-1 * var(--margin-container-side));
+        right: -1500px;
         background: var(--color-primary);
         z-index: -1;
       }

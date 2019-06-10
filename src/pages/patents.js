@@ -37,11 +37,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
           </div>
           <div className="license__photos-list">
             <div className="license__photos-item license--dialog-server">
-              <img
-                className="license__photos-image"
-                src="/images/patent-dialog-server.jpg"
-                alt="Dialog server"
-              />
+              <a href="/images/patent-dialog-server.jpg" download>
+                <img
+                  className="license__photos-image"
+                  src="/images/patent-dialog-server.jpg"
+                  alt="Dialog server"
+                />
+              </a>
               <div className="license__photos-link-box">
                 <a
                   href="/images/patent-dialog-server.jpg"
@@ -58,11 +60,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               </div>
             </div>
             <div className="license__photos-item license--dialog-core">
-              <img
-                className="license__photos-image"
-                src="/images/patent-dialog-core.jpg"
-                alt="Dialog Core"
-              />
+              <a href="/images/patent-dialog-core.jpg" download>
+                <img
+                  className="license__photos-image"
+                  src="/images/patent-dialog-core.jpg"
+                  alt="Dialog Core"
+                />
+              </a>
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
@@ -79,11 +83,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               </div>
             </div>
             <div className="license__photos-item license--dialog-android-sdk">
-              <img
-                className="license__photos-image"
-                src="/images/patent-dialog-android-sdk.jpg"
-                alt="Dialog Android SDK"
-              />
+              <a href="/images/patent-dialog-android-sdk.jpg" download>
+                <img
+                  className="license__photos-image"
+                  src="/images/patent-dialog-android-sdk.jpg"
+                  alt="Dialog Android SDK"
+                />
+              </a>
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
@@ -102,11 +108,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               </div>
             </div>
             <div className="license__photos-item license--dialog-ios-sdk">
-              <img
-                className="license__photos-image"
-                src="/images/patent-dialog-ios-sdk.jpg"
-                alt="Dialog iOS SDK"
-              />
+              <a href="/images/patent-dialog-ios-sdk.jpg" download>
+                <img
+                  className="license__photos-image"
+                  src="/images/patent-dialog-ios-sdk.jpg"
+                  alt="Dialog iOS SDK"
+                />
+              </a>
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
@@ -123,11 +131,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               </div>
             </div>
             <div className="license__photos-item license--dialog-web-sdk">
-              <img
-                className="license__photos-image"
-                src="/images/patent-dialog-web-sdk.jpg"
-                alt="Dialog WEB SDK"
-              />
+              <a href="/images/patent-dialog-web-sdk.jpg" download>
+                <img
+                  className="license__photos-image"
+                  src="/images/patent-dialog-web-sdk.jpg"
+                  alt="Dialog WEB SDK"
+                />
+              </a>
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
@@ -177,11 +187,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
           </div>
           <div className="license__photos-list">
             <div className="license__photos-item">
-              <ImageFormatted
-                imgClass="license__photos-image"
-                src="/images/license-fsb.jpg"
-                altLangId="licenses_FSB"
-              />
+              <a href="/images/license-fsb.jpg" download>
+                <ImageFormatted
+                  imgClass="license__photos-image"
+                  src="/images/license-fsb.jpg"
+                  altLangId="licenses_FSB"
+                />
+              </a>
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
@@ -201,11 +213,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
             </div>
 
             <div className="license__photos-item">
-              <ImageFormatted
-                imgClass="license__photos-image"
-                src="/images/fstek-1.jpg"
-                altLangId="licenses_FSTEK"
-              />
+              <a href="/images/fstek-1.jpg" download>
+                <ImageFormatted
+                  imgClass="license__photos-image"
+                  src="/images/fstek-1.jpg"
+                  altLangId="licenses_FSTEK"
+                />
+              </a>
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
@@ -224,11 +238,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               </div>
             </div>
             <div className="license__photos-item">
-              <ImageFormatted
-                imgClass="license__photos-image"
-                src="/images/fstek-3.jpg"
-                altLangId="licenses_FSTEK"
-              />
+              <a href="/images/fstek-3.jpg" download>
+                <ImageFormatted
+                  imgClass="license__photos-image"
+                  src="/images/fstek-3.jpg"
+                  altLangId="licenses_FSTEK"
+                />
+              </a>
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
