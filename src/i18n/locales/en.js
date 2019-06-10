@@ -536,30 +536,27 @@ and reload the page.
   '404_go_to_home': 'Go to homepage',
   footer_privacy_policy: 'Privacy policy',
   footer_anti_corruption_policy: 'Anti-corruption policy',
+
   jobs_join_team: 'Join Team',
   jobs_apply_button: 'Apply for job',
-
-  jobs_ceo_header:
-    'Андрей Кузнецов, основатель и исполнительный директор Reetm',
+  jobs_ceo_header: 'Andrey Kuznetsov, founder and executive director of Reetm',
   jobs_ceo_quote:
-    'Мы разрабатываем платформу для командной работы, которую приятно и удобно использовать в больших и маленьких коллективах.',
+    'We are developing a platform for teamwork, which is pleasant and convenient to use in large and small teams.',
   jobs_ceo_bio:
-    'Андрей создал компанию в 2016 году и сейчас занимается стратегическим планированием бизнеса и ключевыми технологическими партнерствами.;',
+    'Andrey created the company in 2016 and is now engaged in strategic business planning and key technology partnerships.',
   jobs_ceo_about_product:
-    '<p>Несмотря на то, что наш продукт используется прежде всего крупными компаниями, мы сами используем его в своей работе – разрабатываем для себя и друг друга. Творим со страстью сделать рабочее пространство простыми эффективным – без компромиссных полумер, присущих типичным enterprise продуктам из-за жестких требований безопасности крупных корпораций. Понимаяи уважая эти требования, мы создаем дружелюбную среду, в которой гармонично сочетаются дебюрократизация, автоматизацияи безопасность. </p><p>Всегда рады видеть в команде творцови новаторов, готовых вместе с нами работать над ⁣⁣коммуникационными продуктами, которыми можно гордиться.</p><p>Кстати, верим в идеи open-source, активно участвуем в развитии продуктов сообщества и постоянно открываем все больше компонентов нашей платформы. У нас есть bounty-программа – мы поощряем инициативных разработчиков за участие в open-source сообществе</p>',
+    '<p> Despite the fact that our product is used primarily by large companies, we ourselves use it in our work - we develop for ourselves and each other. We create with the passion to make the working space simple and effective - without the compromise half measures inherent in typical enterprise products due to the strict security requirements of large corporations. Understanding and respecting these requirements, we create a friendly environment in which harmonization, automation and security are harmoniously combined. </ p> <p> We are always glad to see in the team creators and innovators who are ready to work with us on  communication products to be proud of. </ p> <p> By the way, we believe in open-source ideas and actively participate in development community products and constantly discovering more and more components of our platform. We have a bounty program - we encourage initiative developers to participate in the open-source community </ p> ',
   jobs_recommend_title: 'Recommend candidate <br/> for vacancy and get',
   jobs_recommend_award: '$900',
   jobs_recommend_action:
     'Send your resume<br/> to <a href="mailto:info@dlg.im?subject=Feedback on vacancy from site&body=I would like to recommend employee">info@dlg.im</a>',
-  job_apply_header: 'Не нашли что искали?',
+  job_apply_header: 'Did not you find what you were looking for?',
   job_apply_message:
-    'Если вы не нашли интересующую вакансию, не отчаивайтесь – заполните эту форму и отправьте нам. Мы обязательно рассмотрим ваше резюме.',
+    'If you have not found the vacancy you are interested in, do not despair - fill out this form and send it to us. We will definitely consider your resume.',
   job_apply_vacancy_header: 'Respond to a vacancy',
   job_apply_vacancy_message:
     'We are waiting for a resume from you, a short story about yourself and a few lines on the topic of a vacancy',
-  job_expectation_header: 'Что мы ожидаем',
-  job_bonus_header: 'Бонусы',
-  job_back: 'Все вакансии',
+  job_back: 'All vacancies',
   job_apply_button: 'Send resume',
   jobs_vacancies_header: 'Vacancies',
   about_more_than_messenger: 'Reetm - is a lot more than just a messenger',
