@@ -14,7 +14,7 @@ export function RecommendEmployee({ className, children }) {
           <div className="recommend__left__award">
             <img
               className="recommend__left__img"
-              src="/images/jobs/jobs-icon1.png"
+              src="/images/jobs/jobs-money-icon.svg"
               alt=""
             />
             <FormattedMessage id="jobs_recommend_award" />
