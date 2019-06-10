@@ -540,7 +540,7 @@ and reload the page.
 
   jobs_join_team: 'Join Team',
   jobs_apply_button: 'Apply for job',
-  jobs_ceo_header: 'Andrey Kuznetsov, founder and executive director of Reetm',
+  jobs_ceo_header: 'Andrey Kuznetsov, founder and executive director of dialog',
   jobs_ceo_quote:
     'We are developing a platform for teamwork, which is pleasant and convenient to use in large and small teams.',
   jobs_ceo_bio:
@@ -560,15 +560,15 @@ and reload the page.
   job_back: 'All vacancies',
   job_apply_button: 'Send resume',
   jobs_vacancies_header: 'Vacancies',
-  about_more_than_messenger: 'Reetm - is a lot more than just a messenger',
+  about_more_than_messenger: 'dialog - is a lot more than just a messenger',
   about_company:
-    'The company has been developing a corporate messenger Reetm for more than 3 years. Reetm unites specialists in the field of IT-communications, data security, real-time distributed systems, Big Data and other areas related to messaging. Currently, Reetm employs 90 people who at various times have been developing products for the largest companies leading in the field of security systems and data storage.',
+    'The company has been developing a corporate messenger dialog for more than 3 years. Dialog unites specialists in the field of IT-communications, data security, real-time distributed systems, Big Data and other areas related to messaging. Currently, dialog employs 90 people who at various times have been developing products for the largest companies leading in the field of security systems and data storage.',
   about_partnership: 'Technology partnership',
   about_integration: 'Integration',
   about_partnership_text:
-    'Reetm forms an independent IT environment with Russian manufacturers of office solutions and operating systems.',
+    'Dialog forms an independent IT environment with Russian manufacturers of office solutions and operating systems.',
   about_integration_text:
-    'Integrate Reetm with any external services and applications - use the messenger interface to work with familiar tools, such as mail, calendars, task managers, cloud storages and much more.',
+    'Integrate Dialog with any external services and applications - use the messenger interface to work with familiar tools, such as mail, calendars, task managers, cloud storages and much more.',
   about_read_more: 'Read more',
   attach_resume: 'Attach resume',
 };
