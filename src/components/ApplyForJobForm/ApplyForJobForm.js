@@ -48,7 +48,7 @@ export function ApplyForJobForm({
     phone: '',
     about: '',
     workemail: '',
-    city: '',
+    city: cities[0],
     resume: '',
     agree: true,
   });
@@ -154,13 +154,7 @@ export function ApplyForJobForm({
         >
           <FormattedMessage id="form_send" />
         </Button>
-
         <div className="form__info">
-          {!error && !pending && !value && (
-            <div className="form__initial">
-              Служба поддержки обычно отвечает <br />в течение 15 минут
-            </div>
-          )}
           {error && <FormErrorMessage />}
           {pending && (
             <div className="form__pending">

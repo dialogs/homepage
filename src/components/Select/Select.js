@@ -25,8 +25,8 @@ export function Select({
     className,
   );
 
-  function handleChange() {
-    onChange(ref.current.value, name);
+  function handleChange(event) {
+    onChange(event.target.value, name);
   }
 
   function handleLabelMouseDown(event) {
@@ -67,7 +67,7 @@ export function Select({
           onBlur={handleBlur}
           onFocus={handleFocus}
         >
-          {/*label && <option disabled>{label}</option>*/}
+          {/* {label && <option disabled>{label}</option>} */}
           {options.map((option) => {
             return (
               <option key={option} value={option}>

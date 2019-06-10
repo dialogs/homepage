@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { submitApplicationForm } from '../../actions/forms';
-
 import { ApplyForJobForm } from './ApplyForJobForm';
 
 const mapStateToProps = ({ forms }) => {

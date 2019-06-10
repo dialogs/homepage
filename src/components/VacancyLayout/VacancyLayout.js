@@ -9,7 +9,7 @@ import { Container } from '../Container/Container';
 import { PageHeader } from '../PageHeader/PageHeader';
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
-import { ApplyForJobForm } from '../ApplyForJobForm/ApplyForJobForm';
+import ApplyForJobForm from '../ApplyForJobForm';
 import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
 import { ContainerFluid } from '../ContainerFluid/ContainerFluid';
 import './VacancyLayout.css';
