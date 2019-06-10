@@ -1,17 +1,18 @@
 ---
-title: Frontend developer (corporate integration department)
-date: "2015-05-06T23:46:37.121Z"
+title: Frontend Developer (Corporate Integration Department)
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - JavaScript
-    - React
-    - Redux
+  - JavaScript
+  - React
+  - Redux
 city: Moscow
 salary: from 180,000 rub.
 description: Our fast growing team requires Frontend developer to develop the client side of the messaging platform.
 ---
 
-###What we expect
+### What we expect
+
 - JavaScript;
 - Flow;
 - React (required);
@@ -24,7 +25,8 @@ description: Our fast growing team requires Frontend developer to develop the cl
 - quick wit and “flexibility” in solving problems;
 - хорошая ориентация в функционале современного месседжинга.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;
@@ -36,4 +38,3 @@ description: Our fast growing team requires Frontend developer to develop the cl
 - a magical office with its own design project within walking distance of the Kutuzovskaya metro station;
 - super-adequate and professional team;
 - opportunity to influence the product: to discuss the tasks not only from the point of view of implementation methods, but also from the point of view of rationality and the need of the developed features, to contribute their ideas.
-

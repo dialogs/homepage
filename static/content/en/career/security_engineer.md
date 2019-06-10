@@ -1,17 +1,17 @@
 ---
 title: Information Security Engineer
-date: "2015-05-06T23:46:37.121Z"
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - DevSecOps
-    - OWASP TOP-10
+  - DevSecOps
+  - OWASP TOP-10
 city: Moscow
 salary: from 150,000 to 250,000 rub.
 description: In our rapidly growing team we are looking for an Information Security Engineer who can solve complex infrastructure and service tasks, ensure data integrity and conduct an information security audit.
-
 ---
 
-###What we expect
+### What we expect
+
 - knowledge of information technology and information protection methods;
 - knowledge of the secure application development cycle and services (DevSecOps);
 - knowledge of applied monitoring, scanning and analysis systems (SAST, DPA) information security applications and code;
@@ -21,7 +21,8 @@ description: In our rapidly growing team we are looking for an Information Secur
 - experience in designing high-load software architecture; experience in optimizing performance, load analysis and fault tolerance;
 - knowledge of application containerization technologies.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;

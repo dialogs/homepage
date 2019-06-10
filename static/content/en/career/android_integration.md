@@ -1,17 +1,18 @@
 ---
-title: Android developer (department of integration)
-date: "2015-05-06T23:46:37.121Z"
+title: Android developer (Corporate Integration Department)
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - Android
-    - Java
-    - Kotlin
+  - Android
+  - Java
+  - Kotlin
 city: Moscow
 salary: from 180,000 to 240,000 rubles
 description: Our rapidly growing team requires an Android developer to develop a client-side messaging platform. It will be necessary to engage in supporting Android clients and developing new functionality and interfaces.
 ---
 
-###What we expect
+### What we expect
+
 - knowledge of Java, Kotlin;
 - experience of commercial development of Android applications for at least two years;
 - experience of parallel and multi-threaded programming;
@@ -25,7 +26,8 @@ description: Our rapidly growing team requires an Android developer to develop a
 - English at the level of understanding technical literature;
 - experience with VoIP, WebRTC.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;

@@ -1,16 +1,17 @@
 ---
 title: Senior Node.JS developer (call module)
-date: "2015-05-06T23:46:37.121Z"
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - NodeJS
-    - TeamLead
+  - NodeJS
+  - TeamLead
 city: Moscow
 salary: from 300,000 rub.
 description: Our fast growing team needs a Senior Node.JS developer to direct calls to our messaging platform. We are looking for a person who will enter the VoIP-direction in our company and will be ready to work together on its development.
 ---
 
-###What we expect
+### What we expect
+
 - Designing the functionality of calls in the company's products;
 - development of server-side calls;
 - participation in team building;
@@ -21,7 +22,8 @@ description: Our fast growing team needs a Senior Node.JS developer to direct ca
 - Fluency in English at the level of free reading technical documentation.
 - experience in companies developing soft telephony and knowledge of WebRTC.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;
@@ -33,4 +35,3 @@ description: Our fast growing team needs a Senior Node.JS developer to direct ca
 - a magical office with its own design project within walking distance of the Kutuzovskaya metro station;
 - super-adequate and professional team;
 - opportunity to influence the product: to discuss the tasks not only from the point of view of implementation methods, but also from the point of view of rationality and the need of the developed features, to contribute their ideas.
-

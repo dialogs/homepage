@@ -1,16 +1,17 @@
 ---
-title: Senior UX / UI designer (kernel development department)
-date: "2015-05-06T23:46:37.121Z"
+title: Senior UX / UI designer (Platform Development Department)
+date: '2015-05-06T23:46:37.121Z'
 category: Marketing, advertising, PR
 tags:
-    - AfterEffects
-    - UI Kit
+  - AfterEffects
+  - UI Kit
 city: Moscow
 salary: from 180,000 rub.
 description: Now we want to complement our team with the UI / UX Designer, who will work with us to create the best corporate messenger.
 ---
 
-###What we expect
+### What we expect
+
 - successful experience in implementing and supporting a thoughtful and convenient UI in B2B applications, ideally in the field of communication;
 - It is a process of implementation in which the field of communication is implemented;
 - Mandatory knowledge of iOS Human Interface and Google Material Design guidelines;
@@ -23,7 +24,8 @@ description: Now we want to complement our team with the UI / UX Designer, who w
 - quick wit, analytical skills and “flexibility” in problem solving;
 - Good orientation in the functionality of modern messaging.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;

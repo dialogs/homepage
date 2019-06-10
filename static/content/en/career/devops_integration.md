@@ -1,17 +1,18 @@
 ---
-title: DevOps engineer (corporate integration department)
-date: "2015-05-06T23:46:37.121Z"
+title: DevOps engineer (Corporate Integration Department)
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - PostgreSQL
-    - Openshift
-    - Kubernetes
+  - PostgreSQL
+  - Openshift
+  - Kubernetes
 city: Moscow
 salary: from 120,000rub.
 description: Now we want to supplement our DevOps team with an engineer who will work with us to create the best corporate messenger.
 ---
 
-###What we expect
+### What we expect
+
 - OpenShift / Kubernetes - have experience of operation and configuration in production environments;
 - Docker - to have an idea about containerization, to be able to create / edit images of any complexity;
 - experience with DevOps tools: Git, Jenkins, Ansible or their analogs and understanding of the stages of DevOps - CI, CD;
@@ -25,7 +26,8 @@ description: Now we want to supplement our DevOps team with an engineer who will
 - independence and initiative, you should not expect problems to solve for you, but to propose solutions;
 - the ability to come up with a workaround and protect its vitality.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;

@@ -1,17 +1,17 @@
 ---
 title: SMM Manager / Community Manager
-date: "2015-05-06T23:46:37.121Z"
+date: '2015-05-06T23:46:37.121Z'
 category: Marketing, advertising, PR
 tags:
-    - SMM
-    - Content
+  - SMM
+  - Content
 city: Moscow
 salary: from 100,000 to 150,000 rub.
 description: In the marketing department, we are looking for an SMM-manager who will not only lead our social networks, but also build a dialogue with the IT community with the help of original and engaging content.
-
 ---
 
-###What we expect
+### What we expect
+
 - love of lyrics is required;
 - organization, quick response, ability to respond to changes and adapt content;
 - readiness to communicate with users, work with good and bad feedback;
@@ -22,7 +22,8 @@ description: In the marketing department, we are looking for an SMM-manager who 
 - attention to detail;
 - ability to work in multitasking mode.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;

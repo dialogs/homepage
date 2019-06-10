@@ -1,24 +1,25 @@
 ---
-title: Frontend developer (module calls)
-date: "2015-05-06T23:46:37.121Z"
+title: Project Manager (integration department)
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - RxJS
-    - WebRTC
+  - Project Management
+  - Scrum
 city: Moscow
-salary: from 180,000 to 240,000 rub.
-description: Our fast growing team requires Frontend developer to develop the client side of the messaging platform.
+salary: salary is not specified.
+description: Now we want to strengthen our team with a Project Manager, who will work with us to develop the best corporate messenger.
 ---
 
-###What we expect
-- development of the frontend-module calls for the messenger;
-- development of a server log visualization module;
-- WebRTC interaction development for chrome / firefox;
-- RxJS;
-- English at the level of understanding technical literature;
-- experience with VoIP, WebRTC.
+### What we expect
 
-###Bonuses
+- experience in managing IT projects for at least 5 years (on the side of the contractor);
+- experience with government customers is a must;
+- experience of successful implementation of information systems in large geographically distributed companies as a director / project manager;
+- practical experience in implementing projects using flexible software development methodologies (Scrum, Kanban, etc.);
+- availability of certificates in the field of project management (PMI, IPMA or similar).
+
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;

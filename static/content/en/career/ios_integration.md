@@ -1,17 +1,18 @@
 ---
 title: Senior iOS Developer (Corporate Integration Department)
-date: "2015-05-06T23:46:37.121Z"
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - iOS
-    - MVVM
-    - RxSwift
+  - iOS
+  - MVVM
+  - RxSwift
 city: Moscow
 salary: from 200,000 rub.
 description: Our rapidly growing team requires iOS developer to develop the client side of the messaging platform. We are looking for a person who can enter the iOS direction of the development team. His responsibilities will include support for iOS clients, development of new functionality and interfaces.
 ---
 
-###What we expect
+### What we expect
+
 - creating a new version of the mobile messenger on iOS and the SDK for it;
 - we are entirely for the use of new technologies and approaches, we use RxSwift, we build MVVM-C, UI architecture with the help of Texture (AsyncDisplayKit);
 - interaction with the server using gRPC;
@@ -28,7 +29,8 @@ description: Our rapidly growing team requires iOS developer to develop the clie
 - independence and initiative, not to wait for problems to solve for you, you need to propose solutions.
 - chat development, RPC / gRPC application, Texture / AsyncDisplayKit.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;
@@ -40,4 +42,3 @@ description: Our rapidly growing team requires iOS developer to develop the clie
 - a magical office with its own design project within walking distance of the Kutuzovskaya metro station;
 - super-adequate and professional team;
 - opportunity to influence the product: to discuss the tasks not only from the point of view of implementation methods, but also from the point of view of rationality and the need of the developed features, to contribute their ideas.
-

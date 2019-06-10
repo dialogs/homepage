@@ -1,16 +1,17 @@
 ---
 title: Sales manager
-date: "2015-05-06T23:46:37.121Z"
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - Sales
-    - CRM
+  - Sales
+  - CRM
 city: Moscow
 salary: salary is not specified.
 description: Now we lack the Sales manager, who will work with us to create the best corporate messenger.
 ---
 
-###What we expect
+### What we expect
+
 - Sales Solutions Dialog;
 - developing relationships with potential customers;
 - preparing and conducting negotiations with key decision makers of large Russian companies;
@@ -26,7 +27,8 @@ description: Now we lack the Sales manager, who will work with us to create the 
 - the ability to bear responsibility;
 - desire to earn.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - personal snacks, not just cookies (and what do you like more Nutella or protein bars?);
 - LCA (after the trial period);

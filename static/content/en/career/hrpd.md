@@ -1,17 +1,17 @@
 ---
 title: Head of Partner Department
-date: "2015-05-06T23:46:37.121Z"
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - Strategy
-    - Sales
+  - Strategy
+  - Sales
 city: Moscow
 salary: salary is not specified.
 description: Now we are missing the Head of the partner department who will work with us to create the best corporate messenger.
-
 ---
 
-###What we expect
+### What we expect
+
 - experience in a major integrator or vendor in a similar position in the partner department;
 - English, you need to communicate with foreign partners;
 - understanding how the vendor-integrator works;
@@ -21,7 +21,8 @@ description: Now we are missing the Head of the partner department who will work
 - perseverance, perseverance in achieving high results;
 - the ability to be responsible.
 
-###Bonuses
+### Bonuses
+
 - white salary and annual bonuses;
 - personal snacks, not just cookies (and what do you like more Nutella or protein bars?);
 - LCA (after the trial period);

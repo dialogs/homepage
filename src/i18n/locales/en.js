@@ -222,6 +222,7 @@ module.exports = {
   form_label_aboutme: 'About me',
   form_label_city: 'City',
   form_label_attach_resume: 'Attach resume',
+  form_label_about: 'О себе',
 
   form_pending: 'Submitting...',
   form_success_message: 'The request has sent successfully',
@@ -544,7 +545,7 @@ and reload the page.
   jobs_ceo_quote:
     'We are developing a platform for teamwork, which is pleasant and convenient to use in large and small teams.',
   jobs_ceo_bio:
-    'Andrey created the company in 2016 and is now engaged in strategic business planning and key technology partnerships.',
+    'Andrey created the company <b>in 2016</b> and is now engaged in strategic business planning and key technology partnerships.',
   jobs_ceo_about_product:
     '<p> Despite the fact that our product is used primarily by large companies, we ourselves use it in our work - we develop for ourselves and each other. We create with the passion to make the working space simple and effective - without the compromise half measures inherent in typical enterprise products due to the strict security requirements of large corporations. Understanding and respecting these requirements, we create a friendly environment in which harmonization, automation and security are harmoniously combined. </ p> <p> We are always glad to see in the team creators and innovators who are ready to work with us on  communication products to be proud of. </ p> <p> By the way, we believe in open-source ideas and actively participate in development community products and constantly discovering more and more components of our platform. We have a bounty program - we encourage initiative developers to participate in the open-source community </ p> ',
   jobs_recommend_title: 'Recommend candidate <br/> for vacancy and get',

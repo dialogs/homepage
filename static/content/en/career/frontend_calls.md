@@ -1,24 +1,26 @@
 ---
-title: Project Manager (implementation department)
-date: "2015-05-06T23:46:37.121Z"
+title: Frontend developer (Calls Module)
+date: '2015-05-06T23:46:37.121Z'
 category: IT, Development
 tags:
-    - Project Management
-    - Scrum
+  - RxJS
+  - WebRTC
 city: Moscow
-salary: salary is not specified.
-description: Now we want to strengthen our team with a Project Manager, who will work with us to develop the best corporate messenger.
-
+salary: from 180,000 to 240,000 rub.
+description: Our fast growing team requires Frontend developer to develop the client side of the messaging platform.
 ---
 
-###What we expect
-- experience in managing IT projects for at least 5 years (on the side of the contractor);
-- experience with government customers is a must;
-- experience of successful implementation of information systems in large geographically distributed companies as a director / project manager;
-- practical experience in implementing projects using flexible software development methodologies (Scrum, Kanban, etc.);
-- availability of certificates in the field of project management (PMI, IPMA or similar).
+### What we expect
 
-###Bonuses
+- development of the frontend-module calls for the messenger;
+- development of a server log visualization module;
+- WebRTC interaction development for chrome / firefox;
+- RxJS;
+- English at the level of understanding technical literature;
+- experience with VoIP, WebRTC.
+
+### Bonuses
+
 - white salary and annual bonuses;
 - flexible schedule;
 - participation in the development of open-source projects of the company and active work with the community;
@@ -30,4 +32,3 @@ description: Now we want to strengthen our team with a Project Manager, who will
 - a magical office with its own design project within walking distance of the Kutuzovskaya metro station;
 - super-adequate and professional team;
 - opportunity to influence the product: to discuss the tasks not only from the point of view of implementation methods, but also from the point of view of rationality and the need of the developed features, to contribute their ideas.
-
