@@ -100,8 +100,7 @@ module.exports = {
   alt_jobs_company: 'Our company',
   alt_jobs_ceo: 'CEO',
   hero_header: 'Achieve your team goals faster without losing focus',
-  hero_subheader:
-    'A simple and effective communication platform for your company',
+  hero_subheader: 'Secure and efficient corporate communication platform',
   platform_header: 'dialog – a corporate communications <br />platform',
   messenger: 'Messenger',
   corporate_features: 'Corporate Features',
