@@ -167,7 +167,15 @@ function notifyResume(body, site) {
 }
 
 function logBody(body, referer) {
-  console.log(JSON.stringify({ ...body, headerReferer: referer }));
+  if (body.form === 'apply') {
+    // remove resume file from log output
+    console.log(
+      JSON.stringify({ ...body, headerReferer: referer, resume: undefined }),
+    );
+  } else {
+    console.log(JSON.stringify({ ...body, headerReferer: referer }));
+  }
+
   return Promise.resolve();
 }
 
