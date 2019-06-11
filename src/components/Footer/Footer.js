@@ -185,6 +185,14 @@ export function Footer({ locale }) {
                     </Link>
                   </div>
                   <div className="footer__nav-item">
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/career/`}
+                    >
+                      <FormattedMessage id="footer_career" />
+                    </Link>
+                  </div>
+                  <div className="footer__nav-item">
                     <a
                       className="footer__nav-link"
                       href="https://oss.dlg.im/"
