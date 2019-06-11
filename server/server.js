@@ -23,8 +23,8 @@ app.use(helmet());
 app.use(cors());
 app.use(setHeaders);
 app.use(morgan(isDev ? 'dev' : 'combined'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(detectLanguage(['en', 'ru']));
 app.use(parseUserAgent);
