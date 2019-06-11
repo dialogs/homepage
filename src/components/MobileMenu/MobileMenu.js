@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-
+import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
 import './MobileMenu.css';
 
 export function MobileMenu({
@@ -33,15 +33,7 @@ export function MobileMenu({
     <div className={classes}>
       <div className="mobile-menu__content">
         <div className="mobile-menu__header">
-          <div className="header__logo">
-            <Link to="/" className="header__logo-link">
-              <img
-                src="/images/logo-header.svg"
-                alt="dialog"
-                className="header__logo-icon"
-              />
-            </Link>
-          </div>
+          <HeaderLogo to={`/${locale}/`} />
           <button
             className="header__button header__button--menu"
             onClick={onClose}

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
-import { styled } from 'astroturf';
+import styled from 'astroturf';
 import { Container } from '../Container/Container';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
 import debounce from 'lodash.debounce';
 import './Header.css';
 
@@ -120,15 +121,7 @@ export function Header({
       <Container>
         <div className="header__columns">
           <div className="header__col">
-            <div className="header__logo">
-              <Link to={`/${locale}`} className="header__logo-link">
-                <img
-                  src="/images/logo-header.svg"
-                  alt="dialog"
-                  className="header__logo-icon"
-                />
-              </Link>
-            </div>
+            <HeaderLogo to={`/${locale}/`} />
             <nav className="header__menu">
               <ul className="header__menu-list">
                 <li className="header__menu-item">
