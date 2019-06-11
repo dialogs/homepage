@@ -4,7 +4,7 @@ date: '2015-05-06T23:46:37.121Z'
 category: Информационные технологии
 tags:
   - PostgreSQL
-  - Openshift
+  - OpenShift
   - Kubernetes
 city: Москва
 salary: от 120 000 руб.
