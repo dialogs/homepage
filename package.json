@@ -10,7 +10,8 @@
     "gatsby:build": "cross-env NODE_ENV=production gatsby build",
     "start": "npm-run-all -p server gatsby:start",
     "build": "npm run gatsby:build",
-    "format": "prettier --write \"src/**/*.{js,json,css,yml}\""
+    "format": "prettier --write \"src/**/*.{js,json,css,yml,md}\"",
+    "yaspeller": "yaspeller static/content src/i18n/locales"
   },
   "author": "",
   "license": "MIT",
@@ -71,7 +72,8 @@
     "postcss-import": "12.0.1",
     "postcss-nested": "4.1.2",
     "postcss-preset-env": "6.6.0",
-    "prettier": "1.17.1"
+    "prettier": "1.17.1",
+    "yaspeller": "5.1.0"
   },
   "husky": {
     "hooks": {

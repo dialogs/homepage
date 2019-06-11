@@ -1,0 +1,9 @@
+{
+  "fileExtensions": [".js", ".md"],
+  "excludeFiles": [".git", "node_modules"],
+  "ignoreUrls": true,
+  "ignoreUppercase": true,
+  "ignoreCapitalization": true,
+  "report": ["console"],
+  "lang": ["ru", "en"]
+}
