@@ -36,7 +36,10 @@ export function ApplyForJobForm({
   );
 
   const rawData = dataRu.allMarkdownRemark.edges;
-  const langslug = window.location.href.indexOf('/ru/') >= 0 ? '/ru/' : '/en/';
+  const langslug =
+    (typeof window !== 'undefined' && window.location.href.indexOf('/ru/')) >= 0
+      ? '/ru/'
+      : '/en/';
   const cities = rawData
     .filter((el) => el.node.fields.slug.indexOf(langslug) >= 0)
     .map((c) => c.node.frontmatter.city)
