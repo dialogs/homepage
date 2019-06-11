@@ -44,20 +44,6 @@ export default ({ children, pageContext }) => {
   const { locale = 'en', originalPath, url } = pageContext;
 
   useEffect(() => {
-    const href = safeStorage.get('href');
-
-    // Set href
-    if (href) {
-      safeStorage.set(
-        'href',
-        JSON.stringify([...JSON.parse(href), document.location.href]),
-      );
-    } else {
-      safeStorage.set('href', JSON.stringify([document.location.href]));
-    }
-  }, []);
-
-  useEffect(() => {
     // Check if user goes here from somwere else
     // eslint-disable-next-line no-restricted-globals
     if (
