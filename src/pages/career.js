@@ -32,7 +32,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
           <div className="jobs__wrapper">
             <div className="jobs__content">
               <PageHeader>
-                <FormattedMessage id="jobs_join_team" />
+                <FormattedHTMLMessage id="jobs_join_team" />
               </PageHeader>
               <a className="button button--default" href="#form">
                 <FormattedMessage id="jobs_apply_button" />

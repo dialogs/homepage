@@ -113,7 +113,7 @@ module.exports = {
   platform_voice_messages: 'Voice Messages',
   platform_emojis_stickers: 'Emojis and Stickers',
   platform_availability: 'Available on Popular Platforms',
-  platform_smart_chatbots: 'Smart Chatbots',
+  platform_smart_chatbots: 'Smart Chat-bots',
   platform_ad_integration: 'Integration with Active Directory (AD/LDAP)',
   admin_panel: 'Admin Panel',
   screen_sharing: 'Screen Sharing',
@@ -178,7 +178,7 @@ module.exports = {
   business_header: 'dialog and major businesses',
   business_example: 'Case Study: Integration in Banking',
   business_case_1:
-    'A platform for communication beteween employees and corporate clients',
+    'A platform for communication between employees and corporate clients',
   business_case_2: 'Access from any device or subnet',
   business_case_3: 'Integrating banking services via open API',
   business_case_4: 'Sharing confidential information',
@@ -301,7 +301,7 @@ module.exports = {
   feature_files: 'Share files of any format',
   feature_files_content: `
 <h4>Share files with no size restrictions</h4>
-<p>Cannnot send your large presentation via e-mail? Forget about restrictions — share any amount of data and use our convenient search to easily and quickly find important information by looking up the file or sender name.</p>
+<p>Cannot send your large presentation via e-mail? Forget about restrictions — share any amount of data and use our convenient search to easily and quickly find important information by looking up the file or sender name.</p>
   `,
   feature_chats: 'Private and Group Chats',
   feature_chats_content: `
@@ -473,7 +473,7 @@ module.exports = {
   Partnership_technological:
     'Technological Partnerships with Russian Software Developers',
   Partnership_vendors:
-    'dialog cooperates with vendors to ensure the infrastructure comlpiance with the requirements of Russian legislation',
+    'dialog cooperates with vendors to ensure the infrastructure compliance with the requirements of Russian legislation',
   Partnership_learn_more: 'Learn More',
   Partnership_bazalt: 'BaseALT',
   Partnership_my_office: 'MyOffice',
