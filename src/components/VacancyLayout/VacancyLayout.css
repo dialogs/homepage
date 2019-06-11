@@ -120,8 +120,7 @@
       position: relative;
       font-size: 18px;
       line-height: 23px;
-      margin-top: 17px;
-      padding-left: 60px;
+      padding: 0 16px 16px 60px;
       min-height: 50px;
 
       &:before {
