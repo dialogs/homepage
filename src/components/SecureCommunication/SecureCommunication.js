@@ -124,7 +124,7 @@ export function SecureCommunication({ intl: { locale }, image }) {
           </ul>
         </div>
         <div className="link-box">
-          <ArrowLink href={`/${locale}/patents/`} underline>
+          <ArrowLink to={`/${locale}/patents/`} underline>
             <FormattedMessage id="SecureCommunication_learn_more" />
           </ArrowLink>
         </div>
