@@ -44,6 +44,20 @@ export default ({ children, pageContext }) => {
   const { locale = 'en', originalPath, url } = pageContext;
 
   useEffect(() => {
+    const href = safeStorage.get('href');
+
+    // Set href
+    if (href) {
+      safeStorage.set(
+        'href',
+        JSON.stringify([...JSON.parse(href), document.location.href]),
+      );
+    } else {
+      safeStorage.set('href', JSON.stringify([document.location.href]));
+    }
+  }, []);
+
+  useEffect(() => {
     // Check if user goes here from somwere else
     // eslint-disable-next-line no-restricted-globals
     if (
@@ -51,7 +65,6 @@ export default ({ children, pageContext }) => {
       document.referrer.indexOf(document.location.hostname) < 0
     ) {
       const referrer = safeStorage.get('referrer');
-      const href = safeStorage.get('href');
 
       // Set referrer
       if (referrer) {
@@ -61,16 +74,6 @@ export default ({ children, pageContext }) => {
         );
       } else {
         safeStorage.set('referrer', JSON.stringify([document.referrer]));
-      }
-
-      // Set href
-      if (href) {
-        safeStorage.set(
-          'href',
-          JSON.stringify([...JSON.parse(href), document.location.href]),
-        );
-      } else {
-        safeStorage.set('href', JSON.stringify([document.location.href]));
       }
     }
   }, []);
