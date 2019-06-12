@@ -12,6 +12,8 @@ import { CooperateWith } from '../components/CooperateWith/CooperateWith';
 import ImageFormatted from '../components/ImageFormatted';
 import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
 import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
+import { ForPartners } from '../components/ForPartners/ForPartners';
+import { Offer } from '../components/Offer/Offer';
 import '../styles/partners.css';
 
 export default ({ pageContext: { locale, url, originalPath } }) => {
@@ -56,7 +58,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
           <div className="info__partnership">
             <div className="info__box">
               <PageHeader>
-                <FormattedMessage id="partners_info_business" />
+                <FormattedMessage id="partners_business_title" />
               </PageHeader>
               <div className="info__box_text">
                 <FormattedMessage id="partners_business_info" />
@@ -76,7 +78,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
             </div>
             <div className="info__box">
               <PageHeader>
-                <FormattedMessage id="partners_info_technology" />
+                <FormattedMessage id="partners_technology_title" />
               </PageHeader>
               <div className="info__box_text">
                 <FormattedMessage id="partners_technology_info" />
@@ -130,7 +132,10 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         </Section>
       </Container>
       <Container>
-        <ApplyForJob />
+        <ForPartners />
+      </Container>
+      <Container>
+        <Offer />
       </Container>
     </Page>
   );

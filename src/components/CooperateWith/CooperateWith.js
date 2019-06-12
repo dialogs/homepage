@@ -14,7 +14,9 @@ export function CooperateWith({ className, children }) {
             <FormattedHTMLMessage id="partners_cooperate_text" />
           </div>
           <div className="cooperate__left__button">
-            <Button>Сотрудничать</Button>
+            <a className="button button--default" href="#form">
+              <FormattedMessage id="jobs_apply_button" />
+            </a>
           </div>
         </div>
       </div>

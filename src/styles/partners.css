@@ -16,10 +16,22 @@
     padding-bottom: 60px;
   }
 
+  @media (--mobile-viewport) {
+  }
+  @media (--tablet-viewport) {
+  }
+  @media (--tablet-landscape-viewport) {
+  }
+  @media (--laptop-viewport) {
+  }
+  @media (--desktop-viewport) {
+  }
+
   &__wrapper {
     position: relative;
     display: flex;
     align-items: center;
+    margin-top: 20px;
 
     @media (--mobile-viewport) {
       flex-flow: column;
@@ -248,17 +260,14 @@
 .info {
   position: relative;
   padding-top: 0;
-  padding-bottom: 30px;
+  padding-bottom: 0;
 
   @media (--tablet-viewport) {
-    padding-bottom: 45px;
   }
   @media (--tablet-landscape-viewport) {
-    padding-bottom: 50px;
   }
 
   @media (--laptop-viewport) {
-    padding-bottom: 60px;
   }
 
   & .page_header {
@@ -330,7 +339,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: -10px;
 
     @media (--mobile-viewport) {
       flex-flow: column-reverse;
