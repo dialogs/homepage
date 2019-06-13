@@ -9,7 +9,7 @@ import debounce from 'lodash.debounce';
 import './ForPartners.css';
 
 const TOP_SCROLL_HIDE_OFFSET2 = 2000;
-const TOP_SCROLL_REMOVE_OFFSET = 100;
+const TOP_SCROLL_REMOVE_OFFSET = 4000;
 export function ForPartners() {
   const [isTabSticky, setTabSticky] = useState(false);
   let prevScrollPosition2 = 0;
@@ -28,7 +28,10 @@ export function ForPartners() {
       const currentScroll2 = getCurrentScroll();
       console.log(currentScroll2);
 
-      if (currentScroll2 > TOP_SCROLL_HIDE_OFFSET2) {
+      if (
+        (currentScroll2 > TOP_SCROLL_HIDE_OFFSET2) &
+        (currentScroll2 < TOP_SCROLL_REMOVE_OFFSET)
+      ) {
         setTabSticky(true);
         console.log(currentScroll2, TOP_SCROLL_HIDE_OFFSET2, 'setSticky(true)');
       } else {
