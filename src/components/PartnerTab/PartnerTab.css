@@ -1,12 +1,44 @@
+@import '../../styles/variables.css';
+
 .for-partners__tab {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 320px;
+  height: 300px;
   width: 440px;
   margin-right: 20px;
   margin-bottom: 20px;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  @media (--mobile-viewport) {
+    height: 320px;
+    width: 280px;
+  }
+  @media (--tablet-viewport) {
+    height: 320px;
+    width: 320px;
+  }
+  @media (--tablet-landscape-viewport) {
+    height: 320px;
+    width: 290px;
+  }
+  @media (--laptop-viewport) {
+    height: 300px;
+    width: 365px;
+  }
+  @media (--desktop-viewport) {
+    height: 300px;
+    width: 440px;
+  }
+}
+@media (--mobile-viewport) {
+}
+@media (--tablet-viewport) {
+}
+@media (--tablet-landscape-viewport) {
+}
+@media (--laptop-viewport) {
+}
+@media (--desktop-viewport) {
 }
 .tab {
   &__header {
