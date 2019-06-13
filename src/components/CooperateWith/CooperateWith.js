@@ -15,7 +15,7 @@ export function CooperateWith({ className, children }) {
           </div>
           <div className="cooperate__left__button">
             <a className="button button--default" href="#form">
-              <FormattedMessage id="jobs_apply_button" />
+              <FormattedMessage id="partners_cooperate_button" />
             </a>
           </div>
         </div>
