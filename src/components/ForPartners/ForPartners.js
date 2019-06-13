@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import ImageFormatted from '../ImageFormatted';
 
 // import { Page } from '../Page/Page';
 import { Heading } from '../Heading/Heading';

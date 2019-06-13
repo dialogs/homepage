@@ -1,8 +1,6 @@
 import React from 'react';
-import classnames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Section } from '../Section/Section';
-import { Button } from '../Button/Button';
 
 import './CooperateWith.css';
 export function CooperateWith({ className, children }) {

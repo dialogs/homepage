@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import ImageFormatted from '../ImageFormatted';
+import { FormattedMessage } from 'react-intl';
 
-import { Heading } from '../Heading/Heading';
-import { Section } from '../Section/Section';
 import './PartnerTab.css';
 
 export function PartnerTab({

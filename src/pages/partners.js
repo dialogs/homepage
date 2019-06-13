@@ -7,7 +7,6 @@ import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Section } from '../components/Section/Section';
 import { CooperateWith } from '../components/CooperateWith/CooperateWith';
-import ImageFormatted from '../components/ImageFormatted';
 import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
 import { ForPartners } from '../components/ForPartners/ForPartners';
 import { Offer } from '../components/Offer/Offer';
