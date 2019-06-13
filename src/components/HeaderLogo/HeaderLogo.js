@@ -14,7 +14,7 @@ const HeaderLogoImage = styled.img`
 export function HeaderLogo({ ...props }) {
   return (
     <HeaderLogoLink {...props}>
-      <HeaderLogoImage src="/images/dialog-logo.svg" alt="dialog" />
+      <HeaderLogoImage src="/images/logo.svg" alt="dialog" />
     </HeaderLogoLink>
   );
 }
