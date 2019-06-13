@@ -1,0 +1,58 @@
+.for-partners__tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 320px;
+  width: 440px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.tab {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  &__icon {
+  }
+  &__text {
+    padding: 20px;
+    margin-bottom: 21px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0;
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+  }
+  &__footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+  }
+  &__country {
+    font-weight: 700;
+    &__info {
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+  &__category {
+    margin-left: 30px;
+    font-weight: 700;
+    &__info {
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+}

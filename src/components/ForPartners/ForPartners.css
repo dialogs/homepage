@@ -1,0 +1,180 @@
+/*
+ * Copyright 2019 dialog LLC <info@dlg.im>
+ */
+
+@import '../../styles/variables.css';
+
+.for-partners {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  & .heading {
+    @media (--mobile-viewport) {
+      padding-top: 25px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    &__block {
+      width: 340px;
+    }
+    &__tabs {
+      margin-left: 80px;
+      margin-top: 20px;
+    }
+    &__technological {
+      columns: 2;
+      margin-top: 60px;
+      &__text {
+        font-weight: 700;
+      }
+    }
+    &__business {
+      columns: 2;
+      margin-top: 60px;
+      &__text {
+        margin-top: 80px;
+        font-weight: 700;
+      }
+    }
+    @media (--mobile-viewport) {
+      margin-bottom: 60px;
+    }
+
+    @media (--tablet-viewport) {
+      min-height: 830px;
+      margin-bottom: 120px;
+    }
+
+    @media (--tablet-landscape-viewport) {
+      min-height: 500px;
+    }
+
+    @media (--laptop-viewport) {
+      min-height: 592px;
+      margin-bottom: 160px;
+    }
+
+    @media (--desktop-viewport) {
+      min-height: 550px;
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    left: 95%;
+    top: -220px;
+    width: 370px;
+    height: 134px;
+    z-index: -1;
+    background-color: var(--color-secondary);
+    @media (--mobile-viewport) {
+      display: none;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    right: calc(-2 * var(--margin-container-side) - 20px);
+    top: -220px;
+    width: 80px;
+    height: 889px;
+    z-index: -1;
+    background-color: var(--color-secondary);
+    @media (--mobile-viewport) {
+      display: none;
+    }
+  }
+
+  &--primary {
+    &:before {
+      background-color: var(--color-primary);
+    }
+  }
+  &--secondary {
+    &:before {
+      background-color: var(--color-secondary);
+    }
+  }
+  &--transparent {
+    &:before {
+      background-color: transparent;
+    }
+  }
+}
+.nav {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 30px;
+
+  @media (--tablet-viewport) {
+    padding-bottom: 45px;
+  }
+  @media (--tablet-landscape-viewport) {
+    padding-bottom: 50px;
+  }
+
+  @media (--laptop-viewport) {
+    padding-bottom: 60px;
+  }
+
+  & .page_header {
+    @media (--mobile-viewport) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    @media (--tablet-viewport) {
+      font-size: 40px;
+      line-height: 52px;
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+
+    @media (--tablet-landscape-viewport) {
+      font-size: 50px;
+      line-height: 65px;
+      padding-bottom: 30px;
+    }
+
+    @media (--laptop-viewport) {
+      font-size: 60px;
+      line-height: 78px;
+      padding-bottom: 40px;
+    }
+    padding-bottom: 25px;
+    font-size: 60px;
+    line-height: 78px;
+  }
+
+  &__list {
+    padding-top: 20px;
+
+    @media (--mobile-viewport) {
+      width: 100%;
+      padding-bottom: initial;
+      height: auto;
+    }
+    &_item {
+      padding-bottom: 40px;
+      &_wrapper {
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: 0.01em;
+        padding-left: 60px;
+      }
+      &:before {
+        content: '';
+        display: block;
+        float: left;
+        margin-right: 40px;
+        width: 20px;
+        height: 20px;
+        background-color: #b9bbfa;
+      }
+    }
+  }
+}
