@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Section } from '../Section/Section';
+import links from '../../constants/links';
 
 import './RecommendEmployee.css';
 export function RecommendEmployee({ className, children }) {
@@ -22,7 +23,12 @@ export function RecommendEmployee({ className, children }) {
         </div>
         <div className="recommend__right">
           <div className="recommend__right__action">
-            <FormattedHTMLMessage id="jobs_recommend_action" />
+            <FormattedHTMLMessage
+              id="jobs_recommend_action"
+              values={{
+                email: links.email.hire,
+              }}
+            />
           </div>
         </div>
       </div>
