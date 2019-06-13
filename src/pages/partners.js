@@ -6,12 +6,9 @@ import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Section } from '../components/Section/Section';
-import { Vacancies } from '../components/Vacancies/Vacancies';
-import { ApplyForJob } from '../components/ApplyForJob/ApplyForJob';
 import { CooperateWith } from '../components/CooperateWith/CooperateWith';
 import ImageFormatted from '../components/ImageFormatted';
 import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
-import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
 import { ForPartners } from '../components/ForPartners/ForPartners';
 import { Offer } from '../components/Offer/Offer';
 import '../styles/partners.css';
@@ -44,7 +41,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               </div>
               <img
                 className="partners__image"
-                src="/images/partners/partners_promo.png"
+                src="/images/partners/partners_promo.svg"
               />
             </div>
           </div>
@@ -104,31 +101,41 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
       </ContainerFluid>
       <Container>
         <Section className="availables">
-          <PageHeader>
-            <FormattedMessage id="partners_available_title" />
-          </PageHeader>
-          <ul className="availables__list">
-            <li className="availables__list_item">
-              <div className="availables__list_item_wrapper">
-                <FormattedMessage id="partners_available_materials" />
-              </div>
-            </li>
-            <li className="availables__list_item">
-              <div className="availables__list_item_wrapper">
-                <FormattedMessage id="partners_available_access" />
-              </div>
-            </li>
-            <li className="availables__list_item">
-              <div className="availables__list_item_wrapper">
-                <FormattedMessage id="partners_available_cross" />
-              </div>
-            </li>
-            <li className="availables__list_item">
-              <div className="availables__list_item_wrapper">
-                <FormattedMessage id="partners_available_following" />
-              </div>
-            </li>
-          </ul>
+          <div className="availables__container">
+            <div className="availables__container__content">
+              <PageHeader>
+                <FormattedMessage id="partners_available_title" />
+              </PageHeader>
+              <ul className="availables__list">
+                <li className="availables__list_item">
+                  <div className="availables__list_item_wrapper">
+                    <FormattedMessage id="partners_available_materials" />
+                  </div>
+                </li>
+                <li className="availables__list_item">
+                  <div className="availables__list_item_wrapper">
+                    <FormattedMessage id="partners_available_access" />
+                  </div>
+                </li>
+                <li className="availables__list_item">
+                  <div className="availables__list_item_wrapper">
+                    <FormattedMessage id="partners_available_cross" />
+                  </div>
+                </li>
+                <li className="availables__list_item">
+                  <div className="availables__list_item_wrapper">
+                    <FormattedMessage id="partners_available_following" />
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="availables__container__image">
+              <img
+                className="availables__image"
+                src="/images/partners/partners-design.svg"
+              />
+            </div>
+          </div>
         </Section>
       </Container>
       <Container>

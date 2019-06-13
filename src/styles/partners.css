@@ -13,7 +13,10 @@
   }
 
   @media (--laptop-viewport) {
-    padding-bottom: 60px;
+    padding-bottom: 80px;
+  }
+  @media (--mobile-viewport) {
+    padding-bottom: 0;
   }
 
   @media (--mobile-viewport) {
@@ -67,12 +70,35 @@
     &_text {
       font-size: 24px;
       line-height: 31px;
+
+      @media (--mobile-viewport) {
+        font-size: 18px;
+        line-height: 23px;
+      }
+
+      @media (--tablet-viewport) {
+        font-size: 18px;
+        line-height: 23px;
+        margin-bottom: 40px;
+      }
+
+      @media (--tablet-landscape-viewport) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+
+      @media (--mobile-viewport) {
+        margin-bottom: 25px;
+        font-size: 18px;
+        line-height: 23px;
+      }
     }
 
     @media (--mobile-viewport) {
       padding-bottom: 0;
       margin-bottom: 33px;
       flex-grow: 1;
+      width: 100%;
     }
 
     @media (--tablet-viewport) {
@@ -80,6 +106,7 @@
       margin-bottom: 50px;
       flex-grow: 1;
     }
+
     @media (--tablet-landscape-viewport) {
       flex-grow: 0;
     }
@@ -111,14 +138,14 @@
 
     @media (--tablet-viewport) {
       font-size: 40px;
-      line-height: 62px;
+      line-height: 42px;
       padding-top: 30px;
       padding-bottom: 20px;
     }
 
     @media (--tablet-landscape-viewport) {
       font-size: 50px;
-      line-height: 62px;
+      line-height: 52px;
       padding-bottom: 30px;
     }
 
@@ -155,26 +182,26 @@
       position: static;
       display: block;
       flex-grow: 1;
-      height: 300px;
-      margin: 0 -20px;
+      min-height: 185px;
+      width: calc(100% + 3 * var(--margin-container-side));
+      margin-left: -20px;
       object-fit: cover;
     }
-
     @media (--tablet-viewport) {
       position: static;
       display: block;
       flex-grow: 1;
-      height: 468px;
+      width: calc(100% + 3 * var(--margin-container-side));
+      min-height: 468px;
       margin: 0 -72px;
       object-fit: cover;
     }
-
     @media (--tablet-landscape-viewport) {
       position: absolute;
       top: 0;
       right: -72px;
       width: 390px;
-      height: 290px;
+      min-height: 290px;
       object-fit: cover;
       object-position: left;
       margin: 0;
@@ -190,6 +217,7 @@
       object-position: left;
       margin: 0;
     }
+
     @media (--desktop-viewport) {
       position: absolute;
       top: 0;
@@ -273,7 +301,9 @@
   & .page_header {
     @media (--mobile-viewport) {
       font-size: 28px;
-      line-height: 36px;
+      line-height: 30px;
+      padding-top: 10px;
+      margin-bottom: 15px;
     }
 
     @media (--tablet-viewport) {
@@ -304,6 +334,15 @@
     padding-bottom: 47%;
     height: 0;
     width: 39%;
+
+    &__box .second {
+      @media (--mobile-viewport) {
+        width: 100%;
+        padding-bottom: initial;
+        height: auto;
+        margin-top: 30px;
+      }
+    }
     @media (--mobile-viewport) {
       width: 100%;
       padding-bottom: initial;
@@ -313,16 +352,42 @@
       font-size: 32px;
       line-height: 42px;
       letter-spacing: 0.275px;
+      @media (--mobile-viewport) {
+        font-size: 18px;
+        line-height: 23px;
+        padding-bottom: 0px;
+        margin-bottom: 20px;
+      }
     }
     &_text {
       padding-bottom: 60px;
+      @media (--mobile-viewport) {
+        font-size: 16px;
+        line-height: 21px;
+        padding-bottom: 40px;
+      }
     }
     &_item {
       padding-bottom: 40px;
-      text-align: justify;
+
+      @media (--mobile-viewport) {
+        padding-bottom: 30px;
+      }
+
       &_wrapper {
         padding-left: 60px;
+
+        @media (--mobile-viewport) {
+          padding-left: 40px;
+        }
+        @media (--tablet-viewport) {
+          padding-left: 40px;
+        }
+        @media (--tablet-landscape-viewport) {
+          padding-left: 40px;
+        }
       }
+
       &:before {
         content: '';
         display: block;
@@ -331,6 +396,16 @@
         width: 20px;
         height: 20px;
         background-color: #b9bbfa;
+
+        @media (--mobile-viewport) {
+          margin-right: 20px;
+        }
+        @media (--tablet-viewport) {
+          margin-right: 20px;
+        }
+        @media (--tablet-landscape-viewport) {
+          margin-right: 20px;
+        }
       }
     }
   }
@@ -344,6 +419,12 @@
     @media (--mobile-viewport) {
       flex-flow: column-reverse;
     }
+    @media (--tablet-viewport) {
+      height: 580px;
+    }
+    @media (--tablet-landscape-viewport) {
+      height: 538px;
+    }
   }
 }
 .availables {
@@ -351,6 +432,30 @@
   padding-top: 0;
   padding-bottom: 30px;
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &__content {
+    }
+    &__image {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @media (--mobile-viewport) {
+      }
+      @media (--tablet-viewport) {
+      }
+      @media (--tablet-landscape-viewport) {
+      }
+      @media (--laptop-viewport) {
+      }
+      @media (--desktop-viewport) {
+      }
+    }
+  }
+  &__image {
+  }
   @media (--tablet-viewport) {
     padding-bottom: 45px;
   }
@@ -400,12 +505,41 @@
     }
     &_item {
       padding-bottom: 40px;
-      text-align: justify;
+      @media (--mobile-viewport) {
+        padding-bottom: 30px;
+      }
+      @media (--tablet-viewport) {
+        padding-bottom: 30px;
+      }
+      @media (--tablet-landscape-viewport) {
+        padding-bottom: 40px;
+      }
+      @media (--laptop-viewport) {
+        padding-bottom: 40px;
+      }
+      @media (--desktop-viewport) {
+        padding-bottom: 40px;
+      }
       &_wrapper {
         font-size: 18px;
         line-height: 23px;
         letter-spacing: 0.01em;
         padding-left: 60px;
+        @media (--mobile-viewport) {
+          padding-left: 40px;
+        }
+        @media (--tablet-viewport) {
+          padding-left: 40px;
+        }
+        @media (--tablet-landscape-viewport) {
+          padding-left: 40px;
+        }
+        @media (--laptop-viewport) {
+          padding-left: 60px;
+        }
+        @media (--desktop-viewport) {
+          padding-left: 60px;
+        }
       }
       &:before {
         content: '';
@@ -415,6 +549,21 @@
         width: 20px;
         height: 20px;
         background-color: #b9bbfa;
+        @media (--mobile-viewport) {
+          margin-right: 20px;
+        }
+        @media (--tablet-viewport) {
+          margin-right: 20px;
+        }
+        @media (--tablet-landscape-viewport) {
+          margin-right: 20px;
+        }
+        @media (--laptop-viewport) {
+          margin-right: 40px;
+        }
+        @media (--desktop-viewport) {
+          margin-right: 40px;
+        }
       }
     }
   }
