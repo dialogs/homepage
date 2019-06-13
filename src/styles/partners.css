@@ -441,20 +441,30 @@
     &__image {
       position: absolute;
       bottom: 0;
-      right: 0;
-      @media (--mobile-viewport) {
-      }
-      @media (--tablet-viewport) {
-      }
-      @media (--tablet-landscape-viewport) {
-      }
-      @media (--laptop-viewport) {
-      }
-      @media (--desktop-viewport) {
-      }
+      right: calc(-1 * var(--margin-container-side));
     }
   }
   &__image {
+    @media (--mobile-viewport) {
+      width: 268px;
+      height: 185px;
+    }
+    @media (--tablet-viewport) {
+      width: 308px;
+      height: 212px;
+    }
+    @media (--tablet-landscape-viewport) {
+      width: 360px;
+      height: 247px;
+    }
+    @media (--laptop-viewport) {
+      width: 494px;
+      height: 339px;
+    }
+    @media (--desktop-viewport) {
+      width: 494px;
+      height: 339px;
+    }
   }
   @media (--tablet-viewport) {
     padding-bottom: 45px;

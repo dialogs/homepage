@@ -36,6 +36,7 @@
     align-items: center;
     justify-content: space-between;
     padding-left: 140px;
+    box-shadow: 0px -6px 14px rgba(0, 0, 0, 0.08);
 
     @media (--mobile-viewport) {
       width: 100%;
