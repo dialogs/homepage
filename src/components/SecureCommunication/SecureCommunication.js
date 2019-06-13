@@ -36,7 +36,11 @@ export function SecureCommunication({ intl: { locale }, image }) {
           <FormattedMessage id="SecureCommunication_secure">
             {(alt) => (
               <div className="col__image">
-                <Image fadeIn fluid={image.childImageSharp.fluid} alt={alt} />
+                <Image
+                  fadeIn={false}
+                  fluid={image.childImageSharp.fluid}
+                  alt={alt}
+                />
               </div>
             )}
           </FormattedMessage>

@@ -48,7 +48,7 @@ export default ({
               <FormattedMessage id="more_than_messenger">
                 {(alt) => (
                   <Image
-                    fadeIn
+                    fadeIn={false}
                     fluid={teamImage.childImageSharp.fluid}
                     alt={alt}
                   />

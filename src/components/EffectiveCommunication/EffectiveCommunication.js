@@ -17,7 +17,11 @@ export function EffectiveCommunication({ image }) {
         <div className="image">
           <FormattedMessage id="EffectiveCommunication_effective_communications">
             {(alt) => (
-              <Image fadeIn fluid={image.childImageSharp.fluid} alt={alt} />
+              <Image
+                fadeIn={false}
+                fluid={image.childImageSharp.fluid}
+                alt={alt}
+              />
             )}
           </FormattedMessage>
         </div>

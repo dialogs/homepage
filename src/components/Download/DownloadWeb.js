@@ -55,7 +55,7 @@ export function DownloadWeb({ isEnterprise }) {
                 {(title) => (
                   <Image
                     className="download__web-img"
-                    fadeIn
+                    fadeIn={false}
                     fluid={
                       isEnterprise
                         ? enterpriseWeb.childImageSharp.fluid

@@ -137,7 +137,7 @@ export function Platform({ className }) {
                   {(alt) => (
                     <div className="platform__content__image platform__content__image--messenger">
                       <Image
-                        fadeIn
+                        fadeIn={false}
                         fluid={messengerImage.childImageSharp.fluid}
                         alt={alt}
                       />
@@ -192,7 +192,7 @@ export function Platform({ className }) {
                   {(alt) => (
                     <div className="platform__content__image platform__content__image--corporate">
                       <Image
-                        fadeIn
+                        fadeIn={false}
                         fluid={corporateImage.childImageSharp.fluid}
                         alt={alt}
                       />
@@ -226,7 +226,7 @@ export function Platform({ className }) {
                   {(alt) => (
                     <div className="platform__content__image platform__content__image--integrations">
                       <Image
-                        fadeIn
+                        fadeIn={false}
                         fluid={integerationsImage.childImageSharp.fluid}
                         alt={alt}
                       />

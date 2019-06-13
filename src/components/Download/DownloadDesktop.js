@@ -146,7 +146,7 @@ export function DownloadDesktop({ isEnterprise }) {
                 <FormattedMessage id="download_desktop_title">
                   {(alt) => (
                     <Image
-                      fadeIn
+                      fadeIn={false}
                       fluid={
                         isEnterprise
                           ? enterpriseDesktopMacos.childImageSharp.fluid
