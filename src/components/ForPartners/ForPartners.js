@@ -1,13 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 // import { Page } from '../Page/Page';
 import { Heading } from '../Heading/Heading';
 import { Section } from '../Section/Section';
 import { PartnerTab } from '../PartnerTab/PartnerTab';
+import debounce from 'lodash.debounce';
 import './ForPartners.css';
 
+const TOP_SCROLL_HIDE_OFFSET2 = 2000;
+const TOP_SCROLL_REMOVE_OFFSET = 100;
 export function ForPartners() {
+  const [isTabSticky, setTabSticky] = useState(false);
+  let prevScrollPosition2 = 0;
+  let style = {};
+
+  function getCurrentScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+  }
+
+  useEffect(() => {
+    function handleWindowLoad2() {
+      prevScrollPosition2 = getCurrentScroll();
+    }
+
+    function handleScroll2() {
+      const currentScroll2 = getCurrentScroll();
+      console.log(currentScroll2);
+
+      if (currentScroll2 > TOP_SCROLL_HIDE_OFFSET2) {
+        setTabSticky(true);
+        console.log(currentScroll2, TOP_SCROLL_HIDE_OFFSET2, 'setSticky(true)');
+      } else {
+        setTabSticky(false);
+        console.log('setSticky(false)');
+      }
+
+      prevScrollPosition2 = currentScroll2 <= 0 ? 0 : currentScroll2;
+    }
+
+    const debouncedScroll2 = debounce(handleScroll2, 300, {
+      leading: true,
+      trailing: false,
+      maxWait: 300,
+    });
+
+    window.addEventListener('load', handleWindowLoad2);
+    window.addEventListener('scroll', debouncedScroll2, { passive: true });
+
+    return () => {
+      window.removeEventListener('load', handleWindowLoad2);
+      window.removeEventListener('scroll', debouncedScroll2);
+    };
+  }, []);
+
   return (
     <Section className="for-partners">
       <Heading>
@@ -15,7 +61,9 @@ export function ForPartners() {
       </Heading>
       <div className="for-partners__content">
         <div className="for-partners__content__block">
-          <ul className="nav__list">
+          <ul
+            className={'nav__list ' + (isTabSticky ? 'sticky' : 'not-sticky')}
+          >
             <li className="nav__list_item">
               <div className="nav__list_item_wrapper">
                 <a className="llink" href="#technological">

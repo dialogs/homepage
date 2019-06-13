@@ -158,6 +158,12 @@
       padding-bottom: initial;
       height: auto;
     }
+
+    &.sticky {
+      position: fixed;
+      top: 100px;
+    }
+
     &_item {
       padding-bottom: 40px;
       &_wrapper {
