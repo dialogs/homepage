@@ -9,7 +9,7 @@ import './Offer.css';
 export function Offer() {
   return (
     <Section className="offer">
-      <div className="offer__header">
+      <div className="offer__header" id="form">
         <Heading level="4">
           <FormattedMessage id="get_offer" />
         </Heading>
