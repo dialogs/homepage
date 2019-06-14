@@ -80,6 +80,14 @@ export function MobileMenu({
           >
             <FormattedMessage id="menu_about" />
           </Link>
+          <Link
+            to={`/${locale}/support/`}
+            className="navigation__link"
+            activeClassName="navigation__link--active"
+            onClick={onClose}
+          >
+            <FormattedMessage id="menu_support" />
+          </Link>
           <Link to={toLink} className="navigation__link navigation__link--lang">
             {locale === 'ru' ? 'en' : 'ru'}
           </Link>

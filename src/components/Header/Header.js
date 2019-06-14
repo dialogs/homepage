@@ -171,7 +171,7 @@ export function Header({
                   </Link>
                 </li>
 
-                <li className="header__menu-item">
+                {/* <li className="header__menu-item">
                   <Link
                     to={`/${locale}/career/`}
                     className="header__menu-link"
@@ -179,7 +179,7 @@ export function Header({
                   >
                     <FormattedMessage id="menu_career" />
                   </Link>
-                </li>
+                </li> */}
 
                 <li className="header__menu-item">
                   <Link

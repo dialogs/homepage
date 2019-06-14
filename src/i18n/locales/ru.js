@@ -46,7 +46,7 @@ module.exports = {
   avrora_sailfish: 'Аврора',
   menu_about: 'О нас',
   menu_download: 'Скачать',
-  menu_support: 'Поддержка',
+  menu_support: 'Помощь',
   menu_features: 'Функции',
   menu_blog: 'Блог',
   menu_solutions: 'Почему dialog',
