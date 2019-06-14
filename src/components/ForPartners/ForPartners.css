@@ -49,10 +49,12 @@
       @media (--tablet-landscape-viewport) {
         padding-bottom: 50px;
         display: block;
+        min-width: 200px;
       }
       @media (--laptop-viewport) {
         padding-bottom: 60px;
         display: block;
+        min-width: 310px;
       }
     }
     &__tabs {
@@ -330,6 +332,18 @@
         font-size: 32px;
         line-height: 42px;
         padding-left: 20px;
+        @media (--tablet-landscape-viewport) {
+          font-size: 24px;
+          line-height: 31px;
+        }
+        @media (--laptop-viewport) {
+          font-size: 32px;
+          line-height: 42px;
+        }
+        @media (--desktop-viewport) {
+          font-size: 32px;
+          line-height: 42px;
+        }
       }
       &:before {
         content: '';
