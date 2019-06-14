@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 140px;
+    padding-left: var(--margin-container-side);
     box-shadow: 0px -6px 14px rgba(0, 0, 0, 0.08);
 
     @media (--mobile-viewport) {
@@ -51,10 +51,15 @@
     @media (--tablet-landscape-viewport) {
       padding-left: 72px;
       margin-right: 0;
+      margin-top: 0;
     }
     @media (--laptop-viewport) {
       padding-left: 172px;
       margin-right: 170px;
+      margin-top: 0;
+    }
+    @media (--desktop-viewport) {
+      padding-left: calc((100% - 1320px) / 2);
     }
     &__button {
       margin-right: 180px;
