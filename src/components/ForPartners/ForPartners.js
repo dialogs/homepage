@@ -8,7 +8,7 @@ import { PartnerTab } from '../PartnerTab/PartnerTab';
 import debounce from 'lodash.debounce';
 import './ForPartners.css';
 
-const TOP_SCROLL_HIDE_OFFSET2 = 2000;
+const TOP_SCROLL_HIDE_OFFSET2 = 1500;
 const TOP_SCROLL_REMOVE_OFFSET = 4000;
 export function ForPartners() {
   const [isTabSticky, setTabSticky] = useState(false);
@@ -42,10 +42,10 @@ export function ForPartners() {
       prevScrollPosition2 = currentScroll2 <= 0 ? 0 : currentScroll2;
     }
 
-    const debouncedScroll2 = debounce(handleScroll2, 300, {
-      leading: true,
+    const debouncedScroll2 = debounce(handleScroll2, 100, {
+      leading: false,
       trailing: false,
-      maxWait: 300,
+      maxWait: 100,
     });
 
     window.addEventListener('load', handleWindowLoad2);
@@ -84,6 +84,9 @@ export function ForPartners() {
           </ul>
         </div>
         <div className="for-partners__content__tabs">
+          <div className="for-partners__content__technological__wrapper">
+            <FormattedMessage id="partners_technological_nav_title" />
+          </div>
           <div
             className="for-partners__content__technological__text"
             id="technological"
@@ -145,6 +148,9 @@ export function ForPartners() {
               image="/images/partners/omp_icon.svg"
               href="http://omprussia.ru"
             />
+          </div>
+          <div className="for-partners__content__business__wrapper">
+            <FormattedMessage id="partners_business_nav_title" />
           </div>
           <div className="for-partners__content__business__text" id="business">
             <FormattedMessage id="partners_business_text" />
