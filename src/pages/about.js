@@ -252,9 +252,9 @@ export default ({
 
 export const query = graphql`
   query {
-    teamImage: file(relativePath: { eq: "images/about/corporate.png" }) {
+    teamImage: file(relativePath: { eq: "images/about/corporate.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1280) {
+        fluid(maxWidth: 1320) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
