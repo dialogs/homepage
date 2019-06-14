@@ -1,10 +1,21 @@
 import React from 'react';
 import classnames from 'classnames';
 
-export function Tab({ value, current, changeOnHover, children, onChange }) {
-  const className = classnames('tabs__tab', {
-    'tabs__tab--active': value === current,
-  });
+export function Tab({
+  value,
+  current,
+  changeOnHover,
+  children,
+  onChange,
+  className,
+}) {
+  const classes = classnames(
+    'tabs__tab',
+    {
+      'tabs__tab--active': value === current,
+    },
+    className,
+  );
 
   function handleTabSelect() {
     onChange(value);
@@ -15,7 +26,7 @@ export function Tab({ value, current, changeOnHover, children, onChange }) {
     : { onClick: handleTabSelect };
 
   return (
-    <div className={className}>
+    <div className={classes}>
       <span {...actions}>{children}</span>
     </div>
   );
