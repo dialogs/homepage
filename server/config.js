@@ -18,6 +18,7 @@ const config = {
   },
   email_to: env('EMAIL_TO', 'info@dlg.im'),
   email_to_support: env('EMAIL_TO_SUPPORT', 'support@dlg.im'),
+  email_to_hr: env('EMAIL_TO_HR', 'hire@dlg.im'),
   email: {
     host: env('EMAIL_HOST', 'smtp.gmail.com'),
     port: envInt('EMAIL_PORT', 465),

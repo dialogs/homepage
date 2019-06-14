@@ -97,5 +97,13 @@ module.exports = {
         contentApiKey: ghost.apiKey,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'vacancies',
+        path: `${__dirname}/src/vacancies`,
+      },
+    },
+    { resolve: `gatsby-transformer-remark` },
   ],
 };

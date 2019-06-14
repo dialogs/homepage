@@ -1,13 +1,14 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import ImageFormatted from '../components/ImageFormatted';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
-
+import links from '../constants/links';
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
+import { ArrowLink } from '../components/ArrowLink/ArrowLink';
 
 const officesLinks = {
   moscow:
@@ -35,44 +36,66 @@ export default ({
       />
 
       <Container>
-        <PageHeader>
-          <FormattedMessage id="more_than_messenger" />
+        <PageHeader className="about__header_upper">
+          <FormattedMessage id="about_more_than_messenger" />
         </PageHeader>
       </Container>
 
       <section className="about__promo">
-        <div className="about__video">
-          <div className="about__video-wrapper">
-            <FormattedMessage id="more_than_messenger">
-              {(alt) => (
-                <Image
-                  fadeIn
-                  fluid={teamImage.childImageSharp.fluid}
-                  alt={alt}
-                />
-              )}
-            </FormattedMessage>
-          </div>
-        </div>
         <Container>
-          <a
-            href="https://icanchoose.ru/company/dialog/"
-            className="about__description about__description-link"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ImageFormatted
-              imgClass="img--icon"
-              src="/images/svg/about-promo.svg"
-              altLangId="alt_icanchoose_about_dialog"
-            />
-            <FormattedMessage id="link_icanchoose" />
-            <img
-              className="img--arrow"
-              src="/images/svg-icons/arrow.svg"
-              alt=""
-            />
-          </a>
+          <div className="about__video">
+            <div className="about__video-wrapper">
+              <FormattedMessage id="more_than_messenger">
+                {(alt) => (
+                  <Image
+                    fadeIn={false}
+                    fluid={teamImage.childImageSharp.fluid}
+                    alt={alt}
+                  />
+                )}
+              </FormattedMessage>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="about__text">
+        <Container>
+          <PageHeader className="about__header_middle">
+            <FormattedMessage id="about_more_than_messenger" />
+          </PageHeader>
+          <div className="about__company_wrapper">
+            <FormattedHTMLMessage id="about_company" />
+          </div>
+        </Container>
+      </section>
+
+      <section className="about__green_section hide">
+        <Container>
+          <PageHeader className="about__green_section_header">
+            <FormattedMessage id="about_partnership" />
+          </PageHeader>
+          <div className="about__green_section_text_wrapper">
+            <FormattedHTMLMessage id="about_partnership_text" />
+            <div className="about__read_more">
+              <ArrowLink to="#" underline secondary>
+                <FormattedMessage id="about_read_more" />
+              </ArrowLink>
+            </div>
+          </div>
+        </Container>
+        <Container>
+          <PageHeader className="about__green_section_header">
+            <FormattedMessage id="about_integration" />
+          </PageHeader>
+          <div className="about__green_section_text_wrapper">
+            <FormattedHTMLMessage id="about_integration_text" />
+            <div className="about__read_more">
+              <ArrowLink to="#" underline secondary>
+                <FormattedMessage id="about_read_more" />
+              </ArrowLink>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -134,19 +157,13 @@ export default ({
             <FormattedMessage id="about_licenses_text" />
           </div>
           <div className="about__licenses-link-box">
-            <Link
-              to={`/${locale}/patents`}
-              className="about__licenses-link link--arrow"
+            <ArrowLink
+              underline
+              to={`/${locale}/patents/`}
+              className="about__licenses-link"
             >
-              <span className="link--arrow__text">
-                <FormattedMessage id="link_more_licenses" />
-              </span>
-              <img
-                src="/images/svg-icons/arrow-link.svg"
-                alt=""
-                className="link--arrow__icon"
-              />
-            </Link>
+              <FormattedMessage id="link_more_licenses" />
+            </ArrowLink>
           </div>
         </Container>
       </section>
@@ -159,8 +176,11 @@ export default ({
             </div>
             <div className="about__contacts-items">
               <div className="about__contacts-item about__contacts-item--email">
-                <a href="mailto:info@dlg.im" className="link--default">
-                  info@dlg.im
+                <a
+                  href={`mailto:${links.email.info}`}
+                  className="link--default"
+                >
+                  {links.email.info}
                 </a>
               </div>
               <div className="about__contacts-item about__contacts-item--phone">
@@ -232,9 +252,9 @@ export default ({
 
 export const query = graphql`
   query {
-    teamImage: file(relativePath: { eq: "images/about/team.png" }) {
+    teamImage: file(relativePath: { eq: "images/about/corporate.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1280) {
+        fluid(maxWidth: 1320) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }

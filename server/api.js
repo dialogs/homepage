@@ -8,7 +8,7 @@ const md5 = require('md5');
 // http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
-const mailer = nodemailer.createTransport(config.email);
+let mailer = nodemailer.createTransport(config.email);
 const mailchimp = new Mailchimp(config.mailchimp.key);
 
 function renderTextMessage(body, site) {
@@ -41,6 +41,29 @@ GAcid: ${body.data.gacid}
   return message;
 }
 
+function renderApplicationMessage(body, site) {
+  const message = `
+Имя: ${body.fio}
+Телефон: ${body.phone}
+Email: ${body.workemail}
+Город: ${body.city}
+Обо мне: ${body.about}
+Форма: ${body.form}
+Отклик со страницы: ${site}
+
+========================================================
+
+Дополнительная информация:
+Accept-Language: ${body.data.language}
+Document-referrer: ${body.data.referrer}
+Geolocation: ${JSON.stringify(body.data.geo, null, 2)}
+Page-href: ${body.data.href}
+GAcid: ${body.data.gacid}
+      `;
+
+  return message;
+}
+
 function notifyDialog(body, site) {
   return new Promise((resolve, reject) => {
     request(
@@ -49,7 +72,10 @@ function notifyDialog(body, site) {
         uri: config.dialog.webhook,
         json: true,
         body: {
-          text: renderTextMessage(body, site),
+          text:
+            body.form === 'apply'
+              ? renderApplicationMessage(body, site)
+              : renderTextMessage(body, site),
         },
       },
       (error, res, body) => {
@@ -105,8 +131,51 @@ function notifyMailchimp(body, site) {
   });
 }
 
+function notifyResume(body, site) {
+  return new Promise((resolve, reject) => {
+    const sender = {
+      name: body.name || 'empty name',
+      address: body.email,
+    };
+
+    mailer.sendMail(
+      {
+        from: {
+          name: 'Dialog Bot',
+          address: 'bot@dlg.im',
+        },
+        to: config.email_to_hr,
+        sender: sender.address,
+        replyTo: sender.address,
+        subject: `Резюме на вакансию с сайта ${site}`,
+        text: renderApplicationMessage(body, site),
+        attachments: [
+          {
+            path: body.resume,
+          },
+        ],
+      },
+      (error, info) => {
+        if (error) {
+          reject(error);
+        }
+
+        resolve();
+      },
+    );
+  });
+}
+
 function logBody(body, referer) {
-  console.log(JSON.stringify({ ...body, headerReferer: referer }));
+  if (body.form === 'apply') {
+    // remove resume file from log output
+    console.log(
+      JSON.stringify({ ...body, headerReferer: referer, resume: undefined }),
+    );
+  } else {
+    console.log(JSON.stringify({ ...body, headerReferer: referer }));
+  }
+
   return Promise.resolve();
 }
 
@@ -203,6 +272,37 @@ router.post('/support', (request, response) => {
         status: 500,
         message: 'Internal Error',
         error: error,
+      });
+    });
+});
+
+router.post('/apply', (request, response) => {
+  const referer = request.header('referer');
+  const body = request.body;
+  const promises = [];
+
+  promises.push(logBody(body, referer));
+
+  if (config.email.auth.user && config.email.auth.pass) {
+    promises.push(notifyResume(body, referer));
+  }
+
+  if (config.dialog.webhook) {
+    promises.push(notifyDialog(body, referer));
+  }
+
+  Promise.all(promises)
+    .then(() => {
+      response.json({
+        status: 200,
+        message: 'Ok',
+      });
+    })
+    .catch((e) => {
+      console.error(e);
+      response.json({
+        status: 500,
+        message: 'Internal Error',
       });
     });
 });

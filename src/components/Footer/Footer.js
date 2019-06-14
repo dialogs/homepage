@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
-
 import { Container } from '../Container/Container';
 import links from '../../constants/links';
 import './Footer.css';
@@ -18,10 +17,10 @@ export function Footer({ locale }) {
               </div>
               <div className="footer__contacts-item footer__contacts-item--email">
                 <a
-                  href="mailto:info@dlg.ru"
+                  href={`mailto:${links.email.info}`}
                   className="link--default link--default--inverse"
                 >
-                  info@dlg.im
+                  {links.email.info}
                 </a>
               </div>
             </div>
@@ -183,6 +182,14 @@ export function Footer({ locale }) {
                   <div className="footer__nav-item">
                     <Link className="footer__nav-link" to={`/${locale}/about/`}>
                       <FormattedMessage id="menu_about" />
+                    </Link>
+                  </div>
+                  <div className="footer__nav-item">
+                    <Link
+                      className="footer__nav-link"
+                      to={`/${locale}/career/`}
+                    >
+                      <FormattedMessage id="footer_career" />
                     </Link>
                   </div>
                   <div className="footer__nav-item">

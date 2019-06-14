@@ -4,6 +4,7 @@ const initialState = {
   offer: new Field(null),
   subscribe: new Field(null),
   support: new Field(null),
+  apply: new Field(null),
 };
 
 export function forms(state = initialState, action) {
@@ -24,6 +25,11 @@ export function forms(state = initialState, action) {
       return {
         ...state,
         support: action.payload,
+      };
+    case 'APPLICATION_FORM_SUBMIT':
+      return {
+        ...state,
+        apply: action.payload,
       };
 
     default:

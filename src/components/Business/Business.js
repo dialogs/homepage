@@ -65,7 +65,7 @@ export function Business({ intl: { locale } }) {
                 <FormattedMessage id="alt_big_business">
                   {(alt) => (
                     <Image
-                      fadeIn
+                      fadeIn={false}
                       className="business__img"
                       fluid={image.childImageSharp.fluid}
                       alt={alt}

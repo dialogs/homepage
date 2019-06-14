@@ -42,6 +42,8 @@ function sendAnalitics({ form, data }) {
         switch (form.form) {
           case 'support':
             break;
+          case 'apply':
+            break;
           case 'offer':
             if (form.flag === 'sales') {
               window.ga('dlg.send', 'event', 'submit', 'form', 'block');
@@ -140,6 +142,18 @@ export function submitSupportForm(form) {
       type: 'SUPPORT_FORM_SUBMIT',
       context: {},
       action: sendForm(form, '/api/v1/support'),
+      initialState: null,
+    });
+  };
+}
+
+export function submitApplicationForm(form) {
+  return (dispatch) => {
+    Field.dispatch({
+      dispatch,
+      type: 'APPLICATION_FORM_SUBMIT',
+      context: {},
+      action: sendForm(form, '/api/v1/apply'),
       initialState: null,
     });
   };

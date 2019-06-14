@@ -18,20 +18,6 @@ export function Partnership() {
         <div className="subtitle">
           <FormattedMessage id="Partnership_vendors" />
         </div>
-        {/*
-        <div className="link-box">
-          <a className="link--arrow" href="/licenses">
-            <span className="link--arrow__text">
-              <FormattedMessage id="Partnership_learn_more" />
-            </span>
-            <img
-              src="/images/svg-icons/arrow-link.svg"
-              alt=""
-              className="link--arrow__icon"
-            />
-          </a>
-        </div>
-        */}
       </div>
       <div className="column column--partners">
         <div className="partners">

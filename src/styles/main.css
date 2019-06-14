@@ -110,48 +110,6 @@ a {
   }
 }
 
-.link--arrow {
-  position: relative;
-  padding-right: 37px;
-  display: inline-block;
-  padding-bottom: 10px;
-  font-weight: 500;
-  font-size: var(--font-size-content-2);
-  line-height: var(--line-height-content-2);
-
-  &:before {
-    content: '';
-    position: absolute;
-    z-index: 0;
-    left: 0;
-    bottom: 0;
-    width: 32%;
-    height: 14px;
-    background-color: var(--color-primary);
-    transition: width 300ms ease;
-  }
-
-  &--inverse:before {
-    background-color: var(--color-secondary);
-  }
-
-  &__text {
-    position: relative;
-  }
-
-  &__icon {
-    position: absolute;
-    top: 2px;
-    right: 0;
-  }
-
-  &:hover {
-    &:before {
-      width: calc(100% - 37px);
-    }
-  }
-}
-
 .link--download {
   /* TODO styling when link is short and breaks to multiple rows */
   display: inline-block;
@@ -269,6 +227,7 @@ h6 {
   }
 }
 
+/* TODO: FIND USAGES */
 .share-box {
   &__link {
     display: block;
@@ -298,4 +257,10 @@ h6 {
 
 body.scrollBlocked {
   overflow: hidden !important;
+}
+
+/* Helper classes */
+.hide {
+  display: none;
+  visibility: hidden;
 }

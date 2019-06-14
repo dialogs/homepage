@@ -5,7 +5,7 @@ import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
-
+import { ArrowLink } from '../ArrowLink/ArrowLink';
 import './SecureCommunication.css';
 
 export function SecureCommunication({ intl: { locale }, image }) {
@@ -36,7 +36,11 @@ export function SecureCommunication({ intl: { locale }, image }) {
           <FormattedMessage id="SecureCommunication_secure">
             {(alt) => (
               <div className="col__image">
-                <Image fadeIn fluid={image.childImageSharp.fluid} alt={alt} />
+                <Image
+                  fadeIn={false}
+                  fluid={image.childImageSharp.fluid}
+                  alt={alt}
+                />
               </div>
             )}
           </FormattedMessage>
@@ -124,16 +128,9 @@ export function SecureCommunication({ intl: { locale }, image }) {
           </ul>
         </div>
         <div className="link-box">
-          <a className="link--arrow" href={`/${locale}/patents`}>
-            <span className="link--arrow__text">
-              <FormattedMessage id="SecureCommunication_learn_more" />
-            </span>
-            <img
-              src="/images/svg-icons/arrow-link.svg"
-              alt=""
-              className="link--arrow__icon"
-            />
-          </a>
+          <ArrowLink to={`/${locale}/patents/`} underline>
+            <FormattedMessage id="SecureCommunication_learn_more" />
+          </ArrowLink>
         </div>
       </div>
     </Section>

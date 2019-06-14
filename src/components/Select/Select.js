@@ -1,7 +1,8 @@
 import React, { createRef, useState } from 'react';
 import classNames from 'classnames';
-
+import { FormattedMessage } from 'react-intl';
 import './Select.css';
+
 export function Select({
   id,
   name,
@@ -11,6 +12,8 @@ export function Select({
   label,
   className,
   onChange,
+  isSmall,
+  isNeedToTranslate = false,
 }) {
   const ref = createRef();
   const [isFocused, setIsFocused] = useState(false);
@@ -19,12 +22,13 @@ export function Select({
     {
       'select--non-empty': Boolean(value),
       'select--focused': isFocused,
+      'select--small': Boolean(isSmall),
     },
     className,
   );
 
-  function handleChange() {
-    onChange(ref.current.value, name);
+  function handleChange(event) {
+    onChange(event.target.value, name);
   }
 
   function handleLabelMouseDown(event) {
@@ -65,13 +69,23 @@ export function Select({
           onBlur={handleBlur}
           onFocus={handleFocus}
         >
-          {/*label && <option disabled>{label}</option>*/}
-          {options.map((option) => {
-            return (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            );
+          {/* {label && <option disabled>{label}</option>} */}
+          {options.map(({ label, value }, index) => {
+            if (isNeedToTranslate) {
+              return (
+                <FormattedMessage id={label} key={`option_${index}`}>
+                  {(translatedLabel) => (
+                    <option value={value}>{translatedLabel}</option>
+                  )}
+                </FormattedMessage>
+              );
+            } else {
+              return (
+                <option key={`option_${index}`} value={value}>
+                  {label}
+                </option>
+              );
+            }
           })}
         </select>
       </div>

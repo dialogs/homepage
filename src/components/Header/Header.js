@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
-import { styled } from 'astroturf';
+import styled from 'astroturf';
 import { Container } from '../Container/Container';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
+import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
 import debounce from 'lodash.debounce';
 import './Header.css';
 
@@ -66,6 +67,9 @@ export function Header({
     if (window.location.href.indexOf('/blog/') > 0) {
       toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
     }
+    if (window.location.href.indexOf('/career/') > 0) {
+      toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
+    }
   }
 
   function getCurrentScroll() {
@@ -117,15 +121,7 @@ export function Header({
       <Container>
         <div className="header__columns">
           <div className="header__col">
-            <div className="header__logo">
-              <Link to={`/${locale}`} className="header__logo-link">
-                <img
-                  src="/images/logo-header.svg"
-                  alt="dialog"
-                  className="header__logo-icon"
-                />
-              </Link>
-            </div>
+            <HeaderLogo to={`/${locale}/`} />
             <nav className="header__menu">
               <ul className="header__menu-list">
                 <li className="header__menu-item">
@@ -172,6 +168,26 @@ export function Header({
                     activeClassName="header__menu-link--active"
                   >
                     <FormattedMessage id="menu_about" />
+                  </Link>
+                </li>
+
+                {/* <li className="header__menu-item">
+                  <Link
+                    to={`/${locale}/career/`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_career" />
+                  </Link>
+                </li> */}
+
+                <li className="header__menu-item">
+                  <Link
+                    to={`/${locale}/support/`}
+                    className="header__menu-link"
+                    activeClassName="header__menu-link--active"
+                  >
+                    <FormattedMessage id="menu_support" />
                   </Link>
                 </li>
               </ul>

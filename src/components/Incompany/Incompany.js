@@ -69,7 +69,7 @@ export function Incompany() {
                 <img src="/images/home/incompany/icon-arrows.svg" alt="" />
                 <ImageFormatted
                   imgClass="dlg"
-                  src="/images/home/incompany/logo-dlg.png"
+                  src="/images/logo.svg"
                   altLangId="alt_dialog"
                 />
               </div>
@@ -98,7 +98,7 @@ export function Incompany() {
                 <img src="/images/home/incompany/icon-arrows.svg" alt="" />
                 <ImageFormatted
                   imgClass="dlg"
-                  src="/images/home/incompany/logo-dlg.png"
+                  src="/images/logo.svg"
                   altLangId="alt_dialog"
                 />
               </div>

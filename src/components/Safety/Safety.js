@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
+import { ArrowLink } from '../ArrowLink/ArrowLink';
 
 import { Section } from '../Section/Section';
 
@@ -63,16 +63,9 @@ export function Safety({ intl: { locale } }) {
             </div>
           </div>
           <div className="safety-requirements__link-box">
-            <Link to={`/${locale}/patents`} className="link--arrow">
-              <span className="link--arrow__text">
-                <FormattedMessage id="link_more" />
-              </span>
-              <img
-                src="/images/svg-icons/arrow-link.svg"
-                alt=""
-                className="link--arrow__icon"
-              />
-            </Link>
+            <ArrowLink to={`/${locale}/patents`} underline>
+              <FormattedMessage id="link_more" />
+            </ArrowLink>
           </div>
         </div>
       </div>

@@ -39,9 +39,9 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
               </div>
               <div className="hero__image">
                 <Image
-                  fadeIn
+                  fadeIn={false}
                   fluid={heroImage.childImageSharp.fluid}
-                  alt={formatMessage({ id: 'alt_hero_header' })}
+                  alt={formatMessage({ id: 'hero_header' })}
                 />
               </div>
             </div>

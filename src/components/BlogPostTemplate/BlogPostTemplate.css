@@ -1,0 +1,10 @@
+@import '../../styles/variables.css';
+
+.blog_post {
+  &__article {
+  }
+  &__roster {
+  }
+  &__subscribe {
+  }
+}
