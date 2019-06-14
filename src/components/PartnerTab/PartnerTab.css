@@ -54,6 +54,7 @@
       padding: 20px 20px 0 20px;
     }
     @media (--tablet-viewport) {
+      padding: 20px 20px 0 20px;
     }
     @media (--tablet-landscape-viewport) {
     }
@@ -67,6 +68,7 @@
       max-width: 100px;
     }
     @media (--tablet-viewport) {
+      max-width: 105px;
     }
     @media (--tablet-landscape-viewport) {
     }
@@ -85,6 +87,20 @@
     padding: 20px 20px 0 20px;
     display: flex;
     flex-direction: column;
+    @media (--mobile-viewport) {
+      padding: 16px 20px 0 20px;
+    }
+    @media (--tablet-viewport) {
+      padding: 0 20px 0 20px;
+    }
+    @media (--tablet-landscape-viewport) {
+    }
+    @media (--laptop-viewport) {
+      padding: 20px 20px 0 20px;
+    }
+    @media (--desktop-viewport) {
+      padding: 20px 20px 0 20px;
+    }
   }
   &__title {
     font-size: 18px;
