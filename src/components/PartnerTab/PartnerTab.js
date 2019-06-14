@@ -15,8 +15,10 @@ export function PartnerTab({
   return (
     <div className="for-partners__tab">
       <div className="tab__header">
-        <img className="tab_icon" src={image} />
-        <a href={href}>{link}</a>
+        <img className="tab__icon" src={image} />
+        <a className="tab__link" href={href}>
+          {link}
+        </a>
       </div>
       <div className="tab__text">
         <h1 className="tab__title">{title}</h1>
