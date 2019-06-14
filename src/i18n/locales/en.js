@@ -57,7 +57,6 @@ module.exports = {
   menu_legal: 'Legal Information',
   menu_bounty: 'Open-source bounty',
   menu_career: 'Career',
-  alt_hero_header: 'Achieve your team goals faster without losing focus',
   alt_messenger: 'Messenger',
   alt_corporate_features: 'Corporate Features',
   alt_integrations: 'Integrations',
