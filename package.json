@@ -12,7 +12,7 @@
     "build": "npm run gatsby:build",
     "format": "prettier --write \"src/**/*.{js,json,css,yml,md}\"",
     "yaspeller:translations": "node utils/translationValues.js | yaspeller --stdin",
-    "yaspeller:markdown": "yaspeller static/content",
+    "yaspeller:markdown": "yaspeller src/vacancies",
     "yaspeller": "npm-run-all -s yaspeller:*"
   },
   "author": "",
