@@ -6,12 +6,11 @@
   padding-bottom: 30px;
 
   @media (--tablet-viewport) {
-    padding-bottom: 45px;
+    padding-bottom: 0;
   }
   @media (--tablet-landscape-viewport) {
     padding-bottom: 50px;
   }
-
   @media (--laptop-viewport) {
     padding-bottom: 80px;
   }
@@ -417,7 +416,7 @@
     margin-top: -10px;
 
     @media (--mobile-viewport) {
-      flex-flow: column-reverse;
+      flex-flow: column;
     }
     @media (--tablet-viewport) {
       height: 580px;
@@ -516,12 +515,11 @@
       font-size: 28px;
       line-height: 36px;
     }
-
     @media (--tablet-viewport) {
       font-size: 40px;
       line-height: 52px;
-      padding-top: 30px;
-      padding-bottom: 20px;
+      padding-top: 0;
+      padding-bottom: 40px;
     }
 
     @media (--tablet-landscape-viewport) {

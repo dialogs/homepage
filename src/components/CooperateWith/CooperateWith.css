@@ -20,6 +20,7 @@
     }
     @media (--tablet-viewport) {
       height: 220px;
+      margin-top: 100px;
     }
 
     @media (--laptop-viewport) {
@@ -46,7 +47,6 @@
     @media (--tablet-viewport) {
       padding-left: 54px;
       margin-right: 0;
-      margin-top: 100px;
     }
     @media (--tablet-landscape-viewport) {
       padding-left: 72px;

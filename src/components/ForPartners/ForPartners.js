@@ -8,7 +8,7 @@ import { PartnerTab } from '../PartnerTab/PartnerTab';
 import debounce from 'lodash.debounce';
 import './ForPartners.css';
 
-const TOP_SCROLL_HIDE_OFFSET2 = 1500;
+const TOP_SCROLL_HIDE_OFFSET2 = 2000;
 const TOP_SCROLL_REMOVE_OFFSET = 4000;
 export function ForPartners() {
   const [isTabSticky, setTabSticky] = useState(false);
