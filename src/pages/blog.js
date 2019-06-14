@@ -9,7 +9,7 @@ import { BlogRoster } from '../components/BlogRoster/BlogRoster';
 import { Subscribe } from '../components/Subscribe/Subscribe';
 
 export default ({
-  data: { featured, allPosts, tags, ruFeatured, enFeatured, ruPosts, enPosts },
+  data: { tags, ruFeatured, enFeatured, ruPosts, enPosts },
   pageContext: { locale, url, originalPath },
 }) => {
   return (
@@ -39,7 +39,7 @@ export default ({
   );
 };
 
-export const query = graphql`
+export const blogQuery = graphql`
   {
     enFeatured: allGhostPost(
       sort: { order: DESC, fields: [published_at] }

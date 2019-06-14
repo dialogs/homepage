@@ -258,3 +258,9 @@ h6 {
 body.scrollBlocked {
   overflow: hidden !important;
 }
+
+/* Helper classes */
+.hide {
+  display: none;
+  visibility: hidden;
+}

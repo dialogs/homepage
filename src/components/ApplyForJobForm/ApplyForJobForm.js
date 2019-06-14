@@ -8,6 +8,7 @@ import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
 import { Select } from '../Select/Select';
 import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
+import './ApplyForJobForm.css';
 
 export function ApplyForJobForm({
   error,
@@ -15,36 +16,12 @@ export function ApplyForJobForm({
   value,
   onSubmit,
   className,
+  cities,
 }) {
-  const dataRu = useStaticQuery(
-    graphql`
-      query {
-        allMarkdownRemark {
-          edges {
-            node {
-              frontmatter {
-                city
-              }
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
-
-  const rawData = dataRu.allMarkdownRemark.edges;
-  const langslug =
-    (typeof window !== 'undefined' && window.location.href.indexOf('/ru/')) >= 0
-      ? '/ru/'
-      : '/en/';
-  const cities = rawData
-    .filter((el) => el.node.fields.slug.indexOf(langslug) >= 0)
-    .map((c) => c.node.frontmatter.city)
-    .filter((value, index, self) => self.indexOf(value) === index);
-
+  // const langslug =
+  //   (typeof window !== 'undefined' && window.location.href.indexOf('/ru/')) >= 0
+  //     ? '/ru/'
+  //     : '/en/';
   const classes = classNames('form', className);
   const [form, setForm] = useState({
     fio: '',
@@ -123,10 +100,16 @@ export function ApplyForJobForm({
               required
             />
             <Select
-              options={cities}
+              options={cities.map((city) => {
+                return {
+                  label: `career_city_${city}`,
+                  value: city,
+                };
+              })}
               value={form.city}
               name="city"
               onChange={handleChange}
+              isNeedToTranslate
             />
           </div>
         </div>

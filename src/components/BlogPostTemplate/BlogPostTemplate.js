@@ -6,7 +6,7 @@ import { Container } from '../Container/Container';
 import { Article } from '../Article/Article';
 import { BlogRoster } from '../BlogRoster/BlogRoster';
 import { Subscribe } from '../Subscribe/Subscribe';
-import './BlogPost.css';
+import './BlogPostTemplate.css';
 
 export default ({
   data: { post, ruRecommended, enRecommended },
@@ -48,7 +48,7 @@ export default ({
   );
 };
 
-export const postFragment = graphql`
+export const blogPostFragment = graphql`
   fragment PostFragment on GhostPost {
     id
     slug

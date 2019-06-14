@@ -149,6 +149,8 @@
     }
 
     &__action {
+      font-weight: 500;
+
       @media (--mobile-viewport) {
         font-size: 16px;
         line-height: 21px;

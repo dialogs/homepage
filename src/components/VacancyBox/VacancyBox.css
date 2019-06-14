@@ -5,7 +5,7 @@
   height: 205px;
   border: 1px solid color-mod(#000 alpha(17.5%));
   margin: 0 0 30px;
-  background-color: #ffffff;
+  background-color: #fff;
   cursor: pointer;
   transition: all 150ms ease;
   flex: 1 1 auto;
@@ -43,11 +43,11 @@
     align-items: center;
     height: 100%;
     padding: 20px 30px;
+    justify-content: space-between;
   }
 
   &__title {
     margin: 20px auto;
-    height: 90%;
     text-align: center;
     font-size: 18px;
     line-height: 23px;

@@ -2,22 +2,21 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import FormattedMetaTags from '../FormattedMetaTags';
 import FormattedOpenGraph from '../FormattedOpenGraph';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import { Page } from '../Page/Page';
 import { Container } from '../Container/Container';
 import { PageHeader } from '../PageHeader/PageHeader';
 import { Section } from '../Section/Section';
-import { Button } from '../Button/Button';
+import { LinkButton } from '../Button/LinkButton';
 import ApplyForJobForm from '../ApplyForJobForm';
 import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
 import { ContainerFluid } from '../ContainerFluid/ContainerFluid';
-import './VacancyLayout.css';
+import './VacancyTemplate.css';
 
-export default ({
-  data: { markdownRemark },
-  pageContext: { locale, url, slug },
-}) => {
+export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
+  const { title, salary, description, city } = vacancy.frontmatter;
+
   function handleBackClick() {
     if (typeof window !== 'undefined') {
       window.history.back();
@@ -38,35 +37,25 @@ export default ({
 
       <Container>
         <div className="vacancy__nav">
-          <button
-            type="button"
-            className="link--back"
-            onClick={handleBackClick}
-          >
-            <img src="/images/svg-icons/arrow-link.svg" alt="" className="" />
+          <Link className="link--back" to={`/${locale}/career/`}>
+            <img src="/images/svg-icons/arrow-link.svg" alt="" />
             <span>
               <FormattedMessage id="job_back" />
             </span>
-          </button>
+          </Link>
         </div>
         <Section className="vacancy_summary">
           <div className="vacancy_summary__wrapper">
-            <div className="vacancy_summary__title">
-              {markdownRemark.frontmatter.title}
-            </div>
-            <div className="vacancy_summary__salary">
-              {markdownRemark.frontmatter.salary}
-            </div>
-            <div className="vacancy_summary__desc">
-              {markdownRemark.frontmatter.description}
-            </div>
-            <Button>
+            <div className="vacancy_summary__title">{title}</div>
+            <div className="vacancy_summary__salary">{salary}</div>
+            <div className="vacancy_summary__desc">{description}</div>
+            <LinkButton href="#apply_for_job_form">
               <FormattedMessage id="job_apply_button" />
-            </Button>
+            </LinkButton>
           </div>
         </Section>
         <Section className="expectations_bonuses">
-          <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+          <div dangerouslySetInnerHTML={{ __html: vacancy.html }} />
         </Section>
       </Container>
       <ContainerFluid>
@@ -74,14 +63,14 @@ export default ({
       </ContainerFluid>
       <Container>
         <Section className="apply">
-          <div id="form">
+          <div id="apply_for_job_form">
             <PageHeader>
               <FormattedMessage id="job_apply_vacancy_header" />
             </PageHeader>
             <div className="vacancy__apply_text">
               <FormattedMessage id="job_apply_vacancy_message" />
             </div>
-            <ApplyForJobForm className="apply__form" />
+            <ApplyForJobForm className="apply__form" cities={[city]} />
           </div>
         </Section>
       </Container>
@@ -91,9 +80,10 @@ export default ({
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    vacancy: markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
+        city
         title
         salary
         description

@@ -1,14 +1,33 @@
-const path = require(`path`);
+const path = require('path');
 const config = require('./server/config');
+const { languages } = require('./src/i18n/locales');
+const { createFilePath } = require('gatsby-source-filesystem');
 const {
   siteMetadata: { siteUrl },
 } = require('./gatsby-config');
-const { languages } = require('./src/i18n/locales');
 
 // Page components
-const blogPost = path.resolve(`./src/components/BlogPost/BlogPost.js`);
+const blogPostTemplate = path.resolve(
+  './src/components/BlogPostTemplate/BlogPostTemplate.js',
+);
+const vacancyPageTemplate = path.resolve(
+  './src/components/VacancyTemplate/VacancyTemplate.js',
+);
 const redirect = path.resolve('./src/i18n/redirect.js');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode });
+
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    });
+  }
+};
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
@@ -70,62 +89,50 @@ exports.onCreatePage = ({ page, actions }) => {
   });
 };
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` });
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    });
-  }
-};
-
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   const promises = [];
-
+  // Create blogposts
   if (config.ghost.apiKey && config.ghost.endpoint) {
     const postsQueryRu = `
+{
+  posts: allGhostPost(
+    sort: { order: DESC, fields: [published_at] },
+    filter: { tags: {elemMatch: { name: {eq: "#ru"} } } }
+  )
     {
-      posts: allGhostPost(
-        sort: { order: DESC, fields: [published_at] },
-        filter: { tags: {elemMatch: { name: {eq: "#ru"} } } }
-      )
-        {
-        edges {
-          post: node {
-            id
-            slug
-            title
-            html
-            publishDate: published_at
-            featureImage: feature_image
-          }
-        }
+    edges {
+      post: node {
+        id
+        slug
+        title
+        html
+        publishDate: published_at
+        featureImage: feature_image
       }
     }
+  }
+}
     `;
     const postsQueryEn = `
+{
+  posts: allGhostPost(
+    sort: { order: DESC, fields: [published_at] },
+    filter: { tags: {elemMatch: { name: {eq: "#en"} } } }
+  )
     {
-      posts: allGhostPost(
-        sort: { order: DESC, fields: [published_at] },
-        filter: { tags: {elemMatch: { name: {eq: "#en"} } } }
-      )
-        {
-        edges {
-          post: node {
-            id
-            slug
-            title
-            html
-            publishDate: published_at
-            featureImage: feature_image
-          }
-        }
+    edges {
+      post: node {
+        id
+        slug
+        title
+        html
+        publishDate: published_at
+        featureImage: feature_image
       }
     }
+  }
+}
     `;
     const createPostsRu = new Promise((resolve, reject) => {
       resolve(
@@ -145,7 +152,7 @@ exports.createPages = ({ graphql, actions }) => {
 
             createPage({
               path: post.url,
-              component: blogPost,
+              component: blogPostTemplate,
               context: {
                 locale: 'ru',
                 slug: post.slug,
@@ -158,6 +165,7 @@ exports.createPages = ({ graphql, actions }) => {
         }),
       );
     });
+
     const createPostsEn = new Promise((resolve, reject) => {
       resolve(
         graphql(postsQueryEn).then((result) => {
@@ -176,7 +184,7 @@ exports.createPages = ({ graphql, actions }) => {
 
             createPage({
               path: post.url,
-              component: blogPost,
+              component: blogPostTemplate,
               context: {
                 locale: 'en',
                 slug: post.slug,
@@ -188,41 +196,52 @@ exports.createPages = ({ graphql, actions }) => {
         }),
       );
     });
+
     promises.push(createPostsRu);
     promises.push(createPostsEn);
   }
 
-  const allVacancies = `
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
+  // Create vacancies
+  const createVacancies = new Promise((resolve, reject) => {
+    const vacanciesQuery = `
+{
+  vacancies: allMarkdownRemark {
+    edges {
+      node {
+        fields {
+          slug
         }
       }
     }
+  }
+}
   `;
 
-  const createAllVacancies = new Promise((resolve, reject) => {
     resolve(
-      graphql(allVacancies).then((result) => {
-        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-          const lang = node.fields.slug.indexOf('/ru/') >= 0 ? 'ru' : 'en';
+      graphql(vacanciesQuery).then(({ errors, data }) => {
+        if (errors) {
+          return reject(errors);
+        }
 
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve(
-              `./src/components/VacancyLayout/VacancyLayout.js`,
-            ),
-            context: {
-              locale: lang,
-              originalPath: node.fields.slug,
-              slug: node.fields.slug,
-              url: siteUrl,
-            },
+        if (!data.vacancies) {
+          return resolve();
+        }
+
+        data.vacancies.edges.forEach(({ node }) => {
+          languages.forEach(({ value }) => {
+            createPage({
+              originalPath: `career${node.fields.slug}`,
+              path: `${value}/career${node.fields.slug}`,
+              component: vacancyPageTemplate,
+              context: {
+                languages,
+                locale: value,
+                routed: true,
+                originalPath: `career${node.fields.slug}`,
+                slug: node.fields.slug,
+                url: siteUrl,
+              },
+            });
           });
         });
 
@@ -231,7 +250,7 @@ exports.createPages = ({ graphql, actions }) => {
     );
   });
 
-  promises.push(createAllVacancies);
+  promises.push(createVacancies);
 
   return Promise.all(promises);
 };

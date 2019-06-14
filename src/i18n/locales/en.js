@@ -524,4 +524,11 @@ and reload the page.
     'Integrate Dialog with any external services and applications - use the messenger interface to work with familiar tools, such as mail, calendars, task managers, cloud storages and much more.',
   about_read_more: 'Read more',
   attach_resume: 'Attach resume',
+
+  career_city_all: 'All cities',
+  career_city_msk: 'Moscow',
+  career_city_nsk: 'Novosibirsk',
+  career_category_all: 'All',
+  career_category_it: 'IT and Development',
+  career_category_marketing: 'Marketing, Advertising, PR',
 };
