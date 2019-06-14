@@ -117,7 +117,7 @@ export function ForPartners() {
               link={<FormattedMessage id="mtraining_tab_link" />}
               description={<FormattedMessage id="mtraining_tab_description" />}
               country={<FormattedMessage id="mtraining_tab_country" />}
-              category={<FormattedMessage id="mmtraining_tab_category" />}
+              category={<FormattedMessage id="mtraining_tab_category" />}
               image="/images/partners/mtraining_icon.svg"
               href="https://www.mastertraining.it/"
             />
