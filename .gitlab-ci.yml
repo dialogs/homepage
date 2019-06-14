@@ -80,6 +80,8 @@ staging:
     url: '${DEV_URL}'
   variables:
     EMAIL_TO: 'oleg@dlg.im'
+    EMAIL_TO_SUPPORT: 'oleg@dlg.im'
+    EMAIL_TO_HR: 'oleg@dlg.im'
   cache: {}
   image: gitlab.transmit.im:5001/gitlab/builders/ansible
   script:
