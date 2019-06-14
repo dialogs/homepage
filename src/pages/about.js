@@ -70,7 +70,7 @@ export default ({
         </Container>
       </section>
 
-      <section className="about__green_section">
+      <section className="about__green_section hide">
         <Container>
           <PageHeader className="about__green_section_header">
             <FormattedMessage id="about_partnership" />
