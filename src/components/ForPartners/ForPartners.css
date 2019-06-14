@@ -39,7 +39,7 @@
     @media (--laptop-viewport) {
     }
     &__block {
-      min-width: 340px;
+      min-width: 310px;
       @media (--mobile-viewport) {
         display: none;
       }
@@ -65,13 +65,13 @@
         margin-left: 0px;
       }
       @media (--tablet-landscape-viewport) {
-        margin-left: 140px;
+        margin-left: 70px;
       }
       @media (--laptop-viewport) {
         margin-left: 70px;
       }
       @media (--desktop-viewport) {
-        margin-left: 140px;
+        margin-left: 90px;
       }
     }
     &__technological {
@@ -101,18 +101,23 @@
         margin-bottom: 30px;
         @media (--mobile-viewport) {
           display: block;
+          margin-bottom: 30px;
         }
         @media (--tablet-viewport) {
           display: block;
+          margin-bottom: 24px;
         }
         @media (--tablet-landscape-viewport) {
           display: none;
+          margin-bottom: 30px;
         }
         @media (--laptop-viewport) {
           display: none;
+          margin-bottom: 30px;
         }
         @media (--desktop-viewport) {
           display: none;
+          margin-bottom: 30px;
         }
       }
       &__text {
@@ -146,7 +151,7 @@
         margin-top: 40px;
       }
       @media (--tablet-viewport) {
-        margin-top: 60px;
+        margin-top: 30px;
       }
       @media (--tablet-landscape-viewport) {
         margin-top: 60px;
@@ -161,9 +166,12 @@
         font-weight: 700;
         margin-bottom: 30px;
         @media (--mobile-viewport) {
+          margin-top: 40px;
+          margin-bottom: 20px;
           display: block;
         }
         @media (--tablet-viewport) {
+          margin-top: 40px;
           display: block;
         }
         @media (--tablet-landscape-viewport) {
@@ -197,12 +205,12 @@
       }
     }
     @media (--mobile-viewport) {
-      margin-bottom: 60px;
+      margin-bottom: 0;
     }
 
     @media (--tablet-viewport) {
       min-height: 830px;
-      margin-bottom: 120px;
+      margin-bottom: 20px;
     }
 
     @media (--tablet-landscape-viewport) {
@@ -308,7 +316,7 @@
     &.sticky {
       position: fixed;
       top: 100px;
-      width: 340px;
+      width: 310px;
     }
 
     @media (--mobile-viewport) {
@@ -321,17 +329,26 @@
       &_wrapper {
         font-size: 32px;
         line-height: 42px;
-        padding-left: 40px;
+        padding-left: 20px;
       }
       &:before {
         content: '';
         display: block;
         float: left;
         margin-top: 15px;
-        margin-right: 20px;
+        margin-right: 10px;
         width: 10px;
         height: 10px;
         background-color: #b9bbfa;
+        @media (--tablet-landscape-viewport) {
+          display: none;
+        }
+        @media (--laptop-viewport) {
+          display: block;
+        }
+        @media (--desktop-viewport) {
+          display: block;
+        }
       }
     }
   }
