@@ -50,6 +50,11 @@ module.exports = [
       '/ru/news/reactions',
       '/ru/news/updates1',
       '/ru/news/asia',
+    ],
+  },
+  {
+    to: '/career/',
+    from: [
       '/ru/jobs',
       '/en/jobs',
       '/ru/jobs/ios',
