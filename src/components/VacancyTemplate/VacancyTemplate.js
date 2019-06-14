@@ -17,12 +17,6 @@ import './VacancyTemplate.css';
 export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
   const { title, salary, description, city } = vacancy.frontmatter;
 
-  function handleBackClick() {
-    if (typeof window !== 'undefined') {
-      window.history.back();
-    }
-  }
-
   return (
     <Page>
       <FormattedMetaTags
