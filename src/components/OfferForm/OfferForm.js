@@ -78,9 +78,25 @@ export function OfferForm({
           label={<FormattedMessage id="form_label_company" />}
           required
         />
-
         <Select
-          options={['1-100', '101-500', '501-1000', '1000+']}
+          options={[
+            {
+              label: '1-100',
+              value: '1-100',
+            },
+            {
+              label: '101-500',
+              value: '101-500',
+            },
+            {
+              label: '501-1000',
+              value: '501-1000',
+            },
+            {
+              label: '1000+',
+              value: '1000+',
+            },
+          ]}
           value={form.users}
           name="users"
           onChange={handleChange}

@@ -36,7 +36,11 @@ export function SecureCommunication({ intl: { locale }, image }) {
           <FormattedMessage id="SecureCommunication_secure">
             {(alt) => (
               <div className="col__image">
-                <Image fadeIn fluid={image.childImageSharp.fluid} alt={alt} />
+                <Image
+                  fadeIn={false}
+                  fluid={image.childImageSharp.fluid}
+                  alt={alt}
+                />
               </div>
             )}
           </FormattedMessage>
@@ -124,7 +128,7 @@ export function SecureCommunication({ intl: { locale }, image }) {
           </ul>
         </div>
         <div className="link-box">
-          <ArrowLink href={`/${locale}/patents/`} underline>
+          <ArrowLink to={`/${locale}/patents/`} underline>
             <FormattedMessage id="SecureCommunication_learn_more" />
           </ArrowLink>
         </div>

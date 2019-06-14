@@ -39,7 +39,7 @@ export default ({
             {(alt) => (
               <div className="promo__image promo__image--main">
                 <Image
-                  fadeIn
+                  fadeIn={false}
                   fluid={promoImage1.childImageSharp.fluid}
                   alt={alt}
                 />
@@ -50,7 +50,7 @@ export default ({
             {(alt) => (
               <div className="promo__image promo__image--small">
                 <Image
-                  fadeIn
+                  fadeIn={false}
                   fluid={promoImage2.childImageSharp.fluid}
                   alt={alt}
                 />

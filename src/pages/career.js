@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { graphql } from 'gatsby';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { Page } from '../components/Page/Page';
@@ -7,14 +8,39 @@ import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Section } from '../components/Section/Section';
 import { Vacancies } from '../components/Vacancies/Vacancies';
-import { ApplyForJob } from '../components/ApplyForJob/ApplyForJob';
+import { ApplyForJobForm } from '../components/ApplyForJobForm/ApplyForJobForm';
 import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
 import ImageFormatted from '../components/ImageFormatted';
 import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
 import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
+import { LinkButton } from '../components/Button/LinkButton';
 import '../styles/jobs.css';
 
-export default ({ pageContext: { locale, url, originalPath } }) => {
+function getCitiesAndCategories(vacancies) {
+  const cities = ['all'];
+  const categories = ['all'];
+
+  for (let vacancy of vacancies) {
+    const { city, category } = vacancy.frontmatter;
+
+    if (!cities.includes(city)) {
+      cities.push(city);
+    }
+
+    if (!categories.includes(category)) {
+      categories.push(category);
+    }
+  }
+
+  return { cities, categories };
+}
+
+export default ({
+  data: { vacancies },
+  pageContext: { locale, url, originalPath },
+}) => {
+  const { cities, categories } = getCitiesAndCategories(vacancies.nodes);
+
   return (
     <Page>
       <FormattedMetaTags
@@ -34,9 +60,9 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
               <PageHeader>
                 <FormattedHTMLMessage id="jobs_join_team" />
               </PageHeader>
-              <a className="button button--default" href="#form">
+              <LinkButton href="#apply_for_job_form">
                 <FormattedMessage id="jobs_apply_button" />
-              </a>
+              </LinkButton>
             </div>
             <img
               className="jobs__image"
@@ -45,7 +71,6 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
             />
           </div>
         </Section>
-
         <Section className="ceo">
           <PageHeader className="ceo__title">
             <FormattedMessage id="jobs_ceo_header" />
@@ -77,11 +102,18 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
           </div>
         </Section>
       </Container>
+
       <ContainerFluid>
         <RecommendEmployee />
       </ContainerFluid>
+
       <Container>
-        <Vacancies lang={locale} />
+        <Vacancies
+          vacancies={vacancies}
+          locale={locale}
+          cities={cities}
+          categories={categories}
+        />
       </Container>
       <ContainerFluid>
         <CompanyPictures />
@@ -109,8 +141,44 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         </Section>
       </Container>
       <Container>
-        <ApplyForJob />
+        <Section className="apply">
+          <div id="apply_for_job_form">
+            <PageHeader>
+              <FormattedMessage id="job_apply_header" />
+            </PageHeader>
+            <div className="apply__job_text">
+              <FormattedMessage id="job_apply_message" />
+            </div>
+
+            <ApplyForJobForm className="apply__form" cities={cities} />
+          </div>
+        </Section>
       </Container>
     </Page>
   );
 };
+
+export const vacanciesQuery = graphql`
+  {
+    vacancies: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      totalCount
+      nodes {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date
+          city
+          category
+          salary
+          tags
+          description
+        }
+      }
+    }
+  }
+`;

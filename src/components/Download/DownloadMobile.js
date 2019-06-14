@@ -84,7 +84,7 @@ export function DownloadMobile({ isEnterprise, locale }) {
                   >
                     {(title) => (
                       <Image
-                        fadeIn
+                        fadeIn={false}
                         fluid={
                           isEnterprise
                             ? enterprisePhoneIos.childImageSharp.fluid
@@ -146,7 +146,7 @@ export function DownloadMobile({ isEnterprise, locale }) {
                   >
                     {(alt) => (
                       <Image
-                        fadeIn
+                        fadeIn={false}
                         fluid={
                           isEnterprise
                             ? enterprisePhoneAndroid.childImageSharp.fluid

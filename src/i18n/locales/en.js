@@ -503,7 +503,7 @@ and reload the page.
   jobs_recommend_title: 'Recommend candidate <br/> for vacancy and get',
   jobs_recommend_award: '$900',
   jobs_recommend_action:
-    'Send your resume<br/> to <a href="mailto:info@dlg.im?subject=Feedback on vacancy from site&body=I would like to recommend employee">info@dlg.im</a>',
+    'Send your resume<br/> to <a href="mailto:{email}?subject=Feedback on vacancy from site&body=I would like to recommend employee">{email}</a>',
   job_apply_header: 'Did not you find what you were looking for?',
   job_apply_message:
     'If you have not found the vacancy you are interested in, do not despair - fill out this form and send it to us. We will definitely consider your resume.',
@@ -524,4 +524,11 @@ and reload the page.
     'Integrate Dialog with any external services and applications - use the messenger interface to work with familiar tools, such as mail, calendars, task managers, cloud storages and much more.',
   about_read_more: 'Read more',
   attach_resume: 'Attach resume',
+
+  career_city_all: 'All cities',
+  career_city_msk: 'Moscow',
+  career_city_nsk: 'Novosibirsk',
+  career_category_all: 'All',
+  career_category_it: 'IT and Development',
+  career_category_marketing: 'Marketing, Advertising, PR',
 };

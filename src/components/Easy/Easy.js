@@ -36,7 +36,7 @@ export function Easy() {
                   <FormattedMessage id="alt_easy">
                     {(alt) => (
                       <Image
-                        fadeIn
+                        fadeIn={false}
                         className="easy-img"
                         fluid={image.childImageSharp.fluid}
                         alt={alt}

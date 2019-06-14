@@ -1,101 +1,122 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { VacanciesWithTabs } from '../VacanciesWithTabs/VacanciesWithTabs';
+import React, { useState } from 'react';
+import classNames from 'classnames';
+import { PageHeader } from '../PageHeader/PageHeader';
+import { FormattedMessage } from 'react-intl';
+import { Select } from '../Select/Select';
+import { Tabs, Tab } from '../Tabs';
+import { Collapsible } from '../Collapsible/Collapsible';
+import { VacancyBox } from '../VacancyBox/VacancyBox';
+import './Vacancies.css';
 
-export function Vacancies({ className, children, lang }) {
-  const dataRu = useStaticQuery(
-    graphql`
-      query {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-          totalCount
-          edges {
-            node {
-              id
-              frontmatter {
-                title
-                date
-                city
-                category
-                tags
-                salary
-                description
-              }
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
+export function Vacancies({ vacancies, cities, categories, locale }) {
+  const [currentCity, setCurrentCity] = useState(cities[0]);
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
-  const rawData = dataRu.allMarkdownRemark.edges;
-  let vacanciesData = {};
-  vacanciesData.Ru = {};
-  vacanciesData.En = {};
+  function isCategoryHasVacancies(categoryForSearch) {
+    const vacanciesInCategory = vacancies.nodes.find(
+      ({ frontmatter: { category, city } }) => {
+        return category === categoryForSearch && city === currentCity;
+      },
+    );
 
-  const rawVacanciesRu = rawData.filter(
-    (el) => el.node.fields.slug.indexOf('/ru/') >= 0,
-  );
-  const rawVacanciesEn = rawData.filter(
-    (el) => el.node.fields.slug.indexOf('/en/') >= 0,
-  );
-  vacanciesData.Ru.Cities = ['Все'];
-  vacanciesData.Ru.Categories = ['Все'];
-  vacanciesData.Ru.Vacancies = [];
-
-  rawVacanciesRu.forEach((el) => {
-    const city = el.node.frontmatter.city;
-    if (vacanciesData.Ru.Cities.indexOf(city) < 0) {
-      vacanciesData.Ru.Cities.push(city);
-    }
-    const category = el.node.frontmatter.category;
-    if (vacanciesData.Ru.Categories.indexOf(category) < 0) {
-      vacanciesData.Ru.Categories.push(category);
-    }
-
-    vacanciesData.Ru.Vacancies.push({
-      title: el.node.frontmatter.title,
-      city: city,
-      category: category,
-      salary: el.node.frontmatter.salary,
-      tags: el.node.frontmatter.tags,
-      date: el.node.frontmatter.date,
-      description: el.node.frontmatter.description,
-      slug: el.node.fields.slug,
-      id: el.node.id,
-    });
-  });
-  vacanciesData.En.Cities = ['All'];
-  vacanciesData.En.Categories = ['All'];
-  vacanciesData.En.Vacancies = [];
-  rawVacanciesEn.forEach((el) => {
-    const city = el.node.frontmatter.city;
-    if (vacanciesData.En.Cities.indexOf(city) < 0) {
-      vacanciesData.En.Cities.push(city);
-    }
-    const category = el.node.frontmatter.category;
-    if (vacanciesData.En.Categories.indexOf(category) < 0) {
-      vacanciesData.En.Categories.push(category);
-    }
-
-    vacanciesData.En.Vacancies.push({
-      title: el.node.frontmatter.title,
-      city: city,
-      category: category,
-      salary: el.node.frontmatter.salary,
-      tags: el.node.frontmatter.tags,
-      date: el.node.frontmatter.date,
-      description: el.node.frontmatter.description,
-      slug: el.node.fields.slug,
-      id: el.node.id,
-    });
-  });
-
-  if (lang === 'ru') {
-    return <VacanciesWithTabs lang="ru" data={vacanciesData.Ru} />;
+    return Boolean(vacanciesInCategory);
   }
 
-  return <VacanciesWithTabs lang="en" data={vacanciesData.En} />;
+  function handleCityChange(city) {
+    setCurrentCity(city);
+    setCurrentCategory(categories[0]);
+  }
+
+  function renderCollapsible() {
+    return categories.map((currentCat, index) => {
+      const currentCategoryVacancies = vacancies.nodes.filter((vacancy) => {
+        const { city, category } = vacancy.frontmatter;
+        if (currentCity === 'all' || currentCity === city) {
+          if (currentCat === 'all' || currentCat === category) {
+            return vacancy;
+          }
+        }
+      });
+
+      if (!currentCategoryVacancies.length) {
+        return null;
+      }
+
+      return (
+        <Collapsible
+          className={classNames(
+            'vacancies__content',
+            currentCategory === currentCat
+              ? 'vacancies__content--visible'
+              : null,
+          )}
+          title={<FormattedMessage id={`career_category_${currentCat}`} />}
+          key={`cotegory_collapsible_${index}`}
+        >
+          <div className="vacancies__boxes">
+            {currentCategoryVacancies.map((vacancy, index) => {
+              const {
+                frontmatter: { title, tags },
+                fields: { slug },
+              } = vacancy;
+
+              return (
+                <VacancyBox
+                  title={title}
+                  link={`/${locale}/career${slug}`}
+                  tags={tags}
+                  locale={locale}
+                  key={`vacancy_${index}`}
+                />
+              );
+            })}
+          </div>
+        </Collapsible>
+      );
+    });
+  }
+
+  return (
+    <div className="vacancies">
+      <PageHeader>
+        <FormattedMessage id="jobs_vacancies_header" />
+      </PageHeader>
+      <Select
+        options={cities.map((city) => {
+          return {
+            label: `career_city_${city}`,
+            value: city,
+          };
+        })}
+        value={currentCity}
+        name="cities"
+        onChange={handleCityChange}
+        isSmall
+        isNeedToTranslate
+      />
+      <div className="vacancies__filter">
+        <Tabs onChange={setCurrentCategory} current={currentCategory}>
+          {categories.map((category, index) => {
+            const tabClassName = classNames({
+              hide:
+                category !== 'all' &&
+                currentCity !== 'all' &&
+                !isCategoryHasVacancies(category),
+            });
+
+            return (
+              <Tab
+                value={category}
+                key={`category_tab_${index}`}
+                className={tabClassName}
+              >
+                <FormattedMessage id={`career_category_${category}`} />
+              </Tab>
+            );
+          })}
+        </Tabs>
+      </div>
+      <div className="collapsible">{renderCollapsible()}</div>
+    </div>
+  );
 }

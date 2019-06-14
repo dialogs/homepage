@@ -1,7 +1,8 @@
 import React, { createRef, useState } from 'react';
 import classNames from 'classnames';
-
+import { FormattedMessage } from 'react-intl';
 import './Select.css';
+
 export function Select({
   id,
   name,
@@ -12,6 +13,7 @@ export function Select({
   className,
   onChange,
   isSmall,
+  isNeedToTranslate = false,
 }) {
   const ref = createRef();
   const [isFocused, setIsFocused] = useState(false);
@@ -68,12 +70,22 @@ export function Select({
           onFocus={handleFocus}
         >
           {/* {label && <option disabled>{label}</option>} */}
-          {options.map((option) => {
-            return (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            );
+          {options.map(({ label, value }, index) => {
+            if (isNeedToTranslate) {
+              return (
+                <FormattedMessage id={label} key={`option_${index}`}>
+                  {(translatedLabel) => (
+                    <option value={value}>{translatedLabel}</option>
+                  )}
+                </FormattedMessage>
+              );
+            } else {
+              return (
+                <option key={`option_${index}`} value={value}>
+                  {label}
+                </option>
+              );
+            }
           })}
         </select>
       </div>

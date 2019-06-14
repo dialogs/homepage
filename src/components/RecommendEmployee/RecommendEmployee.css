@@ -37,6 +37,10 @@
       padding: 30px 0;
     }
 
+    @media (--desktop-viewport) {
+      padding-left: calc((100% - 1320px) / 2);
+    }
+
     &__title {
       @media (--mobile-viewport) {
         font-size: 16px;
@@ -149,6 +153,8 @@
     }
 
     &__action {
+      font-weight: 500;
+
       @media (--mobile-viewport) {
         font-size: 16px;
         line-height: 21px;
