@@ -55,6 +55,7 @@
         padding-bottom: 60px;
         display: block;
         min-width: 310px;
+        margin-left: -20px;
       }
     }
     &__tabs {
