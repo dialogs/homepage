@@ -512,6 +512,115 @@ and reload the page.
   job_back: 'All vacancies',
   job_apply_button: 'Send resume',
   jobs_vacancies_header: 'Vacancies',
+  partners_header_title: 'Dialog Affiliate Program',
+  partners_header_text:
+    'Cooperate with Dialog, earn with us and improve the quality of your service.',
+  partners_info_header: 'Types and objectives of the partnership',
+  partners_info_business: 'Business partner',
+  partners_info_technology: 'Technological partner',
+  partners_business_info:
+    'Partner engaged in the sale of the company products Dialogue and working on a motivational program.',
+  partners_technology_info:
+    'Partner who develops solutions and products that integrate with Dialog products.',
+  partners_business_info_who:
+    'Who: System integrator, Software reseller, or / and service provider',
+  partners_business_info_target:
+    'Purpose: Expansion of the list of proposed software. Import independent and secure internal communications solution with wide integration capabilities.',
+  partners_technology_title: 'Technological partner',
+  partners_business_title: 'Business partner',
+  partners_technology_info_who: 'Who: Technology companies.',
+  partners_technology_info_target:
+    'Purpose: Expansion of functionality of own products of products. Exchange of audiences.',
+  partners_cooperate_text:
+    'Partnership terms are not limited to two options. For more information, contact the manager.',
+  partners_available_title: 'Partners available:',
+  partners_available_materials:
+    'Informational, educational and marketing materials',
+  partners_available_access: 'Access to customer events',
+  partners_available_cross: 'Cross-promotion',
+  partners_available_following:
+    'Technical and legal support of the transaction / clients',
+  for_partners_title: 'Dialog Partners',
+  partners_technological_nav_title: 'Technology partners',
+  partners_business_nav_title: 'Business partners',
+  partners_technological_text: 'Take advantage of collaborative integrations',
+  partners_business_text:
+    'Work with leading system integrators and resellers to deploy, manage, and expand corporate communications.',
+  partners_cooperate_button: 'Cooperate',
+  for_partners_tab_country: 'Country',
+  for_partners_tab_category: 'Status',
+  myoffice_tab_title: 'MyOffice',
+  myoffice_tab_link: 'myoffice.ru',
+  myoffice_tab_description:
+    'A set of office applications running on all major operating systems, including mobile, as well as through a web interface.',
+  myoffice_tab_country: 'Russia',
+  myoffice_tab_category: 'Software',
+  chatme_tab_title: 'Chatme AI',
+  chatme_tab_link: 'chatme.ai',
+  chatme_tab_description:
+    'Developer of artificial intelligence tools for effective communications.',
+  chatme_tab_country: 'Russia',
+  chatme_tab_category: 'Artificial Intelligence',
+  fasttrack_tab_title: 'Fasttrack',
+  fasttrack_tab_link: 'fstrk.io',
+  fasttrack_tab_description:
+    'Automation of marketing and operational business processes in instant messengers.',
+  fasttrack_tab_country: 'Russia',
+  fasttrack_tab_category: 'Platform to create bots',
+  basealt_tab_title: 'BaseAlt',
+  basealt_tab_link: 'basealt.ru',
+  basealt_tab_description:
+    'Developer software platform to create ready-made solutions and IT-infrastructure of any scale.',
+  basealt_tab_country: 'Russia',
+  basealt_tab_category: 'Operating system',
+  mtraining_tab_title: 'Mastertraining',
+  mtraining_tab_link: 'mastertraining.it',
+  mtraining_tab_description:
+    'Mastertraining develops solutions in the field of corporate telecommunications and hardware for training.',
+  mtraining_tab_country: 'Italy',
+  mtraining_tab_category: 'Telecommunications',
+  omp_tab_title: 'Open mobile platform',
+  omp_tab_link: 'omprussia.ru',
+  omp_tab_description:
+    'Open Mobile Platform LLC is developing the Aurora Mobile Operating System (MOS) (formerly Sailfish). Since 2018, part of the Rostelecom Group.',
+  omp_tab_country: 'Russia',
+  omp_tab_category: 'Mobile Operating System',
+  beclever_tab_title: 'beClever',
+  beclever_tab_link: 'beclever.online',
+  beclever_tab_description:
+    'The company provides a range of services for software development, support, reengineering of existing information systems and a wide range of infrastructure and applied IT solutions.',
+  beclever_tab_country: 'Russia',
+  beclever_tab_category: 'Telecommunications',
+  softline_tab_title: 'Softline',
+  softline_tab_link: 'softline.ru',
+  softline_tab_description:
+    'Leading global provider of IT solutions and services.',
+  softline_tab_country: 'Eastern Europe, America, Asia',
+  softline_tab_category: 'System integrator',
+  dm_tab_title: 'DM Solutions',
+  dm_tab_link: 'dm-solutions.ru',
+  dm_tab_description:
+    'Developer and supplier of IT solutions, services and services.',
+  dm_tab_country: 'Italy',
+  dm_tab_category: 'Telecommunications',
+  swemel_tab_title: 'SWEMEL',
+  swemel_tab_link: 'swemel.ru',
+  swemel_tab_description:
+    'The multidisciplinary innovative enterprise “SVEMEL” was founded in 1989 in order to provide technical and service support for projects of information systems of public authorities and management.',
+  swemel_tab_country: 'Russia',
+  swemel_tab_category: 'System integrator',
+  rb_tab_title: 'RBtechnologies',
+  rb_tab_link: 'rbtechnologies.ru',
+  rb_tab_description:
+    'The company specializes in the implementation and implementation of IT solutions for companies in the financial sector. ',
+  rb_tab_country: 'Russia',
+  rb_tab_category: 'Mobile Operating System',
+  croc_tab_title: 'CROC',
+  croc_tab_link: 'croc.ru',
+  croc_tab_description:
+    'The Russian system integrator, for over 14 years, is among the top 10 largest Russian IT companies.',
+  croc_tab_country: 'Russia',
+  croc_tab_category: 'Technology Review Partner',
   about_more_than_messenger: 'dialog - is a lot more than just a messenger',
   about_company:
     'The company has been developing a corporate messenger dialog for more than 3 years. Dialog unites specialists in the field of IT-communications, data security, real-time distributed systems, Big Data and other areas related to messaging. Currently, dialog employs 90 people who at various times have been developing products for the largest companies leading in the field of security systems and data storage.',
