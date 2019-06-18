@@ -15,15 +15,10 @@ export function EffectiveCommunication({ image }) {
           <FormattedMessage id="EffectiveCommunication_effective_communications" />
         </Heading>
         <div className="image">
-          <FormattedMessage id="EffectiveCommunication_effective_communications">
-            {(alt) => (
-              <Image
-                fadeIn={false}
-                fluid={image.childImageSharp.fluid}
-                alt={alt}
-              />
-            )}
-          </FormattedMessage>
+          <img
+            className="effective-communication__image"
+            src="/images/solution/effective-communication.svg"
+          />
         </div>
       </div>
       <div className="column">
