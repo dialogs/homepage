@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
-import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -36,6 +35,7 @@ export function SecureCommunication({ intl: { locale }, image }) {
           <img
             className="secure-communication__image"
             src="/images/solution/secure-communication.svg"
+            alt=""
           />
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Input } from '../Input/Input';
 import { FileInput } from '../FileInput/FileInput';
 import { Checkbox } from '../Checkbox/Checkbox';

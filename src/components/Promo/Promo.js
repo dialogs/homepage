@@ -14,7 +14,11 @@ export function Promo() {
           <FormattedMessage id="solutions_simple" />
         </PageHeader>
         <div className="promo__image">
-          <img className="promo__img" src="/images/solution/promo_img.svg" />
+          <img
+            className="promo__img"
+            src="/images/solution/promo_img.svg"
+            alt=""
+          />
         </div>
       </div>
     </Section>

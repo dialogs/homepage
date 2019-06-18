@@ -1,23 +1,17 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Promo } from '../components/Promo/Promo';
 import SecureCommunication from '../components/SecureCommunication';
 import { EffectiveCommunication } from '../components/EffectiveCommunication/EffectiveCommunication';
 import { Partnership } from '../components/Partnership/Partnership';
 import { Offer } from '../components/Offer/Offer';
 
-export default ({
-  pageContext: { locale, url, originalPath },
-  data: { promoImage1, promoImage2, secureImage, effectiveImage },
-}) => {
+export default ({ pageContext: { locale, url, originalPath } }) => {
   return (
     <Page>
       <FormattedMetaTags
@@ -32,8 +26,8 @@ export default ({
 
       <Container>
         <Promo />
-        <SecureCommunication image={secureImage} />
-        <EffectiveCommunication image={effectiveImage} />
+        <SecureCommunication />>
+        <EffectiveCommunication />
         <Partnership />
         <Offer />
       </Container>

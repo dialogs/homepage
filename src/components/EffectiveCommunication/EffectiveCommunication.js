@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -18,6 +17,7 @@ export function EffectiveCommunication({ image }) {
           <img
             className="effective-communication__image"
             src="/images/solution/effective-communication.svg"
+            alt=""
           />
         </div>
       </div>
