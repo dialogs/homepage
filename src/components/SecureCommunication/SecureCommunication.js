@@ -33,17 +33,10 @@ export function SecureCommunication({ intl: { locale }, image }) {
           </div>
         </div>
         <div className="col box--architecture__image">
-          <FormattedMessage id="SecureCommunication_secure">
-            {(alt) => (
-              <div className="col__image">
-                <Image
-                  fadeIn={false}
-                  fluid={image.childImageSharp.fluid}
-                  alt={alt}
-                />
-              </div>
-            )}
-          </FormattedMessage>
+          <img
+            className="secure-communication__image"
+            src="/images/solution/secure-communication.svg"
+          />
         </div>
       </div>
 
