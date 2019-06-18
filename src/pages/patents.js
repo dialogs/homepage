@@ -1,14 +1,23 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import ImageFormatted from '../components/ImageFormatted';
-
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 // import { PartnersTechnological } from '../components/PartnersTechnological/PartnersTechnological';
 
-export default ({ pageContext: { locale, url, originalPath } }) => {
+export default ({
+  pageContext: {
+    intl: { language, originalPath },
+  },
+  data: {
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+}) => {
   return (
     <Container>
       <FormattedMetaTags
@@ -17,8 +26,8 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_patents"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
 
       <div className="license__column-content">
@@ -285,3 +294,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
     </Container>
   );
 };
+
+export const pageQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`;

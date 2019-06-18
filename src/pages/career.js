@@ -36,8 +36,15 @@ function getCitiesAndCategories(vacancies) {
 }
 
 export default ({
-  data: { vacancies },
-  pageContext: { locale, url, originalPath },
+  data: {
+    vacancies,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+  pageContext: {
+    intl: { language, originalPath },
+  },
 }) => {
   const { cities, categories } = getCitiesAndCategories(vacancies.nodes);
 
@@ -49,8 +56,8 @@ export default ({
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_jobs"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
 
       <Container>
@@ -110,7 +117,7 @@ export default ({
       <Container>
         <Vacancies
           vacancies={vacancies}
-          locale={locale}
+          locale={language}
           cities={cities}
           categories={categories}
         />
@@ -178,6 +185,11 @@ export const vacanciesQuery = graphql`
           tags
           description
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

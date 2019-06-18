@@ -1,12 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
+import { Link } from 'gatsby';
 import removeMarkdown from 'remove-markdown';
-
 import { ArticleHeader } from '../ArticleHeader/ArticleHeader';
 import { Tag } from '../Tag/Tag';
 import { removeServiceTags } from '../../utils/removeServiceTags';
-import './Article.css';
 import { FormattedMessage } from 'react-intl';
+import './Article.css';
 
 export function Article({
   title,
@@ -24,20 +24,10 @@ export function Article({
     <article className={classes}>
       <header className="article__header">
         <div className="article__header__block article__header__block--left">
-          <button
-            type="button"
-            className="link--back"
-            onClick={() => {
-              if (typeof window !== 'undefined') {
-                window.history.back();
-              }
-            }}
-          >
+          <Link className="link--back" to={`/${locale}/blog/`}>
             <img src="/images/svg-icons/arrow-link.svg" alt="" className="" />
-            <span>
-              <FormattedMessage id="article_back" />
-            </span>
-          </button>
+            <FormattedMessage id="article_back" />
+          </Link>
           <div className="article-image">
             <img src={featureImage} alt={title} />
           </div>

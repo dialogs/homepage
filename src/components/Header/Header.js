@@ -62,6 +62,7 @@ export function Header({
   const [isSticky, setSticky] = useState(false);
   const [isStickyVisible, setStickyVisible] = useState(false);
   let prevScrollPosition = 0;
+
   let toLink = `/${locale === 'ru' ? 'en/' : 'ru/'}${originalPath || ''}`;
   if (typeof window !== 'undefined') {
     if (window.location.href.indexOf('/blog/') > 0) {

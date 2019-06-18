@@ -34,6 +34,7 @@
     "gatsby-plugin-express": "1.1.6",
     "gatsby-plugin-facebook-pixel": "1.0.3",
     "gatsby-plugin-google-tagmanager": "2.0.15",
+    "gatsby-plugin-intl": "0.2.4",
     "gatsby-plugin-layout": "1.0.15",
     "gatsby-plugin-manifest": "2.1.1",
     "gatsby-plugin-postcss": "2.0.7",
