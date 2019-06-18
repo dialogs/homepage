@@ -31,33 +31,7 @@ export default ({
       />
 
       <Container>
-        <PageHeader className="solution">
-          <FormattedMessage id="solutions_simple" />
-        </PageHeader>
-        <Promo>
-          <FormattedMessage id="alt_solution_big">
-            {(alt) => (
-              <div className="promo__image promo__image--main">
-                <Image
-                  fadeIn={false}
-                  fluid={promoImage1.childImageSharp.fluid}
-                  alt={alt}
-                />
-              </div>
-            )}
-          </FormattedMessage>
-          <FormattedMessage id="alt_solution_small">
-            {(alt) => (
-              <div className="promo__image promo__image--small">
-                <Image
-                  fadeIn={false}
-                  fluid={promoImage2.childImageSharp.fluid}
-                  alt={alt}
-                />
-              </div>
-            )}
-          </FormattedMessage>
-        </Promo>
+        <Promo />
         <SecureCommunication image={secureImage} />
         <EffectiveCommunication image={effectiveImage} />
         <Partnership />
@@ -96,7 +70,7 @@ export const query = graphql`
       relativePath: { eq: "images/solution/effective-communication.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 750) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
