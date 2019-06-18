@@ -136,13 +136,11 @@ module.exports = {
   compliance_index_3:
     '“Dialog” is licensed by the Federal Security Service of Russia to develop, produce and distribute cryptographic tools',
   compliance_text_1:
-    'The software development company “Dialog” is registered as an accredited IT organization in the Russian Federation (No. 436 dated 09/07/2016).',
+    'The company-developer Dialog is in the register of accredited organizations operating in the field of information technology in the territory of the Russian Federation (No. 436 from 09/07/2016).',
   compliance_text_2:
-    'dialog messenger complies with the requirements of the Unified Registry of Russian Programs for Electronic Computers and Databases, and is also included in the national software registry.',
+    'Dialog messenger complies with the requirements of the Unified Register of Russian programs for electronic computers and databases, consists in the registry of domestic software.',
   compliance_text_3:
-    'The software development company “Dialog” is licensed by the Federal Service for Technical and Export Control (FSTEC) of Russia to protect confidential information and to develop and produce tools for securing it.',
-  compliance_text_4:
-    'The software development company “Dialog” is licensed by the Federal Security Service (FSS) of Russia to develop, produce, and distribute encryption tools, as well as information systems and telecommunications systems secured by encryption tools.',
+    'Licenses of FSTEC of Russia for activities on technical protection of confidential information (TKKI), as well as on the development activities and the production of confidential information security tools (CIPP).',
   incompany_header:
     'We make communication simple and effective for any company',
   incompany_subtitle:
@@ -431,29 +429,29 @@ module.exports = {
   SecureCommunication_secure: 'Secure communications',
   SecureCommunication_secure_arcitecture: 'On-premise solution',
   SecureCommunication_on_premise:
-    'Unlike cloud solutions, dialog do not possess keys to decrypt your communication and access infrastructure. This architecture provides better protection against any abuser.',
+    'On-premise. Unlike cloud solutions, Dialog does not have the keys to decrypt your communication and access to infrastructure. This architecture offers the best protection against any intruder.',
   SecureCommunication_high_standards: 'High security standards',
   SecureCommunication_encryption: 'Data encryption',
   SecureCommunication_tls_dtls:
-    'Client-server encryption based on TLS and DTLS protocols for a secure dialog connection.',
+    'For a secure connection, dialog uses client-server encryption using TLS and DTLS protocols.',
   SecureCommunication_audit: 'Security audit',
   SecureCommunication_regular_audit:
-    'Dialog cooperates with leading security experts to conduct regular audits on its products.',
+    'dialog collaborates with leading security experts to conduct regular audits of their products.',
   SecureCommunication_antivirus: 'Integration with anti-virus software',
   SecureCommunication_icap:
-    'dialog supports integration with anti-virus software via the ICAP protocol. Messenger blocks malicious files from being sent.',
+    'dialog supports ICAP antivirus integration. The messenger blocks malicious files when sending.',
   SecureCommunication_siem:
-    'SIEM technology provides real-time analysis, dialog makes in possible to promptly respond to security events before any damage is done.',
+    'The SIEM technology provides a real-time analysis dialog that allows you to quickly respond to security events and allows you to respond to them before damage occurs.',
   SecureCommunication_dlp: 'Integration with DLP',
   SecureCommunication_dlp_icap:
-    'dialog integrates with data loss prevention systems based on the ICAP protocol, blocking messages and attachments containing confidential information from being sent. Consequently, it minimizes the risk of deliberate or accidental leaks of confidential information.',
+    'dialog integrates with ICAP data leakage prevention systems blocking the sending of messages and attachments containing confidential information. The risk of deliberate or accidental leakage of confidential information has been minimized.',
   SecureCommunication_requirements: 'Compliance',
   SecureCommunication_developer:
     'The National Software Registry of the Ministry of Digital Development, Communications and Mass Media (MinComSvyaz)',
   SecureCommunication_learn_more: 'Learn more',
   EffectiveCommunication_effective_communications: 'Effective Communications',
   EffectiveCommunication_increased_productivity:
-    'Increasing employee productivity by means of:',
+    'Increasing employee productivity by:',
   EffectiveCommunication_increased_speed:
     'Instant messaging to increase the speed of communication within working groups',
   EffectiveCommunication_fast:

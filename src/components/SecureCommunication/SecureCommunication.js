@@ -122,9 +122,6 @@ export function SecureCommunication({ intl: { locale }, image }) {
             <li>
               <FormattedMessage id="compliance_text_3" />
             </li>
-            <li>
-              <FormattedMessage id="compliance_text_4" />
-            </li>
           </ul>
         </div>
         <div className="link-box">
