@@ -1,20 +1,16 @@
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { IntlProvider, addLocaleData } from 'react-intl';
+import styled from 'astroturf';
+
 import { HeadScripts } from '../HeadScripts/HeadScripts';
 import FormattedMetaTags from '../FormattedMetaTags';
 import FormattedOpenGraph from '../FormattedOpenGraph';
-import styled from 'astroturf';
-
 import Header from '../Header';
 import Modals from '../Modals';
 import { Footer } from '../Footer/Footer';
-import { localeData, messages } from '../../i18n/locales';
 import { safeStorage } from '../../utils/safeStorage';
 
 import '../../styles/index.css';
-
-addLocaleData(localeData);
 
 const Main = styled.main`
   @import '../../styles/variables.css';
@@ -40,9 +36,13 @@ const Main = styled.main`
   }
 `;
 
-export default ({ children, pageContext }) => {
-  const { locale = 'en', originalPath, url } = pageContext;
-
+export default ({
+  children,
+  pageContext: {
+    intl: { language, originalPath },
+    siteUrl,
+  },
+}) => {
   useEffect(() => {
     // Check if user goes here from somwere else
     // eslint-disable-next-line no-restricted-globals
@@ -65,27 +65,23 @@ export default ({ children, pageContext }) => {
   }, []);
 
   return (
-    <IntlProvider locale={locale} messages={messages[locale]}>
-      <>
-        <Helmet htmlAttributes={{ lang: locale }} />
-        <FormattedMetaTags
-          titleId="meta_title_default"
-          descriptionId="meta_description_default"
-        />
-        <FormattedOpenGraph
-          idOgTitle="og_title_default"
-          idOgDescription="og_description_default"
-          url={url}
-          path={`/${locale}${originalPath || ''}`}
-        />
-        <HeadScripts />
-        <Main>
-          <Header locale={locale} originalPath={originalPath || ''} />
-          {children}
-          <Footer locale={locale} />
-          <Modals />
-        </Main>
-      </>
-    </IntlProvider>
+    <Main>
+      <Helmet htmlAttributes={{ lang: language }} />
+      <FormattedMetaTags
+        titleId="meta_title_default"
+        descriptionId="meta_description_default"
+      />
+      <FormattedOpenGraph
+        idOgTitle="og_title_default"
+        idOgDescription="og_description_default"
+        url={siteUrl}
+        path={`/${language}${originalPath || ''}`}
+      />
+      <HeadScripts />
+      <Header locale={language} originalPath={originalPath || ''} />
+      {children}
+      <Footer locale={language} />
+      <Modals />
+    </Main>
   );
 };

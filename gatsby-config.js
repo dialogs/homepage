@@ -1,5 +1,4 @@
-const { isDev, ghost } = require('./server/config');
-const siteUrl = 'https://dlg.im';
+const { isDev, ghost, languages, siteUrl } = require('./server/config');
 
 module.exports = {
   siteMetadata: {
@@ -102,6 +101,15 @@ module.exports = {
       options: {
         name: 'vacancies',
         path: `${__dirname}/src/vacancies`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/i18n`,
+        languages: languages,
+        defaultLanguage: 'ru',
+        redirect: true,
       },
     },
     { resolve: `gatsby-transformer-remark` },

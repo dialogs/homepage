@@ -20,8 +20,15 @@ const officesLinks = {
 };
 
 export default ({
-  pageContext: { locale, url, originalPath },
-  data: { teamImage },
+  pageContext: {
+    intl: { language, originalPath },
+  },
+  data: {
+    teamImage,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
 }) => {
   return (
     <div className="about page">
@@ -31,8 +38,8 @@ export default ({
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_about"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
 
       <Container>
@@ -159,7 +166,7 @@ export default ({
           <div className="about__licenses-link-box">
             <ArrowLink
               underline
-              to={`/${locale}/patents/`}
+              to={`/${language}/patents/`}
               className="about__licenses-link"
             >
               <FormattedMessage id="link_more_licenses" />
@@ -250,13 +257,18 @@ export default ({
   );
 };
 
-export const query = graphql`
-  query {
+export const pageQuery = graphql`
+  {
     teamImage: file(relativePath: { eq: "images/about/corporate.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1320) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

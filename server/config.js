@@ -13,6 +13,8 @@ const isDev = process.env['NODE_ENV'] !== 'production';
 
 const config = {
   isDev,
+  languages: ['ru', 'en'],
+  siteUrl: env('SITE_URL', 'https://dlg.im'),
   dialog: {
     webhook: env('DIALOG_WEBHOOK', null),
   },
