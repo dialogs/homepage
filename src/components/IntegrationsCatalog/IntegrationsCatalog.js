@@ -60,9 +60,30 @@ export function IntegrationsCatalog() {
                 category={<FormattedMessage id="asana_category" />}
                 language={<FormattedMessage id="asana_language" />}
               />
-              <IntegrationCard />
-              <IntegrationCard />
-              <IntegrationCard />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
+              <IntegrationCard
+                title={<FormattedMessage id="reminder_title" />}
+                description={<FormattedMessage id="reminder_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/reminder_icon.svg"
+                category={<FormattedMessage id="reminder_category" />}
+                language={<FormattedMessage id="reminder_language" />}
+              />
+              <IntegrationCard
+                title={<FormattedMessage id="asana_title" />}
+                description={<FormattedMessage id="asana_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/asana_icon.svg"
+                category={<FormattedMessage id="asana_category" />}
+                language={<FormattedMessage id="asana_language" />}
+              />
             </div>
           </Collapsible>
           <Collapsible
@@ -73,7 +94,14 @@ export function IntegrationsCatalog() {
             title={<FormattedMessage id="webhooks" />}
           >
             <div className="integrations__content__body">
-              <IntegrationCard />
+              <IntegrationCard
+                title={<FormattedMessage id="reminder_title" />}
+                description={<FormattedMessage id="reminder_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/reminder_icon.svg"
+                category={<FormattedMessage id="reminder_category" />}
+                language={<FormattedMessage id="reminder_language" />}
+              />
               <IntegrationCard
                 title={<FormattedMessage id="asana_title" />}
                 description={<FormattedMessage id="asana_description" />}
@@ -82,8 +110,22 @@ export function IntegrationsCatalog() {
                 category={<FormattedMessage id="asana_category" />}
                 language={<FormattedMessage id="asana_language" />}
               />
-              <IntegrationCard />
-              <IntegrationCard />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
             </div>
           </Collapsible>
           <Collapsible
@@ -94,8 +136,22 @@ export function IntegrationsCatalog() {
             title={<FormattedMessage id="zapier" />}
           >
             <div className="integrations__content__body">
-              <IntegrationCard />
-              <IntegrationCard />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
               <IntegrationCard
                 title={<FormattedMessage id="asana_title" />}
                 description={<FormattedMessage id="asana_description" />}
@@ -104,7 +160,14 @@ export function IntegrationsCatalog() {
                 category={<FormattedMessage id="asana_category" />}
                 language={<FormattedMessage id="asana_language" />}
               />
-              <IntegrationCard />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
             </div>
           </Collapsible>
           <Collapsible
@@ -115,10 +178,38 @@ export function IntegrationsCatalog() {
             title={<FormattedMessage id="graphql" />}
           >
             <div className="integrations__content__body">
-              <IntegrationCard />
-              <IntegrationCard />
-              <IntegrationCard />
-              <IntegrationCard />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
+              <IntegrationCard
+                title={<FormattedMessage id="asana_title" />}
+                description={<FormattedMessage id="asana_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/asana_icon.svg"
+                category={<FormattedMessage id="asana_category" />}
+                language={<FormattedMessage id="asana_language" />}
+              />
+              <IntegrationCard
+                title={<FormattedMessage id="google_title" />}
+                description={<FormattedMessage id="google_description" />}
+                link={<FormattedMessage id="asana_link" />}
+                image="/images/integrations/google_icon.svg"
+                category={<FormattedMessage id="google_category" />}
+                language={<FormattedMessage id="google_language" />}
+              />
             </div>
           </Collapsible>
         </div>

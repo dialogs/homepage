@@ -156,7 +156,7 @@
       height: 222px;
     }
     @media (--laptop-viewport) {
-      width: 834px;
+      width: 750px;
       height: 222px;
     }
     @media (--desktop-viewport) {
