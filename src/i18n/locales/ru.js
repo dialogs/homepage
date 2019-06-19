@@ -526,6 +526,43 @@ module.exports = {
   attach_resume: 'Прикрепить резюме',
 
   integrations_title: 'Интеграции делают Dialog еще лучше',
+  possibilities_header: 'Расширяйте возможности мессенджера',
+  possibilities_subtitle:
+    'Подключайте Dialog к десяткам сторонних приложений и систем через:',
+  botsdk: 'BotSDK',
+  botsdk_description:
+    'Создавайте чат-ботов самостоятельно. В настоящее время SDK доступен для JS, Java и Python.',
+  botsdk_category1: 'Python',
+  botsdk_category2: 'Java',
+  botsdk_category3: 'JavaScript',
+  botsdk_category4: 'Docs',
+  webhooks: 'Webhooks',
+  webhooks_description:
+    'Функции Dialog в WebHooks как простой способ получения автоматических сообщений и обновления данных, отправленных в текстовый канал на вашем сервере.',
+  zapier: 'Zapier',
+  zapier_description:
+    'Используйте данные и происходящие события в более чем 1000 интеграций для автоматизации вашего рабочего процесса.',
+  zapier_category1: 'Настройте интеграцию прямо сейчас',
+  graphql: 'GraphQL',
+  graphql_description: 'Работайте с данными приложения через GraphQL.',
+  api: 'API',
+  api_description:
+    'Благодаря нашему API вы можете создавать собственные интеграции и настраивать dialog под вашу команду и бизнес. ',
+  api_category1: 'Документация',
+  integrations_header: 'Каталог интеграций',
+  integrations_subtitle: 'Наши наиболее популярные интеграции',
+  bots: 'Боты',
+  design: 'Дизайн',
+  communication: 'Коммуникации',
+  asana_title: 'Asana Bot',
+  asana_description: 'Бот быстрого создания напоминаний ',
+  asana_link: 'Источник кода',
+  asana_language: 'Python',
+  asana_category: 'Бот',
+  integrations_card_language: 'Язык',
+  integrations_card_category: 'Категория',
+  invite_text:
+    'Чтобы попасть в каталог интеграций, сообщите нам о своей работе в @botsfordialog. Мы просим, ​​чтобы перечисленные здесь интеграции были хорошо протестированы и включали файл README с четкими инструкциями по установке.',
 
   career_city_all: 'Все города',
   career_city_msk: 'Москва',
