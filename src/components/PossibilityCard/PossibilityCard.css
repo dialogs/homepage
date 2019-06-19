@@ -12,7 +12,7 @@
     height: 320px;
     width: 100%;
     margin-right: 0;
-    margin-bottom: 60px;
+    margin-bottom: 24px;
   }
   @media (--tablet-viewport) {
     height: 320px;
@@ -105,10 +105,11 @@
     @media (--mobile-viewport) {
       display: block;
       margin-top: 20px;
-      margin-right: 0;
+      margin-right: auto;
     }
   }
   &__title {
+    font-weight: 700;
     @media (--mobile-viewport) {
       display: block;
       margin-bottom: 30px;

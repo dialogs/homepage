@@ -14,7 +14,7 @@ export function PossibilityCard({
   return (
     <div className="possibility__card">
       <div className="content__body">
-        <h1 className="content__title">{title}</h1>
+        <p className="content__title">{title}</p>
         <img className="content__icon" src={image} alt="" />
         <div className="content__text">{description}</div>
         <div className="content__categories">
