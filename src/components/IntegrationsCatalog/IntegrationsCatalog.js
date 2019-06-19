@@ -10,7 +10,7 @@ import { IntegrationCard } from '../IntegrationCard/IntegrationCard';
 import './IntegrationsCatalog.css';
 
 export function IntegrationsCatalog() {
-  const [tab, setTab] = useState('marketing');
+  const [tab, setTab] = useState('bots');
 
   return (
     <Section className="integrations">
