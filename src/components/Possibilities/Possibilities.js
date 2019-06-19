@@ -10,7 +10,7 @@ import { PossibilityCard } from '../PossibilityCard/PossibilityCard';
 import './Possibilities.css';
 
 export function Possibilities() {
-  const [tab, setTab] = useState('marketing');
+  const [tab, setTab] = useState('botsdk');
 
   return (
     <Section className="possibilities">
