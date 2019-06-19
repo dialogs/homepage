@@ -11,7 +11,7 @@
   border: 1px solid rgba(0, 0, 0, 0.5);
   @media (--mobile-viewport) {
     height: 260px;
-    width: 280px;
+    width: 100%;
     margin-right: 0;
   }
   @media (--tablet-viewport) {

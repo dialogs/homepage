@@ -26,11 +26,11 @@ export function IntegrationCard({
       </div>
       <div className="card__footer">
         <div className="card__language">
-          <FormattedMessage id="for_partners_tab_country" />
+          <FormattedMessage id="integrations_card_language" />
           <p className="card__language__info">{language}</p>
         </div>
         <div className="card__category">
-          <FormattedMessage id="for_partners_tab_category" />
+          <FormattedMessage id="integrations_card_category" />
           <p className="card__category__info">{category}</p>
         </div>
       </div>
