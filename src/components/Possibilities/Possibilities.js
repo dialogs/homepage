@@ -115,6 +115,39 @@ export function Possibilities() {
           </Collapsible>
         </div>
       </div>
+      <div className="possibilities__wrapper__mobile">
+        <PossibilityCard
+          image="/images/integrations/botsdk_icon.svg"
+          description={<FormattedMessage id="botsdk_description" />}
+          category1={<FormattedMessage id="botsdk_category1" />}
+          category2={<FormattedMessage id="botsdk_category2" />}
+          category3={<FormattedMessage id="botsdk_category3" />}
+          category4={<FormattedMessage id="botsdk_category4" />}
+          title="BotSDK"
+        />
+        <PossibilityCard
+          image="/images/integrations/webhooks_icon.svg"
+          description={<FormattedMessage id="webhooks_description" />}
+          title="BotSDK"
+        />
+        <PossibilityCard
+          image="/images/integrations/zapier_icon.svg"
+          description={<FormattedMessage id="zapier_description" />}
+          category1={<FormattedMessage id="zapier_category1" />}
+          title="BotSDK"
+        />
+        <PossibilityCard
+          image="/images/integrations/graphql_icon.svg"
+          description={<FormattedMessage id="graphql_description" />}
+          title="BotSDK"
+        />
+        <PossibilityCard
+          image="/images/integrations/api_icon.svg"
+          description={<FormattedMessage id="api_description" />}
+          category1={<FormattedMessage id="api_category1" />}
+          title="BotSDK"
+        />
+      </div>
     </Section>
   );
 }
