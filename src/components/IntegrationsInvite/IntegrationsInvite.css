@@ -4,6 +4,13 @@
   padding-top: 0;
   padding-bottom: 30px;
 
+  @media (--mobile-viewport) {
+    padding-bottom: 0;
+  }
+  @media (--tablet-viewport) {
+    padding-bottom: 30px;
+  }
+
   &__wrapper {
     height: 220px;
     display: flex;
@@ -53,7 +60,7 @@
       margin-right: calc(-2 * var(--margin-container-side));
     }
     @media (--desktop-viewport) {
-      margin-right: calc(-3 * var(--margin-container-side));
+      margin-right: calc(-2 * var(--margin-container-side));
       width: calc(65vw + var(--margin-container-side));
     }
     &__text {
