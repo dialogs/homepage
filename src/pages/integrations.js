@@ -7,6 +7,7 @@ import { Container } from '../components/Container/Container';
 import { IntegrationsPromo } from '../components/IntegrationsPromo/IntegrationsPromo';
 import { Possibilities } from '../components/Possibilities/Possibilities';
 import { IntegrationsCatalog } from '../components/IntegrationsCatalog/IntegrationsCatalog';
+import { IntegrationsInvite } from '../components/IntegrationsInvite/IntegrationsInvite';
 
 export default ({ pageContext: { locale, url, originalPath } }) => {
   return (
@@ -25,6 +26,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         <IntegrationsPromo />
         <Possibilities />
         <IntegrationsCatalog />
+        <IntegrationsInvite />
       </Container>
     </Page>
   );
