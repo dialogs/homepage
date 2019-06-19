@@ -85,6 +85,17 @@
     line-height: 18px;
     text-align: right;
     letter-spacing: 0.01em;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 18px;
+      height: 2px;
+      width: 100%;
+      background: #b9bbfa;
+      background: var(--color-secondary);
+    }
   }
   &__text {
     padding: 10px 20px 0 20px;
