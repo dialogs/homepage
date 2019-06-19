@@ -14,7 +14,18 @@ import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
 import { ContainerFluid } from '../ContainerFluid/ContainerFluid';
 import './VacancyTemplate.css';
 
-export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
+export default ({
+  data: {
+    vacancy,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+  pageContext: {
+    slug,
+    intl: { language },
+  },
+}) => {
   const { title, salary, description, city } = vacancy.frontmatter;
 
   return (
@@ -25,13 +36,13 @@ export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_vacancy"
-        url={url}
-        path={`/${locale}${slug}`}
+        url={siteUrl}
+        path={`/${language}${slug}`}
       />
 
       <Container>
         <div className="vacancy__nav">
-          <Link className="link--back" to={`/${locale}/career/`}>
+          <Link className="link--back" to={`/${language}/career/`}>
             <img src="/images/svg-icons/arrow-link.svg" alt="" />
             <span>
               <FormattedMessage id="job_back" />
@@ -81,6 +92,11 @@ export const query = graphql`
         title
         salary
         description
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

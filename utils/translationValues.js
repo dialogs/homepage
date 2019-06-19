@@ -1,5 +1,5 @@
-const ru = require('../src/i18n/locales/ru');
-const en = require('../src/i18n/locales/en');
+const ru = require('../src/i18n/ru.json');
+const en = require('../src/i18n/en.json');
 
 for (const property in ru) {
   console.log(ru[property]);
