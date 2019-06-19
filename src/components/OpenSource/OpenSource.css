@@ -1,0 +1,210 @@
+.open {
+  padding-top: 0;
+  @media (--mobile-viewport) {
+    padding-top: 0;
+  }
+  @media (--tablet-viewport) {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+  @media (--tablet-landscape-viewport) {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+  @media (--laptop-viewport) {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+  @media (--desktop-viewport) {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+  & .heading {
+    @media (--mobile-viewport) {
+      font-size: 28px;
+      line-height: 30px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 40px;
+      line-height: 42px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 60px;
+      line-height: 78px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 60px;
+      line-height: 78px;
+    }
+    @media (--desktop-viewport) {
+      font-size: 60px;
+      line-height: 78px;
+    }
+  }
+  &__wrapper {
+    @media (--mobile-viewport) {
+      display: flex;
+      flex-direction: column;
+    }
+    @media (--tablet-viewport) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (--tablet-landscape-viewport) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (--laptop-viewport) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (--desktop-viewport) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__item {
+      @media (--mobile-viewport) {
+        width: 100%;
+      }
+      @media (--tablet-viewport) {
+        width: 40%;
+      }
+      @media (--tablet-landscape-viewport) {
+        width: 40%;
+      }
+      @media (--laptop-viewport) {
+        width: 40%;
+      }
+      @media (--desktop-viewport) {
+        width: 40%;
+      }
+    }
+  }
+  &__title {
+    font-weight: 700;
+    @media (--mobile-viewport) {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 40px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 53px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 32px;
+      line-height: 42px;
+    }
+    @media (--desktop-viewport) {
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+  &__text {
+    margin-top: 25px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    @media (--mobile-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @media (--desktop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    &:before {
+      content: '';
+      display: block;
+      float: left;
+      width: 20px;
+      height: 20px;
+      margin-right: 30px;
+      margin-bottom: 20px;
+      background-color: #b9bbfa;
+    }
+  }
+  &__footer {
+  }
+  &__subtitle {
+    font-weight: 700;
+    margin-top: 60px;
+    @media (--mobile-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @media (--desktop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+  &__bounties {
+    display: flex;
+    margin-bottom: 36px;
+    @media (--mobile-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @media (--desktop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+  &__bounty {
+    position: relative;
+    margin-right: 40px;
+    font-size: 18px;
+    line-height: 23px;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: #b9bbfa;
+      background: var(--color-secondary);
+    }
+  }
+}

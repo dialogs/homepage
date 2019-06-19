@@ -8,6 +8,7 @@ import { IntegrationsPromo } from '../components/IntegrationsPromo/IntegrationsP
 import { Possibilities } from '../components/Possibilities/Possibilities';
 import { IntegrationsCatalog } from '../components/IntegrationsCatalog/IntegrationsCatalog';
 import { IntegrationsInvite } from '../components/IntegrationsInvite/IntegrationsInvite';
+import { OpenSource } from '../components/OpenSource/OpenSource';
 
 export default ({ pageContext: { locale, url, originalPath } }) => {
   return (
@@ -27,6 +28,7 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         <Possibilities />
         <IntegrationsCatalog />
         <IntegrationsInvite />
+        <OpenSource />
       </Container>
     </Page>
   );
