@@ -81,4 +81,21 @@
     margin-right: 20px;
     margin-top: 40px;
   }
+  &__title {
+    @media (--mobile-viewport) {
+      display: block;
+    }
+    @media (--tablet-viewport) {
+      display: none;
+    }
+    @media (--tablet-landscape-viewport) {
+      display: none;
+    }
+    @media (--laptop-viewport) {
+      display: none;
+    }
+    @media (--desktop-viewport) {
+      display: none;
+    }
+  }
 }

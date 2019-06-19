@@ -9,10 +9,12 @@ export function PossibilityCard({
   category2,
   category3,
   category4,
+  title,
 }) {
   return (
     <div className="possibility__card">
       <div className="content__body">
+        <h1 className="content__title">{title}</h1>
         <img className="content__icon" src={image} alt="" />
         <div className="content__text">{description}</div>
         <div className="content__categories">
