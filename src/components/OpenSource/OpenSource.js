@@ -14,12 +14,14 @@ export function OpenSource() {
           <p className="open__title">
             <FormattedMessage id="open_dev_title" />
           </p>
-          <p className="open__text">
-            <FormattedMessage id="open_dev_portfolio" />
-          </p>
-          <p className="open__text">
-            <FormattedMessage id="open_dev_experience" />
-          </p>
+          <ul className="list list--secondary">
+            <li className="open__text">
+              <FormattedMessage id="open_dev_portfolio" />
+            </li>
+            <li className="open__text">
+              <FormattedMessage id="open_dev_experience" />
+            </li>
+          </ul>
           <div className="open__footer">
             <p className="open__subtitle">
               <FormattedMessage id="open_dev_subtitle" />
@@ -38,12 +40,14 @@ export function OpenSource() {
           <p className="open__title">
             <FormattedMessage id="open_clients_title" />
           </p>
-          <p className="open__text">
-            <FormattedMessage id="open_clients_community" />
-          </p>
-          <p className="open__text">
-            <FormattedMessage id="open_clients_libraries" />
-          </p>
+          <ul className="list list--secondary">
+            <p className="open__text">
+              <FormattedMessage id="open_clients_community" />
+            </p>
+            <p className="open__text">
+              <FormattedMessage id="open_clients_libraries" />
+            </p>
+          </ul>
         </div>
       </div>
     </Section>
