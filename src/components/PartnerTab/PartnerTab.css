@@ -35,16 +35,6 @@
     margin-right: 20px;
   }
 }
-@media (--mobile-viewport) {
-}
-@media (--tablet-viewport) {
-}
-@media (--tablet-landscape-viewport) {
-}
-@media (--laptop-viewport) {
-}
-@media (--desktop-viewport) {
-}
 .tab {
   &__header {
     display: flex;
@@ -78,10 +68,22 @@
     }
   }
   &__link {
+    height: 18px;
     font-size: 14px;
     line-height: 18px;
     text-align: right;
     letter-spacing: 0.01em;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: #b9bbfa;
+      background: var(--color-secondary);
+    }
   }
   &__text {
     padding: 20px 20px 0 20px;
