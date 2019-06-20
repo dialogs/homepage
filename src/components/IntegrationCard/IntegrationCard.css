@@ -5,33 +5,33 @@
   flex-direction: column;
   justify-content: space-between;
   height: 220px;
-  width: 439px;
+  flex: 1 1 auto;
   margin-right: 20px;
   margin-bottom: 20px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   @media (--mobile-viewport) {
     height: 260px;
-    width: 100%;
+    flex: 0 0 100%;
     margin-right: 0;
   }
   @media (--tablet-viewport) {
     height: 260px;
-    width: 210px;
+    flex: 0 0 45%;
     margin-right: 20px;
   }
   @media (--tablet-landscape-viewport) {
     height: 220px;
-    width: 310px;
+    flex: 0 0 45%;
     margin-right: 20px;
   }
   @media (--laptop-viewport) {
     height: 220px;
-    width: 365px;
+    flex: 0 0 47%;
     margin-right: 20px;
   }
   @media (--desktop-viewport) {
     height: 220px;
-    width: 439px;
+    flex: 0 0 47%;
     margin-right: 20px;
   }
 }
