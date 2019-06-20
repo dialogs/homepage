@@ -41,12 +41,12 @@ export function OpenSource() {
             <FormattedMessage id="open_clients_title" />
           </p>
           <ul className="list list--secondary">
-            <p className="open__text">
+            <li className="open__text">
               <FormattedMessage id="open_clients_community" />
-            </p>
-            <p className="open__text">
+            </li>
+            <li className="open__text">
               <FormattedMessage id="open_clients_libraries" />
-            </p>
+            </li>
           </ul>
         </div>
       </div>
