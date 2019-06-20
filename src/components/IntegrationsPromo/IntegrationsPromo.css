@@ -27,6 +27,7 @@
 }
 
 .promo {
+  width: 100vw;
   padding-top: 0;
   padding-bottom: 20px;
 
@@ -76,7 +77,7 @@
       margin-left: calc(-1 * var(--margin-container-side));
     }
     @media (--tablet-viewport) {
-      width: 768px;
+      width: 100vw;
       height: 468px;
       margin-left: calc(-1 * var(--margin-container-side));
     }
