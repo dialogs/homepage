@@ -13,9 +13,6 @@ import { Offer } from '../components/Offer/Offer';
 import '../styles/partners.css';
 
 export default ({ pageContext: { locale, url, originalPath } }) => {
-  console.log('layout', locale);
-  console.log('layout', url);
-  console.log('layout', originalPath);
   return (
     <Page>
       <FormattedMetaTags
