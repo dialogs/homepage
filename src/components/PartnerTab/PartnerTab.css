@@ -8,7 +8,7 @@
   flex: 1 1 auto;
   margin-right: 20px;
   margin-bottom: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid color-mod(#000 alpha(17.5%));
   @media (--mobile-viewport) {
     height: 320px;
     flex: 0 0 100%;
