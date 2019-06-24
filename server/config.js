@@ -18,7 +18,7 @@ const config = {
   dialog: {
     webhook: env('DIALOG_WEBHOOK', null),
   },
-  email_to: env('EMAIL_TO', 'info@dlg.im'),
+  email_to: env('EMAIL_TO', 'info@dlg.im,zvzt9de6@robot.zapier.com'),
   email_to_support: env('EMAIL_TO_SUPPORT', 'support@dlg.im'),
   email_to_hr: env('EMAIL_TO_HR', 'hire@dlg.im'),
   email: {
