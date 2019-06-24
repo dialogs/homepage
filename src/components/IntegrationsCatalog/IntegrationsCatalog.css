@@ -4,7 +4,7 @@
   padding-top: 30px;
 
   @media (--mobile-viewport) {
-    padding-bottom: 20px;
+    padding-top: 20px;
     padding-bottom: 40px;
   }
 
@@ -69,39 +69,15 @@
   }
 
   &__box {
-    width: 100%;
-    @media (--tablet-viewport) {
-      width: 470px;
-    }
-    @media (--tablet-landscape-viewport) {
-      width: 730px;
-    }
-    @media (--laptop-viewport) {
-      width: 800px;
-    }
-    @media (--desktop-viewport) {
+    width: 70%;
+    @media (--mobile-viewport) {
       width: 100%;
     }
   }
   &__tabs {
-    width: 420px;
+    width: 30%;
     font-size: 32px;
     line-height: 42px;
-
-    @media (--mobile-viewport) {
-    }
-    @media (--tablet-viewport) {
-      width: 181px;
-    }
-    @media (--tablet-landscape-viewport) {
-      width: 243px;
-    }
-    @media (--laptop-viewport) {
-      width: 340px;
-    }
-    @media (--desktop-viewport) {
-      width: 420px;
-    }
   }
 
   &__tabs {

@@ -143,30 +143,11 @@
   }
 
   &__box {
-    width: 834px;
+    width: 69%;
     height: 222px;
-
-    @media (--mobile-viewport) {
-    }
-    @media (--tablet-viewport) {
-      width: 470px;
-      height: 222px;
-    }
-    @media (--tablet-landscape-viewport) {
-      width: 634px;
-      height: 222px;
-    }
-    @media (--laptop-viewport) {
-      width: 750px;
-      height: 222px;
-    }
-    @media (--desktop-viewport) {
-      width: 834px;
-      height: 222px;
-    }
   }
   &__tabs {
-    width: 3400px;
+    width: 30%;
     font-size: 32px;
     line-height: 42px;
 
