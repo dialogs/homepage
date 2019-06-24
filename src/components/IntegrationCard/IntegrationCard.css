@@ -35,36 +35,11 @@
     margin-right: 20px;
   }
 }
-@media (--mobile-viewport) {
-}
-@media (--tablet-viewport) {
-}
-@media (--tablet-landscape-viewport) {
-}
-@media (--laptop-viewport) {
-}
-@media (--desktop-viewport) {
-}
 .card {
   &__header {
     display: flex;
     justify-content: space-between;
     padding: 20px 20px 0 20px;
-    @media (--mobile-viewport) {
-      padding: 20px 20px 0 20px;
-    }
-    @media (--tablet-viewport) {
-      padding: 20px 20px 0 20px;
-    }
-    @media (--tablet-landscape-viewport) {
-      padding: 20px 20px 0 20px;
-    }
-    @media (--laptop-viewport) {
-      padding: 20px 20px 0 20px;
-    }
-    @media (--desktop-viewport) {
-      padding: 20px 20px 0 20px;
-    }
   }
   &__icon {
     @media (--mobile-viewport) {
@@ -73,12 +48,6 @@
     @media (--tablet-viewport) {
       max-width: 105px;
     }
-    @media (--tablet-landscape-viewport) {
-    }
-    @media (--laptop-viewport) {
-    }
-    @media (--desktop-viewport) {
-    }
   }
   &__link {
     font-size: 14px;
@@ -86,6 +55,7 @@
     text-align: right;
     letter-spacing: 0.01em;
     position: relative;
+    cursor: pointer;
     &:before {
       content: '';
       position: absolute;
@@ -98,7 +68,7 @@
     }
   }
   &__text {
-    padding: 10px 20px 0 20px;
+    padding: 0 20px 0 20px;
     display: flex;
     flex-direction: column;
     @media (--mobile-viewport) {
@@ -107,33 +77,12 @@
     @media (--tablet-viewport) {
       padding: 0 20px 0 20px;
     }
-    @media (--tablet-landscape-viewport) {
-      padding: 0 20px 0 20px;
-    }
-    @media (--laptop-viewport) {
-      padding: 0 20px 0 20px;
-    }
-    @media (--desktop-viewport) {
-      padding: 0 20px 0 20px;
-    }
   }
   &__title {
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 16px;
+    line-height: 21px;
     margin: 0;
     letter-spacing: 0.28px;
-    @media (--mobile-viewport) {
-      font-size: 16px;
-      line-height: 21px;
-    }
-    @media (--tablet-viewport) {
-      font-size: 16px;
-      line-height: 21px;
-    }
-    @media (--tablet-landscape-viewport) {
-      font-size: 16px;
-      line-height: 21px;
-    }
     @media (--laptop-viewport) {
       font-size: 18px;
       line-height: 23px;
