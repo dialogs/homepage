@@ -81,7 +81,7 @@ export default ({
       <Header locale={language} originalPath={originalPath || ''} />
       {children}
       <Footer locale={language} />
-      <Modals />
+      <Modals language={language} />
     </Main>
   );
 };

@@ -29,7 +29,7 @@ export default ({
       />
 
       <Container>
-        <Support />
+        <Support language={language} />
       </Container>
     </Page>
   );

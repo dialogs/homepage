@@ -7,7 +7,14 @@ import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
 import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
 
-export function SupportForm({ error, pending, value, onSubmit, className }) {
+export function SupportForm({
+  error,
+  pending,
+  value,
+  onSubmit,
+  className,
+  language,
+}) {
   const classes = classNames('form', className);
   const [form, setForm] = useState({
     email: '',
@@ -20,7 +27,7 @@ export function SupportForm({ error, pending, value, onSubmit, className }) {
     event.preventDefault();
 
     if (form.agree) {
-      onSubmit({ ...form, form: 'support' });
+      onSubmit({ ...form, form: 'support', siteLanguage: language });
     }
   }
 

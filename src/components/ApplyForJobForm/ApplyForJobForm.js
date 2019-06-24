@@ -16,6 +16,7 @@ export function ApplyForJobForm({
   onSubmit,
   className,
   cities,
+  language,
 }) {
   const classes = classNames('form', className);
   const [form, setForm] = useState({
@@ -31,7 +32,7 @@ export function ApplyForJobForm({
   function handleSubmit(event) {
     event.preventDefault();
     if (form.agree) {
-      onSubmit({ ...form, form: 'apply' });
+      onSubmit({ ...form, form: 'apply', siteLanguage: language });
     }
   }
 

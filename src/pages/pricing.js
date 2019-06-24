@@ -159,7 +159,7 @@ export default ({
           </div>
         </Section>
         <div id="prices_offer_form">
-          <Offer />
+          <Offer language={language} />
         </div>
       </Container>
     </Page>

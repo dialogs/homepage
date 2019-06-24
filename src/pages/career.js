@@ -156,8 +156,11 @@ export default ({
             <div className="apply__job_text">
               <FormattedMessage id="job_apply_message" />
             </div>
-
-            <ApplyForJobForm className="apply__form" cities={cities} />
+            <ApplyForJobForm
+              className="apply__form"
+              cities={cities}
+              language={language}
+            />
           </div>
         </Section>
       </Container>
