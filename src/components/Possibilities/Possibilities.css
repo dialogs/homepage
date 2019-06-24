@@ -2,26 +2,28 @@
 
 .possibilities {
   padding-top: 30px;
-  padding-bottom: 30px;
 
   @media (--mobile-viewport) {
     padding-bottom: 20px;
   }
 
   @media (--tablet-viewport) {
+    padding-bottom: 30px;
   }
 
   @media (--tablet-landscape-viewport) {
     padding-top: 60px;
+    padding-bottom: 40px;
   }
 
   @media (--laptop-viewport) {
     padding-top: 80px;
+    padding-bottom: 60px;
   }
 
   @media (--desktop-viewport) {
     padding-top: 80px;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
   }
 
   &__title,
@@ -117,12 +119,10 @@
       display: none;
     }
     @media (--tablet-viewport) {
-      min-height: 300px;
     }
 
     &__mobile {
-      display: flex;
-      flex-direction: column;
+      display: none;
       @media (--mobile-viewport) {
         display: flex;
         flex-direction: column;
@@ -130,20 +130,11 @@
       @media (--tablet-viewport) {
         display: none;
       }
-      @media (--tablet-landscape-viewport) {
-        display: none;
-      }
-      @media (--laptop-viewport) {
-        display: none;
-      }
-      @media (--desktop-viewport) {
-        display: none;
-      }
     }
   }
 
   &__box {
-    width: 69%;
+    width: 70%;
     height: 222px;
   }
   &__tabs {
@@ -151,25 +142,15 @@
     font-size: 32px;
     line-height: 42px;
 
-    @media (--mobile-viewport) {
-    }
     @media (--tablet-viewport) {
-      width: 181px;
       font-size: 20px;
       line-height: 26px;
     }
     @media (--tablet-landscape-viewport) {
-      width: 243px;
       font-size: 24px;
       line-height: 31px;
     }
     @media (--laptop-viewport) {
-      width: 340px;
-      font-size: 32px;
-      line-height: 42px;
-    }
-    @media (--desktop-viewport) {
-      width: 340px;
       font-size: 32px;
       line-height: 42px;
     }

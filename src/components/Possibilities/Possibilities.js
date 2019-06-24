@@ -123,29 +123,29 @@ export function Possibilities() {
           category2={<FormattedMessage id="botsdk_category2" />}
           category3={<FormattedMessage id="botsdk_category3" />}
           category4={<FormattedMessage id="botsdk_category4" />}
-          title="BotSDK"
+          title={<FormattedMessage id="botsdk" />}
         />
         <PossibilityCard
           image="/images/integrations/webhooks_icon.svg"
           description={<FormattedMessage id="webhooks_description" />}
-          title="BotSDK"
+          title={<FormattedMessage id="webhooks" />}
         />
         <PossibilityCard
           image="/images/integrations/zapier_icon.svg"
           description={<FormattedMessage id="zapier_description" />}
           category1={<FormattedMessage id="zapier_category1" />}
-          title="BotSDK"
+          title={<FormattedMessage id="zapier" />}
         />
         <PossibilityCard
           image="/images/integrations/graphql_icon.svg"
           description={<FormattedMessage id="graphql_description" />}
-          title="BotSDK"
+          title={<FormattedMessage id="graphql" />}
         />
         <PossibilityCard
           image="/images/integrations/api_icon.svg"
           description={<FormattedMessage id="api_description" />}
           category1={<FormattedMessage id="api_category1" />}
-          title="BotSDK"
+          title={<FormattedMessage id="api" />}
         />
       </div>
     </Section>
