@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .open {
   padding-top: 0;
   @media (--mobile-viewport) {
@@ -42,42 +44,18 @@
     }
   }
   &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
     @media (--mobile-viewport) {
-      display: flex;
       flex-direction: column;
-    }
-    @media (--tablet-viewport) {
-      display: flex;
-      justify-content: space-between;
-    }
-    @media (--tablet-landscape-viewport) {
-      display: flex;
-      justify-content: space-between;
-    }
-    @media (--laptop-viewport) {
-      display: flex;
-      justify-content: space-between;
-    }
-    @media (--desktop-viewport) {
-      display: flex;
-      justify-content: space-between;
     }
 
     &__item {
+      width: 45%;
       @media (--mobile-viewport) {
         width: 100%;
-      }
-      @media (--tablet-viewport) {
-        width: 40%;
-      }
-      @media (--tablet-landscape-viewport) {
-        width: 40%;
-      }
-      @media (--laptop-viewport) {
-        width: 40%;
-      }
-      @media (--desktop-viewport) {
-        width: 40%;
       }
     }
   }
