@@ -2,6 +2,7 @@
 
 .possibilities {
   padding-top: 30px;
+  padding-bottom: 30px;
 
   @media (--mobile-viewport) {
     padding-bottom: 20px;
@@ -15,11 +16,11 @@
   }
 
   @media (--laptop-viewport) {
-    padding-top: 90px;
+    padding-top: 80px;
   }
 
   @media (--desktop-viewport) {
-    padding-top: 40px;
+    padding-top: 80px;
     padding-bottom: 50px;
   }
 
