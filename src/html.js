@@ -20,12 +20,6 @@ export default function HTML(props) {
           }}
         />
         {props.headComponents}
-        <script
-          id="mcjs"
-          dangerouslySetInnerHTML={{
-            __html: `!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/f831d33796c354b01cc5ba971/79ad79633c984497d7e222d10.js");`,
-          }}
-        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
