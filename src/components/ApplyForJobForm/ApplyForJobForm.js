@@ -17,10 +17,6 @@ export function ApplyForJobForm({
   className,
   cities,
 }) {
-  // const langslug =
-  //   (typeof window !== 'undefined' && window.location.href.indexOf('/ru/')) >= 0
-  //     ? '/ru/'
-  //     : '/en/';
   const classes = classNames('form', className);
   const [form, setForm] = useState({
     fio: '',
