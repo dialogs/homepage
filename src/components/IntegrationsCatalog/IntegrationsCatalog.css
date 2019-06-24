@@ -70,9 +70,6 @@
 
   &__box {
     width: 100%;
-
-    @media (--mobile-viewport) {
-    }
     @media (--tablet-viewport) {
       width: 470px;
     }
