@@ -112,12 +112,10 @@
     }
     @media (--tablet-landscape-viewport) {
       min-width: auto;
-      max-width: 1200px;
     }
   }
 
   @media (--tablet-landscape-viewport) {
-    padding: 60px;
     min-height: auto;
   }
 }
