@@ -52,7 +52,6 @@ export function OfferForm({
           name="name"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_name" />}
-          required
         />
         <Input
           type="email"
@@ -60,7 +59,6 @@ export function OfferForm({
           name="email"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_email" />}
-          required
         />
         <Input
           type="tel"
@@ -68,14 +66,12 @@ export function OfferForm({
           name="phone"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_phone" />}
-          required
         />
         <Input
           value={form.company}
           name="company"
           onChange={handleChange}
           label={<FormattedMessage id="form_label_company" />}
-          required
         />
         <Select
           options={[

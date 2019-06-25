@@ -46,13 +46,13 @@
     font-size: var(--font-size-content-3);
     line-height: var(--line-height-content-3);
     color: var(--text-color-main);
-    box-shadow: 0 1px 0 0 var(--input-border-color);
     transition: box-shadow 120ms ease;
     background-color: transparent;
     width: 100%;
     display: inline-block;
     appearance: none;
     outline: none;
+    box-shadow: 0 1px 0 0 var(--input-border-color);
   }
 
   &--non-empty,
@@ -64,7 +64,14 @@
     }
 
     & .input__input {
-      box-shadow: 0 2px 0 0 var(--input-active-border-color);
+      &:invalid {
+        border-bottom: 2px solid #fdd2d2;
+        box-shadow: none;
+      }
+      &:valid {
+        border-bottom: 2px solid #d2fde5;
+        box-shadow: none;
+      }
     }
   }
 
