@@ -47,6 +47,7 @@ export function Input({
   function handleFocus() {
     ref.current.focus();
     setIsFocused(true);
+    setIsValid(true);
   }
   const EMAIL_REGEX = /\S+@\S+/;
 
@@ -88,8 +89,9 @@ export function Input({
         />
         {!isValid && name == 'email' && (
           <div class="error_message">
-            <div class="error_message_pointer" />Адрес электронной почты должен
-            содержать символ “@”. В адресе “{value}” отсутсвует символ “@”.
+            <div class="error_message_pointer" />
+            Адрес электронной почты должен содержать символ “@”. В адресе “
+            {value}” отсутсвует символ “@”.
           </div>
         )}
       </div>
