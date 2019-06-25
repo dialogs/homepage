@@ -33,6 +33,7 @@ export function OfferForm({
 
   function handleSubmit(event) {
     event.preventDefault();
+
     if (form.agree) {
       onSubmit({ ...form, form: 'offer', flag: flag });
     }
@@ -120,10 +121,11 @@ export function OfferForm({
         <Button
           type="submit"
           className="form__submit"
+          pending={pending}
+          valueStatus={value}
+          error={error}
           disabled={
             !form.agree ||
-            pending ||
-            (value && value.status === 200) ||
             !form.company ||
             !form.email ||
             !form.phone ||
