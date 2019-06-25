@@ -1,9 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import './Heading.css';
 
-export function Heading({ level = '1', className, children }) {
+export function Heading({ level = '1', style, className, children }) {
   function getTagName() {
     switch (level) {
       case '1':
@@ -17,7 +16,6 @@ export function Heading({ level = '1', className, children }) {
       case '6':
         return 'h6';
 
-      case '3':
       default:
         return 'h3';
     }
@@ -26,6 +24,8 @@ export function Heading({ level = '1', className, children }) {
   const TagName = getTagName();
 
   return (
-    <TagName className={classNames('heading', className)}>{children}</TagName>
+    <TagName className={classNames('heading', className)} style={style}>
+      {children}
+    </TagName>
   );
 }

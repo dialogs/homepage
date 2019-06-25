@@ -1,22 +1,16 @@
 @import '../../styles/variables.css';
 
 .section {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   @media (--tablet-viewport) {
-    padding-top: 80px;
-    padding-bottom: 60px;
-  }
-
-  @media (--tablet-landscape-viewport) {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   @media (--laptop-viewport) {
-    padding-bottom: 75px;
-  }
-
-  @media (--desktop-viewport) {
-    padding-bottom: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
