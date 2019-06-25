@@ -11,7 +11,6 @@ import { Section } from '../Section/Section';
 import { LinkButton } from '../Button/LinkButton';
 import ApplyForJobForm from '../ApplyForJobForm';
 import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
-import { ContainerFluid } from '../ContainerFluid/ContainerFluid';
 import './VacancyTemplate.css';
 
 export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
@@ -52,9 +51,9 @@ export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
           <div dangerouslySetInnerHTML={{ __html: vacancy.html }} />
         </Section>
       </Container>
-      <ContainerFluid>
+      <Container fluid>
         <RecommendEmployee />
-      </ContainerFluid>
+      </Container>
       <Container>
         <Section className="apply">
           <div id="apply_for_job_form">

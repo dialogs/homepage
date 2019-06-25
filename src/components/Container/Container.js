@@ -1,7 +1,31 @@
 import React from 'react';
-import classnames from 'classnames';
-import './Container.css';
+import { styled } from 'astroturf';
 
-export function Container({ className, children }) {
-  return <div className={classnames('container', className)}>{children}</div>;
+const StyledContainer = styled.div`
+  @import '../../styles/variables.css';
+
+  margin: var(--container-margin);
+  padding: 0;
+
+  @media (--desktop-viewport) {
+    width: 1320px;
+    margin: 0 auto;
+  }
+
+  &.fluid {
+    width: auto;
+    margin: 0 auto;
+  }
+`;
+
+export function Container({ className, children, style, fluid }) {
+  return (
+    <StyledContainer className={className} style={style} fluid={fluid}>
+      {children}
+    </StyledContainer>
+  );
 }
+
+Container.defaultProps = {
+  fluid: false,
+};

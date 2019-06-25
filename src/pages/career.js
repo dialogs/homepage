@@ -11,7 +11,6 @@ import { Vacancies } from '../components/Vacancies/Vacancies';
 import { ApplyForJobForm } from '../components/ApplyForJobForm/ApplyForJobForm';
 import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
 import ImageFormatted from '../components/ImageFormatted';
-import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
 import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
 import { LinkButton } from '../components/Button/LinkButton';
 import '../styles/jobs.css';
@@ -103,9 +102,9 @@ export default ({
         </Section>
       </Container>
 
-      <ContainerFluid>
+      <Container fluid>
         <RecommendEmployee />
-      </ContainerFluid>
+      </Container>
 
       <Container>
         <Vacancies
@@ -115,9 +114,9 @@ export default ({
           categories={categories}
         />
       </Container>
-      <ContainerFluid>
+      <Container fluid>
         <CompanyPictures />
-      </ContainerFluid>
+      </Container>
       <Container>
         <Section className="icanchoose">
           <a
