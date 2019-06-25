@@ -92,3 +92,24 @@
     }
   }
 }
+
+.error_message {
+  position: absolute;
+  left: -32px;
+  background: #fdd2d2;
+  bottom: -120px;
+  z-index: 100;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 30px 30px;
+  right: -32px;
+}
+.error_message_pointer {
+  position: absolute;
+  background: #fdd2d2;
+  z-index: 100;
+  top: -5px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+}

@@ -29,6 +29,7 @@ export function OfferForm({
   });
 
   const classes = classNames('form', className);
+  const EMAIL_REGEX = /\S+@\S+/;
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -45,7 +46,7 @@ export function OfferForm({
   }
 
   return (
-    <form className={classes} onSubmit={handleSubmit}>
+    <form noValidate className={classes} onSubmit={handleSubmit}>
       <div className="form__box">
         <Input
           value={form.name}
@@ -126,7 +127,8 @@ export function OfferForm({
             !form.company ||
             !form.email ||
             !form.phone ||
-            !form.name
+            !form.name ||
+            !EMAIL_REGEX.test(form.email)
           }
         >
           <FormattedMessage id="send_application" />
