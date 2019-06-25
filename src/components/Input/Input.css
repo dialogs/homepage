@@ -103,6 +103,15 @@
   line-height: 20px;
   padding: 30px 30px;
   right: -32px;
+  @media (--mobile-viewport) {
+    bottom: -160px;
+  }
+  @media (--tablet-viewport) {
+    bottom: -140px;
+  }
+  @media (--laptop-viewport) {
+    bottom: -120px;
+  }
 }
 .error_message_pointer {
   position: absolute;

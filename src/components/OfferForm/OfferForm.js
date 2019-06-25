@@ -135,19 +135,7 @@ export function OfferForm({
         >
           <FormattedMessage id="send_application" />
         </Button>
-        <div className="form__info">
-          {error && <FormErrorMessage />}
-          {pending && (
-            <div className="form__pending">
-              <FormattedMessage id="form_pending" />
-            </div>
-          )}
-          {value && value.status === 200 && (
-            <div className="form__success">
-              <FormattedMessage id="form_success_message" />
-            </div>
-          )}
-        </div>
+        <div className="form__info" />
       </div>
     </form>
   );
