@@ -26,6 +26,10 @@
   -webkit-appearance: none;
   transition: border-radius linear 0.05s, width linear 0.05s;
 
+  &__info {
+    min-height: 63px;
+  }
+
   &--default {
     color: var(--button-text-color);
     background-color: var(--button-background-color);
@@ -67,7 +71,7 @@
       content: '';
       width: 36px;
       height: 36px;
-      border: 4px solid white;
+      border: 2px solid white;
       border-radius: 50%;
       border-left-color: transparent;
       left: 50%;
@@ -90,11 +94,11 @@
       content: '';
       width: 36px;
       height: 18px;
-      border: 4px solid white;
+      border: 2px solid white;
       border-right: 0;
       border-top: 0;
       left: 50%;
-      top: 50%;
+      top: 40%;
       -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
       transform: translate(-50%, -50%) rotate(0deg) scale(0);
       -webkit-animation: success ease-in 0.15s forwards;
@@ -104,10 +108,6 @@
 
     &.error {
       position: relative;
-      -webkit-animation: vibrate ease-in 0.5s forwards;
-      animation: vibrate ease-in 0.5s forwards;
-      -webkit-animation-delay: 2.5s;
-      animation-delay: 2.5s;
 
       &:before {
         color: #fff;
@@ -178,7 +178,6 @@
   }
   to {
     transform: translate(-50%, -50%) scale(1);
-    background-color: #f44336;
   }
 }
 
@@ -188,30 +187,5 @@
   }
   to {
     -webkit-transform: translate(-50%, -50%) scale(1);
-    background-color: #f44336;
-  }
-}
-@keyframes vibrate {
-  0%,
-  30%,
-  60%,
-  85%,
-  100% {
-    left: 0;
-    background-color: #f44336;
-  }
-  10%,
-  40%,
-  90%,
-  70% {
-    left: -2px;
-    background-color: #f44336;
-  }
-  20%,
-  50%,
-  80%,
-  95% {
-    left: 2px;
-    background-color: #f44336;
   }
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import './Button.css';
+import { FormattedHTMLMessage } from 'react-intl';
 
 export function Button({
   children,
@@ -18,7 +19,7 @@ export function Button({
     console.log('fired');
     setTimeout(function() {
       setIsFinished(true);
-    }, 6000);
+    }, 4000);
   }
   const classes = classNames(
     'button',
@@ -42,7 +43,14 @@ export function Button({
       {children}
     </button>
   ) : (
-    <div> {error ? 'Error' : 'Success'}</div>
+    <div className="button__info">
+      {' '}
+      {error ? (
+        <FormattedHTMLMessage id="form_error_message" />
+      ) : (
+        <FormattedHTMLMessage id="form_success_message" />
+      )}
+    </div>
   );
 }
 
