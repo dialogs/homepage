@@ -8,7 +8,7 @@ import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Section } from '../components/Section/Section';
 import { Vacancies } from '../components/Vacancies/Vacancies';
-import { ApplyForJobForm } from '../components/ApplyForJobForm/ApplyForJobForm';
+import ApplyForJobForm from '../components/ApplyForJobForm';
 import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
 import ImageFormatted from '../components/ImageFormatted';
 import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
@@ -156,8 +156,11 @@ export default ({
             <div className="apply__job_text">
               <FormattedMessage id="job_apply_message" />
             </div>
-
-            <ApplyForJobForm className="apply__form" cities={cities} />
+            <ApplyForJobForm
+              className="apply__form"
+              cities={cities}
+              language={language}
+            />
           </div>
         </Section>
       </Container>

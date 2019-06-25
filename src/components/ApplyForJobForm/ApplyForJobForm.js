@@ -16,11 +16,8 @@ export function ApplyForJobForm({
   onSubmit,
   className,
   cities,
+  language,
 }) {
-  // const langslug =
-  //   (typeof window !== 'undefined' && window.location.href.indexOf('/ru/')) >= 0
-  //     ? '/ru/'
-  //     : '/en/';
   const classes = classNames('form', className);
   const [form, setForm] = useState({
     fio: '',
@@ -35,7 +32,7 @@ export function ApplyForJobForm({
   function handleSubmit(event) {
     event.preventDefault();
     if (form.agree) {
-      onSubmit({ ...form, form: 'apply' });
+      onSubmit({ ...form, form: 'apply', siteLanguage: language });
     }
   }
 

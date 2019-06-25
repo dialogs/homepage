@@ -5,7 +5,7 @@ import { Modal, ModalHeader, ModalBody } from '../Modal';
 import OfferForm from '../OfferForm';
 import './OfferModal.css';
 
-export function OfferModal({ isOpen, onClose }) {
+export function OfferModal({ language, isOpen, onClose }) {
   if (!isOpen) {
     return null;
   }
@@ -16,7 +16,11 @@ export function OfferModal({ isOpen, onClose }) {
         <FormattedMessage id="get_offer" />
       </ModalHeader>
       <ModalBody>
-        <OfferForm className="offer_modal__form" flag="popup" />
+        <OfferForm
+          className="offer_modal__form"
+          flag="popup"
+          language={language}
+        />
       </ModalBody>
     </Modal>
   );
