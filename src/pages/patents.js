@@ -196,7 +196,7 @@ export default ({
           </div>
           <div className="license__photos-list">
             <div className="license__photos-item">
-              <a href="/images/license-fsb.jpg" download>
+              <a href="/fsb_license.pdf" download>
                 <ImageFormatted
                   imgClass="license__photos-image"
                   src="/images/license-fsb.jpg"
@@ -206,7 +206,7 @@ export default ({
               <div className="license__photos-link-box">
                 <a
                   className="link--download license__photos-link"
-                  href="/images/license-fsb.jpg"
+                  href="/fsb_license.pdf"
                   download
                 >
                   <span className="link--download__text">
