@@ -39,7 +39,7 @@
 
     @media (--laptop-viewport) {
       top: -140px;
-      right: calc(50% - var(--padding-side-columns) * 1.5);
+      right: calc(42.5% - var(--padding-side-columns) * 1.5);
     }
   }
 

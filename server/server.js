@@ -5,29 +5,28 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-// const gatsbyExpress = require('gatsby-plugin-express');
 const gatsbyExpress = require('./middlewares/gatsbyExpressCustomized');
 const bodyParser = require('body-parser');
-const { isDev, server } = require('./config');
+const { isDev, server, languages } = require('./config');
 const api = require('./api');
 const redirectRules = require('./redirect-rules');
 const helmet = require('helmet');
 const cors = require('cors');
 const setHeaders = require('./middlewares/setHeaders');
 const detectLanguage = require('./middlewares/detectLanguage');
-const parseUserAgent = require('./middlewares/parseUserAgent');
+// const parseUserAgent = require('./middlewares/parseUserAgent');
+const localeRedirect = require('./middlewares/localeRedirect');
 
 const app = express();
+
+// Logging
+app.use(morgan(isDev ? 'dev' : 'combined'));
 
 app.use(helmet());
 app.use(cors());
 app.use(setHeaders);
-app.use(morgan(isDev ? 'dev' : 'combined'));
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
-
-app.use(detectLanguage(['en', 'ru']));
-app.use(parseUserAgent);
 
 redirectRules.forEach((rule) => {
   rule.from.forEach((from) => {
@@ -40,9 +39,12 @@ redirectRules.forEach((rule) => {
 
 app.use('/api/v1', api);
 
-if (!isDev) {
-  app.use(express.static('public/', { maxage: 86400000 }));
+// app.use(parseUserAgent);
+app.use(detectLanguage(languages));
 
+if (!isDev) {
+  app.use(localeRedirect(languages));
+  app.use(express.static('public/', { maxage: 24 * 3600 * 1000 }));
   app.use(
     gatsbyExpress('server/gatsby-express.json', {
       publicDir: './public/',

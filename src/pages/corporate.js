@@ -11,7 +11,20 @@ import { EffectiveCommunication } from '../components/EffectiveCommunication/Eff
 import { Partnership } from '../components/Partnership/Partnership';
 import { Offer } from '../components/Offer/Offer';
 
-export default ({ pageContext: { locale, url, originalPath } }) => {
+export default ({
+  pageContext: {
+    intl: { language, originalPath },
+  },
+  data: {
+    promoImage1,
+    promoImage2,
+    secureImage,
+    effectiveImage,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+}) => {
   return (
     <Page>
       <FormattedMetaTags
@@ -20,8 +33,8 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_solutions"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
 
       <Container>
@@ -29,13 +42,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         <SecureCommunication />>
         <EffectiveCommunication />
         <Partnership />
-        <Offer />
+        <Offer language={language} />
       </Container>
     </Page>
   );
 };
 
-export const query = graphql`
+export const pageQuery = graphql`
   query {
     promoImage1: file(relativePath: { eq: "images/solution/solution_1.jpg" }) {
       childImageSharp {
@@ -67,6 +80,11 @@ export const query = graphql`
         fluid(maxWidth: 750) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

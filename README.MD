@@ -3,7 +3,10 @@
 - `NODE_ENV`: Application environment, should be `production` in production.
 - `PORT`: PORT
 - `HOST`: HOST
-- `EMAIL_TO`: Email address for sending notifications
+- `SITE_URL`: Website url
+- `EMAIL_TO`: Email address for sending messages from forms
+- `EMAIL_TO_SUPPORT`: Email address for sending messages to support
+- `EMAIL_TO_HR`: Email address for sending messages to HR dept.
 - `EMAIL_HOST`: SMTP server address
 - `EMAIL_PORT`: SMTP server port
 - `EMAIL_USER`: SMTP username.

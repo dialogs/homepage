@@ -158,3 +158,15 @@ export function submitApplicationForm(form) {
     });
   };
 }
+
+export function submitPartnerForm(form) {
+  return (dispatch) => {
+    Field.dispatch({
+      dispatch,
+      type: 'PARTNER_FORM_SUBMIT',
+      context: {},
+      action: sendForm(form, '/api/v1/partner'),
+      initialState: null,
+    });
+  };
+}

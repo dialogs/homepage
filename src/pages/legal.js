@@ -1,11 +1,20 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { FormattedMessage } from 'react-intl';
-
 import { Container } from '../components/Container/Container';
 
-export default ({ pageContext: { locale, url, originalPath } }) => {
+export default ({
+  pageContext: {
+    intl: { language, originalPath },
+  },
+  data: {
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+}) => {
   return (
     <Container>
       <FormattedMetaTags
@@ -14,8 +23,8 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_legal"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
 
       <article className="legal">
@@ -94,3 +103,13 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
     </Container>
   );
 };
+
+export const pageQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`;

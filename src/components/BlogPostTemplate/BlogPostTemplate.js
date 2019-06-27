@@ -9,10 +9,20 @@ import { Subscribe } from '../Subscribe/Subscribe';
 import './BlogPostTemplate.css';
 
 export default ({
-  data: { post, ruRecommended, enRecommended },
-  pageContext: { locale, url, slug },
+  data: {
+    post,
+    ruRecommended,
+    enRecommended,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+  pageContext: {
+    slug,
+    intl: { language },
+  },
 }) => {
-  const fullUrl = `${url}/${locale}/blog/${slug}`;
+  const fullUrl = `${siteUrl}/${language}/blog/${slug}`;
 
   return (
     <Container className="blog_post">
@@ -33,15 +43,15 @@ export default ({
         publishDate={post.publishDate}
         excerpt={post.excerpt}
         html={post.html}
-        locale={locale}
+        locale={language}
       />
       <BlogRoster
         title={
-          locale === 'ru' ? 'Рекомендованные статьи' : 'Recomended articles'
+          language === 'ru' ? 'Рекомендованные статьи' : 'Recomended articles'
         }
-        posts={locale === 'ru' ? ruRecommended.posts : enRecommended.posts}
+        posts={language === 'ru' ? ruRecommended.posts : enRecommended.posts}
         limit={6}
-        locale={locale}
+        locale={language}
       />
       <Subscribe />
     </Container>
@@ -89,6 +99,11 @@ export const pageQuery = graphql`
     ) {
       posts: nodes {
         ...PostFragment
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

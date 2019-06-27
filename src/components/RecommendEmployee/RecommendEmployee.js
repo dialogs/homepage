@@ -6,7 +6,7 @@ import links from '../../constants/links';
 import './RecommendEmployee.css';
 export function RecommendEmployee({ className, children }) {
   return (
-    <Section className="recommend">
+    <Section className="recommend" id="recommend">
       <div className="recommend__wrapper">
         <div className="recommend__left">
           <div className="recommend__left__title">
