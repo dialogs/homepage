@@ -112,7 +112,7 @@
       font-size: 40px;
       line-height: 62px;
       padding-top: 30px;
-      padding-bottom: 20px;
+      padding-bottom: 50px;
     }
 
     @media (--tablet-landscape-viewport) {
@@ -164,8 +164,9 @@
       display: block;
       flex-grow: 1;
       height: 468px;
-      margin: 0 -72px;
+      margin: 0 -54px;
       object-fit: cover;
+      width: 100vw;
     }
 
     @media (--tablet-landscape-viewport) {
