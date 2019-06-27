@@ -13,7 +13,8 @@ const StyledContainer = styled.div`
   }
 
   &.fluid {
-    width: auto;
+    width: 100% !important;
+    max-width: 100%;
     margin: 0 auto;
   }
 `;

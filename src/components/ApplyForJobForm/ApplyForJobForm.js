@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Input } from '../Input/Input';
 import { FileInput } from '../FileInput/FileInput';
 import { Checkbox } from '../Checkbox/Checkbox';
@@ -18,10 +17,6 @@ export function ApplyForJobForm({
   className,
   cities,
 }) {
-  // const langslug =
-  //   (typeof window !== 'undefined' && window.location.href.indexOf('/ru/')) >= 0
-  //     ? '/ru/'
-  //     : '/en/';
   const classes = classNames('form', className);
   const [form, setForm] = useState({
     fio: '',
