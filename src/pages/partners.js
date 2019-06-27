@@ -28,16 +28,8 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
         <PartnersInfo />
       </Container>
       <CooperateBanner />
-      <Container fluid style={{ position: 'relative' }}>
-        <Container>
-          <PartnerAvailables />
-        </Container>
-      </Container>
-      <Container fluid style={{ position: 'relative' }}>
-        <Container>
-          <Partners />
-        </Container>
-      </Container>
+      <PartnerAvailables />
+      <Partners />
       <Container>
         <Offer />
       </Container>
