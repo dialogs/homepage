@@ -298,6 +298,36 @@ router.post('/apply', ({ body, header }, response) => {
     });
 });
 
+router.post('/partner', ({ body, header }, response) => {
+  const referer = header('referer');
+  const promises = [];
+
+  promises.push(logBody(body, referer));
+
+  if (config.dialog.webhook) {
+    promises.push(notifyDialog(body, referer));
+  }
+
+  // if (config.email.auth.user && config.email.auth.pass) {
+  //   promises.push(notifyResume(body, referer));
+  // }
+
+  Promise.all(promises)
+    .then(() => {
+      response.json({
+        status: 200,
+        message: 'Ok',
+      });
+    })
+    .catch((e) => {
+      console.error(e);
+      response.json({
+        status: 500,
+        message: 'Internal Error',
+      });
+    });
+});
+
 router.get('/', (request, response) => {
   response.json({
     status: 200,

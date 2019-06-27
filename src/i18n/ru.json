@@ -455,5 +455,10 @@
   "career_city_nsk": "Новосибирск",
   "career_category_all": "Все",
   "career_category_it": "ИТ и Разработка",
-  "career_category_marketing": "Маркетинг, Реклама, PR"
+  "career_category_marketing": "Маркетинг, Реклама, PR",
+  "partner": {
+    "form": {
+      "header": "Стать партнером"
+    }
+  }
 }

@@ -5,7 +5,15 @@ import { FormattedMessage } from 'react-intl';
 import { Input } from '../Input/Input';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
-import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
+import {
+  Form,
+  FormBox,
+  FormFooter,
+  FormInfo,
+  FormErrorMessage,
+  FormPendingMessage,
+  FormSuccessMessage,
+} from '../Form/Form';
 
 export function SupportForm({
   error,
@@ -39,7 +47,7 @@ export function SupportForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className={classes}>
+    <Form onSubmit={handleSubmit} className={classes}>
       <Input
         value={form.email}
         name="email"
@@ -72,7 +80,7 @@ export function SupportForm({
         onChange={handleChange}
       />
 
-      <div className="form__footer">
+      <FormFooter>
         <Button
           type="submit"
           className="form__submit"
@@ -81,27 +89,12 @@ export function SupportForm({
           <FormattedMessage id="form_send" />
         </Button>
 
-        <div className="form__info">
-          {/*
-          {!error && !pending && !value && (
-            <div className="form__initial">
-              Служба поддержки обычно отвечает <br />в течение 15 минут
-            </div>
-          )}
-          */}
+        <FormInfo>
           {error && <FormErrorMessage />}
-          {pending && (
-            <div className="form__pending">
-              <FormattedMessage id="form_pending" />
-            </div>
-          )}
-          {value && value.status === 200 && (
-            <div className="form__success">
-              <FormattedMessage id="form_success_message" />
-            </div>
-          )}
-        </div>
-      </div>
-    </form>
+          {pending && <FormPendingMessage />}
+          {value && value.status === 200 && <FormSuccessMessage />}
+        </FormInfo>
+      </FormFooter>
+    </Form>
   );
 }

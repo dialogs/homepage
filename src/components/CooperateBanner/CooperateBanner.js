@@ -153,7 +153,7 @@ export function CooperateBanner() {
                 <CooperateBlockButton>
                   <FormattedMessage id="partners_cooperate_button">
                     {(buttonText) => (
-                      <CooperateButton href="#form">
+                      <CooperateButton href="#partnership_form">
                         {buttonText}
                       </CooperateButton>
                     )}

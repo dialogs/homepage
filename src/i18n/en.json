@@ -357,8 +357,8 @@
   "partners_info_header": "Types and objectives of the partnership",
   "partners_info_business": "Business partner",
   "partners_info_technology": "Technological partner",
-  "partners_business_info": "Partner engaged in the sale of the company products dialog and working on a motivational program.",
-  "partners_technology_info": "Partner who develops solutions and products that integrate with Dialog products.",
+  "partners_business_info": "Partner engaged in the sale of the dialog company products and working on a motivational program.",
+  "partners_technology_info": "Partner who develops solutions and products that integrate with dialog products.",
   "partners_business_info_who": "<b>Who:</b> System integrator, Software reseller, or / and service provider",
   "partners_business_info_target": "<b>Purpose:</b> Expansion of the list of proposed software. Import independent and secure internal communications solution with wide integration capabilities.",
   "partners_technology_title": "Technological partner",
@@ -452,5 +452,10 @@
   "career_city_nsk": "Novosibirsk",
   "career_category_all": "All",
   "career_category_it": "IT and Development",
-  "career_category_marketing": "Marketing, Advertising, PR"
+  "career_category_marketing": "Marketing, Advertising, PR",
+  "partner": {
+    "form": {
+      "header": "Become a partner"
+    }
+  }
 }

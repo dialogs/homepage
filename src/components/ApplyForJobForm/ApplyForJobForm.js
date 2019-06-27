@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import { Input } from '../Input/Input';
 import { FileInput } from '../FileInput/FileInput';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
 import { Select } from '../Select/Select';
-import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
+import {
+  Form,
+  FormFooter,
+  FormInfo,
+  FormErrorMessage,
+  FormPendingMessage,
+  FormSuccessMessage,
+} from '../Form/Form';
 import './ApplyForJobForm.css';
 
 export function ApplyForJobForm({
@@ -18,7 +24,6 @@ export function ApplyForJobForm({
   cities,
   language,
 }) {
-  const classes = classNames('form', className);
   const [form, setForm] = useState({
     fio: '',
     phone: '',
@@ -65,7 +70,7 @@ export function ApplyForJobForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className={classes}>
+    <Form onSubmit={handleSubmit} className={className}>
       <div className="apply__form__body">
         <div className="apply__form__twocolumns">
           <div className="apply__form__column">
@@ -128,7 +133,7 @@ export function ApplyForJobForm({
           />
         </div>
       </div>
-      <div className="form__footer">
+      <FormFooter>
         <Button
           type="submit"
           className="form__submit"
@@ -136,20 +141,12 @@ export function ApplyForJobForm({
         >
           <FormattedMessage id="form_send" />
         </Button>
-        <div className="form__info">
+        <FormInfo>
           {error && <FormErrorMessage />}
-          {pending && (
-            <div className="form__pending">
-              <FormattedMessage id="form_pending" />
-            </div>
-          )}
-          {value && value.status === 200 && (
-            <div className="form__success">
-              <FormattedMessage id="form_success_message" />
-            </div>
-          )}
-        </div>
-      </div>
-    </form>
+          {pending && <FormPendingMessage />}
+          {value && value.status === 200 && <FormSuccessMessage />}
+        </FormInfo>
+      </FormFooter>
+    </Form>
   );
 }
