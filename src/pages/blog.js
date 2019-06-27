@@ -9,8 +9,19 @@ import { BlogRoster } from '../components/BlogRoster/BlogRoster';
 import { Subscribe } from '../components/Subscribe/Subscribe';
 
 export default ({
-  data: { tags, ruFeatured, enFeatured, ruPosts, enPosts },
-  pageContext: { locale, url, originalPath },
+  data: {
+    tags,
+    ruFeatured,
+    enFeatured,
+    ruPosts,
+    enPosts,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+  pageContext: {
+    intl: { language, originalPath },
+  },
 }) => {
   return (
     <Container>
@@ -20,19 +31,19 @@ export default ({
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_blog"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
 
       <BlogHeader
-        featured={locale === 'ru' ? ruFeatured.posts : enFeatured.posts}
+        featured={language === 'ru' ? ruFeatured.posts : enFeatured.posts}
         tags={tags}
-        locale={locale}
+        locale={language}
       />
       <BlogRoster
-        title={locale === 'ru' ? 'Последние статьи' : 'Latest articles'}
-        posts={locale === 'ru' ? ruPosts.posts : enPosts.posts}
-        locale={locale}
+        title={language === 'ru' ? 'Последние статьи' : 'Latest articles'}
+        posts={language === 'ru' ? ruPosts.posts : enPosts.posts}
+        locale={language}
       />
       <Subscribe />
     </Container>
@@ -80,6 +91,11 @@ export const blogQuery = graphql`
       nodes {
         ...TagFragment
         postCount
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

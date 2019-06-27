@@ -7,14 +7,14 @@ import SupportForm from '../SupportForm';
 import links from '../../constants/links';
 import './Support.css';
 
-export function Support() {
+export function Support({ language }) {
   return (
     <Section className="support">
       <div className="support__col support__section support__section-form">
         <PageHeader>
           <FormattedMessage id="support_header" />
         </PageHeader>
-        <SupportForm className="support__form" />
+        <SupportForm className="support__form" language={language} />
       </div>
 
       <div className="support__col support__section support__section-info">

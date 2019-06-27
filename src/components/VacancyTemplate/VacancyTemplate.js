@@ -13,7 +13,18 @@ import ApplyForJobForm from '../ApplyForJobForm';
 import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
 import './VacancyTemplate.css';
 
-export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
+export default ({
+  data: {
+    vacancy,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+  pageContext: {
+    slug,
+    intl: { language },
+  },
+}) => {
   const { title, salary, description, city } = vacancy.frontmatter;
 
   return (
@@ -24,13 +35,13 @@ export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_vacancy"
-        url={url}
-        path={`/${locale}${slug}`}
+        url={siteUrl}
+        path={`/${language}${slug}`}
       />
 
       <Container>
         <div className="vacancy__nav">
-          <Link className="link--back" to={`/${locale}/career/`}>
+          <Link className="link--back" to={`/${language}/career/`}>
             <img src="/images/svg-icons/arrow-link.svg" alt="" />
             <span>
               <FormattedMessage id="job_back" />
@@ -63,7 +74,11 @@ export default ({ data: { vacancy }, pageContext: { locale, url, slug } }) => {
             <div className="vacancy__apply_text">
               <FormattedMessage id="job_apply_vacancy_message" />
             </div>
-            <ApplyForJobForm className="apply__form" cities={[city]} />
+            <ApplyForJobForm
+              className="apply__form"
+              cities={[city]}
+              language={language}
+            />
           </div>
         </Section>
       </Container>
@@ -80,6 +95,11 @@ export const query = graphql`
         title
         salary
         description
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

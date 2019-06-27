@@ -6,7 +6,7 @@ import { Heading } from '../Heading/Heading';
 import OfferForm from '../OfferForm';
 import './Offer.css';
 
-export function Offer() {
+export function Offer({ language }) {
   return (
     <Section className="offer">
       <div className="offer__header" id="form">
@@ -14,7 +14,7 @@ export function Offer() {
           <FormattedMessage id="get_offer" />
         </Heading>
       </div>
-      <OfferForm className="offer__form" />
+      <OfferForm className="offer__form" language={language} />
     </Section>
   );
 }

@@ -224,8 +224,10 @@
     top: 37px;
   }
 }
+
 .jobs__wrapper:after {
   background: var(--color-secondary);
+  box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.08);
 
   @media (--tablet-landscape-viewport) {
     width: 399px;

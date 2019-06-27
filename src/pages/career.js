@@ -9,7 +9,7 @@ import { PageHeader } from '../components/PageHeader/PageHeader';
 import { Heading } from '../components/Heading/Heading';
 import { Section } from '../components/Section/Section';
 import { Vacancies } from '../components/Vacancies/Vacancies';
-import { ApplyForJobForm } from '../components/ApplyForJobForm/ApplyForJobForm';
+import ApplyForJobForm from '../components/ApplyForJobForm';
 import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
 import ImageFormatted from '../components/ImageFormatted';
 import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
@@ -36,8 +36,15 @@ function getCitiesAndCategories(vacancies) {
 }
 
 export default ({
-  data: { vacancies },
-  pageContext: { locale, url, originalPath },
+  data: {
+    vacancies,
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+  pageContext: {
+    intl: { language, originalPath },
+  },
 }) => {
   const { cities, categories } = getCitiesAndCategories(vacancies.nodes);
 
@@ -49,8 +56,8 @@ export default ({
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_jobs"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
 
       <Container>
@@ -110,7 +117,7 @@ export default ({
       <Container>
         <Vacancies
           vacancies={vacancies}
-          locale={locale}
+          locale={language}
           cities={cities}
           categories={categories}
         />
@@ -139,6 +146,7 @@ export default ({
             />
           </a>
         </Section>
+
         <Section className="apply" id="apply_for_job_form">
           <Heading>
             <FormattedMessage id="job_apply_header" />
@@ -146,7 +154,6 @@ export default ({
           <div className="apply__job_text">
             <FormattedMessage id="job_apply_message" />
           </div>
-
           <ApplyForJobForm className="apply__form" cities={cities} />
         </Section>
       </Container>
@@ -174,6 +181,11 @@ export const vacanciesQuery = graphql`
           tags
           description
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

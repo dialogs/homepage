@@ -62,6 +62,7 @@ export function Header({
   const [isSticky, setSticky] = useState(false);
   const [isStickyVisible, setStickyVisible] = useState(false);
   let prevScrollPosition = 0;
+
   let toLink = `/${locale === 'ru' ? 'en/' : 'ru/'}${originalPath || ''}`;
   if (typeof window !== 'undefined') {
     if (window.location.href.indexOf('/blog/') > 0) {
@@ -181,7 +182,7 @@ export function Header({
                   </Link>
                 </li>
 
-                <li className="header__menu-item">
+                {/* <li className="header__menu-item">
                   <Link
                     to={`/${locale}/support/`}
                     className="header__menu-link"
@@ -189,7 +190,7 @@ export function Header({
                   >
                     <FormattedMessage id="menu_support" />
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

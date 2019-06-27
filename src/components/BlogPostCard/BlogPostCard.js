@@ -8,7 +8,6 @@ import { removeServiceTags } from '../../utils/removeServiceTags';
 export function BlogPostCard({
   title,
   slug,
-  img,
   publishDate,
   featureImage,
   excerpt,

@@ -1,12 +1,21 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
-
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
 import { Support } from '../components/Support/Support';
 
-export default ({ pageContext: { locale, url, originalPath } }) => {
+export default ({
+  pageContext: {
+    intl: { language, originalPath },
+  },
+  data: {
+    site: {
+      siteMetadata: { siteUrl },
+    },
+  },
+}) => {
   return (
     <Page>
       <FormattedMetaTags
@@ -15,13 +24,23 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_support"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
 
       <Container>
-        <Support />
+        <Support language={language} />
       </Container>
     </Page>
   );
 };
+
+export const pageQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`;

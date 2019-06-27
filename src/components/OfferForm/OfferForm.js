@@ -17,6 +17,7 @@ export function OfferForm({
   onSubmit,
   className,
   flag = 'sales',
+  language,
 }) {
   const [form, setForm] = useState({
     name: '',
@@ -27,14 +28,13 @@ export function OfferForm({
     agree: true,
     subscribe: false,
   });
-
   const classes = classNames('form', className);
 
   function handleSubmit(event) {
     event.preventDefault();
 
     if (form.agree) {
-      onSubmit({ ...form, form: 'offer', flag: flag });
+      onSubmit({ ...form, form: 'offer', flag: flag, siteLanguage: language });
     }
   }
 
