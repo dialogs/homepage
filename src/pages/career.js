@@ -5,7 +5,7 @@ import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import { PageHeader } from '../components/PageHeader/PageHeader';
+import { PageHeading } from '../components/PageHeading/PageHeading';
 import { Heading } from '../components/Heading/Heading';
 import { Section } from '../components/Section/Section';
 import { Vacancies } from '../components/Vacancies/Vacancies';
@@ -64,9 +64,9 @@ export default ({
         <Section className="jobs">
           <div className="jobs__wrapper">
             <div className="jobs__content">
-              <PageHeader>
+              <PageHeading>
                 <FormattedHTMLMessage id="jobs_join_team" />
-              </PageHeader>
+              </PageHeading>
               <LinkButton href="#apply_for_job_form">
                 <FormattedMessage id="jobs_apply_button" />
               </LinkButton>
@@ -79,9 +79,9 @@ export default ({
           </div>
         </Section>
         <Section className="ceo">
-          <PageHeader className="ceo__title">
+          <PageHeading className="ceo__title">
             <FormattedMessage id="jobs_ceo_header" />
-          </PageHeader>
+          </PageHeading>
 
           <div className="ceo__photo_bio">
             <div className="ceo__photo_wrapper">

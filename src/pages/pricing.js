@@ -5,7 +5,7 @@ import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import { PageHeader } from '../components/PageHeader/PageHeader';
+import { PageHeading } from '../components/PageHeading/PageHeading';
 import { Section } from '../components/Section/Section';
 import { Heading } from '../components/Heading/Heading';
 import { Offer } from '../components/Offer/Offer';
@@ -34,9 +34,9 @@ export default ({
 
       <Container>
         <div className="price__header">
-          <PageHeader>
+          <PageHeading>
             <FormattedMessage id="prices_pageheader" />
-          </PageHeader>
+          </PageHeading>
         </div>
         <div className="price__subtitle">
           <FormattedHTMLMessage id="prices_go_to_form" />

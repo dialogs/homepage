@@ -5,7 +5,7 @@ import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import ImageFormatted from '../components/ImageFormatted';
 import { Container } from '../components/Container/Container';
-import { PageHeader } from '../components/PageHeader/PageHeader';
+import { PageHeading } from '../components/PageHeading/PageHeading';
 // import { PartnersTechnological } from '../components/PartnersTechnological/PartnersTechnological';
 
 export default ({
@@ -32,9 +32,9 @@ export default ({
 
       <div className="license__column-content">
         <section className="license__section license__intro">
-          <PageHeader>
+          <PageHeading>
             <FormattedMessage id="licenses_licenses" />
-          </PageHeader>
+          </PageHeading>
           <div className="license__intro-text">
             {/*<FormattedMessage id="licenses_prodiction_process" />*/}
           </div>

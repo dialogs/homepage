@@ -7,7 +7,7 @@ import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import links from '../constants/links';
 import { Container } from '../components/Container/Container';
-import { PageHeader } from '../components/PageHeader/PageHeader';
+import { PageHeading } from '../components/PageHeading/PageHeading';
 import { ArrowLink } from '../components/ArrowLink/ArrowLink';
 
 const officesLinks = {
@@ -43,9 +43,9 @@ export default ({
       />
 
       <Container>
-        <PageHeader className="about__header_upper">
+        <PageHeading className="about__header_upper">
           <FormattedMessage id="about_more_than_messenger" />
-        </PageHeader>
+        </PageHeading>
       </Container>
 
       <section className="about__promo">
@@ -68,9 +68,9 @@ export default ({
 
       <section className="about__text">
         <Container>
-          <PageHeader className="about__header_middle">
+          <PageHeading className="about__header_middle">
             <FormattedMessage id="about_more_than_messenger" />
-          </PageHeader>
+          </PageHeading>
           <div className="about__company_wrapper">
             <FormattedHTMLMessage id="about_company" />
           </div>
@@ -79,9 +79,9 @@ export default ({
 
       <section className="about__green_section hide">
         <Container>
-          <PageHeader className="about__green_section_header">
+          <PageHeading className="about__green_section_header">
             <FormattedMessage id="about_partnership" />
-          </PageHeader>
+          </PageHeading>
           <div className="about__green_section_text_wrapper">
             <FormattedHTMLMessage id="about_partnership_text" />
             <div className="about__read_more">
@@ -92,9 +92,9 @@ export default ({
           </div>
         </Container>
         <Container>
-          <PageHeader className="about__green_section_header">
+          <PageHeading className="about__green_section_header">
             <FormattedMessage id="about_integration" />
-          </PageHeader>
+          </PageHeading>
           <div className="about__green_section_text_wrapper">
             <FormattedHTMLMessage id="about_integration_text" />
             <div className="about__read_more">

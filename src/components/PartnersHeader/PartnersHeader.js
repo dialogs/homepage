@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { withProps } from 'astroturf/helpers';
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Container } from '../Container/Container';
 import { Text } from '../Text/Text';
 
@@ -199,9 +199,9 @@ export function PartnersHeader() {
       <PatrnersHeaderSection>
         <PatrnersHeaderWrapper>
           <PartnersHeaderContent>
-            <PageHeader>
+            <PageHeading>
               <FormattedMessage id="partners_header_title" />
-            </PageHeader>
+            </PageHeading>
             <PatrnersHeaderText>
               <FormattedMessage id="partners_header_text" />
             </PatrnersHeaderText>

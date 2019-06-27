@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Tabs, Tab } from '../Tabs';
 import { Collapsible } from '../Collapsible/Collapsible';
 import { IntegrationCard } from '../IntegrationCard/IntegrationCard';
@@ -14,9 +14,9 @@ export function IntegrationsCatalog() {
 
   return (
     <Section className="integrations">
-      <PageHeader className="integrations__title">
+      <PageHeading className="integrations__title">
         <FormattedMessage id="integrations_header" />
-      </PageHeader>
+      </PageHeading>
       <div className="integrations__subtitle">
         <FormattedHTMLMessage id="integrations_subtitle" />
       </div>

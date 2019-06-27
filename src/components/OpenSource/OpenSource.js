@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from 'astroturf';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
 import { List, ListItem } from '../List/List';
@@ -62,9 +62,9 @@ const GithubButtonWrapper = styled.div`
 export function OpenSource() {
   return (
     <Section>
-      <PageHeader>
+      <PageHeading>
         <FormattedMessage id="open_header" />
-      </PageHeader>
+      </PageHeading>
       <OpenSourceContent>
         <OpenSourceContentBlock>
           <Heading level="3">

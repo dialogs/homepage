@@ -4,7 +4,7 @@ import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Section } from '../Section/Section';
 import { Tabs, Tab } from '../Tabs';
 import { PlatformIcon } from './PlatformIcon';
@@ -56,9 +56,9 @@ export function Platform({ className }) {
       `}
       render={({ messengerImage, integerationsImage, corporateImage }) => (
         <Section className={classes}>
-          <PageHeader className="platform__title">
+          <PageHeading className="platform__title">
             <FormattedHTMLMessage id="platform_header" />
-          </PageHeader>
+          </PageHeading>
           <div className="platform__wrapper">
             <Tabs
               onChange={setTab}

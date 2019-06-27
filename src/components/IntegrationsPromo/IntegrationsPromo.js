@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { FormattedMessage } from 'react-intl';
 
 import './IntegrationsPromo.css';
@@ -11,9 +11,9 @@ export function IntegrationsPromo() {
     <Section className="promo">
       <div className="promo__wrapper">
         <div className="promo__content">
-          <PageHeader className="integrations">
+          <PageHeading className="integrations">
             <FormattedMessage id="integrations_title" />
-          </PageHeader>
+          </PageHeading>
           <img
             className="promo__image"
             src="/images/integrations/integrations_promo.svg"

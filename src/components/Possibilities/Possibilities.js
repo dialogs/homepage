@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Tabs, Tab } from '../Tabs';
 import { Collapsible } from '../Collapsible/Collapsible';
 import { PossibilityCard } from '../PossibilityCard/PossibilityCard';
@@ -14,9 +14,9 @@ export function Possibilities() {
 
   return (
     <Section className="possibilities">
-      <PageHeader className="possibilities__title">
+      <PageHeading className="possibilities__title">
         <FormattedMessage id="possibilities_header" />
-      </PageHeader>
+      </PageHeading>
       <div className="possibilities__subtitle">
         <FormattedHTMLMessage id="possibilities_subtitle" />
       </div>
