@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { Section } from '../Section/Section';
 import { PageHeader } from '../PageHeader/PageHeader';
@@ -66,10 +66,10 @@ export function PartnersInfo() {
           </Text>
           <PartnersInfoList>
             <ListItem>
-              <FormattedMessage id="partners_business_info_who" />
+              <FormattedHTMLMessage id="partners_business_info_who" />
             </ListItem>
             <ListItem>
-              <FormattedMessage id="partners_business_info_target" />
+              <FormattedHTMLMessage id="partners_business_info_target" />
             </ListItem>
           </PartnersInfoList>
         </PartnersInfoBlock>
@@ -82,10 +82,10 @@ export function PartnersInfo() {
           </Text>
           <PartnersInfoList>
             <ListItem>
-              <FormattedMessage id="partners_technology_info_who" />
+              <FormattedHTMLMessage id="partners_technology_info_who" />
             </ListItem>
             <ListItem>
-              <FormattedMessage id="partners_technology_info_target" />
+              <FormattedHTMLMessage id="partners_technology_info_target" />
             </ListItem>
           </PartnersInfoList>
         </PartnersInfoBlock>

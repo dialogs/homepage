@@ -7,7 +7,13 @@ import { PageHeader } from '../PageHeader/PageHeader';
 import { Container } from '../Container/Container';
 import { Text } from '../Text/Text';
 
-const PatrnersHeaderContainer = styled(Container)``;
+const PatrnersHeaderContainer = styled(Container)`
+  @import '../../styles/variables.css';
+
+  @media (--tablet-landscape-viewport) {
+    margin: 0 var(--margin-container-side);
+  }
+`;
 
 const PatrnersHeaderSection = styled(Section)`
   @import '../../styles/variables.css';
@@ -32,6 +38,7 @@ const PatrnersHeaderWrapper = styled.div`
 
   display: flex;
   align-items: center;
+  position: relative;
 
   @media (--mobile-viewport) {
     flex-flow: column;
@@ -93,7 +100,11 @@ const PatrnersHeaderImageWrapper = styled.div`
   @media (--tablet-landscape-viewport) {
     width: auto;
     position: absolute;
-    right: 0;
+    right: calc(-1 * var(--margin-container-side));
+  }
+
+  @media (--desktop-viewport) {
+    right: -140px;
   }
 
   &:before {
