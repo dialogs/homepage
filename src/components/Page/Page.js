@@ -1,7 +1,12 @@
 import React from 'react';
+import { styled } from 'astroturf';
 
-import './Page.css';
+const PageContainer = styled.div`
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+`;
 
-export function Page({ children }) {
-  return <div className="page">{children}</div>;
+export function Page({ children, ...props }) {
+  return <PageContainer {...props}>{children}</PageContainer>;
 }

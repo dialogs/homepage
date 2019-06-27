@@ -6,12 +6,12 @@ import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
 import { PageHeader } from '../components/PageHeader/PageHeader';
+import { Heading } from '../components/Heading/Heading';
 import { Section } from '../components/Section/Section';
 import { Vacancies } from '../components/Vacancies/Vacancies';
-import { ApplyForJobForm } from '../components/ApplyForJobForm/ApplyForJobForm';
+import ApplyForJobForm from '../components/ApplyForJobForm';
 import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
 import ImageFormatted from '../components/ImageFormatted';
-import { ContainerFluid } from '../components/ContainerFluid/ContainerFluid';
 import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
 import { LinkButton } from '../components/Button/LinkButton';
 import '../styles/jobs.css';
@@ -110,9 +110,9 @@ export default ({
         </Section>
       </Container>
 
-      <ContainerFluid>
+      <Container fluid>
         <RecommendEmployee />
-      </ContainerFluid>
+      </Container>
 
       <Container>
         <Vacancies
@@ -122,9 +122,9 @@ export default ({
           categories={categories}
         />
       </Container>
-      <ContainerFluid>
+      <Container fluid>
         <CompanyPictures />
-      </ContainerFluid>
+      </Container>
       <Container>
         <Section className="icanchoose">
           <a
@@ -146,19 +146,15 @@ export default ({
             />
           </a>
         </Section>
-      </Container>
-      <Container>
-        <Section className="apply">
-          <div id="apply_for_job_form">
-            <PageHeader>
-              <FormattedMessage id="job_apply_header" />
-            </PageHeader>
-            <div className="apply__job_text">
-              <FormattedMessage id="job_apply_message" />
-            </div>
 
-            <ApplyForJobForm className="apply__form" cities={cities} />
+        <Section className="apply" id="apply_for_job_form">
+          <Heading>
+            <FormattedMessage id="job_apply_header" />
+          </Heading>
+          <div className="apply__job_text">
+            <FormattedMessage id="job_apply_message" />
           </div>
+          <ApplyForJobForm className="apply__form" cities={cities} />
         </Section>
       </Container>
     </Page>

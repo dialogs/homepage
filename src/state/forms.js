@@ -5,6 +5,7 @@ const initialState = {
   subscribe: new Field(null),
   support: new Field(null),
   apply: new Field(null),
+  partner: new Field(null),
 };
 
 export function forms(state = initialState, action) {
@@ -26,10 +27,17 @@ export function forms(state = initialState, action) {
         ...state,
         support: action.payload,
       };
+
     case 'APPLICATION_FORM_SUBMIT':
       return {
         ...state,
         apply: action.payload,
+      };
+
+    case 'PARTNER_FORM_SUBMIT':
+      return {
+        ...state,
+        partner: action.payload,
       };
 
     default:

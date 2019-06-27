@@ -71,7 +71,7 @@ export default ({
         <SecureCommunication image={secureImage} />
         <EffectiveCommunication image={effectiveImage} />
         <Partnership />
-        <Offer />
+        <Offer language={language} />
       </Container>
     </Page>
   );
