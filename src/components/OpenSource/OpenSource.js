@@ -1,55 +1,100 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { styled } from 'astroturf';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Section } from '../Section/Section';
+import { PageHeader } from '../PageHeader/PageHeader';
 import { Heading } from '../Heading/Heading';
-import './OpenSource.css';
+import { Text } from '../Text/Text';
+import { List, ListItem } from '../List/List';
+import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
+
+const OpenSourceList = styled(List)`
+  @import '../../styles/variables.css';
+
+  padding-bottom: 0;
+
+  @media (--mobile-viewport) {
+    padding-bottom: 40px;
+  }
+`;
+
+const OpenSourceContent = styled.div`
+  @import '../../styles/variables.css';
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+
+  @media (--tablet-viewport) {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+`;
+
+const OpenSourceContentBlock = styled.div`
+  @import '../../styles/variables.css';
+
+  @media (--mobile-viewport) {
+    flex: 0 0 auto;
+  }
+
+  @media (--tablet-viewport) {
+    flex: 0 0 45.5%;
+  }
+
+  @media (--laptop-viewport) {
+    flex: 0 0 46%;
+  }
+
+  @media (--desktop-viewport) {
+    flex: 0 0 42%;
+  }
+`;
 export function OpenSource() {
   return (
-    <Section className="open">
-      <Heading>
+    <Section>
+      <PageHeader>
         <FormattedMessage id="open_header" />
-      </Heading>
-      <div className="open__wrapper">
-        <div className="open__wrapper__item">
-          <p className="open__title">
+      </PageHeader>
+      <OpenSourceContent>
+        <OpenSourceContentBlock>
+          <Heading level="3">
             <FormattedMessage id="open_dev_title" />
-          </p>
-          <ul className="list list--secondary">
-            <li className="open__text">
-              <FormattedMessage id="open_dev_portfolio" />
-            </li>
-            <li className="open__text">
-              <FormattedMessage id="open_dev_experience" />
-            </li>
-          </ul>
-          <div className="open__footer">
-            <p className="open__subtitle">
-              <FormattedMessage id="open_dev_subtitle" />
-            </p>
-            <div className="open__bounties">
-              <p className="open__bounty">
-                <FormattedMessage id="open_bounce" />
-              </p>
-              <p className="open__bounty">
-                <FormattedMessage id="open_bountify" />
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="open__wrapper__item">
-          <p className="open__title">
+          </Heading>
+          <OpenSourceList>
+            <ListItem>
+              <FormattedHTMLMessage id="open_dev_portfolio" />
+            </ListItem>
+            <ListItem>
+              <FormattedHTMLMessage id="open_dev_experience" />
+            </ListItem>
+          </OpenSourceList>
+          <Text bold inline={false}>
+            <FormattedMessage id="open_dev_subtitle" />
+          </Text>
+          <Text>
+            <UnderlineLink
+              href="https://www.bountysource.com/teams/dialogs"
+              direction="right"
+            >
+              Bountysource
+            </UnderlineLink>
+          </Text>
+        </OpenSourceContentBlock>
+        <OpenSourceContentBlock>
+          <Heading level="3">
             <FormattedMessage id="open_clients_title" />
-          </p>
-          <ul className="list list--secondary">
-            <li className="open__text">
-              <FormattedMessage id="open_clients_community" />
-            </li>
-            <li className="open__text">
-              <FormattedMessage id="open_clients_libraries" />
-            </li>
-          </ul>
-        </div>
-      </div>
+          </Heading>
+          <OpenSourceList>
+            <ListItem>
+              <FormattedHTMLMessage id="open_clients_community" />
+            </ListItem>
+            <ListItem>
+              <FormattedHTMLMessage id="open_clients_libraries" />
+            </ListItem>
+          </OpenSourceList>
+        </OpenSourceContentBlock>
+      </OpenSourceContent>
     </Section>
   );
 }
