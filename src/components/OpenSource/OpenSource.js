@@ -7,6 +7,7 @@ import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
 import { List, ListItem } from '../List/List';
 import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
+import { GithubButton } from '../GithubButton/GithubButton';
 
 const OpenSourceList = styled(List)`
   @import '../../styles/variables.css';
@@ -33,6 +34,7 @@ const OpenSourceContent = styled.div`
 
 const OpenSourceContentBlock = styled.div`
   @import '../../styles/variables.css';
+  margin-bottom: 40px;
 
   @media (--mobile-viewport) {
     flex: 0 0 auto;
@@ -50,6 +52,13 @@ const OpenSourceContentBlock = styled.div`
     flex: 0 0 42%;
   }
 `;
+
+const GithubButtonWrapper = styled.div`
+  display: block;
+  margin-left: -9px;
+  margin-top: 20px;
+`;
+
 export function OpenSource() {
   return (
     <Section>
@@ -91,6 +100,9 @@ export function OpenSource() {
             </ListItem>
             <ListItem>
               <FormattedHTMLMessage id="open_clients_libraries" />
+              <GithubButtonWrapper>
+                <GithubButton />
+              </GithubButtonWrapper>
             </ListItem>
           </OpenSourceList>
         </OpenSourceContentBlock>
