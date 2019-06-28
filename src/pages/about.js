@@ -7,12 +7,13 @@ import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import links from '../constants/links';
 import { Container } from '../components/Container/Container';
-import { Section } from '../components/Section/Section';
+// import { Section } from '../components/Section/Section';
 import { PageHeading } from '../components/PageHeading/PageHeading';
 import { ArrowLink } from '../components/ArrowLink/ArrowLink';
 import { Page } from '../components/Page/Page';
 import { Connect } from '../components/Connect/Connect';
-import { WeWantYouBanner } from '../components/WeWantYouBanner/WeWantYouBanner';
+import { Text } from '../components/Text/Text';
+// import { WeWantYouBanner } from '../components/WeWantYouBanner/WeWantYouBanner';
 
 const officesLinks = {
   moscow:
@@ -75,11 +76,12 @@ export default ({
           </PageHeading>
           <div className="about__company_wrapper">
             <FormattedHTMLMessage id="about_company" />
+            <FormattedHTMLMessage id="career.we_want_you" />
           </div>
         </Container>
       </section>
 
-      <WeWantYouBanner language={language} />
+      {/* <WeWantYouBanner language={language} /> */}
       <Connect language={language} />
 
       <section className="about__features">
@@ -131,8 +133,8 @@ export default ({
         </Container>
       </section>
 
-      <section className="about__licenses">
-        <Container>
+      <Container>
+        <section className="about__licenses">
           <div className="about__licenses-title">
             <FormattedMessage id="patents_licenses" />
           </div>
@@ -148,11 +150,9 @@ export default ({
               <FormattedMessage id="link_more_licenses" />
             </ArrowLink>
           </div>
-        </Container>
-      </section>
+        </section>
 
-      <section className="about__contacts box--prefooter">
-        <Container>
+        <section className="about__contacts box--prefooter">
           <div className="about__contacts-block">
             <div className="about__contacts-title">
               <FormattedMessage id="contacts" />
@@ -227,8 +227,8 @@ export default ({
               </div>
             </div>
           </div>
-        </Container>
-      </section>
+        </section>
+      </Container>
     </Page>
   );
 };

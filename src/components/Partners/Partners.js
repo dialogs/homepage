@@ -220,6 +220,7 @@ export function Partners() {
                 <Scrollspy
                   items={['technological_partners', 'business_partners']}
                   currentClassName={styles.scrollSpyActive}
+                  offset={-10}
                 >
                   <PartnersNavItem>
                     <PartnersNavLink

@@ -190,6 +190,9 @@ export function Footer({ locale }) {
                   <FooterUnderlineGatsbyLink to={`/${locale}/features/`}>
                     <FormattedMessage id="menu_features" />
                   </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/integrations/`}>
+                    <FormattedMessage id="footer.integrations" />
+                  </FooterUnderlineGatsbyLink>
                   <FooterUnderlineGatsbyLink to={`/${locale}/pricing/`}>
                     <FormattedMessage id="menu_pricing" />
                   </FooterUnderlineGatsbyLink>
@@ -210,10 +213,12 @@ export function Footer({ locale }) {
                 </div>
 
                 <div className="footer__nav-list">
+                  <FooterUnderlineGatsbyLink to={`/${locale}/partners/`}>
+                    <FormattedMessage id="footer.partners" />
+                  </FooterUnderlineGatsbyLink>
                   <FooterUnderlineGatsbyLink to={`/${locale}/support/`}>
                     <FormattedMessage id="footer_support" />
                   </FooterUnderlineGatsbyLink>
-
                   <FooterUnderlineGatsbyLink to={`/${locale}/blog/`}>
                     <FormattedMessage id="menu_blog" />
                   </FooterUnderlineGatsbyLink>

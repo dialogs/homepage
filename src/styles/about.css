@@ -22,7 +22,7 @@
       flex-direction: row;
       justify-content: space-between;
       margin-top: 120px;
-      margin-bottom: 70px;
+      margin-bottom: 120px;
     }
   }
 
@@ -97,7 +97,7 @@
     }
 
     & b {
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 
