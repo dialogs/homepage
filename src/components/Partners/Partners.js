@@ -1,11 +1,12 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import styled from 'astroturf';
+import { styled, css } from 'astroturf';
 import { Heading } from '../Heading/Heading';
 import { Section } from '../Section/Section';
 import { PartnerCard } from '../PartnerCard/PartnerCard';
 import { technological, business } from './partnersData';
 import { Container } from '../Container/Container';
+import Scrollspy from 'react-scrollspy';
 
 const PartnersSection = styled(Section)`
   @import '../../styles/variables.css';
@@ -82,7 +83,7 @@ const PartnersNav = styled.nav`
   padding-top: 60px;
   padding-bottom: 20px;
   position: sticky;
-  top: 0;
+  top: 50px;
 `;
 
 const PartnersNavItem = styled.div`
@@ -110,10 +111,6 @@ const PartnersNavLink = styled.a`
   @media (--laptop-viewport) {
     font-size: 32px;
     line-height: 42px;
-  }
-
-  &.active {
-    color: var(--text-color-main);
   }
 
   &:before {
@@ -196,6 +193,15 @@ const PartnersSectionCards = styled.div`
   justify-content: space-between;
 `;
 
+const styles = css`
+  @import '../../styles/variables.css';
+
+  .scrollSpyActive {
+    & .link {
+      color: var(--text-color-main);
+    }
+  }
+`;
 export function Partners() {
   return (
     <Container fluid style={{ position: 'relative' }}>
@@ -207,16 +213,27 @@ export function Partners() {
           <PartnersContainer>
             <PartnersNavWrapper>
               <PartnersNav>
-                <PartnersNavItem>
-                  <PartnersNavLink href="#technological_partners">
-                    <FormattedMessage id="partners_technological_nav_title" />
-                  </PartnersNavLink>
-                </PartnersNavItem>
-                <PartnersNavItem>
-                  <PartnersNavLink href="#business_partners">
-                    <FormattedMessage id="partners_business_nav_title" />
-                  </PartnersNavLink>
-                </PartnersNavItem>
+                <Scrollspy
+                  items={['technological_partners', 'business_partners']}
+                  currentClassName={styles.scrollSpyActive}
+                >
+                  <PartnersNavItem>
+                    <PartnersNavLink
+                      href="#technological_partners"
+                      className={styles.link}
+                    >
+                      <FormattedMessage id="partners_technological_nav_title" />
+                    </PartnersNavLink>
+                  </PartnersNavItem>
+                  <PartnersNavItem>
+                    <PartnersNavLink
+                      href="#business_partners"
+                      className={styles.link}
+                    >
+                      <FormattedMessage id="partners_business_nav_title" />
+                    </PartnersNavLink>
+                  </PartnersNavItem>
+                </Scrollspy>
               </PartnersNav>
             </PartnersNavWrapper>
             <PartnersBody>
