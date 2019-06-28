@@ -130,7 +130,10 @@ function notifyEmail(body, site) {
 
 function notifyMailchimp(body, site) {
   const listId =
-    body.lang === 'ru' ? config.mailchimp.list.ru : config.mailchimp.list.en;
+    body.siteLanguage === 'ru'
+      ? config.mailchimp.list.ru
+      : config.mailchimp.list.en;
+
   return mailchimp.put(`/lists/${listId}/members/${md5(body.email)}`, {
     email_address: body.email,
     status: 'subscribed',
@@ -166,7 +169,11 @@ function notifyResume(body, site) {
 
 function logBody(body, referer) {
   console.log(
-    JSON.stringify({ ...body, headerReferer: referer, resume: undefined }),
+    JSON.stringify({
+      ...body,
+      headerReferer: referer,
+      resume: body.resume ? '[file]' : '[empty]',
+    }),
   );
 
   return Promise.resolve();
@@ -208,8 +215,9 @@ router.post('/offer', (request, response) => {
     });
 });
 
-router.post('/subscribe', ({ body, header }, response) => {
-  const referer = header('referer');
+router.post('/subscribe', (request, response) => {
+  const { body } = request;
+  const referer = request.header('referer');
   const promises = [];
 
   promises.push(logBody(body, referer));
@@ -237,8 +245,9 @@ router.post('/subscribe', ({ body, header }, response) => {
     });
 });
 
-router.post('/support', ({ body, header }, response) => {
-  const referer = header('referer');
+router.post('/support', (request, response) => {
+  const { body } = request;
+  const referer = request.header('referer');
   const promises = [];
 
   promises.push(logBody(body, referer));
@@ -268,8 +277,9 @@ router.post('/support', ({ body, header }, response) => {
     });
 });
 
-router.post('/apply', ({ body, header }, response) => {
-  const referer = header('referer');
+router.post('/apply', (request, response) => {
+  const { body } = request;
+  const referer = request.header('referer');
   const promises = [];
 
   promises.push(logBody(body, referer));
@@ -298,8 +308,9 @@ router.post('/apply', ({ body, header }, response) => {
     });
 });
 
-router.post('/partner', ({ body, header }, response) => {
-  const referer = header('referer');
+router.post('/partner', (request, response) => {
+  const { body } = request;
+  const referer = request.header('referer');
   const promises = [];
 
   promises.push(logBody(body, referer));

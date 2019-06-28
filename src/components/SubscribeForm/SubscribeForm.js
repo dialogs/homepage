@@ -12,17 +12,20 @@ import {
   FormSuccessMessage,
 } from '../Form/Form';
 
-export function SubscribeForm({ value, error, pending, onSubmit, className }) {
+export function SubscribeForm({
+  value,
+  error,
+  pending,
+  onSubmit,
+  className,
+  language,
+}) {
   const [email, setEmail] = useState('');
   const classes = classNames('form', className);
-  const locale =
-    typeof window !== 'undefined' && window.location.href.indexOf('/ru/') > 0
-      ? 'ru'
-      : 'en';
 
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit({ email, form: 'subscribe' });
+    onSubmit({ email, form: 'subscribe', siteLanguage: language });
   }
 
   function handleChange(value) {
@@ -38,7 +41,7 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         state={error ? 'error' : 'normal'}
         disabled={pending}
         onChange={handleChange}
-        label={locale === 'ru' ? 'Ваш e-mail' : 'Your e-mail'}
+        label={language === 'ru' ? 'Ваш e-mail' : 'Your e-mail'}
         required
       />
       <FormFooter>

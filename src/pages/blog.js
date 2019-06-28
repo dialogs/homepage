@@ -45,7 +45,7 @@ export default ({
         posts={language === 'ru' ? ruPosts.posts : enPosts.posts}
         locale={language}
       />
-      <Subscribe />
+      <Subscribe language={language} />
     </Container>
   );
 };
