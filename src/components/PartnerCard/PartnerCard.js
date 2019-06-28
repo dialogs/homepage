@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'astroturf';
 import { withProps } from 'astroturf/helpers';
+import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 
 const PartnerCardContainer = styled.div`
   @import '../../styles/variables.css';
@@ -17,7 +18,6 @@ const PartnerCardContainer = styled.div`
   @media (--mobile-viewport) {
     height: 320px;
     flex: 0 0 100%;
-    margin-right: 0;
   }
 `;
 
@@ -34,36 +34,12 @@ const PartnerCardImage = styled.img`
 `;
 
 const PartnerCardLink = withProps({
+  direction: 'right',
   target: '_blank',
   rel: 'noopener noreferrer',
-})(styled.a`
-  @import '../../styles/variables.css';
-
-  display: inline-block;
-  line-height: 18px;
-  height: 18px;
+})(styled(UnderlineLink)`
   font-size: 14px;
-  letter-spacing: 0.01em;
-  position: relative;
-  font-weight: 500;
-
-  &:before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 2px;
-    width: 100%;
-    background: #b9bbfa;
-    background: var(--color-secondary);
-    transition: width 150ms ease;
-  }
-
-  &:hover {
-    &:before {
-      width: 0;
-    }
-  }
+  line-height: 20px;
 `);
 
 const PartnerCardBody = styled.div`
@@ -134,12 +110,11 @@ export function PartnerCard({
     <PartnerCardContainer key={title}>
       <PartnerCardHeader>
         <PartnerCardImage src={image} />
-        <PartnerCardLink
-          className="tab__link"
-          href={`http${https ? 's' : ''}://${link}`}
-        >
-          {link}
-        </PartnerCardLink>
+        <div>
+          <PartnerCardLink href={`http${https ? 's' : ''}://${link}`}>
+            {link}
+          </PartnerCardLink>
+        </div>
       </PartnerCardHeader>
       <PartnerCardBody>
         <PartnerCardTitle>

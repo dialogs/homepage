@@ -54,7 +54,7 @@ const PageHeaderContent = styled.div`
   @import '../../styles/variables.css';
 
   width: 100%;
-  padding: 0 var(--margin-container-side) 20px;
+  padding: 0 var(--margin-container-side);
 
   @media (--tablet-landscape-viewport) {
     padding: 0 0 20px;
@@ -80,6 +80,7 @@ const PageHeaderImageWrapper = styled.div`
   @media (--tablet-viewport) {
     width: 100%;
   }
+
   @media (--tablet-landscape-viewport) {
     width: auto;
     margin-right: calc(-1 * var(--margin-container-side));

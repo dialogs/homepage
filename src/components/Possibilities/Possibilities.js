@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-
+import { styled } from 'astroturf';
+import { withProps } from 'astroturf/helpers';
+import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 import { Section } from '../Section/Section';
-import { PageHeading } from '../PageHeading/PageHeading';
+import { Heading } from '../Heading/Heading';
 import { Tabs, Tab } from '../Tabs';
 import { Collapsible } from '../Collapsible/Collapsible';
 import { PossibilityCard } from '../PossibilityCard/PossibilityCard';
@@ -11,14 +13,24 @@ import { Text } from '../Text/Text';
 
 import './Possibilities.css';
 
+const PossibilityCardLink = withProps({
+  direction: 'right',
+  target: '_blank',
+  rel: 'noopener noreferrer',
+})(styled(UnderlineLink)`
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 40px;
+`);
+
 export function Possibilities() {
   const [tab, setTab] = useState('botsdk');
 
   return (
     <Section className="possibilities">
-      <PageHeading>
+      <Heading>
         <FormattedMessage id="possibilities_header" />
-      </PageHeading>
+      </Heading>
       <Text size="large" bold>
         <FormattedHTMLMessage id="possibilities_subtitle" />
       </Text>
@@ -59,11 +71,19 @@ export function Possibilities() {
           >
             <PossibilityCard
               image="/images/integrations/botsdk_icon.svg"
-              description={<FormattedMessage id="botsdk_description" />}
-              category1={<FormattedMessage id="botsdk_category1" />}
-              category2={<FormattedMessage id="botsdk_category2" />}
-              category3={<FormattedMessage id="botsdk_category3" />}
-              category4={<FormattedMessage id="botsdk_category4" />}
+              description={
+                <div>
+                  <FormattedMessage id="botsdk_description" />
+                  <div style={{ marginTop: 20 }}>
+                    <PossibilityCardLink>Python</PossibilityCardLink>
+                    <PossibilityCardLink>Java</PossibilityCardLink>
+                    <PossibilityCardLink>JavaScript</PossibilityCardLink>
+                    <PossibilityCardLink>
+                      <FormattedMessage id="botsdk.docs" />
+                    </PossibilityCardLink>
+                  </div>
+                </div>
+              }
             />
           </Collapsible>
           <Collapsible

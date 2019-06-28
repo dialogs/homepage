@@ -508,5 +508,8 @@
     "form": {
       "header": "Become a partner"
     }
+  },
+  "integrations": {
+    "source_code": "Source code"
   }
 }

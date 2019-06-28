@@ -7,7 +7,7 @@ import { Container } from '../components/Container/Container';
 import { IntegrationsHeader } from '../components/IntegrationsHeader/IntegrationsHeader';
 import { Possibilities } from '../components/Possibilities/Possibilities';
 import { IntegrationsCatalog } from '../components/IntegrationsCatalog/IntegrationsCatalog';
-import { IntegrationsInvite } from '../components/IntegrationsInvite/IntegrationsInvite';
+import { IntegrationsBanner } from '../components/IntegrationsBanner/IntegrationsBanner';
 import { OpenSource } from '../components/OpenSource/OpenSource';
 
 export default ({
@@ -32,12 +32,14 @@ export default ({
         url={siteUrl}
         path={`/${language}${originalPath}`}
       />
-      <IntegrationsHeader image={headerImage} />
 
+      <IntegrationsHeader image={headerImage} />
       <Container>
         <Possibilities />
         <IntegrationsCatalog />
-        <IntegrationsInvite />
+      </Container>
+      <IntegrationsBanner />
+      <Container>
         <OpenSource />
       </Container>
     </Page>

@@ -1,0 +1,42 @@
+export const integrations = [
+  {
+    title: 'asana_title',
+    description: 'asana_description',
+    category: 'asana_category',
+    country: 'asana_language',
+    link: 'myoffice.ru',
+    image: '/images/partners/myoffice_icon.png',
+  },
+  {
+    title: 'google_title',
+    description: 'google_description',
+    category: 'google_category',
+    country: 'google_language',
+    link: 'myoffice.ru',
+    image: '/images/integrations/google_icon.svg',
+  },
+  {
+    title: 'asana_title',
+    description: 'asana_description',
+    category: 'asana_category',
+    country: 'asana_language',
+    link: 'myoffice.ru',
+    image: '/images/partners/myoffice_icon.png',
+  },
+  {
+    title: 'google_title',
+    description: 'google_description',
+    category: 'google_category',
+    country: 'google_language',
+    link: 'myoffice.ru',
+    image: '/images/integrations/google_icon.svg',
+  },
+  {
+    title: 'google_title',
+    description: 'google_description',
+    category: 'google_category',
+    country: 'google_language',
+    link: 'myoffice.ru',
+    image: '/images/integrations/google_icon.svg',
+  },
+];

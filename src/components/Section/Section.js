@@ -8,7 +8,7 @@ const SectionContainer = styled.section`
   padding-bottom: 50px;
 
   @media (--tablet-viewport) {
-    padding-top: 80px;
+    padding-top: 60px;
     padding-bottom: 60px;
   }
 
@@ -16,10 +16,12 @@ const SectionContainer = styled.section`
   }
 
   @media (--laptop-viewport) {
+    padding-top: 75px;
     padding-bottom: 75px;
   }
 
   @media (--desktop-viewport) {
+    padding-top: 80px;
     padding-bottom: 80px;
   }
 `;

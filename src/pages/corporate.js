@@ -39,7 +39,7 @@ export default ({
 
       <Container>
         <Promo />
-        <SecureCommunication />>
+        <SecureCommunication />
         <EffectiveCommunication />
         <Partnership />
         <Offer language={language} />

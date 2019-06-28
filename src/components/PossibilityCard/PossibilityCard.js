@@ -1,29 +1,51 @@
 import React from 'react';
+import { styled } from 'astroturf';
+import { withProps } from 'astroturf/helpers';
+import { Text } from '../Text/Text';
 
-import './PossibilityCard.css';
+const PossibilityCardContainer = styled.div`
+  @import '../../styles/variables.css';
 
-export function PossibilityCard({
-  image,
-  description,
-  category1,
-  category2,
-  category3,
-  category4,
-  title,
-}) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media (--mobile-viewport) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  @media (--tablet-viewport) {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+`;
+
+const PossibilityCardImage = styled.img`
+  height: 60px;
+`;
+
+const PossibilityCardTitle = withProps({ size: 'large', bold: true })(styled(
+  Text,
+)`
+  @import '../../styles/variables.css';
+
+  display: none;
+
+  @media (--mobile-viewport) {
+    display: block;
+    margin-bottom: 30px;
+  }
+`);
+
+export function PossibilityCard({ image, title, description }) {
   return (
-    <div className="possibility__card">
-      <div className="content__body">
-        <p className="content__title">{title}</p>
-        <img className="content__icon" src={image} alt="" />
-        <div className="content__text">{description}</div>
-        <div className="content__categories">
-          <p className="content__category">{category1}</p>
-          <p className="content__category">{category2}</p>
-          <p className="content__category">{category3}</p>
-          <p className="content__category">{category4}</p>
-        </div>
-      </div>
-    </div>
+    <PossibilityCardContainer className="possibility__card">
+      <PossibilityCardTitle>{title}</PossibilityCardTitle>
+      <PossibilityCardImage src={image} alt="" />
+      <Text size="large">{description}</Text>
+    </PossibilityCardContainer>
   );
 }

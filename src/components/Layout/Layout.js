@@ -34,6 +34,10 @@ const Main = styled.main`
   @media (--laptop-viewport) {
     padding-top: 140px;
   }
+
+  &.overflow {
+    overflow: visible;
+  }
 `;
 
 export default ({
@@ -64,8 +68,10 @@ export default ({
     }
   }, []);
 
+  const isOverflowVisible = originalPath.includes('/partners/');
+
   return (
-    <Main>
+    <Main overflow={isOverflowVisible}>
       <Helmet htmlAttributes={{ lang: language }} />
       <FormattedMetaTags
         titleId="meta_title_default"
