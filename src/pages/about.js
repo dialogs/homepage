@@ -7,9 +7,12 @@ import { graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import links from '../constants/links';
 import { Container } from '../components/Container/Container';
+import { Section } from '../components/Section/Section';
 import { PageHeading } from '../components/PageHeading/PageHeading';
 import { ArrowLink } from '../components/ArrowLink/ArrowLink';
 import { Page } from '../components/Page/Page';
+import { Connect } from '../components/Connect/Connect';
+import { WeWantYouBanner } from '../components/WeWantYouBanner/WeWantYouBanner';
 
 const officesLinks = {
   moscow:
@@ -76,34 +79,8 @@ export default ({
         </Container>
       </section>
 
-      <section className="about__green_section">
-        <Container>
-          <PageHeading className="about__green_section_header">
-            <FormattedMessage id="about_partnership" />
-          </PageHeading>
-          <div className="about__green_section_text_wrapper">
-            <FormattedHTMLMessage id="about_partnership_text" />
-            <div className="about__read_more">
-              <ArrowLink to={`/${language}/partners`} underline secondary>
-                <FormattedMessage id="about_read_more" />
-              </ArrowLink>
-            </div>
-          </div>
-        </Container>
-        <Container>
-          <PageHeading className="about__green_section_header">
-            <FormattedMessage id="about_integration" />
-          </PageHeading>
-          <div className="about__green_section_text_wrapper">
-            <FormattedHTMLMessage id="about_integration_text" />
-            <div className="about__read_more">
-              <ArrowLink to={`/${language}/integrations`} underline secondary>
-                <FormattedMessage id="about_read_more" />
-              </ArrowLink>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <WeWantYouBanner language={language} style={{ marginBottom: -70 }} />
+      <Connect language={language} />
 
       <section className="about__features">
         <Container>
