@@ -196,6 +196,10 @@ const PartnersSectionCards = styled.div`
 const styles = css`
   @import '../../styles/variables.css';
 
+  .link {
+    transition: color 200ms ease;
+  }
+
   .scrollSpyActive {
     & .link {
       color: var(--text-color-main);
