@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { styled } from 'astroturf';
 
 const StyledContainer = styled.div`
@@ -21,7 +22,11 @@ const StyledContainer = styled.div`
 
 export function Container({ className, children, style, fluid }) {
   return (
-    <StyledContainer className={className} style={style} fluid={fluid}>
+    <StyledContainer
+      className={classNames('container', className)}
+      style={style}
+      fluid={fluid}
+    >
       {children}
     </StyledContainer>
   );

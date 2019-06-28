@@ -84,7 +84,6 @@ export const FormInfo = styled.div`
   @media (--tablet-viewport) {
     padding-left: 40px;
     margin-top: 0;
-    margin-left: 40px;
   }
 `;
 

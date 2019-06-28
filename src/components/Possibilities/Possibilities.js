@@ -7,6 +7,8 @@ import { PageHeading } from '../PageHeading/PageHeading';
 import { Tabs, Tab } from '../Tabs';
 import { Collapsible } from '../Collapsible/Collapsible';
 import { PossibilityCard } from '../PossibilityCard/PossibilityCard';
+import { Text } from '../Text/Text';
+
 import './Possibilities.css';
 
 export function Possibilities() {
@@ -14,12 +16,13 @@ export function Possibilities() {
 
   return (
     <Section className="possibilities">
-      <PageHeading className="possibilities__title">
+      <PageHeading>
         <FormattedMessage id="possibilities_header" />
       </PageHeading>
-      <div className="possibilities__subtitle">
+      <Text size="large" bold>
         <FormattedHTMLMessage id="possibilities_subtitle" />
-      </div>
+      </Text>
+
       <div className="possibilities__wrapper">
         <Tabs
           onChange={setTab}

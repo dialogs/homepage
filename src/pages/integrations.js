@@ -4,13 +4,23 @@ import FormattedOpenGraph from '../components/FormattedOpenGraph';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import { IntegrationsPromo } from '../components/IntegrationsPromo/IntegrationsPromo';
+import { IntegrationsHeader } from '../components/IntegrationsHeader/IntegrationsHeader';
 import { Possibilities } from '../components/Possibilities/Possibilities';
 import { IntegrationsCatalog } from '../components/IntegrationsCatalog/IntegrationsCatalog';
 import { IntegrationsInvite } from '../components/IntegrationsInvite/IntegrationsInvite';
 import { OpenSource } from '../components/OpenSource/OpenSource';
 
-export default ({ pageContext: { locale, url, originalPath } }) => {
+export default ({
+  pageContext: {
+    intl: { language, originalPath },
+  },
+  data: {
+    site: {
+      siteMetadata: { siteUrl },
+    },
+    headerImage,
+  },
+}) => {
   return (
     <Page>
       <FormattedMetaTags
@@ -19,12 +29,12 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
       />
       <FormattedOpenGraph
         idOgTitle="meta_title_integrations"
-        url={url}
-        path={`/${locale}${originalPath}`}
+        url={siteUrl}
+        path={`/${language}${originalPath}`}
       />
+      <IntegrationsHeader image={headerImage} />
 
       <Container>
-        <IntegrationsPromo />
         <Possibilities />
         <IntegrationsCatalog />
         <IntegrationsInvite />
@@ -33,3 +43,22 @@ export default ({ pageContext: { locale, url, originalPath } }) => {
     </Page>
   );
 };
+
+export const pageQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    headerImage: file(
+      relativePath: { eq: "images/integrations/integrations_promo.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 680) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`;

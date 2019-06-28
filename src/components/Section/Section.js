@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import styled from 'astroturf';
 
 const SectionContainer = styled.section`
@@ -24,7 +24,7 @@ const SectionContainer = styled.section`
   }
 `;
 
-export function Section({ className, children, id }) {
+export function Section({ className, id, children }) {
   return (
     <SectionContainer className={className} id={id}>
       {children}

@@ -14,6 +14,7 @@ import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmpl
 import ImageFormatted from '../components/ImageFormatted';
 import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
 import { LinkButton } from '../components/Button/LinkButton';
+import { PageHeader } from '../components/PageHeader/PageHeader';
 import '../styles/jobs.css';
 
 function getCitiesAndCategories(vacancies) {
@@ -41,6 +42,7 @@ export default ({
     site: {
       siteMetadata: { siteUrl },
     },
+    headerImage,
   },
   pageContext: {
     intl: { language, originalPath },
@@ -60,24 +62,16 @@ export default ({
         path={`/${language}${originalPath}`}
       />
 
+      <PageHeader image={headerImage}>
+        <PageHeading>
+          <FormattedMessage id="jobs_join_team" />
+        </PageHeading>
+        <LinkButton href="#apply_for_job_form">
+          <FormattedMessage id="jobs_apply_button" />
+        </LinkButton>
+      </PageHeader>
+
       <Container>
-        <Section className="jobs">
-          <div className="jobs__wrapper">
-            <div className="jobs__content">
-              <PageHeading>
-                <FormattedHTMLMessage id="jobs_join_team" />
-              </PageHeading>
-              <LinkButton href="#apply_for_job_form">
-                <FormattedMessage id="jobs_apply_button" />
-              </LinkButton>
-            </div>
-            <img
-              className="jobs__image"
-              alt=""
-              src="/images/jobs/jobs-promo.png"
-            />
-          </div>
-        </Section>
         <Section className="ceo">
           <PageHeading className="ceo__title">
             <FormattedMessage id="jobs_ceo_header" />
@@ -186,6 +180,13 @@ export const vacanciesQuery = graphql`
     site {
       siteMetadata {
         siteUrl
+      }
+    }
+    headerImage: file(relativePath: { eq: "images/jobs/jobs-promo.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 680) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
       }
     }
   }

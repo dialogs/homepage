@@ -9,6 +9,7 @@ import links from '../constants/links';
 import { Container } from '../components/Container/Container';
 import { PageHeading } from '../components/PageHeading/PageHeading';
 import { ArrowLink } from '../components/ArrowLink/ArrowLink';
+import { Page } from '../components/Page/Page';
 
 const officesLinks = {
   moscow:
@@ -31,7 +32,7 @@ export default ({
   },
 }) => {
   return (
-    <div className="about page">
+    <Page className="about">
       <FormattedMetaTags
         titleId="meta_title_about"
         descriptionId="meta_description_about"
@@ -51,17 +52,15 @@ export default ({
       <section className="about__promo">
         <Container>
           <div className="about__video">
-            <div className="about__video-wrapper">
-              <FormattedMessage id="more_than_messenger">
-                {(alt) => (
-                  <Image
-                    fadeIn={false}
-                    fluid={teamImage.childImageSharp.fluid}
-                    alt={alt}
-                  />
-                )}
-              </FormattedMessage>
-            </div>
+            <FormattedMessage id="more_than_messenger">
+              {(alt) => (
+                <Image
+                  fadeIn={false}
+                  fluid={teamImage.childImageSharp.fluid}
+                  alt={alt}
+                />
+              )}
+            </FormattedMessage>
           </div>
         </Container>
       </section>
@@ -77,7 +76,7 @@ export default ({
         </Container>
       </section>
 
-      <section className="about__green_section hide">
+      <section className="about__green_section">
         <Container>
           <PageHeading className="about__green_section_header">
             <FormattedMessage id="about_partnership" />
@@ -85,7 +84,7 @@ export default ({
           <div className="about__green_section_text_wrapper">
             <FormattedHTMLMessage id="about_partnership_text" />
             <div className="about__read_more">
-              <ArrowLink to="#" underline secondary>
+              <ArrowLink to={`/${language}/partners`} underline secondary>
                 <FormattedMessage id="about_read_more" />
               </ArrowLink>
             </div>
@@ -98,7 +97,7 @@ export default ({
           <div className="about__green_section_text_wrapper">
             <FormattedHTMLMessage id="about_integration_text" />
             <div className="about__read_more">
-              <ArrowLink to="#" underline secondary>
+              <ArrowLink to={`/${language}/integrations`} underline secondary>
                 <FormattedMessage id="about_read_more" />
               </ArrowLink>
             </div>
@@ -253,7 +252,7 @@ export default ({
           </div>
         </Container>
       </section>
-    </div>
+    </Page>
   );
 };
 
