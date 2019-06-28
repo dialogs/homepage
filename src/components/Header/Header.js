@@ -64,13 +64,12 @@ export function Header({
   let prevScrollPosition = 0;
 
   let toLink = `/${locale === 'ru' ? 'en/' : 'ru/'}${originalPath || ''}`;
-  if (typeof window !== 'undefined') {
-    if (window.location.href.indexOf('/blog/') > 0) {
-      toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
-    }
-    if (window.location.href.indexOf('/career/') > 0) {
-      toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
-    }
+
+  if (originalPath.indexOf('/blog/') > 0) {
+    toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
+  }
+  if (originalPath.indexOf('/career/') > 0) {
+    toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
   }
 
   function getCurrentScroll() {
