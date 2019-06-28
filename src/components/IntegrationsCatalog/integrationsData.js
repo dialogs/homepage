@@ -2,7 +2,7 @@ export const integrations = [
   {
     title: 'asana_title',
     description: 'asana_description',
-    category: 'asana_category',
+    category: 'new_integrations.bot',
     country: 'Kotlin',
     link: 'https://github.com/dialogs/dialog-asana-bot',
     image: '/images/integrations/asana_icon.png',
@@ -10,7 +10,7 @@ export const integrations = [
   {
     title: 'reminder_title',
     description: 'reminder_description',
-    category: 'reminder_category',
+    category: 'new_integrations.bot',
     country: 'JavaScript',
     link: 'myoffice.ru',
     image: '/images/integrations/reminder_icon.svg',

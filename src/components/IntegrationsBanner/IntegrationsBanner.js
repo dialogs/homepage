@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedHTMLMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { SimpleBanner } from '../Banner/SimpleBanner';
+import links from '../../constants/links';
 import { Text } from '../Text/Text';
 
 const IntegrationsBannerContent = styled.div`
@@ -28,10 +29,6 @@ const IntegrationsBannerText = styled.div`
 
   flex: 1 1 auto;
 
-  @media (--tablet-landscape-viewport) {
-    flex: 0 0 60%;
-  }
-
   & a {
     font-weight: 500;
   }
@@ -43,8 +40,11 @@ export function IntegrationsBanner() {
       <IntegrationsBannerContent>
         <IntegrationsBannerImage src="/images/integrations/invite_icon.svg" />
         <IntegrationsBannerText>
-          <Text>
-            <FormattedHTMLMessage id="invite_text" />
+          <Text size="large" bold>
+            <FormattedHTMLMessage
+              id="invite_text"
+              values={{ email: links.email.info }}
+            />
           </Text>
         </IntegrationsBannerText>
       </IntegrationsBannerContent>

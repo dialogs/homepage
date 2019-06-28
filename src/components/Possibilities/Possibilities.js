@@ -31,9 +31,6 @@ export function Possibilities() {
       <Heading>
         <FormattedMessage id="possibilities_header" />
       </Heading>
-      <Text size="large" bold>
-        <FormattedHTMLMessage id="possibilities_subtitle" />
-      </Text>
 
       <div className="possibilities__wrapper">
         <Tabs

@@ -34,7 +34,7 @@ export function OfferForm({
     company: '',
     users: '1-100',
     agree: true,
-    subscribe: false,
+    subscribe: true,
   });
   function handleSubmit(event) {
     event.preventDefault();
