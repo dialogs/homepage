@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -15,15 +14,11 @@ export function EffectiveCommunication({ image }) {
           <FormattedMessage id="EffectiveCommunication_effective_communications" />
         </Heading>
         <div className="image">
-          <FormattedMessage id="EffectiveCommunication_effective_communications">
-            {(alt) => (
-              <Image
-                fadeIn={false}
-                fluid={image.childImageSharp.fluid}
-                alt={alt}
-              />
-            )}
-          </FormattedMessage>
+          <img
+            className="effective-communication__image"
+            src="/images/solution/effective-communication.svg"
+            alt=""
+          />
         </div>
       </div>
       <div className="column">

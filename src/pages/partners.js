@@ -19,6 +19,7 @@ export default ({
     site: {
       siteMetadata: { siteUrl },
     },
+    headerImage,
   },
 }) => {
   return (
@@ -32,7 +33,7 @@ export default ({
         url={siteUrl}
         path={`/${language}${originalPath}`}
       />
-      <PartnersHeader />
+      <PartnersHeader image={headerImage} />
       <Container>
         <PartnersInfo />
       </Container>
@@ -51,6 +52,15 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         siteUrl
+      }
+    }
+    headerImage: file(
+      relativePath: { eq: "images/partners/partners_promo.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 680) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
       }
     }
   }

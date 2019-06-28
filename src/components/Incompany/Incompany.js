@@ -4,7 +4,7 @@ import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
 
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Tabs, Tab } from '../Tabs';
 import { Collapsible } from '../Collapsible/Collapsible';
 import './Incompany.css';
@@ -14,9 +14,9 @@ export function Incompany() {
 
   return (
     <Section className="incompany">
-      <PageHeader className="incompany__title">
+      <PageHeading className="incompany__title">
         <FormattedMessage id="incompany_header" />
-      </PageHeader>
+      </PageHeading>
       <div className="incompany__subtitle">
         <FormattedHTMLMessage id="incompany_subtitle" />
       </div>

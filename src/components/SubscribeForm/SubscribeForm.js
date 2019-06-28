@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-
+import { FormattedMessage } from 'react-intl';
 import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
-import { FormattedMessage } from 'react-intl';
+import {
+  Form,
+  FormFooter,
+  FormInfo,
+  FormErrorMessage,
+  FormPendingMessage,
+  FormSuccessMessage,
+} from '../Form/Form';
 
 export function SubscribeForm({ value, error, pending, onSubmit, className }) {
   const [email, setEmail] = useState('');
@@ -23,7 +30,7 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
   }
 
   return (
-    <form className={classes} onSubmit={handleSubmit}>
+    <Form className={classes} onSubmit={handleSubmit}>
       <Input
         value={email}
         type="email"
@@ -34,7 +41,7 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         label={locale === 'ru' ? 'Ваш e-mail' : 'Your e-mail'}
         required
       />
-      <div className="form__footer">
+      <FormFooter>
         <Button
           type="submit"
           className="form__submit"
@@ -42,24 +49,14 @@ export function SubscribeForm({ value, error, pending, onSubmit, className }) {
         >
           <FormattedMessage id="subscribe_submit" />
         </Button>
-        <div className="form__info">
-          {error && (
-            <div className="form__error">
-              <FormattedMessage id="subscribe_error" />
-            </div>
-          )}
-          {pending && (
-            <div className="form__pending">
-              <FormattedMessage id="subscribe_pending" />
-            </div>
-          )}
+        <FormInfo>
+          {error && <FormErrorMessage id="subscribe_error" />}
+          {pending && <FormPendingMessage id="subscribe_pending" />}
           {value && value.status === 200 && (
-            <div className="form__success">
-              <FormattedMessage id="subscribe_success" />
-            </div>
+            <FormSuccessMessage id="subscribe_success" />
           )}
-        </div>
-      </div>
-    </form>
+        </FormInfo>
+      </FormFooter>
+    </Form>
   );
 }

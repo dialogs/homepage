@@ -2,8 +2,6 @@ module.exports = [
   {
     to: '/',
     from: [
-      '/en/integrations',
-      '/ru/integrations',
       '/ru/developers',
       '/en/developers',
       '/ru/news',

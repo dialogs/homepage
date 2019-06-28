@@ -21,6 +21,7 @@
   padding: var(--button-padding) calc(var(--button-padding) * 2);
   transition: background 250ms ease;
   cursor: pointer;
+  user-select: none;
 
   &--default {
     color: var(--button-text-color);

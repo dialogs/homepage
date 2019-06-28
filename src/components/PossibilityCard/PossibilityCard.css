@@ -1,0 +1,120 @@
+@import '../../styles/variables.css';
+
+.possibility__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  @media (--mobile-viewport) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  @media (--tablet-viewport) {
+    width: 100%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  @media (--tablet-landscape-viewport) {
+    width: 100%;
+    margin-right: 20px;
+  }
+  @media (--laptop-viewport) {
+    width: 100%;
+    margin-right: 20px;
+  }
+  @media (--desktop-viewport) {
+    width: 100%;
+    margin-right: 20px;
+  }
+}
+.content {
+  &__icon {
+    max-width: 60px;
+  }
+  &__text {
+    margin-top: 25px;
+    font-size: 24px;
+    line-height: 31px;
+
+    @media (--mobile-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__categories {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+    line-height: 23px;
+    @media (--mobile-viewport) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @media (--tablet-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--tablet-landscape-viewport) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+    @media (--laptop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+  &__category {
+    margin-right: 20px;
+    margin-top: 40px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      width: 100%;
+      background: #b9bbfa;
+      background: var(--color-secondary);
+    }
+    @media (--mobile-viewport) {
+      display: block;
+      margin-top: 20px;
+      margin-right: auto;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    @media (--mobile-viewport) {
+      display: block;
+      margin-bottom: 30px;
+    }
+    @media (--tablet-viewport) {
+      display: none;
+    }
+    @media (--tablet-landscape-viewport) {
+      display: none;
+    }
+    @media (--laptop-viewport) {
+      display: none;
+    }
+    @media (--desktop-viewport) {
+      display: none;
+    }
+  }
+}

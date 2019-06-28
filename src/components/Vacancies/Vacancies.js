@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { FormattedMessage } from 'react-intl';
 import { Select } from '../Select/Select';
 import { Tabs, Tab } from '../Tabs';
@@ -78,9 +78,9 @@ export function Vacancies({ vacancies, cities, categories, locale }) {
 
   return (
     <div className="vacancies">
-      <PageHeader>
+      <PageHeading>
         <FormattedMessage id="jobs_vacancies_header" />
-      </PageHeader>
+      </PageHeading>
       <Select
         options={cities.map((city) => {
           return {

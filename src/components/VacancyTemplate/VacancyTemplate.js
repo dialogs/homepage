@@ -6,7 +6,7 @@ import { graphql, Link } from 'gatsby';
 
 import { Page } from '../Page/Page';
 import { Container } from '../Container/Container';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Section } from '../Section/Section';
 import { LinkButton } from '../Button/LinkButton';
 import ApplyForJobForm from '../ApplyForJobForm';
@@ -68,9 +68,9 @@ export default ({
       <Container>
         <Section className="apply">
           <div id="apply_for_job_form">
-            <PageHeader>
+            <PageHeading>
               <FormattedMessage id="job_apply_vacancy_header" />
-            </PageHeader>
+            </PageHeading>
             <div className="vacancy__apply_text">
               <FormattedMessage id="job_apply_vacancy_message" />
             </div>

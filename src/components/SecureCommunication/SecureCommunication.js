@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
-import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -33,17 +32,11 @@ export function SecureCommunication({ intl: { locale }, image }) {
           </div>
         </div>
         <div className="col box--architecture__image">
-          <FormattedMessage id="SecureCommunication_secure">
-            {(alt) => (
-              <div className="col__image">
-                <Image
-                  fadeIn={false}
-                  fluid={image.childImageSharp.fluid}
-                  alt={alt}
-                />
-              </div>
-            )}
-          </FormattedMessage>
+          <img
+            className="secure-communication__image"
+            src="/images/solution/secure-communication.svg"
+            alt=""
+          />
         </div>
       </div>
 
@@ -121,9 +114,6 @@ export function SecureCommunication({ intl: { locale }, image }) {
             </li>
             <li>
               <FormattedMessage id="compliance_text_3" />
-            </li>
-            <li>
-              <FormattedMessage id="compliance_text_4" />
             </li>
           </ul>
         </div>

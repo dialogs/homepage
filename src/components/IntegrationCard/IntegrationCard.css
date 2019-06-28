@@ -1,0 +1,133 @@
+@import '../../styles/variables.css';
+
+.integration__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 220px;
+  flex: 1 1 auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid color-mod(#000 alpha(17.5%));
+  @media (--mobile-viewport) {
+    height: 260px;
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
+  @media (--tablet-viewport) {
+    height: 260px;
+    flex: 0 0 45%;
+    margin-right: 20px;
+  }
+  @media (--tablet-landscape-viewport) {
+    height: 220px;
+    flex: 0 0 45%;
+    margin-right: 20px;
+  }
+  @media (--laptop-viewport) {
+    height: 220px;
+    flex: 0 0 47%;
+    margin-right: 20px;
+  }
+  @media (--desktop-viewport) {
+    height: 220px;
+    flex: 0 0 47%;
+    margin-right: 20px;
+  }
+}
+.card {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
+  }
+  &__icon {
+    @media (--mobile-viewport) {
+      max-width: 100px;
+    }
+    @media (--tablet-viewport) {
+      max-width: 105px;
+    }
+  }
+  &__link {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    letter-spacing: 0.01em;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 18px;
+      height: 2px;
+      width: 100%;
+      background: #b9bbfa;
+      background: var(--color-secondary);
+    }
+  }
+  &__text {
+    padding: 0 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    @media (--mobile-viewport) {
+      padding: 16px 20px 0 20px;
+    }
+    @media (--tablet-viewport) {
+      padding: 0 20px 0 20px;
+    }
+  }
+  &__title {
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0;
+    letter-spacing: 0.28px;
+    @media (--laptop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @media (--desktop-viewport) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+  &__footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+  }
+  &__language {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    &__info {
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+  &__category {
+    margin-left: 35px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    &__info {
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+}

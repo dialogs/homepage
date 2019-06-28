@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
 import { List, ListItem } from '../List/List';
@@ -53,9 +53,9 @@ const PartnersInfoBlock = styled.div`
 export function PartnersInfo() {
   return (
     <Section>
-      <PageHeader>
+      <PageHeading>
         <FormattedMessage id="partners_info_header" />
-      </PageHeader>
+      </PageHeading>
       <PartnersInfoPartnership>
         <PartnersInfoBlock>
           <Heading level="3">

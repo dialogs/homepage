@@ -77,5 +77,7 @@ checkOrFail('GHOST_API_KEY', config.ghost.apiKey);
 checkOrFail('MAILCHIMP_KEY', config.mailchimp.key);
 checkOrFail('MAILCHIMP_LIST_RU', config.mailchimp.list.ru);
 checkOrFail('MAILCHIMP_LIST_EN', config.mailchimp.list.en);
+checkOrFail('EMAIL_USER', config.email.auth.user);
+checkOrFail('EMAIL_PASSWORD', config.email.auth.pass);
 
 module.exports = config;
