@@ -457,9 +457,8 @@
   "career_category_all": "Все",
   "career_category_it": "ИТ и Разработка",
   "career_category_marketing": "Маркетинг, Реклама, PR",
-  "integrations_title": "Интеграции делают Dialog еще лучше",
-  "possibilities_header": "Расширяйте возможности мессенджера",
-  "possibilities_subtitle": "Подключайте Dialog к десяткам сторонних приложений и систем через:",
+  "integrations_title": "Интеграции делают dialog еще лучше",
+  "possibilities_header": "Подключайте dialog к десяткам сторонних приложений и систем",
   "botsdk": "BotSDK",
   "botsdk_description": "Создавайте чат-ботов самостоятельно. В настоящее время SDK доступен для JS, Java и Python.",
   "botsdk_category1": "Python",
@@ -476,8 +475,7 @@
   "api": "API",
   "api_description": "Благодаря нашему API вы можете создавать собственные интеграции и настраивать dialog под вашу команду и бизнес. ",
   "api_category1": "Документация",
-  "integrations_header": "Каталог интеграций",
-  "integrations_subtitle": "Наши наиболее популярные интеграции",
+  "integrations_header": "Примеры интеграций",
   "bots": "Боты",
   "design": "Дизайн",
   "communication": "Коммуникации",
@@ -498,15 +496,7 @@
   "reminder_category": "Project management",
   "integrations_card_language": "Язык",
   "integrations_card_category": "Категория",
-  "invite_text": "Чтобы попасть в каталог интеграций, сообщите нам о своей работе в <a href=\"mailto:info@dlg.im\">info@dlg.im</a>. Мы&nbsp;просим, ​​чтобы перечисленные здесь интеграции были хорошо протестированы и включали файл README с четкими инструкциями по установке.",
-  "open_header": "Open Source сообщество Dialog",
-  "open_dev_title": "Для разработчиков",
-  "open_dev_portfolio": "Открытый внешний проект в портфолио, который понравится будущим работодателям.",
-  "open_dev_experience": "Возможность улучшить свои навыки программирования.",
-  "open_dev_subtitle": "Bounty программы вы можете найти тут: ",
-  "open_clients_title": "Для клиентов",
-  "open_clients_community": "Сообщество, в котором можно найти ответы.",
-  "open_clients_libraries": "Библиотеки готовых решений для интеграций.",
+  "invite_text": "Хотите сделать интеграцию с dialog – напишите нам на <a href=\"mailto:info@dlg.im\">info@dlg.im</a>.",
   "partner": {
     "form": {
       "header": "Стать партнером"
@@ -524,5 +514,19 @@
   },
   "career": {
     "we_want_you": "В нашу быстро растущую команду требуется много талантов.<br />Узнайте об открытых вакансиях и работе в компании."
+  },
+  "opensource": {
+    "header": "Dialog Open Source Community",
+    "dev": {
+      "title": "For developers",
+      "portfolio": "Open external project in a portfolio that future employers will enjoy",
+      "experience": "Ability to improve your programming skills",
+      "participate": "Participate"
+    },
+    "clients": {
+      "title": "For clients",
+      "community": "A community where you can find answers",
+      "libraries": "Libraries of ready-made solutions for integrations"
+    }
   }
 }

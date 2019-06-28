@@ -453,8 +453,7 @@
   "career_category_it": "IT and Development",
   "career_category_marketing": "Marketing, Advertising, PR",
   "integrations_title": "Integration makes Dialog even better",
-  "possibilities_header": "Expand the capabilities of the messenger",
-  "possibilities_subtitle": "Connect Dialog to dozens of third-party applications and systems through:",
+  "possibilities_header": "Connect dialog to dozens of third-party applications and systems",
   "botsdk": "BotSDK",
   "botsdk_description": "Create chat bots by yourself. Currently, the SDK is available for JS, Java, and Python.",
   "botsdk_category1": "Python",
@@ -471,8 +470,7 @@
   "api": "API",
   "api_description": "Thanks to our API, you can create your own integrations and customize the dialog for your team and business. ",
   "api_category1": "Documentation",
-  "integrations_header": "Integration Catalog",
-  "integrations_subtitle": "Our most popular integrations",
+  "integrations_header": "Integration Examples",
   "bots": "Bots",
   "design": "Design",
   "communication": "Communications",
@@ -493,15 +491,7 @@
   "reminder_category": "Project management",
   "integrations_card_language": "Language",
   "integrations_card_category": "Category",
-  "invite_text": "To get to the integration directory, tell us about your work at <a href=\"mailto:info@dlg.im\">info@dlg.im</a>. We ask that the integrations listed here be well tested and include a README file with clear installation instructions.",
-  "open_header": "Dialog Open Source Community",
-  "open_dev_title": "For developers",
-  "open_dev_portfolio": "Open external project in a portfolio that future employers will enjoy.",
-  "open_dev_experience": "Ability to improve your programming skills.",
-  "open_dev_subtitle": "Bounty programs you can find here: ",
-  "open_clients_title": "For clients",
-  "open_clients_community": "A community where you can find answers.",
-  "open_clients_libraries": "Libraries of ready-made solutions for integrations.",
+  "invite_text": "Do you want to integrate with dialog – write us at <a href=\"mailto:{email}\">{email}</a>.",
   "partner": {
     "form": {
       "header": "Become a partner"
@@ -519,5 +509,19 @@
   },
   "career": {
     "we_want_you": "Our rapidly growing team needs a lot of talent.<br />Learn about open positions and work for the company."
+  },
+  "opensource": {
+    "header": "Open Source сообщество dialog",
+    "dev": {
+      "title": "Для разработчиков",
+      "portfolio": "Открытый внешний проект в портфолио, который понравится будущим работодателям",
+      "experience": "Возможность улучшить свои навыки программирования",
+      "participate": "Принять участие"
+    },
+    "clients": {
+      "title": "Для клиентов",
+      "community": "Сообщество, в котором можно найти ответы",
+      "libraries": "Библиотеки готовых решений для интеграций"
+    }
   }
 }

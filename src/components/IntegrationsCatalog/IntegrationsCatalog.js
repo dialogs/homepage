@@ -26,9 +26,6 @@ export function IntegrationsCatalog() {
       <Heading>
         <FormattedMessage id="integrations_header" />
       </Heading>
-      <Text size="large" bold>
-        <FormattedHTMLMessage id="integrations_subtitle" />
-      </Text>
       <IntegrationsCatalogCards>
         {integrations.map(IntegrationCard)}
       </IntegrationsCatalogCards>

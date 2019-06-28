@@ -63,43 +63,37 @@ export function OpenSource() {
   return (
     <Section>
       <PageHeading>
-        <FormattedMessage id="open_header" />
+        <FormattedMessage id="opensource.header" />
       </PageHeading>
       <OpenSourceContent>
         <OpenSourceContentBlock>
           <Heading level="3">
-            <FormattedMessage id="open_dev_title" />
+            <FormattedMessage id="opensource.dev.title" />
           </Heading>
           <OpenSourceList>
             <ListItem>
-              <FormattedHTMLMessage id="open_dev_portfolio" />
+              <FormattedHTMLMessage id="opensource.dev.portfolio" />
             </ListItem>
             <ListItem>
-              <FormattedHTMLMessage id="open_dev_experience" />
+              <FormattedHTMLMessage id="opensource.dev.experience" />
+              <Text bold>
+                <UnderlineLink href="https://oss.dlg.im" direction="right">
+                  <FormattedHTMLMessage id="opensource.dev.participate" />
+                </UnderlineLink>
+              </Text>
             </ListItem>
           </OpenSourceList>
-          <Text bold inline={false}>
-            <FormattedMessage id="open_dev_subtitle" />
-          </Text>
-          <Text>
-            <UnderlineLink
-              href="https://www.bountysource.com/teams/dialogs"
-              direction="right"
-            >
-              Bountysource
-            </UnderlineLink>
-          </Text>
         </OpenSourceContentBlock>
         <OpenSourceContentBlock>
           <Heading level="3">
-            <FormattedMessage id="open_clients_title" />
+            <FormattedMessage id="opensource.clients.title" />
           </Heading>
           <OpenSourceList>
             <ListItem>
-              <FormattedHTMLMessage id="open_clients_community" />
+              <FormattedHTMLMessage id="opensource.clients.community" />
             </ListItem>
             <ListItem>
-              <FormattedHTMLMessage id="open_clients_libraries" />
+              <FormattedHTMLMessage id="opensource.clients.libraries" />
               <GithubButtonWrapper>
                 <GithubButton />
               </GithubButtonWrapper>
