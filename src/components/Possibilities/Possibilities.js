@@ -163,6 +163,7 @@ export function Possibilities() {
       <div className="possibilities__wrapper__mobile">
         <PossibilityCard
           image="/images/integrations/botsdk_icon.svg"
+          title={<FormattedMessage id="botsdk" />}
           description={
             <>
               <FormattedMessage id="botsdk_description" />
@@ -190,6 +191,7 @@ export function Possibilities() {
         />
         <PossibilityCard
           image="/images/integrations/zapier_icon.svg"
+          title={<FormattedMessage id="zapier" />}
           description={
             <>
               <FormattedMessage id="zapier_description" />

@@ -22,7 +22,7 @@ const IntegrationsCatalogCards = styled.div`
 
 export function IntegrationsCatalog() {
   return (
-    <Section className="integrations">
+    <Section>
       <Heading>
         <FormattedMessage id="integrations_header" />
       </Heading>
