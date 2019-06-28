@@ -64,7 +64,7 @@ export default ({
 
       <PageHeader image={headerImage}>
         <PageHeading>
-          <FormattedMessage id="jobs_join_team" />
+          <FormattedHTMLMessage id="jobs_join_team" />
         </PageHeading>
         <LinkButton href="#apply_for_job_form">
           <FormattedMessage id="jobs_apply_button" />

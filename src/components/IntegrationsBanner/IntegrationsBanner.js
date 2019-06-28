@@ -4,8 +4,6 @@ import { styled } from 'astroturf';
 import { SimpleBanner } from '../Banner/SimpleBanner';
 import { Text } from '../Text/Text';
 
-import './IntegrationsInvite.css';
-
 const IntegrationsBannerContent = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -33,16 +31,17 @@ const IntegrationsBannerText = styled.div`
   @media (--tablet-landscape-viewport) {
     flex: 0 0 60%;
   }
+
+  & a {
+    font-weight: 500;
+  }
 `;
 
 export function IntegrationsBanner() {
   return (
     <SimpleBanner side="left" intent="secondary">
       <IntegrationsBannerContent>
-        <IntegrationsBannerImage
-          className="invite__right__icon"
-          src="/images/integrations/invite_icon.svg"
-        />
+        <IntegrationsBannerImage src="/images/integrations/invite_icon.svg" />
         <IntegrationsBannerText>
           <Text>
             <FormattedHTMLMessage id="invite_text" />

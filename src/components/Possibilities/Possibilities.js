@@ -72,17 +72,23 @@ export function Possibilities() {
             <PossibilityCard
               image="/images/integrations/botsdk_icon.svg"
               description={
-                <div>
+                <>
                   <FormattedMessage id="botsdk_description" />
                   <div style={{ marginTop: 20 }}>
-                    <PossibilityCardLink>Python</PossibilityCardLink>
-                    <PossibilityCardLink>Java</PossibilityCardLink>
-                    <PossibilityCardLink>JavaScript</PossibilityCardLink>
-                    <PossibilityCardLink>
-                      <FormattedMessage id="botsdk.docs" />
+                    <PossibilityCardLink href="https://github.com/dialogs/python-bot-sdk">
+                      Python
+                    </PossibilityCardLink>
+                    <PossibilityCardLink href="https://github.com/dialogs/java-bot-sdk">
+                      Java
+                    </PossibilityCardLink>
+                    <PossibilityCardLink href="https://github.com/dialogs/js-bot-sdk">
+                      JavaScript
+                    </PossibilityCardLink>
+                    <PossibilityCardLink href="https://dialogs.github.io/bots-docs">
+                      <FormattedMessage id="new_integrations.docs" />
                     </PossibilityCardLink>
                   </div>
-                </div>
+                </>
               }
             />
           </Collapsible>
@@ -107,8 +113,16 @@ export function Possibilities() {
           >
             <PossibilityCard
               image="/images/integrations/zapier_icon.svg"
-              description={<FormattedMessage id="zapier_description" />}
-              category1={<FormattedMessage id="zapier_category1" />}
+              description={
+                <>
+                  <FormattedMessage id="zapier_description" />
+                  <div style={{ marginTop: 20 }}>
+                    <PossibilityCardLink href="https://zapier.com/app/editor/61180830/nodes/61180830/app">
+                      <FormattedMessage id="new_integrations.zapier" />
+                    </PossibilityCardLink>
+                  </div>
+                </>
+              }
             />
           </Collapsible>
           <Collapsible
@@ -131,9 +145,17 @@ export function Possibilities() {
             title={<FormattedMessage id="api" />}
           >
             <PossibilityCard
-              image="/images/integrations/api_icon.svg"
-              description={<FormattedMessage id="api_description" />}
-              category1={<FormattedMessage id="api_category1" />}
+              image="/images/logotype.svg"
+              description={
+                <>
+                  <FormattedMessage id="api_description" />
+                  <div style={{ marginTop: 20 }}>
+                    <PossibilityCardLink href="https://dialogs.github.io/api-schema">
+                      <FormattedMessage id="new_integrations.docs" />
+                    </PossibilityCardLink>
+                  </div>
+                </>
+              }
             />
           </Collapsible>
         </div>
@@ -141,12 +163,25 @@ export function Possibilities() {
       <div className="possibilities__wrapper__mobile">
         <PossibilityCard
           image="/images/integrations/botsdk_icon.svg"
-          description={<FormattedMessage id="botsdk_description" />}
-          category1={<FormattedMessage id="botsdk_category1" />}
-          category2={<FormattedMessage id="botsdk_category2" />}
-          category3={<FormattedMessage id="botsdk_category3" />}
-          category4={<FormattedMessage id="botsdk_category4" />}
-          title={<FormattedMessage id="botsdk" />}
+          description={
+            <>
+              <FormattedMessage id="botsdk_description" />
+              <div style={{ marginTop: 20 }}>
+                <PossibilityCardLink href="https://github.com/dialogs/python-bot-sdk">
+                  Python
+                </PossibilityCardLink>
+                <PossibilityCardLink href="https://github.com/dialogs/java-bot-sdk">
+                  Java
+                </PossibilityCardLink>
+                <PossibilityCardLink href="https://github.com/dialogs/js-bot-sdk">
+                  JavaScript
+                </PossibilityCardLink>
+                <PossibilityCardLink href="https://dialogs.github.io/bots-docs">
+                  <FormattedMessage id="new_integrations.docs" />
+                </PossibilityCardLink>
+              </div>
+            </>
+          }
         />
         <PossibilityCard
           image="/images/integrations/webhooks_icon.svg"
@@ -155,8 +190,16 @@ export function Possibilities() {
         />
         <PossibilityCard
           image="/images/integrations/zapier_icon.svg"
-          description={<FormattedMessage id="zapier_description" />}
-          category1={<FormattedMessage id="zapier_category1" />}
+          description={
+            <>
+              <FormattedMessage id="zapier_description" />
+              <div style={{ marginTop: 20 }}>
+                <PossibilityCardLink href="https://zapier.com/app/editor/61180830/nodes/61180830/app">
+                  <FormattedMessage id="new_integrations.zapier" />
+                </PossibilityCardLink>
+              </div>
+            </>
+          }
           title={<FormattedMessage id="zapier" />}
         />
         <PossibilityCard
@@ -165,9 +208,17 @@ export function Possibilities() {
           title={<FormattedMessage id="graphql" />}
         />
         <PossibilityCard
-          image="/images/integrations/api_icon.svg"
-          description={<FormattedMessage id="api_description" />}
-          category1={<FormattedMessage id="api_category1" />}
+          image="/images/logotype.svg"
+          description={
+            <>
+              <FormattedMessage id="api_description" />
+              <div style={{ marginTop: 20 }}>
+                <PossibilityCardLink href="https://dialogs.github.io/api-schema">
+                  <FormattedMessage id="new_integrations.docs" />
+                </PossibilityCardLink>
+              </div>
+            </>
+          }
           title={<FormattedMessage id="api" />}
         />
       </div>

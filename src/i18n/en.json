@@ -482,12 +482,12 @@
   "asana_language": "Python",
   "asana_category": "Bot",
   "google_title": "Google Forms",
-  "google_description": "Google Forms bot ",
+  "google_description": "Google Forms Bot ",
   "google_link": "Source code",
   "google_language": "Java",
   "google_category": "Bot",
-  "reminder_title": "Bot reminder",
-  "reminder_description": "Bot quickly create reminders ",
+  "reminder_title": "Reminder Bot",
+  "reminder_description": "A bot that reminds you of tasks",
   "reminder_link": "Source code",
   "reminder_language": "Python",
   "reminder_category": "Project management",
@@ -509,7 +509,14 @@
       "header": "Become a partner"
     }
   },
-  "integrations": {
-    "source_code": "Source code"
+  "new_integrations": {
+    "source_code": "Source code",
+    "zapier": "Configure the integration right now",
+    "docs": "Docs",
+    "bot": "Bot",
+    "vote": {
+      "title": "Vote Bot",
+      "description": "A bot for public and private voting"
+    }
   }
 }

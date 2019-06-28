@@ -117,11 +117,13 @@ export function IntegrationCard({
     <IntegrationCardContainer key={link}>
       <IntegrationCardHeader>
         <IntegrationCardImage src={image} />
-        <div>
-          <IntegrationCardLink href={link}>
-            <FormattedMessage id="integrations.source_code" />
-          </IntegrationCardLink>
-        </div>
+        {link ? (
+          <div>
+            <IntegrationCardLink href={link}>
+              <FormattedMessage id="new_integrations.source_code" />
+            </IntegrationCardLink>
+          </div>
+        ) : null}
       </IntegrationCardHeader>
       <IntegrationCardBody>
         <IntegrationCardTitle>

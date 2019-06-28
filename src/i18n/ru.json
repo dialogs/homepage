@@ -487,12 +487,12 @@
   "asana_language": "Python",
   "asana_category": "Бот",
   "google_title": "Google Forms",
-  "google_description": "Бот для заполнения Google Forms ",
+  "google_description": "Бот для заполнения Google Forms",
   "google_link": "Источник кода",
   "google_language": "Java",
   "google_category": "Бот",
-  "reminder_title": "Bot reminder",
-  "reminder_description": "Бот быстрого создания напоминаний ",
+  "reminder_title": "Reminder bot",
+  "reminder_description": "Бот быстрого создания напоминаний",
   "reminder_link": "Источник кода",
   "reminder_language": "Python",
   "reminder_category": "Project management",
@@ -514,7 +514,14 @@
       "header": "Стать партнером"
     }
   },
-  "integrations": {
-    "source_code": "Исходный код"
+  "new_integrations": {
+    "source_code": "Исходный код",
+    "zapier": "Настройте интеграцию прямо сейчас",
+    "docs": "Документация",
+    "bot": "Бот",
+    "vote": {
+      "title": "Vote bot",
+      "description": "Бот для публичных и приватных голосований"
+    }
   }
 }
