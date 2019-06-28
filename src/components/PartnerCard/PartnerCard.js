@@ -112,7 +112,7 @@ export function PartnerCard({
         <PartnerCardImage src={image} />
         <div>
           <PartnerCardLink href={`http${https ? 's' : ''}://${link}`}>
-            {link}
+            {link.replace('www.', '')}
           </PartnerCardLink>
         </div>
       </PartnerCardHeader>
