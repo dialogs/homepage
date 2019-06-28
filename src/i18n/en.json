@@ -493,7 +493,7 @@
   "reminder_category": "Project management",
   "integrations_card_language": "Language",
   "integrations_card_category": "Category",
-  "invite_text": "To get to the integration directory, tell us about your work at @botsfordialog. We ask that the integrations listed here be well tested and include a README file with clear installation instructions.",
+  "invite_text": "To get to the integration directory, tell us about your work at <a href=\"mailto:info@dlg.im\">info@dlg.im</a>. We ask that the integrations listed here be well tested and include a README file with clear installation instructions.",
   "open_header": "Dialog Open Source Community",
   "open_dev_title": "For developers",
   "open_dev_portfolio": "Open external project in a portfolio that future employers will enjoy.",
