@@ -31,16 +31,16 @@ const WeWhantYouBlock = styled(Link)`
   transition: box-shadow 200ms ease;
 
   @media (--tablet-landscape-viewport) {
-    padding: 40px;
-    margin: 0 5%;
+    padding: 30px 40px;
+    margin: 0 5% -55px;
   }
 
   @media (--laptop-viewport) {
-    margin: 0 10%;
+    margin: 0 10% -55px;
   }
 
   @media (--desktop-viewport) {
-    margin: 0 15%;
+    margin: 0 15% -55px;
   }
 
   &:hover {
@@ -57,11 +57,11 @@ export function WeWantYouBanner({ language, className, style }) {
         to={`${language}/career/`}
       >
         <WeWhantYouBlockText>
-          <Text size="large" noPadding bold>
+          <Text noPadding bold>
             <FormattedHTMLMessage id="career.we_want_you" />
           </Text>
         </WeWhantYouBlockText>
-        <WeWhantYouBlockArrow src="/images/svg-icons/arrow-link.svg" alt="" />
+        <WeWhantYouBlockArrow src="/images/svg-icons/arrow.svg" alt="" />
       </WeWhantYouBlock>
     </Container>
   );

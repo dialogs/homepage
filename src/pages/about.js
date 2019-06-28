@@ -79,7 +79,7 @@ export default ({
         </Container>
       </section>
 
-      <WeWantYouBanner language={language} style={{ marginBottom: -70 }} />
+      <WeWantYouBanner language={language} />
       <Connect language={language} />
 
       <section className="about__features">
