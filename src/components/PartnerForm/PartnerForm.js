@@ -31,7 +31,7 @@ export function PartnerForm({
     phone: '',
     company: '',
     agree: true,
-    subscribe: false,
+    subscribe: true,
   });
   function handleSubmit(event) {
     event.preventDefault();
