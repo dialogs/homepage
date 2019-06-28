@@ -48,8 +48,8 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const TOP_SCROLL_HIDE_OFFSET = 350;
-const TOP_SCROLL_REMOVE_OFFSET = 100;
+const TOP_SCROLL_HIDE_OFFSET = 500;
+const TOP_SCROLL_REMOVE_OFFSET = 250;
 
 export function Header({
   locale,
