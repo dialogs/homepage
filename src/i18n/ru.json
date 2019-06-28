@@ -516,17 +516,17 @@
     "we_want_you": "В нашу быстро растущую команду требуется много талантов.<br />Узнайте об открытых вакансиях и работе в компании."
   },
   "opensource": {
-    "header": "Dialog Open Source Community",
+    "header": "Open Source сообщество dialog",
     "dev": {
-      "title": "For developers",
-      "portfolio": "Open external project in a portfolio that future employers will enjoy",
-      "experience": "Ability to improve your programming skills",
-      "participate": "Participate"
+      "title": "Для разработчиков",
+      "portfolio": "Открытый внешний проект в портфолио, который понравится будущим работодателям",
+      "experience": "Возможность улучшить свои навыки программирования",
+      "participate": "Принять участие"
     },
     "clients": {
-      "title": "For clients",
-      "community": "A community where you can find answers",
-      "libraries": "Libraries of ready-made solutions for integrations"
+      "title": "Для клиентов",
+      "community": "Сообщество, в котором можно найти ответы",
+      "libraries": "Библиотеки готовых решений для интеграций"
     }
   }
 }
