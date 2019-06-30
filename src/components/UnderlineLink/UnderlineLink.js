@@ -106,7 +106,6 @@ export function UnderlineGatsbyLink({
   children,
   ...props
 }) {
-  console.log('UnderlineGatsbyLink', {});
   const classes = classNames(
     styles.link,
     styles[intent],
