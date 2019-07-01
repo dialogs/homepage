@@ -489,7 +489,7 @@
   "google_link": "Источник кода",
   "google_language": "Java",
   "google_category": "Бот",
-  "reminder_title": "Reminder bot",
+  "reminder_title": "Reminder Bot",
   "reminder_description": "Бот быстрого создания напоминаний",
   "reminder_link": "Источник кода",
   "reminder_language": "Python",
@@ -508,7 +508,7 @@
     "docs": "Документация",
     "bot": "Бот",
     "vote": {
-      "title": "Vote bot",
+      "title": "Vote Bot",
       "description": "Бот для публичных и приватных голосований"
     }
   },
