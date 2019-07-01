@@ -6,12 +6,11 @@ import { graphql, Link } from 'gatsby';
 
 import { Page } from '../Page/Page';
 import { Container } from '../Container/Container';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { Section } from '../Section/Section';
 import { LinkButton } from '../Button/LinkButton';
 import ApplyForJobForm from '../ApplyForJobForm';
 import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
-import { ContainerFluid } from '../ContainerFluid/ContainerFluid';
 import './VacancyTemplate.css';
 
 export default ({
@@ -63,19 +62,23 @@ export default ({
           <div dangerouslySetInnerHTML={{ __html: vacancy.html }} />
         </Section>
       </Container>
-      <ContainerFluid>
+      <Container fluid>
         <RecommendEmployee />
-      </ContainerFluid>
+      </Container>
       <Container>
         <Section className="apply">
           <div id="apply_for_job_form">
-            <PageHeader>
+            <PageHeading>
               <FormattedMessage id="job_apply_vacancy_header" />
-            </PageHeader>
+            </PageHeading>
             <div className="vacancy__apply_text">
               <FormattedMessage id="job_apply_vacancy_message" />
             </div>
-            <ApplyForJobForm className="apply__form" cities={[city]} />
+            <ApplyForJobForm
+              className="apply__form"
+              cities={[city]}
+              language={language}
+            />
           </div>
         </Section>
       </Container>

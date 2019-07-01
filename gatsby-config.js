@@ -84,13 +84,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve(`./src/components/Layout/Layout`),
+        component: require.resolve('./src/components/Layout/Layout'),
       },
     },
     { resolve: 'gatsby-plugin-postcss' },
     { resolve: 'gatsby-plugin-astroturf' },
     {
-      resolve: `gatsby-source-ghost`,
+      resolve: 'gatsby-source-ghost',
       options: {
         apiUrl: ghost.endpoint,
         contentApiKey: ghost.apiKey,
@@ -113,5 +113,6 @@ module.exports = {
       },
     },
     { resolve: `gatsby-transformer-remark` },
+    { resolve: 'gatsby-plugin-offline' },
   ],
 };

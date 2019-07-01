@@ -1,9 +1,46 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { Container } from '../Container/Container';
 import links from '../../constants/links';
+import { styled } from 'astroturf';
+import { withProps } from 'astroturf/helpers';
+import {
+  UnderlineLink,
+  UnderlineGatsbyLink,
+} from '../UnderlineLink/UnderlineLink';
 import './Footer.css';
+
+const FooterUnderlineGatsbyLink = withProps({
+  intent: 'primary',
+  direction: 'left',
+  invert: true,
+})(
+  styled(UnderlineGatsbyLink)`
+    margin-top: 8px;
+    line-height: 20px;
+  `,
+);
+
+const FooterUnderlineLink = withProps({
+  intent: 'primary',
+  rel: 'noopener noreferrer',
+  target: '_blank',
+  direction: 'left',
+  invert: true,
+})(styled(UnderlineLink)`
+  margin-top: 8px;
+  line-height: 20px;
+`);
+
+const FooterContactUnderlineLink = withProps({
+  intent: 'primary',
+  rel: 'noopener noreferrer',
+  target: '_blank',
+  invert: false,
+  direction: 'right',
+})(styled(UnderlineLink)`
+  line-height: 32px;
+`);
 
 export function Footer({ locale }) {
   return (
@@ -16,12 +53,9 @@ export function Footer({ locale }) {
                 <a href="tel:+78007758202">+7 (800) 775-8202</a>
               </div>
               <div className="footer__contacts-item footer__contacts-item--email">
-                <a
-                  href={`mailto:${links.email.info}`}
-                  className="link--default link--default--inverse"
-                >
+                <FooterContactUnderlineLink href={`mailto:${links.email.info}`}>
                   {links.email.info}
-                </a>
+                </FooterContactUnderlineLink>
               </div>
             </div>
             <div className="footer__top-content-item footer__nav-box">
@@ -147,118 +181,70 @@ export function Footer({ locale }) {
 
               <nav className="footer__nav">
                 <div className="footer__nav-list">
-                  <div className="footer__nav-item">
-                    <Link
-                      className="footer__nav-link"
-                      to={`/${locale}/corporate/`}
-                    >
-                      <FormattedMessage id="menu_solutions" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <Link
-                      className="footer__nav-link"
-                      to={`/${locale}/features/`}
-                    >
-                      <FormattedMessage id="menu_features" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <Link
-                      className="footer__nav-link"
-                      to={`/${locale}/pricing/`}
-                    >
-                      <FormattedMessage id="menu_pricing" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <Link
-                      className="footer__nav-link"
-                      to={`/${locale}/download/enterprise/`}
-                    >
-                      <FormattedMessage id="menu_download" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/about/`}>
-                      <FormattedMessage id="menu_about" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <Link
-                      className="footer__nav-link"
-                      to={`/${locale}/career/`}
-                    >
-                      <FormattedMessage id="footer_career" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <a
-                      className="footer__nav-link"
-                      href="https://oss.dlg.im/"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <FormattedMessage id="menu_bounty" />
-                    </a>
-                  </div>
+                  <FooterUnderlineGatsbyLink
+                    invert
+                    to={`/${locale}/corporate/`}
+                  >
+                    <FormattedMessage id="menu_solutions" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/features/`}>
+                    <FormattedMessage id="menu_features" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/integrations/`}>
+                    <FormattedMessage id="footer.integrations" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/pricing/`}>
+                    <FormattedMessage id="menu_pricing" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink
+                    to={`/${locale}/download/enterprise/`}
+                  >
+                    <FormattedMessage id="menu_download" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/about/`}>
+                    <FormattedMessage id="menu_about" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/career/`}>
+                    <FormattedMessage id="footer_career" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineLink invert href="https://oss.dlg.im/">
+                    <FormattedMessage id="menu_bounty" />
+                  </FooterUnderlineLink>
                 </div>
 
                 <div className="footer__nav-list">
-                  <div className="footer__nav-item">
-                    <Link
-                      className="footer__nav-link"
-                      to={`/${locale}/support/`}
-                    >
-                      <FormattedMessage id="footer_support" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/blog/`}>
-                      <FormattedMessage id="menu_blog" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <a
-                      className="footer__nav-link"
-                      href="https://docs.dlg.im/"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <FormattedMessage id="footer_documentation" />
-                    </a>
-                  </div>
-                  <div className="footer__nav-item">
-                    <Link
-                      className="footer__nav-link"
-                      to={`/${locale}/patents/`}
-                    >
-                      <FormattedMessage id="menu_patents" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <Link className="footer__nav-link" to={`/${locale}/legal/`}>
-                      <FormattedMessage id="menu_legal" />
-                    </Link>
-                  </div>
-                  <div className="footer__nav-item">
-                    <a
-                      className="footer__nav-link"
-                      href={'/privacy_policy.pdf'}
-                      download
-                    >
-                      <FormattedMessage id="footer_privacy_policy" />
-                    </a>
-                  </div>
-                  <div className="footer__nav-item">
-                    <a
-                      className="footer__nav-link"
-                      href={'/anti_corruption_policy.pdf'}
-                      download
-                    >
-                      <FormattedMessage id="footer_anti_corruption_policy" />
-                    </a>
-                  </div>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/partners/`}>
+                    <FormattedMessage id="footer.partners" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/support/`}>
+                    <FormattedMessage id="footer_support" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/blog/`}>
+                    <FormattedMessage id="menu_blog" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineLink invert href="https://docs.dlg.im/">
+                    <FormattedMessage id="footer_documentation" />
+                  </FooterUnderlineLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/patents/`}>
+                    <FormattedMessage id="menu_patents" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineGatsbyLink to={`/${locale}/legal/`}>
+                    <FormattedMessage id="menu_legal" />
+                  </FooterUnderlineGatsbyLink>
+                  <FooterUnderlineLink
+                    invert
+                    href={'/privacy_policy.pdf'}
+                    download
+                  >
+                    <FormattedMessage id="footer_privacy_policy" />
+                  </FooterUnderlineLink>
+                  <FooterUnderlineLink
+                    invert
+                    href={'/anti_corruption_policy.pdf'}
+                    download
+                  >
+                    <FormattedMessage id="footer_anti_corruption_policy" />
+                  </FooterUnderlineLink>
                 </div>
               </nav>
             </div>

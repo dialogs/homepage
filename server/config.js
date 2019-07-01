@@ -18,7 +18,7 @@ const config = {
   dialog: {
     webhook: env('DIALOG_WEBHOOK', null),
   },
-  email_to: env('EMAIL_TO', 'info@dlg.im,zvzt9de6@robot.zapier.com'),
+  email_to: env('EMAIL_TO', 'info@dlg.im,dialogwebsite@robot.zapier.com'),
   email_to_support: env('EMAIL_TO_SUPPORT', 'support@dlg.im'),
   email_to_hr: env('EMAIL_TO_HR', 'hire@dlg.im'),
   email: {
@@ -77,5 +77,7 @@ checkOrFail('GHOST_API_KEY', config.ghost.apiKey);
 checkOrFail('MAILCHIMP_KEY', config.mailchimp.key);
 checkOrFail('MAILCHIMP_LIST_RU', config.mailchimp.list.ru);
 checkOrFail('MAILCHIMP_LIST_EN', config.mailchimp.list.en);
+checkOrFail('EMAIL_USER', config.email.auth.user);
+checkOrFail('EMAIL_PASSWORD', config.email.auth.pass);
 
 module.exports = config;

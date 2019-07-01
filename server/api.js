@@ -8,34 +8,49 @@ const md5 = require('md5');
 // http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
-let mailer = nodemailer.createTransport(config.email);
+const SENDER_EMAIL = {
+  name: 'Dialog Website Service',
+  address: 'site-srv@dlg.im',
+};
+
+const mailer = nodemailer.createTransport(config.email);
 const mailchimp = new Mailchimp(config.mailchimp.key);
+
+function renderAdditionalInfo(body, site) {
+  return `
+ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ:
+
+Accept-Language: ${body.data.language} |
+Document-referrer: ${body.data.referrer} |
+Geolocation: ${JSON.stringify(body.data.geo, null, 2)} |
+Page-href: ${body.data.href} |
+GAcid: ${body.data.gacid} |
+`;
+}
 
 function renderTextMessage(body, site) {
   const message = `
-Имя: ${body.name}
-Телефон: ${body.phone}
-Email: ${body.email}
-Компания: ${body.company}
-Сообщение: ${body.message}
-Количество пользователей: ${body.users}
+ЗАЯВКА С САЙТА.
+
+Имя: ${body.name} |
+Телефон: ${body.phone} |
+Email: ${body.email} |
+Компания: ${body.company} |
+Сообщение: ${body.message} |
+Количество пользователей: ${body.users} |
 
 ========================================================
 
-Форма: ${body.form}
-Флаг: ${body.flag}
-Сайт: ${site}
-Подписка на новости: ${body.subscribe}
-Согласие на обработку персональных данных: ${body.agree}
+Форма: ${body.form} |
+Язык сайта: ${body.siteLanguage} |
+Флаг: ${body.flag} |
+Заявка со страницы: ${site} |
+Подписка на новости: ${body.subscribe} |
+Согласие на обработку персональных данных: ${body.agree} |
 
 ========================================================
 
-Дополнительная информация:
-Accept-Language: ${body.data.language}
-Document-referrer: ${body.data.referrer}
-Geolocation: ${JSON.stringify(body.data.geo, null, 2)}
-Page-href: ${body.data.href}
-GAcid: ${body.data.gacid}
+${renderAdditionalInfo(body, site)}
   `;
 
   return message;
@@ -43,23 +58,25 @@ GAcid: ${body.data.gacid}
 
 function renderApplicationMessage(body, site) {
   const message = `
-Имя: ${body.fio}
-Телефон: ${body.phone}
-Email: ${body.workemail}
-Город: ${body.city}
-Обо мне: ${body.about}
-Форма: ${body.form}
-Отклик со страницы: ${site}
+ОТКЛИК НА ВАКАНСИЮ.
+
+Имя: ${body.fio} |
+Телефон: ${body.phone} |
+Email: ${body.workemail} |
+Город: ${body.city} |
+Обо мне: ${body.about} |
 
 ========================================================
 
-Дополнительная информация:
-Accept-Language: ${body.data.language}
-Document-referrer: ${body.data.referrer}
-Geolocation: ${JSON.stringify(body.data.geo, null, 2)}
-Page-href: ${body.data.href}
-GAcid: ${body.data.gacid}
-      `;
+Форма: ${body.form} |
+Язык сайта: ${body.siteLanguage} |
+Отклик со страницы: ${site} |
+Согласие на обработку персональных данных: ${body.agree} |
+
+========================================================
+
+${renderAdditionalInfo(body, site)}
+  `;
 
   return message;
 }
@@ -91,23 +108,12 @@ function notifyDialog(body, site) {
 
 function notifyEmail(body, site) {
   return new Promise((resolve, reject) => {
-    const sender = {
-      name: body.name || 'empty name',
-      address: body.email,
-    };
-
-    let mailAddressTo =
-      body.form === 'support' ? config.email_to_support : config.email_to;
-
     mailer.sendMail(
       {
-        from: {
-          name: 'Dialog Bot',
-          address: 'bot@dlg.im',
-        },
-        to: mailAddressTo,
-        sender: sender.address,
-        replyTo: sender.address,
+        from: SENDER_EMAIL,
+        to: body.form === 'support' ? config.email_to_support : config.email_to,
+        sender: body.email,
+        replyTo: body.email,
         subject: `Заявка с сайта ${site}`,
         text: renderTextMessage(body, site),
       },
@@ -124,7 +130,10 @@ function notifyEmail(body, site) {
 
 function notifyMailchimp(body, site) {
   const listId =
-    body.lang === 'ru' ? config.mailchimp.list.ru : config.mailchimp.list.en;
+    body.siteLanguage === 'ru'
+      ? config.mailchimp.list.ru
+      : config.mailchimp.list.en;
+
   return mailchimp.put(`/lists/${listId}/members/${md5(body.email)}`, {
     email_address: body.email,
     status: 'subscribed',
@@ -133,21 +142,13 @@ function notifyMailchimp(body, site) {
 
 function notifyResume(body, site) {
   return new Promise((resolve, reject) => {
-    const sender = {
-      name: body.name || 'empty name',
-      address: body.email,
-    };
-
     mailer.sendMail(
       {
-        from: {
-          name: 'Dialog Bot',
-          address: 'bot@dlg.im',
-        },
+        from: SENDER_EMAIL,
         to: config.email_to_hr,
-        sender: sender.address,
-        replyTo: sender.address,
-        subject: `Резюме на вакансию с сайта ${site}`,
+        sender: body.email,
+        replyTo: body.email,
+        subject: `Отклик на вакансию со страницы ${site}`,
         text: renderApplicationMessage(body, site),
         attachments: [
           {
@@ -167,14 +168,13 @@ function notifyResume(body, site) {
 }
 
 function logBody(body, referer) {
-  if (body.form === 'apply') {
-    // remove resume file from log output
-    console.log(
-      JSON.stringify({ ...body, headerReferer: referer, resume: undefined }),
-    );
-  } else {
-    console.log(JSON.stringify({ ...body, headerReferer: referer }));
-  }
+  console.log(
+    JSON.stringify({
+      ...body,
+      headerReferer: referer,
+      resume: body.resume ? '[file]' : '[empty]',
+    }),
+  );
 
   return Promise.resolve();
 }
@@ -186,12 +186,12 @@ router.post('/offer', (request, response) => {
 
   promises.push(logBody(body, referer));
 
-  if (config.email.auth.user && config.email.auth.pass) {
-    promises.push(notifyEmail(body, referer));
-  }
-
   if (config.dialog.webhook) {
     promises.push(notifyDialog(body, referer));
+  }
+
+  if (config.email.auth.user && config.email.auth.pass) {
+    promises.push(notifyEmail(body, referer));
   }
 
   if (body.subscribe) {
@@ -246,17 +246,18 @@ router.post('/subscribe', (request, response) => {
 });
 
 router.post('/support', (request, response) => {
+  const { body } = request;
   const referer = request.header('referer');
-  const body = request.body;
   const promises = [];
 
   promises.push(logBody(body, referer));
 
-  if (config.email.auth.user && config.email.auth.pass) {
-    promises.push(notifyEmail(body, referer));
-  }
   if (config.dialog.webhook) {
     promises.push(notifyDialog(body, referer));
+  }
+
+  if (config.email.auth.user && config.email.auth.pass) {
+    promises.push(notifyEmail(body, referer));
   }
 
   Promise.all(promises)
@@ -277,19 +278,50 @@ router.post('/support', (request, response) => {
 });
 
 router.post('/apply', (request, response) => {
+  const { body } = request;
   const referer = request.header('referer');
-  const body = request.body;
   const promises = [];
 
   promises.push(logBody(body, referer));
+
+  if (config.dialog.webhook) {
+    promises.push(notifyDialog(body, referer));
+  }
 
   if (config.email.auth.user && config.email.auth.pass) {
     promises.push(notifyResume(body, referer));
   }
 
+  Promise.all(promises)
+    .then(() => {
+      response.json({
+        status: 200,
+        message: 'Ok',
+      });
+    })
+    .catch((e) => {
+      console.error(e);
+      response.json({
+        status: 500,
+        message: 'Internal Error',
+      });
+    });
+});
+
+router.post('/partner', (request, response) => {
+  const { body } = request;
+  const referer = request.header('referer');
+  const promises = [];
+
+  promises.push(logBody(body, referer));
+
   if (config.dialog.webhook) {
     promises.push(notifyDialog(body, referer));
   }
+
+  // if (config.email.auth.user && config.email.auth.pass) {
+  //   promises.push(notifyResume(body, referer));
+  // }
 
   Promise.all(promises)
     .then(() => {

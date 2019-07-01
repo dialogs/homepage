@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import './Hero.css';
 
 export function Hero({ openOfferModal, intl: { formatMessage } }) {
@@ -25,7 +25,9 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
           <Section className="hero">
             <div className="hero__wrapper">
               <div className="hero__content">
-                <PageHeader>{formatMessage({ id: 'hero_header' })}</PageHeader>
+                <PageHeading>
+                  {formatMessage({ id: 'hero_header' })}
+                </PageHeading>
                 <h4 className="hero__text">
                   {formatMessage({ id: 'hero_subheader' })}
                 </h4>

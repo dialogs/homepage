@@ -2,16 +2,17 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
+import { Heading } from '../Heading/Heading';
 import SubscribeForm from '../SubscribeForm';
 import './Subscribe.css';
 
-export function Subscribe() {
+export function Subscribe({ language }) {
   return (
     <Section className="subscribe">
-      <h3 className="subscribe__title">
+      <Heading level="1" style={{ padding: '15px 15% 15px 0' }}>
         <FormattedMessage id="subscribe_subscribe" />
-      </h3>
-      <SubscribeForm className="subscribe__form" />
+      </Heading>
+      <SubscribeForm className="subscribe__form" language={language} />
     </Section>
   );
 }

@@ -48,8 +48,8 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const TOP_SCROLL_HIDE_OFFSET = 350;
-const TOP_SCROLL_REMOVE_OFFSET = 100;
+const TOP_SCROLL_HIDE_OFFSET = 500;
+const TOP_SCROLL_REMOVE_OFFSET = 250;
 
 export function Header({
   locale,
@@ -64,13 +64,12 @@ export function Header({
   let prevScrollPosition = 0;
 
   let toLink = `/${locale === 'ru' ? 'en/' : 'ru/'}${originalPath || ''}`;
-  if (typeof window !== 'undefined') {
-    if (window.location.href.indexOf('/blog/') > 0) {
-      toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
-    }
-    if (window.location.href.indexOf('/career/') > 0) {
-      toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
-    }
+
+  if (originalPath.indexOf('/blog/') > 0) {
+    toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
+  }
+  if (originalPath.indexOf('/career/') > 0) {
+    toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
   }
 
   function getCurrentScroll() {

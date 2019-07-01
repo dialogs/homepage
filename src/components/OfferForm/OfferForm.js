@@ -6,7 +6,15 @@ import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
-import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
+import {
+  Form,
+  FormBox,
+  FormFooter,
+  FormInfo,
+  FormErrorMessage,
+  FormPendingMessage,
+  FormSuccessMessage,
+} from '../Form/Form';
 
 import './OfferForm.css';
 
@@ -17,6 +25,7 @@ export function OfferForm({
   onSubmit,
   className,
   flag = 'sales',
+  language,
 }) {
   const [form, setForm] = useState({
     name: '',
@@ -25,16 +34,13 @@ export function OfferForm({
     company: '',
     users: '1-100',
     agree: true,
-    subscribe: false,
+    subscribe: true,
   });
-
-  const classes = classNames('form', className);
-
   function handleSubmit(event) {
     event.preventDefault();
 
     if (form.agree) {
-      onSubmit({ ...form, form: 'offer', flag: flag });
+      onSubmit({ ...form, form: 'offer', flag: flag, siteLanguage: language });
     }
   }
 
@@ -46,8 +52,8 @@ export function OfferForm({
   }
 
   return (
-    <form className={classes} onSubmit={handleSubmit}>
-      <div className="form__box">
+    <Form className={className} onSubmit={handleSubmit}>
+      <FormBox>
         <Input
           value={form.name}
           name="name"
@@ -103,9 +109,9 @@ export function OfferForm({
           label={<FormattedMessage id="form_label_amount" />}
           required
         />
-      </div>
+      </FormBox>
 
-      <div className="form__box">
+      <FormBox>
         <Checkbox
           label={<FormattedMessage id="form_label_agreement" />}
           value={form.agree}
@@ -118,9 +124,9 @@ export function OfferForm({
           name="subscribe"
           onChange={handleChange}
         />
-      </div>
+      </FormBox>
 
-      <div className="form__footer">
+      <FormFooter>
         <Button
           type="submit"
           className="form__submit"
@@ -128,20 +134,12 @@ export function OfferForm({
         >
           <FormattedMessage id="send_application" />
         </Button>
-        <div className="form__info">
+        <FormInfo>
           {error && <FormErrorMessage />}
-          {pending && (
-            <div className="form__pending">
-              <FormattedMessage id="form_pending" />
-            </div>
-          )}
-          {value && value.status === 200 && (
-            <div className="form__success">
-              <FormattedMessage id="form_success_message" />
-            </div>
-          )}
-        </div>
-      </div>
-    </form>
+          {pending && <FormPendingMessage />}
+          {value && value.status === 200 && <FormSuccessMessage />}
+        </FormInfo>
+      </FormFooter>
+    </Form>
   );
 }
