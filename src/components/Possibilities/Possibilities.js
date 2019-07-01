@@ -18,7 +18,7 @@ const PossibilityCardLink = withProps({
   target: '_blank',
   rel: 'noopener noreferrer',
 })(styled(UnderlineLink)`
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   margin-right: 40px;
 `);
