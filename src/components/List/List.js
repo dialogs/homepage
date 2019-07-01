@@ -3,11 +3,25 @@ import { styled } from 'astroturf';
 import { Text } from '../Text/Text';
 
 const ListElement = styled.ul`
+  @import '../../styles/variables.css';
+
   margin: 0;
   padding: 40px 0;
 
   &.noPadding {
     padding: 0;
+  }
+
+  &.intent-primary {
+    & li:before {
+      background-color: var(--color-primary);
+    }
+  }
+
+  &.intent-secondary {
+    & li:before {
+      background-color: var(--color-secondary);
+    }
   }
 `;
 
@@ -18,6 +32,7 @@ const ListItemElement = styled.li`
   position: relative;
   padding-left: 40px;
   margin-bottom: 40px;
+  line-height: 0px;
 
   &:last-child {
     margin-bottom: 0;
@@ -31,7 +46,6 @@ const ListItemElement = styled.li`
     top: 1px;
     width: 20px;
     height: 20px;
-    background-color: var(--color-secondary);
   }
 
   @media (--laptop-viewport) {
@@ -39,9 +53,17 @@ const ListItemElement = styled.li`
   }
 `;
 
-export function List({ style, children }) {
-  return <ListElement style={style}>{children}</ListElement>;
+export function List({ intent, style, children }) {
+  return (
+    <ListElement intent={intent} style={style}>
+      {children}
+    </ListElement>
+  );
 }
+
+List.defaultProps = {
+  intent: 'secondary',
+};
 
 export function ListItem({ children }) {
   return (
