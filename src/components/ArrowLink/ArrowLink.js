@@ -6,7 +6,7 @@ const StyledGatsbyLink = styled(Link)`
   @import '../../styles/variables.css';
 
   font-size: 18px;
-  line-height: 23px;
+  line-height: 24px;
   position: relative;
   display: inline-flex;
   align-items: center;

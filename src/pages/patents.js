@@ -1,12 +1,31 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
+import { styled } from 'astroturf';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
-import ImageFormatted from '../components/ImageFormatted';
+import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import { PageHeading } from '../components/PageHeading/PageHeading';
-// import { PartnersTechnological } from '../components/PartnersTechnological/PartnersTechnological';
+import { PatentsMain } from '../components/Patents/PatentsMain';
+import { PatentsLicenses } from '../components/Patents/PatentsLicenses';
+import { PatentsAssociations } from '../components/Patents/PatentsAssociations';
+
+const PatentsContainer = styled(Container)`
+  @import '../styles/variables.css';
+
+  @media (--tablet-viewport) {
+    padding: 0;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    padding-left: 156px;
+    padding-right: 156px;
+  }
+
+  @media (--laptop-viewport) {
+    padding-left: 186px;
+    padding-right: 186px;
+  }
+`;
 
 export default ({
   pageContext: {
@@ -19,7 +38,7 @@ export default ({
   },
 }) => {
   return (
-    <Container>
+    <Page>
       <FormattedMetaTags
         titleId="meta_title_patents"
         descriptionId="meta_description_patents"
@@ -30,268 +49,12 @@ export default ({
         path={`/${language}${originalPath}`}
       />
 
-      <div className="license__column-content">
-        <section className="license__section license__intro">
-          <PageHeading>
-            <FormattedMessage id="licenses_licenses" />
-          </PageHeading>
-          <div className="license__intro-text">
-            {/*<FormattedMessage id="licenses_prodiction_process" />*/}
-          </div>
-        </section>
-
-        <section className="license__section license__photos license__photos--patents">
-          <div className="license__photos-title">
-            <FormattedMessage id="licenses_company_is_the_holder" />
-          </div>
-          <div className="license__photos-list">
-            <div className="license__photos-item license--dialog-server">
-              <a href="/images/patent-dialog-server.jpg" download>
-                <img
-                  className="license__photos-image"
-                  src="/images/patent-dialog-server.jpg"
-                  alt="Dialog server"
-                />
-              </a>
-              <div className="license__photos-link-box">
-                <a
-                  href="/images/patent-dialog-server.jpg"
-                  className="link--download license__photos-link"
-                  download
-                >
-                  <span className="link--download__text">Dialog server</span>
-                  <ImageFormatted
-                    imgClass="link--download__icon"
-                    src="/images/svg-icons/arrow-download.svg"
-                    altLangId="alt_download"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="license__photos-item license--dialog-core">
-              <a href="/images/patent-dialog-core.jpg" download>
-                <img
-                  className="license__photos-image"
-                  src="/images/patent-dialog-core.jpg"
-                  alt="Dialog Core"
-                />
-              </a>
-              <div className="license__photos-link-box">
-                <a
-                  className="link--download license__photos-link"
-                  href="/images/patent-dialog-core.jpg"
-                  download
-                >
-                  <span className="link--download__text">Dialog Core</span>
-                  <ImageFormatted
-                    imgClass="link--download__icon"
-                    src="/images/svg-icons/arrow-download.svg"
-                    altLangId="alt_download"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="license__photos-item license--dialog-android-sdk">
-              <a href="/images/patent-dialog-android-sdk.jpg" download>
-                <img
-                  className="license__photos-image"
-                  src="/images/patent-dialog-android-sdk.jpg"
-                  alt="Dialog Android SDK"
-                />
-              </a>
-              <div className="license__photos-link-box">
-                <a
-                  className="link--download license__photos-link"
-                  href="/images/patent-dialog-android-sdk.jpg"
-                  download
-                >
-                  <span className="link--download__text">
-                    Dialog Android SDK
-                  </span>
-                  <ImageFormatted
-                    imgClass="link--download__icon"
-                    src="/images/svg-icons/arrow-download.svg"
-                    altLangId="alt_download"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="license__photos-item license--dialog-ios-sdk">
-              <a href="/images/patent-dialog-ios-sdk.jpg" download>
-                <img
-                  className="license__photos-image"
-                  src="/images/patent-dialog-ios-sdk.jpg"
-                  alt="Dialog iOS SDK"
-                />
-              </a>
-              <div className="license__photos-link-box">
-                <a
-                  className="link--download license__photos-link"
-                  href="/images/patent-dialog-ios-sdk.jpg"
-                  download
-                >
-                  <span className="link--download__text">Dialog iOS SDK</span>
-                  <ImageFormatted
-                    imgClass="link--download__icon"
-                    src="/images/svg-icons/arrow-download.svg"
-                    altLangId="alt_download"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="license__photos-item license--dialog-web-sdk">
-              <a href="/images/patent-dialog-web-sdk.jpg" download>
-                <img
-                  className="license__photos-image"
-                  src="/images/patent-dialog-web-sdk.jpg"
-                  alt="Dialog WEB SDK"
-                />
-              </a>
-              <div className="license__photos-link-box">
-                <a
-                  className="link--download license__photos-link"
-                  href="/images/patent-dialog-web-sdk.jpg"
-                  download
-                >
-                  <span className="link--download__text">Dialog WEB SDK</span>
-                  <ImageFormatted
-                    imgClass="link--download__icon"
-                    src="/images/svg-icons/arrow-download.svg"
-                    altLangId="alt_download"
-                  />
-                </a>
-              </div>
-            </div>
-            {/*
-            <div className="license__photos-item license--dialog-enterprise">
-              <img
-                className="license__photos-image"
-                src="/images/patent-dialog-web-sdk.jpg"
-                alt="Dialog enterprise"
-              />
-              <div className="license__photos-link-box">
-                <a
-                  className="link--download license__photos-link"
-                  href="/images/patent-dialog-web-sdk.jpg"
-                  download
-                >
-                  <span className="link--download__text">
-                    Dialog enterprise
-                  </span>
-                  <img
-                    src="/images/svg-icons/arrow-download.svg"
-                    alt=""
-                    className="link--download__icon"
-                  />
-                </a>
-              </div>
-            </div>
-            */}
-          </div>
-        </section>
-
-        <section className="license__section license__photos license__photos--fstek">
-          <div className="license__photos-title">
-            <FormattedMessage id="licenses_required_licenses" />
-          </div>
-          <div className="license__photos-list">
-            <div className="license__photos-item">
-              <a href="/fsb_license.pdf" download>
-                <ImageFormatted
-                  imgClass="license__photos-image"
-                  src="/images/license-fsb.jpg"
-                  altLangId="licenses_FSB"
-                />
-              </a>
-              <div className="license__photos-link-box">
-                <a
-                  className="link--download license__photos-link"
-                  href="/fsb_license.pdf"
-                  download
-                >
-                  <span className="link--download__text">
-                    <FormattedMessage id="licenses_FSB" />
-                  </span>
-                  <ImageFormatted
-                    imgClass="link--download__icon"
-                    src="/images/svg-icons/arrow-download.svg"
-                    altLangId="alt_download"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <div className="license__photos-item">
-              <a href="/images/fstek-1.jpg" download>
-                <ImageFormatted
-                  imgClass="license__photos-image"
-                  src="/images/fstek-1.jpg"
-                  altLangId="licenses_FSTEK"
-                />
-              </a>
-              <div className="license__photos-link-box">
-                <a
-                  className="link--download license__photos-link"
-                  href="/images/fstek-1.jpg"
-                  download
-                >
-                  <span className="link--download__text">
-                    <FormattedMessage id="licenses_FSTEK" />
-                  </span>
-                  <ImageFormatted
-                    imgClass="link--download__icon"
-                    src="/images/svg-icons/arrow-download.svg"
-                    altLangId="alt_download"
-                  />
-                </a>
-              </div>
-            </div>
-            <div className="license__photos-item">
-              <a href="/images/fstek-3.jpg" download>
-                <ImageFormatted
-                  imgClass="license__photos-image"
-                  src="/images/fstek-3.jpg"
-                  altLangId="licenses_FSTEK"
-                />
-              </a>
-              <div className="license__photos-link-box">
-                <a
-                  className="link--download license__photos-link"
-                  href="/images/fstek-3.jpg"
-                  download
-                >
-                  <span className="link--download__text">
-                    <FormattedMessage id="licenses_FSTEK" />
-                  </span>
-                  <ImageFormatted
-                    imgClass="link--download__icon"
-                    src="/images/svg-icons/arrow-download.svg"
-                    altLangId="alt_download"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="license__section license__assoc box--prefooter">
-          <div className="license__assoc-title">
-            <FormattedMessage id="licenses_associations" />
-          </div>
-          <ul>
-            <li>
-              <FormattedMessage id="licenses_messenger_complies" />
-            </li>
-            <li>
-              <FormattedMessage id="licenses_member" />
-            </li>
-            <li>
-              <FormattedMessage id="licenses_ooo" />
-            </li>
-          </ul>
-        </section>
-      </div>
-    </Container>
+      <PatentsContainer>
+        <PatentsMain />
+        <PatentsLicenses />
+        <PatentsAssociations />
+      </PatentsContainer>
+    </Page>
   );
 };
 

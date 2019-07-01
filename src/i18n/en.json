@@ -273,17 +273,6 @@
   "legal_granted_rights": "The rights granted to the user are realised by sending a scanned document containing the above user right and his signature. This document should be sent to Dialog through this software. Dialog undertakes to facilitate the implementation of user rights within 10 business days from the receipt of a properly issued and directed document from the user.",
   "legal_dialog_software": "Dialog software is not intended for use by people under 13 years old. If you are under 13, and this server is in the US, then do not use this software. (According to the requirements of COPPA - the Law on the Protection of Children's Privacy on the Internet).",
   "legal_if_you_are": "If you are an EU resident under the age of 16, you are not entitled to use the Dialog software. In some cases, the legal representative (guardian) of the minor has the right to apply to Dialog with the consent (approval) on the processing of the minor's personal data in the form provided for the realisation of the rights granted to the user, on the basis of this treatment a minor may have the right to use the Dialog software.",
-  "licenses_licenses": "Patents and Licenses",
-  "licenses_prodiction_process": "The process of developing software is based on design-thinking practices, architectural integrity, and the provisions and principles of the Agile Manifesto and DevOps practices. It is defined by the internal regulations of technologies development and implementation. A process for managing incidents and service requests has been implemented to provide technical support and eliminate detected software errors.",
-  "licenses_company_is_the_holder": "The company is the copyright holder of 6 software products, registered by RosPatent.",
-  "licenses_required_licenses": "The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia.",
-  "licenses_FSB": "FSS",
-  "licenses_FSTEK": "FSTEC",
-  "licenses_FSTEK_TZKI": "FSTEC",
-  "licenses_associations": "Registries and Associations",
-  "licenses_messenger_complies": "dialog messenger meets the requirements of the Unified register of Russian ECM and databanks programs and included in the register of national software.",
-  "licenses_member": "The company is a member of the Association of Documented Telecommunications (ADT).",
-  "licenses_ooo": "“Dialog” is registered as an Information-Dissemination Organization (IDO) by RosComNadzor.",
   "blog_header_popular": "Popular Articles",
   "subscribe_subscribe": "Sign up for new blog articles!",
   "subscribe_submit": "Subscribe",
@@ -525,5 +514,28 @@
   "footer": {
     "partners": "Partners",
     "integrations": "Integrations"
+  },
+  "patents": {
+    "header": "Patents and Licenses",
+    "patents": {
+      "header": "The company is the copyright holder of 5 software products, registered by RosPatent.",
+      "server": "Dialog Server",
+      "core": "Dialog Core",
+      "android": "Dialog Android SDK",
+      "ios": "Dialog iOS SDK",
+      "web": "Dialog Web SDK"
+    },
+    "licenses": {
+      "header": "The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia.",
+      "fsb": "FSS",
+      "fstec": "FSTEC"
+    },
+    "associations": {
+      "header": "Registries and Associations",
+      "text_1": "dialog messenger meets the requirements of the Unified register of Russian ECM and databanks programs and included in the register of national software.",
+      "text_2": "The company is a member of the Association of Documented Telecommunications (ADT).",
+      "text_3": "“Dialog” is registered as an Information-Dissemination Organization (IDO) by RosComNadzor.",
+      "text_4": "Member of the Skolkovo Innovation Center"
+    }
   }
 }
