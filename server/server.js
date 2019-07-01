@@ -44,7 +44,7 @@ app.use(detectLanguage(languages));
 
 if (!isDev) {
   app.use(localeRedirect(languages));
-  app.use(express.static('public/', { maxage: 24 * 3600 * 1000 }));
+  app.use(express.static('public/', { maxage: 365 * 24 * 3600 * 1000 }));
   app.use(
     gatsbyExpress('server/gatsby-express.json', {
       publicDir: './public/',
