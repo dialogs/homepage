@@ -1,7 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
-
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
 import { IntegrationsHeader } from '../components/IntegrationsHeader/IntegrationsHeader';

@@ -8,4 +8,4 @@ COPY package.json package.json
 
 RUN npm install --production
 
-ENTRYPOINT ["npm", "run", "server:prod"]
+ENTRYPOINT ["node", "server/server"]

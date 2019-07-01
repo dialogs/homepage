@@ -5,11 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "server:dev": "cross-env NODE_ENV=development node server/server",
-    "server:prod": "cross-env NODE_ENV=production node server/server",
+    "server": "cross-env NODE_ENV=development node server/server",
     "gatsby:start": "gatsby develop -H 0.0.0.0 -p 8000",
     "gatsby:build": "cross-env NODE_ENV=production gatsby build",
-    "start": "npm-run-all -p server:dev gatsby:start",
+    "start": "npm-run-all -p server gatsby:start",
     "build": "npm run gatsby:build",
     "format": "prettier --write \"src/**/*.{js,json,css,yml,md}\"",
     "yaspeller:translations": "node utils/translationValues.js | yaspeller --stdin",
