@@ -2,12 +2,11 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const gatsbyExpress = require('./middlewares/gatsbyExpressCustomized');
 const bodyParser = require('body-parser');
-const { isDev, server, languages } = require('./config');
+const { isDev, server, languages, sentry } = require('./config');
 const api = require('./api');
 const redirectRules = require('./redirect-rules');
 const helmet = require('helmet');
@@ -16,8 +15,15 @@ const setHeaders = require('./middlewares/setHeaders');
 const detectLanguage = require('./middlewares/detectLanguage');
 // const parseUserAgent = require('./middlewares/parseUserAgent');
 const localeRedirect = require('./middlewares/localeRedirect');
+const Sentry = require('@sentry/node');
 
 const app = express();
+
+// Sentry init
+if (sentry.dsn) {
+  Sentry.init({ dsn: sentry.dsn });
+  app.use(Sentry.Handlers.requestHandler());
+}
 
 // Logging
 app.use(morgan(isDev ? 'dev' : 'combined'));
@@ -53,12 +59,20 @@ if (!isDev) {
   );
 }
 
-// Error tracing
+// Errors
+if (sentry.dsn) {
+  app.use(Sentry.Handlers.errorHandler());
+}
+
 app.use((error, req, res, next) => {
   console.trace(error);
-  next(error);
+  res.status(500).json({
+    status: 500,
+    message: 'Internal Error',
+  });
 });
 
+// Start server
 app.listen(server, (error) => {
   if (error) {
     console.trace(error);
