@@ -7,7 +7,7 @@ import { Container } from '../components/Container/Container';
 import { IntegrationsHeader } from '../components/IntegrationsHeader/IntegrationsHeader';
 import { Possibilities } from '../components/Possibilities/Possibilities';
 import { IntegrationsCatalog } from '../components/IntegrationsCatalog/IntegrationsCatalog';
-import { IntegrationsBanner } from '../components/IntegrationsBanner/IntegrationsBanner';
+// import { IntegrationsBanner } from '../components/IntegrationsBanner/IntegrationsBanner';
 import { OpenSource } from '../components/OpenSource/OpenSource';
 
 export default ({

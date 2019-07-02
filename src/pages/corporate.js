@@ -5,7 +5,6 @@ import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import { Promo } from '../components/Promo/Promo';
 import { SecureCommunication } from '../components/SecureCommunication/SecureCommunication';
 import { EffectiveCommunication } from '../components/EffectiveCommunication/EffectiveCommunication';
 import { Partnership } from '../components/Partnership/Partnership';
