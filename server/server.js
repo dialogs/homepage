@@ -16,12 +16,17 @@ const detectLanguage = require('./middlewares/detectLanguage');
 // const parseUserAgent = require('./middlewares/parseUserAgent');
 const localeRedirect = require('./middlewares/localeRedirect');
 const Sentry = require('@sentry/node');
+const package = require('../package.json');
 
 const app = express();
 
 // Sentry init
 if (sentry.dsn) {
-  Sentry.init({ dsn: sentry.dsn });
+  Sentry.init({
+    dsn: sentry.dsn,
+    environment: isDev ? 'development' : 'production',
+    release: package.version,
+  });
   app.use(Sentry.Handlers.requestHandler());
 }
 
