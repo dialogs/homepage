@@ -45,6 +45,10 @@ const config = {
       en: env('MAILCHIMP_LIST_EN', null),
     },
   },
+  sentry: {
+    dsn: env('SENTRY_DSN', null),
+    dsnPublic: env('SENTRY_DSN_PUBLIC', null),
+  },
 };
 
 function checkOrFail(envName, variable) {
