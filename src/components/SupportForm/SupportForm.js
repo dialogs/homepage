@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-
 import { Input } from '../Input/Input';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
 import {
   Form,
-  FormBox,
   FormFooter,
   FormInfo,
   FormErrorMessage,

@@ -1,11 +1,13 @@
-import React, { Children } from 'react';
+import React from 'react';
 import styled from 'astroturf';
 
 const SectionContainer = styled.section`
   @import '../../styles/variables.css';
 
-  padding-top: 50px;
-  padding-bottom: 50px;
+  @media (--mobile-viewport) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 
   @media (--tablet-viewport) {
     padding-top: 60px;

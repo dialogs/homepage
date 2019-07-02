@@ -1,9 +1,8 @@
 import React from 'react';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
-import { Text } from '../Text/Text';
 import { IntegrationCard } from '../IntegrationCard/IntegrationCard';
 import { integrations } from './integrationsData';
 

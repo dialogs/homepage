@@ -1,23 +1,23 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import { FormattedHTMLMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
-import { graphql } from 'gatsby';
-
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import { Promo } from '../components/Promo/Promo';
-import SecureCommunication from '../components/SecureCommunication';
+import { SecureCommunication } from '../components/SecureCommunication/SecureCommunication';
 import { EffectiveCommunication } from '../components/EffectiveCommunication/EffectiveCommunication';
 import { Partnership } from '../components/Partnership/Partnership';
 import { Offer } from '../components/Offer/Offer';
+import { PageHeader } from '../components/PageHeader/PageHeader';
+import { PageHeading } from '../components/PageHeading/PageHeading';
 
 export default ({
   pageContext: {
     intl: { language, originalPath },
   },
   data: {
-    promoImage1,
-    promoImage2,
+    headerImage,
     secureImage,
     effectiveImage,
     site: {
@@ -37,10 +37,15 @@ export default ({
         path={`/${language}${originalPath}`}
       />
 
+      <PageHeader image={headerImage}>
+        <PageHeading>
+          <FormattedHTMLMessage id="solutions_simple" />
+        </PageHeading>
+      </PageHeader>
+
+      <SecureCommunication language={language} image={secureImage} />
+      <EffectiveCommunication image={effectiveImage} />
       <Container>
-        <Promo />
-        <SecureCommunication />
-        <EffectiveCommunication />
         <Partnership />
         <Offer language={language} />
       </Container>
@@ -50,34 +55,29 @@ export default ({
 
 export const pageQuery = graphql`
   query {
-    promoImage1: file(relativePath: { eq: "images/solution/solution_1.jpg" }) {
+    headerImage: file(
+      relativePath: { eq: "images/solution/header_image.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 1280) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-    promoImage2: file(relativePath: { eq: "images/solution/solution_2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 350) {
+        fluid(maxWidth: 740) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     secureImage: file(
-      relativePath: { eq: "images/solution/secure-communication.png" }
+      relativePath: { eq: "images/solution/secure_communication.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 440) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     effectiveImage: file(
-      relativePath: { eq: "images/solution/effective-communication.png" }
+      relativePath: { eq: "images/solution/effective_communication.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 750) {
+        fluid(maxWidth: 740) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }

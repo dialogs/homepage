@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import { styled } from 'astroturf';
 import { Section } from '../Section/Section';
@@ -26,7 +25,7 @@ const PageHeaderSection = styled(Section)`
   }
 
   @media (--desktop-viewport) {
-    padding: 30px 0 80px;
+    padding: 30px 0 120px;
     width: 1320px;
   }
 `;
