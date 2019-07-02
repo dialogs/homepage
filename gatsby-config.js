@@ -1,16 +1,19 @@
-const { isDev, ghost, languages, siteUrl } = require('./server/config');
+const { isDev, ghost, languages, siteUrl, sentry } = require('./server/config');
+const package = require('./package.json');
 
-module.exports = {
-  siteMetadata: {
-    siteUrl,
-  },
-  proxy: isDev
-    ? {
-        prefix: '/api/v1',
-        url: 'http://127.0.0.1:3010',
-      }
-    : undefined,
-  plugins: [
+function getProxy() {
+  if (isDev) {
+    return {
+      prefix: '/api/v1',
+      url: 'http://127.0.0.1:3010',
+    };
+  }
+
+  return undefined;
+}
+
+function getPlugins() {
+  const plugins = [
     { resolve: 'gatsby-plugin-react-helmet' },
     {
       resolve: 'gatsby-plugin-google-tagmanager',
@@ -114,5 +117,26 @@ module.exports = {
     },
     { resolve: `gatsby-transformer-remark` },
     { resolve: 'gatsby-plugin-offline' },
-  ],
+  ];
+
+  if (sentry.dsnPublic) {
+    plugins.push({
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: sentry.dsnPublic,
+        environment: isDev ? 'development' : 'production',
+        release: package.version,
+      },
+    });
+  }
+
+  return plugins;
+}
+
+module.exports = {
+  siteMetadata: {
+    siteUrl,
+  },
+  proxy: getProxy(),
+  plugins: getPlugins(),
 };
