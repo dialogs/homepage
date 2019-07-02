@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { withProps } from 'astroturf/helpers';
 import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
@@ -9,7 +9,6 @@ import { Heading } from '../Heading/Heading';
 import { Tabs, Tab } from '../Tabs';
 import { Collapsible } from '../Collapsible/Collapsible';
 import { PossibilityCard } from '../PossibilityCard/PossibilityCard';
-import { Text } from '../Text/Text';
 
 import './Possibilities.css';
 
@@ -18,7 +17,7 @@ const PossibilityCardLink = withProps({
   target: '_blank',
   rel: 'noopener noreferrer',
 })(styled(UnderlineLink)`
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   margin-right: 40px;
 `);
@@ -199,7 +198,6 @@ export function Possibilities() {
               </div>
             </>
           }
-          title={<FormattedMessage id="zapier" />}
         />
         <PossibilityCard
           image="/images/integrations/graphql_icon.svg"

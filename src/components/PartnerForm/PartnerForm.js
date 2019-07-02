@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-import { styled } from 'astroturf';
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
 import { Input } from '../Input/Input';

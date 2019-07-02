@@ -148,21 +148,6 @@
   "form_success_message": "The request has sent successfully",
   "form_error_message": "Something went wrong. Please, contact us by <a href=\"mailto:info@dlg.im\">info@dlg.im</a> or <a href=\"tel:+78007758202\">+7(800)775-82-02</a>",
   "more_than_messenger": "dialog is a lot more than just a messenger",
-  "mission": "Mission",
-  "mission_text": "To eradicate bureaucracy. To simplify and improve the quality of communications for all the mankind",
-  "values": "Values",
-  "values_text": "Simplicity, transparency, flexibility, smart innovations, opportunity, and efficiency",
-  "goal": "Goal",
-  "goal_text": "To create a communications platform for a “business-society-government” ecosystem",
-  "patents_licenses": "Patents and licenses",
-  "about_licenses_text": "The patents and licenses of “Dialog” and its products comply with the specific requirements of the Russian federal authorities.",
-  "contacts": "Contact Information",
-  "on_map": "View map",
-  "moscow": "Moscow",
-  "novosibirsk": "Novosibirsk",
-  "moscow_address": "3, bldg. 2 Poklonnaya St., 121170",
-  "novosibirsk_address_nikolaeva": "office 311, 11 Nikolaeva St., 630090",
-  "novosibirsk_address_most": "40 Kommunisticheskaya St., 630007",
   "link_icanchoose": "You can find more information about company life in special project \"icanchoose\"",
   "prices_go_to_form": "<a class=\"link--default\" href=\"#prices_offer_form\">Send request</a> to get prices",
   "prices_pageheader": "The price of the dialog Enterprise is based on the number of users",
@@ -500,13 +485,13 @@
   "opensource": {
     "header": "dialog open source community",
     "dev": {
-      "title": "For developers",
+      "title": "For Developers",
       "portfolio": "A public, external project in your portfolio that future employers will like",
       "experience": "The opportunity to improve your programming skills",
       "participate": "Participate"
     },
     "clients": {
-      "title": "For clients",
+      "title": "For Clients",
       "community": "Community where you can find answers",
       "libraries": "Libraries of ready-made integration solutions"
     }
@@ -514,6 +499,40 @@
   "footer": {
     "partners": "Partners",
     "integrations": "Integrations"
+  },
+  "about": {
+    "features": {
+      "mission": {
+        "title": "Mission",
+        "text": "To eradicate bureaucracy. To simplify and improve the quality of communications for all the mankind."
+      },
+      "values": {
+        "title": "Values",
+        "text": "Simplicity, transparency, flexibility, smart innovations, opportunity, and efficiency."
+      },
+      "goal": {
+        "title": "Goal",
+        "text": "To create a communications platform for a “business-society-government” ecosystem."
+      }
+    },
+    "patents": {
+      "header": "Patents and Licenses",
+      "text": "The patents and licenses of “Dialog” and its products comply with the specific requirements of the Russian federal authorities.",
+      "link": "Learn more about patents and licenses"
+    },
+    "contacts": {
+      "header": "Contact Information",
+      "office": {
+        "msk": "Moscow",
+        "nsk": "Novosibirsk",
+        "link": "View map",
+        "address": {
+          "msk": "3, bldg. 2 Poklonnaya St., 121170",
+          "nsk1": "office 311, 11 Nikolaeva St., 630090",
+          "nsk2": "40 Kommunisticheskaya St., 630007"
+        }
+      }
+    }
   },
   "patents": {
     "header": "Patents and Licenses",

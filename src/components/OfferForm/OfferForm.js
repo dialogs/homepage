@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-
 import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
 import { Checkbox } from '../Checkbox/Checkbox';

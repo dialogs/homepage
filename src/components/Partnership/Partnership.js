@@ -29,7 +29,7 @@ export function Partnership() {
           >
             <ImageFormatted
               imgClass="partner__icon"
-              src="/images/partner-basealt.png"
+              src="/images/partners/basealt_icon.png"
               altLangId="Partnership_bazalt"
             />
             <div className="partner__name">
@@ -44,7 +44,7 @@ export function Partnership() {
           >
             <ImageFormatted
               imgClass="partner__icon"
-              src="/images/partner-moiofis.png"
+              src="/images/partners/myoffice_icon.png"
               altLangId="Partnership_my_office"
             />
             <div className="partner__name">
@@ -59,7 +59,7 @@ export function Partnership() {
           >
             <ImageFormatted
               imgClass="partner__icon"
-              src="/images/partner-avrora-orig.png"
+              src="/images/partners/avrora_icon.png"
               altLangId="Partnership_aurora"
             />
             <div className="partner__name">

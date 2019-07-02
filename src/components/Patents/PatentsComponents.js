@@ -1,7 +1,6 @@
 import React from 'react';
 import { styled } from 'astroturf';
 import { UnderlineDownloadLink } from '../UnderlineLink/UnderlineDownloadLink';
-import { Section } from '../Section/Section';
 import { FormattedMessage } from 'react-intl';
 
 export const PatentList = styled.div`

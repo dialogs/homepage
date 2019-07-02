@@ -20,9 +20,9 @@ const RepositoryCount = styled.text`
   user-select: none;
 `;
 
-export function GithubButton({ count = 94, ...props }) {
+export function GithubButton({ count = 94 }) {
   return (
-    <a
+    <GithubButtonLink
       href="https://github.com/dialogs"
       target="_blank"
       rel="noopener noreferrer"
@@ -57,6 +57,6 @@ export function GithubButton({ count = 94, ...props }) {
           {count}
         </RepositoryCount>
       </svg>
-    </a>
+    </GithubButtonLink>
   );
 }
