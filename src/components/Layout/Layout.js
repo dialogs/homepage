@@ -54,16 +54,20 @@ export default ({
       document.referrer &&
       document.referrer.indexOf(document.location.hostname) < 0
     ) {
-      const referrer = safeStorage.get('referrer');
+      try {
+        const referrer = safeStorage.get('referrer');
 
-      // Set referrer
-      if (referrer) {
-        safeStorage.set(
-          'referrer',
-          JSON.stringify([...JSON.parse(referrer), document.referrer]),
-        );
-      } else {
-        safeStorage.set('referrer', JSON.stringify([document.referrer]));
+        // Set referrer
+        if (referrer) {
+          safeStorage.set(
+            'referrer',
+            JSON.stringify([...JSON.parse(referrer), document.referrer]),
+          );
+        } else {
+          safeStorage.set('referrer', JSON.stringify([document.referrer]));
+        }
+      } catch (error) {
+        console.error('Cannot corrctcly set refferer', error);
       }
     }
   }, []);
