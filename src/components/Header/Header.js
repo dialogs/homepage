@@ -5,7 +5,6 @@ import styled from 'astroturf';
 import { Container } from '../Container/Container';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
-import debounce from 'lodash.debounce';
 import './Header.css';
 
 const HeaderContainer = styled.header`
@@ -83,36 +82,40 @@ export function Header({
 
     function handleScroll() {
       const currentScroll = getCurrentScroll();
+      const isScrollingDown = currentScroll > prevScrollPosition;
 
-      if (currentScroll > TOP_SCROLL_HIDE_OFFSET - TOP_SCROLL_REMOVE_OFFSET) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-        setStickyVisible(false);
-      }
+      if (isScrollingDown) {
+        if (currentScroll > TOP_SCROLL_REMOVE_OFFSET) {
+          setSticky(true);
+        }
 
-      if (currentScroll > TOP_SCROLL_HIDE_OFFSET) {
-        const isScrollingDown = currentScroll > prevScrollPosition;
-        setStickyVisible(!isScrollingDown);
+        if (currentScroll > TOP_SCROLL_HIDE_OFFSET) {
+          setStickyVisible(false);
+        }
       } else {
-        setStickyVisible(false);
+        if (currentScroll < TOP_SCROLL_REMOVE_OFFSET) {
+          setSticky(false);
+        }
+
+        if (currentScroll < TOP_SCROLL_HIDE_OFFSET) {
+          setStickyVisible(false);
+        }
+
+        if (currentScroll > TOP_SCROLL_HIDE_OFFSET) {
+          setStickyVisible(true);
+        }
       }
 
       prevScrollPosition = currentScroll <= 0 ? 0 : currentScroll;
     }
 
-    const debouncedScroll = debounce(handleScroll, 100, {
-      leading: true,
-      trailing: false,
-      maxWait: 100,
-    });
-
     window.addEventListener('load', handleWindowLoad);
-    window.addEventListener('scroll', debouncedScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
+      console.log('unload listeners');
       window.removeEventListener('load', handleWindowLoad);
-      window.removeEventListener('scroll', debouncedScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
