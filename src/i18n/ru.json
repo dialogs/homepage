@@ -82,9 +82,6 @@
   "hero_header": "Платформа корпоративных коммуникаций",
   "hero_subheader": "Безопасное решение с функциями мессенджера, аудио- /видеозвонками, интеграциями с сервисами компании и чат-ботами",
   "platform_header": "Функции платформы dialog",
-  "messenger": "Мессенджер",
-  "corporate_features": "Корпоративные функции",
-  "integrations": "Интеграции",
   "platform_chats": "Личные и групповые чаты",
   "platform_free_calls": "Бесплатные аудио- / видеозвонки",
   "platform_files_sharing": "Обмен файлами без ограничений",
@@ -263,7 +260,6 @@
   "form_label_topic": "Тема",
   "form_label_your_question": "Чем мы можем вам помочь?",
   "form_send": "Отправить",
-  "what_dialog_can": "Что умеет dialog",
   "feature_audio_video": "Аудио / видеовызовы",
   "feature_audio_video_content": "\n<h4>Высокое качество связи</h4>\n<p>dialog оптимизирует качество связи автоматически в зависимости от уровня сигнала сотового оператора в месте вашего нахождения. При слабом уровне сигнала dialog снижает количество передаваемого аудио или видео трафика без разрыва или задержки соединения.</p>\n<h4>Безопасное общение</h4>\n<p>Все звонки надежно защищены криптографическими решениями на базе end-to-end и TLS шифрования.</p>\n  ",
   "feature_files": "Обмен файлами любого формата",
@@ -431,77 +427,87 @@
   "career_category_all": "Все",
   "career_category_it": "ИТ и Разработка",
   "career_category_marketing": "Маркетинг, Реклама, PR",
-  "integrations_title": "Интеграции делают dialog еще лучше",
-  "possibilities_header": "Подключайте dialog к десяткам сторонних приложений и систем",
-  "botsdk": "BotSDK",
-  "botsdk_description": "Создавайте чат-ботов самостоятельно. В настоящее время SDK доступен для JS, Java и Python",
-  "botsdk_category1": "Python",
-  "botsdk_category2": "Java",
-  "botsdk_category3": "JavaScript",
-  "botsdk_category4": "Docs",
-  "webhooks": "Webhooks",
-  "webhooks_description": "Функции Dialog в WebHooks как простой способ получения автоматических сообщений и обновления данных, отправленных в текстовый канал на вашем сервере",
-  "zapier": "Zapier",
-  "zapier_description": "Используйте данные и происходящие события в более чем 1000 интеграций для автоматизации вашего рабочего процесса",
-  "zapier_category1": "Настроить интеграцию",
-  "graphql": "GraphQL",
-  "graphql_description": "Работайте с данными приложения через GraphQL",
-  "api": "API",
-  "api_description": "Благодаря нашему API вы можете создавать собственные интеграции и настраивать dialog под вашу команду и бизнес",
-  "api_category1": "Документация",
-  "integrations_header": "Примеры интеграций",
   "bots": "Боты",
   "design": "Дизайн",
   "communication": "Коммуникации",
-  "asana_title": "Asana Bot",
-  "asana_description": "Бот быстрого создания напоминаний ",
-  "asana_link": "Источник кода",
-  "asana_language": "Python",
-  "asana_category": "Бот",
-  "google_title": "Google Forms",
-  "google_description": "Бот для заполнения Google Forms",
-  "google_link": "Источник кода",
-  "google_language": "Java",
-  "google_category": "Бот",
-  "reminder_title": "Reminder Bot",
-  "reminder_description": "Бот быстрого создания напоминаний",
-  "reminder_link": "Источник кода",
-  "reminder_language": "Python",
-  "reminder_category": "Project management",
-  "integrations_card_language": "Язык",
-  "integrations_card_category": "Категория",
   "invite_text": "Хотите сделать интеграцию с dialog – напишите нам на <a href=\"mailto:info@dlg.im\">info@dlg.im</a>.",
+  "############": "REFACTORED TRANSLAtiONS BELOW",
   "partner": {
     "form": {
       "header": "Стать партнером"
     }
   },
-  "new_integrations": {
-    "source_code": "Исходный код",
-    "zapier": "Настройте интеграцию прямо сейчас",
+  "features": {
+    "header": "Что умеет dialog",
+    "tabs": {
+      "messenger": "Мессенджер",
+      "corporate": "Корпоративные функции",
+      "integrations": "Интеграции"
+    }
+  },
+  "integrations": {
+    "header": "Интеграции делают dialog еще лучше",
     "docs": "Документация",
-    "bot": "Бот",
-    "vote": {
-      "title": "Vote Bot",
-      "description": "Бот для публичных и приватных голосований"
+    "possibilities": {
+      "header": "Подключайте dialog к десяткам сторонних приложений и систем",
+      "botsdk": {
+        "title": "BotSDK",
+        "description": "Создавайте чат-ботов самостоятельно. В настоящее время SDK доступен для JS, Java и Python"
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "Функции Dialog в WebHooks как простой способ получения автоматических сообщений и обновления данных, отправленных в текстовый канал на вашем сервере"
+      },
+      "zapier": {
+        "title": "Zapier",
+        "description": "Используйте данные и происходящие события в более чем 1000 интеграций для автоматизации вашего рабочего процесса",
+        "link": "Настройте интеграцию прямо сейчас"
+      },
+      "graphql": {
+        "title": "GraphQL",
+        "description": "Работайте с данными приложения через GraphQL"
+      },
+      "api": {
+        "title": "API",
+        "description": "Благодаря нашему API вы можете создавать собственные интеграции и настраивать dialog под вашу команду и бизнес"
+      }
+    },
+    "list": {
+      "header": "Примеры интеграций",
+      "source_code": "Исходный код",
+      "bot": "Бот",
+      "language": "Язык",
+      "category": "Категория",
+      "asana": {
+        "title": "Asana Bot",
+        "description": "Бот для создания задач в Asana"
+      },
+      "reminder": {
+        "title": "Reminder Bot",
+        "description": "Бот быстрого создания напоминаний"
+      },
+      "vote": {
+        "title": "Vote Bot",
+        "description": "Бот для публичных и приватных голосований"
+      }
+    },
+    "opensource": {
+      "header": "Open Source сообщество dialog",
+      "dev": {
+        "title": "Для Разработчиков",
+        "portfolio": "Открытый внешний проект в портфолио, который понравится будущим работодателям",
+        "experience": "Возможность улучшить свои навыки программирования",
+        "participate": "Принять участие"
+      },
+      "clients": {
+        "title": "Для Клиентов",
+        "community": "Сообщество, в котором можно найти ответы",
+        "libraries": "Библиотеки готовых решений для интеграций"
+      }
     }
   },
   "career": {
     "we_want_you": "В нашу быстро растущую команду требуется много талантов. <a class=\"link--default\" href=\"/ru/career\">Узнайте больше</a> об открытых вакансиях и работе в компании."
-  },
-  "opensource": {
-    "header": "Open Source сообщество dialog",
-    "dev": {
-      "title": "Для Разработчиков",
-      "portfolio": "Открытый внешний проект в портфолио, который понравится будущим работодателям",
-      "experience": "Возможность улучшить свои навыки программирования",
-      "participate": "Принять участие"
-    },
-    "clients": {
-      "title": "Для Клиентов",
-      "community": "Сообщество, в котором можно найти ответы",
-      "libraries": "Библиотеки готовых решений для интеграций"
-    }
   },
   "footer": {
     "partners": "Партнерам",

@@ -78,9 +78,6 @@
   "hero_header": "Achieve your team goals faster without losing focus",
   "hero_subheader": "Secure and efficient corporate communication platform",
   "platform_header": "dialog – a corporate communications <br />platform",
-  "messenger": "Messenger",
-  "corporate_features": "Corporate Features",
-  "integrations": "Integrations",
   "platform_chats": "Private and Group Chats",
   "platform_free_calls": "Free Audio/Video Calls",
   "platform_files_sharing": "Unlimited File Sharing",
@@ -208,7 +205,6 @@
   "form_label_topic": "Subject",
   "form_label_your_question": "Describe your issue",
   "form_send": "Send",
-  "what_dialog_can": "What dialog can do",
   "feature_audio_video": "Audio/Video Calls",
   "feature_audio_video_content": "<h4>High quality connection</h4><p>dialog automatically optimizes connection quality based on the strength of the mobile operator’s signal at your location. If the signal is weak, dialog reduces the amount of audio or video traffic without interrupting or delaying your connection.</p><h4>Secure communication</h4><p>All calls are securely protected by cryptographic solutions based on end-to-end and TLS encryption.</p>  ",
   "feature_files": "Share files of any format",
@@ -425,76 +421,88 @@
   "career_category_all": "All",
   "career_category_it": "IT and Development",
   "career_category_marketing": "Marketing, Advertising, PR",
-  "integrations_title": "Integrations make dialog even better",
-  "possibilities_header": "Connect dialog to dozens of third-party applications and systems",
-  "botsdk": "BotSDK",
-  "botsdk_description": "Create your own chatbots. The SDK is currently available for JavaScript, Java and Python.",
-  "botsdk_category1": "Python",
-  "botsdk_category2": "Java",
-  "botsdk_category3": "JavaScript",
-  "botsdk_category4": "Docs",
-  "webhooks": "Webhooks",
-  "webhooks_description": "dialog functions in WebHooks is a simple way to receive automated messages and update data sent via a text channel on your server.",
-  "zapier": "Zapier",
-  "zapier_description": "Use data and transpiring events in more than 1,000 integrations to automate your workflow.",
-  "graphql": "GraphQL",
-  "graphql_description": "Work with application data via GraphQL",
-  "api": "API",
-  "api_description": "Thanks to our API, you can create your own integrations and configure dialog for your team and business.",
-  "api_category1": "Documentation",
-  "integrations_header": "Integration Examples",
   "bots": "Bots",
   "design": "Design",
   "communication": "Communications",
-  "asana_title": "Asana Bot",
-  "asana_description": "A bot for creating tasks in Asana",
-  "asana_link": "Source code",
-  "asana_language": "Python",
-  "asana_category": "Bot",
-  "google_title": "Google Forms",
-  "google_description": "Google Forms Bot ",
-  "google_link": "Source code",
-  "google_language": "Java",
-  "google_category": "Bot",
-  "reminder_title": "Reminder Bot",
-  "reminder_description": "A bot that reminds you of tasks",
-  "reminder_link": "Source code",
-  "reminder_language": "Python",
-  "reminder_category": "Project management",
-  "integrations_card_language": "Language",
-  "integrations_card_category": "Category",
   "invite_text": "Do you want to integrate with dialog – write us at <a href=\"mailto:{email}\">{email}</a>.",
+  "############": "REFACTORED TRANSLAtiONS BELOW",
   "partner": {
     "form": {
       "header": "Become a partner"
     }
   },
-  "new_integrations": {
-    "source_code": "Source code",
-    "zapier": "Configure integration",
-    "docs": "Documentations",
-    "bot": "Bot",
-    "vote": {
-      "title": "Vote Bot",
-      "description": "A bot for public and private voting"
+  "features": {
+    "header": "What dialog can do",
+    "tabs": {
+      "messenger": "Messenger",
+      "corporate": "Corporate Features",
+      "integrations": "Integrations"
+    }
+  },
+  "integrations": {
+    "header": "Integrations make dialog even better",
+    "docs": "Documentation",
+    "category": "",
+    "possibilities": {
+      "header": "Connect dialog to dozens of third-party applications and systems",
+      "botsdk": {
+        "title": "BotSDK",
+        "description": "Create your own chatbots. The SDK is currently available for JavaScript, Java and Python"
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "dialog functions in WebHooks is a simple way to receive automated messages and update data sent via a text channel on your server"
+      },
+      "zapier": {
+        "title": "Zapier",
+        "description": "Use data and transpiring events in more than 1,000 integrations to automate your workflow",
+        "link": "Configure integration"
+      },
+      "graphql": {
+        "title": "GraphQL",
+        "description": "Work with application data via GraphQL"
+      },
+      "api": {
+        "title": "API",
+        "description": "Thanks to our API, you can create your own integrations and configure dialog for your team and business"
+      }
+    },
+    "list": {
+      "header": "Integration Examples",
+      "source_code": "Source code",
+      "bot": "Bot",
+      "language": "Language",
+      "category": "Category",
+      "asana": {
+        "title": "Asana Bot",
+        "description": "A bot for creating tasks in Asana"
+      },
+      "reminder": {
+        "title": "Reminder Bot",
+        "description": "A bot that reminds you of tasks"
+      },
+      "vote": {
+        "title": "Vote Bot",
+        "description": "A bot for public and private voting"
+      }
+    },
+    "opensource": {
+      "header": "dialog open source community",
+      "dev": {
+        "title": "For Developers",
+        "portfolio": "A public, external project in your portfolio that future employers will like",
+        "experience": "The opportunity to improve your programming skills",
+        "participate": "Participate"
+      },
+      "clients": {
+        "title": "For Clients",
+        "community": "Community where you can find answers",
+        "libraries": "Libraries of ready-made integration solutions"
+      }
     }
   },
   "career": {
     "we_want_you": "We need more talents in our team, <a class=\"link--default\" href=\"/en/career\">learn more</a> about current openings and life in the company."
-  },
-  "opensource": {
-    "header": "dialog open source community",
-    "dev": {
-      "title": "For Developers",
-      "portfolio": "A public, external project in your portfolio that future employers will like",
-      "experience": "The opportunity to improve your programming skills",
-      "participate": "Participate"
-    },
-    "clients": {
-      "title": "For Clients",
-      "community": "Community where you can find answers",
-      "libraries": "Libraries of ready-made integration solutions"
-    }
   },
   "footer": {
     "partners": "Partners",
