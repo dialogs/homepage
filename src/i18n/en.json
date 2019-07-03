@@ -42,7 +42,7 @@
   "menu_patents": "Patents and Licenses",
   "menu_legal": "Legal Information",
   "menu_bounty": "Open-source bounty",
-  "menu_career": "Career",
+  "menu_career": "Careers",
   "alt_messenger": "Messenger",
   "alt_corporate_features": "Corporate Features",
   "alt_integrations": "Integrations",
@@ -297,27 +297,27 @@
   "Partnership_bazalt": "BaseAlt",
   "Partnership_my_office": "MyOffice",
   "Partnership_aurora": "Sailfish",
-  "404_title": "We couldn’t<br />find the page<br />you are looking for.  ",
-  "404_text": "Make sure that the URL<br />is written correctly<br />and reload the page.  ",
+  "404_title": "We couldn’t <br />find the page <br />you are looking for.",
+  "404_text": "Make sure that the URL<br />is written correctly<br />and reload the page.",
   "404_go_to_home": "Go to homepage",
   "footer_privacy_policy": "Privacy policy",
   "footer_anti_corruption_policy": "Anti-corruption policy",
-  "footer_career": "Career",
+  "footer_career": "Careers",
   "jobs_join_team": "Join dialog",
   "jobs_apply_button": "Apply for job",
   "jobs_ceo_header": "Andrey Kuznetsov – dialog founder and executive director",
   "jobs_ceo_quote": "We are developing a team-work platform that is pleasant and easy to use in both large and small groups.",
   "jobs_ceo_bio": "Andrey created the company <b>in 2016</b> and is currently involved in strategic business planning and key technological partnerships.",
-  "jobs_ceo_about_product": "<p>We are developing a team-work platform that is pleasant and easy to use in both large and small groups. Even though our product is mostly used by large companies, we also use it in our own work. We build it for ourselves and our community. We work passionately to create simple and effective workspaces without the inherently inefficient modalities of typical enterprise products caused by the strict security requirements of major corporations. While understanding and respecting these requirements, we are engaged in creating a friendly environment in which de-bureaucratization, automation and security are harmoniously blended.</p><p>In our team, we are always pleased to see innovators and creators who are ready to work with us on communications projects that we can be proud of.</p><p>We believe in the idea of open-source, actively participate in developing community products and are constantly discovering new components of our platform. We have a <a href=\"https://oss.dlg.im\" target=\"_blank\" rel=\"noopener noreferrer\">bounty program</a> and encourage proactive developers to participate in the open-source community.</p>",
-  "jobs_recommend_title": "Get a reward for bringing in a job candidate.",
+  "jobs_ceo_about_product": "<p>Even though our product is mostly used by bigger companies, we too use it in our work – we develop it for ourselves and our community. We work passionately to create simple and effective work spaces without trade-off half measures inherent in typical enterprise products due to the strict security requirements of major corporations. While understanding and respecting these requirements, we are creating a friendly environment harmoniously blending de-bureaucratization, automation and security.</p><p>We are always happy to see in our team innovators and creators who are ready to work with us on communications projects that we can be proud of.</p><p>We believe in the idea of open-source, actively participate in developing community products and are constantly discovering new features of our platform. We have a <a class=\"link link--default\" href=\"https://oss.dlg.im\" target=\"_blank\" rel=\"noopener noreferrer\">bounty program</a> and encourage proactive developers to participate in the open-source community.</p>",
+  "jobs_recommend_title": "Get a reward for bringing in a job candidate",
   "jobs_recommend_award": "$900",
-  "jobs_recommend_action": "Send a CV<br/> to <a href=\"mailto:{email}?subject=Feedback on vacancy from site&body=I would like to recommend employee\">{email}</a>",
+  "jobs_recommend_action": "Send a recommendation<br/> to <a href=\"mailto:{email}?subject=Feedback on vacancy from site&body=I would like to recommend employee\">{email}</a>",
   "job_apply_header": "Can’t find the right position?",
   "job_apply_message": "Fill out this form and attach your CV. We will definitely consider your resume.",
   "job_apply_vacancy_header": "Respond to a vacancy",
   "job_apply_vacancy_message": "We are waiting for a resume from you, a short story about yourself and a few lines on the topic of a vacancy",
   "job_back": "All vacancies",
-  "job_apply_button": "Send resume",
+  "job_apply_button": "Send CV",
   "jobs_vacancies_header": "Openings",
   "partners_header_title": "dialog Partnership Program",
   "partners_header_text": "Collaborate with dialog",
@@ -410,9 +410,9 @@
   "about_company": "<p>Our company has been developing the dialog corporate messenger for more than 3 years. We are a team of specialists from IT-communications, data security, real-time distributed systems, Big Data and other fields related to messaging.</p><p>Today, there are more than <b>108 people</b> working on dialog who was, at various points, engaged in developing products for major companies leading in the fields of system security and data storage.</p>",
   "about_partnership": "Technology partnership",
   "about_integration": "Integration",
-  "about_partnership_text": "dialog is part of an independent IT environment with Russian producers of office solutions and operating systems.",
+  "about_partnership_text": "dialog creates an independent IT environment with Russian developers of office solutions and operating systems.",
   "about_integration_text": "Integrate dialog with any external service or application – use the messenger interface to work with familiar tools such as e-mail, calendar, task manager, cloud storage and much more.",
-  "about_read_more": "Read more",
+  "about_read_more": "Learn more",
   "attach_resume": "Attach CV",
   "career_city_all": "All cities",
   "career_city_msk": "Moscow",
@@ -538,7 +538,7 @@
     },
     "patents": {
       "header": "Patents and Licenses",
-      "text": "The patents and licenses of “Dialog” and its products comply with the specific requirements of the Russian federal authorities.",
+      "text": "The patents and licenses of dialog and its products comply with the specific requirements of the Russian federal authorities.",
       "link": "Learn more about patents and licenses"
     },
     "contacts": {
@@ -558,7 +558,7 @@
   "patents": {
     "header": "Patents and Licenses",
     "patents": {
-      "header": "The company is the copyright holder of 5 software products, registered by RosPatent.",
+      "header": "The company is the copyright holder of 5 software products, registered by RosPatent",
       "server": "Dialog Server",
       "core": "Dialog Core",
       "android": "Dialog Android SDK",
@@ -566,7 +566,7 @@
       "web": "Dialog Web SDK"
     },
     "licenses": {
-      "header": "The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia.",
+      "header": "The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia",
       "fsb": "FSS",
       "fstec": "FSTEC"
     },
@@ -575,7 +575,14 @@
       "text_1": "dialog messenger meets the requirements of the Unified register of Russian ECM and databanks programs and included in the register of national software.",
       "text_2": "The company is a member of the Association of Documented Telecommunications (ADT).",
       "text_3": "“Dialog” is registered as an Information-Dissemination Organization (IDO) by RosComNadzor.",
-      "text_4": "Member of the Skolkovo Innovation Center"
+      "text_4": "Member of the Skolkovo Innovation Center."
+    }
+  },
+  "form": {
+    "phone": "Phone number",
+    "email": "E-mail",
+    "submit": {
+      "resume": "Send CV"
     }
   }
 }
