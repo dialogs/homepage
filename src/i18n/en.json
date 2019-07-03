@@ -77,7 +77,6 @@
   "alt_jobs_ceo": "CEO",
   "hero_header": "Achieve your team goals faster without losing focus",
   "hero_subheader": "Secure and efficient corporate communication platform",
-  "platform_header": "dialog – a corporate communications <br />platform",
   "platform_chats": "Private and Group Chats",
   "platform_free_calls": "Free Audio/Video Calls",
   "platform_files_sharing": "Unlimited File Sharing",
@@ -325,31 +324,31 @@
   "partners_info_header": "Partnership Types and Goals",
   "partners_info_business": "Business Partner",
   "partners_info_technology": "Technology Partner",
-  "partners_business_info": "This partner engages in selling dialog products and works on the motivational program",
-  "partners_technology_info": "This partner develops solutions that integrates with dialog products",
+  "partners_business_info": "Partner sells “Dialog” products and works on the incentive basis",
+  "partners_technology_info": "Partner develops solutions that are integrated with “Dialog” products",
   "partners_business_info_who": "<b>For who:</b> A system integrator, software reseller company and/or service provider.",
-  "partners_business_info_target": "<b>Goal:</b> expansion of the list of proposed software. Import independent and secure internal communications solution with wide integration capabilities.",
+  "partners_business_info_target": "<b>Goal:</b> To expand the list of offered software. An import-independent and secure solution in the field of internal communications with extensive integration opportunities.",
   "partners_technology_title": "Technology Partner",
   "partners_business_title": "Business Partner",
   "partners_technology_info_who": "<b>For Who:</b> Technology companies.",
-  "partners_technology_info_target": "<b>Goal:</b> Expand the functionality of own products. Cross-promotion.",
-  "partners_cooperate_text": "Contact a manager to learn about other forms of cooperation",
+  "partners_technology_info_target": "<b>Goal:</b> Expand the functionality of own products. Cross-promotion. -> Goal: To expand the functionality of their own products. To share client bases.",
+  "partners_cooperate_text": "Contact our manager to learn about other forms of cooperation.",
   "partners_available_title": "Partners get access to",
-  "partners_available_materials": "Informational, training and marketing materials",
-  "partners_available_access": "Clients events",
+  "partners_available_materials": "Information, training and marketing materials",
+  "partners_available_access": "Client events",
   "partners_available_cross": "Cross-promotion",
   "partners_available_following": "Technical and legal support for sales",
   "for_partners_title": "dialog partners",
   "partners_technological_nav_title": "Technology Partners",
   "partners_business_nav_title": "Business Partners",
-  "partners_technological_text": "Take advantage of collaborative integrations",
+  "partners_technological_text": "Take advantage of joint integrations",
   "partners_business_text": "Work with leading system integrators and resellers to deploy, manage, and extend corporate communications",
   "partners_cooperate_button": "Become a partner",
   "for_partners_tab_country": "Country",
   "for_partners_tab_category": "Industry",
   "myoffice_tab_title": "MyOffice",
   "myoffice_tab_link": "myoffice.ru",
-  "myoffice_tab_description": "A collection of office applications that work on all major operating systems, including mobile systems, and via a web interface.",
+  "myoffice_tab_description": "A suite of office applications that work on all major operating systems, including mobile ones, and via a web interface.",
   "myoffice_tab_country": "Russia",
   "myoffice_tab_category": "Software",
   "chatme_tab_title": "Chatme AI",
@@ -364,17 +363,17 @@
   "fasttrack_tab_category": "Platform to create bots",
   "basealt_tab_title": "BaseAlt",
   "basealt_tab_link": "basealt.ru",
-  "basealt_tab_description": "The developer of a software platform for creating ready-made solutions and IT-infrastructure at any scale.",
+  "basealt_tab_description": "The developer of a software platform for creating ready-made solutions and IT infrastructure of any scale.",
   "basealt_tab_country": "Russia",
   "basealt_tab_category": "Operating system",
   "mtraining_tab_title": "Mastertraining",
   "mtraining_tab_link": "mastertraining.it",
-  "mtraining_tab_description": "Mastertraining develops solutions in the sphere of corporate telecommunications and training hardware.",
+  "mtraining_tab_description": "Mastertraining develops solutions in the field of corporate telecommunications.",
   "mtraining_tab_country": "Italy",
   "mtraining_tab_category": "Telecommunications",
   "omp_tab_title": "Open mobile platform",
   "omp_tab_link": "omprussia.ru",
-  "omp_tab_description": "Open Mobile Platform LLC works on developing the mobile operating system (MOS) Aurora (former – Sailfish). A member of the Rostelecom Group since 2018.",
+  "omp_tab_description": "Open Mobile Platform is developing a mobile operating system (MOS) Aurora (previously – Sailfish). A member of the Rostelecom Group since 2018.",
   "omp_tab_country": "Russia",
   "omp_tab_category": "Mobile Operating System",
   "beclever_tab_title": "beClever",
@@ -384,7 +383,7 @@
   "beclever_tab_category": "Telecommunications",
   "softline_tab_title": "Softline",
   "softline_tab_link": "softline.ru",
-  "softline_tab_description": "The leading global supplier of IT solutions and services.",
+  "softline_tab_description": "A leading global supplier of IT solutions and services.",
   "softline_tab_country": "Eastern Europe, America, Asia",
   "softline_tab_category": "System integrator",
   "dm_tab_title": "DM Solutions",
@@ -394,19 +393,19 @@
   "dm_tab_category": "Telecommunications",
   "swemel_tab_title": "SWEMEL",
   "swemel_tab_link": "swemel.ru",
-  "swemel_tab_description": "The company was founded in 1989 to provide technical and service support for the information system projects of public and administrative authorities.",
+  "swemel_tab_description": "The company was founded in 1989 to provide technical and service support of the information system projects for public and administrative authorities.",
   "swemel_tab_country": "Russia",
   "swemel_tab_category": "System integrator",
   "rb_tab_title": "RBtechnologies",
   "rb_tab_link": "rbtechnologies.ru",
-  "rb_tab_description": "The company specializes in developing and implementing IT solutions for the financial sector. It mainly engaged in risk management, regulatory reporting.",
+  "rb_tab_description": " The company specializes in developing and implementing IT solutions for the financial sector. It mainly deals with incorporating comprehensive solutions in the sphere of risk management, regulatory reporting.",
   "rb_tab_country": "Russia",
   "rb_tab_category": "Mobile Operating System",
   "croc_tab_title": "CROC",
   "croc_tab_link": "croc.ru",
   "croc_tab_description": "The Russian system integrator has been one of the top 10 largest Russian IT companies for more than 14 years.",
   "croc_tab_country": "Russia",
-  "croc_tab_category": "Technology Review Partner",
+  "croc_tab_category": "System integrator",
   "about_more_than_messenger": "dialog - is a lot more than just a messenger",
   "about_company": "<p>Our company has been developing the dialog corporate messenger for more than 3 years. We are a team of specialists from IT-communications, data security, real-time distributed systems, Big Data and other fields related to messaging.</p><p>Today, there are more than <b>108 people</b> working on dialog who was, at various points, engaged in developing products for major companies leading in the fields of system security and data storage.</p>",
   "about_partnership": "Technology partnership",
@@ -425,7 +424,21 @@
   "design": "Design",
   "communication": "Communications",
   "invite_text": "Do you want to integrate with dialog – write us at <a href=\"mailto:{email}\">{email}</a>.",
-  "############": "REFACTORED TRANSLAtiONS BELOW",
+  "############": "REFACTORED TRANSLATIONS BELOW",
+  "home": {
+    "platform": {
+      "header": "dialog – a corporate communications <br />platform",
+      "messenger": {
+        "title": "Messenger"
+      },
+      "corporate": {
+        "title": "Corporate Features"
+      },
+      "integrations": {
+        "title": "Integrations"
+      }
+    }
+  },
   "partner": {
     "form": {
       "header": "Become a partner"
@@ -451,7 +464,7 @@
       },
       "webhooks": {
         "title": "Webhooks",
-        "description": "dialog functions in WebHooks is a simple way to receive automated messages and update data sent via a text channel on your server"
+        "description": "dialog works in WebHooks as a simple way to receive automated messages and update data via a text channel on your server"
       },
       "zapier": {
         "title": "Zapier",
@@ -491,7 +504,7 @@
       "dev": {
         "title": "For Developers",
         "portfolio": "A public, external project in your portfolio that future employers will like",
-        "experience": "The opportunity to improve your programming skills",
+        "experience": "An opportunity to improve your programming skills",
         "participate": "Participate"
       },
       "clients": {

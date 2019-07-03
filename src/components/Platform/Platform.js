@@ -57,7 +57,7 @@ export function Platform({ className }) {
       render={({ messengerImage, integerationsImage, corporateImage }) => (
         <Section className={classes}>
           <PageHeading className="platform__title">
-            <FormattedHTMLMessage id="platform_header" />
+            <FormattedHTMLMessage id="home.platform.header" />
           </PageHeading>
           <div className="platform__wrapper">
             <Tabs
@@ -69,13 +69,13 @@ export function Platform({ className }) {
               className="platform__tabs"
             >
               <Tab value="messenger">
-                <FormattedMessage id="messenger" />
+                <FormattedMessage id="home.platform.messenger.title" />
               </Tab>
               <Tab value="features">
-                <FormattedMessage id="corporate_features" />
+                <FormattedMessage id="home.platform.corporate.title" />
               </Tab>
               <Tab value="integrations">
-                <FormattedMessage id="integrations" />
+                <FormattedMessage id="home.platform.integrations.title" />
               </Tab>
             </Tabs>
 

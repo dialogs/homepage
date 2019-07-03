@@ -81,7 +81,6 @@
   "alt_jobs_ceo": "Директор",
   "hero_header": "Платформа корпоративных коммуникаций",
   "hero_subheader": "Безопасное решение с функциями мессенджера, аудио- /видеозвонками, интеграциями с сервисами компании и чат-ботами",
-  "platform_header": "Функции платформы dialog",
   "platform_chats": "Личные и групповые чаты",
   "platform_free_calls": "Бесплатные аудио- / видеозвонки",
   "platform_files_sharing": "Обмен файлами без ограничений",
@@ -431,7 +430,21 @@
   "design": "Дизайн",
   "communication": "Коммуникации",
   "invite_text": "Хотите сделать интеграцию с dialog – напишите нам на <a href=\"mailto:info@dlg.im\">info@dlg.im</a>.",
-  "############": "REFACTORED TRANSLAtiONS BELOW",
+  "############": "REFACTORED TRANSLATIONS BELOW",
+  "home": {
+    "platform": {
+      "header": "Функции платформы dialog",
+      "messenger": {
+        "title": "Мессенджер"
+      },
+      "corporate": {
+        "title": "Корпоративные функции"
+      },
+      "integrations": {
+        "title": "Интеграции"
+      }
+    }
+  },
   "partner": {
     "form": {
       "header": "Стать партнером"
