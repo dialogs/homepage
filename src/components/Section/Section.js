@@ -1,10 +1,37 @@
 import React from 'react';
-import classnames from 'classnames';
+import styled from 'astroturf';
 
-import './Section.css';
+const SectionContainer = styled.section`
+  @import '../../styles/variables.css';
 
-export function Section({ className, children }) {
+  @media (--mobile-viewport) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @media (--tablet-viewport) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (--tablet-landscape-viewport) {
+  }
+
+  @media (--laptop-viewport) {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  @media (--desktop-viewport) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+`;
+
+export function Section({ className, id, children }) {
   return (
-    <section className={classnames('section', className)}>{children}</section>
+    <SectionContainer className={className} id={id}>
+      {children}
+    </SectionContainer>
   );
 }

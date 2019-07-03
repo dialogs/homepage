@@ -10,7 +10,11 @@ import { Easy } from '../components/Easy/Easy';
 import Business from '../components/Business';
 import { Offer } from '../components/Offer/Offer';
 
-export default () => {
+export default ({
+  pageContext: {
+    intl: { language },
+  },
+}) => {
   return (
     <Page>
       <Container>
@@ -20,7 +24,7 @@ export default () => {
         <Incompany />
         <Easy />
         <Business />
-        <Offer />
+        <Offer language={language} />
       </Container>
     </Page>
   );

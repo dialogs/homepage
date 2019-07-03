@@ -24,7 +24,11 @@
   position: relative;
   appearance: none;
   -webkit-appearance: none;
-  transition: border-radius linear 0.05s, width linear 0.05s;
+  user-select: none;
+
+  &:after {
+    transition: border-radius linear 0.05s, width linear 0.05s;
+  }
 
   &__info {
     min-height: 63px;
@@ -63,6 +67,7 @@
   }
   &--pending {
   }
+
   &.animate {
     color: transparent;
 

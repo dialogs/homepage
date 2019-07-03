@@ -2,19 +2,19 @@ import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
-import { PageHeader } from '../PageHeader/PageHeader';
+import { PageHeading } from '../PageHeading/PageHeading';
 import SupportForm from '../SupportForm';
 import links from '../../constants/links';
 import './Support.css';
 
-export function Support() {
+export function Support({ language }) {
   return (
     <Section className="support">
       <div className="support__col support__section support__section-form">
-        <PageHeader>
+        <PageHeading>
           <FormattedMessage id="support_header" />
-        </PageHeader>
-        <SupportForm className="support__form" />
+        </PageHeading>
+        <SupportForm className="support__form" language={language} />
       </div>
 
       <div className="support__col support__section support__section-info">

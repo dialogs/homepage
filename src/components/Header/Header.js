@@ -5,7 +5,6 @@ import styled from 'astroturf';
 import { Container } from '../Container/Container';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
-import debounce from 'lodash.debounce';
 import './Header.css';
 
 const HeaderContainer = styled.header`
@@ -48,8 +47,8 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const TOP_SCROLL_HIDE_OFFSET = 350;
-const TOP_SCROLL_REMOVE_OFFSET = 100;
+const TOP_SCROLL_HIDE_OFFSET = 500;
+const TOP_SCROLL_REMOVE_OFFSET = 250;
 
 export function Header({
   locale,
@@ -64,13 +63,12 @@ export function Header({
   let prevScrollPosition = 0;
 
   let toLink = `/${locale === 'ru' ? 'en/' : 'ru/'}${originalPath || ''}`;
-  if (typeof window !== 'undefined') {
-    if (window.location.href.indexOf('/blog/') > 0) {
-      toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
-    }
-    if (window.location.href.indexOf('/career/') > 0) {
-      toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
-    }
+
+  if (originalPath.indexOf('/blog/') > 0) {
+    toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
+  }
+  if (originalPath.indexOf('/career/') > 0) {
+    toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
   }
 
   function getCurrentScroll() {
@@ -84,36 +82,40 @@ export function Header({
 
     function handleScroll() {
       const currentScroll = getCurrentScroll();
+      const isScrollingDown = currentScroll > prevScrollPosition;
 
-      if (currentScroll > TOP_SCROLL_HIDE_OFFSET - TOP_SCROLL_REMOVE_OFFSET) {
-        setSticky(true);
-      } else {
-        setSticky(false);
-        setStickyVisible(false);
-      }
+      if (isScrollingDown) {
+        if (currentScroll > TOP_SCROLL_REMOVE_OFFSET) {
+          setSticky(true);
+        }
 
-      if (currentScroll > TOP_SCROLL_HIDE_OFFSET) {
-        const isScrollingDown = currentScroll > prevScrollPosition;
-        setStickyVisible(!isScrollingDown);
+        if (currentScroll > TOP_SCROLL_HIDE_OFFSET) {
+          setStickyVisible(false);
+        }
       } else {
-        setStickyVisible(false);
+        if (currentScroll < TOP_SCROLL_REMOVE_OFFSET) {
+          setSticky(false);
+        }
+
+        if (currentScroll < TOP_SCROLL_HIDE_OFFSET) {
+          setStickyVisible(false);
+        }
+
+        if (currentScroll > TOP_SCROLL_HIDE_OFFSET) {
+          setStickyVisible(true);
+        }
       }
 
       prevScrollPosition = currentScroll <= 0 ? 0 : currentScroll;
     }
 
-    const debouncedScroll = debounce(handleScroll, 100, {
-      leading: true,
-      trailing: false,
-      maxWait: 100,
-    });
-
     window.addEventListener('load', handleWindowLoad);
-    window.addEventListener('scroll', debouncedScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
+      console.log('unload listeners');
       window.removeEventListener('load', handleWindowLoad);
-      window.removeEventListener('scroll', debouncedScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -172,7 +174,7 @@ export function Header({
                   </Link>
                 </li>
 
-                {/* <li className="header__menu-item">
+                <li className="header__menu-item">
                   <Link
                     to={`/${locale}/career/`}
                     className="header__menu-link"
@@ -180,9 +182,9 @@ export function Header({
                   >
                     <FormattedMessage id="menu_career" />
                   </Link>
-                </li> */}
+                </li>
 
-                <li className="header__menu-item">
+                {/* <li className="header__menu-item">
                   <Link
                     to={`/${locale}/support/`}
                     className="header__menu-link"
@@ -190,7 +192,7 @@ export function Header({
                   >
                     <FormattedMessage id="menu_support" />
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>

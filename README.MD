@@ -14,3 +14,5 @@
 - `GHOST_ENDPOINT`: [https://ghost.org/](Ghost) blog url.
 - `GHOST_API_KEY`: Ghost API Key
 - `DIALOG_WEBHOOK`: Dialog webhook URL
+- `SENTRY_DSN`: Sentry DSN
+- `SENTRY_DSN_PUBLIC`: Sentry Public DSN

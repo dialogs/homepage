@@ -8,7 +8,6 @@
 @import 'variables.css';
 @import 'grid.css';
 @import 'main.css';
-@import 'forms.css';
 @import 'page.css';
 
 /* TODO: place this styles to the right place(components foldew which it belongs) */
@@ -19,6 +18,5 @@
 
 @import 'about.css';
 @import 'prices.css';
-@import 'license.css';
 @import 'blog.css';
 @import 'legal.css';

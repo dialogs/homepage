@@ -17,38 +17,6 @@
     padding-bottom: 60px;
   }
 
-  &__wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    @media (--mobile-viewport) {
-      flex-flow: column;
-      align-items: normal;
-    }
-
-    @media (--tablet-viewport) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    @media (--tablet-landscape-viewport) {
-      height: 332px;
-    }
-
-    @media (--laptop-viewport) {
-      height: 470px;
-    }
-
-    @media (--desktop-viewport) {
-      height: 509px;
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-  }
-
   &__content {
     padding-bottom: 20px;
     width: 50%;
@@ -364,6 +332,8 @@
   }
 
   &__bio {
+    display: flex;
+    align-items: center;
     position: absolute;
     width: 100%;
     bottom: -65px;

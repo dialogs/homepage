@@ -34,6 +34,10 @@ const Main = styled.main`
   @media (--laptop-viewport) {
     padding-top: 140px;
   }
+
+  &.overflow {
+    overflow: visible;
+  }
 `;
 
 export default ({
@@ -50,22 +54,28 @@ export default ({
       document.referrer &&
       document.referrer.indexOf(document.location.hostname) < 0
     ) {
-      const referrer = safeStorage.get('referrer');
+      try {
+        const referrer = safeStorage.get('referrer');
 
-      // Set referrer
-      if (referrer) {
-        safeStorage.set(
-          'referrer',
-          JSON.stringify([...JSON.parse(referrer), document.referrer]),
-        );
-      } else {
-        safeStorage.set('referrer', JSON.stringify([document.referrer]));
+        // Set referrer
+        if (referrer) {
+          safeStorage.set(
+            'referrer',
+            JSON.stringify([...JSON.parse(referrer), document.referrer]),
+          );
+        } else {
+          safeStorage.set('referrer', JSON.stringify([document.referrer]));
+        }
+      } catch (error) {
+        console.error('Cannot corrctcly set refferer', error);
       }
     }
   }, []);
 
+  const isOverflowVisible = originalPath.includes('/partners/');
+
   return (
-    <Main>
+    <Main overflow={isOverflowVisible}>
       <Helmet htmlAttributes={{ lang: language }} />
       <FormattedMetaTags
         titleId="meta_title_default"
@@ -81,7 +91,7 @@ export default ({
       <Header locale={language} originalPath={originalPath || ''} />
       {children}
       <Footer locale={language} />
-      <Modals />
+      <Modals language={language} />
     </Main>
   );
 };

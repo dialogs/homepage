@@ -1,26 +1,23 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { graphql } from 'gatsby';
+import { FormattedHTMLMessage } from 'react-intl';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
-import { graphql } from 'gatsby';
-import Image from 'gatsby-image';
-
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import { PageHeader } from '../components/PageHeader/PageHeader';
-import { Promo } from '../components/Promo/Promo';
-import SecureCommunication from '../components/SecureCommunication';
+import { SecureCommunication } from '../components/SecureCommunication/SecureCommunication';
 import { EffectiveCommunication } from '../components/EffectiveCommunication/EffectiveCommunication';
 import { Partnership } from '../components/Partnership/Partnership';
 import { Offer } from '../components/Offer/Offer';
+import { PageHeader } from '../components/PageHeader/PageHeader';
+import { PageHeading } from '../components/PageHeading/PageHeading';
 
 export default ({
   pageContext: {
     intl: { language, originalPath },
   },
   data: {
-    promoImage1,
-    promoImage2,
+    headerImage,
     secureImage,
     effectiveImage,
     site: {
@@ -40,38 +37,17 @@ export default ({
         path={`/${language}${originalPath}`}
       />
 
+      <PageHeader image={headerImage}>
+        <PageHeading>
+          <FormattedHTMLMessage id="solutions_simple" />
+        </PageHeading>
+      </PageHeader>
+
+      <SecureCommunication language={language} image={secureImage} />
+      <EffectiveCommunication image={effectiveImage} />
       <Container>
-        <PageHeader className="solution">
-          <FormattedMessage id="solutions_simple" />
-        </PageHeader>
-        <Promo>
-          <FormattedMessage id="alt_solution_big">
-            {(alt) => (
-              <div className="promo__image promo__image--main">
-                <Image
-                  fadeIn={false}
-                  fluid={promoImage1.childImageSharp.fluid}
-                  alt={alt}
-                />
-              </div>
-            )}
-          </FormattedMessage>
-          <FormattedMessage id="alt_solution_small">
-            {(alt) => (
-              <div className="promo__image promo__image--small">
-                <Image
-                  fadeIn={false}
-                  fluid={promoImage2.childImageSharp.fluid}
-                  alt={alt}
-                />
-              </div>
-            )}
-          </FormattedMessage>
-        </Promo>
-        <SecureCommunication image={secureImage} />
-        <EffectiveCommunication image={effectiveImage} />
         <Partnership />
-        <Offer />
+        <Offer language={language} />
       </Container>
     </Page>
   );
@@ -79,34 +55,29 @@ export default ({
 
 export const pageQuery = graphql`
   query {
-    promoImage1: file(relativePath: { eq: "images/solution/solution_1.jpg" }) {
+    headerImage: file(
+      relativePath: { eq: "images/solution/header_image.png" }
+    ) {
       childImageSharp {
-        fluid(maxWidth: 1280) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-    promoImage2: file(relativePath: { eq: "images/solution/solution_2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 350) {
+        fluid(maxWidth: 740) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     secureImage: file(
-      relativePath: { eq: "images/solution/secure-communication.png" }
+      relativePath: { eq: "images/solution/secure_communication.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 440) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
     effectiveImage: file(
-      relativePath: { eq: "images/solution/effective-communication.png" }
+      relativePath: { eq: "images/solution/effective_communication.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 500) {
+        fluid(maxWidth: 740) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }

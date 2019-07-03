@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
-
 import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
-import { FormErrorMessage } from '../FormErrorMessage/FormErrorMessage';
+import {
+  Form,
+  FormBox,
+  FormFooter,
+  FormInfo,
+  FormErrorMessage,
+  FormPendingMessage,
+  FormSuccessMessage,
+} from '../Form/Form';
 
 import './OfferForm.css';
 
@@ -17,6 +23,7 @@ export function OfferForm({
   onSubmit,
   className,
   flag = 'sales',
+  language,
 }) {
   const [form, setForm] = useState({
     name: '',
@@ -25,7 +32,7 @@ export function OfferForm({
     company: '',
     users: '1-100',
     agree: true,
-    subscribe: false,
+    subscribe: true,
   });
 
   const classes = classNames('form', className);
@@ -35,7 +42,7 @@ export function OfferForm({
     event.preventDefault();
 
     if (form.agree) {
-      onSubmit({ ...form, form: 'offer', flag: flag });
+      onSubmit({ ...form, form: 'offer', flag: flag, siteLanguage: language });
     }
   }
 
@@ -47,8 +54,8 @@ export function OfferForm({
   }
 
   return (
-    <form noValidate className={classes} onSubmit={handleSubmit}>
-      <div className="form__box">
+    <Form className={className} onSubmit={handleSubmit} noValidate>
+      <FormBox>
         <Input
           value={form.name}
           name="name"
@@ -100,9 +107,9 @@ export function OfferForm({
           label={<FormattedMessage id="form_label_amount" />}
           required
         />
-      </div>
+      </FormBox>
 
-      <div className="form__box">
+      <FormBox>
         <Checkbox
           label={<FormattedMessage id="form_label_agreement" />}
           value={form.agree}
@@ -115,9 +122,9 @@ export function OfferForm({
           name="subscribe"
           onChange={handleChange}
         />
-      </div>
+      </FormBox>
 
-      <div className="form__footer">
+      <FormFooter>
         <Button
           type="submit"
           className="form__submit"
@@ -135,8 +142,12 @@ export function OfferForm({
         >
           <FormattedMessage id="send_application" />
         </Button>
-        <div className="form__info" />
-      </div>
-    </form>
+        <FormInfo>
+          {error && <FormErrorMessage />}
+          {pending && <FormPendingMessage />}
+          {value && value.status === 200 && <FormSuccessMessage />}
+        </FormInfo>
+      </FormFooter>
+    </Form>
   );
 }
