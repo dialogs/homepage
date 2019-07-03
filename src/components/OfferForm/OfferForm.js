@@ -35,7 +35,6 @@ export function OfferForm({
     subscribe: true,
   });
 
-  const classes = classNames('form', className);
   const EMAIL_REGEX = /\S+@\S+/;
 
   function handleSubmit(event) {
