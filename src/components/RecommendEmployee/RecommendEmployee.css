@@ -24,48 +24,29 @@
 
   &__left {
     width: 63%;
-    height: 100%;
     background-color: var(--color-secondary);
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row nowrap;
     align-items: center;
     padding-left: var(--margin-container-side);
 
     @media (--mobile-viewport) {
       width: 100%;
-      flex-direction: column;
+      flex-flow: column wrap;
       padding: 30px 0;
     }
 
-    @media (--desktop-viewport) {
-      padding-left: calc((100% - 1320px) / 2);
+    @media (--tablet-viewport) {
+      padding-right: 40px;
     }
 
-    &__title {
-      @media (--mobile-viewport) {
-        font-size: 16px;
-        line-height: 21px;
-        font-weight: 700;
-        text-align: center;
-      }
+    @media (--laptop-viewport) {
+      padding-right: 50px;
+    }
 
-      @media (--tablet-viewport) {
-        font-size: 16px;
-        line-height: 21px;
-        font-weight: 700;
-      }
-
-      @media (--tablet-landscape-viewport) {
-        font-size: 20px;
-        line-height: 26px;
-        font-weight: 700;
-      }
-
-      @media (--laptop-viewport) {
-        font-size: 24px;
-        line-height: 31px;
-        font-weight: 700;
-      }
+    @media (--desktop-viewport) {
+      padding-right: 100px;
+      padding-left: calc((100% - 1320px) / 2);
     }
 
     &__img {
@@ -73,64 +54,60 @@
         height: 24px;
         width: auto;
       }
+
       @media (--tablet-viewport) {
-        margin-left: 25px;
         height: 24px;
         width: auto;
       }
 
       @media (--tablet-landscape-viewport) {
-        margin-left: 45px;
-        height: 40px;
-        width: auto;
-      }
-
-      @media (--laptop-viewport) {
-        margin-left: 55px;
         height: 40px;
         width: auto;
       }
     }
 
     &__award {
+      flex: 0 0 auto;
+
       @media (--mobile-viewport) {
         margin-top: 10px;
         font-size: 30px;
         line-height: 49px;
         font-weight: 500;
+
         & span {
           margin-left: 14px;
         }
       }
 
       @media (--tablet-viewport) {
+        margin-left: 24px;
         font-size: 30px;
         line-height: 49px;
         font-weight: 500;
+
         & span {
           margin-left: 14px;
         }
       }
 
       @media (--tablet-landscape-viewport) {
-        margin-left: 24px;
         font-size: 40px;
         line-height: 65px;
         font-weight: 500;
         display: flex;
         align-items: center;
+
         & span {
           margin-left: 14px;
         }
       }
 
       @media (--laptop-viewport) {
-        margin-left: 24px;
         font-size: 60px;
         line-height: 97px;
         font-weight: 500;
-        display: flex;
-        align-items: center;
+
         & span {
           padding-top: 10px;
           margin-left: 14px;
@@ -138,49 +115,42 @@
       }
     }
   }
+
   &__right {
     width: 37%;
-    height: 100%;
     background-color: var(--color-primary);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 0 15px;
+    padding-right: var(--margin-container-side);
 
     @media (--mobile-viewport) {
       width: 100%;
       flex-direction: column;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: center;
     }
 
-    &__action {
-      font-weight: 500;
+    @media (--tablet-viewport) {
+      padding-left: 40px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: left;
+    }
 
-      @media (--mobile-viewport) {
-        font-size: 16px;
-        line-height: 21px;
-        font-weight: 700;
-        margin: 25px 0 33px 0;
-        text-align: center;
-      }
+    @media (--laptop-viewport) {
+      padding-right: calc((100% - 1320px) / 2);
+      padding-left: 50px;
+    }
 
-      @media (--tablet-viewport) {
-        font-size: 20px;
-        line-height: 26px;
-        margin-left: 100px;
-        text-align: left;
-      }
+    @media (--desktop-viewport) {
+      padding-left: 100px;
+    }
 
-      @media (--laptop-viewport) {
-        font-size: 24px;
-        line-height: 31px;
-        margin-left: 100px;
-        text-align: left;
-      }
-
-      a {
-        text-decoration: none;
-        border-bottom: 2px solid var(--color-secondary);
-      }
+    a {
+      text-decoration: none;
+      border-bottom: 2px solid var(--color-secondary);
     }
   }
 }

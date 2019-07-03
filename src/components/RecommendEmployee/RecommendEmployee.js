@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Section } from '../Section/Section';
+import { Text } from '../Text/Text';
 import links from '../../constants/links';
 
 import './RecommendEmployee.css';
@@ -9,9 +10,14 @@ export function RecommendEmployee({ className, children }) {
     <Section className="recommend" id="recommend">
       <div className="recommend__wrapper">
         <div className="recommend__left">
-          <div className="recommend__left__title">
+          <Text
+            bold
+            noPadding
+            size="large"
+            style={{ flex: '1 1 auto', fontWeight: 600 }}
+          >
             <FormattedHTMLMessage id="jobs_recommend_title" />
-          </div>
+          </Text>
           <div className="recommend__left__award">
             <img
               className="recommend__left__img"
@@ -22,14 +28,14 @@ export function RecommendEmployee({ className, children }) {
           </div>
         </div>
         <div className="recommend__right">
-          <div className="recommend__right__action">
+          <Text bold size="large" style={{ flex: '1 1 auto' }}>
             <FormattedHTMLMessage
               id="jobs_recommend_action"
               values={{
                 email: links.email.hire,
               }}
             />
-          </div>
+          </Text>
         </div>
       </div>
     </Section>

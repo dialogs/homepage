@@ -37,9 +37,6 @@ export default ({
       <Container>
         <Possibilities />
         <IntegrationsCatalog />
-      </Container>
-      {/* <IntegrationsBanner /> */}
-      <Container>
         <OpenSource />
       </Container>
     </Page>

@@ -87,7 +87,7 @@ export function ApplyForJobForm({
               name="phone"
               type="text"
               onChange={handleChange}
-              label={<FormattedMessage id="form_label_phone" />}
+              label={<FormattedMessage id="form.phone" />}
               required
             />
           </div>
@@ -97,7 +97,7 @@ export function ApplyForJobForm({
               name="workemail"
               type="email"
               onChange={handleChange}
-              label={<FormattedMessage id="form_label_email" />}
+              label={<FormattedMessage id="form.email" />}
               required
             />
             <Select
@@ -139,7 +139,7 @@ export function ApplyForJobForm({
           className="form__submit"
           disabled={!form.agree || pending || (value && value.status === 200)}
         >
-          <FormattedMessage id="form_send" />
+          <FormattedMessage id="form.submit.resume" />
         </Button>
         <FormInfo>
           {error && <FormErrorMessage />}

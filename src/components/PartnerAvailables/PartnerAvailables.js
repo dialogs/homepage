@@ -112,7 +112,7 @@ export function PartnerAvailables() {
     <Container fluid style={{ position: 'relative' }}>
       <Container>
         <Section>
-          <PartnerAvailablesHeading>
+          <PartnerAvailablesHeading level="1">
             <FormattedMessage id="partners_available_title" />
           </PartnerAvailablesHeading>
           <PartnerAvailablesContainer>
