@@ -52,7 +52,7 @@ export function Input({
   const EMAIL_REGEX = /\S+@\S+/;
 
   function handleBlur() {
-    if (ref.current.name == 'email') {
+    if (ref.current.name === 'email') {
       setIsValid(EMAIL_REGEX.test(ref.current.value));
     }
     ref.current.blur();
@@ -87,7 +87,7 @@ export function Input({
           disabled={disabled}
           required={required}
         />
-        {!isValid && name == 'email' && (
+        {!isValid && name === 'email' && (
           <div class="error_message">
             <div class="error_message_pointer" />
             Адрес электронной почты должен содержать символ “@”. В адресе “

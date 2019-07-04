@@ -28,7 +28,7 @@ export function Button({
       'button--disabled': disabled,
       animate: pending,
       'animate error': error,
-      'animate success': valueStatus && valueStatus.status == 200,
+      'animate success': valueStatus && valueStatus.status === 200,
     },
     className,
   );

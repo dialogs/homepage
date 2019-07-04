@@ -36,6 +36,7 @@ export function Vacancies({ vacancies, cities, categories, locale }) {
             return vacancy;
           }
         }
+        return null;
       });
 
       if (!currentCategoryVacancies.length) {
