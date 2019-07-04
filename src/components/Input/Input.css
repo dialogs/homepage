@@ -52,7 +52,7 @@
     display: inline-block;
     appearance: none;
     outline: none;
-    box-shadow: 0 1px 0 0 var(--input-border-color);
+    border-bottom: 1px solid rgb(30, 30, 30, 0.2);
   }
 
   &--non-empty,
