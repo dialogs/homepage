@@ -97,13 +97,13 @@
     &.success:before {
       position: absolute;
       content: '';
-      width: 36px;
-      height: 18px;
+      width: 22px;
+      height: 10px;
       border: 2px solid white;
       border-right: 0;
       border-top: 0;
       left: 50%;
-      top: 40%;
+      top: 50%;
       -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
       transform: translate(-50%, -50%) rotate(0deg) scale(0);
       -webkit-animation: success ease-in 0.15s forwards;
