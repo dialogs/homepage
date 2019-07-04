@@ -460,7 +460,7 @@
       "header": "Connect dialog to dozens of third-party applications and systems",
       "botsdk": {
         "title": "BotSDK",
-        "description": "Create your own chatbots. The SDK is currently available for JavaScript, Java and Python"
+        "description": "Create your own chat-bots. The SDK is currently available for JavaScript, Java and Python"
       },
       "webhooks": {
         "title": "Webhooks",
