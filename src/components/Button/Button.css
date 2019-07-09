@@ -25,6 +25,7 @@
   appearance: none;
   -webkit-appearance: none;
   user-select: none;
+  min-height: 64px;
 
   &:after {
     transition: border-radius linear 0.05s, width linear 0.05s;
@@ -69,29 +70,70 @@
   }
 
   &.animate {
-    color: transparent;
+    &:hover {
+      background-color: var(--button-background-color);
+    }
 
-    &:after {
-      position: absolute;
-      content: '';
+    & .loading {
       width: 36px;
       height: 36px;
-      border: 2px solid white;
-      border-radius: 50%;
-      border-left-color: transparent;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      animation: spin ease-in 2.5s forwards;
-      animation-name: spin;
-      -webkit-animation-name: spin;
-      transition-timing-function: ease-in-out;
-      -webkit-transition-timing-function: ease-in-out;
-      animation-duration: 2.5s;
-      -webkit-animation-duration: 2.5s;
-      animation-fill-mode: forwards;
+      top: 14px;
+      position: absolute;
+      left: 40%;
+      z-index: 9;
+      -webkit-animation: load 0.3s ease-out;
+      -webkit-animation-delay: 3s;
       -webkit-animation-fill-mode: forwards;
+    }
+
+    & .inner-shadow {
+      z-index: 6;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 32px;
+      height: 32px;
+      margin-left: -16px;
+      margin-top: -16px;
+      border-radius: 100%;
+      background-color: var(--button-background-color);
+    }
+
+    & .hold {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      clip: rect(0px, 36px, 36px, 18px);
+      -webkit-border-radius: 100%;
+      background-color: var(--button-background-color);
+    }
+
+    & .pie {
+      background-color: white;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-border-radius: 100%;
+      clip: rect(0px, 18px, 36px, 0px);
+    }
+
+    & #left .pie {
+      z-index: 1;
+      -webkit-animation: left 1.5s ease-out both;
+    }
+
+    & #right {
+      z-index: 3;
+      -webkit-transform: rotate(180deg);
+    }
+
+    & #right .pie {
+      -webkit-animation: right 1.5s ease-out both;
+      -webkit-animation-delay: 1.5s;
+    }
+
+    & span {
+      display: none;
     }
 
     &.success:before {
@@ -108,7 +150,8 @@
       transform: translate(-50%, -50%) rotate(0deg) scale(0);
       -webkit-animation: success ease-in 0.15s forwards;
       animation: success ease-in 0.15s forwards;
-      animation-delay: 2.5s;
+      animation-delay: 3.3s;
+      z-index: 10;
     }
 
     &.error {
@@ -127,35 +170,28 @@
         transform: translate(-50%, -50%) scale(0);
         -webkit-animation: error ease-in 0.5s forwards;
         animation: error ease-in 0.5s forwards;
-        animation-delay: 2.5s;
+        animation-delay: 3.3s;
+        z-index: 10;
       }
     }
   }
 }
 
-@keyframes spin {
+@-webkit-keyframes left {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
-  90% {
-    transform: translate(-50%, -50%) rotate(1080deg) scale(1);
+    -webkit-transform: rotate(0deg);
   }
   100% {
-    transform: scale(0);
+    -webkit-transform: rotate(180deg);
   }
 }
 
-@-webkit-keyframes spin {
+@-webkit-keyframes right {
   0% {
-    -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg);
   }
-
-  98% {
-    -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(1);
-  }
-
   100% {
-    -webkit-transform: translate(-50%, -50%) rotate(1080deg) scale(0);
+    -webkit-transform: rotate(180deg);
   }
 }
 
@@ -192,5 +228,14 @@
   }
   to {
     -webkit-transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@-webkit-keyframes load {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

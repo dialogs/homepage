@@ -19,7 +19,7 @@ export function Button({
     console.log('fired');
     setTimeout(function() {
       setIsFinished(true);
-    }, 4000);
+    }, 6000);
   }
   const classes = classNames(
     'button',
@@ -41,6 +41,17 @@ export function Button({
       disabled={disabled}
     >
       {children}
+      <div className="loading">
+        <div className="inner-shadow"></div>
+        <div className="timer">
+          <div className="hold" id="left">
+            <div className="pie"></div>
+          </div>
+          <div className="hold" id="right">
+            <div className="pie"></div>
+          </div>
+        </div>
+      </div>
     </button>
   ) : (
     <div className="button__info">
