@@ -86,7 +86,7 @@ export function Platform({ className }) {
                   tab === 'messenger' ? 'platform__box__item--visible' : null,
                 )}
                 openByDefault
-                title={<FormattedMessage id="messenger" />}
+                title={<FormattedMessage id="home.platform.messenger.title" />}
               >
                 <div className="platform__content__icons">
                   <PlatformIcon
@@ -151,7 +151,7 @@ export function Platform({ className }) {
                   tab === 'features' ? 'platform__box__item--visible' : null,
                 )}
                 openByDefault
-                title={<FormattedMessage id="corporate_features" />}
+                title={<FormattedMessage id="home.platform.corporate.title" />}
               >
                 <div className="platform__content__icons">
                   <PlatformIcon
@@ -208,7 +208,9 @@ export function Platform({ className }) {
                     : null,
                 )}
                 openByDefault
-                title={<FormattedMessage id="integrations" />}
+                title={
+                  <FormattedMessage id="home.platform.integrations.title" />
+                }
               >
                 <div className="platform__content__icons">
                   <PlatformIcon
