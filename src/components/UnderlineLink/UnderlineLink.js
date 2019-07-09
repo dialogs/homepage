@@ -10,7 +10,9 @@ const styles = css`
     display: inline-block;
     position: relative;
     cursor: pointer;
+    line-height: inherit;
     z-index: 1;
+    padding: 0;
 
     &:before {
       content: '';
@@ -64,6 +66,11 @@ const styles = css`
         width: 100%;
       }
     }
+  }
+
+  .linkButton {
+    outline: none;
+    appearance: none;
   }
 `;
 
@@ -123,5 +130,32 @@ export function UnderlineGatsbyLink({
   );
 }
 
+export function UnderlineButtonLink({
+  intent,
+  invert,
+  direction,
+  className,
+  children,
+  ...props
+}) {
+  const classes = classNames(
+    styles.link,
+    styles.linkButton,
+    styles[intent],
+    styles[direction],
+    {
+      [styles.invert]: invert,
+    },
+    className,
+  );
+
+  return (
+    <button type="button" className={classes} {...props}>
+      {children}
+    </button>
+  );
+}
+
 UnderlineLink.defaultProps = defaultProps;
 UnderlineGatsbyLink.defaultProps = defaultProps;
+UnderlineButtonLink.defaultProps = defaultProps;

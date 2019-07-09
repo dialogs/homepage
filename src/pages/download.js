@@ -1,10 +1,28 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { styled } from 'astroturf';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
-import Download from '../components/Download';
+import { Section } from '../components/Section/Section';
+import {
+  DownloadHeader,
+  DownloadDesktop,
+  DownloadMobile,
+  DownloadWeb,
+} from '../components/Download';
+
+const DownloadClientsSection = styled(Section)`
+  @import '../styles/variables.css';
+
+  padding: 0;
+
+  @media (--tablet-viewport) {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+`;
 
 export default ({
   pageContext: {
@@ -28,9 +46,16 @@ export default ({
         path={`/${language}${originalPath}`}
       />
 
-      <Container>
-        <Download locale={language} />
+      <Container fluid style={{ position: 'relative' }}>
+        <DownloadHeader />
+        <Container>
+          <DownloadClientsSection>
+            <DownloadDesktop language={language} />
+            <DownloadMobile language={language} />
+          </DownloadClientsSection>
+        </Container>
       </Container>
+      <DownloadWeb />
     </Page>
   );
 };
