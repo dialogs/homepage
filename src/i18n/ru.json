@@ -63,18 +63,6 @@
   "alt_big_business": "dialog в большом бизнесе",
   "alt_solution_big": "Простое решение для корпоративных коммуникаций",
   "alt_solution_small": "Технологичное решение для корпоративных коммуникаций",
-  "alt_download_cloud_mobile_ios": "Мобильное демонстрационное облачное приложение платформы dialog для iPhone / iPad",
-  "alt_download_enterprise_mobile_ios": "Мобильное приложение dialog enterprise для iPhone / iPad",
-  "alt_download_cloud_mobile_ios_qr": "Скачать мобильное приложение демо в облаке для iPhone / iPad",
-  "alt_download_enterprise_mobile_ios_qr": "Скачать мобильное приложение enterprise для iPhone / iPad",
-  "alt_download_appstore": "Скачать с App Store",
-  "alt_download_cloud_mobile_android": "Мобильное демонстрационное облачное приложение платформы dialog для Android",
-  "alt_download_enterprise_mobile_android": "Мобильное приложение dialog enterprise для Android",
-  "alt_download_cloud_mobile_android_qr": "Скачать мобильное демонстрационное облачное приложение платформы dialog для Android",
-  "alt_download_enterprise_mobile_android_qr": "Скачать мобильное приложение dialog enterprise для Android",
-  "alt_download_googleplay": "Скачать с Google Play",
-  "alt_download_cloud_web": "Web версия демонстрационного облачного приложения платформы dialog",
-  "alt_download_enterprise_web": "Web версия dialog Enterprise",
   "alt_icanchoose_about_dialog": "icanchoose о dialog",
   "alt_download": "Скачать",
   "alt_jobs_company": "Наша компания",
@@ -150,17 +138,6 @@
   "form_error_message": "Не удалось отправить заявку. Пожалуйста, свяжитесь с нами через <a href=\"mailto:info@dlg.im\">info@dlg.im</a> или <a href=\"tel:+78007758202\">+7(800)775-82-02</a>",
   "more_than_messenger": "dialog — намного больше, чем просто мессенджер",
   "link_icanchoose": "Подробнее о жизни в компании вы можете прочитать в специальном проекте icanchoose",
-  "download_header": "Демонстрационное облачное приложение платформы dialog",
-  "download_subtitle_button_text": "Оставьте заявку",
-  "download_subtitle_after": ", чтобы получить информацию о подключении платформы.",
-  "download_enterprise_subtitle_before": "Информацию о подключении вы можете получить у своего системного администратора или в центре ",
-  "download_enterprise_subtitle_link": "поддержки клиентов",
-  "download_enterprise_subtitle_2": "Вы также можете ознакомиться с функциями платформы в нашем ",
-  "download_enterprise_subtitle_2_link": "демо-приложении",
-  "download_desktop_title": "Десктопное приложение",
-  "download_for": "Скачать для ",
-  "download_mobile_title": "Мобильное приложение",
-  "download_web_title": "Web версия",
   "start": "Начать",
   "prices_go_to_form": "<a class=\"link--default\" href=\"#prices_offer_form\">Отправьте заявку</a>, чтобы узнать цены",
   "prices_pageheader": "Цена на dialog Enterprise рассчитывается от количества пользователей",
@@ -443,6 +420,41 @@
       "integrations": {
         "title": "Интеграции"
       }
+    }
+  },
+  "download": {
+    "enterprise": {
+      "header": "dialog enterprise",
+      "subtitle": {
+        "before": "Информацию о подключении вы можете получить у своего системного администратора или в центре ",
+        "supportLink": "поддержки клиентов",
+        "middle": "Вы также можете ознакомиться с функциями платформы в нашем ",
+        "cloudLink": "демо-приложении"
+      },
+      "appstore": "Мобильное приложение dialog enterprise для iPhone / iPad",
+      "googleplay": "Мобильное приложение dialog enterprise для Android",
+      "web": "Web версия dialog enterprise"
+    },
+    "cloud": {
+      "header": "Демонстрационное облачное приложение платформы dialog",
+      "subtitle": {
+        "button": "Оставьте заявку",
+        "text": ", чтобы получить информацию о подключении платформы."
+      },
+      "appstore": "Мобильное демонстрационное облачное приложение платформы dialog для iPhone / iPad",
+      "googleplay": "Мобильное демонстрационное облачное приложение платформы dialog для Android",
+      "web": "Web версия демонстрационного облачного приложения платформы dialog"
+    },
+    "desktop": {
+      "header": "Десктопное приложение",
+      "button": "Скачать для {os}"
+    },
+    "mobile": {
+      "header": "Мобильное приложение"
+    },
+    "web": {
+      "header": "Web версия",
+      "start": "Начать"
     }
   },
   "partner": {

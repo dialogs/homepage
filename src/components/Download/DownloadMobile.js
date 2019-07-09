@@ -1,206 +1,358 @@
 import React from 'react';
-import classnames from 'classnames';
+import { styled } from 'astroturf';
 import { FormattedMessage } from 'react-intl';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-
-import ImageFormatted from '../ImageFormatted';
-// import { getOS } from '../../utils/getOS';
+import { Heading } from '../Heading/Heading';
+import { Text } from '../Text/Text';
+import { Section } from '../Section/Section';
 import appLinks from '../../constants/links';
+import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 
-export function DownloadMobile({ isEnterprise, locale }) {
-  function handleDownloadAnalytics(event, param) {
-    if (typeof window !== 'undefined') {
-      window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
-      window.yaCounter.reachGoal(`download_${param}`);
+const DownloadMobileSection = styled(Section)`
+  @import '../../styles/variables.css';
+
+  padding-top: 40px;
+  flex: 0 0 50%;
+
+  &:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-primary);
+  }
+
+  @media (--mobile-viewport) {
+    position: relative;
+    flex: 0 0 auto;
+    padding-bottom: 30px;
+
+    &:after {
+      left: calc(-1 * var(--margin-container-side));
+      right: calc(-1 * var(--margin-container-side));
     }
   }
 
-  const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
-  const mobileClasses = classnames('download__mobile-items');
+  @media (--tablet-viewport) {
+    flex: 0 0 50%;
+    padding-left: 64px;
 
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          enterprisePhoneIos: file(
-            relativePath: { eq: "images/download/enterprise_iphone.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 110) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-          cloudPhoneIos: file(
-            relativePath: { eq: "images/download/cloud_iphone.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 110) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-          enterprisePhoneAndroid: file(
-            relativePath: { eq: "images/download/enterprise_android.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 110) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-          cloudPhoneAndroid: file(
-            relativePath: { eq: "images/download/cloud_android.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 110) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
+    &:after {
+      left: calc(50% - 30px);
+    }
+  }
+
+  @media (--tablet-landscape-viewport) {
+    padding-left: 80px;
+
+    &:after {
+      left: calc(50% - 32px);
+    }
+  }
+
+  @media (--desktop-viewport) {
+    padding-left: 120px;
+
+    &:after {
+      left: calc(50% - 60px);
+    }
+  }
+`;
+
+const DownloadMobileDeviceList = styled.div`
+  @import '../../styles/variables.css';
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @media (--mobile-viewport) {
+    flex-flow: column nowrap;
+  }
+
+  @media (--tablet-viewport) {
+    padding-top: 20px;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    padding-top: 30px;
+  }
+
+  @media (--desktop-viewport) {
+    padding-top: 36px;
+  }
+`;
+
+const DownloadMobileDevice = styled.div`
+  @import '../../styles/variables.css';
+
+  text-align: center;
+  line-height: 0;
+
+  @media (--mobile-viewport) {
+    width: 100%;
+    padding: 50px 0;
+  }
+
+  @media (--tablet-viewport) {
+    flex: 0 0 82px;
+    width: 82px;
+
+    &:first-child {
+      margin-right: 36px;
+    }
+  }
+
+  @media (--tablet-landscape-viewport) {
+    flex: 0 0 110px;
+    width: 110px;
+
+    &:first-child {
+      margin-right: 46px;
+    }
+  }
+
+  @media (--laptop-viewport) {
+    flex: 0 0 140px;
+    width: 140px;
+
+    &:first-child {
+      margin-right: 80px;
+    }
+  }
+`;
+
+const DownloadMobileDeviceImage = styled(Image)`
+  @import '../../styles/variables.css';
+
+  width: 100%;
+
+  @media (--mobile-viewport) {
+    width: 80%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  @media (--tablet-viewport) {
+    margin-bottom: 38px;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    margin-bottom: 56px;
+  }
+`;
+
+const MarketTextLink = styled(Text)`
+  @import '../../styles/variables.css';
+
+  @media (--mobile-viewport) {
+    display: none;
+  }
+`;
+
+const QRCodeImage = styled.img`
+  @import '../../styles/variables.css';
+
+  margin-top: 30px;
+  width: 100%;
+
+  @media (--mobile-viewport) {
+    display: none;
+  }
+`;
+
+const MarketLink = styled.a`
+  @import '../../styles/variables.css';
+  display: inline-block;
+  line-height: 0;
+  display: none;
+  margin-top: 30px;
+
+  & img {
+    max-height: 50px;
+  }
+
+  @media (--mobile-viewport) {
+    display: block;
+  }
+`;
+
+export function DownloadMobile({ isEnterprise, language }) {
+  const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
+  const {
+    enterprisePhoneIos,
+    cloudPhoneIos,
+    enterprisePhoneAndroid,
+    cloudPhoneAndroid,
+  } = useStaticQuery(graphql`
+    query {
+      enterprisePhoneIos: file(
+        relativePath: { eq: "images/download/enterprise_iphone.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 140) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
-      `}
-      render={({
-        enterprisePhoneIos,
-        cloudPhoneIos,
-        enterprisePhoneAndroid,
-        cloudPhoneAndroid,
-      }) => {
-        return (
-          <div className="download__section download__item download__mobile">
-            <h2 className="download__item-title">
-              <FormattedMessage id="download_mobile_title" />
-            </h2>
-            <div className={mobileClasses}>
-              <div className="download__mobile-item mobile--ios">
-                <div className="download__mobile-pictute">
-                  <FormattedMessage
-                    id={
-                      isEnterprise
-                        ? 'alt_download_enterprise_mobile_ios'
-                        : 'alt_download_cloud_mobile_ios'
-                    }
-                  >
-                    {(title) => (
-                      <Image
-                        fadeIn={false}
-                        fluid={
-                          isEnterprise
-                            ? enterprisePhoneIos.childImageSharp.fluid
-                            : cloudPhoneIos.childImageSharp.fluid
-                        }
-                        alt={title}
-                      />
-                    )}
-                  </FormattedMessage>
-                </div>
-                <div className="title">
-                  <a
-                    className="download__item-link"
-                    href={locale === 'ru' ? links.ios : links.ios_en}
-                    onClick={(event) =>
-                      handleDownloadAnalytics(event, 'dialog_ios')
-                    }
-                  >
-                    iPhone / iPad
-                  </a>
-                </div>
-                <div className="qr-box">
-                  <ImageFormatted
-                    src={
-                      isEnterprise
-                        ? '/images/download/enterprise_appstore.svg'
-                        : '/images/download/cloud_appstore.svg'
-                    }
-                    altLangId={
-                      isEnterprise
-                        ? 'alt_download_enterprise_mobile_ios_qr'
-                        : 'alt_download_cloud_mobile_ios_qr'
-                    }
-                  />
-                </div>
-                <a
-                  className="store-link"
-                  href={locale === 'ru' ? links.ios : links.ios_en}
-                  onClick={(event) =>
-                    handleDownloadAnalytics(event, 'dialog_ios')
-                  }
-                >
-                  <ImageFormatted
-                    src="/images/download/button-app-store.png"
-                    srcSet="/images/download/button-app-store@2x.png 2x"
-                    altLangId="alt_download_appstore"
-                  />
-                </a>
-              </div>
+      }
+      cloudPhoneIos: file(
+        relativePath: { eq: "images/download/cloud_iphone.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 140) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      enterprisePhoneAndroid: file(
+        relativePath: { eq: "images/download/enterprise_android.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 140) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      cloudPhoneAndroid: file(
+        relativePath: { eq: "images/download/cloud_android.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 140) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `);
 
-              <div className="download__mobile-item mobile--android">
-                <div className="download__mobile-pictute">
-                  <FormattedMessage
-                    id={
-                      isEnterprise
-                        ? 'alt_download_enterprise_mobile_android'
-                        : 'alt_download_cloud_mobile_android'
+  function handleDownloadClick(event, param) {
+    if (typeof window !== 'undefined') {
+      window.ga &&
+        window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
+      window.yaCounter && window.yaCounter.reachGoal(`download_${param}`);
+    }
+  }
+
+  return (
+    <DownloadMobileSection>
+      <FormattedMessage id="download.mobile.header">
+        {(title) => <Heading level="3">{title}</Heading>}
+      </FormattedMessage>
+      <DownloadMobileDeviceList>
+        <DownloadMobileDevice>
+          <FormattedMessage
+            id={
+              isEnterprise
+                ? 'download.enterprise.appstore'
+                : 'download.cloud.appstore'
+            }
+          >
+            {(alt) => (
+              <>
+                <DownloadMobileDeviceImage
+                  fadeIn={false}
+                  fluid={
+                    isEnterprise
+                      ? enterprisePhoneIos.childImageSharp.fluid
+                      : cloudPhoneIos.childImageSharp.fluid
+                  }
+                  alt={alt}
+                />
+                <MarketTextLink bold inline>
+                  <UnderlineLink
+                    direction="right"
+                    href={language === 'ru' ? links.ios : links.ios_en}
+                    onClick={(event) =>
+                      handleDownloadClick(event, 'dialog_ios')
                     }
                   >
-                    {(alt) => (
-                      <Image
-                        fadeIn={false}
-                        fluid={
-                          isEnterprise
-                            ? enterprisePhoneAndroid.childImageSharp.fluid
-                            : cloudPhoneAndroid.childImageSharp.fluid
-                        }
-                        alt={alt}
-                      />
-                    )}
-                  </FormattedMessage>
-                </div>
-                <div className="title">
-                  <a
-                    className="download__item-link"
+                    iOS
+                  </UnderlineLink>
+                </MarketTextLink>
+                <QRCodeImage
+                  src={
+                    isEnterprise
+                      ? '/images/download/enterprise_appstore.svg'
+                      : '/images/download/cloud_appstore.svg'
+                  }
+                  alt={alt}
+                />
+                <MarketLink
+                  href={language === 'ru' ? links.ios : links.ios_en}
+                  onClick={(event) => handleDownloadClick(event, 'dialog_ios')}
+                >
+                  <img
+                    alt={alt}
+                    width="150"
+                    src={`/images/app-store/${language}.svg`}
+                  />
+                </MarketLink>
+              </>
+            )}
+          </FormattedMessage>
+        </DownloadMobileDevice>
+        <DownloadMobileDevice>
+          <FormattedMessage
+            id={
+              isEnterprise
+                ? 'download.enterprise.googleplay'
+                : 'download.cloud.googleplay'
+            }
+          >
+            {(alt) => (
+              <>
+                <DownloadMobileDeviceImage
+                  fadeIn={false}
+                  fluid={
+                    isEnterprise
+                      ? enterprisePhoneAndroid.childImageSharp.fluid
+                      : cloudPhoneAndroid.childImageSharp.fluid
+                  }
+                  alt={alt}
+                />
+                <MarketTextLink bold inline>
+                  <UnderlineLink
+                    direction="right"
                     href={links.android}
                     onClick={(event) =>
-                      handleDownloadAnalytics(event, 'dialog_android')
+                      handleDownloadClick(event, 'dialog_android')
                     }
                   >
                     Android
-                  </a>
-                </div>
-                <div className="qr-box">
-                  <ImageFormatted
-                    src={
-                      isEnterprise
-                        ? '/images/download/enterprise_playmarket.svg'
-                        : '/images/download/cloud_playmarket.svg'
-                    }
-                    altLangId={
-                      isEnterprise
-                        ? 'alt_download_enterprise_mobile_android_qr'
-                        : 'alt_download_cloud_mobile_android_qr'
-                    }
-                  />
-                </div>
-                <a
-                  className="store-link"
+                  </UnderlineLink>
+                </MarketTextLink>
+                <QRCodeImage
+                  src={
+                    isEnterprise
+                      ? '/images/download/enterprise_playmarket.svg'
+                      : '/images/download/cloud_playmarket.svg'
+                  }
+                  alt={alt}
+                />
+
+                <MarketLink
                   href={links.android}
                   onClick={(event) =>
-                    handleDownloadAnalytics(event, 'dialog_android')
+                    handleDownloadClick(event, 'dialog_android')
                   }
                 >
-                  <ImageFormatted
-                    src="/images/download/button-google-play.png"
-                    srcSet="/images/download/button-google-play@2x.png 2x"
-                    altLangId="alt_download_googleplay"
+                  <img
+                    alt={alt}
+                    width="166"
+                    src={`/images/google-play/${language}.png`}
                   />
-                </a>
-              </div>
-            </div>
-          </div>
-        );
-      }}
-    />
+                </MarketLink>
+              </>
+            )}
+          </FormattedMessage>
+        </DownloadMobileDevice>
+      </DownloadMobileDeviceList>
+    </DownloadMobileSection>
   );
 }
 

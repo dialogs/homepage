@@ -59,18 +59,6 @@
   "alt_big_business": "dialog and big business",
   "alt_solution_big": "A simple solution for corporate communications",
   "alt_solution_small": "A technological solution for corporate communications",
-  "alt_download_cloud_mobile_ios": "Mobile application dialog platform’s cloud for iPhone / iPad",
-  "alt_download_enterprise_mobile_ios": "Mobile application dialog Enterprise for iPhone / iPad",
-  "alt_download_cloud_mobile_ios_qr": "Download mobile application dialog platform’s cloud for iPhone / iPad",
-  "alt_download_enterprise_mobile_ios_qr": "Download mobile application dialog Enterprise for iPhone / iPad",
-  "alt_download_appstore": "Download on the App Store",
-  "alt_download_cloud_mobile_android": "The dialog platform’s cloud mobile app demo for Android",
-  "alt_download_enterprise_mobile_android": "Mobile application dialog Enterprise for Android",
-  "alt_download_cloud_mobile_android_qr": "Download the dialog platform’s cloud mobile app demo for Android",
-  "alt_download_enterprise_mobile_android_qr": "Download mobile application dialog Enterprise for Android",
-  "alt_download_googleplay": "get it on Google Play",
-  "alt_download_cloud_web": "The dialog platform’s cloud app demo web version",
-  "alt_download_enterprise_web": "Web version dialog Enterprise",
   "alt_icanchoose_about_dialog": "icanchoose about dialog",
   "alt_download": "Download",
   "alt_jobs_company": "Our company",
@@ -184,17 +172,6 @@
   "prices_ad_ldap": "Integration with AD / LDAP user catalogues",
   "prices_security_infrastructure": "Integrations with security infrastructure (SIEM, DLP, IDM, Anti-virus)",
   "prices_bot_sdk": "Bot SDK",
-  "download_header": "The dialog platform’s cloud app demo",
-  "download_subtitle_button_text": "Complete an application",
-  "download_subtitle_after": " to receive information on how to install the platform.",
-  "download_enterprise_subtitle_before": "Get installation info from your system administrator or the ",
-  "download_enterprise_subtitle_link": "client support system",
-  "download_enterprise_subtitle_2": "You can also try out the platform’s features in our ",
-  "download_enterprise_subtitle_2_link": "demo app",
-  "download_desktop_title": "Desktop Application",
-  "download_for": "Download for ",
-  "download_mobile_title": "Mobile Application",
-  "download_web_title": "Web Version",
   "start": "Start",
   "support_header": "Feedback",
   "support_corporate_title": "Contact Technical Support",
@@ -437,6 +414,42 @@
       "integrations": {
         "title": "Integrations"
       }
+    }
+  },
+  "download": {
+    "enterprise": {
+      "header": "dialog enterprise",
+      "subtitle": {
+        "before": "Get installation info from your system administrator or the ",
+        "supportLink": "client support system",
+        "middle": "You can also try out the platform’s features in our ",
+        "cloudLink": "demo app"
+      },
+      "appstore": "Mobile application dialog enterprise for iPhone / iPad",
+      "googleplay": "Mobile application dialog enterprise for Android",
+      "web": "Web version dialog enterprise"
+    },
+    "cloud": {
+      "header": "The dialog platform’s cloud app demo",
+      "subtitle": {
+        "button": "Complete an application",
+        "text": " to receive information on how to install the platform."
+      },
+      "appstore": "Mobile application dialog platform’s cloud for iPhone / iPad",
+      "googleplay": "The dialog platform’s cloud mobile app demo for Android",
+      "web": "The dialog platform’s cloud app demo web version"
+    },
+    "desktop": {
+      "header": "Desktop Application",
+      "button": "Download for {os}"
+    },
+    "mobile": {
+      "header": "Mobile Application"
+    },
+    "web": {
+      "header": "Web Version",
+      "start": "Start",
+      "alt": "Web version dialog enterprise"
     }
   },
   "partner": {

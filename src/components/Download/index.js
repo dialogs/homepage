@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
 import { openOfferModal } from '../../actions/modals';
 
-import { Download } from './Download';
+import { DownloadHeader as DownloadHeaderComponent } from './DownloadHeader';
 
-const mapStateToProps = () => {
-  return {};
-};
+export const DownloadHeader = connect(
+  () => ({}),
+  { openOfferModal },
+)(DownloadHeaderComponent);
 
-const mapDispatchToProps = { openOfferModal };
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Download);
+export * from './DownloadEnterpriseHeader';
+export * from './DownloadDesktop';
+export * from './DownloadMobile';
+export * from './DownloadWeb';
