@@ -88,8 +88,8 @@ export function Input({
           required={required}
         />
         {!isValid && name === 'email' && (
-          <div class="error_message">
-            <div class="error_message_pointer" />
+          <div className="error_message">
+            <div className="error_message_pointer" />
             Адрес электронной почты должен содержать символ “@”. В адресе “
             {value}” отсутсвует символ “@”.
           </div>
