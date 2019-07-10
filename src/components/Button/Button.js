@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 
 import './Button.css';
@@ -12,15 +12,23 @@ export function Button({
   error,
   disabled,
   className,
-  onClick,
 }) {
   const [isFinished, setIsFinished] = useState(false);
+
+  useEffect(() => {
+    if (error || valueStatus === 200) {
+      setIsFinished(true);
+    }
+    return () => setIsFinished(true);
+  }, []);
+
   function handleOnClick() {
     console.log('fired');
     setTimeout(function() {
       setIsFinished(true);
     }, 6000);
   }
+
   const classes = classNames(
     'button',
     'button--default',
@@ -33,7 +41,16 @@ export function Button({
     className,
   );
 
-  return !isFinished ? (
+  return isFinished && (error || valueStatus === 200) ? (
+    <div className="button__info">
+      {' '}
+      {error ? (
+        <FormattedHTMLMessage id="form_error_message" />
+      ) : (
+        <FormattedHTMLMessage id="form_success_message" />
+      )}
+    </div>
+  ) : (
     <button
       type={type}
       className={classes}
@@ -53,15 +70,6 @@ export function Button({
         </div>
       </div>
     </button>
-  ) : (
-    <div className="button__info">
-      {' '}
-      {error ? (
-        <FormattedHTMLMessage id="form_error_message" />
-      ) : (
-        <FormattedHTMLMessage id="form_success_message" />
-      )}
-    </div>
   );
 }
 
