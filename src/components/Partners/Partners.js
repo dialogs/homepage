@@ -118,7 +118,7 @@ const PartnersNavLink = styled.a`
     display: none;
     width: 10px;
     height: 10px;
-    background-color: #b9bbfa;
+    background-color: #825bf9;
     position: absolute;
     left: -30px;
     top: 16px;

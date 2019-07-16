@@ -8,7 +8,6 @@
   bottom: 0;
   right: 0;
   background: var(--color-primary);
-  background: #d2fde5;
   z-index: 100;
   overflow: auto;
   height: 100vh;
@@ -35,7 +34,6 @@
       height: 25vw;
       min-height: 118px;
       background-color: var(--color-secondary);
-      background-color: #b9bbfa;
     }
   }
 

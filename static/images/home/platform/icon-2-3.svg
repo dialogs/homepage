@@ -3,7 +3,7 @@
 <path d="M38.8438 22.5223C38.8438 15.9004 33.4712 10.5322 26.8438 10.5322C20.2163 10.5322 14.8438 15.9004 14.8438 22.5223" stroke="#1E1E1E" stroke-width="2"/>
 <path d="M28.8438 24.5209C28.8438 25.6233 27.9491 26.5184 26.8438 26.5184C25.7384 26.5184 24.8438 25.6233 24.8438 24.5209C24.8438 23.4185 25.7384 22.5234 26.8438 22.5234C27.9491 22.5234 28.8438 23.4185 28.8438 24.5209Z" stroke="#1E1E1E" stroke-width="2"/>
 <path d="M27.8438 23.5216L32.8438 19.5249" stroke="#1E1E1E" stroke-width="2"/>
-<rect width="14" height="13.9885" transform="matrix(1 0 0 -1 30.8438 60.4912)" fill="#B9BBFA"/>
-<rect width="30" height="13.9885" transform="matrix(1 0 0 -1 30.8438 44.5044)" fill="#B9BBFA"/>
-<rect width="14" height="13.9885" transform="matrix(1 0 0 -1 46.8438 60.4912)" fill="#B9BBFA"/>
+<rect width="14" height="13.9885" transform="matrix(1 0 0 -1 30.8438 60.4912)" fill="#825bf9"/>
+<rect width="30" height="13.9885" transform="matrix(1 0 0 -1 30.8438 44.5044)" fill="#825bf9"/>
+<rect width="14" height="13.9885" transform="matrix(1 0 0 -1 46.8438 60.4912)" fill="#825bf9"/>
 </svg>

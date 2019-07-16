@@ -126,7 +126,7 @@ export function Footer({ locale }) {
                       />
                       <path
                         d="M10.3438 5.98047V15.9469L18.6771 10.9637L10.3438 5.98047Z"
-                        fill="#b9bbfa"
+                        fill="#825bf9"
                       />
                     </svg>
                   </a>

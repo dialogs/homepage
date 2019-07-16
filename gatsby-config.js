@@ -43,7 +43,7 @@ function getPlugins() {
         short_name: 'dlg.im',
         start_url: '/',
         background_color: '#fff',
-        theme_color: '#b9bbfa',
+        theme_color: '#825bf9',
         display: 'standalone',
         icon: 'static/images/icon.png',
         include_favicon: true,

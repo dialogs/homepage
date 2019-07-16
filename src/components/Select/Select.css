@@ -2,7 +2,7 @@
 
 :root {
   --select-border-color: color-mod(var(--text-color-main) alpha(20%));
-  --select-active-border-color: #b9bbfa;
+  --select-active-border-color: #825bf9;
 }
 
 .select {
