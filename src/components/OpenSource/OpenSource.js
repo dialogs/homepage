@@ -2,7 +2,6 @@ import React from 'react';
 import { styled } from 'astroturf';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Section } from '../Section/Section';
-import { PageHeading } from '../PageHeading/PageHeading';
 import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
 import { List, ListItem } from '../List/List';
@@ -62,23 +61,23 @@ const GithubButtonWrapper = styled.div`
 export function OpenSource() {
   return (
     <Section>
-      <PageHeading>
-        <FormattedMessage id="opensource.header" />
-      </PageHeading>
+      <Heading level="1">
+        <FormattedMessage id="integrations.opensource.header" />
+      </Heading>
       <OpenSourceContent>
         <OpenSourceContentBlock>
           <Heading level="3">
-            <FormattedMessage id="opensource.dev.title" />
+            <FormattedMessage id="integrations.opensource.dev.title" />
           </Heading>
           <OpenSourceList>
             <ListItem>
-              <FormattedHTMLMessage id="opensource.dev.portfolio" />
+              <FormattedHTMLMessage id="integrations.opensource.dev.portfolio" />
             </ListItem>
             <ListItem>
-              <FormattedHTMLMessage id="opensource.dev.experience" />
+              <FormattedHTMLMessage id="integrations.opensource.dev.experience" />
               <Text bold>
                 <UnderlineLink href="https://oss.dlg.im" direction="right">
-                  <FormattedHTMLMessage id="opensource.dev.participate" />
+                  <FormattedHTMLMessage id="integrations.opensource.dev.participate" />
                 </UnderlineLink>
               </Text>
             </ListItem>
@@ -86,14 +85,14 @@ export function OpenSource() {
         </OpenSourceContentBlock>
         <OpenSourceContentBlock>
           <Heading level="3">
-            <FormattedMessage id="opensource.clients.title" />
+            <FormattedMessage id="integrations.opensource.clients.title" />
           </Heading>
           <OpenSourceList>
             <ListItem>
-              <FormattedHTMLMessage id="opensource.clients.community" />
+              <FormattedHTMLMessage id="integrations.opensource.clients.community" />
             </ListItem>
             <ListItem>
-              <FormattedHTMLMessage id="opensource.clients.libraries" />
+              <FormattedHTMLMessage id="integrations.opensource.clients.libraries" />
               <GithubButtonWrapper>
                 <GithubButton />
               </GithubButtonWrapper>

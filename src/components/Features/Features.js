@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import ImageFormatted from '../ImageFormatted';
-
-// import { Page } from '../Page/Page';
 import { Heading } from '../Heading/Heading';
 import { Section } from '../Section/Section';
 import { Tabs, Tab } from '../Tabs';
@@ -23,22 +21,22 @@ export function Features() {
 
   return (
     <Section className={sectionClassName}>
-      <Heading>
-        <FormattedMessage id="what_dialog_can" />
+      <Heading level="1">
+        <FormattedMessage id="features.header" />
       </Heading>
       <Tabs
         onChange={setTab}
         current={tab}
-        className="features__tabs  features__tabs--top"
+        className="features__tabs features__tabs--top"
       >
         <Tab value="messenger">
-          <FormattedMessage id="messenger" />
+          <FormattedMessage id="features.tabs.messenger" />
         </Tab>
         <Tab value="business">
-          <FormattedMessage id="corporate_features" />
+          <FormattedMessage id="features.tabs.corporate" />
         </Tab>
         <Tab value="integrations">
-          <FormattedMessage id="integrations" />
+          <FormattedMessage id="features.tabs.integrations" />
         </Tab>
       </Tabs>
       <div className="features__content">
@@ -81,7 +79,7 @@ export function Features() {
             </Tabs>
             <div className="feature_block__slides">
               <div className="feature_block__slides__heading">
-                <FormattedMessage id="messenger" />
+                <FormattedMessage id="features.tabs.messenger" />
               </div>
               <Collapsible
                 title={<FormattedMessage id="feature_audio_video" />}
@@ -256,7 +254,7 @@ export function Features() {
             </Tabs>
             <div className="feature_block__slides">
               <div className="feature_block__slides__heading">
-                <FormattedMessage id="corporate_features" />
+                <FormattedMessage id="features.tabs.corporate" />
               </div>
               <Collapsible
                 title={<FormattedMessage id="feature_chatbots" />}
@@ -343,7 +341,7 @@ export function Features() {
             </Tabs>
             <div className="feature_block__slides">
               <div className="feature_block__slides__heading">
-                <FormattedMessage id="integrations" />
+                <FormattedMessage id="features.tabs.integrations" />
               </div>
               <Collapsible
                 title={<FormattedMessage id="feature_api" />}

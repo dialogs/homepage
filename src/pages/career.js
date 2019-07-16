@@ -142,7 +142,7 @@ export default ({
         </Section>
 
         <Section className="apply" id="apply_for_job_form">
-          <Heading>
+          <Heading level="1">
             <FormattedMessage id="job_apply_header" />
           </Heading>
           <div className="apply__job_text">
