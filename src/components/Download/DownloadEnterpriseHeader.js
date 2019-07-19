@@ -36,18 +36,6 @@ export function DownloadEnterpriseHeader({ language }) {
             )}
           </FormattedMessage>
           {'. '}
-          <FormattedHTMLMessage id="download.enterprise.subtitle.middle" />
-          <FormattedMessage id="download.enterprise.subtitle.cloudLink">
-            {(text) => (
-              <UnderlineGatsbyLink
-                direction="right"
-                to={`/${language}/download`}
-              >
-                {text}
-              </UnderlineGatsbyLink>
-            )}
-          </FormattedMessage>
-          {'.'}
         </Text>
       </DownloadHeaderSection>
     </Container>
