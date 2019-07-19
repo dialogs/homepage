@@ -1,13 +1,13 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import { styled } from 'astroturf';
+import { graphql } from 'gatsby';
 import FormattedMetaTags from '../components/FormattedMetaTags';
 import FormattedOpenGraph from '../components/FormattedOpenGraph';
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
 import { Section } from '../components/Section/Section';
 import {
-  DownloadHeader,
+  DownloadEnterpriseHeader,
   DownloadDesktop,
   DownloadMobile,
   DownloadWeb,
@@ -47,15 +47,15 @@ export default ({
       />
 
       <Container fluid style={{ position: 'relative' }}>
-        <DownloadHeader />
+        <DownloadEnterpriseHeader language={language} />
         <Container>
           <DownloadClientsSection>
-            <DownloadDesktop language={language} />
-            <DownloadMobile language={language} />
+            <DownloadDesktop isEnterprise language={language} />
+            <DownloadMobile isEnterprise language={language} />
           </DownloadClientsSection>
         </Container>
       </Container>
-      <DownloadWeb />
+      <DownloadWeb isEnterprise />
     </Page>
   );
 };

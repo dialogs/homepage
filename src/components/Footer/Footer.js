@@ -196,9 +196,7 @@ export function Footer({ locale }) {
                   <FooterUnderlineGatsbyLink to={`/${locale}/pricing/`}>
                     <FormattedMessage id="menu_pricing" />
                   </FooterUnderlineGatsbyLink>
-                  <FooterUnderlineGatsbyLink
-                    to={`/${locale}/download/enterprise/`}
-                  >
+                  <FooterUnderlineGatsbyLink to={`/${locale}/download/`}>
                     <FormattedMessage id="menu_download" />
                   </FooterUnderlineGatsbyLink>
                   <FooterUnderlineGatsbyLink to={`/${locale}/about/`}>
