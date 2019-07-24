@@ -22,8 +22,8 @@ const IntegrationsCatalogCards = styled.div`
 export function IntegrationsCatalog() {
   return (
     <Section>
-      <Heading>
-        <FormattedMessage id="integrations_header" />
+      <Heading level="1">
+        <FormattedMessage id="integrations.list.header" />
       </Heading>
       <IntegrationsCatalogCards>
         {integrations.map(IntegrationCard)}

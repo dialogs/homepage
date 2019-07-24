@@ -89,4 +89,8 @@ module.exports = [
       '/en/jobs/technical-support-engineer',
     ],
   },
+  {
+    to: '/download',
+    from: ['/ru/download/enterprise', '/en/download/enterprise'],
+  },
 ];

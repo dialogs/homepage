@@ -87,7 +87,7 @@ const IntegrationCardFooterBlockTitle = styled.div`
   font-weight: 500;
 `;
 
-const IntegrationCardCountry = styled(IntegrationCardFooterBlock)`
+const IntegrationCardLanguage = styled(IntegrationCardFooterBlock)`
   flex: 0 0 auto;
   margin-right: 30px;
 `;
@@ -110,7 +110,7 @@ export function IntegrationCard({
   description,
   link,
   image,
-  country,
+  language,
   category,
 }) {
   return (
@@ -120,7 +120,7 @@ export function IntegrationCard({
         {link ? (
           <div>
             <IntegrationCardLink href={link}>
-              <FormattedMessage id="new_integrations.source_code" />
+              <FormattedMessage id="integrations.list.source_code" />
             </IntegrationCardLink>
           </div>
         ) : null}
@@ -134,15 +134,15 @@ export function IntegrationCard({
         </IntegrationCardDescription>
       </IntegrationCardBody>
       <IntegrationCardFooter>
-        <IntegrationCardCountry>
+        <IntegrationCardLanguage>
           <IntegrationCardFooterBlockTitle>
-            <FormattedMessage id="integrations_card_language" />
+            <FormattedMessage id="integrations.list.language" />
           </IntegrationCardFooterBlockTitle>
-          <FormattedMessage id={country} />
-        </IntegrationCardCountry>
+          <FormattedMessage id={language} />
+        </IntegrationCardLanguage>
         <IntegrationCardCategory>
           <IntegrationCardFooterBlockTitle>
-            <FormattedMessage id="integrations_card_category" />
+            <FormattedMessage id="integrations.list.category" />
           </IntegrationCardFooterBlockTitle>
           <FormattedMessage id={category} />
         </IntegrationCardCategory>

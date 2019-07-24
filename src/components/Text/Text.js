@@ -58,7 +58,15 @@ const styles = css`
   }
 `;
 
-export function Text({ inline, noPadding, bold, size, className, children }) {
+export function Text({
+  inline,
+  noPadding,
+  bold,
+  size,
+  className,
+  style,
+  children,
+}) {
   const TagName = inline ? 'span' : 'p';
   const classes = classNames(
     styles.text,
@@ -71,7 +79,11 @@ export function Text({ inline, noPadding, bold, size, className, children }) {
     className,
   );
 
-  return <TagName className={classes}>{children}</TagName>;
+  return (
+    <TagName className={classes} style={style}>
+      {children}
+    </TagName>
+  );
 }
 
 Text.defaultProps = {

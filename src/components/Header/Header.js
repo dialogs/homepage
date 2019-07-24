@@ -147,7 +147,7 @@ export function Header({
                 </li>
                 <li className="header__menu-item">
                   <Link
-                    to={`/${locale}/download/enterprise/`}
+                    to={`/${locale}/download/`}
                     className="header__menu-link"
                     activeClassName="header__menu-link--active"
                   >

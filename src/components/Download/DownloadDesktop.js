@@ -1,249 +1,356 @@
 import React from 'react';
+import { styled } from 'astroturf';
 import { FormattedMessage } from 'react-intl';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-
-// import { getOS } from '../../utils/getOS';
+import { Heading } from '../Heading/Heading';
+import { getOS } from '../../utils/getOS';
+import { Section } from '../Section/Section';
+import { Text } from '../Text/Text';
 import appLinks from '../../constants/links';
+import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
+import { LinkButton } from '../Button/LinkButton';
+
+const DownloadDesktopSection = styled(Section)`
+  @import '../../styles/variables.css';
+
+  padding-top: 40px;
+  flex: 0 0 50%;
+
+  @media (--mobile-viewport) {
+    flex: 0 0 auto;
+    padding-bottom: 50px;
+  }
+`;
+
+const DownloadDesktopImage = styled(Image)`
+  @import '../../styles/variables.css';
+
+  width: 100%;
+
+  @media (--mobile-viewport) {
+    max-width: 400px;
+  }
+
+  @media (--tablet-viewport) {
+    margin-left: -38px;
+    max-width: 300px;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    margin-left: -54px;
+    max-width: 425px;
+  }
+
+  @media (--laptop-viewport) {
+    margin-left: -64px;
+    max-width: 520px;
+  }
+`;
+
+const DownloadDesktopButtonWrapper = styled.div`
+  @import '../../styles/variables.css';
+
+  @media (--tablet-viewport) {
+    width: calc(300px - (38px * 2));
+  }
+
+  @media (--tablet-landscape-viewport) {
+    width: calc(425px - (54px * 2));
+  }
+
+  @media (--laptop-viewport) {
+    width: calc(520px - (64px * 2));
+  }
+`;
+
+const DownloadDesktopButton = styled(LinkButton)`
+  @import '../../styles/variables.css';
+
+  @media (--tablet-viewport) {
+    width: 100%;
+  }
+`;
+
+const DownloadDesktopLinksBlock = styled.div`
+  @import '../../styles/variables.css';
+
+  padding-top: 30px;
+
+  @media (--tablet-viewport) {
+    width: calc(300px - (38px * 2));
+    text-align: center;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    width: calc(425px - (54px * 2));
+  }
+
+  @media (--laptop-viewport) {
+    width: calc(520px - (64px * 2));
+  }
+`;
+
+const DownloadDesktopLink = styled(UnderlineLink)`
+  @import '../../styles/variables.css';
+
+  margin: 10px 10px 0;
+`;
 
 export function DownloadDesktop({ isEnterprise }) {
-  function handleDownloadAnalytics(event, param) {
+  const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
+  const os = getOS();
+  const {
+    enterpriseDesktopMacos,
+    cloudDesktopMacos,
+    enterpriseDesktopLinux,
+    cloudDesktopLinux,
+    enterpriseDesktopWindows,
+    cloudDesktopWindows,
+  } = useStaticQuery(graphql`
+    query {
+      enterpriseDesktopMacos: file(
+        relativePath: { eq: "images/download/enterprise_desktop_macos.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 520) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      cloudDesktopMacos: file(
+        relativePath: { eq: "images/download/cloud_desktop_macos.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 520) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      enterpriseDesktopLinux: file(
+        relativePath: { eq: "images/download/enterprise_desktop_linux.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 520) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      cloudDesktopLinux: file(
+        relativePath: { eq: "images/download/cloud_desktop_linux.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 520) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      enterpriseDesktopWindows: file(
+        relativePath: { eq: "images/download/enterprise_desktop_windows.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 520) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      cloudDesktopWindows: file(
+        relativePath: { eq: "images/download/cloud_desktop_windows.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 520) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `);
+
+  function handleDownloadClick(event, param) {
     if (typeof window !== 'undefined') {
-      window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
-      window.yaCounter.reachGoal(`download_${param}`);
+      window.ga &&
+        window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
+      window.yaCounter && window.yaCounter.reachGoal(`download_${param}`);
     }
   }
 
-  // const os = getOS();
-  const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
+  function getDesktopImage() {
+    if (isEnterprise) {
+      switch (os) {
+        case 'macOS':
+        case 'iOS':
+          return enterpriseDesktopMacos.childImageSharp.fluid;
+        case 'Linux':
+          return enterpriseDesktopLinux.childImageSharp.fluid;
+        case 'Windows':
+        default:
+          return enterpriseDesktopWindows.childImageSharp.fluid;
+      }
+    }
 
-  /*
-  function renderDownloadDesktopImage() {
     switch (os) {
       case 'macOS':
       case 'iOS':
-        imgSrc = isEnterprise
-          ? '/images/download/enterprise-desktop-macos.png'
-          : '/images/download/cloud-desktop-macos.png';
-
-        imgSrcSet = isEnterprise
-          ? '/images/download/enterprise-desktop-macos@2x.png 2x'
-          : '/images/download/cloud-desktop-macos@2x.png 2x';
-
-        return (
-          <ImageFormatted
-            imgClass="download__desktop-img"
-            src={imgSrc}
-            srcSet={imgSrcSet}
-            altLangId="download_desktop_title"
-          />
-        );
-
+        return cloudDesktopMacos.childImageSharp.fluid;
       case 'Linux':
-        imgSrc = isEnterprise
-          ? '/images/download/enterprise-desktop-linux.png'
-          : '/images/download/cloud-desktop-linux.png';
-
-        imgSrcSet = isEnterprise
-          ? '/images/download/enterprise-desktop-linux@2x.png 2x'
-          : '/images/download/cloud-desktop-linux@2x.png 2x';
-
-        return (
-          <ImageFormatted
-            imgClass="download__desktop-img"
-            src={imgSrc}
-            srcSet={imgSrcSet}
-            altLangId="download_desktop_title"
-          />
-        );
-
+        return cloudDesktopLinux.childImageSharp.fluid;
       case 'Windows':
       default:
-        return (
-          <ImageFormatted
-            imgClass="download__desktop-img"
-            src={imgSrc}
-            srcSet={imgSrcSet}
-            altLangId="download_desktop_title"
-          />
-        );
+        return cloudDesktopWindows.childImageSharp.fluid;
     }
   }
 
-  function renderDownloadDesktopButton() {
+  function renderDownloadButton() {
     switch (os) {
       case 'macOS':
       case 'iOS':
         return (
-          <a className="button button--default" href={links.osx}>
-            <FormattedMessage id="download_for" />
-            MacOS
-          </a>
+          <FormattedMessage
+            id="download.desktop.button"
+            values={{ os: 'macOS' }}
+          >
+            {(text) => (
+              <DownloadDesktopButton
+                href={links.osx}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) =>
+                  handleDownloadClick(event, 'dialog_windows')
+                }
+              >
+                {text}
+              </DownloadDesktopButton>
+            )}
+          </FormattedMessage>
         );
 
       case 'Linux':
         return (
           <>
-            <a className="button button--default" href={links.linux}>
-              <FormattedMessage id="download_for" />
-              Linux 32
-            </a>
-            <a className="button button--default" href={links.linux64}>
-              <FormattedMessage id="download_for" />
-              Linux 64
-            </a>
+            <FormattedMessage
+              id="download.desktop.button"
+              values={{ os: 'Linux 32' }}
+            >
+              {(text) => (
+                <DownloadDesktopButton
+                  href={links.linux}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(event) =>
+                    handleDownloadClick(event, 'dialog_linux')
+                  }
+                >
+                  {text}
+                </DownloadDesktopButton>
+              )}
+            </FormattedMessage>
+            <br />
+            <br />
+            <FormattedMessage
+              id="download.desktop.button"
+              values={{ os: 'Linux 64' }}
+            >
+              {(text) => (
+                <DownloadDesktopButton
+                  href={links.linux64}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(event) =>
+                    handleDownloadClick(event, 'dialog_linux')
+                  }
+                >
+                  {text}
+                </DownloadDesktopButton>
+              )}
+            </FormattedMessage>
           </>
         );
 
       case 'Windows':
       default:
         return (
-          <a className="button button--default" href={links.windows}>
-            <FormattedMessage id="download_for" />
-            Windows
-          </a>
+          <FormattedMessage
+            id="download.desktop.button"
+            values={{ os: 'Windows' }}
+          >
+            {(text) => (
+              <DownloadDesktopButton
+                fill
+                href={links.windows}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) => handleDownloadClick(event, 'dialog_macos')}
+              >
+                {text}
+              </DownloadDesktopButton>
+            )}
+          </FormattedMessage>
         );
     }
   }
-  */
 
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          enterpriseDesktopMacos: file(
-            relativePath: { eq: "images/download/enterprise_desktop_macos.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 425) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-          cloudDesktopMacos: file(
-            relativePath: { eq: "images/download/cloud_desktop_macos.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 425) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-        }
-      `}
-      render={({ enterpriseDesktopMacos, cloudDesktopMacos }) => {
-        return (
-          <div className="download__section download__item download__desktop">
-            <FormattedMessage id="download_desktop_title">
-              {(title) => (
-                <h2 className="download__item-title download__desktop-title">
-                  {title}
-                </h2>
-              )}
-            </FormattedMessage>
-            <div className="download__desktop-pictute">
-              <div className="download__desktop-img">
-                <FormattedMessage id="download_desktop_title">
-                  {(alt) => (
-                    <Image
-                      fadeIn={false}
-                      fluid={
-                        isEnterprise
-                          ? enterpriseDesktopMacos.childImageSharp.fluid
-                          : cloudDesktopMacos.childImageSharp.fluid
-                      }
-                      alt={alt}
-                    />
-                  )}
-                </FormattedMessage>
-              </div>
-            </div>
-            {/*
-          <div className="download__desktop-button-box">
-            {renderDownloadDesktopButton()}
-          </div>
-          */}
-
-            <div className="download__desktop-systems">
-              <div className="download__desktop-system">
-                <a
-                  className="download__item-link"
-                  href={links.osx}
-                  onClick={(event) =>
-                    handleDownloadAnalytics(event, 'dialog_macos')
-                  }
-                >
-                  Mac OS
-                </a>
-              </div>
-              <div className="download__desktop-system">
-                <a
-                  className="download__item-link"
-                  href={links.windows}
-                  onClick={(event) =>
-                    handleDownloadAnalytics(event, 'dialog_windows')
-                  }
-                >
-                  Windows
-                </a>
-              </div>
-              <div className="download__desktop-system">
-                <a
-                  className="download__item-link"
-                  href={links.linux}
-                  onClick={(event) =>
-                    handleDownloadAnalytics(event, 'dialog_linux')
-                  }
-                >
-                  Linux 32
-                </a>
-              </div>
-              <div className="download__desktop-system">
-                <a
-                  className="download__item-link"
-                  href={links.linux64}
-                  onClick={(event) =>
-                    handleDownloadAnalytics(event, 'dialog_linux')
-                  }
-                >
-                  Linux 64
-                </a>
-              </div>
-              {/*
-        {os !== 'macOS' && os !== 'iOS' && (
-          <div className="download__desktop-system">
-            <a className="download__item-link" href={links.osx}>
-              Mac OS
-            </a>
-          </div>
+    <DownloadDesktopSection>
+      <FormattedMessage id="download.desktop.header">
+        {(title) => <Heading level="3">{title}</Heading>}
+      </FormattedMessage>
+      <FormattedMessage id="download.desktop.header">
+        {(alt) => (
+          <DownloadDesktopImage
+            fadeIn={false}
+            fluid={getDesktopImage()}
+            alt={alt}
+          />
         )}
-        {os !== 'Windows' && os !== 'Android' && (
-          <div className="download__desktop-system">
-            <a className="download__item-link" href={links.windows}>
+      </FormattedMessage>
+      <DownloadDesktopButtonWrapper>
+        {renderDownloadButton()}
+      </DownloadDesktopButtonWrapper>
+      <Text bold inline>
+        <DownloadDesktopLinksBlock>
+          {os !== 'macOS' && os !== 'iOS' && (
+            <DownloadDesktopLink
+              direction="right"
+              download
+              href={links.osx}
+              onClick={(event) => handleDownloadClick(event, 'dialog_macos')}
+            >
+              macOS
+            </DownloadDesktopLink>
+          )}
+          {os !== 'Windows' && os !== 'Android' && (
+            <DownloadDesktopLink
+              direction="right"
+              download
+              href={links.windows}
+              onClick={(event) => handleDownloadClick(event, 'dialog_windows')}
+            >
               Windows
-            </a>
-          </div>
-        )}
-        {os !== 'Linux' && (
-          <div className="download__desktop-system">
-            <a className="download__item-link" href={links.linux}>
-              Linux 32
-            </a>
-          </div>
-        )}
-        {os !== 'Linux' && (
-          <div className="download__desktop-system">
-            <a className="download__item-link" href={links.linux64}>
-              Linux 64
-            </a>
-          </div>
-        )}
-        */}
-            </div>
-          </div>
-        );
-      }}
-    />
+            </DownloadDesktopLink>
+          )}
+          {os !== 'Linux' && (
+            <>
+              <DownloadDesktopLink
+                direction="right"
+                download
+                href={links.linux}
+                onClick={(event) => handleDownloadClick(event, 'dialog_linux')}
+              >
+                Linux 32
+              </DownloadDesktopLink>
+              <DownloadDesktopLink
+                direction="right"
+                download
+                href={links.linux64}
+                onClick={(event) => handleDownloadClick(event, 'dialog_linux')}
+              >
+                Linux 64
+              </DownloadDesktopLink>
+            </>
+          )}
+        </DownloadDesktopLinksBlock>
+      </Text>
+    </DownloadDesktopSection>
   );
 }
 

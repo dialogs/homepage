@@ -196,9 +196,7 @@ export function Footer({ locale }) {
                   <FooterUnderlineGatsbyLink to={`/${locale}/pricing/`}>
                     <FormattedMessage id="menu_pricing" />
                   </FooterUnderlineGatsbyLink>
-                  <FooterUnderlineGatsbyLink
-                    to={`/${locale}/download/enterprise/`}
-                  >
+                  <FooterUnderlineGatsbyLink to={`/${locale}/download/`}>
                     <FormattedMessage id="menu_download" />
                   </FooterUnderlineGatsbyLink>
                   <FooterUnderlineGatsbyLink to={`/${locale}/about/`}>
@@ -212,7 +210,7 @@ export function Footer({ locale }) {
                   </FooterUnderlineLink>
                 </div>
 
-                <div className="footer__nav-list">
+                <div className="footer__nav-list" style={{ flex: '1 1 auto' }}>
                   <FooterUnderlineGatsbyLink to={`/${locale}/partners/`}>
                     <FormattedMessage id="footer.partners" />
                   </FooterUnderlineGatsbyLink>

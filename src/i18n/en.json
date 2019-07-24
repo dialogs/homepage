@@ -42,7 +42,7 @@
   "menu_patents": "Patents and Licenses",
   "menu_legal": "Legal Information",
   "menu_bounty": "Open-source bounty",
-  "menu_career": "Career",
+  "menu_career": "Careers",
   "alt_messenger": "Messenger",
   "alt_corporate_features": "Corporate Features",
   "alt_integrations": "Integrations",
@@ -59,28 +59,12 @@
   "alt_big_business": "dialog and big business",
   "alt_solution_big": "A simple solution for corporate communications",
   "alt_solution_small": "A technological solution for corporate communications",
-  "alt_download_cloud_mobile_ios": "Mobile application dialog platform’s cloud for iPhone / iPad",
-  "alt_download_enterprise_mobile_ios": "Mobile application dialog Enterprise for iPhone / iPad",
-  "alt_download_cloud_mobile_ios_qr": "Download mobile application dialog platform’s cloud for iPhone / iPad",
-  "alt_download_enterprise_mobile_ios_qr": "Download mobile application dialog Enterprise for iPhone / iPad",
-  "alt_download_appstore": "Download on the App Store",
-  "alt_download_cloud_mobile_android": "The dialog platform’s cloud mobile app demo for Android",
-  "alt_download_enterprise_mobile_android": "Mobile application dialog Enterprise for Android",
-  "alt_download_cloud_mobile_android_qr": "Download the dialog platform’s cloud mobile app demo for Android",
-  "alt_download_enterprise_mobile_android_qr": "Download mobile application dialog Enterprise for Android",
-  "alt_download_googleplay": "get it on Google Play",
-  "alt_download_cloud_web": "The dialog platform’s cloud app demo web version",
-  "alt_download_enterprise_web": "Web version dialog Enterprise",
   "alt_icanchoose_about_dialog": "icanchoose about dialog",
   "alt_download": "Download",
   "alt_jobs_company": "Our company",
   "alt_jobs_ceo": "CEO",
   "hero_header": "Achieve your team goals faster without losing focus",
   "hero_subheader": "Secure and efficient corporate communication platform",
-  "platform_header": "dialog – a corporate communications <br />platform",
-  "messenger": "Messenger",
-  "corporate_features": "Corporate Features",
-  "integrations": "Integrations",
   "platform_chats": "Private and Group Chats",
   "platform_free_calls": "Free Audio/Video Calls",
   "platform_files_sharing": "Unlimited File Sharing",
@@ -188,17 +172,6 @@
   "prices_ad_ldap": "Integration with AD / LDAP user catalogues",
   "prices_security_infrastructure": "Integrations with security infrastructure (SIEM, DLP, IDM, Anti-virus)",
   "prices_bot_sdk": "Bot SDK",
-  "download_header": "The dialog platform’s cloud app demo",
-  "download_subtitle_button_text": "Complete an application",
-  "download_subtitle_after": " to receive information on how to install the platform.",
-  "download_enterprise_subtitle_before": "Get installation info from your system administrator or the ",
-  "download_enterprise_subtitle_link": "client support system",
-  "download_enterprise_subtitle_2": "You can also try out the platform’s features in our ",
-  "download_enterprise_subtitle_2_link": "demo app",
-  "download_desktop_title": "Desktop Application",
-  "download_for": "Download for ",
-  "download_mobile_title": "Mobile Application",
-  "download_web_title": "Web Version",
   "start": "Start",
   "support_header": "Feedback",
   "support_corporate_title": "Contact Technical Support",
@@ -208,7 +181,6 @@
   "form_label_topic": "Subject",
   "form_label_your_question": "Describe your issue",
   "form_send": "Send",
-  "what_dialog_can": "What dialog can do",
   "feature_audio_video": "Audio/Video Calls",
   "feature_audio_video_content": "<h4>High quality connection</h4><p>dialog automatically optimizes connection quality based on the strength of the mobile operator’s signal at your location. If the signal is weak, dialog reduces the amount of audio or video traffic without interrupting or delaying your connection.</p><h4>Secure communication</h4><p>All calls are securely protected by cryptographic solutions based on end-to-end and TLS encryption.</p>  ",
   "feature_files": "Share files of any format",
@@ -302,58 +274,58 @@
   "Partnership_bazalt": "BaseAlt",
   "Partnership_my_office": "MyOffice",
   "Partnership_aurora": "Sailfish",
-  "404_title": "We couldn’t<br />find the page<br />you are looking for.  ",
-  "404_text": "Make sure that the URL<br />is written correctly<br />and reload the page.  ",
+  "404_title": "We couldn’t <br />find the page <br />you are looking for.",
+  "404_text": "Make sure that the URL<br />is written correctly<br />and reload the page.",
   "404_go_to_home": "Go to homepage",
   "footer_privacy_policy": "Privacy policy",
   "footer_anti_corruption_policy": "Anti-corruption policy",
-  "footer_career": "Career",
+  "footer_career": "Careers",
   "jobs_join_team": "Join dialog",
   "jobs_apply_button": "Apply for job",
   "jobs_ceo_header": "Andrey Kuznetsov – dialog founder and executive director",
   "jobs_ceo_quote": "We are developing a team-work platform that is pleasant and easy to use in both large and small groups.",
   "jobs_ceo_bio": "Andrey created the company <b>in 2016</b> and is currently involved in strategic business planning and key technological partnerships.",
-  "jobs_ceo_about_product": "<p>We are developing a team-work platform that is pleasant and easy to use in both large and small groups. Even though our product is mostly used by large companies, we also use it in our own work. We build it for ourselves and our community. We work passionately to create simple and effective workspaces without the inherently inefficient modalities of typical enterprise products caused by the strict security requirements of major corporations. While understanding and respecting these requirements, we are engaged in creating a friendly environment in which de-bureaucratization, automation and security are harmoniously blended.</p><p>In our team, we are always pleased to see innovators and creators who are ready to work with us on communications projects that we can be proud of.</p><p>We believe in the idea of open-source, actively participate in developing community products and are constantly discovering new components of our platform. We have a <a href=\"https://oss.dlg.im\" target=\"_blank\" rel=\"noopener noreferrer\">bounty program</a> and encourage proactive developers to participate in the open-source community.</p>",
-  "jobs_recommend_title": "Get a reward for bringing in a job candidate.",
+  "jobs_ceo_about_product": "<p>Even though our product is mostly used by bigger companies, we too use it in our work – we develop it for ourselves and our community. We work passionately to create simple and effective work spaces without trade-off half measures inherent in typical enterprise products due to the strict security requirements of major corporations. While understanding and respecting these requirements, we are creating a friendly environment harmoniously blending de-bureaucratization, automation and security.</p><p>We are always happy to see in our team innovators and creators who are ready to work with us on communications projects that we can be proud of.</p><p>We believe in the idea of open-source, actively participate in developing community products and are constantly discovering new features of our platform. We have a <a class=\"link link--default\" href=\"https://oss.dlg.im\" target=\"_blank\" rel=\"noopener noreferrer\">bounty program</a> and encourage proactive developers to participate in the open-source community.</p>",
+  "jobs_recommend_title": "Get a reward for bringing in a job candidate",
   "jobs_recommend_award": "$900",
-  "jobs_recommend_action": "Send a CV<br/> to <a href=\"mailto:{email}?subject=Feedback on vacancy from site&body=I would like to recommend employee\">{email}</a>",
+  "jobs_recommend_action": "Send a recommendation<br/> to <a href=\"mailto:{email}?subject=Feedback on vacancy from site&body=I would like to recommend employee\">{email}</a>",
   "job_apply_header": "Can’t find the right position?",
   "job_apply_message": "Fill out this form and attach your CV. We will definitely consider your resume.",
   "job_apply_vacancy_header": "Respond to a vacancy",
   "job_apply_vacancy_message": "We are waiting for a resume from you, a short story about yourself and a few lines on the topic of a vacancy",
   "job_back": "All vacancies",
-  "job_apply_button": "Send resume",
+  "job_apply_button": "Send CV",
   "jobs_vacancies_header": "Openings",
   "partners_header_title": "dialog Partnership Program",
   "partners_header_text": "Collaborate with dialog",
   "partners_info_header": "Partnership Types and Goals",
   "partners_info_business": "Business Partner",
   "partners_info_technology": "Technology Partner",
-  "partners_business_info": "This partner engages in selling dialog products and works on the motivational program",
-  "partners_technology_info": "This partner develops solutions that integrates with dialog products",
+  "partners_business_info": "Partner sells “Dialog” products and works on the incentive basis",
+  "partners_technology_info": "Partner develops solutions that are integrated with “Dialog” products",
   "partners_business_info_who": "<b>For who:</b> A system integrator, software reseller company and/or service provider.",
-  "partners_business_info_target": "<b>Goal:</b> expansion of the list of proposed software. Import independent and secure internal communications solution with wide integration capabilities.",
+  "partners_business_info_target": "<b>Goal:</b> To expand the list of offered software. An import-independent and secure solution in the field of internal communications with extensive integration opportunities.",
   "partners_technology_title": "Technology Partner",
   "partners_business_title": "Business Partner",
   "partners_technology_info_who": "<b>For Who:</b> Technology companies.",
-  "partners_technology_info_target": "<b>Goal:</b> Expand the functionality of own products. Cross-promotion.",
-  "partners_cooperate_text": "Contact a manager to learn about other forms of cooperation",
+  "partners_technology_info_target": "<b>Goal:</b> Expand the functionality of own products. Cross-promotion. -> Goal: To expand the functionality of their own products. To share client bases.",
+  "partners_cooperate_text": "Contact our manager to learn about other forms of cooperation.",
   "partners_available_title": "Partners get access to",
-  "partners_available_materials": "Informational, training and marketing materials",
-  "partners_available_access": "Clients events",
+  "partners_available_materials": "Information, training and marketing materials",
+  "partners_available_access": "Client events",
   "partners_available_cross": "Cross-promotion",
   "partners_available_following": "Technical and legal support for sales",
   "for_partners_title": "dialog partners",
   "partners_technological_nav_title": "Technology Partners",
   "partners_business_nav_title": "Business Partners",
-  "partners_technological_text": "Take advantage of collaborative integrations",
+  "partners_technological_text": "Take advantage of joint integrations",
   "partners_business_text": "Work with leading system integrators and resellers to deploy, manage, and extend corporate communications",
   "partners_cooperate_button": "Become a partner",
   "for_partners_tab_country": "Country",
   "for_partners_tab_category": "Industry",
   "myoffice_tab_title": "MyOffice",
   "myoffice_tab_link": "myoffice.ru",
-  "myoffice_tab_description": "A collection of office applications that work on all major operating systems, including mobile systems, and via a web interface.",
+  "myoffice_tab_description": "A suite of office applications that work on all major operating systems, including mobile ones, and via a web interface.",
   "myoffice_tab_country": "Russia",
   "myoffice_tab_category": "Software",
   "chatme_tab_title": "Chatme AI",
@@ -368,17 +340,17 @@
   "fasttrack_tab_category": "Platform to create bots",
   "basealt_tab_title": "BaseAlt",
   "basealt_tab_link": "basealt.ru",
-  "basealt_tab_description": "The developer of a software platform for creating ready-made solutions and IT-infrastructure at any scale.",
+  "basealt_tab_description": "The developer of a software platform for creating ready-made solutions and IT infrastructure of any scale.",
   "basealt_tab_country": "Russia",
   "basealt_tab_category": "Operating system",
   "mtraining_tab_title": "Mastertraining",
   "mtraining_tab_link": "mastertraining.it",
-  "mtraining_tab_description": "Mastertraining develops solutions in the sphere of corporate telecommunications and training hardware.",
+  "mtraining_tab_description": "Mastertraining develops solutions in the field of corporate telecommunications.",
   "mtraining_tab_country": "Italy",
   "mtraining_tab_category": "Telecommunications",
   "omp_tab_title": "Open mobile platform",
   "omp_tab_link": "omprussia.ru",
-  "omp_tab_description": "Open Mobile Platform LLC works on developing the mobile operating system (MOS) Aurora (former – Sailfish). A member of the Rostelecom Group since 2018.",
+  "omp_tab_description": "Open Mobile Platform is developing a mobile operating system (MOS) Aurora (previously – Sailfish). A member of the Rostelecom Group since 2018.",
   "omp_tab_country": "Russia",
   "omp_tab_category": "Mobile Operating System",
   "beclever_tab_title": "beClever",
@@ -388,7 +360,7 @@
   "beclever_tab_category": "Telecommunications",
   "softline_tab_title": "Softline",
   "softline_tab_link": "softline.ru",
-  "softline_tab_description": "The leading global supplier of IT solutions and services.",
+  "softline_tab_description": "A leading global supplier of IT solutions and services.",
   "softline_tab_country": "Eastern Europe, America, Asia",
   "softline_tab_category": "System integrator",
   "dm_tab_title": "DM Solutions",
@@ -398,26 +370,26 @@
   "dm_tab_category": "Telecommunications",
   "swemel_tab_title": "SWEMEL",
   "swemel_tab_link": "swemel.ru",
-  "swemel_tab_description": "The company was founded in 1989 to provide technical and service support for the information system projects of public and administrative authorities.",
+  "swemel_tab_description": "The company was founded in 1989 to provide technical and service support of the information system projects for public and administrative authorities.",
   "swemel_tab_country": "Russia",
   "swemel_tab_category": "System integrator",
   "rb_tab_title": "RBtechnologies",
   "rb_tab_link": "rbtechnologies.ru",
-  "rb_tab_description": "The company specializes in developing and implementing IT solutions for the financial sector. It mainly engaged in risk management, regulatory reporting.",
+  "rb_tab_description": " The company specializes in developing and implementing IT solutions for the financial sector. It mainly deals with incorporating comprehensive solutions in the sphere of risk management, regulatory reporting.",
   "rb_tab_country": "Russia",
   "rb_tab_category": "Mobile Operating System",
   "croc_tab_title": "CROC",
   "croc_tab_link": "croc.ru",
   "croc_tab_description": "The Russian system integrator has been one of the top 10 largest Russian IT companies for more than 14 years.",
   "croc_tab_country": "Russia",
-  "croc_tab_category": "Technology Review Partner",
+  "croc_tab_category": "System integrator",
   "about_more_than_messenger": "dialog - is a lot more than just a messenger",
   "about_company": "<p>Our company has been developing the dialog corporate messenger for more than 3 years. We are a team of specialists from IT-communications, data security, real-time distributed systems, Big Data and other fields related to messaging.</p><p>Today, there are more than <b>108 people</b> working on dialog who was, at various points, engaged in developing products for major companies leading in the fields of system security and data storage.</p>",
   "about_partnership": "Technology partnership",
   "about_integration": "Integration",
-  "about_partnership_text": "dialog is part of an independent IT environment with Russian producers of office solutions and operating systems.",
+  "about_partnership_text": "dialog creates an independent IT environment with Russian developers of office solutions and operating systems.",
   "about_integration_text": "Integrate dialog with any external service or application – use the messenger interface to work with familiar tools such as e-mail, calendar, task manager, cloud storage and much more.",
-  "about_read_more": "Read more",
+  "about_read_more": "Learn more",
   "attach_resume": "Attach CV",
   "career_city_all": "All cities",
   "career_city_msk": "Moscow",
@@ -425,76 +397,138 @@
   "career_category_all": "All",
   "career_category_it": "IT and Development",
   "career_category_marketing": "Marketing, Advertising, PR",
-  "integrations_title": "Integrations make dialog even better",
-  "possibilities_header": "Connect dialog to dozens of third-party applications and systems",
-  "botsdk": "BotSDK",
-  "botsdk_description": "Create your own chatbots. The SDK is currently available for JavaScript, Java and Python.",
-  "botsdk_category1": "Python",
-  "botsdk_category2": "Java",
-  "botsdk_category3": "JavaScript",
-  "botsdk_category4": "Docs",
-  "webhooks": "Webhooks",
-  "webhooks_description": "dialog functions in WebHooks is a simple way to receive automated messages and update data sent via a text channel on your server.",
-  "zapier": "Zapier",
-  "zapier_description": "Use data and transpiring events in more than 1,000 integrations to automate your workflow.",
-  "graphql": "GraphQL",
-  "graphql_description": "Work with application data via GraphQL",
-  "api": "API",
-  "api_description": "Thanks to our API, you can create your own integrations and configure dialog for your team and business.",
-  "api_category1": "Documentation",
-  "integrations_header": "Integration Examples",
   "bots": "Bots",
   "design": "Design",
   "communication": "Communications",
-  "asana_title": "Asana Bot",
-  "asana_description": "A bot for creating tasks in Asana",
-  "asana_link": "Source code",
-  "asana_language": "Python",
-  "asana_category": "Bot",
-  "google_title": "Google Forms",
-  "google_description": "Google Forms Bot ",
-  "google_link": "Source code",
-  "google_language": "Java",
-  "google_category": "Bot",
-  "reminder_title": "Reminder Bot",
-  "reminder_description": "A bot that reminds you of tasks",
-  "reminder_link": "Source code",
-  "reminder_language": "Python",
-  "reminder_category": "Project management",
-  "integrations_card_language": "Language",
-  "integrations_card_category": "Category",
   "invite_text": "Do you want to integrate with dialog – write us at <a href=\"mailto:{email}\">{email}</a>.",
+  "############": "REFACTORED TRANSLATIONS BELOW",
+  "home": {
+    "platform": {
+      "header": "dialog – a corporate communications <br />platform",
+      "messenger": {
+        "title": "Messenger"
+      },
+      "corporate": {
+        "title": "Corporate Features"
+      },
+      "integrations": {
+        "title": "Integrations"
+      }
+    }
+  },
+  "download": {
+    "enterprise": {
+      "header": "dialog enterprise",
+      "subtitle": {
+        "before": "Get installation info from your system administrator or the ",
+        "supportLink": "client support system",
+        "middle": "You can also try out the platform’s features in our ",
+        "cloudLink": "demo app"
+      },
+      "appstore": "Mobile application dialog enterprise for iPhone / iPad",
+      "googleplay": "Mobile application dialog enterprise for Android",
+      "web": "Web version dialog enterprise"
+    },
+    "cloud": {
+      "header": "The dialog platform’s cloud app demo",
+      "subtitle": {
+        "button": "Complete an application",
+        "text": " to receive information on how to install the platform."
+      },
+      "appstore": "Mobile application dialog platform’s cloud for iPhone / iPad",
+      "googleplay": "The dialog platform’s cloud mobile app demo for Android",
+      "web": "The dialog platform’s cloud app demo web version"
+    },
+    "desktop": {
+      "header": "Desktop Application",
+      "button": "Download for {os}"
+    },
+    "mobile": {
+      "header": "Mobile Application"
+    },
+    "web": {
+      "header": "Web Version",
+      "start": "Start",
+      "alt": "Web version dialog enterprise"
+    }
+  },
   "partner": {
     "form": {
       "header": "Become a partner"
     }
   },
-  "new_integrations": {
-    "source_code": "Source code",
-    "zapier": "Configure integration",
-    "docs": "Documentations",
-    "bot": "Bot",
-    "vote": {
-      "title": "Vote Bot",
-      "description": "A bot for public and private voting"
+  "features": {
+    "header": "What dialog can do",
+    "tabs": {
+      "messenger": "Messenger",
+      "corporate": "Corporate Features",
+      "integrations": "Integrations"
+    }
+  },
+  "integrations": {
+    "header": "Integrations make dialog even better",
+    "docs": "Documentation",
+    "category": "",
+    "possibilities": {
+      "header": "Connect dialog to dozens of third-party applications and systems",
+      "botsdk": {
+        "title": "BotSDK",
+        "description": "Create your own chat-bots. The SDK is currently available for JavaScript, Java and Python"
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "dialog works in WebHooks as a simple way to receive automated messages and update data via a text channel on your server"
+      },
+      "zapier": {
+        "title": "Zapier",
+        "description": "Use data and transpiring events in more than 1,000 integrations to automate your workflow",
+        "link": "Configure integration"
+      },
+      "graphql": {
+        "title": "GraphQL",
+        "description": "Work with application data via GraphQL"
+      },
+      "api": {
+        "title": "API",
+        "description": "Thanks to our API, you can create your own integrations and configure dialog for your team and business"
+      }
+    },
+    "list": {
+      "header": "Integration Examples",
+      "source_code": "Source code",
+      "bot": "Bot",
+      "language": "Language",
+      "category": "Category",
+      "asana": {
+        "title": "Asana Bot",
+        "description": "A bot for creating tasks in Asana"
+      },
+      "reminder": {
+        "title": "Reminder Bot",
+        "description": "A bot that reminds you of tasks"
+      },
+      "vote": {
+        "title": "Vote Bot",
+        "description": "A bot for public and private voting"
+      }
+    },
+    "opensource": {
+      "header": "dialog open source community",
+      "dev": {
+        "title": "For Developers",
+        "portfolio": "A public, external project in your portfolio that future employers will like",
+        "experience": "An opportunity to improve your programming skills",
+        "participate": "Participate"
+      },
+      "clients": {
+        "title": "For Clients",
+        "community": "Community where you can find answers",
+        "libraries": "Libraries of ready-made integration solutions"
+      }
     }
   },
   "career": {
     "we_want_you": "We need more talents in our team, <a class=\"link--default\" href=\"/en/career\">learn more</a> about current openings and life in the company."
-  },
-  "opensource": {
-    "header": "dialog open source community",
-    "dev": {
-      "title": "For Developers",
-      "portfolio": "A public, external project in your portfolio that future employers will like",
-      "experience": "The opportunity to improve your programming skills",
-      "participate": "Participate"
-    },
-    "clients": {
-      "title": "For Clients",
-      "community": "Community where you can find answers",
-      "libraries": "Libraries of ready-made integration solutions"
-    }
   },
   "footer": {
     "partners": "Partners",
@@ -517,7 +551,7 @@
     },
     "patents": {
       "header": "Patents and Licenses",
-      "text": "The patents and licenses of “Dialog” and its products comply with the specific requirements of the Russian federal authorities.",
+      "text": "The patents and licenses of dialog and its products comply with the specific requirements of the Russian federal authorities.",
       "link": "Learn more about patents and licenses"
     },
     "contacts": {
@@ -537,7 +571,7 @@
   "patents": {
     "header": "Patents and Licenses",
     "patents": {
-      "header": "The company is the copyright holder of 5 software products, registered by RosPatent.",
+      "header": "The company is the copyright holder of 5 software products, registered by RosPatent",
       "server": "Dialog Server",
       "core": "Dialog Core",
       "android": "Dialog Android SDK",
@@ -545,7 +579,7 @@
       "web": "Dialog Web SDK"
     },
     "licenses": {
-      "header": "The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia.",
+      "header": "The company possesses the required qualifications and licenses by the Federal Service for Technical and Export Control of Russia and the Federal Security Service (FSS) of Russia",
       "fsb": "FSS",
       "fstec": "FSTEC"
     },
@@ -554,7 +588,14 @@
       "text_1": "dialog messenger meets the requirements of the Unified register of Russian ECM and databanks programs and included in the register of national software.",
       "text_2": "The company is a member of the Association of Documented Telecommunications (ADT).",
       "text_3": "“Dialog” is registered as an Information-Dissemination Organization (IDO) by RosComNadzor.",
-      "text_4": "Member of the Skolkovo Innovation Center"
+      "text_4": "Member of the Skolkovo Innovation Center."
+    }
+  },
+  "form": {
+    "phone": "Phone number",
+    "email": "E-mail",
+    "submit": {
+      "resume": "Send CV"
     }
   }
 }

@@ -29,7 +29,7 @@ export function Business({ intl: { locale } }) {
           <Section className="business">
             <div className="business__cols">
               <div className="business__info">
-                <Heading className="business__info-title">
+                <Heading level="1" className="business__info-title">
                   <FormattedMessage id="business_header" />
                 </Heading>
                 <div className="business__info-subtitle">

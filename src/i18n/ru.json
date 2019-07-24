@@ -63,28 +63,12 @@
   "alt_big_business": "dialog в большом бизнесе",
   "alt_solution_big": "Простое решение для корпоративных коммуникаций",
   "alt_solution_small": "Технологичное решение для корпоративных коммуникаций",
-  "alt_download_cloud_mobile_ios": "Мобильное демонстрационное облачное приложение платформы dialog для iPhone / iPad",
-  "alt_download_enterprise_mobile_ios": "Мобильное приложение dialog enterprise для iPhone / iPad",
-  "alt_download_cloud_mobile_ios_qr": "Скачать мобильное приложение демо в облаке для iPhone / iPad",
-  "alt_download_enterprise_mobile_ios_qr": "Скачать мобильное приложение enterprise для iPhone / iPad",
-  "alt_download_appstore": "Скачать с App Store",
-  "alt_download_cloud_mobile_android": "Мобильное демонстрационное облачное приложение платформы dialog для Android",
-  "alt_download_enterprise_mobile_android": "Мобильное приложение dialog enterprise для Android",
-  "alt_download_cloud_mobile_android_qr": "Скачать мобильное демонстрационное облачное приложение платформы dialog для Android",
-  "alt_download_enterprise_mobile_android_qr": "Скачать мобильное приложение dialog enterprise для Android",
-  "alt_download_googleplay": "Скачать с Google Play",
-  "alt_download_cloud_web": "Web версия демонстрационного облачного приложения платформы dialog",
-  "alt_download_enterprise_web": "Web версия dialog Enterprise",
   "alt_icanchoose_about_dialog": "icanchoose о dialog",
   "alt_download": "Скачать",
   "alt_jobs_company": "Наша компания",
   "alt_jobs_ceo": "Директор",
   "hero_header": "Платформа корпоративных коммуникаций",
   "hero_subheader": "Безопасное решение с функциями мессенджера, аудио- /видеозвонками, интеграциями с сервисами компании и чат-ботами",
-  "platform_header": "Функции платформы dialog",
-  "messenger": "Мессенджер",
-  "corporate_features": "Корпоративные функции",
-  "integrations": "Интеграции",
   "platform_chats": "Личные и групповые чаты",
   "platform_free_calls": "Бесплатные аудио- / видеозвонки",
   "platform_files_sharing": "Обмен файлами без ограничений",
@@ -154,17 +138,6 @@
   "form_error_message": "Не удалось отправить заявку. Пожалуйста, свяжитесь с нами через <a href=\"mailto:info@dlg.im\">info@dlg.im</a> или <a href=\"tel:+78007758202\">+7(800)775-82-02</a>",
   "more_than_messenger": "dialog — намного больше, чем просто мессенджер",
   "link_icanchoose": "Подробнее о жизни в компании вы можете прочитать в специальном проекте icanchoose",
-  "download_header": "Демонстрационное облачное приложение платформы dialog",
-  "download_subtitle_button_text": "Оставьте заявку",
-  "download_subtitle_after": ", чтобы получить информацию о подключении платформы.",
-  "download_enterprise_subtitle_before": "Информацию о подключении вы можете получить у своего системного администратора или в центре ",
-  "download_enterprise_subtitle_link": "поддержки клиентов",
-  "download_enterprise_subtitle_2": "Вы также можете ознакомиться с функциями платформы в нашем ",
-  "download_enterprise_subtitle_2_link": "демо-приложении",
-  "download_desktop_title": "Десктопное приложение",
-  "download_for": "Скачать для ",
-  "download_mobile_title": "Мобильное приложение",
-  "download_web_title": "Web версия",
   "start": "Начать",
   "prices_go_to_form": "<a class=\"link--default\" href=\"#prices_offer_form\">Отправьте заявку</a>, чтобы узнать цены",
   "prices_pageheader": "Цена на dialog Enterprise рассчитывается от количества пользователей",
@@ -263,7 +236,6 @@
   "form_label_topic": "Тема",
   "form_label_your_question": "Чем мы можем вам помочь?",
   "form_send": "Отправить",
-  "what_dialog_can": "Что умеет dialog",
   "feature_audio_video": "Аудио / видеовызовы",
   "feature_audio_video_content": "\n<h4>Высокое качество связи</h4>\n<p>dialog оптимизирует качество связи автоматически в зависимости от уровня сигнала сотового оператора в месте вашего нахождения. При слабом уровне сигнала dialog снижает количество передаваемого аудио или видео трафика без разрыва или задержки соединения.</p>\n<h4>Безопасное общение</h4>\n<p>Все звонки надежно защищены криптографическими решениями на базе end-to-end и TLS шифрования.</p>\n  ",
   "feature_files": "Обмен файлами любого формата",
@@ -431,77 +403,136 @@
   "career_category_all": "Все",
   "career_category_it": "ИТ и Разработка",
   "career_category_marketing": "Маркетинг, Реклама, PR",
-  "integrations_title": "Интеграции делают dialog еще лучше",
-  "possibilities_header": "Подключайте dialog к десяткам сторонних приложений и систем",
-  "botsdk": "BotSDK",
-  "botsdk_description": "Создавайте чат-ботов самостоятельно. В настоящее время SDK доступен для JS, Java и Python",
-  "botsdk_category1": "Python",
-  "botsdk_category2": "Java",
-  "botsdk_category3": "JavaScript",
-  "botsdk_category4": "Docs",
-  "webhooks": "Webhooks",
-  "webhooks_description": "Функции Dialog в WebHooks как простой способ получения автоматических сообщений и обновления данных, отправленных в текстовый канал на вашем сервере",
-  "zapier": "Zapier",
-  "zapier_description": "Используйте данные и происходящие события в более чем 1000 интеграций для автоматизации вашего рабочего процесса",
-  "zapier_category1": "Настроить интеграцию",
-  "graphql": "GraphQL",
-  "graphql_description": "Работайте с данными приложения через GraphQL",
-  "api": "API",
-  "api_description": "Благодаря нашему API вы можете создавать собственные интеграции и настраивать dialog под вашу команду и бизнес",
-  "api_category1": "Документация",
-  "integrations_header": "Примеры интеграций",
   "bots": "Боты",
   "design": "Дизайн",
   "communication": "Коммуникации",
-  "asana_title": "Asana Bot",
-  "asana_description": "Бот быстрого создания напоминаний ",
-  "asana_link": "Источник кода",
-  "asana_language": "Python",
-  "asana_category": "Бот",
-  "google_title": "Google Forms",
-  "google_description": "Бот для заполнения Google Forms",
-  "google_link": "Источник кода",
-  "google_language": "Java",
-  "google_category": "Бот",
-  "reminder_title": "Reminder Bot",
-  "reminder_description": "Бот быстрого создания напоминаний",
-  "reminder_link": "Источник кода",
-  "reminder_language": "Python",
-  "reminder_category": "Project management",
-  "integrations_card_language": "Язык",
-  "integrations_card_category": "Категория",
   "invite_text": "Хотите сделать интеграцию с dialog – напишите нам на <a href=\"mailto:info@dlg.im\">info@dlg.im</a>.",
+  "############": "REFACTORED TRANSLATIONS BELOW",
+  "home": {
+    "platform": {
+      "header": "Функции платформы dialog",
+      "messenger": {
+        "title": "Мессенджер"
+      },
+      "corporate": {
+        "title": "Корпоративные функции"
+      },
+      "integrations": {
+        "title": "Интеграции"
+      }
+    }
+  },
+  "download": {
+    "enterprise": {
+      "header": "dialog enterprise",
+      "subtitle": {
+        "before": "Информацию о подключении вы можете получить у своего системного администратора или в центре ",
+        "supportLink": "поддержки клиентов",
+        "middle": "Вы также можете ознакомиться с функциями платформы в нашем ",
+        "cloudLink": "демо-приложении"
+      },
+      "appstore": "Мобильное приложение dialog enterprise для iPhone / iPad",
+      "googleplay": "Мобильное приложение dialog enterprise для Android",
+      "web": "Web версия dialog enterprise"
+    },
+    "cloud": {
+      "header": "Демонстрационное облачное приложение платформы dialog",
+      "subtitle": {
+        "button": "Оставьте заявку",
+        "text": ", чтобы получить информацию о подключении платформы."
+      },
+      "appstore": "Мобильное демонстрационное облачное приложение платформы dialog для iPhone / iPad",
+      "googleplay": "Мобильное демонстрационное облачное приложение платформы dialog для Android",
+      "web": "Web версия демонстрационного облачного приложения платформы dialog"
+    },
+    "desktop": {
+      "header": "Десктопное приложение",
+      "button": "Скачать для {os}"
+    },
+    "mobile": {
+      "header": "Мобильное приложение"
+    },
+    "web": {
+      "header": "Web версия",
+      "start": "Начать"
+    }
+  },
   "partner": {
     "form": {
       "header": "Стать партнером"
     }
   },
-  "new_integrations": {
-    "source_code": "Исходный код",
-    "zapier": "Настройте интеграцию прямо сейчас",
+  "features": {
+    "header": "Что умеет dialog",
+    "tabs": {
+      "messenger": "Мессенджер",
+      "corporate": "Корпоративные функции",
+      "integrations": "Интеграции"
+    }
+  },
+  "integrations": {
+    "header": "Интеграции делают dialog еще лучше",
     "docs": "Документация",
-    "bot": "Бот",
-    "vote": {
-      "title": "Vote Bot",
-      "description": "Бот для публичных и приватных голосований"
+    "possibilities": {
+      "header": "Подключайте dialog к десяткам сторонних приложений и систем",
+      "botsdk": {
+        "title": "BotSDK",
+        "description": "Создавайте чат-ботов самостоятельно. В настоящее время SDK доступен для JS, Java и Python"
+      },
+      "webhooks": {
+        "title": "Webhooks",
+        "description": "Функции Dialog в WebHooks как простой способ получения автоматических сообщений и обновления данных, отправленных в текстовый канал на вашем сервере"
+      },
+      "zapier": {
+        "title": "Zapier",
+        "description": "Используйте данные и происходящие события в более чем 1000 интеграций для автоматизации вашего рабочего процесса",
+        "link": "Настройте интеграцию прямо сейчас"
+      },
+      "graphql": {
+        "title": "GraphQL",
+        "description": "Работайте с данными приложения через GraphQL"
+      },
+      "api": {
+        "title": "API",
+        "description": "Благодаря нашему API вы можете создавать собственные интеграции и настраивать dialog под вашу команду и бизнес"
+      }
+    },
+    "list": {
+      "header": "Примеры интеграций",
+      "source_code": "Исходный код",
+      "bot": "Бот",
+      "language": "Язык",
+      "category": "Категория",
+      "asana": {
+        "title": "Asana Bot",
+        "description": "Бот для создания задач в Asana"
+      },
+      "reminder": {
+        "title": "Reminder Bot",
+        "description": "Бот быстрого создания напоминаний"
+      },
+      "vote": {
+        "title": "Vote Bot",
+        "description": "Бот для публичных и приватных голосований"
+      }
+    },
+    "opensource": {
+      "header": "Open Source сообщество dialog",
+      "dev": {
+        "title": "Для Разработчиков",
+        "portfolio": "Открытый внешний проект в портфолио, который понравится будущим работодателям",
+        "experience": "Возможность улучшить свои навыки программирования",
+        "participate": "Принять участие"
+      },
+      "clients": {
+        "title": "Для Клиентов",
+        "community": "Сообщество, в котором можно найти ответы",
+        "libraries": "Библиотеки готовых решений для интеграций"
+      }
     }
   },
   "career": {
     "we_want_you": "В нашу быстро растущую команду требуется много талантов. <a class=\"link--default\" href=\"/ru/career\">Узнайте больше</a> об открытых вакансиях и работе в компании."
-  },
-  "opensource": {
-    "header": "Open Source сообщество dialog",
-    "dev": {
-      "title": "Для Разработчиков",
-      "portfolio": "Открытый внешний проект в портфолио, который понравится будущим работодателям",
-      "experience": "Возможность улучшить свои навыки программирования",
-      "participate": "Принять участие"
-    },
-    "clients": {
-      "title": "Для Клиентов",
-      "community": "Сообщество, в котором можно найти ответы",
-      "libraries": "Библиотеки готовых решений для интеграций"
-    }
   },
   "footer": {
     "partners": "Партнерам",
@@ -562,6 +593,13 @@
       "text_2": "Компания является членом Ассоциации документальной электросвязи (АДЭ).",
       "text_3": "ООО «Диалог» входит в реестр Организаторов Распространения Информации (ОРИ) Роскомнадзор.",
       "text_4": "Участник инновационного центра «Сколково»"
+    }
+  },
+  "form": {
+    "phone": "Номер телефона",
+    "email": "E-mail",
+    "submit": {
+      "resume": "Отправить"
     }
   }
 }

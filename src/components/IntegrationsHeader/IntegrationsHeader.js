@@ -7,7 +7,7 @@ export function IntegrationsHeader({ image }) {
   return (
     <PageHeader image={image}>
       <PageHeading>
-        <FormattedMessage id="integrations_title" />
+        <FormattedMessage id="integrations.header" />
       </PageHeading>
     </PageHeader>
   );

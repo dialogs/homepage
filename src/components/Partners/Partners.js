@@ -211,7 +211,7 @@ export function Partners() {
     <Container fluid style={{ position: 'relative' }}>
       <Container>
         <PartnersSection>
-          <PartnersSectionHeading>
+          <PartnersSectionHeading level="1">
             <FormattedMessage id="for_partners_title" />
           </PartnersSectionHeading>
           <PartnersContainer>

@@ -1,88 +1,98 @@
 import React from 'react';
+import { styled } from 'astroturf';
 import { FormattedMessage } from 'react-intl';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-
+import { Container } from '../Container/Container';
+import { Section } from '../Section/Section';
+import { Heading } from '../Heading/Heading';
+import { LinkButton } from '../Button/LinkButton';
 import appLinks from '../../constants/links';
 
+const DownloadSection = styled(Section)`
+  @import '../../styles/variables.css';
+
+  @media (--mobile-viewport) {
+    padding-bottom: 50px;
+  }
+`;
+
+const DownloadWebImage = styled(Image)`
+  @import '../../styles/variables.css';
+
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 0 64px 0 color-mod(#000 alpha(20%));
+  margin-top: 30px;
+  margin-bottom: 50px;
+  max-width: 400px;
+
+  @media (--tablet-viewport) {
+    max-width: 450px;
+  }
+`;
+
 export function DownloadWeb({ isEnterprise }) {
-  function handleDownloadAnalytics(event, param) {
+  const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
+  const { enterpriseWeb, cloudWeb } = useStaticQuery(graphql`
+    query {
+      enterpriseWeb: file(
+        relativePath: { eq: "images/download/enterprise_web.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+      cloudWeb: file(relativePath: { eq: "images/download/cloud_web.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `);
+
+  function handleDownloadClick(event) {
     if (typeof window !== 'undefined') {
-      window.ga('dlg.send', 'event', 'button', 'download', `${param}`);
-      window.yaCounter.reachGoal(`download_${param}`);
+      window.ga('dlg.send', 'event', 'button', 'download', 'dialog_web');
+      window.yaCounter.reachGoal(`download_dialog_web`);
     }
   }
 
-  const links = isEnterprise ? appLinks.enterprise : appLinks.cloud;
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          enterpriseWeb: file(
-            relativePath: { eq: "images/download/enterprise_web.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
+    <Container>
+      <DownloadSection>
+        <FormattedMessage id="download.web.header">
+          {(title) => <Heading level="3">{title}</Heading>}
+        </FormattedMessage>
+        <FormattedMessage
+          id={isEnterprise ? 'download.enterprise.web' : 'download.cloud.web'}
+        >
+          {(title) => (
+            <DownloadWebImage
+              fadeIn={false}
+              fluid={
+                isEnterprise
+                  ? enterpriseWeb.childImageSharp.fluid
+                  : cloudWeb.childImageSharp.fluid
               }
-            }
-          }
-          cloudWeb: file(
-            relativePath: { eq: "images/download/cloud_web.png" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-        }
-      `}
-      render={({ enterpriseWeb, cloudWeb }) => {
-        return (
-          <div className="download__section download__item download__web">
-            <h2 className="download__item-title download__web-title">
-              <FormattedMessage id="download_web_title" />
-            </h2>
-            <div className="download__web-pictute">
-              <FormattedMessage
-                id={
-                  isEnterprise
-                    ? 'alt_download_enterprise_web'
-                    : 'alt_download_cloud_web'
-                }
-              >
-                {(title) => (
-                  <Image
-                    className="download__web-img"
-                    fadeIn={false}
-                    fluid={
-                      isEnterprise
-                        ? enterpriseWeb.childImageSharp.fluid
-                        : cloudWeb.childImageSharp.fluid
-                    }
-                    alt={title}
-                  />
-                )}
-              </FormattedMessage>
-            </div>
-            <div className="download__web-button-box">
-              <a
-                className="button button--default"
-                href={links.web}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(event) =>
-                  handleDownloadAnalytics(event, 'dialog_web')
-                }
-              >
-                <FormattedMessage id="start" />
-              </a>
-            </div>
-          </div>
-        );
-      }}
-    />
+              alt={title}
+            />
+          )}
+        </FormattedMessage>
+        <LinkButton
+          href={links.web}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleDownloadClick}
+        >
+          <FormattedMessage id="download.web.start" />
+        </LinkButton>
+      </DownloadSection>
+    </Container>
   );
 }
 

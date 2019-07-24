@@ -4,6 +4,7 @@ import { styled } from 'astroturf';
 import { withProps } from 'astroturf/helpers';
 import { PageHeading } from '../PageHeading/PageHeading';
 import { Text } from '../Text/Text';
+import { LinkButton } from '../Button/LinkButton';
 import { PageHeader } from '../PageHeader/PageHeader';
 
 const PartnersHeaderText = withProps({
@@ -33,6 +34,9 @@ export function PartnersHeader({ image }) {
       <PartnersHeaderText>
         <FormattedMessage id="partners_header_text" />
       </PartnersHeaderText>
+      <LinkButton href="#partnership_form">
+        <FormattedMessage id="partners_cooperate_button" />
+      </LinkButton>
     </PageHeader>
   );
 }
