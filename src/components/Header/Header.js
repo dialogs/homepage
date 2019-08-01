@@ -5,6 +5,7 @@ import styled from 'astroturf';
 import { Container } from '../Container/Container';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
+import { Button } from '../Button/Button';
 import './Header.css';
 
 const HeaderContainer = styled.header`
@@ -197,12 +198,13 @@ export function Header({
             </nav>
           </div>
           <div className="header__col">
-            <button
-              className="header__button header__button--offer"
+            <Button
               onClick={openOfferModal}
+              theme="outline"
+              className="header__offer-button"
             >
               <FormattedMessage id="button_get_offer" />
-            </button>
+            </Button>
             <Link
               to={toLink}
               className="header__button header__button--lang btn__change-lang"

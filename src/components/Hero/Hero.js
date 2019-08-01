@@ -4,6 +4,7 @@ import Image from 'gatsby-image';
 
 import { Section } from '../Section/Section';
 import { PageHeading } from '../PageHeading/PageHeading';
+import { Button } from '../Button/Button';
 import './Hero.css';
 
 export function Hero({ openOfferModal, intl: { formatMessage } }) {
@@ -31,13 +32,9 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                 <h4 className="hero__text">
                   {formatMessage({ id: 'hero_subheader' })}
                 </h4>
-                <button
-                  type="button"
-                  className="button button--default"
-                  onClick={openOfferModal}
-                >
+                <Button onClick={openOfferModal}>
                   {formatMessage({ id: 'button_get_offer' })}
-                </button>
+                </Button>
               </div>
               <div className="hero__image">
                 <Image

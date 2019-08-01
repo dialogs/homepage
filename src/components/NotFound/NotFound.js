@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { FormattedHTMLMessage } from 'react-intl';
+import { GatsbyLinkButton } from '../Button/Button';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -16,18 +16,23 @@ export function NotFound() {
         <p className="not_found__text">
           <FormattedHTMLMessage id="404_text" />
         </p>
-        <Link
-          to="/"
-          className="button button--default not_found__button--uppper"
-        >
-          <FormattedHTMLMessage id="404_go_to_home" />
-        </Link>
+        <FormattedMessage id="404_go_to_home">
+          {(buttonText) => (
+            <GatsbyLinkButton to="/" className="not_found__button--uppper">
+              {buttonText}
+            </GatsbyLinkButton>
+          )}
+        </FormattedMessage>
       </div>
       <div className="not_found__col">
         <img src="/images/404.png" alt="" className="not_found__image" />
-        <Link to="/" className="button button--default not_found__button--down">
-          <FormattedHTMLMessage id="404_go_to_home" />
-        </Link>
+        <FormattedMessage id="404_go_to_home">
+          {(buttonText) => (
+            <GatsbyLinkButton to="/" className="not_found__button--down">
+              {buttonText}
+            </GatsbyLinkButton>
+          )}
+        </FormattedMessage>
       </div>
     </Section>
   );

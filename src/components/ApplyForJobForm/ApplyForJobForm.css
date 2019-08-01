@@ -9,15 +9,17 @@
 .apply__form__twocolumns {
   display: flex;
   justify-content: space-between;
+
   @media (--mobile-viewport) {
     flex-direction: column;
   }
 }
 
 .apply__form__column {
-  width: 45%;
+  flex: 0 0 47%;
+
   @media (--mobile-viewport) {
-    width: 100%;
+    flex: 0 0 100%;
   }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import classNames from 'classnames';
 import { styled, css } from 'astroturf';
 
@@ -350,6 +351,30 @@ export function LinkButton({ children, theme, wide, className, ...props }) {
   );
 }
 
+export function GatsbyLinkButton({
+  children,
+  theme,
+  wide,
+  className,
+  ...props
+}) {
+  return (
+    <Link
+      className={classNames(
+        styles.container,
+        styles[theme],
+        {
+          [styles.wide]: wide,
+        },
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+}
+
 Button.defaultProps = {
   type: 'button',
   theme: 'default',
@@ -357,7 +382,7 @@ Button.defaultProps = {
   disabled: false,
 };
 
-LinkButton.defaultProps = {
+LinkButton.defaultProps = GatsbyLinkButton.defaultProps = {
   theme: 'default',
   state: 'default',
   disabled: false,

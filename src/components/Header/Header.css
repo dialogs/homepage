@@ -69,31 +69,6 @@
   &__button {
     font-weight: 500;
 
-    &--offer {
-      flex: 1 1 auto;
-      font-size: 14px;
-      border: 2px solid var(--text-color-main);
-      padding-left: 12px;
-      padding-right: 12px;
-      height: 50px;
-      display: none;
-      color: var(--text-color-main);
-      transition: all 400ms ease;
-      cursor: pointer;
-      z-index: 1000;
-      background-color: #fff;
-      min-width: 120px;
-
-      @media (--tablet-landscape-viewport) {
-        display: block;
-      }
-
-      &:hover {
-        background-color: var(--text-color-main);
-        color: #fff;
-      }
-    }
-
     &--lang {
       text-transform: uppercase;
       line-height: 19px;
@@ -139,6 +114,14 @@
       &:after {
         top: 19px;
       }
+    }
+  }
+
+  &__offer-button {
+    display: none;
+
+    @media (--tablet-landscape-viewport) {
+      display: block;
     }
   }
 }

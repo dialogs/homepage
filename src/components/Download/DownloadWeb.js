@@ -6,7 +6,7 @@ import Image from 'gatsby-image';
 import { Container } from '../Container/Container';
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
-import { LinkButton } from '../Button/LinkButton';
+import { LinkButton } from '../Button/Button';
 import appLinks from '../../constants/links';
 
 const DownloadSection = styled(Section)`

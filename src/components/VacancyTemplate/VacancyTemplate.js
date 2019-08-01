@@ -8,14 +8,17 @@ import { Page } from '../Page/Page';
 import { Container } from '../Container/Container';
 import { PageHeading } from '../PageHeading/PageHeading';
 import { Section } from '../Section/Section';
-import { LinkButton } from '../Button/LinkButton';
+import { LinkButton } from '../Button/Button';
 import ApplyForJobForm from '../ApplyForJobForm';
 import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
 import './VacancyTemplate.css';
 
 export default ({
   data: {
-    vacancy,
+    vacancy: {
+      html,
+      frontmatter: { title, salary, description, city },
+    },
     site: {
       siteMetadata: { siteUrl },
     },
@@ -25,8 +28,6 @@ export default ({
     intl: { language },
   },
 }) => {
-  const { title, salary, description, city } = vacancy.frontmatter;
-
   return (
     <Page>
       <FormattedMetaTags
@@ -59,7 +60,7 @@ export default ({
           </div>
         </Section>
         <Section className="expectations_bonuses">
-          <div dangerouslySetInnerHTML={{ __html: vacancy.html }} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </Section>
       </Container>
       <Container fluid>

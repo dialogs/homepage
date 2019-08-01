@@ -48,12 +48,12 @@
       display: none;
 
       @media (--tablet-viewport) {
-        display: inline-block;
+        display: inline-flex;
       }
     }
 
     &--down {
-      display: block;
+      display: flex;
 
       @media (--tablet-viewport) {
         display: none;

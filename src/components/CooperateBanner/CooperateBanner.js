@@ -3,7 +3,7 @@ import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { withProps } from 'astroturf/helpers';
 import { Text } from '../Text/Text';
-import { LinkButton } from '../Button/LinkButton';
+import { LinkButton } from '../Button/Button';
 import { SimpleBanner } from '../Banner/SimpleBanner';
 
 const CooperateBlock = styled.div`

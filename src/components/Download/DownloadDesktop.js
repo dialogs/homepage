@@ -9,7 +9,7 @@ import { Section } from '../Section/Section';
 import { Text } from '../Text/Text';
 import appLinks from '../../constants/links';
 import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
-import { LinkButton } from '../Button/LinkButton';
+import { LinkButton } from '../Button/Button';
 
 const DownloadDesktopSection = styled(Section)`
   @import '../../styles/variables.css';

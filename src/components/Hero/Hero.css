@@ -66,28 +66,6 @@
     }
   }
 
-  & .page_header {
-    padding-bottom: 25px;
-
-    @media (--tablet-viewport) {
-      margin-right: calc(-1 * var(--padding-side-columns));
-      padding-top: 30px;
-      padding-bottom: 20px;
-    }
-
-    @media (--tablet-landscape-viewport) {
-      padding-bottom: 30px;
-    }
-
-    @media (--laptop-viewport) {
-      padding-bottom: 40px;
-    }
-
-    @media (--desktop-viewport) {
-      margin-right: 0;
-    }
-  }
-
   &__text {
     margin: 0 0 35px;
     font-size: var(--font-size-subtitle);

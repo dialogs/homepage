@@ -154,12 +154,6 @@
       margin: 0;
     }
   }
-
-  & .button--default {
-    @media (--mobile-viewport) {
-      width: 100%;
-    }
-  }
 }
 
 .jobs__wrapper:before,

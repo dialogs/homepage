@@ -13,7 +13,7 @@ import ApplyForJobForm from '../components/ApplyForJobForm';
 import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
 import ImageFormatted from '../components/ImageFormatted';
 import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
-import { LinkButton } from '../components/Button/LinkButton';
+import { LinkButton } from '../components/Button/Button';
 import { PageHeader } from '../components/PageHeader/PageHeader';
 import '../styles/jobs.css';
 

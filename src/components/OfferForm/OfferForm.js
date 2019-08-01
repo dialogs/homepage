@@ -4,7 +4,15 @@ import { Input } from '../Input/Input';
 import { Select } from '../Select/Select';
 import { Checkbox } from '../Checkbox/Checkbox';
 import { Button } from '../Button/Button';
-import { Form, FormBox, FormFooter } from '../Form/Form';
+import {
+  Form,
+  FormBox,
+  FormFooter,
+  FormInfo,
+  FormErrorMessage,
+  FormPendingMessage,
+  FormSuccessMessage,
+} from '../Form/Form';
 
 import './OfferForm.css';
 
@@ -137,6 +145,11 @@ export function OfferForm({
         >
           <FormattedMessage id="send_application" />
         </Button>
+        <FormInfo>
+          {error && <FormErrorMessage />}
+          {pending && <FormPendingMessage />}
+          {value && value.status === 200 && <FormSuccessMessage />}
+        </FormInfo>
       </FormFooter>
     </Form>
   );
