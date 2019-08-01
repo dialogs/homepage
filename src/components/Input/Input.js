@@ -1,7 +1,34 @@
 import React, { useState, createRef } from 'react';
-
 import classNames from 'classnames';
+import { styled } from 'astroturf';
 import './Input.css';
+
+const InputErrorMessage = styled.div`
+  @import '../../styles/variables.css';
+
+  --input-error-offset: 30px;
+
+  position: absolute;
+  left: calc(-1 * var(--input-error-offset));
+  background-color: var(--color-danger);
+  top: 100%;
+  z-index: 10;
+  font-size: 18px;
+  line-height: 20px;
+  padding: var(--input-error-offset) var(--input-error-offset);
+  right: calc(-1 * var(--input-error-offset));
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: var(--color-danger);
+    z-index: 10;
+    top: -5px;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+  }
+`;
 
 export function Input({
   type,
@@ -13,13 +40,15 @@ export function Input({
   label,
   className,
   onChange,
+  error,
   rows,
-  state,
+  state, // 'default' | 'success' | 'error'
   required,
+  autocomplete,
+  spellcheck,
 }) {
   const ref = createRef();
   const [isFocused, setIsFocused] = useState(false);
-  const [isValid, setIsValid] = useState(true);
 
   const classes = classNames(
     'input',
@@ -45,18 +74,13 @@ export function Input({
   }
 
   function handleFocus() {
-    ref.current.focus();
     setIsFocused(true);
-    setIsValid(true);
+    ref.current.focus();
   }
-  const EMAIL_REGEX = /\S+@\S+/;
 
   function handleBlur() {
-    if (ref.current.name === 'email') {
-      setIsValid(EMAIL_REGEX.test(ref.current.value));
-    }
-    ref.current.blur();
     setIsFocused(false);
+    ref.current.blur();
   }
 
   const TagName = type === 'textarea' ? 'textarea' : 'input';
@@ -86,21 +110,19 @@ export function Input({
           name={name}
           disabled={disabled}
           required={required}
+          autoComplete={autocomplete}
+          spellCheck={spellcheck}
         />
-        {!isValid && name === 'email' && (
-          <div className="error_message">
-            <div className="error_message_pointer" />
-            Адрес электронной почты должен содержать символ “@”. В адресе “
-            {value}” отсутсвует символ “@”.
-          </div>
-        )}
       </div>
+      {error && isFocused && <InputErrorMessage>{error}</InputErrorMessage>}
     </div>
   );
 }
 
 Input.defaultProps = {
   type: 'text',
-  state: 'normal',
+  state: 'default',
   disabled: false,
+  spellcheck: false,
+  autocomplete: 'off',
 };

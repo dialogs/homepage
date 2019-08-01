@@ -17,7 +17,10 @@
   /* color */
   --color-primary: #d2fde5;
   --color-secondary: #b9bbfa;
+
+  --color-success: #d2fde5;
   --color-danger: #fdd2d2;
+
   /* text color */
   --text-color-main: #1e1e1e;
   --text-color-main-03: color-mod(var(--text-color-main) alpha(30%));

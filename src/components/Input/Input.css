@@ -3,6 +3,7 @@
 :root {
   --input-border-color: color-mod(var(--text-color-main) alpha(20%));
   --input-active-border-color: var(--color-secondary);
+  --input-success-border-color: var(--color-success);
   --input-error-border-color: var(--color-danger);
 }
 
@@ -13,6 +14,7 @@
   vertical-align: middle;
   min-width: 250px;
   width: 100%;
+  position: relative;
 
   &__wrapper {
     position: relative;
@@ -52,7 +54,7 @@
     display: inline-block;
     appearance: none;
     outline: none;
-    border-bottom: 1px solid rgb(30, 30, 30, 0.2);
+    box-shadow: 0 1px 0 0 var(--input-border-color);
   }
 
   &--non-empty,
@@ -64,14 +66,7 @@
     }
 
     & .input__input {
-      &:invalid {
-        border-bottom: 2px solid #fdd2d2;
-        box-shadow: none;
-      }
-      &:valid {
-        border-bottom: 2px solid #d2fde5;
-        box-shadow: none;
-      }
+      box-shadow: 0 2px 0 0 var(--input-active-border-color);
     }
   }
 
@@ -86,39 +81,15 @@
     }
   }
 
+  &--success {
+    & .input__input {
+      box-shadow: 0 2px 0 0 var(--input-success-border-color);
+    }
+  }
+
   &--error {
     & .input__input {
       box-shadow: 0 2px 0 0 var(--input-error-border-color);
     }
   }
-}
-
-.error_message {
-  position: absolute;
-  left: -32px;
-  background: #fdd2d2;
-  bottom: -120px;
-  z-index: 100;
-  font-size: 18px;
-  line-height: 20px;
-  padding: 30px 30px;
-  right: -32px;
-  @media (--mobile-viewport) {
-    bottom: -160px;
-  }
-  @media (--tablet-viewport) {
-    bottom: -140px;
-  }
-  @media (--laptop-viewport) {
-    bottom: -120px;
-  }
-}
-.error_message_pointer {
-  position: absolute;
-  background: #fdd2d2;
-  z-index: 100;
-  top: -5px;
-  width: 30px;
-  height: 30px;
-  transform: rotate(45deg);
 }
