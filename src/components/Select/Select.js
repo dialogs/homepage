@@ -13,6 +13,7 @@ export function Select({
   className,
   onChange,
   isSmall,
+  state,
   isNeedToTranslate = false,
 }) {
   const ref = createRef();
@@ -24,6 +25,7 @@ export function Select({
       'select--focused': isFocused,
       'select--small': Boolean(isSmall),
     },
+    `select--${state}`,
     className,
   );
 
