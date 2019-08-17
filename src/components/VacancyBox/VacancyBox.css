@@ -49,40 +49,41 @@
   &__title {
     margin: 20px auto;
     text-align: center;
-    font-size: 18px;
-    line-height: 23px;
+    font-weight: 500;
 
     @media (--mobile-viewport) {
       font-size: 16px;
-      line-height: 21px;
+      line-height: 22px;
     }
 
     @media (--tablet-viewport) {
       font-size: 16px;
-      line-height: 21px;
+      line-height: 22px;
     }
+
     @media (--tablet-landscape-viewport) {
       font-size: 16px;
-      line-height: 21px;
+      line-height: 22px;
     }
+
     @media (--laptop-viewport) {
       font-size: 18px;
-      line-height: 23px;
-    }
-    @media (--desktop-viewport) {
-      font-size: 18px;
-      line-height: 23px;
+      line-height: 24px;
     }
   }
 
   &__tags {
-    display: none;
     margin: 0 auto;
     font-size: 14px;
     line-height: 18px;
+    text-align: center;
 
-    & span:last-child .tag-delimeter {
+    & span:last-child .vacancies__box__tags--delimeter {
       display: none;
+    }
+
+    &--delimeter {
+      font-size: 20px;
     }
   }
 }

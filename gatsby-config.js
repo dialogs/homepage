@@ -100,13 +100,6 @@ function getPlugins() {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'vacancies',
-        path: `${__dirname}/src/vacancies`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/i18n`,
