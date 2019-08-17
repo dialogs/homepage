@@ -391,9 +391,6 @@
   "about_integration_text": "Integrate dialog with any external service or application – use the messenger interface to work with familiar tools such as e-mail, calendar, task manager, cloud storage and much more.",
   "about_read_more": "Learn more",
   "attach_resume": "Attach CV",
-  "career_city_all": "All cities",
-  "career_city_msk": "Moscow",
-  "career_city_nsk": "Novosibirsk",
   "career_category_all": "All",
   "career_category_it": "IT and Development",
   "career_category_marketing": "Marketing, Advertising, PR",
@@ -528,7 +525,19 @@
     }
   },
   "career": {
-    "we_want_you": "We need more talents in our team, <a class=\"link--default\" href=\"/en/career\">learn more</a> about current openings and life in the company."
+    "we_want_you": "We need more talents in our team, <a class=\"link--default\" href=\"/en/career\">learn more</a> about current openings and life in the company.",
+    "location": {
+      "all": "All cities",
+      "msk": "Moscow",
+      "nsk": "Novosibirsk",
+      "spb": "St. Petersburg"
+    },
+    "category": {
+      "all": "All",
+      "it": "IT and Development",
+      "art": "Arts, Entertainment, Media",
+      "marketing": "Marketing, Advertising, PR"
+    }
   },
   "footer": {
     "partners": "Partners",

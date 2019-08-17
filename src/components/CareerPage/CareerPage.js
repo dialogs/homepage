@@ -1,54 +1,58 @@
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import { graphql } from 'gatsby';
-import FormattedMetaTags from '../components/FormattedMetaTags';
-import FormattedOpenGraph from '../components/FormattedOpenGraph';
-import { Page } from '../components/Page/Page';
-import { Container } from '../components/Container/Container';
-import { PageHeading } from '../components/PageHeading/PageHeading';
-import { Heading } from '../components/Heading/Heading';
-import { Section } from '../components/Section/Section';
-import { Vacancies } from '../components/Vacancies/Vacancies';
-import ApplyForJobForm from '../components/ApplyForJobForm';
-import { RecommendEmployee } from '../components/RecommendEmployee/RecommendEmployee';
-import ImageFormatted from '../components/ImageFormatted';
-import { CompanyPictures } from '../components/CompanyPictures/CompanyPictures';
-import { LinkButton } from '../components/Button/LinkButton';
-import { PageHeader } from '../components/PageHeader/PageHeader';
-import '../styles/jobs.css';
+import { useStaticQuery, graphql } from 'gatsby';
+import FormattedMetaTags from '../FormattedMetaTags';
+import FormattedOpenGraph from '../FormattedOpenGraph';
+import { Page } from '../Page/Page';
+import { Container } from '../Container/Container';
+import { PageHeading } from '../PageHeading/PageHeading';
+import { Heading } from '../Heading/Heading';
+import { Section } from '../Section/Section';
+import { Vacancies } from '../Vacancies/Vacancies';
+import ApplyForJobForm from '../ApplyForJobForm';
+import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
+import ImageFormatted from '../ImageFormatted';
+import { CompanyPictures } from '../CompanyPictures/CompanyPictures';
+import { LinkButton } from '../Button/LinkButton';
+import { PageHeader } from '../PageHeader/PageHeader';
+import '../../styles/jobs.css';
 
 function getCitiesAndCategories(vacancies) {
   const cities = ['all'];
   const categories = ['all'];
 
-  for (let vacancy of vacancies) {
-    const { city, category } = vacancy.frontmatter;
-
-    if (!cities.includes(city)) {
-      cities.push(city);
+  vacancies.forEach(({ location, specialization }) => {
+    if (!cities.includes(location)) {
+      cities.push(location);
     }
 
-    if (!categories.includes(category)) {
-      categories.push(category);
+    if (!categories.includes(specialization)) {
+      categories.push(specialization);
     }
-  }
+  });
 
   return { cities, categories };
 }
 
 export default ({
-  data: {
-    vacancies,
-    site: {
-      siteMetadata: { siteUrl },
-    },
-    headerImage,
-  },
   pageContext: {
+    siteUrl,
     intl: { language, originalPath },
+    vacancies,
   },
 }) => {
-  const { cities, categories } = getCitiesAndCategories(vacancies.nodes);
+  const { headerImage } = useStaticQuery(graphql`
+    {
+      headerImage: file(relativePath: { eq: "images/jobs/jobs-promo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 680) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `);
+  const { cities, categories } = getCitiesAndCategories(vacancies);
 
   return (
     <Page>
@@ -154,40 +158,3 @@ export default ({
     </Page>
   );
 };
-
-export const vacanciesQuery = graphql`
-  {
-    vacancies: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      totalCount
-      nodes {
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          date
-          city
-          category
-          salary
-          tags
-          description
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
-    headerImage: file(relativePath: { eq: "images/jobs/jobs-promo.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 680) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
-  }
-`;

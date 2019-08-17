@@ -103,7 +103,7 @@ export function ApplyForJobForm({
             <Select
               options={cities.map((city) => {
                 return {
-                  label: `career_city_${city}`,
+                  label: `career.location.${city}`,
                   value: city,
                 };
               })}
