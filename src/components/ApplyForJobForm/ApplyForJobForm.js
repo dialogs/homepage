@@ -55,9 +55,7 @@ export function ApplyForJobForm({
     reader.onload = () => {
       callback(reader.result);
     };
-    reader.onerror = (error) => {
-      console.error(error);
-    };
+    reader.onerror = console.error;
   }
 
   function handleResumeChange(value) {
@@ -75,8 +73,8 @@ export function ApplyForJobForm({
         <div className="apply__form__twocolumns">
           <div className="apply__form__column">
             <Input
-              value={form.fio}
-              name="fio"
+              value={form.name}
+              name="name"
               type="text"
               onChange={handleChange}
               label={<FormattedMessage id="form_label_fio" />}
@@ -93,8 +91,8 @@ export function ApplyForJobForm({
           </div>
           <div className="apply__form__column">
             <Input
-              value={form.workemail}
-              name="workemail"
+              value={form.email}
+              name="email"
               type="email"
               onChange={handleChange}
               label={<FormattedMessage id="form.email" />}

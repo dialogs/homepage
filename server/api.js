@@ -60,9 +60,9 @@ function renderApplicationMessage(body, site) {
   const message = `
 ОТКЛИК НА ВАКАНСИЮ.
 
-Имя: ${body.fio} |
+Имя: ${body.name} |
 Телефон: ${body.phone} |
-Email: ${body.workemail} |
+Email: ${body.email} |
 Город: ${body.city} |
 Обо мне: ${body.about} |
 
