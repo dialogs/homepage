@@ -117,7 +117,8 @@ export function ApplyForJobForm({
         <Input
           value={form.about}
           name="about"
-          type="text"
+          type="textarea"
+          rows={4}
           onChange={handleChange}
           label={<FormattedMessage id="form_label_about" />}
         />
