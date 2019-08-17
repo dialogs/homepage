@@ -59,8 +59,6 @@ function getCategory(id) {
 }
 
 function normalizeVacancyData({ data }) {
-  console.log(`fetching data for '${data.name}' vacancy`);
-
   return {
     id: data.id,
     title: data.name,
@@ -119,10 +117,6 @@ async function fetchAllVacancies() {
       error: 'No vacancies fetched',
     };
   }
-
-  console.log(
-    `employer_id ${COMPANY_ID} has ${allVacanciesIds.length} vacancies published on hh.ru`,
-  );
 
   const vacanciesData = await axios
     .all(allVacanciesIds.map((vacancy) => fetchVacancy(vacancy.id)))
