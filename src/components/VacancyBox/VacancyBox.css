@@ -77,13 +77,17 @@
     font-size: 14px;
     line-height: 18px;
     text-align: center;
+    vertical-align: middle;
 
-    & span:last-child .vacancies__box__tags--delimeter {
-      display: none;
-    }
+    & span {
+      &:after {
+        content: '\a0 \2022 \a0';
+        font-size: 11px;
+      }
 
-    &--delimeter {
-      font-size: 20px;
+      &:last-child:after {
+        display: none;
+      }
     }
   }
 }
