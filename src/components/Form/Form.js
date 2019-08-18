@@ -63,6 +63,7 @@ export const FormFooter = styled.div`
 
   @media (--tablet-landscape-viewport) {
     margin-top: 30px;
+    justify-content: flex-start;
   }
 `;
 

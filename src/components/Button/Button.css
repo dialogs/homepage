@@ -19,9 +19,21 @@
   font-size: var(--button-font-size);
   line-height: var(--button-line-height);
   padding: var(--button-padding) calc(var(--button-padding) * 2);
-  transition: background 250ms ease;
+  #transition: background 250ms ease;
   cursor: pointer;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
   user-select: none;
+  min-height: 64px;
+
+  &:after {
+    transition: border-radius linear 0.05s, width linear 0.05s;
+  }
+
+  &__info {
+    min-height: 63px;
+  }
 
   &--default {
     color: var(--button-text-color);
@@ -51,7 +63,179 @@
 
   &--disabled {
     cursor: not-allowed;
-    opacity: 0.8;
-    background-color: var(--button-background-color) !important;
+    color: rgba(30, 30, 30, 0.35);
+    background-color: #f6f6f6 !important;
+  }
+  &--pending {
+  }
+
+  &.animate {
+    &:hover {
+      background-color: var(--button-background-color);
+    }
+
+    & .loading {
+      width: 36px;
+      height: 36px;
+      top: 14px;
+      position: absolute;
+      left: 40%;
+      z-index: 9;
+      -webkit-animation: load 0.3s ease-out;
+      -webkit-animation-delay: 3s;
+      -webkit-animation-fill-mode: forwards;
+    }
+
+    & .inner-shadow {
+      z-index: 6;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 32px;
+      height: 32px;
+      margin-left: -16px;
+      margin-top: -16px;
+      border-radius: 100%;
+      background-color: var(--button-background-color);
+    }
+
+    & .hold {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      clip: rect(0px, 36px, 36px, 18px);
+      -webkit-border-radius: 100%;
+      background-color: var(--button-background-color);
+    }
+
+    & .pie {
+      background-color: white;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-border-radius: 100%;
+      clip: rect(0px, 18px, 36px, 0px);
+    }
+
+    & #left .pie {
+      z-index: 1;
+      -webkit-animation: left 1.5s ease-out both;
+    }
+
+    & #right {
+      z-index: 3;
+      -webkit-transform: rotate(180deg);
+    }
+
+    & #right .pie {
+      -webkit-animation: right 1.5s ease-out both;
+      -webkit-animation-delay: 1.5s;
+    }
+
+    & span {
+      display: none;
+    }
+
+    &.success:before {
+      position: absolute;
+      content: '';
+      width: 22px;
+      height: 10px;
+      border: 2px solid white;
+      border-right: 0;
+      border-top: 0;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
+      transform: translate(-50%, -50%) rotate(0deg) scale(0);
+      -webkit-animation: success ease-in 0.15s forwards;
+      animation: success ease-in 0.15s forwards;
+      animation-delay: 3.3s;
+      z-index: 10;
+    }
+
+    &.error {
+      position: relative;
+
+      &:before {
+        color: #fff;
+        position: absolute;
+        content: '!';
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+        -webkit-animation: error ease-in 0.5s forwards;
+        animation: error ease-in 0.5s forwards;
+        animation-delay: 3.3s;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes left {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes right {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@keyframes success {
+  from {
+    transform: translate(-50%, -50%) rotate(0) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
+}
+
+@-webkit-keyframes success {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0) scale(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
+}
+
+@keyframes error {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@-webkit-keyframes error {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@-webkit-keyframes load {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
