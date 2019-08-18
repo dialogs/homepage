@@ -1,14 +1,11 @@
 import React from 'react';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { Container } from '../Container/Container';
 import { Section } from '../Section/Section';
 import { PageHeading } from '../PageHeading/PageHeading';
 import { Text } from '../Text/Text';
-import {
-  UnderlineLink,
-  UnderlineGatsbyLink,
-} from '../UnderlineLink/UnderlineLink';
+import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 
 const DownloadHeaderSection = styled(Section)`
   padding: 0;

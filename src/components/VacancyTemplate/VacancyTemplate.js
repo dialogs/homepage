@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import FormattedMetaTags from '../FormattedMetaTags';
-import FormattedOpenGraph from '../FormattedOpenGraph';
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 import { Page } from '../Page/Page';
+import FormattedMetaTags from '../FormattedMetaTags';
+import FormattedOpenGraph from '../FormattedOpenGraph';
 import { Container } from '../Container/Container';
 import { PageHeading } from '../PageHeading/PageHeading';
 import { Section } from '../Section/Section';
@@ -14,18 +14,14 @@ import { RecommendEmployee } from '../RecommendEmployee/RecommendEmployee';
 import './VacancyTemplate.css';
 
 export default ({
-  data: {
-    vacancy,
-    site: {
-      siteMetadata: { siteUrl },
-    },
-  },
   pageContext: {
     slug,
     intl: { language },
+    siteUrl,
+    vacancy,
   },
 }) => {
-  const { title, salary, description, city } = vacancy.frontmatter;
+  const { title, salary, description, location, experience } = vacancy;
 
   return (
     <Page>
@@ -51,56 +47,41 @@ export default ({
         <Section className="vacancy_summary">
           <div className="vacancy_summary__wrapper">
             <div className="vacancy_summary__title">{title}</div>
-            <div className="vacancy_summary__salary">{salary}</div>
-            <div className="vacancy_summary__desc">{description}</div>
+            {salary && (salary.from || salary.to) ? (
+              <div className="vacancy_summary__salary">
+                {salary.from && `от ${salary.from} `}
+                {salary.to && `до ${salary.to} `}
+                {'руб. на руки'}
+              </div>
+            ) : null}
+            <div className="vacancy_summary__experience">{experience}</div>
             <LinkButton href="#apply_for_job_form">
               <FormattedMessage id="job_apply_button" />
             </LinkButton>
           </div>
         </Section>
         <Section className="expectations_bonuses">
-          <div dangerouslySetInnerHTML={{ __html: vacancy.html }} />
+          <div dangerouslySetInnerHTML={{ __html: description }} />
         </Section>
       </Container>
       <Container fluid>
         <RecommendEmployee />
       </Container>
       <Container>
-        <Section className="apply">
-          <div id="apply_for_job_form">
-            <PageHeading>
-              <FormattedMessage id="job_apply_vacancy_header" />
-            </PageHeading>
-            <div className="vacancy__apply_text">
-              <FormattedMessage id="job_apply_vacancy_message" />
-            </div>
-            <ApplyForJobForm
-              className="apply__form"
-              cities={[city]}
-              language={language}
-            />
+        <Section className="apply" id="apply_for_job_form">
+          <PageHeading>
+            <FormattedMessage id="job_apply_vacancy_header" />
+          </PageHeading>
+          <div className="vacancy__apply_text">
+            <FormattedMessage id="job_apply_vacancy_message" />
           </div>
+          <ApplyForJobForm
+            className="apply__form"
+            cities={[location]}
+            language={language}
+          />
         </Section>
       </Container>
     </Page>
   );
 };
-
-export const query = graphql`
-  query($slug: String!) {
-    vacancy: markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        city
-        title
-        salary
-        description
-      }
-    }
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
-  }
-`;

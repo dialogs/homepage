@@ -13,9 +13,9 @@ export function Vacancies({ vacancies, cities, categories, locale }) {
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
   function isCategoryHasVacancies(categoryForSearch) {
-    const vacanciesInCategory = vacancies.nodes.find(
-      ({ frontmatter: { category, city } }) => {
-        return category === categoryForSearch && city === currentCity;
+    const vacanciesInCategory = vacancies.find(
+      ({ specialization, location }) => {
+        return specialization === categoryForSearch && location === currentCity;
       },
     );
 
@@ -29,10 +29,11 @@ export function Vacancies({ vacancies, cities, categories, locale }) {
 
   function renderCollapsible() {
     return categories.map((currentCat, index) => {
-      const currentCategoryVacancies = vacancies.nodes.filter((vacancy) => {
-        const { city, category } = vacancy.frontmatter;
-        if (currentCity === 'all' || currentCity === city) {
-          if (currentCat === 'all' || currentCat === category) {
+      const currentCategoryVacancies = vacancies.filter((vacancy) => {
+        const { specialization, location } = vacancy;
+
+        if (currentCity === 'all' || currentCity === location) {
+          if (currentCat === 'all' || currentCat === specialization) {
             return vacancy;
           }
         }
@@ -50,21 +51,18 @@ export function Vacancies({ vacancies, cities, categories, locale }) {
               ? 'vacancies__content--visible'
               : null,
           )}
-          title={<FormattedMessage id={`career_category_${currentCat}`} />}
+          title={<FormattedMessage id={`career.category.${currentCat}`} />}
           key={`cotegory_collapsible_${index}`}
         >
           <div className="vacancies__boxes">
             {currentCategoryVacancies.map((vacancy, index) => {
-              const {
-                frontmatter: { title, tags },
-                fields: { slug },
-              } = vacancy;
+              const { title, slug, skills } = vacancy;
 
               return (
                 <VacancyBox
                   title={title}
-                  link={`/${locale}/career${slug}`}
-                  tags={tags}
+                  link={`/${locale}/career/${slug}`}
+                  skills={skills}
                   locale={locale}
                   key={`vacancy_${index}`}
                 />
@@ -84,7 +82,7 @@ export function Vacancies({ vacancies, cities, categories, locale }) {
       <Select
         options={cities.map((city) => {
           return {
-            label: `career_city_${city}`,
+            label: `career.location.${city}`,
             value: city,
           };
         })}
@@ -110,7 +108,7 @@ export function Vacancies({ vacancies, cities, categories, locale }) {
                 key={`category_tab_${index}`}
                 className={tabClassName}
               >
-                <FormattedMessage id={`career_category_${category}`} />
+                <FormattedMessage id={`career.category.${category}`} />
               </Tab>
             );
           })}
