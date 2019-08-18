@@ -62,6 +62,7 @@
   &__experience {
     color: var(--text-color-main-03);
     margin: 1rem 0;
+    text-transform: lowercase;
 
     @media (--mobile-viewport) {
       font-size: 16px;
