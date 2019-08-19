@@ -18,7 +18,9 @@ export function BlogHeader({ featured, tags, locale }) {
     <Section className="blog__top-section blog_header">
       <div className="blog__main box-block">
         <div className="blog__main-image">
-          <img src={mainPost.featureImage} alt={mainPost.title} />
+          <Link to={`/${locale}/blog/${mainPost.slug}`}>
+            <img src={mainPost.featureImage} alt={mainPost.title} />
+          </Link>
         </div>
         <div className="blog__main-date">
           {new Date(mainPost.publishDate).toLocaleDateString(locale, {
