@@ -49,40 +49,45 @@
   &__title {
     margin: 20px auto;
     text-align: center;
-    font-size: 18px;
-    line-height: 23px;
+    font-weight: 500;
 
     @media (--mobile-viewport) {
       font-size: 16px;
-      line-height: 21px;
+      line-height: 22px;
     }
 
     @media (--tablet-viewport) {
       font-size: 16px;
-      line-height: 21px;
+      line-height: 22px;
     }
+
     @media (--tablet-landscape-viewport) {
       font-size: 16px;
-      line-height: 21px;
+      line-height: 22px;
     }
+
     @media (--laptop-viewport) {
       font-size: 18px;
-      line-height: 23px;
-    }
-    @media (--desktop-viewport) {
-      font-size: 18px;
-      line-height: 23px;
+      line-height: 24px;
     }
   }
 
   &__tags {
-    display: none;
     margin: 0 auto;
     font-size: 14px;
     line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
 
-    & span:last-child .tag-delimeter {
-      display: none;
+    & span {
+      &:after {
+        content: '\a0 \2022 \a0';
+        font-size: 11px;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
     }
   }
 }

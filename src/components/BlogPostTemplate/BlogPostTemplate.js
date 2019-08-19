@@ -53,7 +53,7 @@ export default ({
         limit={6}
         locale={language}
       />
-      <Subscribe />
+      <Subscribe language={language} />
     </Container>
   );
 };

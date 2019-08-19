@@ -180,15 +180,17 @@ export function PageHeader({ children, image }) {
       <PageHeaderSection>
         <PageHeaderWrapper>
           <PageHeaderContent>{children}</PageHeaderContent>
-          <PageHeaderImageWrapper>
-            <PageHeaderImage>
-              <Image
-                src={image}
-                fadeIn={false}
-                fluid={image.childImageSharp.fluid}
-              />
-            </PageHeaderImage>
-          </PageHeaderImageWrapper>
+          {image && (
+            <PageHeaderImageWrapper>
+              <PageHeaderImage>
+                <Image
+                  src={image}
+                  fadeIn={false}
+                  fluid={image.childImageSharp.fluid}
+                />
+              </PageHeaderImage>
+            </PageHeaderImageWrapper>
+          )}
         </PageHeaderWrapper>
       </PageHeaderSection>
     </PageHeaderContainer>

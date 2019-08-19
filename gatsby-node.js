@@ -1,139 +1,122 @@
 const path = require('path');
 const { ghost, languages, siteUrl } = require('./server/config');
 const { createFilePath } = require('gatsby-source-filesystem');
+const { fetchAllVacancies } = require('./utils/fetchAllVacancies');
 
 // Page components
 const blogPostTemplate = path.resolve(
   './src/components/BlogPostTemplate/BlogPostTemplate.js',
 );
+const careerPageTemplate = path.resolve(
+  './src/components/CareerPage/CareerPage.js',
+);
 const vacancyPageTemplate = path.resolve(
   './src/components/VacancyTemplate/VacancyTemplate.js',
 );
 
-exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
-  if (node.internal.type === 'MarkdownRemark') {
-    createNodeField({
-      node,
-      name: 'slug',
-      value: createFilePath({ node, getNode }),
-    });
-  }
-};
-
-exports.createPages = ({ graphql, actions: { createPage } }) => {
-  const promises = [];
-
+exports.createPages = async ({
+  graphql,
+  actions: { createPage },
+  reporter,
+}) => {
   // Create blogposts
   if (ghost.apiKey && ghost.endpoint) {
-    languages.forEach((language) => {
-      const postsQuery = `
-        {
-          posts: allGhostPost(
-            sort: { order: DESC, fields: [published_at] },
-            filter: { tags: {elemMatch: { name: {eq: "#${language}"} } } }
-          )
-            {
-            edges {
-              post: node {
-                id
-                slug
-                title
-                html
-                publishDate: published_at
-                featureImage: feature_image
+    async function createPosts(language) {
+      const { errors, data } = await graphql(`
+          {
+            posts: allGhostPost(sort: { order: DESC, fields: [published_at] }, filter: { tags: {elemMatch: { name: {eq: "#${language}"} } } }) {
+              edges {
+                post: node {
+                  id
+                  slug
+                  title
+                  html
+                  publishDate: published_at
+                  featureImage: feature_image
+                }
               }
             }
           }
-        }
-      `;
+        `);
 
-      const createPosts = new Promise((resolve, reject) => {
-        resolve(
-          graphql(postsQuery).then(({ errors, data }) => {
-            if (errors) {
-              return reject(errors);
-            }
+      if (errors || !data.posts) {
+        return;
+      }
 
-            if (!data.posts) {
-              return resolve();
-            }
+      const posts = data.posts.edges;
 
-            const posts = data.posts.edges;
+      posts.forEach(async ({ post }) => {
+        post.url = `/blog/${post.slug}/`;
 
-            posts.forEach(({ post }) => {
-              post.url = `/blog/${post.slug}/`;
-
-              createPage({
-                path: post.url,
-                component: blogPostTemplate,
-                context: {
-                  slug: post.slug,
-                  isBlogPost: true,
-                  postLanguage: language,
-                },
-              });
-            });
-
-            return resolve();
-          }),
-        );
+        createPage({
+          path: post.url,
+          component: blogPostTemplate,
+          context: {
+            slug: post.slug,
+            isBlogPost: true,
+            postLanguage: language,
+          },
+        });
       });
+    }
 
-      promises.push(createPosts);
+    languages.forEach(async (language) => {
+      await createPosts(language);
     });
   }
 
   // Create vacancies
-  const createVacancies = new Promise((resolve, reject) => {
-    const vacanciesQuery = `
-      {
-        vacancies: allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `;
+  async function createCareerPage() {
+    const vacanciesResult = await fetchAllVacancies();
 
-    resolve(
-      graphql(vacanciesQuery).then(({ errors, data }) => {
-        if (errors) {
-          return reject(errors);
-        }
+    if (vacanciesResult.error || !vacanciesResult.data) {
+      reporter.panicOnBuild(`Error while fetching vacancies.`);
+      return;
+    }
 
-        if (!data.vacancies) {
-          return resolve();
-        }
+    createPage({
+      path: 'career',
+      component: careerPageTemplate,
+      context: {
+        routed: true,
+        siteUrl,
+        vacancies: vacanciesResult.data,
+      },
+    });
+  }
 
-        data.vacancies.edges.forEach(({ node }) => {
-          const { slug } = node.fields;
-          const originalPath = `career${slug}`;
+  async function createVacancyPages() {
+    const { data, error } = await fetchAllVacancies();
 
-          createPage({
-            originalPath,
-            path: originalPath,
-            component: vacancyPageTemplate,
-            context: {
-              routed: true,
-              originalPath,
-              slug: slug,
-              siteUrl,
-            },
-          });
-        });
+    if (error) {
+      return reject();
+    }
 
-        return resolve();
-      }),
-    );
-  });
+    if (!data) {
+      return resolve();
+    }
 
-  promises.push(createVacancies);
+    data.forEach((vacancy) => {
+      const slug = `/${vacancy.slug}`;
+      const originalPath = `career${slug}`;
 
-  return Promise.all(promises);
+      createPage({
+        originalPath,
+        path: originalPath,
+        component: vacancyPageTemplate,
+        context: {
+          routed: true,
+          originalPath,
+          slug,
+          siteUrl,
+          vacancy,
+        },
+      });
+    });
+  }
+
+  await createCareerPage();
+  await createVacancyPages();
 };
 
 exports.onCreatePage = async ({ page, actions: { deletePage } }) => {
