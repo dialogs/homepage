@@ -90,22 +90,32 @@ a {
   &:before {
     content: '';
     position: absolute;
-    right: 0;
     bottom: 0;
+    left: 0;
     height: 2px;
     width: 100%;
-    background: var(--color-secondary);
+    z-index: -1;
+    transition: width 150ms ease;
+    transform: translateZ(0);
+    background-color: var(--color-secondary);
   }
 
   &--inverse {
     &:before {
-      background: var(--color-primary);
+      background-color: var(--color-primary);
     }
   }
 
   &:hover {
     &:before {
       width: 0;
+    }
+  }
+
+  &--right {
+    &:before {
+      left: auto;
+      right: 0;
     }
   }
 }

@@ -21,10 +21,10 @@ export function MobileMenu({
   let toLink = locale === 'ru' ? `/en${originalPath}` : `/ru${originalPath}`;
 
   if (typeof window !== 'undefined') {
-    if (window.location.href.indexOf('/blog/') > 0) {
+    if (window.location.href.indexOf('/blog/') >= 0) {
       toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
     }
-    if (window.location.href.indexOf('/career/') > 0) {
+    if (window.location.href.indexOf('/career/') >= 0) {
       toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
     }
   }
@@ -57,7 +57,7 @@ export function MobileMenu({
             <FormattedMessage id="menu_features" />
           </Link>
           <Link
-            to={`/${locale}/download/enterprise/`}
+            to={`/${locale}/download/`}
             className="navigation__link"
             activeClassName="navigation__link--active"
             onClick={onClose}

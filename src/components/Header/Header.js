@@ -64,10 +64,12 @@ export function Header({
 
   let toLink = `/${locale === 'ru' ? 'en/' : 'ru/'}${originalPath || ''}`;
 
-  if (originalPath.indexOf('/blog/') > 0) {
+  if (originalPath.indexOf('/blog/') >= 0) {
     toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
   }
-  if (originalPath.indexOf('/career/') > 0) {
+  console.log({ originalPath, toLink });
+
+  if (originalPath.indexOf('/career/') >= 0) {
     toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
   }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { styled } from 'astroturf';
 import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
@@ -27,20 +27,7 @@ export function PatentsAssociations() {
           <FormattedMessage id="patents.associations.text_3" />
         </ListItem>
         <ListItem>
-          <FormattedMessage id="patents.associations.text_4">
-            {(text) => {
-              return (
-                <UnderlineLink
-                  href="/sk_cert.pdf"
-                  target="_blank"
-                  direction="right"
-                  rel="noopener noreferrer"
-                >
-                  {text}
-                </UnderlineLink>
-              );
-            }}
-          </FormattedMessage>
+          <FormattedHTMLMessage id="patents.associations.text_4" />
         </ListItem>
       </List>
     </PatentsAssociationsSection>
