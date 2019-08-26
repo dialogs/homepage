@@ -4,10 +4,10 @@ import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
 import Hero from '../components/Hero';
 import { Platform } from '../components/Platform/Platform';
-import Safety from '../components/Safety';
+import { Safety } from '../components/Safety/Safety';
 import { Incompany } from '../components/Incompany/Incompany';
 import { Easy } from '../components/Easy/Easy';
-import Business from '../components/Business';
+import { Business } from '../components/Business/Business';
 import { Offer } from '../components/Offer/Offer';
 
 export default ({
@@ -20,10 +20,10 @@ export default ({
       <Container>
         <Hero />
         <Platform />
-        <Safety />
+        <Safety language={language} />
         <Incompany />
         <Easy />
-        <Business />
+        <Business language={language} />
         <Offer language={language} />
       </Container>
     </Page>
