@@ -194,7 +194,12 @@ router.post('/offer', (request, response) => {
     promises.push(notifyEmail(body, referer));
   }
 
-  if (body.subscribe) {
+  if (
+    config.mailchimp.key &&
+    config.mailchimp.list.ru &&
+    config.mailchimp.list.en &&
+    body.subscribe
+  ) {
     promises.push(notifyMailchimp(body, referer));
   }
 
@@ -226,7 +231,13 @@ router.post('/subscribe', (request, response) => {
     promises.push(notifyDialog(body, referer));
   }
 
-  promises.push(notifyMailchimp(body, referer));
+  if (
+    config.mailchimp.key &&
+    config.mailchimp.list.ru &&
+    config.mailchimp.list.en
+  ) {
+    promises.push(notifyMailchimp(body, referer));
+  }
 
   Promise.all(promises)
     .then(() => {
