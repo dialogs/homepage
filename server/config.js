@@ -76,12 +76,21 @@ function checkUrlOrFail(envName, url) {
   }
 }
 
-checkUrlOrFail('GHOST_ENDPOINT', config.ghost.endpoint);
-checkOrFail('GHOST_API_KEY', config.ghost.apiKey);
-checkOrFail('MAILCHIMP_KEY', config.mailchimp.key);
-checkOrFail('MAILCHIMP_LIST_RU', config.mailchimp.list.ru);
-checkOrFail('MAILCHIMP_LIST_EN', config.mailchimp.list.en);
+function checkAndWarn(envName, variable) {
+  if (!variable) {
+    console.warn(`${envName} not configured!`);
+  }
+}
+
 checkOrFail('EMAIL_USER', config.email.auth.user);
 checkOrFail('EMAIL_PASSWORD', config.email.auth.pass);
+checkUrlOrFail('GHOST_ENDPOINT', config.ghost.endpoint);
+checkOrFail('GHOST_API_KEY', config.ghost.apiKey);
+checkAndWarn('MAILCHIMP_KEY', config.mailchimp.key);
+checkAndWarn('MAILCHIMP_LIST_RU', config.mailchimp.list.ru);
+checkAndWarn('MAILCHIMP_LIST_EN', config.mailchimp.list.en);
+checkAndWarn('DIALOG_WEBHOOK', config.dialog.webhook);
+checkAndWarn('SENTRY_DSN', config.sentry.dsn);
+checkAndWarn('SENTRY_DSN_PUBLIC', config.sentry.dsnPublic);
 
 module.exports = config;

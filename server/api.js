@@ -128,6 +128,28 @@ function notifyEmail(body, site) {
   });
 }
 
+function notifyPartners(body, site) {
+  return new Promise((resolve, reject) => {
+    mailer.sendMail(
+      {
+        from: SENDER_EMAIL,
+        to: body.form === 'support' ? config.email_to_support : config.email_to,
+        sender: body.email,
+        replyTo: body.email,
+        subject: `Заявка с сайта ${site}`,
+        text: renderTextMessage(body, site),
+      },
+      (error, info) => {
+        if (error) {
+          reject(error);
+        }
+
+        resolve();
+      },
+    );
+  });
+}
+
 function notifyMailchimp(body, site) {
   const listId =
     body.siteLanguage === 'ru'
@@ -194,7 +216,12 @@ router.post('/offer', (request, response) => {
     promises.push(notifyEmail(body, referer));
   }
 
-  if (body.subscribe) {
+  if (
+    config.mailchimp.key &&
+    config.mailchimp.list.ru &&
+    config.mailchimp.list.en &&
+    body.subscribe
+  ) {
     promises.push(notifyMailchimp(body, referer));
   }
 
@@ -226,7 +253,13 @@ router.post('/subscribe', (request, response) => {
     promises.push(notifyDialog(body, referer));
   }
 
-  promises.push(notifyMailchimp(body, referer));
+  if (
+    config.mailchimp.key &&
+    config.mailchimp.list.ru &&
+    config.mailchimp.list.en
+  ) {
+    promises.push(notifyMailchimp(body, referer));
+  }
 
   Promise.all(promises)
     .then(() => {
@@ -319,9 +352,9 @@ router.post('/partner', (request, response) => {
     promises.push(notifyDialog(body, referer));
   }
 
-  // if (config.email.auth.user && config.email.auth.pass) {
-  //   promises.push(notifyResume(body, referer));
-  // }
+  if (config.email.auth.user && config.email.auth.pass) {
+    promises.push(notifyPartners(body, referer));
+  }
 
   Promise.all(promises)
     .then(() => {
