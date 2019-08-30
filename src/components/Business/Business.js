@@ -8,7 +8,7 @@ import { Heading } from '../Heading/Heading';
 
 import './Business.css';
 
-export function Business({ intl: { locale } }) {
+export function Business({ language }) {
   return (
     <StaticQuery
       query={graphql`
@@ -39,11 +39,11 @@ export function Business({ intl: { locale } }) {
                   <img
                     className="business__info-img"
                     src={
-                      locale === 'ru'
+                      language === 'ru'
                         ? '/images/home/business/logo-sberbank-business.svg'
                         : '/images/home/business/logo-sberbank-en.svg'
                     }
-                    alt={locale === 'ru' ? 'Сбербанк' : 'Sberbank'}
+                    alt={language === 'ru' ? 'Сбербанк' : 'Sberbank'}
                   />
                 </div>
                 <ul className="business__info-list list list--secondary">

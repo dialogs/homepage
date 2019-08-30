@@ -51,8 +51,8 @@ export default ({
 
       <PatentsContainer>
         <PatentsMain />
-        <PatentsLicenses />
-        <PatentsAssociations />
+        {language === 'ru' && <PatentsLicenses />}
+        {language === 'ru' && <PatentsAssociations />}
       </PatentsContainer>
     </Page>
   );

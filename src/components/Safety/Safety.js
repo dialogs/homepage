@@ -7,7 +7,7 @@ import { Section } from '../Section/Section';
 
 import './Safety.css';
 
-export function Safety({ intl: { locale } }) {
+export function Safety({ language }) {
   return (
     <Section className="safety">
       <h3 className="safety-title">
@@ -46,29 +46,31 @@ export function Safety({ intl: { locale } }) {
         </div>
       </div>
 
-      <div className="safety-item safety-requirements">
-        <div className="safety-item__title">
-          <FormattedMessage id="compliance" />
-        </div>
-        <div className="safety-item__content safety-requirements__content">
-          <div className="safety-requirements__items">
-            <div className="safety-requirements__item">
-              <FormattedMessage id="compliance_index_1" />
+      {language === 'ru' && (
+        <div className="safety-item safety-requirements">
+          <div className="safety-item__title">
+            <FormattedMessage id="compliance" />
+          </div>
+          <div className="safety-item__content safety-requirements__content">
+            <div className="safety-requirements__items">
+              <div className="safety-requirements__item">
+                <FormattedMessage id="compliance_index_1" />
+              </div>
+              <div className="safety-requirements__item">
+                <FormattedMessage id="compliance_index_2" />
+              </div>
+              <div className="safety-requirements__item">
+                <FormattedMessage id="compliance_index_3" />
+              </div>
             </div>
-            <div className="safety-requirements__item">
-              <FormattedMessage id="compliance_index_2" />
-            </div>
-            <div className="safety-requirements__item">
-              <FormattedMessage id="compliance_index_3" />
+            <div className="safety-requirements__link-box">
+              <ArrowLink to={`/${language}/patents`} underline>
+                <FormattedMessage id="link_more" />
+              </ArrowLink>
             </div>
           </div>
-          <div className="safety-requirements__link-box">
-            <ArrowLink to={`/${locale}/patents`} underline>
-              <FormattedMessage id="link_more" />
-            </ArrowLink>
-          </div>
         </div>
-      </div>
+      )}
     </Section>
   );
 }
