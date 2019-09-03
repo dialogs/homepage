@@ -1,5 +1,3 @@
-@import '../../styles/variables.css';
-
 :root {
   --tabs-tab-horizontal-color: var(--text-color-main);
   --tabs-tab-horizontal-color-active: var(--color-secondary);

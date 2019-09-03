@@ -1,5 +1,3 @@
-@import '../../styles/variables.css';
-
 .possibilities {
   @media (--mobile-viewport) {
     padding-top: 0;

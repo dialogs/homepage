@@ -7,8 +7,6 @@ const GithubButtonLink = styled.a`
 `;
 
 const RepositoryCount = styled.text`
-  @import '../../styles/variables.css';
-
   font-size: 14px;
   font-weight: 600;
   font-family: var(--font-family);

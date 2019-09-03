@@ -10,8 +10,6 @@ import appLinks from '../../constants/links';
 import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 
 const DownloadMobileSection = styled(Section)`
-  @import '../../styles/variables.css';
-
   padding-top: 40px;
   flex: 0 0 50%;
 
@@ -64,8 +62,6 @@ const DownloadMobileSection = styled(Section)`
 `;
 
 const DownloadMobileDeviceList = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
@@ -89,8 +85,6 @@ const DownloadMobileDeviceList = styled.div`
 `;
 
 const DownloadMobileDevice = styled.div`
-  @import '../../styles/variables.css';
-
   text-align: center;
   line-height: 0;
 
@@ -128,8 +122,6 @@ const DownloadMobileDevice = styled.div`
 `;
 
 const DownloadMobileDeviceImage = styled(Image)`
-  @import '../../styles/variables.css';
-
   width: 100%;
 
   @media (--mobile-viewport) {
@@ -148,16 +140,12 @@ const DownloadMobileDeviceImage = styled(Image)`
 `;
 
 const MarketTextLink = styled(Text)`
-  @import '../../styles/variables.css';
-
   @media (--mobile-viewport) {
     display: none;
   }
 `;
 
 const QRCodeImage = styled.img`
-  @import '../../styles/variables.css';
-
   margin-top: 30px;
   width: 100%;
 
@@ -167,7 +155,6 @@ const QRCodeImage = styled.img`
 `;
 
 const MarketLink = styled.a`
-  @import '../../styles/variables.css';
   display: inline-block;
   line-height: 0;
   display: none;

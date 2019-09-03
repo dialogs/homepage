@@ -1,5 +1,3 @@
-@import '../../styles/variables.css';
-
 .safety {
   @media (--mobile-viewport) {
     margin-top: 0;

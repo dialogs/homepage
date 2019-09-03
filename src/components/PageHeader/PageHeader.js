@@ -5,16 +5,12 @@ import { Section } from '../Section/Section';
 import { Container } from '../Container/Container';
 
 const PageHeaderContainer = styled(Container)`
-  @import '../../styles/variables.css';
-
   @media (--tablet-landscape-viewport) {
     margin: 0 var(--margin-container-side);
   }
 `;
 
 const PageHeaderSection = styled(Section)`
-  @import '../../styles/variables.css';
-
   padding: 0;
   margin: 0;
   width: 100%;
@@ -31,8 +27,6 @@ const PageHeaderSection = styled(Section)`
 `;
 
 const PageHeaderWrapper = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   align-items: center;
   position: relative;
@@ -50,8 +44,6 @@ const PageHeaderWrapper = styled.div`
 `;
 
 const PageHeaderContent = styled.div`
-  @import '../../styles/variables.css';
-
   width: 100%;
   padding: 0 var(--margin-container-side);
 
@@ -70,8 +62,6 @@ const PageHeaderContent = styled.div`
 `;
 
 const PageHeaderImageWrapper = styled.div`
-  @import '../../styles/variables.css';
-
   flex: 0 0 auto;
   line-height: 0;
   position: relative;
@@ -148,8 +138,6 @@ const PageHeaderImageWrapper = styled.div`
 `;
 
 const PageHeaderImage = styled.div`
-  @import '../../styles/variables.css';
-
   @media (--mobile-viewport) {
     display: block;
     width: 100%;

@@ -8,8 +8,6 @@ const SimpleBannerContainerWrapper = styled.div`
 `;
 
 const SimpleBannerContainer = styled(Container)`
-  @import '../../styles/variables.css';
-
   padding-top: 30px;
   padding-bottom: 30px;
 
@@ -29,8 +27,6 @@ const SimpleBannerSection = styled(Section)`
 `;
 
 const SimpleBannerWrapper = styled.div`
-  @import '../../styles/variables.css';
-
   &:before {
     content: '';
     display: block;
@@ -89,8 +85,6 @@ const SimpleBannerWrapper = styled.div`
 `;
 
 const SimpleBannerContent = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-flow: row nowrap;
   padding: 60px 0;

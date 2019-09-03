@@ -8,8 +8,6 @@ import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
 import './Header.css';
 
 const HeaderContainer = styled.header`
-  @import '../../styles/variables.css';
-
   position: absolute;
   width: 100%;
   top: 0;

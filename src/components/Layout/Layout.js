@@ -13,8 +13,6 @@ import { safeStorage } from '../../utils/safeStorage';
 import '../../styles/index.css';
 
 const Main = styled.main`
-  @import '../../styles/variables.css';
-
   flex: 1 1 auto;
   min-width: 0;
   min-height: 0;
@@ -67,7 +65,7 @@ export default ({
           safeStorage.set('referrer', JSON.stringify([document.referrer]));
         }
       } catch (error) {
-        console.error('Cannot corrctcly set refferer', error);
+        console.error('Cannot correctly set referrer', error);
       }
     }
   }, []);

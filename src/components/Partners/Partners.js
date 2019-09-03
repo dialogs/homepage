@@ -9,8 +9,6 @@ import { Container } from '../Container/Container';
 import Scrollspy from 'react-scrollspy';
 
 const PartnersSection = styled(Section)`
-  @import '../../styles/variables.css';
-
   padding-top: 0;
   padding-bottom: 0;
 
@@ -39,8 +37,6 @@ const PartnersSection = styled(Section)`
 `;
 
 const PartnersSectionHeading = styled(Heading)`
-  @import '../../styles/variables.css';
-
   @media (--mobile-viewport) {
     padding-top: 25px;
     padding-bottom: 15px;
@@ -52,16 +48,12 @@ const PartnersSectionHeading = styled(Heading)`
 `;
 
 const PartnersContainer = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-flow: row nowrap;
   padding-bottom: 40px;
 `;
 
 const PartnersNavWrapper = styled.div`
-  @import '../../styles/variables.css';
-
   flex: 0 0 auto;
   display: none;
 
@@ -87,8 +79,6 @@ const PartnersNav = styled.nav`
 `;
 
 const PartnersNavItem = styled.div`
-  @import '../../styles/variables.css';
-
   @media (--tablet-landscape-viewport) {
     margin-bottom: 20px;
   }
@@ -99,8 +89,6 @@ const PartnersNavItem = styled.div`
 `;
 
 const PartnersNavLink = styled.a`
-  @import '../../styles/variables.css';
-
   font-size: 24px;
   line-height: 30px;
   font-weight: 500;
@@ -134,8 +122,6 @@ const PartnersNavLink = styled.a`
 `;
 
 const PartnersBody = styled.div`
-  @import '../../styles/variables.css';
-
   flex: 1 1 auto;
 
   @media (--tablet-landscape-viewport) {
@@ -152,8 +138,6 @@ const PartnersBodyContent = styled.div`
 `;
 
 const PartnersBodyHeading = styled.div`
-  @import '../../styles/variables.css';
-
   font-size: 20px;
   line-height: 26px;
   font-weight: 500;
@@ -165,8 +149,6 @@ const PartnersBodyHeading = styled.div`
 `;
 
 const PartnersBodyDescription = styled.div`
-  @import '../../styles/variables.css';
-
   font-size: 16px;
   line-height: 20px;
   padding-bottom: 28px;
@@ -194,8 +176,6 @@ const PartnersSectionCards = styled.div`
 `;
 
 const styles = css`
-  @import '../../styles/variables.css';
-
   .link {
     transition: color 200ms ease;
   }

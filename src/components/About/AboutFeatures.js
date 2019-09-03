@@ -7,8 +7,6 @@ import { Heading } from '../Heading/Heading';
 import { Text } from '../Text/Text';
 
 const AboutFeaturesList = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-flow: column nowrap;
 
@@ -20,8 +18,6 @@ const AboutFeaturesList = styled.div`
 `;
 
 const AboutFeatureBlock = styled.div`
-  @import '../../styles/variables.css';
-
   padding-top: 60px;
   flex: 1 1 100%;
 

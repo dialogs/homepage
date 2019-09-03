@@ -12,8 +12,6 @@ import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 import { LinkButton } from '../Button/LinkButton';
 
 const DownloadDesktopSection = styled(Section)`
-  @import '../../styles/variables.css';
-
   padding-top: 40px;
   flex: 0 0 50%;
 
@@ -24,8 +22,6 @@ const DownloadDesktopSection = styled(Section)`
 `;
 
 const DownloadDesktopImage = styled(Image)`
-  @import '../../styles/variables.css';
-
   width: 100%;
 
   @media (--mobile-viewport) {
@@ -49,8 +45,6 @@ const DownloadDesktopImage = styled(Image)`
 `;
 
 const DownloadDesktopButtonWrapper = styled.div`
-  @import '../../styles/variables.css';
-
   @media (--tablet-viewport) {
     width: calc(300px - (38px * 2));
   }
@@ -65,16 +59,12 @@ const DownloadDesktopButtonWrapper = styled.div`
 `;
 
 const DownloadDesktopButton = styled(LinkButton)`
-  @import '../../styles/variables.css';
-
   @media (--tablet-viewport) {
     width: 100%;
   }
 `;
 
 const DownloadDesktopLinksBlock = styled.div`
-  @import '../../styles/variables.css';
-
   padding-top: 30px;
 
   @media (--tablet-viewport) {
@@ -92,8 +82,6 @@ const DownloadDesktopLinksBlock = styled.div`
 `;
 
 const DownloadDesktopLink = styled(UnderlineLink)`
-  @import '../../styles/variables.css';
-
   margin: 10px 10px 0;
 `;
 

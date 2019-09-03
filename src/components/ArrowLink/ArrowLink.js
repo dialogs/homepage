@@ -3,8 +3,6 @@ import { Link } from 'gatsby';
 import styled from 'astroturf';
 
 const StyledGatsbyLink = styled(Link)`
-  @import '../../styles/variables.css';
-
   font-size: 18px;
   line-height: 24px;
   position: relative;

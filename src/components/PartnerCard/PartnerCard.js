@@ -5,8 +5,6 @@ import { withProps } from 'astroturf/helpers';
 import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 
 const PartnerCardContainer = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-direction: column;
   height: 320px;
@@ -27,8 +25,6 @@ const PartnerCardHeader = styled.header`
 `;
 
 const PartnerCardImage = styled.img`
-  @import '../../styles/variables.css';
-
   max-width: 140px;
   height: 40px;
 `;
@@ -48,8 +44,6 @@ const PartnerCardBody = styled.div`
 `;
 
 const PartnerCardTitle = styled.h3`
-  @import '../../styles/variables.css';
-
   font-size: 18px;
   line-height: 23px;
   margin: 0;

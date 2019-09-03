@@ -4,8 +4,6 @@ import { withProps } from 'astroturf/helpers';
 import { Text } from '../Text/Text';
 
 const PossibilityCardContainer = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -30,8 +28,6 @@ const PossibilityCardImage = styled.img`
 const PossibilityCardTitle = withProps({ size: 'large', bold: true })(styled(
   Text,
 )`
-  @import '../../styles/variables.css';
-
   display: none;
 
   @media (--mobile-viewport) {
