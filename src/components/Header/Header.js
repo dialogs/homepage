@@ -65,7 +65,6 @@ export function Header({
   if (originalPath.indexOf('/blog/') >= 0) {
     toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
   }
-  console.log({ originalPath, toLink });
 
   if (originalPath.indexOf('/career/') >= 0) {
     toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
@@ -113,7 +112,6 @@ export function Header({
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
-      console.log('unload listeners');
       window.removeEventListener('load', handleWindowLoad);
       window.removeEventListener('scroll', handleScroll);
     };
