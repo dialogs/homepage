@@ -3,7 +3,13 @@
   --acg: var(--advantages-card-gap);
 
   &__title {
-    padding-bottom: calc(var(--acg) * 2.5);
+    text-align: center;
+    @media (--mobile-viewport) {
+      padding-bottom: var(--acg);
+    }
+    @media (--desktop-viewport) {
+      padding-bottom: calc(var(--acg) * 2.5);
+    }
   }
 
   &__row {
@@ -19,6 +25,9 @@
     margin-top: var(--acg);
     margin-right: var(--acg);
     background: var(--color-secondary);
+    @media (--mini-viewport) {
+      padding: 25px;
+    }
     @media (--mobile-viewport) {
       margin-right: 0;
       width: 100%;
