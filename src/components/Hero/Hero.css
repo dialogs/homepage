@@ -23,7 +23,7 @@
     align-items: center;
     margin: auto;
     @media (--tablet-viewport) {
-      width: calc(70% - var(--padding-side-columns) / 2);
+      width: calc(85% - var(--padding-side-columns) / 2);
       padding-bottom: 0;
     }
 
@@ -98,7 +98,6 @@
       right: 50%;
       width: 100vw;
       height: 820px;
-      bottom: 7vw;
       @media (--mobile-viewport) {
         bottom: 10vw;
         height: 620px;
@@ -108,7 +107,7 @@
         height: 720px;
       }
       @media (--laptop-viewport) {
-        bottom: 10vw;
+        bottom: 7vw;
         height: 820px;
       }
     }
