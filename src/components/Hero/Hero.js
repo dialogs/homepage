@@ -41,12 +41,13 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                   {formatMessage({ id: 'button_get_offer' })}
                 </button>
               </div>
-              <Image
-                fadeIn={false}
-                fluid={heroImage.childImageSharp.fluid}
-                alt={formatMessage({ id: 'hero_header' })}
-                className="hero__image"
-              />
+              <div className="hero__image">
+                <Image
+                  fadeIn={false}
+                  fluid={heroImage.childImageSharp.fluid}
+                  alt={formatMessage({ id: 'hero_header' })}
+                />
+              </div>
               <div className="hero__info">
                 <div className="hero__text hero__text--available hero__text--gray">
                   {formatMessage({ id: 'platform_available' })}

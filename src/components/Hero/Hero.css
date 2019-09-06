@@ -15,19 +15,6 @@
     padding-bottom: 60px;
   }
 
-  &:before {
-    content: '';
-    position: absolute;
-    /* top depends on header's height */
-    bottom: 0;
-    width: 100vw;
-    background: var(--color-gray);
-    transform: translateY(50%) translateX(50%);
-    z-index: -1;
-    right: 50%;
-    height: 1000px;
-  }
-
   &__content {
     padding-bottom: 20px;
     text-align: center;
@@ -35,7 +22,6 @@
     flex-direction: column;
     align-items: center;
     margin: auto;
-
     @media (--tablet-viewport) {
       width: calc(70% - var(--padding-side-columns) / 2);
       padding-bottom: 0;
@@ -88,7 +74,7 @@
     }
 
     &--available {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
 
     &--gray {
@@ -97,33 +83,67 @@
   }
 
   &__image {
-    max-width: 100%;
+    width: 100%;
     display: block;
     margin: 0 auto;
+    position: relative;
 
-    @media (--mobile-viewport) {
-      max-width: 85%;
+    &:before {
+      content: '';
+      position: absolute;
+      /* top depends on header's height */
+      background: var(--color-gray);
+      transform: translateX(50%) translateY(100%);
+      z-index: -1;
+      right: 50%;
+      width: 100vw;
+      height: 820px;
+      bottom: 7vw;
+      @media (--mobile-viewport) {
+        bottom: 10vw;
+        height: 620px;
+      }
+      @media (--tablet-viewport) {
+        bottom: 10vw;
+        height: 720px;
+      }
+      @media (--laptop-viewport) {
+        bottom: 10vw;
+        height: 820px;
+      }
     }
-    @media (--tablet-viewport) {
-      width: calc(100% + var(--padding-side-columns) / 2 - 10px);
-    }
-    @media (--laptop-viewport) {
-      width: calc(60% + var(--padding-side-columns));
+
+    .gatsby-image-wrapper {
+      margin: auto;
+      @media (--mobile-viewport) {
+        max-width: 85%;
+      }
+      @media (--tablet-viewport) {
+        width: calc(80% + var(--padding-side-columns) / 2 - 10px);
+      }
+      @media (--laptop-viewport) {
+        width: calc(60% + var(--padding-side-columns));
+      }
     }
   }
 
   &__info {
     padding-top: 30px;
+    position: relative;
   }
 
   &__row {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
+    @media (--mini-viewport) {
+      overflow-x: auto;
+      justify-content: flex-start;
+    }
   }
 
   &__platform {
-    margin: 0 20px;
+    margin: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
