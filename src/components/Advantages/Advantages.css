@@ -1,0 +1,33 @@
+.advantages {
+  --advantages-card-gap: 20px;
+  --acg: var(--advantages-card-gap);
+
+  &__title {
+    padding-bottom: calc(var(--acg) * 2.5);
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    @media (--tablet-viewport) {
+      margin-right: calc(-1 * var(--acg));
+    }
+  }
+
+  &__card {
+    padding: 45px;
+    margin-top: var(--acg);
+    margin-right: var(--acg);
+    background: var(--color-secondary);
+    @media (--mobile-viewport) {
+      margin-right: 0;
+      width: 100%;
+    }
+    @media (--tablet-viewport) {
+      width: calc(50% - var(--acg));
+    }
+    @media (--laptop-viewport) {
+      width: calc(100% / 3 - var(--acg));
+    }
+  }
+}
