@@ -11,9 +11,11 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
     <StaticQuery
       query={graphql`
         query {
-          heroImage: file(relativePath: { eq: "images/home/hero.png" }) {
+          heroImage: file(
+            relativePath: { eq: "images/home/hero/hero-main.png" }
+          ) {
             childImageSharp {
-              fluid(maxWidth: 780) {
+              fluid(maxWidth: 1200) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -39,12 +41,58 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                   {formatMessage({ id: 'button_get_offer' })}
                 </button>
               </div>
-              <div className="hero__image">
-                <Image
-                  fadeIn={false}
-                  fluid={heroImage.childImageSharp.fluid}
-                  alt={formatMessage({ id: 'hero_header' })}
-                />
+              <Image
+                fadeIn={false}
+                fluid={heroImage.childImageSharp.fluid}
+                alt={formatMessage({ id: 'hero_header' })}
+                className="hero__image"
+              />
+              <div className="hero__info">
+                <div className="hero__text hero__text--available hero__text--gray">
+                  {formatMessage({ id: 'platform_available' })}
+                </div>
+                <div className="hero__row">
+                  <div className="hero__platform">
+                    <img
+                      className="hero__icon"
+                      alt="ios"
+                      src="/images/home/hero/supported-devices-1.png"
+                    />
+                    <div className="hero__text ">iOS</div>
+                  </div>
+                  <div className="hero__platform">
+                    <img
+                      className="hero__icon"
+                      alt="android"
+                      src="/images/home/hero/supported-devices-2.png"
+                    />
+                    <div className="hero__text ">Android</div>
+                  </div>
+                  <div className="hero__platform">
+                    <img
+                      className="hero__icon"
+                      alt="windows"
+                      src="/images/home/hero/supported-devices-3.png"
+                    />
+                    <div className="hero__text ">Windows</div>
+                  </div>
+                  <div className="hero__platform">
+                    <img
+                      className="hero__icon"
+                      alt="macos"
+                      src="/images/home/hero/supported-devices-4.png"
+                    />
+                    <div className="hero__text ">macOS</div>
+                  </div>
+                  <div className="hero__platform">
+                    <img
+                      className="hero__icon"
+                      alt="linux"
+                      src="/images/home/hero/supported-devices-5.png"
+                    />
+                    <div className="hero__text ">Linux</div>
+                  </div>
+                </div>
               </div>
             </div>
           </Section>
