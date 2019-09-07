@@ -24,7 +24,7 @@
     padding: 45px;
     margin-top: var(--acg);
     margin-right: var(--acg);
-    background: var(--color-secondary);
+    background: var(--color-primary-new);
     @media (--mini-viewport) {
       padding: 25px;
     }

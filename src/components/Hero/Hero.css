@@ -92,7 +92,7 @@
       content: '';
       position: absolute;
       /* top depends on header's height */
-      background: var(--color-gray);
+      background: var(--color-secondary-new);
       transform: translateX(50%) translateY(100%);
       z-index: -1;
       right: 50%;
