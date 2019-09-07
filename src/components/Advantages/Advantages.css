@@ -1,14 +1,13 @@
 .advantages {
-  --advantages-card-gap: 20px;
-  --acg: var(--advantages-card-gap);
+  --gap: 20px;
 
   &__title {
     text-align: center;
     @media (--mobile-viewport) {
-      padding-bottom: var(--acg);
+      padding-bottom: var(--gap);
     }
     @media (--desktop-viewport) {
-      padding-bottom: calc(var(--acg) * 2.5);
+      padding-bottom: calc(var(--gap) * 2.5);
     }
   }
 
@@ -16,14 +15,14 @@
     display: flex;
     flex-wrap: wrap;
     @media (--tablet-viewport) {
-      margin-right: calc(-1 * var(--acg));
+      margin-right: calc(-1 * var(--gap));
     }
   }
 
   &__card {
     padding: 45px;
-    margin-top: var(--acg);
-    margin-right: var(--acg);
+    margin-top: var(--gap);
+    margin-right: var(--gap);
     background: var(--color-primary-new);
     @media (--mini-viewport) {
       padding: 25px;
@@ -33,10 +32,10 @@
       width: 100%;
     }
     @media (--tablet-viewport) {
-      width: calc(50% - var(--acg));
+      width: calc(50% - var(--gap));
     }
     @media (--laptop-viewport) {
-      width: calc(100% / 3 - var(--acg));
+      width: calc(100% / 3 - var(--gap));
     }
   }
 }

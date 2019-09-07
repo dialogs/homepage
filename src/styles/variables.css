@@ -58,6 +58,7 @@
   --font-size-subtitle-2: 16px;
   --line-height-subtitle-2: 21px;
   /* paddings & margins */
+  --gap: 20px;
   --padding-top-section: 60px;
   --padding-side-columns: 40px;
   --margin-container-side: 20px;
