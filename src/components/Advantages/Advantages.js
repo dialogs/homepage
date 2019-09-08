@@ -9,24 +9,26 @@ export function Advantages() {
   return (
     <Section className="advantages">
       <PageHeading className="advantages__title">
-        <FormattedMessage id="advantages_header" />
+        <FormattedMessage id="advantages_title" />
       </PageHeading>
-      <div className="advantages__row">
-        <AdvantagesCard
-          image="/images/home/advantages/icon-1.svg"
-          heading="advantages_safe"
-          description="advantages_safe_description"
-        />
-        <AdvantagesCard
-          image="/images/home/advantages/icon-2.svg"
-          heading="advantages_robotics"
-          description="advantages_robotics_description"
-        />
-        <AdvantagesCard
-          image="/images/home/advantages/icon-3.svg"
-          heading="advantages_usability"
-          description="advantages_usability_description"
-        />
+      <div className="scrollable">
+        <div className="advantages__row">
+          <AdvantagesCard
+            image="/images/home/advantages/icon-1.svg"
+            heading="advantages_safe"
+            description="advantages_safe_description"
+          />
+          <AdvantagesCard
+            image="/images/home/advantages/icon-2.svg"
+            heading="advantages_robotics"
+            description="advantages_robotics_description"
+          />
+          <AdvantagesCard
+            image="/images/home/advantages/icon-3.svg"
+            heading="advantages_usability"
+            description="advantages_usability_description"
+          />
+        </div>
       </div>
     </Section>
   );

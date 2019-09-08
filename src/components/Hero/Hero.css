@@ -146,6 +146,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    @media (--mini-viewport) {
+      margin: 20px 30px;
+    }
   }
 
   &__icon {
