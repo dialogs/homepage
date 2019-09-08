@@ -39,7 +39,7 @@
   }
 
   &__card {
-    padding: 45px;
+    padding: var(--gap-2_25);
     margin-top: var(--gap);
     margin-right: var(--gap);
     background: var(--color-primary-new);

@@ -19,6 +19,34 @@
 /* ----------- 1600px - max ----------- */
 @custom-media --desktop-viewport screen and (min-width: 1600px);
 
+.solutions,
+.hero,
+.advantages,
+.advantages2,
+.organize {
+  --gap-n: calc(var(--gap) * -1);
+  --gap-2: calc(var(--gap) * 2);
+  --gap-3: calc(var(--gap) * 3);
+  --gap-4: calc(var(--gap) * 4);
+  --gap-5: calc(var(--gap) * 5);
+  --gap-6: calc(var(--gap) * 6);
+  --gap-0_25: calc(var(--gap) * 0.25); /* 5 */
+  --gap-0_5: calc(var(--gap) * 0.5); /*10*/
+  --gap-0_75: calc(var(--gap) * 0.75); /*15*/
+  --gap-1_25: calc(var(--gap) * 1.25); /*25*/
+  --gap-1_5: calc(var(--gap) * 1.5); /*30*/
+  --gap-1_75: calc(var(--gap) * 1.75); /*35*/
+  --gap-2_25: calc(var(--gap) * 2.25); /*45*/
+  --gap-2_5: calc(var(--gap) * 2.5); /*50*/
+  --gap-n-0_25: calc(var(--gap) * -0.25); /*-5*/
+  --gap-n-0_5: calc(var(--gap) * -0.5); /*-10*/
+  --gap-n-0_75: calc(var(--gap) * -0.75); /*-15*/
+  --gap-n-1_25: calc(var(--gap) * -1.25); /*-25*/
+  --gap-n-1_5: calc(var(--gap) * -1.5); /*-30*/
+  --gap-n-1_75: calc(var(--gap) * -1.75); /*-35*/
+  --gap-n-2_25: calc(var(--gap) * -2.25); /*-45*/
+}
+
 :root {
   /* color */
   --color-primary: #d2fde5;
@@ -41,7 +69,7 @@
   --letter-spacing-content: 0.01em;
   --letter-spacing-0275: 0.275px;
   --font-size-content-2: 16px;
-  --line-height-content-2: 22px;
+  --line-height-content-2: 25px;
   --font-size-content-3: 18px;
   --line-height-content-3: 23px;
   --font-size-footer-nav: 14px;
@@ -65,32 +93,7 @@
   --padding-side-columns: 40px;
   --margin-container-side: 20px;
   --container-margin: 0 var(--margin-container-side);
-
   --gap: 20px;
-  --gap-n: calc(var(--gap) * -1);
-
-  --gap-2: calc(var(--gap) * 2);
-  --gap-3: calc(var(--gap) * 3);
-  --gap-4: calc(var(--gap) * 4);
-  --gap-5: calc(var(--gap) * 5);
-  --gap-6: calc(var(--gap) * 6);
-
-  --gap-0_25: calc(var(--gap) * 0.25); /* 5 */
-  --gap-0_5: calc(var(--gap) * 0.5); /*10*/
-  --gap-0_75: calc(var(--gap) * 0.75); /*15*/
-  --gap-1_25: calc(var(--gap) * 1.25); /*25*/
-  --gap-1_5: calc(var(--gap) * 1.5); /*30*/
-  --gap-1_75: calc(var(--gap) * -1.5); /*-35*/
-  --gap-2_25: calc(var(--gap) * -1.5); /*-45*/
-  --gap-2_5: calc(var(--gap) * 2.5); /*50*/
-  --gap-n-0_25: calc(var(--gap) * -0.25); /*-5*/
-  --gap-n-0_5: calc(var(--gap) * -0.5); /*-10*/
-  --gap-n-0_75: calc(var(--gap) * -0.75); /*-15*/
-  --gap-n-1_25: calc(var(--gap) * -1.25); /*-25*/
-  --gap-n-1_5: calc(var(--gap) * -1.5); /*-30*/
-  --gap-n-1_75: calc(var(--gap) * -1.5); /*-35*/
-  --gap-n-2_25: calc(var(--gap) * -1.5); /*-45*/
-
   --wrapper-width: 600px;
   --wrapper-margin: calc((100% - var(--wrapper-width)) / 2);
 
@@ -129,7 +132,7 @@
     --font-size-content: 18px;
     --line-height-content: 29px;
     --font-size-content-2: 18px;
-    --line-height-content-2: 23px;
+    --line-height-content-2: 26px;
     --font-size-content-3: 24px;
     --line-height-content-3: 31px;
     --line-height-footer-nav: 18px;
