@@ -5,7 +5,8 @@ import { Container } from '../components/Container/Container';
 import Hero from '../components/Hero';
 // import { Platform } from '../components/Platform/Platform';
 import { Advantages } from '../components/Advantages/Advantages';
-import { Safety } from '../components/Safety/Safety';
+import { Advantages2 } from '../components/Advantages2/Advantages2';
+// import { Safety } from '../components/Safety/Safety';
 import { Incompany } from '../components/Incompany/Incompany';
 import { Easy } from '../components/Easy/Easy';
 import { Business } from '../components/Business/Business';
@@ -21,8 +22,9 @@ export default ({
       <Container>
         <Hero />
         <Advantages />
+        <Advantages2 />
         {/*<Platform />*/}
-        <Safety language={language} />
+        {/*<Safety language={language} />*/}
         <Incompany />
         <Easy />
         <Business language={language} />
