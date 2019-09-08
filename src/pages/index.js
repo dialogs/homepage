@@ -6,6 +6,8 @@ import Hero from '../components/Hero';
 // import { Platform } from '../components/Platform/Platform';
 import { Advantages } from '../components/Advantages/Advantages';
 import { Advantages2 } from '../components/Advantages2/Advantages2';
+import { Solutions } from '../components/Solutions/Solutions';
+import { Organize } from '../components/Organize/Organize';
 // import { Safety } from '../components/Safety/Safety';
 import { Incompany } from '../components/Incompany/Incompany';
 import { Easy } from '../components/Easy/Easy';
@@ -23,10 +25,12 @@ export default ({
         <Hero />
         <Advantages />
         <Advantages2 />
+        <Solutions language={language} />
+        <Organize />
         {/*<Platform />*/}
         {/*<Safety language={language} />*/}
-        <Incompany />
-        <Easy />
+        {/*<Incompany />*/}
+        {/*<Easy />*/}
         <Business language={language} />
         <Offer language={language} />
       </Container>
