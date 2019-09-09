@@ -54,7 +54,7 @@
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1440x) {
     &__subtitle {
       min-height: 58px;
     }
@@ -67,7 +67,11 @@
         min-height: 79px;
       }
     }
-
+  }
+  @media (min-width: 1200px) {
+    &__subtitle {
+      min-height: 58px;
+    }
     &__row {
       width: 100%;
       display: flex;

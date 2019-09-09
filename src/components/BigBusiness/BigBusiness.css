@@ -8,13 +8,21 @@
     @media (max-width: 1440px) {
       margin: var(--container-margin);
     }
-    @media (max-width: 767px) {
+    @media (max-width: 820px) {
       margin: 0;
       margin-left: -1px;
     }
   }
 
+  &__image {
+    img {
+      display: block;
+    }
+  }
+
   &__title {
+    padding: 0 var(-gap);
+
     &--main {
       text-align: center;
     }
@@ -41,7 +49,7 @@
     }
 
     &--image {
-      width: 270px;
+      min-width: 270px;
       overflow: hidden;
       position: relative;
     }
@@ -107,6 +115,9 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 8;
     overflow: hidden;
+    @media (max-width: 575px) {
+      margin-bottom: var(--gap-1_5);
+    }
   }
 
   &__name {
@@ -118,6 +129,10 @@
     position: absolute;
     bottom: var(--gap);
     right: var(--gap);
+    @media (min-width: 575px) and (max-width: 720px) {
+      bottom: auto;
+      top: var(--gap-1_25);
+    }
 
     span {
       white-space: nowrap;
