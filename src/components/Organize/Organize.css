@@ -17,7 +17,7 @@
   }
 
   &__subtitle {
-    font-size: calc(var(--font-size-subtitle) + 0.1vw);
+    font-size: var(--font-size-subtitle);
     line-height: var(--line-height-subtitle);
     margin-top: var(--gap-1_5);
     margin-bottom: 0;
@@ -85,21 +85,24 @@
 
     &__col {
       min-width: 100%;
-      padding-bottom: var(--gap-3);
     }
   }
 
   @media (max-width: 1023px) {
+    padding-bottom: var(--gap-3);
+    &__subtitle {
+      --font-size-subtitle: 16px;
+    }
   }
 
   @media (max-width: 767px) {
-    --gap: 30px;
+    --gap: 20px;
     --negative-fix: var(--gap-2_25);
     &__row {
       width: 100%;
     }
     &__col {
-      --gap: 20px;
+      padding-bottom: 0;
     }
   }
 
