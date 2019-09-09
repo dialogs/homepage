@@ -1,13 +1,21 @@
 .organize {
+  --gap: 20px;
   --negative-fix: var(--gap-2);
 
   &__row {
     display: flex;
   }
 
+  &__wrapper {
+    width: calc(100% + var(--gap-2) * 2);
+    position: relative;
+    margin-left: var(--gap-n-2);
+    margin-right: var(--gap-n-2);
+  }
+
   &__col {
     width: 50%;
-    padding: var(--negative-fix);
+    padding: var(--gap-2);
   }
 
   &__title {
@@ -31,7 +39,8 @@
   &__item {
     font-size: var(--font-size-content-2);
     line-height: var(--line-height-content-2);
-    margin-top: var(--gap) !important;
+    margin-top: var(--gap-0_5) !important;
+    padding-left: 40px;
 
     &:before {
       content: '';
@@ -43,10 +52,6 @@
       width: 20px;
       height: 20px;
     }
-  }
-
-  @media (min-width: 1440px) {
-    margin: 0 calc(-1 * var(--negative-fix));
   }
 
   @media (min-width: 1200px) {
@@ -69,14 +74,6 @@
   }
 
   @media (max-width: 1199px) {
-    --negative-fix: 0;
-
-    &__wrapper {
-      width: calc(100% + var(--margin-container-side) * 2);
-      position: relative;
-      margin-left: calc(var(--margin-container-side) * -1);
-      margin-right: calc(var(--margin-container-side) * -1);
-    }
     &__row {
       width: var(--wrapper-width);
       flex-wrap: wrap;
@@ -96,18 +93,23 @@
   }
 
   @media (max-width: 767px) {
-    --gap: 20px;
-    --negative-fix: var(--gap-2_25);
     &__row {
       width: 100%;
     }
+    &__wrapper {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
     &__col {
-      padding-bottom: 0;
+      padding-left: var(--gap-2_25);
+      padding-right: var(--gap-2_25);
     }
   }
-
   @media (max-width: 575px) {
-    --gap: 20px;
-    --negative-fix: var(--gap-1_25);
+    &__col {
+      padding-left: var(--gap-0_5);
+      padding-right: var(--gap-0_5);
+    }
   }
 }

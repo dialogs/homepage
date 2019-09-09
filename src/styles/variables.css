@@ -24,7 +24,8 @@
 .advantages,
 .advantages2,
 .organize,
-.optimize {
+.optimize,
+.bigb {
   --gap: 20px;
   --gap-n: calc(var(--gap) * -1); /* -20 */
   --gap-2: calc(var(--gap) * 2); /* 40 */
