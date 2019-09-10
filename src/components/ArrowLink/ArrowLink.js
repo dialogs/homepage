@@ -40,6 +40,16 @@ const StyledGatsbyLink = styled(Link)`
         background-color: var(--color-secondary);
       }
     }
+    &.black {
+      &:before {
+        background-color: #000000;
+      }
+    }
+    &.primary-new {
+      &:before {
+        background-color: var(--color-primary-new);
+      }
+    }
   }
 `;
 
