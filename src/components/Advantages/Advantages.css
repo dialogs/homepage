@@ -1,39 +1,15 @@
 .advantages {
   &__title {
     text-align: center;
-    @media (--mobile-viewport) {
-      padding-bottom: var(--gap);
-    }
-    @media (--desktop-viewport) {
-      padding-bottom: var(--gap-2_5);
-    }
-
-    &--card {
-      min-height: var(--gap-2);
-    }
   }
-
   &__row {
     display: flex;
-    overflow-x: auto;
-
-    @media (--mobile-viewport) {
-      margin: 0 calc(var(--margin-container-side) * -1 - var(--gap)) 0 0;
-    }
+    justify-content: center;
+    flex-wrap: wrap;
     @media (--tablet-viewport) {
-      margin: auto;
-      width: var(--wrapper-width);
-      flex-wrap: nowrap;
-    }
-    @media (--middle-viewport) {
-      margin: 0 calc(var(--margin-container-side) * -1 - var(--gap)) 0 0;
-      width: auto;
-    }
-    @media (--laptop-viewport) {
-      flex-wrap: wrap;
+      margin-right: var(--gap-n);
     }
     @media (--desktop-viewport) {
-      margin: 0 var(--gap-n) 0 0;
       flex-wrap: nowrap;
     }
   }
@@ -41,25 +17,19 @@
   &__card {
     padding: var(--gap-2_25);
     margin-top: var(--gap);
-    margin-right: var(--gap);
     background: var(--color-primary-new);
     @media (--mini-viewport) {
-      padding: var(--gap-1_25);
+      padding: var(--gap-1_5);
     }
     @media (--mobile-viewport) {
-      min-width: 65%;
+      width: 100%;
     }
     @media (--tablet-viewport) {
-      min-width: 100%;
-    }
-    @media (--middle-viewport) {
-      min-width: 500px;
-    }
-    @media (--laptop-viewport) {
-      width: 600px;
+      margin-right: var(--gap);
+      width: calc(100% / 2 - var(--gap));
     }
     @media (--desktop-viewport) {
-      min-width: calc(100% / 3 - var(--gap));
+      width: calc(100% / 3 - var(--gap));
       margin-right: var(--gap);
     }
   }

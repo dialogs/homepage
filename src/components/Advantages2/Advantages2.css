@@ -8,20 +8,20 @@
   --card-padding-mini: var(--gap-1_25) var(--gap-2_5) var(--gap-1_25)
     var(--gap-1_25);
   --card-negative-margin: calc(-1 * var(--icon-height) + var(--gap-2));
-  --col-min-width-small: 50%;
-  --col-min-width-big: 70%;
-  @media (max-width: 890px) {
-    --col-min-width-small: 60%;
+  --col-min-width: 50%;
+  @media (max-width: 900px) {
+    --col-min-width: 70%;
   }
   @media (--mobile-viewport) {
     margin-top: var(--gap-2);
   }
+  @media (--mini-viewport) {
+    --col-min-width: 100%;
+  }
 
   &__wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
     display: flex;
-    @media (--middle-viewport) {
+    @media (min-width: 401px) {
       flex-wrap: wrap;
     }
   }
@@ -29,35 +29,11 @@
   &__title {
     text-align: center;
     margin: 0;
-    padding: 0 30px;
-    @media (--mini-viewport) {
-      width: 100vw;
-    }
   }
 
   &__item {
     min-width: 100%;
     margin-top: 0;
-    @media (--mobile-viewport) {
-      margin-right: 50px;
-      min-width: 80%;
-      margin-left: 10%;
-    }
-    @media (max-width: 550px) {
-      margin-right: 150px;
-      margin-left: 0;
-      min-width: 100%;
-    }
-    @media (max-width: 400px) {
-      margin-right: 150px;
-      margin-left: 0;
-      min-width: 430px;
-    }
-    @media (--middle-viewport) {
-      &:not(:first-child) {
-        margin-top: var(--gap-4);
-      }
-    }
   }
 
   &__row {
@@ -67,10 +43,10 @@
     align-content: center;
     flex-wrap: wrap;
     padding: var(--gap-2) 0 var(--gap-2);
-    height: 100%;
-    @media (--tablet-viewport) {
-      min-width: 650px;
-    }
+    margin-bottom: var(--gap-2);
+    min-width: 650px;
+    min-height: 550px;
+
     @media (--middle-viewport) {
       flex-wrap: nowrap;
       justify-content: center;
@@ -84,6 +60,20 @@
         --phone-gap: var(--phone-gap-small);
       }
     }
+
+    @media (max-width: 1199px) {
+      &.responsive-align {
+        .advantages2__image {
+          transform: translateX(-50%) translateY(30px);
+        }
+      }
+    }
+    @media (--mobile-viewport) {
+      min-width: 100%;
+    }
+    @media (--mini-viewport) {
+      min-height: 0;
+    }
   }
 
   &__col {
@@ -91,16 +81,11 @@
     &--card {
       margin-top: var(--phone-gap);
       flex: 0;
-      min-width: var(--col-min-width-small);
+      min-width: var(--col-min-width);
       margin-left: var(--wrapper-margin);
       margin-right: auto;
-      z-index: 2;
       padding: var(--card-padding-small);
-      @media (--mobile-viewport) {
-        margin-left: 0;
-        padding: var(--card-padding-mini);
-        min-width: var(--col-min-width-big);
-      }
+
       @media (--laptop-viewport) {
         max-height: 300px;
       }
@@ -113,46 +98,64 @@
         margin-left: 0;
         z-index: 0;
       }
+      @media (max-width: 1439px) {
+        --gap: 2vw;
+      }
+      @media (max-width: 900px) {
+        --gap: 20px;
+        margin-left: 0;
+      }
+      @media (--mobile-viewport) {
+        margin-left: 0;
+        padding: var(--card-padding-mini);
+      }
     }
 
     &--icon {
-      margin-bottom: var(--card-negative-margin);
-      @media (--middle-viewport) {
-        margin-bottom: 0;
+      z-index: 1;
+      @media (max-width: 1199px) {
+        margin-bottom: var(--card-negative-margin);
+        margin-top: var(--card-negative-margin);
       }
     }
 
     &--phone {
-      z-index: 1;
-      position: absolute;
-      right: calc(100% - var(--col-min-width-small) - var(--wrapper-margin));
-      top: 50%;
-      transform: translateY(-50%) translateX(calc(100% - var(--gap-1_5)));
-      @media (--mobile-viewport) {
-        right: calc(100% - var(--col-min-width-big));
+      z-index: 3;
+      @media (max-width: 1199px) {
+        transform: translateY(-50%) translateX(calc(100% - var(--gap-1_5)));
+        right: calc(100% - var(--col-min-width) - var(--wrapper-margin));
+        top: 50%;
+        position: absolute;
       }
-      @media (--middle-viewport) {
-        transform: none;
-        position: static;
+      @media (max-width: 900px) {
+        right: calc(100% - var(--col-min-width));
+      }
+      @media (--mini-viewport) {
+        display: none;
       }
     }
 
     &--card {
+      z-index: 2;
       background: var(--color-primary-new);
       padding-top: var(--gap);
-      @media (--mobile-viewport) {
-        padding-top: var(--gap-0_25);
-      }
       @media (--middle-viewport) {
         transform: translateX(var(--gap-n-0_5));
         margin-right: var(--gap-n-0_5);
         padding-top: var(--gap-icon);
       }
+      @media (max-width: 900px) {
+        margin-left: 0;
+      }
+      @media (--mobile-viewport) {
+        padding-top: var(--gap-0_25);
+      }
     }
   }
 
   &__text {
-    margin: var(--gap) 0 0;
+    margin: 0;
+    margin-top: var(--gap);
   }
 
   &__icon {

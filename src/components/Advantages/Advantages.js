@@ -11,7 +11,7 @@ export function Advantages() {
       <PageHeading className="advantages__title">
         <FormattedMessage id="advantages_title" />
       </PageHeading>
-      <div className="scrollable">
+      <div>
         <div className="advantages__row">
           <AdvantagesCard
             image="/images/home/advantages/icon-1.svg"

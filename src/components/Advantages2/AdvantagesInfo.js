@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Section } from '../Section/Section';
+import { Heading } from '../Heading/Heading';
 
 export function AdvantagesInfo({ index, row }) {
   let rowClass = row
@@ -9,9 +10,9 @@ export function AdvantagesInfo({ index, row }) {
 
   return (
     <div className="advantages2__item">
-      <h2 className="advantages2__title">
+      <Heading level="2" className="advantages2__title">
         <FormattedMessage id={'advantages2_title_' + index} />
-      </h2>
+      </Heading>
 
       <div className={rowClass}>
         <div className="advantages2__col advantages2__col--icon">
