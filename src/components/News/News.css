@@ -1,0 +1,34 @@
+.news {
+  background: var(--color-secondary-new);
+  &__link {
+    text-align: center;
+    margin-top: var(--gap-3);
+  }
+
+  .blog__roster-item-link {
+    background: #fff;
+    padding: 0 25px 30px;
+    &:before {
+      background: var(--color-primary-new);
+    }
+  }
+  .blog__roster-image {
+    display: block;
+    margin-left: -25px;
+    margin-right: -25px;
+    min-height: 0;
+  }
+  .blog__roster-item-link:hover {
+    .blog__roster-date {
+      color: #000;
+    }
+  }
+  .blog__roster-image-box,
+  .blog__roster-date,
+  .blog__roster-short {
+    z-index: 2;
+  }
+  .blog__roster-item-link:before {
+    z-index: 1;
+  }
+}
