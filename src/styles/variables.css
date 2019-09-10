@@ -25,7 +25,8 @@
 .advantages2,
 .organize,
 .optimize,
-.bigb {
+.bigb,
+.news {
   --gap: 20px;
   --gap-n: calc(var(--gap) * -1); /* -20 */
   --gap-2: calc(var(--gap) * 2); /* 40 */
@@ -99,7 +100,7 @@
   --padding-side-columns: 40px;
   --margin-container-side: 20px;
   --container-margin: 0 var(--margin-container-side);
-  --wrapper-width: 600px;
+  --wrapper-width: 700px;
   --wrapper-margin: calc((100% - var(--wrapper-width)) / 2);
 
   @media (--mobile-viewport) {
