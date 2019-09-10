@@ -3,7 +3,7 @@
  */
 
 .site__footer {
-  background: var(--color-primary);
+  background: var(--color-primary-new);
 }
 
 .footer {
@@ -64,7 +64,6 @@
           width: 80px;
           height: 80px;
           left: 100%;
-          background: #000;
         }
 
         @media (--laptop-viewport) {
@@ -193,6 +192,11 @@
   }
 
   &__bottom {
+    background: var(--color-primary-new);
+
+    @media (--laptop-viewport) {
+      margin-top: -130px;
+    }
   }
 
   &__copyright {
@@ -224,7 +228,6 @@
       bottom: 0;
       left: calc(-1 * var(--margin-container-side));
       right: calc(-1 * var(--margin-container-side));
-      background: #fff;
 
       @media (--tablet-viewport) {
         right: 0;
@@ -243,7 +246,6 @@
         bottom: 0;
         width: 80px;
         left: calc(100vw - 80px - var(--margin-container-side));
-        background: #000;
       }
 
       @media (--tablet-landscape-viewport) {
@@ -254,7 +256,6 @@
     &-text {
       font-size: 14px;
       line-height: 18px;
-      opacity: 0.2;
     }
   }
 }
