@@ -23,7 +23,7 @@ export function Optimize() {
           }
         }
       `}
-      render={({ optimizeImage }) => {
+      render={({ optimizeImage, language }) => {
         return (
           <Section className="optimize">
             <div className="optimize__wrapper optimize__wrapper--header">
@@ -33,7 +33,11 @@ export function Optimize() {
                     <FormattedMessage id="optimize_title" />
                   </PageHeading>
                   <p className="optimize__text optimize__text--description">
-                    <FormattedHTMLMessage id="optimize_text" />
+                    <FormattedHTMLMessage id="optimize_text_part_1" />
+                    <a href={`/${language}/about`} target="_blank">
+                      Bot SDK
+                    </a>
+                    <FormattedHTMLMessage id="optimize_text_part_2" />
                   </p>
                 </div>
                 <div className="optimize__col--image">

@@ -4,11 +4,6 @@
   --image-width: 97%;
   --image-offset: 50px;
 
-  --card-current-padding: var(--gap);
-  --card-current-padding-double: calc(var(--card-current-padding) * 2);
-  --card-current-padding-tripple: calc(var(--card-current-padding) * 3);
-  --col-text-width: calc(100% - var(--col-image-width));
-
   &__title {
     &--main {
       padding: var(--gap) 0 var(--gap);
@@ -17,7 +12,7 @@
     &--card {
       display: block;
       margin-top: 0;
-      margin-bottom: var(--card-current-padding);
+      margin-bottom: var(--gap);
       font-weight: 500;
     }
   }
@@ -27,6 +22,10 @@
       margin-top: 0;
       display: block;
       width: 80%;
+
+      a {
+        text-decoration: underline;
+      }
     }
 
     &--card {
@@ -90,32 +89,32 @@
 
   &__col {
     display: flex;
-    padding-left: var(--card-current-padding);
-    padding-right: var(--card-current-padding);
+    padding-left: var(--gap);
+    padding-right: var(--gap);
 
     &--image {
       min-width: var(--col-image-width);
     }
 
     &--text {
-      max-width: var(--col-text-width);
+      max-width: calc(100% - var(--col-image-width));
       display: flex;
       flex-wrap: wrap;
       width: 100%;
-      padding-left: var(--card-current-padding-tripple);
-      padding-top: var(--card-current-padding-double);
-      padding-bottom: var(--card-current-padding-double);
+      padding-left: var(--gap-3);
+      padding-top: var(--gap-2);
+      padding-bottom: var(--gap-2);
       padding-right: 0;
     }
 
     &--card {
-      margin-top: calc(var(--card-current-padding) * 2);
+      margin-top: var(--gap-2);
       max-width: calc(100% / 3);
     }
   }
 
   &__card {
-    padding: calc(var(--card-current-padding-double));
+    padding: var(--gap-2);
     background: var(--color-secondary-new);
     border-radius: 12px;
     display: flex;
@@ -128,16 +127,16 @@
     --gap: 1.2vw;
   }
 
-  @media (min-width: 1440px) {
+  @media (--laptop-viewport) {
     &__wrapper {
-      margin: var(--card-current-padding) 0;
+      margin: var(--gap) 0;
     }
   }
 
   @media (max-width: 1439px) {
-    --image-offset: 5vw;
-    --col-image-width: 30%;
-    --image-width: 100%;
+    --image-offset: 3vw;
+    --col-image-width: 35%;
+    --image-width: 85%;
   }
 
   @media (max-width: 1199px) {
@@ -156,7 +155,7 @@
     }
   }
 
-  @media (max-width: 767px) {
+  @media (--tablet-viewport) {
     &__row {
       &--header {
         margin-top: var(--gap-3);
@@ -164,10 +163,10 @@
     }
   }
 
-  @media (max-width: 700px) {
-    --gap: 20px;
+  @media (--mobile-viewport) {
+    --gap: 10px;
     --col-image-width: 100%;
-    --image-width: 50%;
+    --image-width: 80%;
 
     &__row {
       &--header {
@@ -178,30 +177,23 @@
     }
 
     &__col {
-      --card-current-padding: 0;
-      min-width: calc(var(--wrapper-width) - 15vw);
       margin-left: auto;
       margin-right: auto;
 
-      &--card {
-        margin-top: var(--gap-2);
-      }
-
       &--image {
         position: static;
+        margin-bottom: var(--gap);
       }
 
       &--text {
         padding-left: 0;
         padding-top: 0;
-        text-align: center;
         min-width: calc(100% - var(--gap-1_75));
       }
     }
 
     &__text--description {
       width: calc(100% - var(--gap-2));
-      text-align: center;
     }
 
     .gatsby-image-wrapper {
@@ -214,8 +206,15 @@
   }
 
   @media (max-width: 575px) {
+    --gap: 20px;
     &__col {
       min-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+
+      &--card {
+        margin-top: var(--gap);
+      }
     }
     &__row {
       margin-left: 0;
