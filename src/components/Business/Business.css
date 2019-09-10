@@ -1,8 +1,4 @@
 .business {
-  @media (--mobile-viewport) {
-    padding-top: 10px;
-  }
-
   & .heading {
     padding: 0;
   }
@@ -10,5 +6,23 @@
   &__img {
     max-width: 230px;
     margin-left: 60px;
+  }
+
+  .box {
+    margin-top: var(--padding-top-section);
+    &:last-child {
+      margin-bottom: var(--padding-side-columns);
+    }
+  }
+
+  @media (--mobile-viewport) {
+    padding-top: 10px;
+  }
+  @media (--tablet-landscape-viewport) {
+    &__info-item {
+      &--box {
+        width: calc(33% - var(--padding-side-columns) / 2);
+      }
+    }
   }
 }

@@ -7,6 +7,7 @@ import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
 
 import './Business.css';
+import { ArrowLink } from '../ArrowLink/ArrowLink';
 
 export function Business({ language }) {
   return (
@@ -73,6 +74,29 @@ export function Business({ language }) {
                   )}
                 </FormattedMessage>
               </div>
+            </div>
+            <div className="box">
+              <Heading level="2" className="box__title">
+                <FormattedMessage id="bigbusiness_title" />
+              </Heading>
+              <div className="box__content">
+                <ul className="business__info-list list list--secondary">
+                  <li className="business__info-item business__info-item--box">
+                    <FormattedMessage id="bigbusiness_platform" />
+                  </li>
+                  <li className="business__info-item business__info-item--box">
+                    <FormattedMessage id="bigbusiness_access" />
+                  </li>
+                  <li className="business__info-item business__info-item--box">
+                    <FormattedMessage id="bigbusiness_api" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="box">
+              <ArrowLink to={`/${language}/integrations`} underline primary-new>
+                <FormattedMessage id="solutions_learn_more" />
+              </ArrowLink>
             </div>
           </Section>
         );
