@@ -1,53 +1,39 @@
 import React from 'react';
-import './Solutions.css';
-import { Section } from '../Section/Section';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { Container } from '../Container/Container';
+import { PageHeading } from '../PageHeading/PageHeading';
 import { ArrowLink } from '../ArrowLink/ArrowLink';
+import { Section } from '../Section/Section';
 
 export function Solutions({ language }) {
   return (
-    <Section className="solutions stretch">
-      <div className="solutions__wrapper">
-        <div className="solutions__row">
-          <div className="solutions__col solutions__col--title">
-            <h2 className="solutions__title page_header">
-              <FormattedMessage id="solutions_title_1" />
-            </h2>
-          </div>
-          <div className="solutions__col solutions__col--link">
-            <div className="solutions__text">
-              <FormattedMessage id="solutions_text_1" />
-            </div>
-            <ArrowLink
-              to={`/${language}/patents`}
-              className="solutions__link solutions__link--primary-new"
-              underline
-            >
+    <Section className="about__green_section about__green_section--new stretch">
+      <Container>
+        <PageHeading className="about__green_section_header">
+          <FormattedMessage id="solutions_title_1" />
+        </PageHeading>
+        <div className="about__green_section_text_wrapper">
+          <FormattedHTMLMessage id="solutions_text_1" />
+          <div className="about__read_more">
+            <ArrowLink to={`/${language}/partners`} underline black>
               <FormattedMessage id="solutions_learn_more" />
             </ArrowLink>
           </div>
         </div>
-
-        <div className="solutions__row">
-          <div className="solutions__col solutions__col--title">
-            <h2 className="solutions__title page_header">
-              <FormattedMessage id="solutions_title_2" />
-            </h2>
-          </div>
-          <div className="solutions__col solutions__col--link">
-            <div className="solutions__text">
-              <FormattedMessage id="solutions_text_2" />
-            </div>
-            <ArrowLink
-              to={`/${language}/patents`}
-              className="solutions__link solutions__link--primary-new"
-              underline
-            >
+      </Container>
+      <Container>
+        <PageHeading className="about__green_section_header">
+          <FormattedMessage id="solutions_title_2" />
+        </PageHeading>
+        <div className="about__green_section_text_wrapper">
+          <FormattedHTMLMessage id="solutions_text_2" />
+          <div className="about__read_more">
+            <ArrowLink to={`/${language}/integrations`} underline black>
               <FormattedMessage id="solutions_learn_more" />
             </ArrowLink>
           </div>
         </div>
-      </div>
+      </Container>
     </Section>
   );
 }
