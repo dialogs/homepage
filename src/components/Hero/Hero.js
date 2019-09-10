@@ -59,7 +59,7 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                       alt="ios"
                       src="/images/home/hero/supported-devices-1.png"
                     />
-                    <div className="hero__text ">iOS</div>
+                    <div className="hero__text hero__text--icon">iOS</div>
                   </div>
                   <div className="hero__platform">
                     <img
@@ -67,7 +67,7 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                       alt="android"
                       src="/images/home/hero/supported-devices-2.png"
                     />
-                    <div className="hero__text ">Android</div>
+                    <div className="hero__text hero__text--icon">Android</div>
                   </div>
                   <div className="hero__platform">
                     <img
@@ -75,7 +75,7 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                       alt="windows"
                       src="/images/home/hero/supported-devices-3.png"
                     />
-                    <div className="hero__text ">Windows</div>
+                    <div className="hero__text hero__text--icon">Windows</div>
                   </div>
                   <div className="hero__platform">
                     <img
@@ -83,7 +83,7 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                       alt="macos"
                       src="/images/home/hero/supported-devices-4.png"
                     />
-                    <div className="hero__text ">macOS</div>
+                    <div className="hero__text hero__text--icon">macOS</div>
                   </div>
                   <div className="hero__platform">
                     <img
@@ -91,7 +91,7 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                       alt="linux"
                       src="/images/home/hero/supported-devices-5.png"
                     />
-                    <div className="hero__text ">Linux</div>
+                    <div className="hero__text hero__text--icon">Linux</div>
                   </div>
                 </div>
               </div>
