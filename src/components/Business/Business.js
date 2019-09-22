@@ -14,9 +14,7 @@ export function Business({ language }) {
     <StaticQuery
       query={graphql`
         query {
-          image: file(
-            relativePath: { eq: "images/home/business/man2@2x.png" }
-          ) {
+          image: file(relativePath: { eq: "images/home/business/man2.png" }) {
             childImageSharp {
               fluid(maxWidth: 230) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -81,20 +79,37 @@ export function Business({ language }) {
               </Heading>
               <div className="box__content">
                 <ul className="business__info-list list list--secondary">
-                  <li className="business__info-item business__info-item--box">
-                    <FormattedMessage id="bigbusiness_platform" />
+                  <li className="business__info-logo-item business__info-logo-item--skolkovo business__info-item--box">
+                    <img
+                      src="/images/home/business/skolkovo.png"
+                      alt={language === 'ru' ? 'Сколково' : 'Skolkovo'}
+                    />
+                    <FormattedMessage id="bigbusiness_skolkovo" />
                   </li>
-                  <li className="business__info-item business__info-item--box">
-                    <FormattedMessage id="bigbusiness_access" />
+                  <li className="business__info-logo-item business__info-logo-item--soft business__info-item--box">
+                    <img
+                      src="/images/home/business/soft.png"
+                      alt={
+                        language === 'ru' ? 'Отечественный софт' : 'Local Soft'
+                      }
+                    />
+                    <FormattedMessage id="bigbusiness_soft" />
                   </li>
-                  <li className="business__info-item business__info-item--box">
-                    <FormattedMessage id="bigbusiness_api" />
+                  <li className="business__info-logo-item business__info-logo-item--ade business__info-item--box">
+                    <img
+                      src="/images/home/business/ade.png"
+                      alt={language === 'ru' ? 'АДЭ' : 'ADE'}
+                    />
+                    <FormattedMessage id="bigbusiness_ade" />
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="box">
-              <ArrowLink to={`/${language}/integrations`} underline primary-new>
+              <ArrowLink
+                to={`/${language}/integrations`}
+                underline
+                primary-new
+                className="business__link"
+              >
                 <FormattedMessage id="solutions_learn_more" />
               </ArrowLink>
             </div>
