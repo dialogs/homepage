@@ -145,6 +145,11 @@
     }
   }
 
+  &__green_section_title:not(#_) {
+    width: 100%;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 10px;
+  }
   &__green_section_header {
     @media (--tablet-landscape-viewport) {
       display: block;
