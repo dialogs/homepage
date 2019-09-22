@@ -33,7 +33,7 @@ const FooterUnderlineLink = withProps({
 `);
 
 const FooterContactUnderlineLink = withProps({
-  intent: 'primary',
+  intent: 'secondarynew',
   rel: 'noopener noreferrer',
   target: '_blank',
   invert: false,
