@@ -50,6 +50,11 @@ const StyledGatsbyLink = styled(Link)`
         background-color: var(--color-primary-new);
       }
     }
+    &.secondary-new {
+      &:before {
+        background-color: var(--color-secondary-new);
+      }
+    }
   }
 `;
 
