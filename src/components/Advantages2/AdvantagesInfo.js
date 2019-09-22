@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
 
 export function AdvantagesInfo({ index, row }) {

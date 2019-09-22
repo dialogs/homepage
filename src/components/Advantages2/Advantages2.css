@@ -1,7 +1,7 @@
 .advantages2 {
   --icon-height: 48px;
-  --phone-gap-small: var(--icon-height);
-  --phone-gap-big: 62px;
+  --phone-gap-small: 58px;
+  --phone-gap-big: 54px;
   --gap-icon: calc(var(--icon-height) + var(--gap));
   --card-padding-big: var(--gap) var(--gap-3) var(--gap-4);
   --card-padding-small: var(--gap) var(--gap-2) var(--gap-2);
@@ -9,6 +9,7 @@
     var(--gap-1_25);
   --card-negative-margin: calc(-1 * var(--icon-height) + var(--gap-2));
   --col-min-width: 50%;
+
   @media (max-width: 900px) {
     --col-min-width: 70%;
   }
@@ -21,9 +22,7 @@
 
   &__wrapper {
     display: flex;
-    @media (min-width: 401px) {
-      flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
   }
 
   &__title {
@@ -113,9 +112,25 @@
 
     &--icon {
       z-index: 1;
+      background: #ffffff;
+      position: relative;
       @media (max-width: 1199px) {
         margin-bottom: var(--card-negative-margin);
         margin-top: var(--card-negative-margin);
+      }
+      @media (--mini-viewport) {
+        padding-left: 0;
+        padding-right: 0;
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          top: 0;
+          height: 50px;
+          width: calc(100% + var(--gap-2));
+          left: var(--gap-n);
+          box-shadow: 0 -11px 15px rgba(0, 0, 0, 0.1);
+        }
       }
     }
 
@@ -131,7 +146,15 @@
         right: calc(100% - var(--col-min-width));
       }
       @media (--mini-viewport) {
-        display: none;
+        position: static;
+        transform: none;
+        right: 0;
+        top: 0;
+        display: block;
+        margin: auto;
+        margin-bottom: -25%;
+        order: -1;
+        z-index: -1;
       }
     }
 
@@ -165,6 +188,7 @@
   }
 
   &__image {
+    max-width: 210px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
