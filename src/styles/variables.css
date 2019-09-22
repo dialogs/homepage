@@ -32,6 +32,7 @@
   --gap-2: calc(var(--gap) * 2); /* 40 */
   --gap-n-2: calc(var(--gap) * -2); /* -40 */
   --gap-3: calc(var(--gap) * 3); /* 60 */
+  --gap-3_5: calc(var(--gap) * 3.5); /* 70 */
   --gap-n-3: calc(var(--gap) * -3); /* -60 */
   --gap-4: calc(var(--gap) * 4); /* 80 */
   --gap-n-4: calc(var(--gap) * -4); /* -80 */
@@ -52,6 +53,7 @@
   --gap-n-1_5: calc(var(--gap) * -1.5); /*-30*/
   --gap-n-1_75: calc(var(--gap) * -1.75); /*-35*/
   --gap-n-2_25: calc(var(--gap) * -2.25); /*-45*/
+  --gap-n-2_5: calc(var(--gap) * -2.5); /*-50*/
 }
 
 :root {

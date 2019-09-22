@@ -1,11 +1,3 @@
-.scrollable {
-  position: relative;
-
-  @media (--mobile-viewport) {
-    margin: 0 calc(var(--margin-container-side) * -1);
-  }
-}
-
 .stretch {
   position: relative;
   left: 50%;
@@ -13,25 +5,5 @@
   transform: translateX(-50%);
   @media (max-width: 1599px) {
     width: calc(100% + var(--margin-container-side) * 2);
-  }
-
-  &--news {
-    width: 100%;
-    transform: none;
-    left: auto;
-    &:before {
-      z-index: -1;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      height: 100%;
-      transform: translateX(-50%);
-      background: var(--color-secondary-new);
-      width: calc(100% + calc(100vw - 1320px / 2));
-      @media (max-width: 1599px) {
-        width: calc(100% + var(--margin-container-side) * 2);
-      }
-    }
   }
 }
