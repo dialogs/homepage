@@ -6,6 +6,7 @@ import { PageHeading } from '../PageHeading/PageHeading';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { graphql, StaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
+import { ArrowLink } from '../ArrowLink/ArrowLink';
 
 export function Optimize() {
   return (
@@ -16,7 +17,7 @@ export function Optimize() {
             relativePath: { eq: "images/home/optimize/puzzle-illustration.png" }
           ) {
             childImageSharp {
-              fluid(maxWidth: 1200) {
+              fluid(maxWidth: 479) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -32,14 +33,21 @@ export function Optimize() {
                   <PageHeading className="optimize__title optimize__title--main">
                     <FormattedMessage id="optimize_title" />
                   </PageHeading>
-                  <p className="optimize__text optimize__text--description">
+
+                  <h3 className="optimize__text optimize__text--description">
                     <FormattedHTMLMessage id="optimize_text_part_1" />
-                    <a href={`/${language}/about`} target="_blank">
+                    <a
+                      className="optimize__link"
+                      href={`/${language}/about`}
+                      target="_blank"
+                    >
                       Bot SDK
                     </a>
+                    <br />
                     <FormattedHTMLMessage id="optimize_text_part_2" />
-                  </p>
+                  </h3>
                 </div>
+
                 <div className="optimize__col--image">
                   <div className="optimize__image">
                     <Image
@@ -51,7 +59,11 @@ export function Optimize() {
                 </div>
               </div>
             </div>
+
             <div className="optimize__wrapper optimize__wrapper--cards">
+              <h2 className="optimize__title--secondary">
+                <FormattedHTMLMessage id="optimize_subtitle" />
+              </h2>
               <div className="optimize__row optimize__row--cards">
                 <OptimizeCard
                   image="/images/home/optimize/google.svg"
@@ -91,6 +103,14 @@ export function Optimize() {
                 />
               </div>
             </div>
+            <ArrowLink
+              to={`/${language}/about`}
+              underline
+              primary-new
+              className="optimize__link--arrow"
+            >
+              <FormattedHTMLMessage id="optimize_link" />
+            </ArrowLink>
           </Section>
         );
       }}

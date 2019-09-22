@@ -1,8 +1,15 @@
 .optimize {
   --gap: 20px;
-  --col-image-width: 35%;
-  --image-width: 97%;
-  --image-offset: 50px;
+  --col-image-width: 45%;
+  --image-width: 80%;
+  --image-offset: 25px;
+
+  br {
+    display: none;
+    @media (max-width: 1180px) {
+      display: none;
+    }
+  }
 
   &__title {
     &--main {
@@ -15,13 +22,39 @@
       margin-bottom: var(--gap);
       font-weight: 500;
     }
+
+    &--secondary {
+      font-size: var(--font-size-title-3);
+      line-height: var(--line-height-title-3);
+      font-weight: 600;
+      padding: 0 var(--gap-2);
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    white-space: nowrap;
+
+    &--arrow {
+      margin-top: var(--gap-3);
+      margin-left: var(--gap-2);
+      @media (--mobile-viewport) {
+        margin-left: 0;
+      }
+      @media (max-width: 380px) {
+        span:last-child {
+          display: none;
+        }
+      }
+    }
   }
 
   &__text {
     &--description {
-      margin-top: 0;
       display: block;
-      width: 80%;
+      font-size: var(--font-size-subtitle);
+      line-height: var(--line-height-subtitle);
 
       a {
         text-decoration: underline;
@@ -41,7 +74,9 @@
     z-index: 1;
 
     .gatsby-image-wrapper {
+      padding: 50px 0;
       width: var(--image-width);
+      max-width: 479px;
       transform: translateX(-50%) translateY(calc(-50% - var(--image-offset)));
       left: 55%;
       top: 50%;
@@ -116,7 +151,7 @@
   &__card {
     padding: var(--gap-2);
     background: var(--color-secondary-new);
-    border-radius: 12px;
+    border-radius: 8px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -130,6 +165,7 @@
   @media (--laptop-viewport) {
     &__wrapper {
       margin: var(--gap) 0;
+      margin-top: 100px;
     }
   }
 
@@ -186,14 +222,16 @@
       }
 
       &--text {
-        padding-left: 0;
-        padding-top: 0;
         min-width: calc(100% - var(--gap-1_75));
       }
     }
 
     &__text--description {
       width: calc(100% - var(--gap-2));
+    }
+
+    &__wrapper {
+      margin-top: 0;
     }
 
     .gatsby-image-wrapper {
@@ -206,14 +244,14 @@
   }
 
   @media (max-width: 575px) {
-    --gap: 20px;
+    --gap: calc(7px + 2vw);
     &__col {
       min-width: 100%;
       padding-left: 0;
       padding-right: 0;
 
       &--card {
-        margin-top: var(--gap);
+        margin-top: 20px;
       }
     }
     &__row {
