@@ -5,17 +5,20 @@ import Image from 'gatsby-image';
 import { Section } from '../Section/Section';
 import { PageHeading } from '../PageHeading/PageHeading';
 import './Hero.css';
+import { Heading } from '../Heading/Heading';
+import { FormattedMessage } from 'react-intl';
+import { Text } from '../Text/Text';
 
 export function Hero({ openOfferModal, intl: { formatMessage } }) {
+  const platforms = ['iOS', 'Android', 'Windows', 'macOS', 'Linux'];
+
   return (
     <StaticQuery
       query={graphql`
         query {
-          heroImage: file(
-            relativePath: { eq: "images/home/hero/hero-main.png" }
-          ) {
+          heroImage: file(relativePath: { eq: "images/home/hero/hero.png" }) {
             childImageSharp {
-              fluid(maxWidth: 1200) {
+              fluid(maxWidth: 780) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -30,9 +33,11 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                 <PageHeading>
                   {formatMessage({ id: 'hero_header' })}
                 </PageHeading>
+
                 <h4 className="hero__text">
                   {formatMessage({ id: 'hero_subheader' })}
                 </h4>
+
                 <button
                   type="button"
                   className="button button--default"
@@ -41,57 +46,33 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                   {formatMessage({ id: 'button_get_offer' })}
                 </button>
               </div>
-              <div className="hero__image">
+
+              <div className="hero__info">
                 <Image
+                  className="hero__image"
                   fadeIn={false}
                   fluid={heroImage.childImageSharp.fluid}
                   alt={formatMessage({ id: 'hero_header' })}
                 />
-              </div>
-              <div className="hero__info">
-                <div className="hero__text hero__text--available hero__text--gray">
-                  {formatMessage({ id: 'platform_available' })}
-                </div>
-                <div className="hero__row">
-                  <div className="hero__platform">
-                    <img
-                      className="hero__icon"
-                      alt="ios"
-                      src="/images/home/hero/supported-devices-1.png"
-                    />
-                    <div className="hero__text hero__text--icon">iOS</div>
+
+                <div className="hero__platforms">
+                  <div className="hero__text hero__text--available ">
+                    {formatMessage({ id: 'platform_available' })}
                   </div>
-                  <div className="hero__platform">
-                    <img
-                      className="hero__icon"
-                      alt="android"
-                      src="/images/home/hero/supported-devices-2.png"
-                    />
-                    <div className="hero__text hero__text--icon">Android</div>
-                  </div>
-                  <div className="hero__platform">
-                    <img
-                      className="hero__icon"
-                      alt="windows"
-                      src="/images/home/hero/supported-devices-3.png"
-                    />
-                    <div className="hero__text hero__text--icon">Windows</div>
-                  </div>
-                  <div className="hero__platform">
-                    <img
-                      className="hero__icon"
-                      alt="macos"
-                      src="/images/home/hero/supported-devices-4.png"
-                    />
-                    <div className="hero__text hero__text--icon">macOS</div>
-                  </div>
-                  <div className="hero__platform">
-                    <img
-                      className="hero__icon"
-                      alt="linux"
-                      src="/images/home/hero/supported-devices-5.png"
-                    />
-                    <div className="hero__text hero__text--icon">Linux</div>
+
+                  <div className="hero__row--platforms">
+                    {platforms.map((platform) => {
+                      return (
+                        <div className="hero__platform">
+                          <img
+                            className="hero__icon"
+                            alt={`${platform}`}
+                            src={`/images/home/hero/platform-${platform}.png`}
+                          />
+                          <div className="hero__text--icon">{platform}</div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
