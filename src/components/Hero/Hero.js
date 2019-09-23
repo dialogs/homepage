@@ -29,7 +29,7 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
         return (
           <Section className="hero">
             <div className="hero__wrapper">
-              <div className="hero__content">
+              <div className="hero__col--content">
                 <PageHeading>
                   {formatMessage({ id: 'hero_header' })}
                 </PageHeading>
@@ -47,33 +47,33 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
                 </button>
               </div>
 
-              <div className="hero__info">
+              <div className="hero__col--image">
                 <Image
                   className="hero__image"
                   fadeIn={false}
                   fluid={heroImage.childImageSharp.fluid}
                   alt={formatMessage({ id: 'hero_header' })}
                 />
+              </div>
 
-                <div className="hero__platforms">
-                  <div className="hero__text hero__text--available ">
-                    {formatMessage({ id: 'platform_available' })}
-                  </div>
+              <div className="hero__col--platforms">
+                <div className="hero__text hero__text--available ">
+                  {formatMessage({ id: 'platform_available' })}
+                </div>
 
-                  <div className="hero__row--platforms">
-                    {platforms.map((platform) => {
-                      return (
-                        <div className="hero__platform">
-                          <img
-                            className="hero__icon"
-                            alt={`${platform}`}
-                            src={`/images/home/hero/platform-${platform}.png`}
-                          />
-                          <div className="hero__text--icon">{platform}</div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                <div className="hero__row--platforms">
+                  {platforms.map((platform) => {
+                    return (
+                      <div className="hero__platform">
+                        <img
+                          className="hero__icon"
+                          alt={`${platform}`}
+                          src={`/images/home/hero/platform-${platform}.png`}
+                        />
+                        <div className="hero__text--icon">{platform}</div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
