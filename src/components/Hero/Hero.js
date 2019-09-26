@@ -6,7 +6,7 @@ import { Section } from '../Section/Section';
 import { PageHeading } from '../PageHeading/PageHeading';
 import './Hero.css';
 import { Heading } from '../Heading/Heading';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { Text } from '../Text/Text';
 
 export function Hero({ openOfferModal, intl: { formatMessage } }) {
@@ -16,9 +16,11 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
     <StaticQuery
       query={graphql`
         query {
-          heroImage: file(relativePath: { eq: "images/home/hero/hero.png" }) {
+          heroImage: file(
+            relativePath: { eq: "images/home/hero/hero@2x.png" }
+          ) {
             childImageSharp {
-              fluid(maxWidth: 780) {
+              fluid(maxWidth: 1180) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
@@ -31,7 +33,7 @@ export function Hero({ openOfferModal, intl: { formatMessage } }) {
             <div className="hero__wrapper">
               <div className="hero__col--content">
                 <PageHeading>
-                  {formatMessage({ id: 'hero_header' })}
+                  <FormattedHTMLMessage id="hero_header" />
                 </PageHeading>
 
                 <h4 className="hero__text">

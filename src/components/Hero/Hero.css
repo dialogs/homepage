@@ -186,8 +186,9 @@
       margin-right: 0;
     }
 
-    @media (min-width: 768px) and (max-width: 991px) {
-      font-size: 35px;
+    @media (min-width: 768px) and (max-width: 1200px) {
+      font-size: 40px;
+      line-height: 1em;
     }
   }
 }
