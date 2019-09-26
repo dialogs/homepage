@@ -154,6 +154,9 @@
     @media (--tablet-landscape-viewport) {
       display: block;
       width: calc(50% + 40px);
+      &:not(#_) {
+        padding-right: 20px;
+      }
     }
     @media (--laptop-viewport) {
       display: block;
