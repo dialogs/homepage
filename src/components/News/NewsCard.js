@@ -2,13 +2,13 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { ArrowLink } from '../ArrowLink/ArrowLink';
 
-export function NewsCard({ language, index, date }) {
+export function NewsCard({ language, index, date, link }) {
   return (
     <div className="blog__roster-item">
-      <a href="/404" className="blog__roster-item-link">
+      <a href={link} className="blog__roster-item-link">
         <div className="blog__roster-image-box">
           <div className="blog__roster-image">
-            <img src={'/images/home/news/image-' + index + '.png'} alt="" />
+            <img src={'/images/home/news/' + index + '.jpg'} alt="" />
           </div>
         </div>
         <div className="blog__roster-date">

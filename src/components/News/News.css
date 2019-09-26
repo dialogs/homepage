@@ -7,7 +7,6 @@
   }
 
   &__link {
-    text-align: center;
     margin-top: var(--gap-3);
     @media (--mobile-viewport) {
       margin-top: var(--gap-2);
