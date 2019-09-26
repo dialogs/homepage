@@ -7,7 +7,7 @@ import { Section } from '../Section/Section';
 import { Heading } from '../Heading/Heading';
 
 import './Business.css';
-import { ArrowLink } from '../ArrowLink/ArrowLink';
+// import { ArrowLink } from '../ArrowLink/ArrowLink';
 
 export function Business({ language }) {
   return (
@@ -104,14 +104,14 @@ export function Business({ language }) {
                   </li>
                 </ul>
               </div>
-              <ArrowLink
-                to={`/${language}/integrations`}
-                underline
-                primary-new
-                className="business__link"
-              >
-                <FormattedMessage id="solutions_learn_more" />
-              </ArrowLink>
+              {/*<ArrowLink*/}
+              {/*to={`/${language}/integrations`}*/}
+              {/*underline*/}
+              {/*primary-new*/}
+              {/*className="business__link"*/}
+              {/*>*/}
+              {/*<FormattedMessage id="solutions_learn_more" />*/}
+              {/*</ArrowLink>*/}
             </div>
           </Section>
         );
