@@ -20,11 +20,11 @@ export function Solutions({ language }) {
         </PageHeading>
         <div className="about__green_section_text_wrapper">
           <FormattedHTMLMessage id="solutions_text_1" />
-          <div className="about__read_more">
-            <ArrowLink to={`/${language}/partners`} underline secondary-new>
-              <FormattedMessage id="solutions_learn_more" />
-            </ArrowLink>
-          </div>
+          {/*<div className="about__read_more">*/}
+          {/*<ArrowLink to={`/${language}/partners`} underline secondary-new>*/}
+          {/*<FormattedMessage id="solutions_learn_more" />*/}
+          {/*</ArrowLink>*/}
+          {/*</div>*/}
         </div>
       </Container>
       <Container>
@@ -33,11 +33,11 @@ export function Solutions({ language }) {
         </PageHeading>
         <div className="about__green_section_text_wrapper">
           <FormattedHTMLMessage id="solutions_text_2" />
-          <div className="about__read_more">
-            <ArrowLink to={`/${language}/integrations`} underline secondary-new>
-              <FormattedMessage id="solutions_learn_more" />
-            </ArrowLink>
-          </div>
+          {/*<div className="about__read_more">*/}
+          {/*<ArrowLink to={`/${language}/integrations`} underline secondary-new>*/}
+          {/*<FormattedMessage id="solutions_learn_more" />*/}
+          {/*</ArrowLink>*/}
+          {/*</div>*/}
         </div>
       </Container>
     </Section>
