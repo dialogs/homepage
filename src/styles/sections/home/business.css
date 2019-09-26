@@ -89,7 +89,7 @@
     text-align: center;
 
     @media (--mobile-viewport) {
-      margin-top: 40px;
+      display: none;
     }
 
     @media (--tablet-viewport) {
