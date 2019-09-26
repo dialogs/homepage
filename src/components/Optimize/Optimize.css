@@ -4,13 +4,6 @@
   --image-width: 80%;
   --image-offset: 25px;
 
-  br {
-    display: none;
-    @media (max-width: 1180px) {
-      display: none;
-    }
-  }
-
   &__title {
     &--main {
       padding: var(--gap) 0 var(--gap);
@@ -34,18 +27,14 @@
   }
 
   &__link {
-    white-space: nowrap;
-
+    &--subtitle {
+      white-space: nowrap;
+    }
     &--arrow {
       margin-top: var(--gap-3);
       margin-left: var(--gap-2);
       @media (--mobile-viewport) {
         margin-left: 0;
-      }
-      @media (max-width: 380px) {
-        span:last-child {
-          display: none;
-        }
       }
     }
   }
@@ -55,15 +44,12 @@
       display: block;
       font-size: var(--font-size-subtitle);
       line-height: var(--line-height-subtitle);
-
-      a {
-        text-decoration: underline;
-      }
     }
 
     &--card {
       display: block;
       margin-bottom: var(--gap-2);
+      width: 100%;
     }
   }
 
@@ -97,13 +83,25 @@
     display: block;
     margin-left: auto;
 
-    &[alt='Google'],
-    &[alt='Potok'] {
+    &[alt='Google'] {
       transform: translateY(5px);
+    }
+
+    &[alt='Zendesk'] {
+      transform: translateY(1px);
+    }
+
+    &[alt='Jira'] {
+      transform: translateY(8px);
     }
 
     &[alt='Symantec'] {
       transform: translateY(10px);
+    }
+
+    &[alt='Huntflow'] {
+      transform: translatey(8px);
+      max-width: 190px;
     }
   }
 
@@ -144,7 +142,7 @@
 
     &--card {
       margin-top: var(--gap-2);
-      max-width: calc(100% / 3);
+      width: calc(100% / 3);
     }
   }
 
@@ -156,6 +154,7 @@
     flex-wrap: wrap;
     align-content: flex-start;
     flex-direction: column;
+    width: 100%;
   }
 
   @media (min-width: 1024px) and (max-width: 1439px) {
@@ -186,7 +185,7 @@
     --gap: 1.3vw;
     &__col {
       &--card {
-        max-width: calc(100% / 2);
+        width: calc(100% / 2);
       }
     }
   }
@@ -217,12 +216,12 @@
       margin-right: auto;
 
       &--image {
-        position: static;
-        margin-bottom: var(--gap);
+        display: none;
       }
 
       &--text {
-        min-width: calc(100% - var(--gap-1_75));
+        min-width: 100%;
+        padding-right: var(--gap-3);
       }
     }
 

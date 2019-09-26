@@ -36,14 +36,15 @@ export function Optimize() {
 
                   <h3 className="optimize__text optimize__text--description">
                     <FormattedHTMLMessage id="optimize_text_part_1" />
+                    &nbsp;
                     <a
-                      className="optimize__link"
+                      className="link--default"
                       href={`/${language}/about`}
                       target="_blank"
                     >
                       Bot SDK
                     </a>
-                    <br />
+                    &nbsp;
                     <FormattedHTMLMessage id="optimize_text_part_2" />
                   </h3>
                 </div>
@@ -66,40 +67,40 @@ export function Optimize() {
               </h2>
               <div className="optimize__row optimize__row--cards">
                 <OptimizeCard
-                  image="/images/home/optimize/google.svg"
-                  title="optimize_item_title-1"
-                  text="optimize_item_text-1"
-                  alt="Google"
-                />
-                <OptimizeCard
                   image="/images/home/optimize/jira.svg"
-                  title="optimize_item_title-2"
-                  text="optimize_item_text-2"
+                  title="optimize_item_title-development"
+                  text="optimize_item_text-development"
                   alt="Jira"
                 />
                 <OptimizeCard
-                  image="/images/home/optimize/amocrm.svg"
-                  title="optimize_item_title-3"
-                  text="optimize_item_text-3"
-                  alt="Amocrm"
-                />
-                <OptimizeCard
                   image="/images/home/optimize/zendesk.svg"
-                  title="optimize_item_title-4"
-                  text="optimize_item_text-4"
+                  title="optimize_item_title-tech"
+                  text="optimize_item_text-tech"
                   alt="Zendesk"
                 />
                 <OptimizeCard
                   image="/images/home/optimize/symantec.svg"
-                  title="optimize_item_title-5"
-                  text="optimize_item_text-5"
+                  title="optimize_item_title-security"
+                  text="optimize_item_text-security"
                   alt="Symantec"
                 />
                 <OptimizeCard
-                  image="/images/home/optimize/potok.svg"
-                  title="optimize_item_title-6"
-                  text="optimize_item_text-6"
-                  alt="Potok"
+                  image="/images/home/optimize/amocrm.svg"
+                  title="optimize_item_title-sales"
+                  text="optimize_item_text-sales"
+                  alt="Amocrm"
+                />
+                <OptimizeCard
+                  image="/images/home/optimize/google.svg"
+                  title="optimize_item_title-marketing"
+                  text="optimize_item_text-marketing"
+                  alt="Google"
+                />
+                <OptimizeCard
+                  image="/images/home/optimize/huntflow.svg"
+                  title="optimize_item_title-hr"
+                  text="optimize_item_text-hr"
+                  alt="Huntflow"
                 />
               </div>
             </div>
