@@ -7,3 +7,7 @@
     width: calc(100% + var(--margin-container-side) * 2);
   }
 }
+
+.nowrap {
+  white-space: nowrap;
+}
