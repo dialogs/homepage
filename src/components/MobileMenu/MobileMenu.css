@@ -5,8 +5,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: var(--color-primary);
-  background: #d2fde5;
+  background: var(--color-primary-new);
   z-index: 100;
   overflow: auto;
   height: 100vh;
@@ -22,19 +21,6 @@
     position: relative;
     padding-bottom: 180px;
     padding-top: 100px;
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 68%;
-      height: 21%;
-      height: 25vw;
-      min-height: 118px;
-      background-color: var(--color-secondary);
-      background-color: #b9bbfa;
-    }
   }
 
   &__header {
@@ -46,7 +32,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px var(--margin-container-side);
-    background: color-mod(var(--color-primary) alpha(98%));
+    background: var(--color-primary-new);
     z-index: 5;
 
     @media (--tablet-viewport) {

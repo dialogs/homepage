@@ -1,14 +1,87 @@
 .business {
-  @media (--mobile-viewport) {
-    padding-top: 10px;
-  }
-
   & .heading {
-    padding: 0;
+    padding-bottom: 0;
   }
 
   &__img {
     max-width: 230px;
     margin-left: 60px;
+  }
+
+  .box {
+    margin-top: calc(var(--padding-top-section) / 1.5);
+    margin-bottom: calc(var(--padding-top-section) / 1.5);
+
+    @media (--laptop-viewport) {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 0;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        width: calc(100% + 100px);
+        height: calc(100% + 120px);
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+    }
+  }
+
+  &__link {
+    margin-top: 60px;
+  }
+
+  &__info-logo-item {
+    position: relative;
+
+    &:not(#_) {
+      padding-left: 60px;
+    }
+
+    &:before {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+
+    &--skolkovo {
+      img {
+        width: 40px;
+        top: -4px;
+      }
+    }
+
+    &--soft {
+      img {
+        width: 40px;
+      }
+    }
+
+    &--ade {
+      img {
+        width: 40px;
+      }
+    }
+  }
+
+  @media (--mobile-viewport) {
+    padding-top: 10px;
+  }
+
+  @media (--tablet-landscape-viewport) {
+    &__info-item {
+      &--box {
+        width: calc(33% - var(--padding-side-columns) / 2);
+      }
+    }
   }
 }

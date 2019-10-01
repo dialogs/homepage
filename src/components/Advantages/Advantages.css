@@ -1,0 +1,31 @@
+.advantages {
+  &__title {
+    text-align: center;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (--tablet-landscape-viewport) {
+      margin-right: var(--gap-n);
+    }
+    @media (--desktop-viewport) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__card {
+    padding: var(--gap-2_25);
+    margin-top: var(--gap);
+    background: var(--color-primary-new);
+    width: 100%;
+    @media (--mini-viewport) {
+      padding: var(--gap-1_5);
+    }
+    @media (--tablet-landscape-viewport) {
+      width: calc(100% / 3 - var(--gap));
+      margin-right: var(--gap);
+    }
+  }
+}

@@ -54,6 +54,12 @@ const styles = css`
     }
   }
 
+  .secondarynew {
+    &:before {
+      background-color: var(--color-secondary-new);
+    }
+  }
+
   .invert {
     &:before {
       width: 0;

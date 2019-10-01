@@ -1,11 +1,4 @@
 .offer {
-  padding-top: 30px;
-
-  @media (--tablet-viewport) {
-    padding-top: 20px;
-    padding-bottom: 100px;
-  }
-
   &__header {
     & .heading {
       margin: 0;
@@ -41,7 +34,6 @@
         @media (--tablet-viewport) {
           margin-bottom: 32px;
           flex-basis: calc(50% - var(--padding-side-columns) / 2);
-          /* width: calc(50% - var(--padding-side-columns) / 2); */
         }
       }
 
@@ -75,5 +67,8 @@
         margin-top: 30px;
       }
     }
+  }
+  .checkbox__input:checked + .checkbox__checkbox {
+    background: var(--color-primary-new);
   }
 }

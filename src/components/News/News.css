@@ -1,0 +1,56 @@
+.news {
+  background: var(--color-secondary-new);
+  @media (--laptop-viewport) {
+    margin-top: -130px;
+    padding-top: 230px;
+    padding-bottom: 230px;
+  }
+
+  &__link {
+    margin-top: var(--gap-3);
+    @media (--mobile-viewport) {
+      margin-top: var(--gap-2);
+      margin-bottom: var(--gap-2);
+    }
+  }
+
+  .blog__roster-item {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
+  }
+
+  .blog__roster-item-link {
+    background: #fff;
+    padding: 0 25px 30px;
+
+    &:before {
+      background: var(--color-primary-new);
+    }
+  }
+
+  .blog__roster-image {
+    display: block;
+    margin-left: -25px;
+    margin-right: -25px;
+    min-height: 0;
+  }
+
+  .blog__roster-item-link:hover {
+    .blog__roster-date {
+      color: #000;
+    }
+  }
+
+  .blog__roster-image-box,
+  .blog__roster-date,
+  .blog__roster-short {
+    z-index: 2;
+  }
+
+  .blog__roster-item-link:before {
+    z-index: 1;
+  }
+}

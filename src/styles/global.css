@@ -1,0 +1,13 @@
+.stretch {
+  position: relative;
+  left: 50%;
+  width: calc(100% + calc(100vw - 1320px / 2));
+  transform: translateX(-50%);
+  @media (max-width: 1599px) {
+    width: calc(100% + var(--margin-container-side) * 2);
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
