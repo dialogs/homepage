@@ -15,7 +15,7 @@ jobs:
         run: |
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
-          ${{ DIALOG_WEBHOOK }}
+          ${{ secrets.TEST_WEBHOOK }}
       - name: Update version
         run: |
           VERSION=$(node -p "require('./package.json').version")
