@@ -1,0 +1,14 @@
+name: CI
+
+on: [push]
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: test log
+        run: |
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"👉🏾 Homepage build *#001*: pipeline started.\"}" \
+          ${{ secrets.DIALOG_WEBHOOK }}
