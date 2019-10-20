@@ -31,7 +31,7 @@ jobs:
         with:
           name: BUILD_NUMBER
       - name: Restore build number
-      uses: einaregilsson/build-number@v1
+        uses: einaregilsson/build-number@v1
       - name: Build
         run: |
           npm ci
