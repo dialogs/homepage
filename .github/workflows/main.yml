@@ -58,13 +58,12 @@ jobs:
         with:
           name: app
           path: public
-  # build-docker:
-  #   needs: build-app
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - name: Download app build artifact
-  #       uses: actions/download-artifact@v1
-  #         with:
-  #           name: app
-  #           path: public
+  build-docker:
+    needs: build-app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Download app build artifact
+        uses: actions/download-artifact@v1
+          with:
+            name: app
