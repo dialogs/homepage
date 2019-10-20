@@ -68,3 +68,8 @@ jobs:
         with:
           name: app
           path: public
+      - name: Build
+        run: |
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER:* docker image ready. test\"}" \
+          ${{ secrets.TEST_WEBHOOK }}
