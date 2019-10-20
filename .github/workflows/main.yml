@@ -68,7 +68,14 @@ jobs:
         with:
           name: app
           path: public
-      - name: Build
+      - name: Download app build artifac
+        uses: actions/download-artifact@v1
+        with:
+          name: BUILD_NUMBER
+      # - name: Build
+      #   run: |
+      #     - docker login -u="${REGISTRY_USER}" -p="${REGISTRY_PASSWORD}" "${REGISTRY}"
+      - name: Notify
         run: |
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER:* docker image ready. test\"}" \
