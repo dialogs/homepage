@@ -76,11 +76,11 @@ jobs:
         uses: einaregilsson/build-number@v1
       - name: Build the Docker image
         env:
-          DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
+          DOCKER_IMAGE: harbor.transmit.im/dlg/homepage
         run: |
           VERSION=$(node -p "require('./package.json').version")
           IMAGE_VERSION="${VERSION}.${GITHUB_SHA}"
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+          echo "${{ secrets.HARBOR_PASSWORD }}" | docker login harbor.transmit.im -u ${{ secrets.HARBOR_LOGIN }} --password-stdin
           docker build -t $DOCKER_IMAGE:$IMAGE_VERSION .
           docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:latest
           docker push $DOCKER_IMAGE:$IMAGE_VERSION
