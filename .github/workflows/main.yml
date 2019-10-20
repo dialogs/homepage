@@ -21,7 +21,7 @@ jobs:
         with:
           name: BUILD_NUMBER
           path: BUILD_NUMBER
-  build:
+  build-app:
     needs: version
     runs-on: ubuntu-latest
     steps:
@@ -33,10 +33,12 @@ jobs:
       - name: Restore build number
         uses: einaregilsson/build-number@v1
       - name: Build
+        env:
+          EMAIL_USER: ${{secrets.EMAIL_USER}}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: |
           npm ci
           npm run build
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
           ${{ secrets.TEST_WEBHOOK }}
-      
