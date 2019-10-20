@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Generate build number
-        uses: einaregilsson/build-number@v1 
+        uses: einaregilsson/build-number@v1
         with:
           token: ${{secrets.github_token}}
       - name: Version notify
@@ -52,19 +52,19 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
           ${{ secrets.TEST_WEBHOOK }}
-          
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v1
         with:
           name: app
           path: public
-  build-docker:
-    needs: build-app
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Download app build artifact
-        uses: actions/download-artifact@v1
-          with:
-            name: app
-            path: public
+  # build-docker:
+  #   needs: build-app
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - name: Download app build artifact
+  #       uses: actions/download-artifact@v1
+  #         with:
+  #           name: app
+  #           path: public
