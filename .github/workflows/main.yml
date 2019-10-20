@@ -16,22 +16,27 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
           ${{ secrets.TEST_WEBHOOK }}
-      - name: Update version
-        run: |
-          VERSION=$(node -p "require('./package.json').version")
-          IMAGE_VERSION="$VERSION.$BUILD_NUMBER"
-      - name: Upload build number
-        uses: actions/upload-artifact@v1
-        with:
-          name: IMAGE_VERSION
-          path: IMAGE_VERSION
       - name: Upload build number
         uses: actions/upload-artifact@v1
         with:
           name: BUILD_NUMBER
           path: BUILD_NUMBER
   build:
+    needs: version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Download build number
+        uses: actions/download-artifact@v1
+        with:
+          name: BUILD_NUMBER
+      - name: Restore build number
+      uses: einaregilsson/build-number@v1
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
+          ${{ secrets.TEST_WEBHOOK }}
       
