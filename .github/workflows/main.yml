@@ -68,7 +68,7 @@ jobs:
         with:
           name: app
           path: public
-      - name: Download app build artifac
+      - name: Download app build artifact
         uses: actions/download-artifact@v1
         with:
           name: BUILD_NUMBER
@@ -83,9 +83,10 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
           docker build -t $DOCKER_IMAGE:$IMAGE_VERSION .
           docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:latest
+          docker push $DOCKER_IMAGE:$IMAGE_VERSION
           docker images
       - name: Notify
         run: |
           curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER:* docker image ready. $DOCKER_IMAGE:$IMAGE_VERSION\"}" \
+          --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER:* docker image ready."}" \
           ${{ secrets.TEST_WEBHOOK }}
