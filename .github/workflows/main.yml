@@ -36,6 +36,15 @@ jobs:
         env:
           EMAIL_USER: ${{secrets.EMAIL_USER}}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          GHOST_ENDPOINT: ${{ secrets.GHOST_ENDPOINT }}
+          GHOST_API_KEY: ${{ secrets.GHOST_API_KEY }}
+          MAILCHIMP_KEY: ${{ secrets.MAILCHIMP_KEY }}
+          MAILCHIMP_LIST_RU: ${{ secrets.MAILCHIMP_LIST_RU }}
+          MAILCHIMP_LIST_EN: ${{ secrets.MAILCHIMP_LIST_EN }}
+          GATSBY_GRAPHQL_IDE: playground
+          DIALOG_WEBHOOK: ${{ secrets.DIALOG_WEBHOOK }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          SENTRY_DSN_PUBLIC: ${{ secrets.SENTRY_DSN_PUBLIC }}
         run: |
           npm ci
           npm run build
