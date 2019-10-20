@@ -76,7 +76,7 @@ jobs:
         uses: einaregilsson/build-number@v1
       - name: Build the Docker image
         env:
-          DOCKER_IMAGE: harbor.transmit.im/harbor/projects/4/repositories/dlg%2fhomepage
+          DOCKER_IMAGE: harbor.transmit.im/dlg/homepage
         run: |
           VERSION=$(node -p "require('./package.json').version")
           IMAGE_VERSION="${VERSION}.${GITHUB_SHA}"
