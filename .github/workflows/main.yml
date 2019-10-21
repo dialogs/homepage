@@ -84,6 +84,9 @@ jobs:
           docker build -t $DOCKER_IMAGE:$IMAGE_VERSION .
           docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:latest
           docker push $DOCKER_IMAGE:$IMAGE_VERSION
+      - name: Version bump
+        if: github.ref == 'refs/heads/master'
+        run: npm version patch
       - name: Notify
         run: |
           curl --header 'Content-Type: application/json' --request POST \
