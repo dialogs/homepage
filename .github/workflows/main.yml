@@ -15,7 +15,7 @@ jobs:
         run: |
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
-          ${{ secrets.TEST_WEBHOOK }}
+          ${{ secrets.DIALOG_WEBHOOK }}
       - name: Upload build number
         uses: actions/upload-artifact@v1
         with:
@@ -51,7 +51,7 @@ jobs:
           npm run build
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
-          ${{ secrets.TEST_WEBHOOK }}
+          ${{ secrets.DIALOG_WEBHOOK }}
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v1
@@ -79,7 +79,7 @@ jobs:
           DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          IMAGE_VERSION="${VERSION}.${GITHUB_SHA}"
+          IMAGE_VERSION="${VERSION}.$BUILD_NUMBER"
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
           docker build -t $DOCKER_IMAGE:$IMAGE_VERSION .
           docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:latest
@@ -88,4 +88,10 @@ jobs:
         run: |
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
-          ${{ secrets.TEST_WEBHOOK }}
+          ${{ secrets.DIALOG_WEBHOOK }}
+      - name: Exepction
+        if: failure()
+        run: |
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed. [More info](https://github.com/dialogs/dialog-web-platform/commit/${GITHUB_SHA}/checks)\"}" \
+          $DIALOG_WEBHOOK
