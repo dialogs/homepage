@@ -7,7 +7,6 @@ on:
 
 jobs:
   build-app:
-    needs: version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -53,6 +52,7 @@ jobs:
           path: BUILD_NUMBER
 
   version:
+    needs: build-app
     runs-on: ubuntu-latest
     steps:
       - name: Configure git
