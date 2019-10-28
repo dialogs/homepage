@@ -1,12 +1,17 @@
-name: CI
+name: Master CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'master'
 
 jobs:
-  version:
+  build-app:
+    needs: version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-node@master
       - name: Generate build number
         uses: einaregilsson/build-number@v1
         with:
@@ -15,24 +20,7 @@ jobs:
         run: |
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
-          ${{ secrets.DIALOG_WEBHOOK }}
-      - name: Upload build number
-        uses: actions/upload-artifact@v1
-        with:
-          name: BUILD_NUMBER
-          path: BUILD_NUMBER
-  build-app:
-    needs: version
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@master
-      - name: Download build number
-        uses: actions/download-artifact@v1
-        with:
-          name: BUILD_NUMBER
-      - name: Restore build number
-        uses: einaregilsson/build-number@v1
+          ${{ secrets.TEST_WEBHOOK }}
       - name: Build
         env:
           EMAIL_USER: ${{secrets.EMAIL_USER}}
@@ -43,7 +31,7 @@ jobs:
           MAILCHIMP_LIST_RU: ${{ secrets.MAILCHIMP_LIST_RU }}
           MAILCHIMP_LIST_EN: ${{ secrets.MAILCHIMP_LIST_EN }}
           GATSBY_GRAPHQL_IDE: playground
-          DIALOG_WEBHOOK: ${{ secrets.DIALOG_WEBHOOK }}
+          DIALOG_WEBHOOK: ${{ secrets.TEST_WEBHOOK }}
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           SENTRY_DSN_PUBLIC: ${{ secrets.SENTRY_DSN_PUBLIC }}
         run: |
@@ -51,15 +39,57 @@ jobs:
           npm run build
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
-          ${{ secrets.DIALOG_WEBHOOK }}
+          ${{ secrets.TEST_WEBHOOK }}
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v1
         with:
           name: app
           path: public
+      - name: Upload build number
+        uses: actions/upload-artifact@v1
+        with:
+          name: BUILD_NUMBER
+          path: BUILD_NUMBER
+
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure git
+        run: |
+          git config user.name ${{ secrets.GITHUB_BOT_USERNAME }}
+          git config user.email ${{ secrets.GITHUB_BOT_EMAIL }}
+          git remote set-url origin https://${{ secrets.GITHUB_BOT_TOKEN }}@github.com/dialogs/homepage.git
+      - name: Configure bot
+        run: |
+          if [[ "${{ github.actor }}" != "dialog-bot" ]]
+          then
+            sudo apt-get update
+            sudo apt-get install gnupg2 -y
+            echo "${{ secrets.GITHUB_BOT_GPG_KEY }}" | base64 --decode > private.key
+            gpg2 --allow-secret-key-import --import private.key
+            git config gpg.program gpg2
+            git config commit.gpgsign true
+            git config user.signingkey "${{ secrets.GITHUB_BOT_GPG_KEY_ID }}"
+            git config credential.helper 'cache --timeout=120'
+            git config user.name "${{ secrets.GITHUB_BOT_USERNAME }}"
+            git config user.email "${{ secrets.GITHUB_BOT_EMAIL }}"
+          fi
+      - name: Version bump
+        if: github.actor != 'dialog-bot'
+        run: |
+          git checkout master
+          npm version patch
+          git push --follow-tags
+      - name: (Exception step) Version bump
+        if: failure()
+        uses: dialogs/dialog-notify-action@master
+        with:
+          url: ${{ secrets.TEST_WEBHOOK }}
+          message: ' Homepage version bump failed: '
+
   build-docker:
-    needs: build-app
+    needs: version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -84,17 +114,14 @@ jobs:
           docker build -t $DOCKER_IMAGE:$IMAGE_VERSION .
           docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:latest
           docker push $DOCKER_IMAGE:$IMAGE_VERSION
-      - name: Version bump
-        if: github.ref == 'refs/heads/master'
-        run: npm version patch
       - name: Notify
         run: |
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
-          ${{ secrets.DIALOG_WEBHOOK }}
+          ${{ secrets.TEST_WEBHOOK }}
       - name: Exepction
         if: failure()
         run: |
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed. [More info](https://github.com/dialogs/dialog-web-platform/commit/${GITHUB_SHA}/checks)\"}" \
-          $DIALOG_WEBHOOK
+          $TEST_WEBHOOK
