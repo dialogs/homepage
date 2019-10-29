@@ -83,7 +83,7 @@ jobs:
           git checkout master
           npm install -g npm
           npm version patch
-          git push --follow-tags
+          # git push --follow-tags
       - name: (Exception step) Version bump
         if: failure()
         uses: dialogs/dialog-notify-action@master
