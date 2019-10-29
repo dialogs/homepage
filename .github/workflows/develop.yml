@@ -78,7 +78,7 @@ jobs:
         if: github.actor != 'dialog-bot'
         run: |
           npm install
-          # git push --follow-tags
+          npm version patch
       - name: (Exception step) Version bump
         if: failure()
         uses: dialogs/dialog-notify-action@master
