@@ -1,16 +1,16 @@
 name: Develop CI
 
-on:
-  push:
-    branches:
-      - 'develop'
+on: [push]
 
 jobs:
   build-app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@master
+      - name: Use Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
       - name: Generate build number
         uses: einaregilsson/build-number@v1
         with:
@@ -20,6 +20,8 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
           ${{ secrets.TEST_WEBHOOK }}
+      - name: Dependencies install
+        run: npm ci
       - name: Build
         env:
           EMAIL_USER: ${{secrets.EMAIL_USER}}
@@ -34,7 +36,6 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           SENTRY_DSN_PUBLIC: ${{ secrets.SENTRY_DSN_PUBLIC }}
         run: |
-          npm ci
           npm run build
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
@@ -82,6 +83,8 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
           ${{ secrets.TEST_WEBHOOK }}
+      - name: Deploy
+        run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASS }}@jenkins.transmit.im/job/Web/job/web-apps%20deploy/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&aapp=beta&image=$DOCKER_IMAGE:$IMAGE_VERSION"
       - name: Exepction
         if: failure()
         run: |
