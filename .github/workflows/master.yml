@@ -55,6 +55,7 @@ jobs:
     needs: build-app
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: Configure git
         run: |
           git config user.name ${{ secrets.GITHUB_BOT_USERNAME }}
@@ -119,6 +120,8 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
           ${{ secrets.TEST_WEBHOOK }}
+      - name: Deploy
+        run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASS }}@jenkins.transmit.im/job/Web/job/web-apps%20deploy/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&aapp=beta&image=$DOCKER_IMAGE:$IMAGE_VERSION"
       - name: Exepction
         if: failure()
         run: |
