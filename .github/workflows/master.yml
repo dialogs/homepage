@@ -1,6 +1,9 @@
 name: Master CI
 
-on: push
+on:
+  push:
+    branches:
+      - 'master'
 
 jobs:
   build-app:
@@ -72,15 +75,13 @@ jobs:
           sudo apt-get install gnupg2 -y
           echo "${{ secrets.GITHUB_BOT_GPG_KEY }}" > private.key
           gpg2 --allow-secret-key-import --import private.key
-          git config gpg.program gpg2
-          git config commit.gpgsign true
-          git config user.signingkey "${{ secrets.GITHUB_BOT_GPG_KEY_ID }}"
-          git config credential.helper 'cache --timeout=120'
-          git config user.name "${{ secrets.GITHUB_BOT_USERNAME }}"
-          git config user.email "${{ secrets.GITHUB_BOT_EMAIL }}"
+          git config --global gpg.program gpg2
+          git config --global push.followTags true
+
       - name: Version bump
         if: github.actor != 'dialog-bot'
         run: |
+          git checkout master
           npm version patch
           git push --follow-tags
       - name: (Exception step) Version bump
