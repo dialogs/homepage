@@ -1,16 +1,16 @@
 name: Develop CI
 
-on:
-  push:
-    branches:
-      - 'develop'
+on: [push]
 
 jobs:
   build-app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: actions/setup-node@master
+      - name: Use Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
       - name: Generate build number
         uses: einaregilsson/build-number@v1
         with:
@@ -20,6 +20,8 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
           ${{ secrets.TEST_WEBHOOK }}
+      - name: Dependencies install
+        run: npm ci
       - name: Build
         env:
           EMAIL_USER: ${{secrets.EMAIL_USER}}
@@ -34,7 +36,6 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           SENTRY_DSN_PUBLIC: ${{ secrets.SENTRY_DSN_PUBLIC }}
         run: |
-          npm ci
           npm run build
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
@@ -51,26 +52,8 @@ jobs:
           name: BUILD_NUMBER
           path: BUILD_NUMBER
 
-  version:
-    needs: build-app
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@master
-      - name: Version bump
-        if: github.actor != 'dialog-bot'
-        run: |
-          npm install
-          npm version patch
-      - name: (Exception step) Version bump
-        if: failure()
-        uses: dialogs/dialog-notify-action@master
-        with:
-          url: ${{ secrets.TEST_WEBHOOK }}
-          message: ' Homepage version bump failed: '
-
   build-docker:
-    needs: version
+    needs: build-app
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
