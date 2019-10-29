@@ -55,8 +55,26 @@ jobs:
           name: BUILD_NUMBER
           path: BUILD_NUMBER
 
-  build-docker:
+  version:
     needs: build-app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@master
+      - name: Version bump
+        if: github.actor != 'dialog-bot'
+        run: |
+          npm install
+          npm version patch
+      - name: (Exception step) Version bump
+        if: failure()
+        uses: dialogs/dialog-notify-action@master
+        with:
+          url: ${{ secrets.TEST_WEBHOOK }}
+          message: ' Homepage version bump failed: '
+
+  build-docker:
+    needs: version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
