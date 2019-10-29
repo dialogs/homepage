@@ -56,6 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-node@master
       - name: Configure git
         run: |
           git config user.name ${{ secrets.GITHUB_BOT_USERNAME }}
@@ -81,6 +82,7 @@ jobs:
         run: |
           git checkout master
           npm version patch
+          git push --follow-tags
       - name: (Exception step) Version bump
         if: failure()
         uses: dialogs/dialog-notify-action@master
