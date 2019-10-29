@@ -1,6 +1,6 @@
 {
   "name": "@dlghq/homepage",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Brand new dialog website",
   "main": "index.js",
   "private": true,
