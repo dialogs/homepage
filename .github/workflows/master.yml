@@ -81,6 +81,7 @@ jobs:
         if: github.actor != 'dialog-bot'
         run: |
           git checkout master
+          npm install
           npm version patch
           git push --follow-tags
       - name: (Exception step) Version bump
