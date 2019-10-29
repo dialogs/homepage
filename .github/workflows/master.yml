@@ -10,10 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js
-        uses: actions/setup-node@master
-        with:
-          node-version: '12.x'
+      - uses: actions/setup-node@master
       - name: Generate build number
         uses: einaregilsson/build-number@v1
         with:
@@ -23,8 +20,6 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
           ${{ secrets.TEST_WEBHOOK }}
-      - name: Dependencies install
-        run: npm ci
       - name: Build
         env:
           EMAIL_USER: ${{secrets.EMAIL_USER}}
@@ -39,10 +34,12 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           SENTRY_DSN_PUBLIC: ${{ secrets.SENTRY_DSN_PUBLIC }}
         run: |
+          npm ci
           npm run build
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
           ${{ secrets.TEST_WEBHOOK }}
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v1
         with:
@@ -59,31 +56,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js
-        uses: actions/setup-node@master
-        with:
-          node-version: '12.x'
+      - uses: actions/setup-node@master
       - name: Configure git
         run: |
           git config user.name ${{ secrets.GITHUB_BOT_USERNAME }}
           git config user.email ${{ secrets.GITHUB_BOT_EMAIL }}
           git remote set-url origin https://${{ secrets.GITHUB_BOT_TOKEN }}@github.com/dialogs/homepage.git
       - name: Configure bot
-        if: github.actor != 'dialog-bot'
         run: |
-          sudo apt-get update
-          sudo apt-get install gnupg2 -y
-          echo "${{ secrets.GITHUB_BOT_GPG_KEY }}" > private.key
-          gpg2 --allow-secret-key-import --import private.key
-          git config gpg.program gpg2
-          git config commit.gpgsign true
-          git config user.signingkey "${{ secrets.GITHUB_BOT_GPG_KEY_ID }}"
-          git config credential.helper 'cache --timeout=120'
-          git config user.name "${{ secrets.GITHUB_BOT_USERNAME }}"
-          git config user.email "${{ secrets.GITHUB_BOT_EMAIL }}"
+          if [[ "${{ github.actor }}" != "dialog-bot" ]]
+          then
+            sudo apt-get update
+            sudo apt-get install gnupg2 -y
+            echo "${{ secrets.GPG_KEY }}" > private.key
+            gpg2 --allow-secret-key-import --import private.key
+            git config --global gpg.program gpg2
+            git config --global push.followTags true
+          fi
       - name: Version bump
         if: github.actor != 'dialog-bot'
         run: |
+          git checkout master
           npm version patch
           git push --follow-tags
       - name: (Exception step) Version bump
