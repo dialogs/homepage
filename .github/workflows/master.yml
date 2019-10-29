@@ -68,7 +68,7 @@ jobs:
             sudo apt-get update
             sudo apt-get install gnupg2 -y
             echo "${{ secrets.GITHUB_BOT_GPG_KEY }}" > private.key
-            gpg2 --allow-secret-key-import --import private.key
+            # gpg2 --allow-secret-key-import --import private.key
             # git config gpg.program gpg2
             # git config commit.gpgsign true
             # git config user.signingkey "${{ secrets.GITHUB_BOT_GPG_KEY_ID }}"
