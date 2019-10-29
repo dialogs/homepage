@@ -1,9 +1,6 @@
 name: Develop CI
 
-on:
-  push:
-    branches:
-      - 'develop'
+on: push
 
 jobs:
   build-app:
@@ -51,8 +48,48 @@ jobs:
           name: BUILD_NUMBER
           path: BUILD_NUMBER
 
-  build-docker:
+  version:
     needs: build-app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@master
+      - name: Configure git
+        run: |
+          git config user.name ${{ secrets.GITHUB_BOT_USERNAME }}
+          git config user.email ${{ secrets.GITHUB_BOT_EMAIL }}
+          git remote set-url origin https://${{ secrets.GITHUB_BOT_TOKEN }}@github.com/dialogs/homepage.git
+      - name: Configure bot
+        run: |
+          if [[ "${{ github.actor }}" != "dialog-bot" ]]
+          then
+            sudo apt-get update
+            sudo apt-get install gnupg2 -y
+            echo "${{ secrets.GITHUB_BOT_GPG_KEY }}" > private.key
+            gpg2 --allow-secret-key-import --import private.key
+            git config gpg.program gpg2
+            git config commit.gpgsign true
+            git config user.signingkey "${{ secrets.GITHUB_BOT_GPG_KEY_ID }}"
+            git config credential.helper 'cache --timeout=120'
+            git config user.name "${{ secrets.GITHUB_BOT_USERNAME }}"
+            git config user.email "${{ secrets.GITHUB_BOT_EMAIL }}"
+          fi
+      - name: Version bump
+        if: github.actor != 'dialog-bot'
+        run: |
+          git checkout master
+          npm install -g npm
+          npm version patch
+          git push --follow-tags
+      - name: (Exception step) Version bump
+        if: failure()
+        uses: dialogs/dialog-notify-action@master
+        with:
+          url: ${{ secrets.TEST_WEBHOOK }}
+          message: ' Homepage version bump failed: '
+
+  build-docker:
+    needs: version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -82,6 +119,8 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
           ${{ secrets.TEST_WEBHOOK }}
+      - name: Deploy
+        run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASS }}@jenkins.transmit.im/job/Web/job/web-apps%20deploy/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&aapp=beta&image=$DOCKER_IMAGE:$IMAGE_VERSION"
       - name: Exepction
         if: failure()
         run: |
