@@ -15,11 +15,11 @@ jobs:
         uses: einaregilsson/build-number@v1
         with:
           token: ${{secrets.github_token}}
-      - name: Version notify
-        run: |
-          curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started.\"}" \
-          ${{ secrets.TEST_WEBHOOK }}
+      - name: Pipline notify started
+        uses: dialogs/dialog-notify-action@master
+        with:
+          url: ${{ secrets.DIALOG_WEBHOOK }}
+          message: '👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started. '
       - name: Build
         env:
           EMAIL_USER: ${{secrets.EMAIL_USER}}
@@ -30,15 +30,17 @@ jobs:
           MAILCHIMP_LIST_RU: ${{ secrets.MAILCHIMP_LIST_RU }}
           MAILCHIMP_LIST_EN: ${{ secrets.MAILCHIMP_LIST_EN }}
           GATSBY_GRAPHQL_IDE: playground
-          DIALOG_WEBHOOK: ${{ secrets.TEST_WEBHOOK }}
+          DIALOG_WEBHOOK: ${{ secrets.DIALOG_WEBHOOK }}
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           SENTRY_DSN_PUBLIC: ${{ secrets.SENTRY_DSN_PUBLIC }}
         run: |
           npm ci
           npm run build
-          curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: application build successful.\"}" \
-          ${{ secrets.TEST_WEBHOOK }}
+      - name: Pipline notify started
+        uses: dialogs/dialog-notify-action@master
+        with:
+          url: ${{ secrets.DIALOG_WEBHOOK }}
+          message: '👉🏾 Homepage build *#${BUILD_NUMBER}*: pipeline started. '
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v1
@@ -82,7 +84,7 @@ jobs:
         uses: dialogs/dialog-notify-action@master
         with:
           url: ${{ secrets.TEST_WEBHOOK }}
-          message: ' Homepage version bump failed: '
+          message: '🖕🏾 Homepage version bump failed: '
 
   build-docker:
     needs: version
@@ -111,15 +113,16 @@ jobs:
           docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:latest
           docker push $DOCKER_IMAGE:$IMAGE_VERSION
       - name: Notify
-        run: |
-          curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
-          ${{ secrets.TEST_WEBHOOK }}
+        if: failure()
+        uses: dialogs/dialog-notify-action@master
+        with:
+          url: ${{ secrets.DIALOG_WEBHOOK }}
+          message: ' 👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. '
       - name: Deploy
         run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASS_PROD }}@jenkins.transmit.im/job/Web/job/web-apps%20deploy/buildWithParameters?token=${{ secrets.JENKINS_TOKEN_PROD }}&app=prod&image=$DOCKER_IMAGE:$IMAGE_VERSION"
       - name: Exepction
         if: failure()
-        run: |
-          curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed. [More info](https://github.com/dialogs/dialog-web-platform/commit/${GITHUB_SHA}/checks)\"}" \
-          $TEST_WEBHOOK
+        uses: dialogs/dialog-notify-action@master
+        with:
+          url: ${{ secrets.DIALOG_WEBHOOK }}
+          message: '🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed.'
