@@ -3,6 +3,7 @@ name: Other CI
 on:
   push:
     branches:
+      - '*'
       - '!master'
       - '!develop'
 
