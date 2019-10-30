@@ -71,7 +71,7 @@ jobs:
         uses: einaregilsson/build-number@v1
       - name: Build the Docker image
         env:
-          DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
+          DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage-stage
         run: |
           VERSION=$(node -p "require('./package.json').version")
           IMAGE_VERSION="${VERSION}.$BUILD_NUMBER"
