@@ -1,6 +1,6 @@
 {
-  "name": "@dlghq/homepage-next",
-  "version": "0.0.0",
+  "name": "@dlghq/homepage",
+  "version": "0.1.4",
   "description": "Brand new dialog website",
   "main": "index.js",
   "private": true,
