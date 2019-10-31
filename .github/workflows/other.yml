@@ -1,11 +1,10 @@
 name: Other CI
 
 on:
-  push:
-    branches:
-      - '*'
-      - '!master'
-      - '!develop'
+  pull_request:
+    branches-ignore:
+      - 'master'
+      - 'develop'
 
 jobs:
   build-app:
@@ -39,3 +38,41 @@ jobs:
         with:
           url: ${{ secrets.DIALOG_WEBHOOK }}
           message: '👉🏾 Homepage build: application build successful.'
+
+  build-docker:
+    needs: build-app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Download app build artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: app
+          path: public
+      - name: Download app build artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: BUILD_NUMBER
+      - name: Restore build number
+        uses: einaregilsson/build-number@v1
+      - name: Build the Docker image
+        env:
+          DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          IMAGE_VERSION="${VERSION}.$BUILD_NUMBER"
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+          docker build -t $DOCKER_IMAGE:$IMAGE_VERSION .
+          docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:$IMAGE_VERSION
+          docker push $DOCKER_IMAGE:$IMAGE_VERSION
+      - name: Docker image notify
+        run: |
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
+          ${{ secrets.DIALOG_WEBHOOK }}
+      - name: Exepction
+        if: failure()
+        run: |
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed. [More info](https://github.com/dialogs/dialog-web-platform/commit/${GITHUB_SHA}/checks)\"}" \
+          ${{ secrets.DIALOG_WEBHOOK }}
