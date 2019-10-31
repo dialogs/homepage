@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import { css } from 'astroturf';
 
 const styles = css`
-  @import '../../styles/variables.css';
-
   .link {
     display: inline-flex;
     flex-flow: row nowrap;

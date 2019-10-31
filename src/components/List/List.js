@@ -3,8 +3,6 @@ import { styled } from 'astroturf';
 import { Text } from '../Text/Text';
 
 const ListElement = styled.ul`
-  @import '../../styles/variables.css';
-
   margin: 0;
   padding: 40px 0;
 
@@ -26,8 +24,6 @@ const ListElement = styled.ul`
 `;
 
 const ListItemElement = styled.li`
-  @import '../../styles/variables.css';
-
   list-style: none;
   position: relative;
   padding-left: 40px;

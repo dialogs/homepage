@@ -5,8 +5,6 @@ import { FormattedHTMLMessage } from 'react-intl';
 export const Form = styled.form``;
 
 export const FormBox = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -43,8 +41,6 @@ export const FormBox = styled.div`
 `;
 
 export const FormFooter = styled.div`
-  @import '../../styles/variables.css';
-
   margin-top: 20px;
   display: flex;
   flex-flow: column nowrap;
@@ -67,8 +63,6 @@ export const FormFooter = styled.div`
 `;
 
 export const FormInfo = styled.div`
-  @import '../../styles/variables.css';
-
   flex: 1 1 auto;
   min-width: 0px;
   min-height: 0px;

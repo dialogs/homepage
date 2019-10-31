@@ -1,8 +1,9 @@
-name: Develop CI
+name: Other CI
 
 on:
-  push:
-    branches:
+  pull_request:
+    branches-ignore:
+      - 'master'
       - 'develop'
 
 jobs:
@@ -11,15 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@master
-      - name: Generate build number
-        uses: einaregilsson/build-number@v1
-        with:
-          token: ${{secrets.github_token}}
       - name: Pipline notify started
-        run: |
-          curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👉🏾 Homepage build(develop) *#${BUILD_NUMBER}*: pipeline started.\"}" \
-          ${{ secrets.DIALOG_WEBHOOK }}
+        uses: dialogs/dialog-notify-action@master
+        with:
+          url: ${{ secrets.DIALOG_WEBHOOK }}
+          message: '👉🏾 Homepage build: pipeline started. '
       - name: Build
         env:
           EMAIL_USER: ${{secrets.EMAIL_USER}}
@@ -36,20 +33,11 @@ jobs:
         run: |
           npm ci
           npm run build
-          curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👌🏾 Homepage build(develop) *#$BUILD_NUMBER*: application build successful.\"}" \
-          ${{ secrets.DIALOG_WEBHOOK }}
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v1
+      - name: Application notify build
+        uses: dialogs/dialog-notify-action@master
         with:
-          name: app
-          path: public
-      - name: Upload build number
-        uses: actions/upload-artifact@v1
-        with:
-          name: BUILD_NUMBER
-          path: BUILD_NUMBER
+          url: ${{ secrets.DIALOG_WEBHOOK }}
+          message: '👉🏾 Homepage build: application build successful.'
 
   build-docker:
     needs: build-app
@@ -80,14 +68,11 @@ jobs:
       - name: Docker image notify
         run: |
           curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👌🏾 Homepage build(develop) *#$BUILD_NUMBER*: docker image ready. \"}" \
+          --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
-
-      - name: Deploy
-        run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASS }}@jenkins.transmit.im/job/Web/job/landing-deploy/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&app=demo&image=$DOCKER_IMAGE:$IMAGE_VERSION"
       - name: Exepction
         if: failure()
         run: |
           curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"🖕🏾 Homepage build(develop) *#${BUILD_NUMBER}:* pipeline failed. [More info](https://github.com/dialogs/dialog-web-platform/commit/${GITHUB_SHA}/checks)\"}" \
+          --data "{\"text\": \"🖕🏾 Homepage build *#${BUILD_NUMBER}:* pipeline failed. [More info](https://github.com/dialogs/dialog-web-platform/commit/${GITHUB_SHA}/checks)\"}" \
           ${{ secrets.DIALOG_WEBHOOK }}

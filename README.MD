@@ -1,4 +1,10 @@
-# Environment Variables
+## Development
+
+### Before first run
+
+run `npm run build` before first start
+
+### Environment Variables
 
 - `NODE_ENV`: Application environment, should be `production` in production.
 - `PORT`: PORT

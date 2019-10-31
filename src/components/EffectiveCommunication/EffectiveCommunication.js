@@ -9,8 +9,6 @@ import { Heading } from '../Heading/Heading';
 import { List, ListItem } from '../List/List';
 
 const EffectiveCommunicationSection = styled(Section)`
-  @import '../../styles/variables.css';
-
   padding-top: 30px;
   padding-bottom: 30px;
   position: relative;
@@ -57,15 +55,11 @@ const EffectiveCommunicationBlockHeading = withProps({ level: '3' })(styled(
 `);
 
 const EffectiveCommunicationColumn = styled.div`
-  @import '../../styles/variables.css';
-
   @media (--tablet-viewport) {
     width: calc(50% - var(--padding-side-columns) / 2);
   }
 `;
 const EffectiveCommunicationImageColumn = styled(EffectiveCommunicationColumn)`
-  @import '../../styles/variables.css';
-
   @media (--tablet-viewport) {
     display: flex;
     flex-direction: column;
@@ -73,8 +67,6 @@ const EffectiveCommunicationImageColumn = styled(EffectiveCommunicationColumn)`
 `;
 
 const EffectiveCommunicationColumnItem = styled.div`
-  @import '../../styles/variables.css';
-
   margin-top: 40px;
 
   @media (--tablet-viewport) {
@@ -93,8 +85,6 @@ const EffectiveCommunicationColumnItem = styled.div`
 `;
 
 const EffectiveCommunicationImageWrapper = styled.div`
-  @import '../../styles/variables.css';
-
   position: relative;
   z-index: 1;
 

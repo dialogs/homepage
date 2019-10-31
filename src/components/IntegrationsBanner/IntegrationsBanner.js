@@ -14,8 +14,6 @@ const IntegrationsBannerContent = styled.div`
 `;
 
 const IntegrationsBannerImage = styled.img`
-  @import '../../styles/variables.css';
-
   flex: 0 0 auto;
   margin-right: 30px;
 
@@ -25,8 +23,6 @@ const IntegrationsBannerImage = styled.img`
 `;
 
 const IntegrationsBannerText = styled.div`
-  @import '../../styles/variables.css';
-
   flex: 1 1 auto;
 
   & a {

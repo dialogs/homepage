@@ -31,8 +31,6 @@ const offices = [
 ];
 
 const AboutContactsContainer = styled(Container)`
-  @import '../../styles/variables.css';
-
   @media (--tablet-landscape-viewport) {
     padding-bottom: 40px;
   }
@@ -58,8 +56,6 @@ const AboutContactsLinks = styled.div`
 `;
 
 const AboutOfficeContainer = styled.div`
-  @import '../../styles/variables.css';
-
   margin-bottom: 40px;
   flex: 1 1 100%;
 
@@ -73,8 +69,6 @@ const AboutOfficeContainer = styled.div`
 `;
 
 const OfficeCardFooter = styled.div`
-  @import '../../styles/variables.css';
-
   padding-top: 10px;
 
   @media (--tablet-landscape-viewport) {

@@ -8,8 +8,6 @@ import { Text } from '../Text/Text';
 import { List, ListItem } from '../List/List';
 
 const PartnersInfoList = styled(List)`
-  @import '../../styles/variables.css';
-
   padding-bottom: 0;
 
   @media (--mobile-viewport) {
@@ -18,8 +16,6 @@ const PartnersInfoList = styled(List)`
 `;
 
 const PartnersInfoPartnership = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -31,8 +27,6 @@ const PartnersInfoPartnership = styled.div`
 `;
 
 const PartnersInfoBlock = styled.div`
-  @import '../../styles/variables.css';
-
   @media (--mobile-viewport) {
     flex: 0 0 auto;
   }

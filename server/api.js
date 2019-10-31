@@ -14,7 +14,9 @@ const SENDER_EMAIL = {
 };
 
 const mailer = nodemailer.createTransport(config.email);
-const mailchimp = new Mailchimp(config.mailchimp.key);
+const mailchimp = config.mailchimp.key
+  ? new Mailchimp(config.mailchimp.key)
+  : undefined;
 
 function renderAdditionalInfo(body, site) {
   return `
@@ -151,6 +153,10 @@ function notifyPartners(body, site) {
 }
 
 function notifyMailchimp(body, site) {
+  if (!mailchimp || !config.mailchimp.list.ru || !config.mailchimp.list.en) {
+    return Promise.resolve();
+  }
+
   const listId =
     body.siteLanguage === 'ru'
       ? config.mailchimp.list.ru
@@ -216,12 +222,7 @@ router.post('/offer', (request, response) => {
     promises.push(notifyEmail(body, referer));
   }
 
-  if (
-    config.mailchimp.key &&
-    config.mailchimp.list.ru &&
-    config.mailchimp.list.en &&
-    body.subscribe
-  ) {
+  if (body.subscribe) {
     promises.push(notifyMailchimp(body, referer));
   }
 
@@ -253,13 +254,7 @@ router.post('/subscribe', (request, response) => {
     promises.push(notifyDialog(body, referer));
   }
 
-  if (
-    config.mailchimp.key &&
-    config.mailchimp.list.ru &&
-    config.mailchimp.list.en
-  ) {
-    promises.push(notifyMailchimp(body, referer));
-  }
+  promises.push(notifyMailchimp(body, referer));
 
   Promise.all(promises)
     .then(() => {

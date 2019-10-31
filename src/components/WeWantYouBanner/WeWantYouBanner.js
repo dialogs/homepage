@@ -15,8 +15,6 @@ const WeWhantYouBlockArrow = styled.img`
 `;
 
 const WeWhantYouBlock = styled(Link)`
-  @import '../../styles/variables.css';
-
   background-color: var(--color-secondary);
   position: relative;
   display: flex;

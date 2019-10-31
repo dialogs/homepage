@@ -10,16 +10,12 @@ import { LinkButton } from '../Button/LinkButton';
 import appLinks from '../../constants/links';
 
 const DownloadSection = styled(Section)`
-  @import '../../styles/variables.css';
-
   @media (--mobile-viewport) {
     padding-bottom: 50px;
   }
 `;
 
 const DownloadWebImage = styled(Image)`
-  @import '../../styles/variables.css';
-
   display: block;
   border-radius: 2px;
   box-shadow: 0 0 64px 0 color-mod(#000 alpha(20%));

@@ -7,8 +7,6 @@ import { IntegrationCard } from '../IntegrationCard/IntegrationCard';
 import { integrations } from './integrationsData';
 
 const IntegrationsCatalogCards = styled.div`
-  @import '../../styles/variables.css';
-
   margin-top: 40px;
   display: flex;
   flex-flow: row wrap;

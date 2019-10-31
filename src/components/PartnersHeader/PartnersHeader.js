@@ -12,8 +12,6 @@ const PartnersHeaderText = withProps({
   bold: true,
   noPadding: true,
 })(styled(Text)`
-  @import '../../styles/variables.css';
-
   margin-bottom: 35px;
 
   @media (--tablet-viewport) {

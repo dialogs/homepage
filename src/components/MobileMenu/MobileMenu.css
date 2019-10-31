@@ -1,5 +1,3 @@
-@import '../../styles/variables.css';
-
 .mobile-menu {
   position: fixed;
   display: none;

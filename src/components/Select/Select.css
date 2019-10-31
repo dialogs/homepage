@@ -1,11 +1,7 @@
-@import '../../styles/variables.css';
-
-:root {
+.select {
   --select-border-color: color-mod(var(--text-color-main) alpha(20%));
   --select-active-border-color: #b9bbfa;
-}
 
-.select {
   display: inline-flex;
   flex-flow: column nowrap;
   padding: 24px 0;

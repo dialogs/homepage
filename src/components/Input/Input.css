@@ -1,5 +1,3 @@
-@import '../../styles/variables.css';
-
 :root {
   --input-border-color: color-mod(var(--text-color-main) alpha(20%));
   --input-active-border-color: var(--color-secondary);

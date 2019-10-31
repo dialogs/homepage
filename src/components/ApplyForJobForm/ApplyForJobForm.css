@@ -1,5 +1,3 @@
-@import '../../styles/variables.css';
-
 .apply__form__body {
   display: flex;
   flex-direction: column;

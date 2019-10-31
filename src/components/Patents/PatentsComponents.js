@@ -4,8 +4,6 @@ import { UnderlineDownloadLink } from '../UnderlineLink/UnderlineDownloadLink';
 import { FormattedMessage } from 'react-intl';
 
 export const PatentList = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -13,8 +11,6 @@ export const PatentList = styled.div`
 `;
 
 export const PatentElement = styled.div`
-  @import '../../styles/variables.css';
-
   flex: 0 0 49%;
   margin-right: 2%;
   margin-bottom: 40px;

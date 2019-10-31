@@ -7,8 +7,6 @@ import { List, ListItem } from '../List/List';
 import { Container } from '../Container/Container';
 
 const PartnerAvailablesHeading = styled(Heading)`
-  @import '../../styles/variables.css';
-
   @media (--mobile-viewport) {
     padding: 20px 0 10px !important;
   }
@@ -19,8 +17,6 @@ const PartnerAvailablesHeading = styled(Heading)`
 `;
 
 const PartnerAvailablesContainer = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   justify-content: space-between;
 
@@ -31,16 +27,12 @@ const PartnerAvailablesContainer = styled.div`
 `;
 
 const PartnerAvailablesContent = styled.div`
-  @import '../../styles/variables.css';
-
   @media (--tablet-landscape-viewport) {
     padding-right: 40px;
   }
 `;
 
 const PartnerAvailablesImage = styled.img`
-  @import '../../styles/variables.css';
-
   z-index: 10;
 
   @media (--mobile-viewport) {
@@ -67,8 +59,6 @@ const PartnerAvailablesImage = styled.img`
 `;
 
 const PartnerAvailablesImageWrapper = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-direction: column-reverse;
 

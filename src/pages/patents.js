@@ -10,8 +10,6 @@ import { PatentsLicenses } from '../components/Patents/PatentsLicenses';
 import { PatentsAssociations } from '../components/Patents/PatentsAssociations';
 
 const PatentsContainer = styled(Container)`
-  @import '../styles/variables.css';
-
   @media (--tablet-viewport) {
     padding: 0;
   }

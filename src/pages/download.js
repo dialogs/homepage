@@ -14,8 +14,6 @@ import {
 } from '../components/Download';
 
 const DownloadClientsSection = styled(Section)`
-  @import '../styles/variables.css';
-
   padding: 0;
 
   @media (--tablet-viewport) {

@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import { styled } from 'astroturf';
 
 const StyledContainer = styled.div`
-  @import '../../styles/variables.css';
-
   margin: var(--container-margin);
   padding: 0;
 

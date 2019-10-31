@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import { css } from 'astroturf';
 
 const styles = css`
-  @import '../../styles/variables.css';
-
   .text {
     font-family: var(--font-family);
     letter-spacing: 0.01em;

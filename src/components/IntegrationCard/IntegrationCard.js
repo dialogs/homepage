@@ -5,8 +5,6 @@ import { withProps } from 'astroturf/helpers';
 import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 
 const IntegrationCardContainer = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-direction: column;
   height: 220px;
@@ -35,8 +33,6 @@ const IntegrationCardHeader = styled.header`
 `;
 
 const IntegrationCardImage = styled.img`
-  @import '../../styles/variables.css';
-
   max-width: 140px;
   height: 40px;
 `;
@@ -47,8 +43,6 @@ const IntegrationCardBody = styled.div`
 `;
 
 const IntegrationCardTitle = styled.h3`
-  @import '../../styles/variables.css';
-
   font-size: 18px;
   line-height: 23px;
   margin: 0;

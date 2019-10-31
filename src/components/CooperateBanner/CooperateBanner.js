@@ -11,8 +11,6 @@ const CooperateBlock = styled.div`
 `;
 
 const CooperateBlockButton = styled(CooperateBlock)`
-  @import '../../styles/variables.css';
-
   @media (--mobile-viewport) {
     width: 100%;
   }
@@ -37,8 +35,6 @@ const CooperateText = withProps({
   size: 'large',
   noPadding: true,
 })(styled(Text)`
-  @import '../../styles/variables.css';
-
   & br {
     display: none;
   }
@@ -59,8 +55,6 @@ const CooperateText = withProps({
 `);
 
 const CooperateButton = styled(LinkButton)`
-  @import '../../styles/variables.css';
-
   width: 100%;
 
   @media (--laptop-viewport) {

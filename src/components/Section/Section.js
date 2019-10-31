@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'astroturf';
 
 const SectionContainer = styled.section`
-  @import '../../styles/variables.css';
-
   @media (--mobile-viewport) {
     padding-top: 20px;
     padding-bottom: 20px;

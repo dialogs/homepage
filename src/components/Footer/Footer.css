@@ -2,8 +2,6 @@
  * Copyright 2019 dialog LLC <info@dlg.im>
  */
 
-@import '../../styles/variables.css';
-
 .site__footer {
   background: var(--color-primary);
 }

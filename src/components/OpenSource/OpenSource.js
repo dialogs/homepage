@@ -9,8 +9,6 @@ import { UnderlineLink } from '../UnderlineLink/UnderlineLink';
 import { GithubButton } from '../GithubButton/GithubButton';
 
 const OpenSourceList = styled(List)`
-  @import '../../styles/variables.css';
-
   padding-bottom: 0;
 
   @media (--mobile-viewport) {
@@ -19,8 +17,6 @@ const OpenSourceList = styled(List)`
 `;
 
 const OpenSourceContent = styled.div`
-  @import '../../styles/variables.css';
-
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -32,7 +28,6 @@ const OpenSourceContent = styled.div`
 `;
 
 const OpenSourceContentBlock = styled.div`
-  @import '../../styles/variables.css';
   margin-bottom: 40px;
 
   @media (--mobile-viewport) {

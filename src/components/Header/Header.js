@@ -8,8 +8,6 @@ import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
 import './Header.css';
 
 const HeaderContainer = styled.header`
-  @import '../../styles/variables.css';
-
   position: absolute;
   width: 100%;
   top: 0;
@@ -67,7 +65,6 @@ export function Header({
   if (originalPath.indexOf('/blog/') >= 0) {
     toLink = locale === 'ru' ? '/en/blog/' : '/ru/blog/';
   }
-  console.log({ originalPath, toLink });
 
   if (originalPath.indexOf('/career/') >= 0) {
     toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
@@ -115,7 +112,6 @@ export function Header({
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
-      console.log('unload listeners');
       window.removeEventListener('load', handleWindowLoad);
       window.removeEventListener('scroll', handleScroll);
     };
