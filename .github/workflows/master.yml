@@ -7,7 +7,6 @@ on:
 
 jobs:
   build-app:
-    if: github.actor != 'dialog-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -88,7 +87,7 @@ jobs:
 
   build-docker:
     needs: version
-    if: github.actor != 'dialog-bot'
+    if: github.actor === 'dialog-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
