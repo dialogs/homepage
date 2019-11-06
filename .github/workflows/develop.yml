@@ -85,6 +85,12 @@ jobs:
 
       - name: Deploy
         run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASSWORD }}@jenkins.transmit.im/job/Web/job/landing-deploy/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&app=demo&image=$DOCKER_IMAGE:$IMAGE_VERSION"
+      - name: Deploy notify
+        if: success()
+        run: |
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"🖕🏾 Homepage build(develop) *#${BUILD_NUMBER}:* successfully deployed. \"}" \
+          ${{ secrets.DIALOG_WEBHOOK }}
       - name: Exepction
         if: failure()
         run: |
