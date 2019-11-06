@@ -86,8 +86,8 @@ jobs:
           ${{ secrets.DIALOG_WEBHOOK }}
 
   build-docker:
-    needs: version
-    if: github.actor === 'dialog-bot'
+    needs: build-app
+    if: github.actor == 'dialog-bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
