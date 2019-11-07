@@ -83,7 +83,7 @@ jobs:
           DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          IMAGE_VERSION="${VERSION}:$BUILD_NUMBER"
+          IMAGE_VERSION="${VERSION}.$BUILD_NUMBER"
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
           docker build -t $DOCKER_IMAGE:$IMAGE_VERSION .
           docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:$IMAGE_VERSION
