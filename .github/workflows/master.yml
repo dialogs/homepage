@@ -39,12 +39,16 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build(master) *#$BUILD_NUMBER*: application build successful.\"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
-
-      - name: Upload build artifact
+      - name: Upload app artifact
         uses: actions/upload-artifact@v1
         with:
           name: app
           path: public
+      - name: Upload server artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: server
+          path: server
       - name: Upload build number
         uses: actions/upload-artifact@v1
         with:
@@ -70,14 +74,12 @@ jobs:
           gpg2 --allow-secret-key-import --import private.key
           git config --global gpg.program gpg2
           git config --global push.followTags true
-
       - name: Version bump
         if: github.actor != 'dialog-bot'
         run: |
           git checkout master
           npm version patch
           git push --follow-tags
-
       - name: (Exception step) Version bump
         if: failure()
         run: |
@@ -90,12 +92,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Download app build artifact
+      - name: Download app artifact
         uses: actions/download-artifact@v1
         with:
           name: app
           path: public
-      - name: Download app build artifact
+      - name: Download server artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: server
+          path: server
+      - name: Download build number artifact
         uses: actions/download-artifact@v1
         with:
           name: BUILD_NUMBER
