@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
       - name: Generate build number
         uses: einaregilsson/build-number@v1
         with:
@@ -39,12 +41,16 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build(master) *#$BUILD_NUMBER*: application build successful.\"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
-
-      - name: Upload build artifact
+      - name: Upload app artifact
         uses: actions/upload-artifact@v1
         with:
           name: app
           path: public
+      - name: Upload server artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: server
+          path: server
       - name: Upload build number
         uses: actions/upload-artifact@v1
         with:
@@ -58,6 +64,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
       - name: Configure git
         run: |
           git config user.name ${{ secrets.GITHUB_BOT_USERNAME }}
@@ -71,13 +79,11 @@ jobs:
           gpg2 --allow-secret-key-import --import private.key
           git config --global gpg.program gpg2
           git config --global push.followTags true
-
       - name: Version bump
         run: |
           git checkout master
           npm version patch
           git push --follow-tags
-
       - name: (Exception step) Version bump
         if: failure()
         run: |
@@ -91,12 +97,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Download app build artifact
+      - name: Download app artifact
         uses: actions/download-artifact@v1
         with:
           name: app
           path: public
-      - name: Download app build artifact
+      - name: Download server artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: server
+          path: server
+      - name: Download build number artifact
         uses: actions/download-artifact@v1
         with:
           name: BUILD_NUMBER
@@ -105,6 +116,7 @@ jobs:
       - name: Build the Docker image
         env:
           DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
+          NODE_ENV: production
         run: |
           VERSION=$(node -p "require('./package.json').version")
           IMAGE_VERSION="${VERSION}.$BUILD_NUMBER"

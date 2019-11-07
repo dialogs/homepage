@@ -196,14 +196,6 @@ function notifyResume(body, site) {
 }
 
 function logBody(body, referer) {
-  console.log(
-    JSON.stringify({
-      ...body,
-      headerReferer: referer,
-      resume: body.resume ? '[file]' : '[empty]',
-    }),
-  );
-
   return Promise.resolve();
 }
 

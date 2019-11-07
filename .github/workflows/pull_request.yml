@@ -1,4 +1,4 @@
-name: Other CI
+name: Pull Request CI
 
 on:
   pull_request:
@@ -12,6 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
+      - name: Generate build number
+        uses: einaregilsson/build-number@v1
+        with:
+          token: ${{secrets.github_token}}
       - name: Pipline notify started
         uses: dialogs/dialog-notify-action@master
         with:
@@ -38,18 +44,38 @@ jobs:
         with:
           url: ${{ secrets.DIALOG_WEBHOOK }}
           message: '👉🏾 Homepage build: application build successful.'
+      - name: Upload app artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: public
+      - name: Upload server artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: server
+          path: server
+      - name: Upload build number
+        uses: actions/upload-artifact@v1
+        with:
+          name: BUILD_NUMBER
+          path: BUILD_NUMBER
 
   build-docker:
     needs: build-app
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Download app build artifact
+      - name: Download app artifact
         uses: actions/download-artifact@v1
         with:
           name: app
           path: public
-      - name: Download app build artifact
+      - name: Download server artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: server
+          path: server
+      - name: Download build number artifact
         uses: actions/download-artifact@v1
         with:
           name: BUILD_NUMBER
@@ -58,6 +84,7 @@ jobs:
       - name: Build the Docker image
         env:
           DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
+          NODE_ENV: production
         run: |
           VERSION=$(node -p "require('./package.json').version")
           IMAGE_VERSION="${VERSION}.$BUILD_NUMBER"

@@ -15,12 +15,3 @@ function flattenMessages(nestedMessages, prefix = '') {
     return messages;
   }, {});
 }
-
-function printKeyValues(object) {
-  for (const property in object) {
-    console.log(object[property]);
-  }
-}
-
-printKeyValues(flattenMessages(ru));
-printKeyValues(flattenMessages(en));
