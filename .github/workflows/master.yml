@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
       - name: Generate build number
         uses: einaregilsson/build-number@v1
         with:
@@ -61,6 +63,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
       - name: Configure git
         run: |
           git config user.name ${{ secrets.GITHUB_BOT_USERNAME }}

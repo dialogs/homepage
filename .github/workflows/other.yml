@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
       - name: Generate build number
         uses: einaregilsson/build-number@v1
         with:
