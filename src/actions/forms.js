@@ -85,11 +85,6 @@ async function getFormData(form) {
   };
 }
 
-// function logFormData(data) {
-//   console.log(data);
-//   return data;
-// }
-
 function sendFormData(form, endpoint) {
   return axios.post(endpoint, form).then(({ data }) => {
     return new Promise((resolve, reject) => {

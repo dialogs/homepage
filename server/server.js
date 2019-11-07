@@ -41,7 +41,6 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 redirectRules.forEach((rule) => {
   rule.from.forEach((from) => {
-    console.log(`Add redirect rule from ${from} to ${rule.to}`);
     app.get(from, (req, res) => {
       res.redirect(rule.to);
     });
