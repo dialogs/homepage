@@ -14,15 +14,13 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: '12.x'
-      - name: Generate build number
-        uses: einaregilsson/build-number@v1
-        with:
-          token: ${{secrets.github_token}}
       - name: Pipline notify started
-        uses: dialogs/dialog-notify-action@master
-        with:
-          url: ${{ secrets.DIALOG_WEBHOOK }}
-          message: '👉🏾 Homepage build: pipeline started. '
+        env:
+          BUILD_NUMBER: git rev-list --count HEAD
+        run: |
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* pipeline started. \"}" \
+          ${{ secrets.DIALOG_WEBHOOK }}
       - name: Build
         env:
           EMAIL_USER: ${{secrets.EMAIL_USER}}
@@ -40,10 +38,10 @@ jobs:
           npm ci
           npm run build
       - name: Application notify build
-        uses: dialogs/dialog-notify-action@master
-        with:
-          url: ${{ secrets.DIALOG_WEBHOOK }}
-          message: '👉🏾 Homepage build: application build successful.'
+        run: |
+          curl --header 'Content-Type: application/json' --request POST \
+          --data "{\"text\": \"👉🏾 Homepage build *#${BUILD_NUMBER}:* application build successful. \"}" \
+          ${{ secrets.DIALOG_WEBHOOK }}
       - name: Upload app artifact
         uses: actions/upload-artifact@v1
         with:
@@ -54,11 +52,6 @@ jobs:
         with:
           name: server
           path: server
-      - name: Upload build number
-        uses: actions/upload-artifact@v1
-        with:
-          name: BUILD_NUMBER
-          path: BUILD_NUMBER
 
   build-docker:
     needs: build-app
@@ -75,16 +68,13 @@ jobs:
         with:
           name: server
           path: server
-      - name: Download build number artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: BUILD_NUMBER
       - name: Restore build number
         uses: einaregilsson/build-number@v1
       - name: Build the Docker image
         env:
           DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
           NODE_ENV: production
+          BUILD_NUMBER: git rev-list --count HEAD
         run: |
           VERSION=$(node -p "require('./package.json').version")
           IMAGE_VERSION="${VERSION}.$BUILD_NUMBER"

@@ -10,7 +10,7 @@ import { Easy } from '../components/Easy/Easy';
 import { Business } from '../components/Business/Business';
 import { Offer } from '../components/Offer/Offer';
 
-import { getVersion } from '../utils/getVersion.js';
+import { getVersion } from '../../utils/getVersion.js';
 
 export default ({
   pageContext: {
@@ -19,7 +19,7 @@ export default ({
 }) => {
   useEffect(() => {
     console.log(`App version: ${getVersion()}`);
-  }, [logger]);
+  }, []);
 
   return (
     <Page>
