@@ -24,6 +24,8 @@ export default ({
     },
   },
 }) => {
+
+  console.log('flag this')
   return (
     <Page className="about">
       <FormattedMetaTags

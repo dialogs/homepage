@@ -19,6 +19,7 @@ const RepositoryCount = styled.text`
 `;
 
 export function GithubButton({ count = 94 }) {
+
   return (
     <GithubButtonLink
       href="https://github.com/dialogs"
