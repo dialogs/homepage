@@ -2,9 +2,9 @@ name: Other CI
 
 on:
   pull_request:
-    branches-ignore:
-      - 'master'
-      - 'develop'
+    types: [edited, opened, synchronize]
+    branches:
+      - develop
 
 jobs:
   build-app:
