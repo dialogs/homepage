@@ -127,7 +127,7 @@ jobs:
         run: |
           BUILD_NUMBER=$(git rev-list --count HEAD)
           curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"🖕🏾 Homepage build(develop) *#$BUILD_NUMBER:* successfully deployed. \"}" \
+          --data "{\"text\": \"👌🏾 Homepage build(develop) *#$BUILD_NUMBER:* successfully deployed. \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
 
       - name: Exepction
