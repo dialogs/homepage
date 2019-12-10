@@ -1,8 +1,5 @@
 import packageJson from '../package.json';
 
-export function getVersion({
-  platformVersion = packageJson.version,
-  buildNum = process.env.BUILD_NUM,
-}) {
-  return [appVersion, platformVersion, buildNum].filter(Boolean).join('.');
+export function getVersion() {
+  return `${packageJson.version}:${process.env.BUILD_NUM || 'DEV'}`;
 }
