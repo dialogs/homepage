@@ -70,11 +70,11 @@ export function OpenSource() {
             </ListItem>
             <ListItem>
               <FormattedHTMLMessage id="integrations.opensource.dev.experience" />
-              {/* <Text bold>
+              <Text bold>
                 <UnderlineLink href="https://oss.dlg.im" direction="right">
                   <FormattedHTMLMessage id="integrations.opensource.dev.participate" />
                 </UnderlineLink>
-              </Text> */}
+              </Text>
             </ListItem>
           </OpenSourceList>
         </OpenSourceContentBlock>
