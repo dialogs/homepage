@@ -102,7 +102,6 @@ jobs:
         with:
           name: server
           path: server
-
       - name: Build the Docker image
         env:
           DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
@@ -129,8 +128,7 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build(develop) *#$BUILD_NUMBER:* successfully deployed. \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
-
-      - name: Exepction
+      - name: Exception
         if: failure()
         run: |
           BUILD_NUMBER=$(git rev-list --count HEAD)

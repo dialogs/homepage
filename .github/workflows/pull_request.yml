@@ -86,7 +86,7 @@ jobs:
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
-      - name: Exepction
+      - name: Exception
         if: failure()
         run: |
           BUILD_NUMBER=$(git rev-list --count HEAD)
