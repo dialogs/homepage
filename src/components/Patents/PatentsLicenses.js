@@ -13,7 +13,7 @@ const PatentsLicensesSection = styled(Section)`
 const licenses = [
   {
     src: '/images/license-fsb.jpg',
-    href: '/fsb_license.pdf',
+    href: '/images/license-fsb.jpg',
     title: 'patents.licenses.fsb',
   },
   {
@@ -22,8 +22,8 @@ const licenses = [
     title: 'patents.licenses.fstec',
   },
   {
-    src: '/images/fstek-3.jpg',
-    href: '/images/fstek-3.jpg',
+    src: '/images/fstek-2.jpg',
+    href: '/images/fstek-2.jpg',
     title: 'patents.licenses.fstec',
   },
 ];
