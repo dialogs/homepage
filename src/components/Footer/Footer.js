@@ -205,9 +205,9 @@ export function Footer({ locale }) {
                   <FooterUnderlineGatsbyLink to={`/${locale}/career/`}>
                     <FormattedMessage id="footer_career" />
                   </FooterUnderlineGatsbyLink>
-                  {/* <FooterUnderlineLink invert href="https://oss.dlg.im/">
+                  <FooterUnderlineLink invert href="https://oss.dlg.im/">
                     <FormattedMessage id="menu_bounty" />
-                  </FooterUnderlineLink> */}
+                  </FooterUnderlineLink>
                 </div>
 
                 <div className="footer__nav-list" style={{ flex: '1 1 auto' }}>
