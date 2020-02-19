@@ -107,6 +107,7 @@ jobs:
           DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
           NODE_ENV: production
         run: |
+          BUILD_NUMBER=$(git rev-list --count HEAD)
           VERSION=$(node -p "require('./package.json').version")
           IMAGE_VERSION="${VERSION}.$BUILD_NUMBER"
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
