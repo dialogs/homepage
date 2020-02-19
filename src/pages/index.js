@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Page } from '../components/Page/Page';
 import { Container } from '../components/Container/Container';
@@ -9,12 +9,17 @@ import { Incompany } from '../components/Incompany/Incompany';
 import { Easy } from '../components/Easy/Easy';
 import { Business } from '../components/Business/Business';
 import { Offer } from '../components/Offer/Offer';
+import { getVersion } from '../../utils/getVersion';
 
 export default ({
   pageContext: {
     intl: { language },
   },
 }) => {
+  useEffect(() => {
+    console.log(`App version: ${getVersion()}`);
+  }, []);
+
   return (
     <Page>
       <Container>

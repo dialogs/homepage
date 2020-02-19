@@ -89,7 +89,7 @@ export function OpenSource() {
             <ListItem>
               <FormattedHTMLMessage id="integrations.opensource.clients.libraries" />
               <GithubButtonWrapper>
-                <GithubButton />
+                <GithubButton count={117} />
               </GithubButtonWrapper>
             </ListItem>
           </OpenSourceList>

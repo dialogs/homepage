@@ -13,14 +13,11 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: '12.x'
-      - name: Generate build number
-        uses: einaregilsson/build-number@v1
-        with:
-          token: ${{secrets.github_token}}
       - name: Pipline notify started
         run: |
+          BUILD_NUMBER=$(git rev-list --count HEAD)
           curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👉🏾 Homepage build(master) *#${BUILD_NUMBER}*: pipeline started.\"}" \
+          --data "{\"text\": \"👉🏾 Homepage build(master) *#$BUILD_NUMBER*: pipeline started.\"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
       - name: Build
         env:
@@ -38,6 +35,7 @@ jobs:
         run: |
           npm ci
           npm run build
+          BUILD_NUMBER=$(git rev-list --count HEAD)
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build(master) *#$BUILD_NUMBER*: application build successful.\"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
@@ -46,16 +44,12 @@ jobs:
         with:
           name: app
           path: public
+
       - name: Upload server artifact
         uses: actions/upload-artifact@v1
         with:
           name: server
           path: server
-      - name: Upload build number
-        uses: actions/upload-artifact@v1
-        with:
-          name: BUILD_NUMBER
-          path: BUILD_NUMBER
 
   version:
     needs: build-app
@@ -87,8 +81,9 @@ jobs:
       - name: (Exception step) Version bump
         if: failure()
         run: |
+          BUILD_NUMBER=$(git rev-list --count HEAD)
           curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"👌🏾 Homepage(master) version bump failed: \"}" \
+          --data "{\"text\": \"👌🏾 Homepage(master) *#$BUILD_NUMBER* version bump failed: \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
 
   build-docker:
@@ -107,12 +102,6 @@ jobs:
         with:
           name: server
           path: server
-      - name: Download build number artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: BUILD_NUMBER
-      - name: Restore build number
-        uses: einaregilsson/build-number@v1
       - name: Build the Docker image
         env:
           DOCKER_IMAGE: docker.pkg.github.com/dialogs/homepage/homepage
@@ -126,6 +115,7 @@ jobs:
           docker push $DOCKER_IMAGE:$IMAGE_VERSION
       - name: Notify
         run: |
+          BUILD_NUMBER=$(git rev-list --count HEAD)
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
@@ -134,12 +124,14 @@ jobs:
       - name: Deploy notify
         if: success()
         run: |
+          BUILD_NUMBER=$(git rev-list --count HEAD)
           curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"🖕🏾 Homepage build(develop) *#${BUILD_NUMBER}:* successfully deployed. \"}" \
+          --data "{\"text\": \"👌🏾 Homepage build(develop) *#$BUILD_NUMBER:* successfully deployed. \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
-      - name: Exepction
+      - name: Exception
         if: failure()
         run: |
+          BUILD_NUMBER=$(git rev-list --count HEAD)
           curl --header 'Content-Type: application/json' --request POST \
-          --data "{\"text\": \"🖕🏾 Homepage build(master) *#${BUILD_NUMBER}:* pipeline failed. [More info](https://github.com/dialogs/dialog-web-platform/commit/${GITHUB_SHA}/checks)\"}" \
+          --data "{\"text\": \"🖕🏾 Homepage build(master) *#$BUILD_NUMBER:* pipeline failed. [More info](https://github.com/dialogs/dialog-web-platform/commit/${GITHUB_SHA}/checks)\"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
