@@ -209,6 +209,7 @@
   "subscribe_success": "Вы успешно подписаны.",
   "blog_roster_see_more": "Смотреть еще",
   "article_back": "Назад",
+  "footer_social_responsibility": "Социальная ответственность",
   "footer_documentation": "Документация",
   "footer_support": "Помощь",
   "footer_copyright": "© 2016 - 2020 ООО «Диалог» ИНН: 7804568396",
@@ -577,6 +578,13 @@
         }
       }
     }
+  },
+  "social_responsibility": {
+    "header": "Социальная ответственность",
+    "sub_header": "Результаты специальной оценки условий труда",
+    "text": "Согласно результатам проведённой специальной оценки условий труда рабочие места подразделений Общества в улучшении условий труда не нуждаются.",
+    "link_register": "<a href=\"/register.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link--default link--default--right\">Сводная ведомость результатов</a> проведения специальной оценки условий труда ООО «Диалог»",
+    "link_list": "<a href=\"/list.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"link--default link--default--right\">Перечень рекомендуемых мероприятий по улучшению условий труда.</a>"
   },
   "patents": {
     "header": "Патенты и Лицензии",

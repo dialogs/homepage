@@ -243,6 +243,13 @@ export function Footer({ locale }) {
                   >
                     <FormattedMessage id="footer_anti_corruption_policy" />
                   </FooterUnderlineLink>
+                  {locale === 'ru' && (
+                    <FooterUnderlineGatsbyLink
+                      to={`/${locale}/responsibility/`}
+                    >
+                      <FormattedMessage id="footer_social_responsibility" />
+                    </FooterUnderlineGatsbyLink>
+                  )}
                 </div>
               </nav>
             </div>
