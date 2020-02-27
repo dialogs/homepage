@@ -120,7 +120,7 @@ jobs:
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
       - name: Deploy
-        run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASSWORD }}@jenkins.transmit.im/job/Web/job/landing-deploy/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&app=prod&image=$DOCKER_IMAGE:$IMAGE_VERSION:latest"
+        run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASSWORD }}@jenkins.transmit.im/job/Web/job/landing-deploy-test/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&app=prod&image=$DOCKER_IMAGE:$IMAGE_VERSION:latest"
       - name: Deploy notify
         if: success()
         run: |
