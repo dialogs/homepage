@@ -113,14 +113,15 @@ jobs:
           docker build -t $DOCKER_IMAGE:$IMAGE_VERSION .
           docker tag $DOCKER_IMAGE:$IMAGE_VERSION $DOCKER_IMAGE:latest
           docker push $DOCKER_IMAGE:$IMAGE_VERSION
+          curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASSWORD }}@jenkins.transmit.im/job/Web/job/landing-deploy-test/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&app=prod&image=$DOCKER_IMAGE:$IMAGE_VERSION"
       - name: Notify
         run: |
           BUILD_NUMBER=$(git rev-list --count HEAD)
           curl --header 'Content-Type: application/json' --request POST \
           --data "{\"text\": \"👌🏾 Homepage build *#$BUILD_NUMBER*: docker image ready. \"}" \
           ${{ secrets.DIALOG_WEBHOOK }}
-      - name: Deploy
-        run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASSWORD }}@jenkins.transmit.im/job/Web/job/landing-deploy-test/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&app=prod&image=${DOCKER_IMAGE}:${IMAGE_VERSION}"
+     # - name: Deploy
+     #   run: curl -X POST "https://${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_PASSWORD }}@jenkins.transmit.im/job/Web/job/landing-deploy-test/buildWithParameters?token=${{ secrets.JENKINS_TOKEN }}&app=prod&image=${DOCKER_IMAGE}:${IMAGE_VERSION}"
       - name: Deploy notify
         if: success()
         run: |
