@@ -70,6 +70,10 @@ export function Header({
     toLink = locale === 'ru' ? '/en/career/' : '/ru/career/';
   }
 
+  if (originalPath.indexOf('/responsibility/') >= 0 && locale === 'ru') {
+    toLink = '/en/';
+  }
+
   function getCurrentScroll() {
     return window.pageYOffset || document.documentElement.scrollTop;
   }
