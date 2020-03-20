@@ -8,6 +8,7 @@ import {
   UnderlineLink,
   UnderlineGatsbyLink,
 } from '../UnderlineLink/UnderlineLink';
+import { SKBanner } from '../SKBanner/SKBanner';
 import './Footer.css';
 
 const FooterUnderlineGatsbyLink = withProps({
@@ -42,6 +43,10 @@ const FooterContactUnderlineLink = withProps({
   line-height: 32px;
 `);
 
+const SKBannerStyled = styled(SKBanner)`
+  margin-top: 2rem;
+`;
+
 export function Footer({ locale }) {
   return (
     <footer className="site__footer">
@@ -57,6 +62,7 @@ export function Footer({ locale }) {
                   {links.email.info}
                 </FooterContactUnderlineLink>
               </div>
+              <SKBannerStyled locale={locale} />
             </div>
             <div className="footer__top-content-item footer__nav-box">
               <div className="footer__social">
