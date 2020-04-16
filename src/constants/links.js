@@ -16,13 +16,13 @@ export default {
     android: 'https://play.google.com/store/apps/details?id=im.dlg.ee.grpc',
     web: 'https://ee.dlg.im',
     osx:
-      'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-mac-latest.zip',
+      'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog-ee-x-2.3.2.dmg',
     windows:
-      'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-win-latest.exe',
+      'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog-ee-x-setup-2.3.2.exe',
     linux:
-      'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-linux-i386-latest.deb',
+      'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog_ee_x_2.3.2_x86_64.rpm',
     linux64:
-      'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-linux-amd64-latest.deb',
+      'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog_ee_x_2.3.2_amd64.deb',
   },
   vk: 'https://vk.com/dlgim',
   facebook: 'https://www.facebook.com/startdialog',
