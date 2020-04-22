@@ -11,18 +11,18 @@ export default {
       'https://cdn1.dlg.im/desktop/dialog-messenger-linux-amd64-latest.deb',
   },
   enterprise: {
-    ios: 'https://itunes.apple.com/ru/app/dialog-in-company/id1438225210',
-    ios_en: 'https://itunes.apple.com/app/dialog-in-company/id1438225210',
-    android: 'https://play.google.com/store/apps/details?id=im.dlg.ee.grpc',
+    ios: 'https://apps.apple.com/ru/app/dialog-enterprise/id1475749650',
+    ios_en: 'https://apps.apple.com/ru/app/dialog-enterprise/id1475749650',
+    android: 'https://play.google.com/store/apps/details?id=im.dlg.dialogx',
     web: 'https://ee.dlg.im',
     osx:
-      'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-mac-latest.zip',
+      'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog-ee-x-2.3.2.dmg',
     windows:
-      'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-win-latest.exe',
+      'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog-ee-x-setup-2.3.2.exe',
     linux:
-      'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-linux-i386-latest.deb',
+      'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog_ee_x_2.3.2_x86_64.rpm',
     linux64:
-      'https://dialog-ee-desktop.s3.amazonaws.com/dialog-ee-messenger-linux-amd64-latest.deb',
+      'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog_ee_x_2.3.2_amd64.deb',
   },
   vk: 'https://vk.com/dlgim',
   facebook: 'https://www.facebook.com/startdialog',
