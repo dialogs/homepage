@@ -11,9 +11,9 @@ export default {
       'https://cdn1.dlg.im/desktop/dialog-messenger-linux-amd64-latest.deb',
   },
   enterprise: {
-    ios: 'https://itunes.apple.com/ru/app/dialog-in-company/id1438225210',
-    ios_en: 'https://itunes.apple.com/app/dialog-in-company/id1438225210',
-    android: 'https://play.google.com/store/apps/details?id=im.dlg.ee.grpc',
+    ios: 'https://apps.apple.com/ru/app/dialog-enterprise/id1475749650',
+    ios_en: 'https://apps.apple.com/ru/app/dialog-enterprise/id1475749650',
+    android: 'https://play.google.com/store/apps/details?id=im.dlg.dialogx',
     web: 'https://ee.dlg.im',
     osx:
       'https://dialog-enterprise-x-desktop.s3.eu-west-2.amazonaws.com/dialog-ee-x-2.3.2.dmg',
