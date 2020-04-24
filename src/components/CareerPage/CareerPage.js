@@ -76,49 +76,15 @@ export default ({
       </PageHeader>
 
       <Container>
-        <Section className="ceo">
-          <PageHeading className="ceo__title">
-            <FormattedMessage id="jobs_ceo_header" />
-          </PageHeading>
-
-          <div className="ceo__photo_bio">
-            <div className="ceo__photo_wrapper">
-              <ImageFormatted
-                imgClass="ceo__photo"
-                src="/images/jobs/jobs-ceo.png"
-                altLangId="alt_jobs_ceo"
-              />
-              <span className="ceo__bio">
-                <FormattedHTMLMessage id="jobs_ceo_bio" />
-              </span>
-            </div>
-            <div className="ceo__quote_wrapper">
-              <div className="ceo__quote">
-                <div className="ceo__quote_mark">&#8221;</div>
-                <div className="ceo__quote_text">
-                  <FormattedMessage id="jobs_ceo_quote" />
-                </div>
-                <div className="ceo__quote_mark">&#8220;</div>
-              </div>
-            </div>
-          </div>
-          <div className="ceo__about__product">
-            <FormattedHTMLMessage id="jobs_ceo_about_product" />
-          </div>
-        </Section>
-      </Container>
-
-      <Container fluid>
-        <RecommendEmployee />
-      </Container>
-
-      <Container>
         <Vacancies
           vacancies={vacancies}
           locale={language}
           cities={cities}
           categories={categories}
         />
+      </Container>
+      <Container fluid>
+        <RecommendEmployee />
       </Container>
       <Container fluid>
         <CompanyPictures />
